@@ -1702,6 +1702,16 @@ public final class ProtoUserLogin {
      * <code>optional uint32 chat_delete_message_for_both_period = 5;</code>
      */
     int getChatDeleteMessageForBothPeriod();
+
+    /**
+     * <code>optional bool wallet_active = 6;</code>
+     */
+    boolean getWalletActive();
+
+    /**
+     * <code>optional bool mpl_active = 7;</code>
+     */
+    boolean getMplActive();
   }
   /**
    * Protobuf type {@code proto.UserLoginResponse}
@@ -1719,6 +1729,8 @@ public final class ProtoUserLogin {
       secondaryNodeName_ = "";
       updateAvailable_ = false;
       chatDeleteMessageForBothPeriod_ = 0;
+      walletActive_ = false;
+      mplActive_ = false;
     }
 
     @java.lang.Override
@@ -1778,6 +1790,16 @@ public final class ProtoUserLogin {
             case 40: {
 
               chatDeleteMessageForBothPeriod_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              walletActive_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              mplActive_ = input.readBool();
               break;
             }
           }
@@ -1885,6 +1907,24 @@ public final class ProtoUserLogin {
       return chatDeleteMessageForBothPeriod_;
     }
 
+    public static final int WALLET_ACTIVE_FIELD_NUMBER = 6;
+    private boolean walletActive_;
+    /**
+     * <code>optional bool wallet_active = 6;</code>
+     */
+    public boolean getWalletActive() {
+      return walletActive_;
+    }
+
+    public static final int MPL_ACTIVE_FIELD_NUMBER = 7;
+    private boolean mplActive_;
+    /**
+     * <code>optional bool mpl_active = 7;</code>
+     */
+    public boolean getMplActive() {
+      return mplActive_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1912,6 +1952,12 @@ public final class ProtoUserLogin {
       if (chatDeleteMessageForBothPeriod_ != 0) {
         output.writeUInt32(5, chatDeleteMessageForBothPeriod_);
       }
+      if (walletActive_ != false) {
+        output.writeBool(6, walletActive_);
+      }
+      if (mplActive_ != false) {
+        output.writeBool(7, mplActive_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1937,6 +1983,14 @@ public final class ProtoUserLogin {
       if (chatDeleteMessageForBothPeriod_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, chatDeleteMessageForBothPeriod_);
+      }
+      if (walletActive_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, walletActive_);
+      }
+      if (mplActive_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, mplActive_);
       }
       memoizedSize = size;
       return size;
@@ -1967,6 +2021,10 @@ public final class ProtoUserLogin {
           == other.getUpdateAvailable());
       result = result && (getChatDeleteMessageForBothPeriod()
           == other.getChatDeleteMessageForBothPeriod());
+      result = result && (getWalletActive()
+          == other.getWalletActive());
+      result = result && (getMplActive()
+          == other.getMplActive());
       return result;
     }
 
@@ -1991,6 +2049,12 @@ public final class ProtoUserLogin {
           getUpdateAvailable());
       hash = (37 * hash) + CHAT_DELETE_MESSAGE_FOR_BOTH_PERIOD_FIELD_NUMBER;
       hash = (53 * hash) + getChatDeleteMessageForBothPeriod();
+      hash = (37 * hash) + WALLET_ACTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getWalletActive());
+      hash = (37 * hash) + MPL_ACTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getMplActive());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2123,6 +2187,10 @@ public final class ProtoUserLogin {
 
         chatDeleteMessageForBothPeriod_ = 0;
 
+        walletActive_ = false;
+
+        mplActive_ = false;
+
         return this;
       }
 
@@ -2154,6 +2222,8 @@ public final class ProtoUserLogin {
         result.secondaryNodeName_ = secondaryNodeName_;
         result.updateAvailable_ = updateAvailable_;
         result.chatDeleteMessageForBothPeriod_ = chatDeleteMessageForBothPeriod_;
+        result.walletActive_ = walletActive_;
+        result.mplActive_ = mplActive_;
         onBuilt();
         return result;
       }
@@ -2210,6 +2280,12 @@ public final class ProtoUserLogin {
         }
         if (other.getChatDeleteMessageForBothPeriod() != 0) {
           setChatDeleteMessageForBothPeriod(other.getChatDeleteMessageForBothPeriod());
+        }
+        if (other.getWalletActive() != false) {
+          setWalletActive(other.getWalletActive());
+        }
+        if (other.getMplActive() != false) {
+          setMplActive(other.getMplActive());
         }
         onChanged();
         return this;
@@ -2500,6 +2576,58 @@ public final class ProtoUserLogin {
         onChanged();
         return this;
       }
+
+      private boolean walletActive_ ;
+      /**
+       * <code>optional bool wallet_active = 6;</code>
+       */
+      public boolean getWalletActive() {
+        return walletActive_;
+      }
+      /**
+       * <code>optional bool wallet_active = 6;</code>
+       */
+      public Builder setWalletActive(boolean value) {
+        
+        walletActive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool wallet_active = 6;</code>
+       */
+      public Builder clearWalletActive() {
+        
+        walletActive_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean mplActive_ ;
+      /**
+       * <code>optional bool mpl_active = 7;</code>
+       */
+      public boolean getMplActive() {
+        return mplActive_;
+      }
+      /**
+       * <code>optional bool mpl_active = 7;</code>
+       */
+      public Builder setMplActive(boolean value) {
+        
+        mplActive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool mpl_active = 7;</code>
+       */
+      public Builder clearMplActive() {
+        
+        mplActive_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -2577,12 +2705,13 @@ public final class ProtoUserLogin {
       "Platform\022\030\n\020platform_version\030\010 \001(\t\022\035\n\006de" +
       "vice\030\t \001(\0162\r.proto.Device\022\023\n\013device_name" +
       "\030\n \001(\t\022!\n\010language\030\013 \001(\0162\017.proto.Languag" +
-      "e\"\265\001\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
+      "e\"\340\001\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
       "\0132\017.proto.Response\022\031\n\021deprecated_client\030" +
       "\002 \001(\010\022\033\n\023secondary_node_name\030\003 \001(\t\022\030\n\020up" +
       "date_available\030\004 \001(\010\022+\n#chat_delete_mess" +
-      "age_for_both_period\030\005 \001(\rB \n\016net.iGap.pr" +
-      "otoB\016ProtoUserLoginb\006proto3"
+      "age_for_both_period\030\005 \001(\r\022\025\n\rwallet_acti" +
+      "ve\030\006 \001(\010\022\022\n\nmpl_active\030\007 \001(\010B \n\016net.iGap" +
+      ".protoB\016ProtoUserLoginb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2610,7 +2739,7 @@ public final class ProtoUserLogin {
     internal_static_proto_UserLoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserLoginResponse_descriptor,
-        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", });
+        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();

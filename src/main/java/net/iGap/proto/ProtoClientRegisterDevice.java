@@ -40,6 +40,15 @@ public final class ProtoClientRegisterDevice {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+     */
+    net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type getType();
   }
   /**
    * Protobuf type {@code proto.ClientRegisterDevice}
@@ -54,6 +63,7 @@ public final class ProtoClientRegisterDevice {
     }
     private ClientRegisterDevice() {
       token_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -100,6 +110,12 @@ public final class ProtoClientRegisterDevice {
               token_ = s;
               break;
             }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -121,6 +137,122 @@ public final class ProtoClientRegisterDevice {
       return net.iGap.proto.ProtoClientRegisterDevice.internal_static_proto_ClientRegisterDevice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.class, net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.ClientRegisterDevice.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>GENERIC = 0;</code>
+       */
+      GENERIC(0),
+      /**
+       * <code>ANDROID = 1;</code>
+       */
+      ANDROID(1),
+      /**
+       * <code>IOS = 2;</code>
+       */
+      IOS(2),
+      /**
+       * <code>WEB = 3;</code>
+       */
+      WEB(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>GENERIC = 0;</code>
+       */
+      public static final int GENERIC_VALUE = 0;
+      /**
+       * <code>ANDROID = 1;</code>
+       */
+      public static final int ANDROID_VALUE = 1;
+      /**
+       * <code>IOS = 2;</code>
+       */
+      public static final int IOS_VALUE = 2;
+      /**
+       * <code>WEB = 3;</code>
+       */
+      public static final int WEB_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return GENERIC;
+          case 1: return ANDROID;
+          case 2: return IOS;
+          case 3: return WEB;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.ClientRegisterDevice.Type)
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
@@ -178,6 +310,22 @@ public final class ProtoClientRegisterDevice {
       }
     }
 
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private int type_;
+    /**
+     * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+     */
+    public net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type getType() {
+      net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type result = net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -196,6 +344,9 @@ public final class ProtoClientRegisterDevice {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
       }
+      if (type_ != net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.GENERIC.getNumber()) {
+        output.writeEnum(3, type_);
+      }
     }
 
     public int getSerializedSize() {
@@ -209,6 +360,10 @@ public final class ProtoClientRegisterDevice {
       }
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      }
+      if (type_ != net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.GENERIC.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, type_);
       }
       memoizedSize = size;
       return size;
@@ -233,6 +388,7 @@ public final class ProtoClientRegisterDevice {
       }
       result = result && getToken()
           .equals(other.getToken());
+      result = result && type_ == other.type_;
       return result;
     }
 
@@ -249,6 +405,8 @@ public final class ProtoClientRegisterDevice {
       }
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -375,6 +533,8 @@ public final class ProtoClientRegisterDevice {
         }
         token_ = "";
 
+        type_ = 0;
+
         return this;
       }
 
@@ -403,6 +563,7 @@ public final class ProtoClientRegisterDevice {
           result.request_ = requestBuilder_.build();
         }
         result.token_ = token_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -450,6 +611,9 @@ public final class ProtoClientRegisterDevice {
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         onChanged();
         return this;
@@ -659,6 +823,50 @@ public final class ProtoClientRegisterDevice {
   checkByteStringIsUtf8(value);
         
         token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+       */
+      public net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type getType() {
+        net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type result = net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -1291,12 +1499,14 @@ public final class ProtoClientRegisterDevice {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ClientRegisterDevice.proto\022\005proto\032\rReq" +
-      "uest.proto\032\016Response.proto\"F\n\024ClientRegi" +
-      "sterDevice\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
-      "est\022\r\n\005token\030\002 \001(\t\"A\n\034ClientRegisterDevi" +
-      "ceResponse\022!\n\010response\030\001 \001(\0132\017.proto.Res" +
-      "ponseB+\n\016net.iGap.protoB\031ProtoClientRegi" +
-      "sterDeviceb\006proto3"
+      "uest.proto\032\016Response.proto\"\252\001\n\024ClientReg" +
+      "isterDevice\022\037\n\007request\030\001 \001(\0132\016.proto.Req" +
+      "uest\022\r\n\005token\030\002 \001(\t\022.\n\004type\030\003 \001(\0162 .prot" +
+      "o.ClientRegisterDevice.Type\"2\n\004Type\022\013\n\007G" +
+      "ENERIC\020\000\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\007\n\003WEB\020\003\"" +
+      "A\n\034ClientRegisterDeviceResponse\022!\n\010respo" +
+      "nse\030\001 \001(\0132\017.proto.ResponseB+\n\016net.iGap.p" +
+      "rotoB\031ProtoClientRegisterDeviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1317,7 +1527,7 @@ public final class ProtoClientRegisterDevice {
     internal_static_proto_ClientRegisterDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientRegisterDevice_descriptor,
-        new java.lang.String[] { "Request", "Token", });
+        new java.lang.String[] { "Request", "Token", "Type", });
     internal_static_proto_ClientRegisterDeviceResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientRegisterDeviceResponse_fieldAccessorTable = new
