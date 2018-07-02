@@ -964,6 +964,16 @@ public final class ProtoMplGetTopupToken {
      * <code>optional uint32 expire_time = 4;</code>
      */
     int getExpireTime();
+
+    /**
+     * <code>optional string message = 5;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>optional string message = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
   }
   /**
    * Protobuf type {@code proto.MplGetTopupTokenResponse}
@@ -980,6 +990,7 @@ public final class ProtoMplGetTopupToken {
       status_ = 0;
       token_ = "";
       expireTime_ = 0;
+      message_ = "";
     }
 
     @java.lang.Override
@@ -1034,6 +1045,12 @@ public final class ProtoMplGetTopupToken {
             case 32: {
 
               expireTime_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
               break;
             }
           }
@@ -1132,6 +1149,40 @@ public final class ProtoMplGetTopupToken {
       return expireTime_;
     }
 
+    public static final int MESSAGE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>optional string message = 5;</code>
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string message = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1156,6 +1207,9 @@ public final class ProtoMplGetTopupToken {
       if (expireTime_ != 0) {
         output.writeUInt32(4, expireTime_);
       }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1177,6 +1231,9 @@ public final class ProtoMplGetTopupToken {
       if (expireTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, expireTime_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
       }
       memoizedSize = size;
       return size;
@@ -1205,6 +1262,8 @@ public final class ProtoMplGetTopupToken {
           .equals(other.getToken());
       result = result && (getExpireTime()
           == other.getExpireTime());
+      result = result && getMessage()
+          .equals(other.getMessage());
       return result;
     }
 
@@ -1225,6 +1284,8 @@ public final class ProtoMplGetTopupToken {
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1355,6 +1416,8 @@ public final class ProtoMplGetTopupToken {
 
         expireTime_ = 0;
 
+        message_ = "";
+
         return this;
       }
 
@@ -1385,6 +1448,7 @@ public final class ProtoMplGetTopupToken {
         result.status_ = status_;
         result.token_ = token_;
         result.expireTime_ = expireTime_;
+        result.message_ = message_;
         onBuilt();
         return result;
       }
@@ -1438,6 +1502,10 @@ public final class ProtoMplGetTopupToken {
         }
         if (other.getExpireTime() != 0) {
           setExpireTime(other.getExpireTime());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1702,6 +1770,75 @@ public final class ProtoMplGetTopupToken {
         onChanged();
         return this;
       }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>optional string message = 5;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 5;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 5;</code>
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 5;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1778,11 +1915,11 @@ public final class ProtoMplGetTopupToken {
       "n.Type\"o\n\004Type\022\024\n\020IRANCELL_PREPAID\020\000\022\020\n\014" +
       "IRANCELL_WOW\020\001\022\022\n\016IRANCELL_WIMAX\020\002\022\025\n\021IR" +
       "ANCELL_POSTPAID\020\003\022\007\n\003MCI\020\004\022\013\n\007RIGHTEL\020\005\"" +
-      "q\n\030MplGetTopupTokenResponse\022!\n\010response\030" +
-      "\001 \001(\0132\017.proto.Response\022\016\n\006status\030\002 \001(\r\022\r",
-      "\n\005token\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\rB\'\n\016ne" +
-      "t.iGap.protoB\025ProtoMplGetTopupTokenb\006pro" +
-      "to3"
+      "\202\001\n\030MplGetTopupTokenResponse\022!\n\010response" +
+      "\030\001 \001(\0132\017.proto.Response\022\016\n\006status\030\002 \001(\r\022",
+      "\r\n\005token\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007m" +
+      "essage\030\005 \001(\tB\'\n\016net.iGap.protoB\025ProtoMpl" +
+      "GetTopupTokenb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1809,7 +1946,7 @@ public final class ProtoMplGetTopupToken {
     internal_static_proto_MplGetTopupTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplGetTopupTokenResponse_descriptor,
-        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", });
+        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", "Message", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }
