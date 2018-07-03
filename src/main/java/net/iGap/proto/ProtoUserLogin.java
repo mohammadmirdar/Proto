@@ -1712,6 +1712,11 @@ public final class ProtoUserLogin {
      * <code>optional bool mpl_active = 7;</code>
      */
     boolean getMplActive();
+
+    /**
+     * <code>optional bool wallet_agreement_accepted = 8;</code>
+     */
+    boolean getWalletAgreementAccepted();
   }
   /**
    * Protobuf type {@code proto.UserLoginResponse}
@@ -1731,6 +1736,7 @@ public final class ProtoUserLogin {
       chatDeleteMessageForBothPeriod_ = 0;
       walletActive_ = false;
       mplActive_ = false;
+      walletAgreementAccepted_ = false;
     }
 
     @java.lang.Override
@@ -1800,6 +1806,11 @@ public final class ProtoUserLogin {
             case 56: {
 
               mplActive_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              walletAgreementAccepted_ = input.readBool();
               break;
             }
           }
@@ -1925,6 +1936,15 @@ public final class ProtoUserLogin {
       return mplActive_;
     }
 
+    public static final int WALLET_AGREEMENT_ACCEPTED_FIELD_NUMBER = 8;
+    private boolean walletAgreementAccepted_;
+    /**
+     * <code>optional bool wallet_agreement_accepted = 8;</code>
+     */
+    public boolean getWalletAgreementAccepted() {
+      return walletAgreementAccepted_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1957,6 +1977,9 @@ public final class ProtoUserLogin {
       }
       if (mplActive_ != false) {
         output.writeBool(7, mplActive_);
+      }
+      if (walletAgreementAccepted_ != false) {
+        output.writeBool(8, walletAgreementAccepted_);
       }
     }
 
@@ -1992,6 +2015,10 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, mplActive_);
       }
+      if (walletAgreementAccepted_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, walletAgreementAccepted_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -2025,6 +2052,8 @@ public final class ProtoUserLogin {
           == other.getWalletActive());
       result = result && (getMplActive()
           == other.getMplActive());
+      result = result && (getWalletAgreementAccepted()
+          == other.getWalletAgreementAccepted());
       return result;
     }
 
@@ -2055,6 +2084,9 @@ public final class ProtoUserLogin {
       hash = (37 * hash) + MPL_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getMplActive());
+      hash = (37 * hash) + WALLET_AGREEMENT_ACCEPTED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getWalletAgreementAccepted());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2191,6 +2223,8 @@ public final class ProtoUserLogin {
 
         mplActive_ = false;
 
+        walletAgreementAccepted_ = false;
+
         return this;
       }
 
@@ -2224,6 +2258,7 @@ public final class ProtoUserLogin {
         result.chatDeleteMessageForBothPeriod_ = chatDeleteMessageForBothPeriod_;
         result.walletActive_ = walletActive_;
         result.mplActive_ = mplActive_;
+        result.walletAgreementAccepted_ = walletAgreementAccepted_;
         onBuilt();
         return result;
       }
@@ -2286,6 +2321,9 @@ public final class ProtoUserLogin {
         }
         if (other.getMplActive() != false) {
           setMplActive(other.getMplActive());
+        }
+        if (other.getWalletAgreementAccepted() != false) {
+          setWalletAgreementAccepted(other.getWalletAgreementAccepted());
         }
         onChanged();
         return this;
@@ -2628,6 +2666,32 @@ public final class ProtoUserLogin {
         onChanged();
         return this;
       }
+
+      private boolean walletAgreementAccepted_ ;
+      /**
+       * <code>optional bool wallet_agreement_accepted = 8;</code>
+       */
+      public boolean getWalletAgreementAccepted() {
+        return walletAgreementAccepted_;
+      }
+      /**
+       * <code>optional bool wallet_agreement_accepted = 8;</code>
+       */
+      public Builder setWalletAgreementAccepted(boolean value) {
+        
+        walletAgreementAccepted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool wallet_agreement_accepted = 8;</code>
+       */
+      public Builder clearWalletAgreementAccepted() {
+        
+        walletAgreementAccepted_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -2705,13 +2769,14 @@ public final class ProtoUserLogin {
       "Platform\022\030\n\020platform_version\030\010 \001(\t\022\035\n\006de" +
       "vice\030\t \001(\0162\r.proto.Device\022\023\n\013device_name" +
       "\030\n \001(\t\022!\n\010language\030\013 \001(\0162\017.proto.Languag" +
-      "e\"\340\001\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
+      "e\"\203\002\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
       "\0132\017.proto.Response\022\031\n\021deprecated_client\030" +
       "\002 \001(\010\022\033\n\023secondary_node_name\030\003 \001(\t\022\030\n\020up" +
       "date_available\030\004 \001(\010\022+\n#chat_delete_mess" +
       "age_for_both_period\030\005 \001(\r\022\025\n\rwallet_acti" +
-      "ve\030\006 \001(\010\022\022\n\nmpl_active\030\007 \001(\010B \n\016net.iGap" +
-      ".protoB\016ProtoUserLoginb\006proto3"
+      "ve\030\006 \001(\010\022\022\n\nmpl_active\030\007 \001(\010\022!\n\031wallet_a" +
+      "greement_accepted\030\010 \001(\010B \n\016net.iGap.prot" +
+      "oB\016ProtoUserLoginb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2739,7 +2804,7 @@ public final class ProtoUserLogin {
     internal_static_proto_UserLoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserLoginResponse_descriptor,
-        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", });
+        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", "WalletAgreementAccepted", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
