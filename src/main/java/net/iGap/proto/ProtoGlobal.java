@@ -543,6 +543,10 @@ public final class ProtoGlobal {
      * <code>CONTACT = 13;</code>
      */
     CONTACT(13),
+    /**
+     * <code>WALLET = 15;</code>
+     */
+    WALLET(15),
     UNRECOGNIZED(-1),
     ;
 
@@ -606,6 +610,10 @@ public final class ProtoGlobal {
      * <code>CONTACT = 13;</code>
      */
     public static final int CONTACT_VALUE = 13;
+    /**
+     * <code>WALLET = 15;</code>
+     */
+    public static final int WALLET_VALUE = 15;
 
 
     public final int getNumber() {
@@ -641,6 +649,7 @@ public final class ProtoGlobal {
         case 11: return LOCATION;
         case 12: return LOG;
         case 13: return CONTACT;
+        case 15: return WALLET;
         default: return null;
       }
     }
@@ -4642,6 +4651,1633 @@ public final class ProtoGlobal {
 
   }
 
+  public interface RoomMessageWalletOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageWallet)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type getType();
+
+    /**
+     * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+     */
+    boolean hasMoneyTransfer();
+    /**
+     * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer getMoneyTransfer();
+    /**
+     * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder getMoneyTransferOrBuilder();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageWallet}
+   */
+  public  static final class RoomMessageWallet extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageWallet)
+      RoomMessageWalletOrBuilder {
+    // Use RoomMessageWallet.newBuilder() to construct.
+    private RoomMessageWallet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageWallet() {
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageWallet(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder subBuilder = null;
+              if (moneyTransfer_ != null) {
+                subBuilder = moneyTransfer_.toBuilder();
+              }
+              moneyTransfer_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(moneyTransfer_);
+                moneyTransfer_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.class, net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.RoomMessageWallet.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>MONEY_TRANSFER = 0;</code>
+       */
+      MONEY_TRANSFER(0),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>MONEY_TRANSFER = 0;</code>
+       */
+      public static final int MONEY_TRANSFER_VALUE = 0;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return MONEY_TRANSFER;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageWallet.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.RoomMessageWallet.Type)
+    }
+
+    public interface MoneyTransferOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.RoomMessageWallet.MoneyTransfer)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      long getFromUserId();
+
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      long getToUserId();
+
+      /**
+       * <code>optional uint64 amount = 3;</code>
+       */
+      long getAmount();
+
+      /**
+       * <code>optional int64 trace_number = 4;</code>
+       */
+      long getTraceNumber();
+
+      /**
+       * <code>optional int64 invoice_number = 5;</code>
+       */
+      long getInvoiceNumber();
+
+      /**
+       * <code>optional uint32 pay_time = 6;</code>
+       */
+      int getPayTime();
+
+      /**
+       * <code>optional string description = 7;</code>
+       */
+      java.lang.String getDescription();
+      /**
+       * <code>optional string description = 7;</code>
+       */
+      com.google.protobuf.ByteString
+          getDescriptionBytes();
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageWallet.MoneyTransfer}
+     */
+    public  static final class MoneyTransfer extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.RoomMessageWallet.MoneyTransfer)
+        MoneyTransferOrBuilder {
+      // Use MoneyTransfer.newBuilder() to construct.
+      private MoneyTransfer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private MoneyTransfer() {
+        fromUserId_ = 0L;
+        toUserId_ = 0L;
+        amount_ = 0L;
+        traceNumber_ = 0L;
+        invoiceNumber_ = 0L;
+        payTime_ = 0;
+        description_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private MoneyTransfer(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                fromUserId_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+
+                toUserId_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+
+                amount_ = input.readUInt64();
+                break;
+              }
+              case 32: {
+
+                traceNumber_ = input.readInt64();
+                break;
+              }
+              case 40: {
+
+                invoiceNumber_ = input.readInt64();
+                break;
+              }
+              case 48: {
+
+                payTime_ = input.readUInt32();
+                break;
+              }
+              case 58: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                description_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_MoneyTransfer_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_MoneyTransfer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.class, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder.class);
+      }
+
+      public static final int FROM_USER_ID_FIELD_NUMBER = 1;
+      private long fromUserId_;
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      public long getFromUserId() {
+        return fromUserId_;
+      }
+
+      public static final int TO_USER_ID_FIELD_NUMBER = 2;
+      private long toUserId_;
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public long getToUserId() {
+        return toUserId_;
+      }
+
+      public static final int AMOUNT_FIELD_NUMBER = 3;
+      private long amount_;
+      /**
+       * <code>optional uint64 amount = 3;</code>
+       */
+      public long getAmount() {
+        return amount_;
+      }
+
+      public static final int TRACE_NUMBER_FIELD_NUMBER = 4;
+      private long traceNumber_;
+      /**
+       * <code>optional int64 trace_number = 4;</code>
+       */
+      public long getTraceNumber() {
+        return traceNumber_;
+      }
+
+      public static final int INVOICE_NUMBER_FIELD_NUMBER = 5;
+      private long invoiceNumber_;
+      /**
+       * <code>optional int64 invoice_number = 5;</code>
+       */
+      public long getInvoiceNumber() {
+        return invoiceNumber_;
+      }
+
+      public static final int PAY_TIME_FIELD_NUMBER = 6;
+      private int payTime_;
+      /**
+       * <code>optional uint32 pay_time = 6;</code>
+       */
+      public int getPayTime() {
+        return payTime_;
+      }
+
+      public static final int DESCRIPTION_FIELD_NUMBER = 7;
+      private volatile java.lang.Object description_;
+      /**
+       * <code>optional string description = 7;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string description = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (fromUserId_ != 0L) {
+          output.writeUInt64(1, fromUserId_);
+        }
+        if (toUserId_ != 0L) {
+          output.writeUInt64(2, toUserId_);
+        }
+        if (amount_ != 0L) {
+          output.writeUInt64(3, amount_);
+        }
+        if (traceNumber_ != 0L) {
+          output.writeInt64(4, traceNumber_);
+        }
+        if (invoiceNumber_ != 0L) {
+          output.writeInt64(5, invoiceNumber_);
+        }
+        if (payTime_ != 0) {
+          output.writeUInt32(6, payTime_);
+        }
+        if (!getDescriptionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (fromUserId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(1, fromUserId_);
+        }
+        if (toUserId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(2, toUserId_);
+        }
+        if (amount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(3, amount_);
+        }
+        if (traceNumber_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(4, traceNumber_);
+        }
+        if (invoiceNumber_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(5, invoiceNumber_);
+        }
+        if (payTime_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(6, payTime_);
+        }
+        if (!getDescriptionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer other = (net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer) obj;
+
+        boolean result = true;
+        result = result && (getFromUserId()
+            == other.getFromUserId());
+        result = result && (getToUserId()
+            == other.getToUserId());
+        result = result && (getAmount()
+            == other.getAmount());
+        result = result && (getTraceNumber()
+            == other.getTraceNumber());
+        result = result && (getInvoiceNumber()
+            == other.getInvoiceNumber());
+        result = result && (getPayTime()
+            == other.getPayTime());
+        result = result && getDescription()
+            .equals(other.getDescription());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + FROM_USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getFromUserId());
+        hash = (37 * hash) + TO_USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getToUserId());
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getAmount());
+        hash = (37 * hash) + TRACE_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTraceNumber());
+        hash = (37 * hash) + INVOICE_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getInvoiceNumber());
+        hash = (37 * hash) + PAY_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getPayTime();
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.RoomMessageWallet.MoneyTransfer}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.RoomMessageWallet.MoneyTransfer)
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_MoneyTransfer_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_MoneyTransfer_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.class, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder.class);
+        }
+
+        // Construct using net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          fromUserId_ = 0L;
+
+          toUserId_ = 0L;
+
+          amount_ = 0L;
+
+          traceNumber_ = 0L;
+
+          invoiceNumber_ = 0L;
+
+          payTime_ = 0;
+
+          description_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_MoneyTransfer_descriptor;
+        }
+
+        public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer build() {
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer buildPartial() {
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer result = new net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer(this);
+          result.fromUserId_ = fromUserId_;
+          result.toUserId_ = toUserId_;
+          result.amount_ = amount_;
+          result.traceNumber_ = traceNumber_;
+          result.invoiceNumber_ = invoiceNumber_;
+          result.payTime_ = payTime_;
+          result.description_ = description_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer) {
+            return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer other) {
+          if (other == net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.getDefaultInstance()) return this;
+          if (other.getFromUserId() != 0L) {
+            setFromUserId(other.getFromUserId());
+          }
+          if (other.getToUserId() != 0L) {
+            setToUserId(other.getToUserId());
+          }
+          if (other.getAmount() != 0L) {
+            setAmount(other.getAmount());
+          }
+          if (other.getTraceNumber() != 0L) {
+            setTraceNumber(other.getTraceNumber());
+          }
+          if (other.getInvoiceNumber() != 0L) {
+            setInvoiceNumber(other.getInvoiceNumber());
+          }
+          if (other.getPayTime() != 0) {
+            setPayTime(other.getPayTime());
+          }
+          if (!other.getDescription().isEmpty()) {
+            description_ = other.description_;
+            onChanged();
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long fromUserId_ ;
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public long getFromUserId() {
+          return fromUserId_;
+        }
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public Builder setFromUserId(long value) {
+          
+          fromUserId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public Builder clearFromUserId() {
+          
+          fromUserId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long toUserId_ ;
+        /**
+         * <code>optional uint64 to_user_id = 2;</code>
+         */
+        public long getToUserId() {
+          return toUserId_;
+        }
+        /**
+         * <code>optional uint64 to_user_id = 2;</code>
+         */
+        public Builder setToUserId(long value) {
+          
+          toUserId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 to_user_id = 2;</code>
+         */
+        public Builder clearToUserId() {
+          
+          toUserId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long amount_ ;
+        /**
+         * <code>optional uint64 amount = 3;</code>
+         */
+        public long getAmount() {
+          return amount_;
+        }
+        /**
+         * <code>optional uint64 amount = 3;</code>
+         */
+        public Builder setAmount(long value) {
+          
+          amount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 amount = 3;</code>
+         */
+        public Builder clearAmount() {
+          
+          amount_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long traceNumber_ ;
+        /**
+         * <code>optional int64 trace_number = 4;</code>
+         */
+        public long getTraceNumber() {
+          return traceNumber_;
+        }
+        /**
+         * <code>optional int64 trace_number = 4;</code>
+         */
+        public Builder setTraceNumber(long value) {
+          
+          traceNumber_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 trace_number = 4;</code>
+         */
+        public Builder clearTraceNumber() {
+          
+          traceNumber_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long invoiceNumber_ ;
+        /**
+         * <code>optional int64 invoice_number = 5;</code>
+         */
+        public long getInvoiceNumber() {
+          return invoiceNumber_;
+        }
+        /**
+         * <code>optional int64 invoice_number = 5;</code>
+         */
+        public Builder setInvoiceNumber(long value) {
+          
+          invoiceNumber_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 invoice_number = 5;</code>
+         */
+        public Builder clearInvoiceNumber() {
+          
+          invoiceNumber_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int payTime_ ;
+        /**
+         * <code>optional uint32 pay_time = 6;</code>
+         */
+        public int getPayTime() {
+          return payTime_;
+        }
+        /**
+         * <code>optional uint32 pay_time = 6;</code>
+         */
+        public Builder setPayTime(int value) {
+          
+          payTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 pay_time = 6;</code>
+         */
+        public Builder clearPayTime() {
+          
+          payTime_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object description_ = "";
+        /**
+         * <code>optional string description = 7;</code>
+         */
+        public java.lang.String getDescription() {
+          java.lang.Object ref = description_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            description_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string description = 7;</code>
+         */
+        public com.google.protobuf.ByteString
+            getDescriptionBytes() {
+          java.lang.Object ref = description_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            description_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string description = 7;</code>
+         */
+        public Builder setDescription(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          description_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string description = 7;</code>
+         */
+        public Builder clearDescription() {
+          
+          description_ = getDefaultInstance().getDescription();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string description = 7;</code>
+         */
+        public Builder setDescriptionBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          description_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.RoomMessageWallet.MoneyTransfer)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.RoomMessageWallet.MoneyTransfer)
+      private static final net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer();
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MoneyTransfer>
+          PARSER = new com.google.protobuf.AbstractParser<MoneyTransfer>() {
+        public MoneyTransfer parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new MoneyTransfer(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<MoneyTransfer> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MoneyTransfer> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type getType() {
+      net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type result = net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int MONEY_TRANSFER_FIELD_NUMBER = 2;
+    private net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer moneyTransfer_;
+    /**
+     * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+     */
+    public boolean hasMoneyTransfer() {
+      return moneyTransfer_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer getMoneyTransfer() {
+      return moneyTransfer_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.getDefaultInstance() : moneyTransfer_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder getMoneyTransferOrBuilder() {
+      return getMoneyTransfer();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.MONEY_TRANSFER.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (moneyTransfer_ != null) {
+        output.writeMessage(2, getMoneyTransfer());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.MONEY_TRANSFER.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (moneyTransfer_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getMoneyTransfer());
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageWallet)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageWallet other = (net.iGap.proto.ProtoGlobal.RoomMessageWallet) obj;
+
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && (hasMoneyTransfer() == other.hasMoneyTransfer());
+      if (hasMoneyTransfer()) {
+        result = result && getMoneyTransfer()
+            .equals(other.getMoneyTransfer());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      if (hasMoneyTransfer()) {
+        hash = (37 * hash) + MONEY_TRANSFER_FIELD_NUMBER;
+        hash = (53 * hash) + getMoneyTransfer().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageWallet prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageWallet}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageWallet)
+        net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageWallet.class, net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageWallet.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        if (moneyTransferBuilder_ == null) {
+          moneyTransfer_ = null;
+        } else {
+          moneyTransfer_ = null;
+          moneyTransferBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageWallet_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageWallet.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet result = new net.iGap.proto.ProtoGlobal.RoomMessageWallet(this);
+        result.type_ = type_;
+        if (moneyTransferBuilder_ == null) {
+          result.moneyTransfer_ = moneyTransfer_;
+        } else {
+          result.moneyTransfer_ = moneyTransferBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageWallet) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageWallet)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageWallet other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageWallet.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.hasMoneyTransfer()) {
+          mergeMoneyTransfer(other.getMoneyTransfer());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageWallet) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type getType() {
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type result = net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Type type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer moneyTransfer_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder> moneyTransferBuilder_;
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public boolean hasMoneyTransfer() {
+        return moneyTransferBuilder_ != null || moneyTransfer_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer getMoneyTransfer() {
+        if (moneyTransferBuilder_ == null) {
+          return moneyTransfer_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.getDefaultInstance() : moneyTransfer_;
+        } else {
+          return moneyTransferBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public Builder setMoneyTransfer(net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer value) {
+        if (moneyTransferBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          moneyTransfer_ = value;
+          onChanged();
+        } else {
+          moneyTransferBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public Builder setMoneyTransfer(
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder builderForValue) {
+        if (moneyTransferBuilder_ == null) {
+          moneyTransfer_ = builderForValue.build();
+          onChanged();
+        } else {
+          moneyTransferBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public Builder mergeMoneyTransfer(net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer value) {
+        if (moneyTransferBuilder_ == null) {
+          if (moneyTransfer_ != null) {
+            moneyTransfer_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.newBuilder(moneyTransfer_).mergeFrom(value).buildPartial();
+          } else {
+            moneyTransfer_ = value;
+          }
+          onChanged();
+        } else {
+          moneyTransferBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public Builder clearMoneyTransfer() {
+        if (moneyTransferBuilder_ == null) {
+          moneyTransfer_ = null;
+          onChanged();
+        } else {
+          moneyTransfer_ = null;
+          moneyTransferBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder getMoneyTransferBuilder() {
+        
+        onChanged();
+        return getMoneyTransferFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder getMoneyTransferOrBuilder() {
+        if (moneyTransferBuilder_ != null) {
+          return moneyTransferBuilder_.getMessageOrBuilder();
+        } else {
+          return moneyTransfer_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.getDefaultInstance() : moneyTransfer_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.MoneyTransfer money_transfer = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder> 
+          getMoneyTransferFieldBuilder() {
+        if (moneyTransferBuilder_ == null) {
+          moneyTransferBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransfer.Builder, net.iGap.proto.ProtoGlobal.RoomMessageWallet.MoneyTransferOrBuilder>(
+                  getMoneyTransfer(),
+                  getParentForChildren(),
+                  isClean());
+          moneyTransfer_ = null;
+        }
+        return moneyTransferBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageWallet)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageWallet)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageWallet DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageWallet();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageWallet getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageWallet>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageWallet>() {
+      public RoomMessageWallet parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageWallet(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageWallet> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageWallet> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RoomMessageForwardFromOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.RoomMessageForwardFrom)
       com.google.protobuf.MessageOrBuilder {
@@ -8219,6 +9855,19 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMessageContactOrBuilder getContactOrBuilder();
 
     /**
+     * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+     */
+    boolean hasWallet();
+    /**
+     * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWallet getWallet();
+    /**
+     * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder getWalletOrBuilder();
+
+    /**
      * <code>optional bool edited = 12;</code>
      */
     boolean getEdited();
@@ -8519,6 +10168,19 @@ public final class ProtoGlobal {
             case 168: {
 
               randomId_ = input.readUInt64();
+              break;
+            }
+            case 178: {
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder subBuilder = null;
+              if (wallet_ != null) {
+                subBuilder = wallet_.toBuilder();
+              }
+              wallet_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageWallet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(wallet_);
+                wallet_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -11642,6 +13304,27 @@ public final class ProtoGlobal {
       return getContact();
     }
 
+    public static final int WALLET_FIELD_NUMBER = 22;
+    private net.iGap.proto.ProtoGlobal.RoomMessageWallet wallet_;
+    /**
+     * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+     */
+    public boolean hasWallet() {
+      return wallet_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet getWallet() {
+      return wallet_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.getDefaultInstance() : wallet_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder getWalletOrBuilder() {
+      return getWallet();
+    }
+
     public static final int EDITED_FIELD_NUMBER = 12;
     private boolean edited_;
     /**
@@ -11850,6 +13533,9 @@ public final class ProtoGlobal {
       if (randomId_ != 0L) {
         output.writeUInt64(21, randomId_);
       }
+      if (wallet_ != null) {
+        output.writeMessage(22, getWallet());
+      }
     }
 
     public int getSerializedSize() {
@@ -11940,6 +13626,10 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(21, randomId_);
       }
+      if (wallet_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, getWallet());
+      }
       memoizedSize = size;
       return size;
     }
@@ -11990,6 +13680,11 @@ public final class ProtoGlobal {
       if (hasContact()) {
         result = result && getContact()
             .equals(other.getContact());
+      }
+      result = result && (hasWallet() == other.hasWallet());
+      if (hasWallet()) {
+        result = result && getWallet()
+            .equals(other.getWallet());
       }
       result = result && (getEdited()
           == other.getEdited());
@@ -12063,6 +13758,10 @@ public final class ProtoGlobal {
       if (hasContact()) {
         hash = (37 * hash) + CONTACT_FIELD_NUMBER;
         hash = (53 * hash) + getContact().hashCode();
+      }
+      if (hasWallet()) {
+        hash = (37 * hash) + WALLET_FIELD_NUMBER;
+        hash = (53 * hash) + getWallet().hashCode();
       }
       hash = (37 * hash) + EDITED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -12254,6 +13953,12 @@ public final class ProtoGlobal {
           contact_ = null;
           contactBuilder_ = null;
         }
+        if (walletBuilder_ == null) {
+          wallet_ = null;
+        } else {
+          wallet_ = null;
+          walletBuilder_ = null;
+        }
         edited_ = false;
 
         createTime_ = 0;
@@ -12338,6 +14043,11 @@ public final class ProtoGlobal {
           result.contact_ = contact_;
         } else {
           result.contact_ = contactBuilder_.build();
+        }
+        if (walletBuilder_ == null) {
+          result.wallet_ = wallet_;
+        } else {
+          result.wallet_ = walletBuilder_.build();
         }
         result.edited_ = edited_;
         result.createTime_ = createTime_;
@@ -12435,6 +14145,9 @@ public final class ProtoGlobal {
         }
         if (other.hasContact()) {
           mergeContact(other.getContact());
+        }
+        if (other.hasWallet()) {
+          mergeWallet(other.getWallet());
         }
         if (other.getEdited() != false) {
           setEdited(other.getEdited());
@@ -13310,6 +15023,123 @@ public final class ProtoGlobal {
           contact_ = null;
         }
         return contactBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomMessageWallet wallet_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet, net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder, net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder> walletBuilder_;
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public boolean hasWallet() {
+        return walletBuilder_ != null || wallet_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet getWallet() {
+        if (walletBuilder_ == null) {
+          return wallet_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.getDefaultInstance() : wallet_;
+        } else {
+          return walletBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public Builder setWallet(net.iGap.proto.ProtoGlobal.RoomMessageWallet value) {
+        if (walletBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          wallet_ = value;
+          onChanged();
+        } else {
+          walletBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public Builder setWallet(
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder builderForValue) {
+        if (walletBuilder_ == null) {
+          wallet_ = builderForValue.build();
+          onChanged();
+        } else {
+          walletBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public Builder mergeWallet(net.iGap.proto.ProtoGlobal.RoomMessageWallet value) {
+        if (walletBuilder_ == null) {
+          if (wallet_ != null) {
+            wallet_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.newBuilder(wallet_).mergeFrom(value).buildPartial();
+          } else {
+            wallet_ = value;
+          }
+          onChanged();
+        } else {
+          walletBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public Builder clearWallet() {
+        if (walletBuilder_ == null) {
+          wallet_ = null;
+          onChanged();
+        } else {
+          wallet_ = null;
+          walletBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder getWalletBuilder() {
+        
+        onChanged();
+        return getWalletFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder getWalletOrBuilder() {
+        if (walletBuilder_ != null) {
+          return walletBuilder_.getMessageOrBuilder();
+        } else {
+          return wallet_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet.getDefaultInstance() : wallet_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet wallet = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet, net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder, net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder> 
+          getWalletFieldBuilder() {
+        if (walletBuilder_ == null) {
+          walletBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageWallet, net.iGap.proto.ProtoGlobal.RoomMessageWallet.Builder, net.iGap.proto.ProtoGlobal.RoomMessageWalletOrBuilder>(
+                  getWallet(),
+                  getParentForChildren(),
+                  isClean());
+          wallet_ = null;
+        }
+        return walletBuilder_;
       }
 
       private boolean edited_ ;
@@ -28083,6 +29913,16 @@ public final class ProtoGlobal {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_RoomMessageContact_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageWallet_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageWallet_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageWallet_MoneyTransfer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageWallet_MoneyTransfer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_RoomMessageForwardFrom_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -28215,9 +30055,17 @@ public final class ProtoGlobal {
       "TARGET_USER\020\001\"k\n\022RoomMessageContact\022\022\n\nf" +
       "irst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\020\n\010ni" +
       "ckname\030\003 \001(\t\022\r\n\005phone\030\004 \003(\t\022\r\n\005email\030\005 \003" +
-      "(\t\"=\n\026RoomMessageForwardFrom\022\017\n\007room_id\030",
+      "(\t\"\275\002\n\021RoomMessageWallet\022+\n\004type\030\001 \001(\0162\035",
+      ".proto.RoomMessageWallet.Type\022>\n\016money_t" +
+      "ransfer\030\002 \001(\0132&.proto.RoomMessageWallet." +
+      "MoneyTransfer\032\236\001\n\rMoneyTransfer\022\024\n\014from_" +
+      "user_id\030\001 \001(\004\022\022\n\nto_user_id\030\002 \001(\004\022\016\n\006amo" +
+      "unt\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(\003\022\026\n\016invoi" +
+      "ce_number\030\005 \001(\003\022\020\n\010pay_time\030\006 \001(\r\022\023\n\013des" +
+      "cription\030\007 \001(\t\"\032\n\004Type\022\022\n\016MONEY_TRANSFER" +
+      "\020\000\"=\n\026RoomMessageForwardFrom\022\017\n\007room_id\030" +
       "\001 \001(\004\022\022\n\nmessage_id\030\002 \001(\004\"\357\003\n\016Registered" +
-      "User\022\n\n\002id\030\001 \001(\004\022\020\n\010username\030\002 \001(\t\022\r\n\005ph" +
+      "User\022\n\n\002id\030\001 \001(\004\022\020\n\010username\030\002 \001(\t\022\r\n\005ph",
       "one\030\003 \001(\004\022\022\n\nfirst_name\030\004 \001(\t\022\021\n\tlast_na" +
       "me\030\005 \001(\t\022\024\n\014display_name\030\006 \001(\t\022\020\n\010initia" +
       "ls\030\007 \001(\t\022\r\n\005color\030\010 \001(\t\022,\n\006status\030\t \001(\0162" +
@@ -28225,127 +30073,128 @@ public final class ProtoGlobal {
       "en\030\n \001(\r\022\024\n\014avatar_count\030\013 \001(\r\022\035\n\006avatar" +
       "\030\014 \001(\0132\r.proto.Avatar\022\016\n\006mutual\030\r \001(\010\022\017\n" +
       "\007deleted\030\016 \001(\010\022\020\n\010cache_id\030\017 \001(\t\022\013\n\003bio\030" +
-      "\020 \001(\t\022\020\n\010verified\030\021 \001(\010\"\211\001\n\006Status\022\021\n\rLO",
+      "\020 \001(\t\022\020\n\010verified\030\021 \001(\010\"\211\001\n\006Status\022\021\n\rLO" +
       "NG_TIME_AGO\020\000\022\016\n\nLAST_MONTH\020\001\022\r\n\tLAST_WE" +
-      "EK\020\002\022\n\n\006ONLINE\020\003\022\013\n\007EXACTLY\020\004\022\014\n\010RECENTL" +
+      "EK\020\002\022\n\n\006ONLINE\020\003\022\013\n\007EXACTLY\020\004\022\014\n\010RECENTL",
       "Y\020\005\022\013\n\007SUPPORT\020\006\022\031\n\025SERVICE_NOTIFICATION" +
       "S\020\007\"/\n\006Avatar\022\n\n\002id\030\001 \001(\004\022\031\n\004file\030\002 \001(\0132" +
-      "\013.proto.File\"\215\010\n\013RoomMessage\022\022\n\nmessage_" +
+      "\013.proto.File\"\267\010\n\013RoomMessage\022\022\n\nmessage_" +
       "id\030\001 \001(\004\022\027\n\017message_version\030\002 \001(\004\022(\n\006sta" +
       "tus\030\003 \001(\0162\030.proto.RoomMessageStatus\022\026\n\016s" +
       "tatus_version\030\004 \001(\004\022,\n\014message_type\030\005 \001(" +
       "\0162\026.proto.RoomMessageType\022\017\n\007message\030\006 \001" +
-      "(\t\022\037\n\nattachment\030\007 \001(\0132\013.proto.File\022)\n\006a",
+      "(\t\022\037\n\nattachment\030\007 \001(\0132\013.proto.File\022)\n\006a" +
       "uthor\030\010 \001(\0132\031.proto.RoomMessage.Author\022," +
-      "\n\010location\030\t \001(\0132\032.proto.RoomMessageLoca" +
+      "\n\010location\030\t \001(\0132\032.proto.RoomMessageLoca",
       "tion\022\"\n\003log\030\n \001(\0132\025.proto.RoomMessageLog" +
       "\022*\n\007contact\030\013 \001(\0132\031.proto.RoomMessageCon" +
-      "tact\022\016\n\006edited\030\014 \001(\010\022\023\n\013create_time\030\r \001(" +
-      "\r\022\023\n\013update_time\030\016 \001(\r\022\017\n\007deleted\030\017 \001(\010\022" +
-      "(\n\014forward_from\030\020 \001(\0132\022.proto.RoomMessag" +
-      "e\022$\n\010reply_to\030\021 \001(\0132\022.proto.RoomMessage\022" +
-      "\033\n\023previous_message_id\030\022 \001(\004\022\021\n\trandom_i" +
-      "d\030\025 \001(\004\0220\n\nextra_type\030\023 \001(\0162\034.proto.Room",
-      "Message.ExtraType\0226\n\rchannel_extra\030\024 \001(\013" +
-      "2\037.proto.RoomMessage.ChannelExtra\032\266\001\n\006Au" +
-      "thor\022\014\n\004hash\030\001 \001(\t\022,\n\004user\030\002 \001(\0132\036.proto" +
-      ".RoomMessage.Author.User\022,\n\004room\030\003 \001(\0132\036" +
-      ".proto.RoomMessage.Author.Room\032)\n\004User\022\017" +
-      "\n\007user_id\030\001 \001(\004\022\020\n\010cache_id\030\002 \001(\t\032\027\n\004Roo" +
-      "m\022\017\n\007room_id\030\001 \001(\004\032j\n\014ChannelExtra\022\021\n\tsi" +
-      "gnature\030\001 \001(\t\022\023\n\013views_label\030\002 \001(\t\022\027\n\017th" +
-      "umbs_up_label\030\003 \001(\t\022\031\n\021thumbs_down_label" +
-      "\030\004 \001(\t\",\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\021\n\rCHA",
-      "NNEL_EXTRA\020\001\".\n\tRoomDraft\022\017\n\007message\030\001 \001" +
-      "(\t\022\020\n\010reply_to\030\002 \001(\004\"\260\004\n\004Room\022\n\n\002id\030\001 \001(" +
-      "\004\022\036\n\004type\030\002 \001(\0162\020.proto.Room.Type\022\r\n\005tit" +
-      "le\030\003 \001(\t\022\020\n\010initials\030\004 \001(\t\022\r\n\005color\030\005 \001(" +
-      "\t\022\024\n\014unread_count\030\006 \001(\r\022(\n\014last_message\030" +
-      "\007 \001(\0132\022.proto.RoomMessage\022\021\n\tread_only\030\010" +
-      " \001(\010\022\026\n\016is_participant\030\t \001(\010\022\037\n\005draft\030\n " +
-      "\001(\0132\020.proto.RoomDraft\0220\n\024first_unread_me" +
-      "ssage\030\016 \001(\0132\022.proto.RoomMessage\022\"\n\troom_" +
-      "mute\030\017 \001(\0162\017.proto.RoomMute\022\016\n\006pin_id\030\020 ",
-      "\001(\004\022*\n\016pinned_message\030\021 \001(\0132\022.proto.Room" +
-      "Message\022(\n\017chat_room_extra\030\013 \001(\0132\017.proto" +
-      ".ChatRoom\022*\n\020group_room_extra\030\014 \001(\0132\020.pr" +
-      "oto.GroupRoom\022.\n\022channel_room_extra\030\r \001(" +
-      "\0132\022.proto.ChannelRoom\"(\n\004Type\022\010\n\004CHAT\020\000\022" +
-      "\t\n\005GROUP\020\001\022\013\n\007CHANNEL\020\002\"/\n\010ChatRoom\022#\n\004p" +
-      "eer\030\001 \001(\0132\025.proto.RegisteredUser\"\321\004\n\tGro" +
-      "upRoom\022#\n\004type\030\001 \001(\0162\025.proto.GroupRoom.T" +
-      "ype\022#\n\004role\030\002 \001(\0162\025.proto.GroupRoom.Role" +
-      "\022\032\n\022participants_count\030\003 \001(\r\022 \n\030particip",
-      "ants_count_label\030\004 \001(\t\022 \n\030participants_c" +
-      "ount_limit\030\005 \001(\r\022&\n\036participants_count_l" +
-      "imit_label\030\006 \001(\t\022\023\n\013description\030\007 \001(\t\022\024\n" +
-      "\014avatar_count\030\010 \001(\r\022\035\n\006avatar\030\t \001(\0132\r.pr" +
-      "oto.Avatar\0224\n\rprivate_extra\030\n \001(\0132\035.prot" +
-      "o.GroupRoom.PrivateExtra\0222\n\014public_extra" +
-      "\030\013 \001(\0132\034.proto.GroupRoom.PublicExtra\0329\n\014" +
-      "PrivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014inv" +
-      "ite_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010userna" +
-      "me\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PU",
-      "BLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMODER" +
-      "ATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013Channel" +
-      "Room\022%\n\004type\030\001 \001(\0162\027.proto.ChannelRoom.T" +
-      "ype\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRoom.Ro" +
+      "tact\022(\n\006wallet\030\026 \001(\0132\030.proto.RoomMessage" +
+      "Wallet\022\016\n\006edited\030\014 \001(\010\022\023\n\013create_time\030\r " +
+      "\001(\r\022\023\n\013update_time\030\016 \001(\r\022\017\n\007deleted\030\017 \001(" +
+      "\010\022(\n\014forward_from\030\020 \001(\0132\022.proto.RoomMess" +
+      "age\022$\n\010reply_to\030\021 \001(\0132\022.proto.RoomMessag" +
+      "e\022\033\n\023previous_message_id\030\022 \001(\004\022\021\n\trandom" +
+      "_id\030\025 \001(\004\0220\n\nextra_type\030\023 \001(\0162\034.proto.Ro" +
+      "omMessage.ExtraType\0226\n\rchannel_extra\030\024 \001",
+      "(\0132\037.proto.RoomMessage.ChannelExtra\032\266\001\n\006" +
+      "Author\022\014\n\004hash\030\001 \001(\t\022,\n\004user\030\002 \001(\0132\036.pro" +
+      "to.RoomMessage.Author.User\022,\n\004room\030\003 \001(\013" +
+      "2\036.proto.RoomMessage.Author.Room\032)\n\004User" +
+      "\022\017\n\007user_id\030\001 \001(\004\022\020\n\010cache_id\030\002 \001(\t\032\027\n\004R" +
+      "oom\022\017\n\007room_id\030\001 \001(\004\032j\n\014ChannelExtra\022\021\n\t" +
+      "signature\030\001 \001(\t\022\023\n\013views_label\030\002 \001(\t\022\027\n\017" +
+      "thumbs_up_label\030\003 \001(\t\022\031\n\021thumbs_down_lab" +
+      "el\030\004 \001(\t\",\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\021\n\rC" +
+      "HANNEL_EXTRA\020\001\".\n\tRoomDraft\022\017\n\007message\030\001",
+      " \001(\t\022\020\n\010reply_to\030\002 \001(\004\"\260\004\n\004Room\022\n\n\002id\030\001 " +
+      "\001(\004\022\036\n\004type\030\002 \001(\0162\020.proto.Room.Type\022\r\n\005t" +
+      "itle\030\003 \001(\t\022\020\n\010initials\030\004 \001(\t\022\r\n\005color\030\005 " +
+      "\001(\t\022\024\n\014unread_count\030\006 \001(\r\022(\n\014last_messag" +
+      "e\030\007 \001(\0132\022.proto.RoomMessage\022\021\n\tread_only" +
+      "\030\010 \001(\010\022\026\n\016is_participant\030\t \001(\010\022\037\n\005draft\030" +
+      "\n \001(\0132\020.proto.RoomDraft\0220\n\024first_unread_" +
+      "message\030\016 \001(\0132\022.proto.RoomMessage\022\"\n\troo" +
+      "m_mute\030\017 \001(\0162\017.proto.RoomMute\022\016\n\006pin_id\030" +
+      "\020 \001(\004\022*\n\016pinned_message\030\021 \001(\0132\022.proto.Ro",
+      "omMessage\022(\n\017chat_room_extra\030\013 \001(\0132\017.pro" +
+      "to.ChatRoom\022*\n\020group_room_extra\030\014 \001(\0132\020." +
+      "proto.GroupRoom\022.\n\022channel_room_extra\030\r " +
+      "\001(\0132\022.proto.ChannelRoom\"(\n\004Type\022\010\n\004CHAT\020" +
+      "\000\022\t\n\005GROUP\020\001\022\013\n\007CHANNEL\020\002\"/\n\010ChatRoom\022#\n" +
+      "\004peer\030\001 \001(\0132\025.proto.RegisteredUser\"\321\004\n\tG" +
+      "roupRoom\022#\n\004type\030\001 \001(\0162\025.proto.GroupRoom" +
+      ".Type\022#\n\004role\030\002 \001(\0162\025.proto.GroupRoom.Ro" +
       "le\022\032\n\022participants_count\030\003 \001(\r\022 \n\030partic" +
-      "ipants_count_label\030\004 \001(\t\022\023\n\013description\030" +
-      "\005 \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avatar\030\007 " +
-      "\001(\0132\r.proto.Avatar\0226\n\rprivate_extra\030\010 \001(" +
-      "\0132\037.proto.ChannelRoom.PrivateExtra\0224\n\014pu" +
-      "blic_extra\030\t \001(\0132\036.proto.ChannelRoom.Pub",
-      "licExtra\022\021\n\tsignature\030\n \001(\010\022\017\n\007seen_id\030\013" +
-      " \001(\004\022\020\n\010verified\030\014 \001(\010\022\027\n\017reaction_statu" +
-      "s\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invite_link\030\001" +
-      " \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013PublicExtr" +
-      "a\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_R" +
-      "OOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER" +
-      "\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"" +
-      "f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005width\030\002 \001(" +
-      "\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n\004n" +
-      "ame\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004File\022\r\n\005toke",
-      "n\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n\017l" +
-      "arge_thumbnail\030\004 \001(\0132\020.proto.Thumbnail\022)" +
-      "\n\017small_thumbnail\030\005 \001(\0132\020.proto.Thumbnai" +
-      "l\022,\n\022waveform_thumbnail\030\006 \001(\0132\020.proto.Th" +
-      "umbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006height\030\010 \001(\005\022\020" +
-      "\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004mi" +
-      "me\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"5\n\tWallpape" +
-      "r\022\031\n\004file\030\001 \001(\0132\013.proto.File\022\r\n\005color\030\002 " +
-      "\001(\t\"+\n\nPagination\022\016\n\006offset\030\001 \001(\r\022\r\n\005lim" +
-      "it\030\002 \001(\r*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020",
-      "\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVIC" +
-      "E\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010P" +
-      "latform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID" +
-      "\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005" +
-      "LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005" +
-      "EN_US\020\000\022\t\n\005FA_IR\020\001*\313\001\n\017RoomMessageType\022\010" +
-      "\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005V" +
-      "IDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUD" +
-      "IO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEX" +
-      "T\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION",
-      "\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r*]\n\021RoomMessageS" +
-      "tatus\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002" +
-      "\022\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*" +
-      "5\n\023RoomMessageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n" +
-      "\013THUMBS_DOWN\020\001*\244\002\n\014ClientAction\022\n\n\006CANCE" +
-      "L\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CA" +
-      "PTURING_IMAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CA" +
-      "PTURING_VIDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RE" +
-      "CORDING_VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SE" +
-      "NDING_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SEN",
-      "DING_FILE\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHO" +
-      "OSING_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMut" +
-      "e\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022" +
-      "\017\n\013USER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_IN" +
-      "VITE\020\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALL" +
-      "ING\020\004\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARI" +
-      "NG\020\006\022\017\n\013SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n" +
-      "\tALLOW_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONT" +
-      "ACTS\020\002B\035\n\016net.iGap.protoB\013ProtoGlobalb\006p" +
-      "roto3"
+      "ipants_count_label\030\004 \001(\t\022 \n\030participants",
+      "_count_limit\030\005 \001(\r\022&\n\036participants_count" +
+      "_limit_label\030\006 \001(\t\022\023\n\013description\030\007 \001(\t\022" +
+      "\024\n\014avatar_count\030\010 \001(\r\022\035\n\006avatar\030\t \001(\0132\r." +
+      "proto.Avatar\0224\n\rprivate_extra\030\n \001(\0132\035.pr" +
+      "oto.GroupRoom.PrivateExtra\0222\n\014public_ext" +
+      "ra\030\013 \001(\0132\034.proto.GroupRoom.PublicExtra\0329" +
+      "\n\014PrivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014i" +
+      "nvite_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010user" +
+      "name\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013" +
+      "PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMOD",
+      "ERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013Chann" +
+      "elRoom\022%\n\004type\030\001 \001(\0162\027.proto.ChannelRoom" +
+      ".Type\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRoom." +
+      "Role\022\032\n\022participants_count\030\003 \001(\r\022 \n\030part" +
+      "icipants_count_label\030\004 \001(\t\022\023\n\013descriptio" +
+      "n\030\005 \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avatar\030" +
+      "\007 \001(\0132\r.proto.Avatar\0226\n\rprivate_extra\030\010 " +
+      "\001(\0132\037.proto.ChannelRoom.PrivateExtra\0224\n\014" +
+      "public_extra\030\t \001(\0132\036.proto.ChannelRoom.P" +
+      "ublicExtra\022\021\n\tsignature\030\n \001(\010\022\017\n\007seen_id",
+      "\030\013 \001(\004\022\020\n\010verified\030\014 \001(\010\022\027\n\017reaction_sta" +
+      "tus\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invite_link" +
+      "\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013PublicEx" +
+      "tra\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE" +
+      "_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMB" +
+      "ER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020" +
+      "\003\"f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005width\030\002 " +
+      "\001(\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n" +
+      "\004name\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004File\022\r\n\005to" +
+      "ken\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n",
+      "\017large_thumbnail\030\004 \001(\0132\020.proto.Thumbnail" +
+      "\022)\n\017small_thumbnail\030\005 \001(\0132\020.proto.Thumbn" +
+      "ail\022,\n\022waveform_thumbnail\030\006 \001(\0132\020.proto." +
+      "Thumbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006height\030\010 \001(\005" +
+      "\022\020\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004" +
+      "mime\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"5\n\tWallpa" +
+      "per\022\031\n\004file\030\001 \001(\0132\013.proto.File\022\r\n\005color\030" +
+      "\002 \001(\t\"+\n\nPagination\022\016\n\006offset\030\001 \001(\r\022\r\n\005l" +
+      "imit\030\002 \001(\r*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MAL" +
+      "E\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEV",
+      "ICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n" +
+      "\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDRO" +
+      "ID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t" +
+      "\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t" +
+      "\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\327\001\n\017RoomMessageType" +
+      "\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n" +
+      "\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nA" +
+      "UDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_T" +
+      "EXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATI" +
+      "ON\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017*]",
+      "\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013\n\007SENDI" +
+      "NG\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022" +
+      "\014\n\010LISTENED\020\005*5\n\023RoomMessageReaction\022\r\n\t" +
+      "THUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014ClientA" +
+      "ction\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDING" +
+      "_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSENDING" +
+      "_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSENDING" +
+      "_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSENDING" +
+      "_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SENDIN" +
+      "G_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING_LOC",
+      "ATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAINTIN" +
+      "G\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001" +
+      "\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n\006AVATAR" +
+      "\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_INVITE\020\003" +
+      "\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALLING\020\005\022\022" +
+      "\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT\020\007*?\n\014P" +
+      "rivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY_ALL\020\001" +
+      "\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap.protoB\013" +
+      "ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -28383,30 +30232,42 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessageContact_descriptor,
         new java.lang.String[] { "FirstName", "LastName", "Nickname", "Phone", "Email", });
-    internal_static_proto_RoomMessageForwardFrom_descriptor =
+    internal_static_proto_RoomMessageWallet_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_proto_RoomMessageWallet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageWallet_descriptor,
+        new java.lang.String[] { "Type", "MoneyTransfer", });
+    internal_static_proto_RoomMessageWallet_MoneyTransfer_descriptor =
+      internal_static_proto_RoomMessageWallet_descriptor.getNestedTypes().get(0);
+    internal_static_proto_RoomMessageWallet_MoneyTransfer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageWallet_MoneyTransfer_descriptor,
+        new java.lang.String[] { "FromUserId", "ToUserId", "Amount", "TraceNumber", "InvoiceNumber", "PayTime", "Description", });
+    internal_static_proto_RoomMessageForwardFrom_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_proto_RoomMessageForwardFrom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessageForwardFrom_descriptor,
         new java.lang.String[] { "RoomId", "MessageId", });
     internal_static_proto_RegisteredUser_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_proto_RegisteredUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RegisteredUser_descriptor,
         new java.lang.String[] { "Id", "Username", "Phone", "FirstName", "LastName", "DisplayName", "Initials", "Color", "Status", "LastSeen", "AvatarCount", "Avatar", "Mutual", "Deleted", "CacheId", "Bio", "Verified", });
     internal_static_proto_Avatar_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_proto_Avatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Avatar_descriptor,
         new java.lang.String[] { "Id", "File", });
     internal_static_proto_RoomMessage_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_proto_RoomMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessage_descriptor,
-        new java.lang.String[] { "MessageId", "MessageVersion", "Status", "StatusVersion", "MessageType", "Message", "Attachment", "Author", "Location", "Log", "Contact", "Edited", "CreateTime", "UpdateTime", "Deleted", "ForwardFrom", "ReplyTo", "PreviousMessageId", "RandomId", "ExtraType", "ChannelExtra", });
+        new java.lang.String[] { "MessageId", "MessageVersion", "Status", "StatusVersion", "MessageType", "Message", "Attachment", "Author", "Location", "Log", "Contact", "Wallet", "Edited", "CreateTime", "UpdateTime", "Deleted", "ForwardFrom", "ReplyTo", "PreviousMessageId", "RandomId", "ExtraType", "ChannelExtra", });
     internal_static_proto_RoomMessage_Author_descriptor =
       internal_static_proto_RoomMessage_descriptor.getNestedTypes().get(0);
     internal_static_proto_RoomMessage_Author_fieldAccessorTable = new
@@ -28432,25 +30293,25 @@ public final class ProtoGlobal {
         internal_static_proto_RoomMessage_ChannelExtra_descriptor,
         new java.lang.String[] { "Signature", "ViewsLabel", "ThumbsUpLabel", "ThumbsDownLabel", });
     internal_static_proto_RoomDraft_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_proto_RoomDraft_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomDraft_descriptor,
         new java.lang.String[] { "Message", "ReplyTo", });
     internal_static_proto_Room_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_proto_Room_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Room_descriptor,
         new java.lang.String[] { "Id", "Type", "Title", "Initials", "Color", "UnreadCount", "LastMessage", "ReadOnly", "IsParticipant", "Draft", "FirstUnreadMessage", "RoomMute", "PinId", "PinnedMessage", "ChatRoomExtra", "GroupRoomExtra", "ChannelRoomExtra", });
     internal_static_proto_ChatRoom_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_proto_ChatRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatRoom_descriptor,
         new java.lang.String[] { "Peer", });
     internal_static_proto_GroupRoom_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_proto_GroupRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoom_descriptor,
@@ -28468,7 +30329,7 @@ public final class ProtoGlobal {
         internal_static_proto_GroupRoom_PublicExtra_descriptor,
         new java.lang.String[] { "Username", });
     internal_static_proto_ChannelRoom_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_proto_ChannelRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelRoom_descriptor,
@@ -28486,25 +30347,25 @@ public final class ProtoGlobal {
         internal_static_proto_ChannelRoom_PublicExtra_descriptor,
         new java.lang.String[] { "Username", });
     internal_static_proto_Thumbnail_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_proto_Thumbnail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Thumbnail_descriptor,
         new java.lang.String[] { "Size", "Width", "Height", "CacheId", "Name", "Mime", });
     internal_static_proto_File_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_proto_File_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_File_descriptor,
         new java.lang.String[] { "Token", "Name", "Size", "LargeThumbnail", "SmallThumbnail", "WaveformThumbnail", "Width", "Height", "Duration", "CacheId", "Mime", "PublicUrl", });
     internal_static_proto_Wallpaper_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_proto_Wallpaper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Wallpaper_descriptor,
         new java.lang.String[] { "File", "Color", });
     internal_static_proto_Pagination_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_proto_Pagination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Pagination_descriptor,
