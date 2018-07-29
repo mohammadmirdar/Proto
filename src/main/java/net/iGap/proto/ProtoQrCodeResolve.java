@@ -8,15 +8,9 @@ public final class ProtoQrCodeResolve {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   public interface QrCodeResolveOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.QrCodeResolve)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .proto.Request request = 1;</code>
@@ -26,10 +20,6 @@ public final class ProtoQrCodeResolve {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>optional string username = 2;</code>
@@ -50,90 +40,13 @@ public final class ProtoQrCodeResolve {
    * Protobuf type {@code proto.QrCodeResolve}
    */
   public  static final class QrCodeResolve extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          QrCodeResolve, QrCodeResolve.Builder> implements
       // @@protoc_insertion_point(message_implements:proto.QrCodeResolve)
       QrCodeResolveOrBuilder {
-    // Use QrCodeResolve.newBuilder() to construct.
-    private QrCodeResolve(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private QrCodeResolve() {
       username_ = "";
-      messageId_ = 0L;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private QrCodeResolve(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-              if (request_ != null) {
-                subBuilder = request_.toBuilder();
-              }
-              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(request_);
-                request_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              username_ = s;
-              break;
-            }
-            case 24: {
-
-              messageId_ = input.readUInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolve_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolve_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.class, net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.Builder.class);
-    }
-
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -151,42 +64,85 @@ public final class ProtoQrCodeResolve {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
-      return getRequest();
+    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      request_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    private void setRequest(
+        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
+      request_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
+      if (request_ != null &&
+          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
+        request_ =
+          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+      } else {
+        request_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    private void clearRequest() {  request_ = null;
+      
     }
 
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object username_;
+    private java.lang.String username_;
     /**
      * <code>optional string username = 2;</code>
      */
     public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
-      }
+      return username_;
     }
     /**
      * <code>optional string username = 2;</code>
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(username_);
+    }
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    private void setUsername(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      username_ = value;
+    }
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    private void clearUsername() {
+      
+      username_ = getDefaultInstance().getUsername();
+    }
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    private void setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      username_ = value.toStringUtf8();
     }
 
     public static final int MESSAGE_ID_FIELD_NUMBER = 3;
@@ -197,15 +153,19 @@ public final class ProtoQrCodeResolve {
     public long getMessageId() {
       return messageId_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional uint64 message_id = 3;</code>
+     */
+    private void setMessageId(long value) {
+      
+      messageId_ = value;
+    }
+    /**
+     * <code>optional uint64 message_id = 3;</code>
+     */
+    private void clearMessageId() {
+      
+      messageId_ = 0L;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -213,8 +173,8 @@ public final class ProtoQrCodeResolve {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
-      if (!getUsernameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+      if (!username_.isEmpty()) {
+        output.writeString(2, getUsername());
       }
       if (messageId_ != 0L) {
         output.writeUInt64(3, messageId_);
@@ -222,7 +182,7 @@ public final class ProtoQrCodeResolve {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -230,460 +190,173 @@ public final class ProtoQrCodeResolve {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      if (!getUsernameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+      if (!username_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getUsername());
       }
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, messageId_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve)) {
-        return super.equals(obj);
-      }
-      net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve other = (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve) obj;
-
-      boolean result = true;
-      result = result && (hasRequest() == other.hasRequest());
-      if (hasRequest()) {
-        result = result && getRequest()
-            .equals(other.getRequest());
-      }
-      result = result && getUsername()
-          .equals(other.getUsername());
-      result = result && (getMessageId()
-          == other.getMessageId());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasRequest()) {
-        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
-        hash = (53 * hash) + getRequest().hashCode();
-      }
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMessageId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code proto.QrCodeResolve}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve, Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.QrCodeResolve)
         net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolve_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolve_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.class, net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.Builder.class);
-      }
-
       // Construct using net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (requestBuilder_ == null) {
-          request_ = null;
-        } else {
-          request_ = null;
-          requestBuilder_ = null;
-        }
-        username_ = "";
 
-        messageId_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolve_descriptor;
-      }
-
-      public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve getDefaultInstanceForType() {
-        return net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.getDefaultInstance();
-      }
-
-      public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve build() {
-        net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve buildPartial() {
-        net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve result = new net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve(this);
-        if (requestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = requestBuilder_.build();
-        }
-        result.username_ = username_;
-        result.messageId_ = messageId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve) {
-          return mergeFrom((net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve other) {
-        if (other == net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.getDefaultInstance()) return this;
-        if (other.hasRequest()) {
-          mergeRequest(other.getRequest());
-        }
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
-          onChanged();
-        }
-        if (other.getMessageId() != 0L) {
-          setMessageId(other.getMessageId());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private net.iGap.proto.ProtoRequest.Request request_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return requestBuilder_ != null || request_ != null;
+        return instance.hasRequest();
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        if (requestBuilder_ == null) {
-          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
-        } else {
-          return requestBuilder_.getMessage();
-        }
+        return instance.getRequest();
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        if (requestBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          request_ = value;
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setRequest(value);
         return this;
-      }
+        }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        if (requestBuilder_ == null) {
-          request_ = builderForValue.build();
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setRequest(builderForValue);
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        if (requestBuilder_ == null) {
-          if (request_ != null) {
-            request_ =
-              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-          } else {
-            request_ = value;
-          }
-          onChanged();
-        } else {
-          requestBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeRequest(value);
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {
-        if (requestBuilder_ == null) {
-          request_ = null;
-          onChanged();
-        } else {
-          request_ = null;
-          requestBuilder_ = null;
-        }
-
+      public Builder clearRequest() {  copyOnWrite();
+        instance.clearRequest();
         return this;
       }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
-        
-        onChanged();
-        return getRequestFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
-        if (requestBuilder_ != null) {
-          return requestBuilder_.getMessageOrBuilder();
-        } else {
-          return request_ == null ?
-              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
-        }
-      }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
-          getRequestFieldBuilder() {
-        if (requestBuilder_ == null) {
-          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
-                  getRequest(),
-                  getParentForChildren(),
-                  isClean());
-          request_ = null;
-        }
-        return requestBuilder_;
-      }
 
-      private java.lang.Object username_ = "";
       /**
        * <code>optional string username = 2;</code>
        */
       public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          username_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getUsername();
       }
       /**
        * <code>optional string username = 2;</code>
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
-        java.lang.Object ref = username_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          username_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getUsernameBytes();
       }
       /**
        * <code>optional string username = 2;</code>
        */
       public Builder setUsername(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        username_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setUsername(value);
         return this;
       }
       /**
        * <code>optional string username = 2;</code>
        */
       public Builder clearUsername() {
-        
-        username_ = getDefaultInstance().getUsername();
-        onChanged();
+        copyOnWrite();
+        instance.clearUsername();
         return this;
       }
       /**
@@ -691,93 +364,157 @@ public final class ProtoQrCodeResolve {
        */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        username_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setUsernameBytes(value);
         return this;
       }
 
-      private long messageId_ ;
       /**
        * <code>optional uint64 message_id = 3;</code>
        */
       public long getMessageId() {
-        return messageId_;
+        return instance.getMessageId();
       }
       /**
        * <code>optional uint64 message_id = 3;</code>
        */
       public Builder setMessageId(long value) {
-        
-        messageId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setMessageId(value);
         return this;
       }
       /**
        * <code>optional uint64 message_id = 3;</code>
        */
       public Builder clearMessageId() {
-        
-        messageId_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearMessageId();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:proto.QrCodeResolve)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve other = (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve) arg1;
+          request_ = visitor.visitMessage(request_, other.request_);
+          username_ = visitor.visitString(!username_.isEmpty(), username_,
+              !other.username_.isEmpty(), other.username_);
+          messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
+              other.messageId_ != 0L, other.messageId_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+                  if (request_ != null) {
+                    subBuilder = request_.toBuilder();
+                  }
+                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(request_);
+                    request_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  username_ = s;
+                  break;
+                }
+                case 24: {
+
+                  messageId_ = input.readUInt64();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:proto.QrCodeResolve)
     private static final net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve();
+      DEFAULT_INSTANCE = new QrCodeResolve();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QrCodeResolve>
-        PARSER = new com.google.protobuf.AbstractParser<QrCodeResolve>() {
-      public QrCodeResolve parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QrCodeResolve(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<QrCodeResolve> PARSER;
 
     public static com.google.protobuf.Parser<QrCodeResolve> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<QrCodeResolve> getParserForType() {
-      return PARSER;
-    }
-
-    public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolve getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface QrCodeResolveResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.QrCodeResolveResponse)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .proto.Response response = 1;</code>
@@ -787,10 +524,6 @@ public final class ProtoQrCodeResolve {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>optional bytes qr_code_image = 2;</code>
@@ -801,83 +534,13 @@ public final class ProtoQrCodeResolve {
    * Protobuf type {@code proto.QrCodeResolveResponse}
    */
   public  static final class QrCodeResolveResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          QrCodeResolveResponse, QrCodeResolveResponse.Builder> implements
       // @@protoc_insertion_point(message_implements:proto.QrCodeResolveResponse)
       QrCodeResolveResponseOrBuilder {
-    // Use QrCodeResolveResponse.newBuilder() to construct.
-    private QrCodeResolveResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private QrCodeResolveResponse() {
       qrCodeImage_ = com.google.protobuf.ByteString.EMPTY;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private QrCodeResolveResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-              if (response_ != null) {
-                subBuilder = response_.toBuilder();
-              }
-              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(response_);
-                response_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-
-              qrCodeImage_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolveResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolveResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.class, net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.Builder.class);
-    }
-
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
@@ -895,8 +558,39 @@ public final class ProtoQrCodeResolve {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
-      return getResponse();
+    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      response_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    private void setResponse(
+        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
+      response_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
+      if (response_ != null &&
+          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
+        response_ =
+          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+      } else {
+        response_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    private void clearResponse() {  response_ = null;
+      
     }
 
     public static final int QR_CODE_IMAGE_FIELD_NUMBER = 2;
@@ -907,15 +601,22 @@ public final class ProtoQrCodeResolve {
     public com.google.protobuf.ByteString getQrCodeImage() {
       return qrCodeImage_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional bytes qr_code_image = 2;</code>
+     */
+    private void setQrCodeImage(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      qrCodeImage_ = value;
+    }
+    /**
+     * <code>optional bytes qr_code_image = 2;</code>
+     */
+    private void clearQrCodeImage() {
+      
+      qrCodeImage_ = getDefaultInstance().getQrCodeImage();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -929,7 +630,7 @@ public final class ProtoQrCodeResolve {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -941,521 +642,274 @@ public final class ProtoQrCodeResolve {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, qrCodeImage_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse)) {
-        return super.equals(obj);
-      }
-      net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse other = (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse) obj;
-
-      boolean result = true;
-      result = result && (hasResponse() == other.hasResponse());
-      if (hasResponse()) {
-        result = result && getResponse()
-            .equals(other.getResponse());
-      }
-      result = result && getQrCodeImage()
-          .equals(other.getQrCodeImage());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasResponse()) {
-        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-        hash = (53 * hash) + getResponse().hashCode();
-      }
-      hash = (37 * hash) + QR_CODE_IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getQrCodeImage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code proto.QrCodeResolveResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse, Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.QrCodeResolveResponse)
         net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolveResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolveResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.class, net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.Builder.class);
-      }
-
       // Construct using net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (responseBuilder_ == null) {
-          response_ = null;
-        } else {
-          response_ = null;
-          responseBuilder_ = null;
-        }
-        qrCodeImage_ = com.google.protobuf.ByteString.EMPTY;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.iGap.proto.ProtoQrCodeResolve.internal_static_proto_QrCodeResolveResponse_descriptor;
-      }
-
-      public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse getDefaultInstanceForType() {
-        return net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.getDefaultInstance();
-      }
-
-      public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse build() {
-        net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse buildPartial() {
-        net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse result = new net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse(this);
-        if (responseBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = responseBuilder_.build();
-        }
-        result.qrCodeImage_ = qrCodeImage_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse) {
-          return mergeFrom((net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse other) {
-        if (other == net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.getDefaultInstance()) return this;
-        if (other.hasResponse()) {
-          mergeResponse(other.getResponse());
-        }
-        if (other.getQrCodeImage() != com.google.protobuf.ByteString.EMPTY) {
-          setQrCodeImage(other.getQrCodeImage());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private net.iGap.proto.ProtoResponse.Response response_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return responseBuilder_ != null || response_ != null;
+        return instance.hasResponse();
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        if (responseBuilder_ == null) {
-          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
-        } else {
-          return responseBuilder_.getMessage();
-        }
+        return instance.getResponse();
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        if (responseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          response_ = value;
-          onChanged();
-        } else {
-          responseBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setResponse(value);
         return this;
-      }
+        }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        if (responseBuilder_ == null) {
-          response_ = builderForValue.build();
-          onChanged();
-        } else {
-          responseBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setResponse(builderForValue);
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        if (responseBuilder_ == null) {
-          if (response_ != null) {
-            response_ =
-              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-          } else {
-            response_ = value;
-          }
-          onChanged();
-        } else {
-          responseBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeResponse(value);
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {
-        if (responseBuilder_ == null) {
-          response_ = null;
-          onChanged();
-        } else {
-          response_ = null;
-          responseBuilder_ = null;
-        }
-
+      public Builder clearResponse() {  copyOnWrite();
+        instance.clearResponse();
         return this;
       }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
-        
-        onChanged();
-        return getResponseFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
-        if (responseBuilder_ != null) {
-          return responseBuilder_.getMessageOrBuilder();
-        } else {
-          return response_ == null ?
-              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
-        }
-      }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
-          getResponseFieldBuilder() {
-        if (responseBuilder_ == null) {
-          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
-                  getResponse(),
-                  getParentForChildren(),
-                  isClean());
-          response_ = null;
-        }
-        return responseBuilder_;
-      }
 
-      private com.google.protobuf.ByteString qrCodeImage_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes qr_code_image = 2;</code>
        */
       public com.google.protobuf.ByteString getQrCodeImage() {
-        return qrCodeImage_;
+        return instance.getQrCodeImage();
       }
       /**
        * <code>optional bytes qr_code_image = 2;</code>
        */
       public Builder setQrCodeImage(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        qrCodeImage_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setQrCodeImage(value);
         return this;
       }
       /**
        * <code>optional bytes qr_code_image = 2;</code>
        */
       public Builder clearQrCodeImage() {
-        
-        qrCodeImage_ = getDefaultInstance().getQrCodeImage();
-        onChanged();
+        copyOnWrite();
+        instance.clearQrCodeImage();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:proto.QrCodeResolveResponse)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse other = (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse) arg1;
+          response_ = visitor.visitMessage(response_, other.response_);
+          qrCodeImage_ = visitor.visitByteString(qrCodeImage_ != com.google.protobuf.ByteString.EMPTY, qrCodeImage_,
+              other.qrCodeImage_ != com.google.protobuf.ByteString.EMPTY, other.qrCodeImage_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+                  if (response_ != null) {
+                    subBuilder = response_.toBuilder();
+                  }
+                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(response_);
+                    response_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 18: {
+
+                  qrCodeImage_ = input.readBytes();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:proto.QrCodeResolveResponse)
     private static final net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse();
+      DEFAULT_INSTANCE = new QrCodeResolveResponse();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QrCodeResolveResponse>
-        PARSER = new com.google.protobuf.AbstractParser<QrCodeResolveResponse>() {
-      public QrCodeResolveResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QrCodeResolveResponse(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<QrCodeResolveResponse> PARSER;
 
     public static com.google.protobuf.Parser<QrCodeResolveResponse> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<QrCodeResolveResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public net.iGap.proto.ProtoQrCodeResolve.QrCodeResolveResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_QrCodeResolve_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_QrCodeResolve_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_QrCodeResolveResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_QrCodeResolveResponse_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\023QrCodeResolve.proto\022\005proto\032\rRequest.pr" +
-      "oto\032\016Response.proto\"V\n\rQrCodeResolve\022\037\n\007" +
-      "request\030\001 \001(\0132\016.proto.Request\022\020\n\010usernam" +
-      "e\030\002 \001(\t\022\022\n\nmessage_id\030\003 \001(\004\"Q\n\025QrCodeRes" +
-      "olveResponse\022!\n\010response\030\001 \001(\0132\017.proto.R" +
-      "esponse\022\025\n\rqr_code_image\030\002 \001(\014B$\n\016net.iG" +
-      "ap.protoB\022ProtoQrCodeResolveb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          net.iGap.proto.ProtoRequest.getDescriptor(),
-          net.iGap.proto.ProtoResponse.getDescriptor(),
-        }, assigner);
-    internal_static_proto_QrCodeResolve_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_proto_QrCodeResolve_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_QrCodeResolve_descriptor,
-        new java.lang.String[] { "Request", "Username", "MessageId", });
-    internal_static_proto_QrCodeResolveResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_proto_QrCodeResolveResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_QrCodeResolveResponse_descriptor,
-        new java.lang.String[] { "Response", "QrCodeImage", });
-    net.iGap.proto.ProtoRequest.getDescriptor();
-    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

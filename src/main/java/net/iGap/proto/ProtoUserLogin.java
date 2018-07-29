@@ -8,15 +8,9 @@ public final class ProtoUserLogin {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   public interface UserLoginOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserLogin)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .proto.Request request = 1;</code>
@@ -26,10 +20,6 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>optional string token = 2;</code>
@@ -122,145 +112,17 @@ public final class ProtoUserLogin {
    * Protobuf type {@code proto.UserLogin}
    */
   public  static final class UserLogin extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          UserLogin, UserLogin.Builder> implements
       // @@protoc_insertion_point(message_implements:proto.UserLogin)
       UserLoginOrBuilder {
-    // Use UserLogin.newBuilder() to construct.
-    private UserLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private UserLogin() {
       token_ = "";
       appName_ = "";
-      appId_ = 0;
-      appBuildVersion_ = 0;
       appVersion_ = "";
-      platform_ = 0;
       platformVersion_ = "";
-      device_ = 0;
       deviceName_ = "";
-      language_ = 0;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private UserLogin(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-              if (request_ != null) {
-                subBuilder = request_.toBuilder();
-              }
-              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(request_);
-                request_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              appName_ = s;
-              break;
-            }
-            case 32: {
-
-              appId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              appBuildVersion_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              appVersion_ = s;
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              platform_ = rawValue;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              platformVersion_ = s;
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              device_ = rawValue;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deviceName_ = s;
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              language_ = rawValue;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLogin_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLogin_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.iGap.proto.ProtoUserLogin.UserLogin.class, net.iGap.proto.ProtoUserLogin.UserLogin.Builder.class);
-    }
-
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -278,76 +140,131 @@ public final class ProtoUserLogin {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
-      return getRequest();
+    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      request_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    private void setRequest(
+        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
+      request_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
+      if (request_ != null &&
+          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
+        request_ =
+          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+      } else {
+        request_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    private void clearRequest() {  request_ = null;
+      
     }
 
     public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
+    private java.lang.String token_;
     /**
      * <code>optional string token = 2;</code>
      */
     public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
+      return token_;
     }
     /**
      * <code>optional string token = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(token_);
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    private void setToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      token_ = value;
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    private void clearToken() {
+      
+      token_ = getDefaultInstance().getToken();
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    private void setTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      token_ = value.toStringUtf8();
     }
 
     public static final int APP_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object appName_;
+    private java.lang.String appName_;
     /**
      * <code>optional string app_name = 3;</code>
      */
     public java.lang.String getAppName() {
-      java.lang.Object ref = appName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appName_ = s;
-        return s;
-      }
+      return appName_;
     }
     /**
      * <code>optional string app_name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getAppNameBytes() {
-      java.lang.Object ref = appName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(appName_);
+    }
+    /**
+     * <code>optional string app_name = 3;</code>
+     */
+    private void setAppName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appName_ = value;
+    }
+    /**
+     * <code>optional string app_name = 3;</code>
+     */
+    private void clearAppName() {
+      
+      appName_ = getDefaultInstance().getAppName();
+    }
+    /**
+     * <code>optional string app_name = 3;</code>
+     */
+    private void setAppNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appName_ = value.toStringUtf8();
     }
 
     public static final int APP_ID_FIELD_NUMBER = 4;
@@ -358,6 +275,20 @@ public final class ProtoUserLogin {
     public int getAppId() {
       return appId_;
     }
+    /**
+     * <code>optional uint32 app_id = 4;</code>
+     */
+    private void setAppId(int value) {
+      
+      appId_ = value;
+    }
+    /**
+     * <code>optional uint32 app_id = 4;</code>
+     */
+    private void clearAppId() {
+      
+      appId_ = 0;
+    }
 
     public static final int APP_BUILD_VERSION_FIELD_NUMBER = 5;
     private int appBuildVersion_;
@@ -367,39 +298,65 @@ public final class ProtoUserLogin {
     public int getAppBuildVersion() {
       return appBuildVersion_;
     }
+    /**
+     * <code>optional uint32 app_build_version = 5;</code>
+     */
+    private void setAppBuildVersion(int value) {
+      
+      appBuildVersion_ = value;
+    }
+    /**
+     * <code>optional uint32 app_build_version = 5;</code>
+     */
+    private void clearAppBuildVersion() {
+      
+      appBuildVersion_ = 0;
+    }
 
     public static final int APP_VERSION_FIELD_NUMBER = 6;
-    private volatile java.lang.Object appVersion_;
+    private java.lang.String appVersion_;
     /**
      * <code>optional string app_version = 6;</code>
      */
     public java.lang.String getAppVersion() {
-      java.lang.Object ref = appVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appVersion_ = s;
-        return s;
-      }
+      return appVersion_;
     }
     /**
      * <code>optional string app_version = 6;</code>
      */
     public com.google.protobuf.ByteString
         getAppVersionBytes() {
-      java.lang.Object ref = appVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(appVersion_);
+    }
+    /**
+     * <code>optional string app_version = 6;</code>
+     */
+    private void setAppVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appVersion_ = value;
+    }
+    /**
+     * <code>optional string app_version = 6;</code>
+     */
+    private void clearAppVersion() {
+      
+      appVersion_ = getDefaultInstance().getAppVersion();
+    }
+    /**
+     * <code>optional string app_version = 6;</code>
+     */
+    private void setAppVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appVersion_ = value.toStringUtf8();
     }
 
     public static final int PLATFORM_FIELD_NUMBER = 7;
@@ -414,42 +371,77 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Platform platform = 7;</code>
      */
     public net.iGap.proto.ProtoGlobal.Platform getPlatform() {
-      net.iGap.proto.ProtoGlobal.Platform result = net.iGap.proto.ProtoGlobal.Platform.valueOf(platform_);
+      net.iGap.proto.ProtoGlobal.Platform result = net.iGap.proto.ProtoGlobal.Platform.forNumber(platform_);
       return result == null ? net.iGap.proto.ProtoGlobal.Platform.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.Platform platform = 7;</code>
+     */
+    private void setPlatformValue(int value) {
+        platform_ = value;
+    }
+    /**
+     * <code>optional .proto.Platform platform = 7;</code>
+     */
+    private void setPlatform(net.iGap.proto.ProtoGlobal.Platform value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      platform_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.Platform platform = 7;</code>
+     */
+    private void clearPlatform() {
+      
+      platform_ = 0;
     }
 
     public static final int PLATFORM_VERSION_FIELD_NUMBER = 8;
-    private volatile java.lang.Object platformVersion_;
+    private java.lang.String platformVersion_;
     /**
      * <code>optional string platform_version = 8;</code>
      */
     public java.lang.String getPlatformVersion() {
-      java.lang.Object ref = platformVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        platformVersion_ = s;
-        return s;
-      }
+      return platformVersion_;
     }
     /**
      * <code>optional string platform_version = 8;</code>
      */
     public com.google.protobuf.ByteString
         getPlatformVersionBytes() {
-      java.lang.Object ref = platformVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        platformVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(platformVersion_);
+    }
+    /**
+     * <code>optional string platform_version = 8;</code>
+     */
+    private void setPlatformVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      platformVersion_ = value;
+    }
+    /**
+     * <code>optional string platform_version = 8;</code>
+     */
+    private void clearPlatformVersion() {
+      
+      platformVersion_ = getDefaultInstance().getPlatformVersion();
+    }
+    /**
+     * <code>optional string platform_version = 8;</code>
+     */
+    private void setPlatformVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      platformVersion_ = value.toStringUtf8();
     }
 
     public static final int DEVICE_FIELD_NUMBER = 9;
@@ -464,42 +456,77 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Device device = 9;</code>
      */
     public net.iGap.proto.ProtoGlobal.Device getDevice() {
-      net.iGap.proto.ProtoGlobal.Device result = net.iGap.proto.ProtoGlobal.Device.valueOf(device_);
+      net.iGap.proto.ProtoGlobal.Device result = net.iGap.proto.ProtoGlobal.Device.forNumber(device_);
       return result == null ? net.iGap.proto.ProtoGlobal.Device.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.Device device = 9;</code>
+     */
+    private void setDeviceValue(int value) {
+        device_ = value;
+    }
+    /**
+     * <code>optional .proto.Device device = 9;</code>
+     */
+    private void setDevice(net.iGap.proto.ProtoGlobal.Device value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      device_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.Device device = 9;</code>
+     */
+    private void clearDevice() {
+      
+      device_ = 0;
     }
 
     public static final int DEVICE_NAME_FIELD_NUMBER = 10;
-    private volatile java.lang.Object deviceName_;
+    private java.lang.String deviceName_;
     /**
      * <code>optional string device_name = 10;</code>
      */
     public java.lang.String getDeviceName() {
-      java.lang.Object ref = deviceName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceName_ = s;
-        return s;
-      }
+      return deviceName_;
     }
     /**
      * <code>optional string device_name = 10;</code>
      */
     public com.google.protobuf.ByteString
         getDeviceNameBytes() {
-      java.lang.Object ref = deviceName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(deviceName_);
+    }
+    /**
+     * <code>optional string device_name = 10;</code>
+     */
+    private void setDeviceName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deviceName_ = value;
+    }
+    /**
+     * <code>optional string device_name = 10;</code>
+     */
+    private void clearDeviceName() {
+      
+      deviceName_ = getDefaultInstance().getDeviceName();
+    }
+    /**
+     * <code>optional string device_name = 10;</code>
+     */
+    private void setDeviceNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deviceName_ = value.toStringUtf8();
     }
 
     public static final int LANGUAGE_FIELD_NUMBER = 11;
@@ -514,18 +541,31 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Language language = 11;</code>
      */
     public net.iGap.proto.ProtoGlobal.Language getLanguage() {
-      net.iGap.proto.ProtoGlobal.Language result = net.iGap.proto.ProtoGlobal.Language.valueOf(language_);
+      net.iGap.proto.ProtoGlobal.Language result = net.iGap.proto.ProtoGlobal.Language.forNumber(language_);
       return result == null ? net.iGap.proto.ProtoGlobal.Language.UNRECOGNIZED : result;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional .proto.Language language = 11;</code>
+     */
+    private void setLanguageValue(int value) {
+        language_ = value;
+    }
+    /**
+     * <code>optional .proto.Language language = 11;</code>
+     */
+    private void setLanguage(net.iGap.proto.ProtoGlobal.Language value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      language_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.Language language = 11;</code>
+     */
+    private void clearLanguage() {
+      
+      language_ = 0;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -533,11 +573,11 @@ public final class ProtoUserLogin {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      if (!token_.isEmpty()) {
+        output.writeString(2, getToken());
       }
-      if (!getAppNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appName_);
+      if (!appName_.isEmpty()) {
+        output.writeString(3, getAppName());
       }
       if (appId_ != 0) {
         output.writeUInt32(4, appId_);
@@ -545,20 +585,20 @@ public final class ProtoUserLogin {
       if (appBuildVersion_ != 0) {
         output.writeUInt32(5, appBuildVersion_);
       }
-      if (!getAppVersionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, appVersion_);
+      if (!appVersion_.isEmpty()) {
+        output.writeString(6, getAppVersion());
       }
       if (platform_ != net.iGap.proto.ProtoGlobal.Platform.UNKNOWN_PLATFORM.getNumber()) {
         output.writeEnum(7, platform_);
       }
-      if (!getPlatformVersionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, platformVersion_);
+      if (!platformVersion_.isEmpty()) {
+        output.writeString(8, getPlatformVersion());
       }
       if (device_ != net.iGap.proto.ProtoGlobal.Device.UNKNOWN_DEVICE.getNumber()) {
         output.writeEnum(9, device_);
       }
-      if (!getDeviceNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, deviceName_);
+      if (!deviceName_.isEmpty()) {
+        output.writeString(10, getDeviceName());
       }
       if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
         output.writeEnum(11, language_);
@@ -566,7 +606,7 @@ public final class ProtoUserLogin {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -574,11 +614,13 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      if (!token_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getToken());
       }
-      if (!getAppNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appName_);
+      if (!appName_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getAppName());
       }
       if (appId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -588,554 +630,189 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, appBuildVersion_);
       }
-      if (!getAppVersionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, appVersion_);
+      if (!appVersion_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(6, getAppVersion());
       }
       if (platform_ != net.iGap.proto.ProtoGlobal.Platform.UNKNOWN_PLATFORM.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, platform_);
       }
-      if (!getPlatformVersionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, platformVersion_);
+      if (!platformVersion_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(8, getPlatformVersion());
       }
       if (device_ != net.iGap.proto.ProtoGlobal.Device.UNKNOWN_DEVICE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, device_);
       }
-      if (!getDeviceNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, deviceName_);
+      if (!deviceName_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(10, getDeviceName());
       }
       if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, language_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof net.iGap.proto.ProtoUserLogin.UserLogin)) {
-        return super.equals(obj);
-      }
-      net.iGap.proto.ProtoUserLogin.UserLogin other = (net.iGap.proto.ProtoUserLogin.UserLogin) obj;
-
-      boolean result = true;
-      result = result && (hasRequest() == other.hasRequest());
-      if (hasRequest()) {
-        result = result && getRequest()
-            .equals(other.getRequest());
-      }
-      result = result && getToken()
-          .equals(other.getToken());
-      result = result && getAppName()
-          .equals(other.getAppName());
-      result = result && (getAppId()
-          == other.getAppId());
-      result = result && (getAppBuildVersion()
-          == other.getAppBuildVersion());
-      result = result && getAppVersion()
-          .equals(other.getAppVersion());
-      result = result && platform_ == other.platform_;
-      result = result && getPlatformVersion()
-          .equals(other.getPlatformVersion());
-      result = result && device_ == other.device_;
-      result = result && getDeviceName()
-          .equals(other.getDeviceName());
-      result = result && language_ == other.language_;
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasRequest()) {
-        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
-        hash = (53 * hash) + getRequest().hashCode();
-      }
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getAppName().hashCode();
-      hash = (37 * hash) + APP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAppId();
-      hash = (37 * hash) + APP_BUILD_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getAppBuildVersion();
-      hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getAppVersion().hashCode();
-      hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
-      hash = (53 * hash) + platform_;
-      hash = (37 * hash) + PLATFORM_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getPlatformVersion().hashCode();
-      hash = (37 * hash) + DEVICE_FIELD_NUMBER;
-      hash = (53 * hash) + device_;
-      hash = (37 * hash) + DEVICE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceName().hashCode();
-      hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
-      hash = (53 * hash) + language_;
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLogin parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserLogin.UserLogin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code proto.UserLogin}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoUserLogin.UserLogin, Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserLogin)
         net.iGap.proto.ProtoUserLogin.UserLoginOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLogin_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLogin_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.iGap.proto.ProtoUserLogin.UserLogin.class, net.iGap.proto.ProtoUserLogin.UserLogin.Builder.class);
-      }
-
       // Construct using net.iGap.proto.ProtoUserLogin.UserLogin.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (requestBuilder_ == null) {
-          request_ = null;
-        } else {
-          request_ = null;
-          requestBuilder_ = null;
-        }
-        token_ = "";
 
-        appName_ = "";
-
-        appId_ = 0;
-
-        appBuildVersion_ = 0;
-
-        appVersion_ = "";
-
-        platform_ = 0;
-
-        platformVersion_ = "";
-
-        device_ = 0;
-
-        deviceName_ = "";
-
-        language_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLogin_descriptor;
-      }
-
-      public net.iGap.proto.ProtoUserLogin.UserLogin getDefaultInstanceForType() {
-        return net.iGap.proto.ProtoUserLogin.UserLogin.getDefaultInstance();
-      }
-
-      public net.iGap.proto.ProtoUserLogin.UserLogin build() {
-        net.iGap.proto.ProtoUserLogin.UserLogin result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.iGap.proto.ProtoUserLogin.UserLogin buildPartial() {
-        net.iGap.proto.ProtoUserLogin.UserLogin result = new net.iGap.proto.ProtoUserLogin.UserLogin(this);
-        if (requestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = requestBuilder_.build();
-        }
-        result.token_ = token_;
-        result.appName_ = appName_;
-        result.appId_ = appId_;
-        result.appBuildVersion_ = appBuildVersion_;
-        result.appVersion_ = appVersion_;
-        result.platform_ = platform_;
-        result.platformVersion_ = platformVersion_;
-        result.device_ = device_;
-        result.deviceName_ = deviceName_;
-        result.language_ = language_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.iGap.proto.ProtoUserLogin.UserLogin) {
-          return mergeFrom((net.iGap.proto.ProtoUserLogin.UserLogin)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.iGap.proto.ProtoUserLogin.UserLogin other) {
-        if (other == net.iGap.proto.ProtoUserLogin.UserLogin.getDefaultInstance()) return this;
-        if (other.hasRequest()) {
-          mergeRequest(other.getRequest());
-        }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
-        if (!other.getAppName().isEmpty()) {
-          appName_ = other.appName_;
-          onChanged();
-        }
-        if (other.getAppId() != 0) {
-          setAppId(other.getAppId());
-        }
-        if (other.getAppBuildVersion() != 0) {
-          setAppBuildVersion(other.getAppBuildVersion());
-        }
-        if (!other.getAppVersion().isEmpty()) {
-          appVersion_ = other.appVersion_;
-          onChanged();
-        }
-        if (other.platform_ != 0) {
-          setPlatformValue(other.getPlatformValue());
-        }
-        if (!other.getPlatformVersion().isEmpty()) {
-          platformVersion_ = other.platformVersion_;
-          onChanged();
-        }
-        if (other.device_ != 0) {
-          setDeviceValue(other.getDeviceValue());
-        }
-        if (!other.getDeviceName().isEmpty()) {
-          deviceName_ = other.deviceName_;
-          onChanged();
-        }
-        if (other.language_ != 0) {
-          setLanguageValue(other.getLanguageValue());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.iGap.proto.ProtoUserLogin.UserLogin parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.iGap.proto.ProtoUserLogin.UserLogin) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private net.iGap.proto.ProtoRequest.Request request_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return requestBuilder_ != null || request_ != null;
+        return instance.hasRequest();
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        if (requestBuilder_ == null) {
-          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
-        } else {
-          return requestBuilder_.getMessage();
-        }
+        return instance.getRequest();
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        if (requestBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          request_ = value;
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setRequest(value);
         return this;
-      }
+        }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        if (requestBuilder_ == null) {
-          request_ = builderForValue.build();
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setRequest(builderForValue);
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        if (requestBuilder_ == null) {
-          if (request_ != null) {
-            request_ =
-              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-          } else {
-            request_ = value;
-          }
-          onChanged();
-        } else {
-          requestBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeRequest(value);
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {
-        if (requestBuilder_ == null) {
-          request_ = null;
-          onChanged();
-        } else {
-          request_ = null;
-          requestBuilder_ = null;
-        }
-
+      public Builder clearRequest() {  copyOnWrite();
+        instance.clearRequest();
         return this;
       }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
-        
-        onChanged();
-        return getRequestFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
-        if (requestBuilder_ != null) {
-          return requestBuilder_.getMessageOrBuilder();
-        } else {
-          return request_ == null ?
-              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
-        }
-      }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
-          getRequestFieldBuilder() {
-        if (requestBuilder_ == null) {
-          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
-                  getRequest(),
-                  getParentForChildren(),
-                  isClean());
-          request_ = null;
-        }
-        return requestBuilder_;
-      }
 
-      private java.lang.Object token_ = "";
       /**
        * <code>optional string token = 2;</code>
        */
       public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getToken();
       }
       /**
        * <code>optional string token = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getTokenBytes();
       }
       /**
        * <code>optional string token = 2;</code>
        */
       public Builder setToken(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setToken(value);
         return this;
       }
       /**
        * <code>optional string token = 2;</code>
        */
       public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
+        copyOnWrite();
+        instance.clearToken();
         return this;
       }
       /**
@@ -1143,68 +820,39 @@ public final class ProtoUserLogin {
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setTokenBytes(value);
         return this;
       }
 
-      private java.lang.Object appName_ = "";
       /**
        * <code>optional string app_name = 3;</code>
        */
       public java.lang.String getAppName() {
-        java.lang.Object ref = appName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getAppName();
       }
       /**
        * <code>optional string app_name = 3;</code>
        */
       public com.google.protobuf.ByteString
           getAppNameBytes() {
-        java.lang.Object ref = appName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getAppNameBytes();
       }
       /**
        * <code>optional string app_name = 3;</code>
        */
       public Builder setAppName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appName_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAppName(value);
         return this;
       }
       /**
        * <code>optional string app_name = 3;</code>
        */
       public Builder clearAppName() {
-        
-        appName_ = getDefaultInstance().getAppName();
-        onChanged();
+        copyOnWrite();
+        instance.clearAppName();
         return this;
       }
       /**
@@ -1212,120 +860,85 @@ public final class ProtoUserLogin {
        */
       public Builder setAppNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appName_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAppNameBytes(value);
         return this;
       }
 
-      private int appId_ ;
       /**
        * <code>optional uint32 app_id = 4;</code>
        */
       public int getAppId() {
-        return appId_;
+        return instance.getAppId();
       }
       /**
        * <code>optional uint32 app_id = 4;</code>
        */
       public Builder setAppId(int value) {
-        
-        appId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAppId(value);
         return this;
       }
       /**
        * <code>optional uint32 app_id = 4;</code>
        */
       public Builder clearAppId() {
-        
-        appId_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearAppId();
         return this;
       }
 
-      private int appBuildVersion_ ;
       /**
        * <code>optional uint32 app_build_version = 5;</code>
        */
       public int getAppBuildVersion() {
-        return appBuildVersion_;
+        return instance.getAppBuildVersion();
       }
       /**
        * <code>optional uint32 app_build_version = 5;</code>
        */
       public Builder setAppBuildVersion(int value) {
-        
-        appBuildVersion_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAppBuildVersion(value);
         return this;
       }
       /**
        * <code>optional uint32 app_build_version = 5;</code>
        */
       public Builder clearAppBuildVersion() {
-        
-        appBuildVersion_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearAppBuildVersion();
         return this;
       }
 
-      private java.lang.Object appVersion_ = "";
       /**
        * <code>optional string app_version = 6;</code>
        */
       public java.lang.String getAppVersion() {
-        java.lang.Object ref = appVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getAppVersion();
       }
       /**
        * <code>optional string app_version = 6;</code>
        */
       public com.google.protobuf.ByteString
           getAppVersionBytes() {
-        java.lang.Object ref = appVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getAppVersionBytes();
       }
       /**
        * <code>optional string app_version = 6;</code>
        */
       public Builder setAppVersion(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appVersion_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAppVersion(value);
         return this;
       }
       /**
        * <code>optional string app_version = 6;</code>
        */
       public Builder clearAppVersion() {
-        
-        appVersion_ = getDefaultInstance().getAppVersion();
-        onChanged();
+        copyOnWrite();
+        instance.clearAppVersion();
         return this;
       }
       /**
@@ -1333,112 +946,76 @@ public final class ProtoUserLogin {
        */
       public Builder setAppVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appVersion_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAppVersionBytes(value);
         return this;
       }
 
-      private int platform_ = 0;
       /**
        * <code>optional .proto.Platform platform = 7;</code>
        */
       public int getPlatformValue() {
-        return platform_;
+        return instance.getPlatformValue();
       }
       /**
        * <code>optional .proto.Platform platform = 7;</code>
        */
       public Builder setPlatformValue(int value) {
-        platform_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPlatformValue(value);
         return this;
       }
       /**
        * <code>optional .proto.Platform platform = 7;</code>
        */
       public net.iGap.proto.ProtoGlobal.Platform getPlatform() {
-        net.iGap.proto.ProtoGlobal.Platform result = net.iGap.proto.ProtoGlobal.Platform.valueOf(platform_);
-        return result == null ? net.iGap.proto.ProtoGlobal.Platform.UNRECOGNIZED : result;
+        return instance.getPlatform();
       }
       /**
        * <code>optional .proto.Platform platform = 7;</code>
        */
       public Builder setPlatform(net.iGap.proto.ProtoGlobal.Platform value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        platform_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setPlatform(value);
         return this;
       }
       /**
        * <code>optional .proto.Platform platform = 7;</code>
        */
       public Builder clearPlatform() {
-        
-        platform_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearPlatform();
         return this;
       }
 
-      private java.lang.Object platformVersion_ = "";
       /**
        * <code>optional string platform_version = 8;</code>
        */
       public java.lang.String getPlatformVersion() {
-        java.lang.Object ref = platformVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          platformVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getPlatformVersion();
       }
       /**
        * <code>optional string platform_version = 8;</code>
        */
       public com.google.protobuf.ByteString
           getPlatformVersionBytes() {
-        java.lang.Object ref = platformVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          platformVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getPlatformVersionBytes();
       }
       /**
        * <code>optional string platform_version = 8;</code>
        */
       public Builder setPlatformVersion(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        platformVersion_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPlatformVersion(value);
         return this;
       }
       /**
        * <code>optional string platform_version = 8;</code>
        */
       public Builder clearPlatformVersion() {
-        
-        platformVersion_ = getDefaultInstance().getPlatformVersion();
-        onChanged();
+        copyOnWrite();
+        instance.clearPlatformVersion();
         return this;
       }
       /**
@@ -1446,112 +1023,76 @@ public final class ProtoUserLogin {
        */
       public Builder setPlatformVersionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        platformVersion_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPlatformVersionBytes(value);
         return this;
       }
 
-      private int device_ = 0;
       /**
        * <code>optional .proto.Device device = 9;</code>
        */
       public int getDeviceValue() {
-        return device_;
+        return instance.getDeviceValue();
       }
       /**
        * <code>optional .proto.Device device = 9;</code>
        */
       public Builder setDeviceValue(int value) {
-        device_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setDeviceValue(value);
         return this;
       }
       /**
        * <code>optional .proto.Device device = 9;</code>
        */
       public net.iGap.proto.ProtoGlobal.Device getDevice() {
-        net.iGap.proto.ProtoGlobal.Device result = net.iGap.proto.ProtoGlobal.Device.valueOf(device_);
-        return result == null ? net.iGap.proto.ProtoGlobal.Device.UNRECOGNIZED : result;
+        return instance.getDevice();
       }
       /**
        * <code>optional .proto.Device device = 9;</code>
        */
       public Builder setDevice(net.iGap.proto.ProtoGlobal.Device value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        device_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setDevice(value);
         return this;
       }
       /**
        * <code>optional .proto.Device device = 9;</code>
        */
       public Builder clearDevice() {
-        
-        device_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearDevice();
         return this;
       }
 
-      private java.lang.Object deviceName_ = "";
       /**
        * <code>optional string device_name = 10;</code>
        */
       public java.lang.String getDeviceName() {
-        java.lang.Object ref = deviceName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getDeviceName();
       }
       /**
        * <code>optional string device_name = 10;</code>
        */
       public com.google.protobuf.ByteString
           getDeviceNameBytes() {
-        java.lang.Object ref = deviceName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getDeviceNameBytes();
       }
       /**
        * <code>optional string device_name = 10;</code>
        */
       public Builder setDeviceName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deviceName_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setDeviceName(value);
         return this;
       }
       /**
        * <code>optional string device_name = 10;</code>
        */
       public Builder clearDeviceName() {
-        
-        deviceName_ = getDefaultInstance().getDeviceName();
-        onChanged();
+        copyOnWrite();
+        instance.clearDeviceName();
         return this;
       }
       /**
@@ -1559,111 +1100,231 @@ public final class ProtoUserLogin {
        */
       public Builder setDeviceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deviceName_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setDeviceNameBytes(value);
         return this;
       }
 
-      private int language_ = 0;
       /**
        * <code>optional .proto.Language language = 11;</code>
        */
       public int getLanguageValue() {
-        return language_;
+        return instance.getLanguageValue();
       }
       /**
        * <code>optional .proto.Language language = 11;</code>
        */
       public Builder setLanguageValue(int value) {
-        language_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLanguageValue(value);
         return this;
       }
       /**
        * <code>optional .proto.Language language = 11;</code>
        */
       public net.iGap.proto.ProtoGlobal.Language getLanguage() {
-        net.iGap.proto.ProtoGlobal.Language result = net.iGap.proto.ProtoGlobal.Language.valueOf(language_);
-        return result == null ? net.iGap.proto.ProtoGlobal.Language.UNRECOGNIZED : result;
+        return instance.getLanguage();
       }
       /**
        * <code>optional .proto.Language language = 11;</code>
        */
       public Builder setLanguage(net.iGap.proto.ProtoGlobal.Language value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        language_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setLanguage(value);
         return this;
       }
       /**
        * <code>optional .proto.Language language = 11;</code>
        */
       public Builder clearLanguage() {
-        
-        language_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearLanguage();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:proto.UserLogin)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoUserLogin.UserLogin();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoUserLogin.UserLogin other = (net.iGap.proto.ProtoUserLogin.UserLogin) arg1;
+          request_ = visitor.visitMessage(request_, other.request_);
+          token_ = visitor.visitString(!token_.isEmpty(), token_,
+              !other.token_.isEmpty(), other.token_);
+          appName_ = visitor.visitString(!appName_.isEmpty(), appName_,
+              !other.appName_.isEmpty(), other.appName_);
+          appId_ = visitor.visitInt(appId_ != 0, appId_,
+              other.appId_ != 0, other.appId_);
+          appBuildVersion_ = visitor.visitInt(appBuildVersion_ != 0, appBuildVersion_,
+              other.appBuildVersion_ != 0, other.appBuildVersion_);
+          appVersion_ = visitor.visitString(!appVersion_.isEmpty(), appVersion_,
+              !other.appVersion_.isEmpty(), other.appVersion_);
+          platform_ = visitor.visitInt(platform_ != 0, platform_,    other.platform_ != 0, other.platform_);
+          platformVersion_ = visitor.visitString(!platformVersion_.isEmpty(), platformVersion_,
+              !other.platformVersion_.isEmpty(), other.platformVersion_);
+          device_ = visitor.visitInt(device_ != 0, device_,    other.device_ != 0, other.device_);
+          deviceName_ = visitor.visitString(!deviceName_.isEmpty(), deviceName_,
+              !other.deviceName_.isEmpty(), other.deviceName_);
+          language_ = visitor.visitInt(language_ != 0, language_,    other.language_ != 0, other.language_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+                  if (request_ != null) {
+                    subBuilder = request_.toBuilder();
+                  }
+                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(request_);
+                    request_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  token_ = s;
+                  break;
+                }
+                case 26: {
+                  String s = input.readStringRequireUtf8();
+
+                  appName_ = s;
+                  break;
+                }
+                case 32: {
+
+                  appId_ = input.readUInt32();
+                  break;
+                }
+                case 40: {
+
+                  appBuildVersion_ = input.readUInt32();
+                  break;
+                }
+                case 50: {
+                  String s = input.readStringRequireUtf8();
+
+                  appVersion_ = s;
+                  break;
+                }
+                case 56: {
+                  int rawValue = input.readEnum();
+
+                  platform_ = rawValue;
+                  break;
+                }
+                case 66: {
+                  String s = input.readStringRequireUtf8();
+
+                  platformVersion_ = s;
+                  break;
+                }
+                case 72: {
+                  int rawValue = input.readEnum();
+
+                  device_ = rawValue;
+                  break;
+                }
+                case 82: {
+                  String s = input.readStringRequireUtf8();
+
+                  deviceName_ = s;
+                  break;
+                }
+                case 88: {
+                  int rawValue = input.readEnum();
+
+                  language_ = rawValue;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserLogin.UserLogin.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:proto.UserLogin)
     private static final net.iGap.proto.ProtoUserLogin.UserLogin DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserLogin.UserLogin();
+      DEFAULT_INSTANCE = new UserLogin();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static net.iGap.proto.ProtoUserLogin.UserLogin getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserLogin>
-        PARSER = new com.google.protobuf.AbstractParser<UserLogin>() {
-      public UserLogin parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UserLogin(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<UserLogin> PARSER;
 
     public static com.google.protobuf.Parser<UserLogin> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<UserLogin> getParserForType() {
-      return PARSER;
-    }
-
-    public net.iGap.proto.ProtoUserLogin.UserLogin getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface UserLoginResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserLoginResponse)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .proto.Response response = 1;</code>
@@ -1673,10 +1334,6 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>optional bool deprecated_client = 2;</code>
@@ -1722,120 +1379,13 @@ public final class ProtoUserLogin {
    * Protobuf type {@code proto.UserLoginResponse}
    */
   public  static final class UserLoginResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          UserLoginResponse, UserLoginResponse.Builder> implements
       // @@protoc_insertion_point(message_implements:proto.UserLoginResponse)
       UserLoginResponseOrBuilder {
-    // Use UserLoginResponse.newBuilder() to construct.
-    private UserLoginResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private UserLoginResponse() {
-      deprecatedClient_ = false;
       secondaryNodeName_ = "";
-      updateAvailable_ = false;
-      chatDeleteMessageForBothPeriod_ = 0;
-      walletActive_ = false;
-      mplActive_ = false;
-      walletAgreementAccepted_ = false;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private UserLoginResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-              if (response_ != null) {
-                subBuilder = response_.toBuilder();
-              }
-              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(response_);
-                response_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              deprecatedClient_ = input.readBool();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              secondaryNodeName_ = s;
-              break;
-            }
-            case 32: {
-
-              updateAvailable_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              chatDeleteMessageForBothPeriod_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              walletActive_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              mplActive_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              walletAgreementAccepted_ = input.readBool();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLoginResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLoginResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.iGap.proto.ProtoUserLogin.UserLoginResponse.class, net.iGap.proto.ProtoUserLogin.UserLoginResponse.Builder.class);
-    }
-
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
@@ -1853,8 +1403,39 @@ public final class ProtoUserLogin {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
-      return getResponse();
+    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      response_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    private void setResponse(
+        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
+      response_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
+      if (response_ != null &&
+          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
+        response_ =
+          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+      } else {
+        response_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    private void clearResponse() {  response_ = null;
+      
     }
 
     public static final int DEPRECATED_CLIENT_FIELD_NUMBER = 2;
@@ -1865,39 +1446,65 @@ public final class ProtoUserLogin {
     public boolean getDeprecatedClient() {
       return deprecatedClient_;
     }
+    /**
+     * <code>optional bool deprecated_client = 2;</code>
+     */
+    private void setDeprecatedClient(boolean value) {
+      
+      deprecatedClient_ = value;
+    }
+    /**
+     * <code>optional bool deprecated_client = 2;</code>
+     */
+    private void clearDeprecatedClient() {
+      
+      deprecatedClient_ = false;
+    }
 
     public static final int SECONDARY_NODE_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object secondaryNodeName_;
+    private java.lang.String secondaryNodeName_;
     /**
      * <code>optional string secondary_node_name = 3;</code>
      */
     public java.lang.String getSecondaryNodeName() {
-      java.lang.Object ref = secondaryNodeName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        secondaryNodeName_ = s;
-        return s;
-      }
+      return secondaryNodeName_;
     }
     /**
      * <code>optional string secondary_node_name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getSecondaryNodeNameBytes() {
-      java.lang.Object ref = secondaryNodeName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        secondaryNodeName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(secondaryNodeName_);
+    }
+    /**
+     * <code>optional string secondary_node_name = 3;</code>
+     */
+    private void setSecondaryNodeName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      secondaryNodeName_ = value;
+    }
+    /**
+     * <code>optional string secondary_node_name = 3;</code>
+     */
+    private void clearSecondaryNodeName() {
+      
+      secondaryNodeName_ = getDefaultInstance().getSecondaryNodeName();
+    }
+    /**
+     * <code>optional string secondary_node_name = 3;</code>
+     */
+    private void setSecondaryNodeNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      secondaryNodeName_ = value.toStringUtf8();
     }
 
     public static final int UPDATE_AVAILABLE_FIELD_NUMBER = 4;
@@ -1908,6 +1515,20 @@ public final class ProtoUserLogin {
     public boolean getUpdateAvailable() {
       return updateAvailable_;
     }
+    /**
+     * <code>optional bool update_available = 4;</code>
+     */
+    private void setUpdateAvailable(boolean value) {
+      
+      updateAvailable_ = value;
+    }
+    /**
+     * <code>optional bool update_available = 4;</code>
+     */
+    private void clearUpdateAvailable() {
+      
+      updateAvailable_ = false;
+    }
 
     public static final int CHAT_DELETE_MESSAGE_FOR_BOTH_PERIOD_FIELD_NUMBER = 5;
     private int chatDeleteMessageForBothPeriod_;
@@ -1916,6 +1537,20 @@ public final class ProtoUserLogin {
      */
     public int getChatDeleteMessageForBothPeriod() {
       return chatDeleteMessageForBothPeriod_;
+    }
+    /**
+     * <code>optional uint32 chat_delete_message_for_both_period = 5;</code>
+     */
+    private void setChatDeleteMessageForBothPeriod(int value) {
+      
+      chatDeleteMessageForBothPeriod_ = value;
+    }
+    /**
+     * <code>optional uint32 chat_delete_message_for_both_period = 5;</code>
+     */
+    private void clearChatDeleteMessageForBothPeriod() {
+      
+      chatDeleteMessageForBothPeriod_ = 0;
     }
 
     public static final int WALLET_ACTIVE_FIELD_NUMBER = 6;
@@ -1926,6 +1561,20 @@ public final class ProtoUserLogin {
     public boolean getWalletActive() {
       return walletActive_;
     }
+    /**
+     * <code>optional bool wallet_active = 6;</code>
+     */
+    private void setWalletActive(boolean value) {
+      
+      walletActive_ = value;
+    }
+    /**
+     * <code>optional bool wallet_active = 6;</code>
+     */
+    private void clearWalletActive() {
+      
+      walletActive_ = false;
+    }
 
     public static final int MPL_ACTIVE_FIELD_NUMBER = 7;
     private boolean mplActive_;
@@ -1934,6 +1583,20 @@ public final class ProtoUserLogin {
      */
     public boolean getMplActive() {
       return mplActive_;
+    }
+    /**
+     * <code>optional bool mpl_active = 7;</code>
+     */
+    private void setMplActive(boolean value) {
+      
+      mplActive_ = value;
+    }
+    /**
+     * <code>optional bool mpl_active = 7;</code>
+     */
+    private void clearMplActive() {
+      
+      mplActive_ = false;
     }
 
     public static final int WALLET_AGREEMENT_ACCEPTED_FIELD_NUMBER = 8;
@@ -1944,15 +1607,19 @@ public final class ProtoUserLogin {
     public boolean getWalletAgreementAccepted() {
       return walletAgreementAccepted_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional bool wallet_agreement_accepted = 8;</code>
+     */
+    private void setWalletAgreementAccepted(boolean value) {
+      
+      walletAgreementAccepted_ = value;
+    }
+    /**
+     * <code>optional bool wallet_agreement_accepted = 8;</code>
+     */
+    private void clearWalletAgreementAccepted() {
+      
+      walletAgreementAccepted_ = false;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -1963,8 +1630,8 @@ public final class ProtoUserLogin {
       if (deprecatedClient_ != false) {
         output.writeBool(2, deprecatedClient_);
       }
-      if (!getSecondaryNodeNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, secondaryNodeName_);
+      if (!secondaryNodeName_.isEmpty()) {
+        output.writeString(3, getSecondaryNodeName());
       }
       if (updateAvailable_ != false) {
         output.writeBool(4, updateAvailable_);
@@ -1984,7 +1651,7 @@ public final class ProtoUserLogin {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1996,8 +1663,9 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, deprecatedClient_);
       }
-      if (!getSecondaryNodeNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, secondaryNodeName_);
+      if (!secondaryNodeName_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getSecondaryNodeName());
       }
       if (updateAvailable_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -2019,533 +1687,188 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, walletAgreementAccepted_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof net.iGap.proto.ProtoUserLogin.UserLoginResponse)) {
-        return super.equals(obj);
-      }
-      net.iGap.proto.ProtoUserLogin.UserLoginResponse other = (net.iGap.proto.ProtoUserLogin.UserLoginResponse) obj;
-
-      boolean result = true;
-      result = result && (hasResponse() == other.hasResponse());
-      if (hasResponse()) {
-        result = result && getResponse()
-            .equals(other.getResponse());
-      }
-      result = result && (getDeprecatedClient()
-          == other.getDeprecatedClient());
-      result = result && getSecondaryNodeName()
-          .equals(other.getSecondaryNodeName());
-      result = result && (getUpdateAvailable()
-          == other.getUpdateAvailable());
-      result = result && (getChatDeleteMessageForBothPeriod()
-          == other.getChatDeleteMessageForBothPeriod());
-      result = result && (getWalletActive()
-          == other.getWalletActive());
-      result = result && (getMplActive()
-          == other.getMplActive());
-      result = result && (getWalletAgreementAccepted()
-          == other.getWalletAgreementAccepted());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasResponse()) {
-        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-        hash = (53 * hash) + getResponse().hashCode();
-      }
-      hash = (37 * hash) + DEPRECATED_CLIENT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDeprecatedClient());
-      hash = (37 * hash) + SECONDARY_NODE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getSecondaryNodeName().hashCode();
-      hash = (37 * hash) + UPDATE_AVAILABLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUpdateAvailable());
-      hash = (37 * hash) + CHAT_DELETE_MESSAGE_FOR_BOTH_PERIOD_FIELD_NUMBER;
-      hash = (53 * hash) + getChatDeleteMessageForBothPeriod();
-      hash = (37 * hash) + WALLET_ACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getWalletActive());
-      hash = (37 * hash) + MPL_ACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMplActive());
-      hash = (37 * hash) + WALLET_AGREEMENT_ACCEPTED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getWalletAgreementAccepted());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserLogin.UserLoginResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code proto.UserLoginResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoUserLogin.UserLoginResponse, Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserLoginResponse)
         net.iGap.proto.ProtoUserLogin.UserLoginResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLoginResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLoginResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.iGap.proto.ProtoUserLogin.UserLoginResponse.class, net.iGap.proto.ProtoUserLogin.UserLoginResponse.Builder.class);
-      }
-
       // Construct using net.iGap.proto.ProtoUserLogin.UserLoginResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (responseBuilder_ == null) {
-          response_ = null;
-        } else {
-          response_ = null;
-          responseBuilder_ = null;
-        }
-        deprecatedClient_ = false;
 
-        secondaryNodeName_ = "";
-
-        updateAvailable_ = false;
-
-        chatDeleteMessageForBothPeriod_ = 0;
-
-        walletActive_ = false;
-
-        mplActive_ = false;
-
-        walletAgreementAccepted_ = false;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.iGap.proto.ProtoUserLogin.internal_static_proto_UserLoginResponse_descriptor;
-      }
-
-      public net.iGap.proto.ProtoUserLogin.UserLoginResponse getDefaultInstanceForType() {
-        return net.iGap.proto.ProtoUserLogin.UserLoginResponse.getDefaultInstance();
-      }
-
-      public net.iGap.proto.ProtoUserLogin.UserLoginResponse build() {
-        net.iGap.proto.ProtoUserLogin.UserLoginResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.iGap.proto.ProtoUserLogin.UserLoginResponse buildPartial() {
-        net.iGap.proto.ProtoUserLogin.UserLoginResponse result = new net.iGap.proto.ProtoUserLogin.UserLoginResponse(this);
-        if (responseBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = responseBuilder_.build();
-        }
-        result.deprecatedClient_ = deprecatedClient_;
-        result.secondaryNodeName_ = secondaryNodeName_;
-        result.updateAvailable_ = updateAvailable_;
-        result.chatDeleteMessageForBothPeriod_ = chatDeleteMessageForBothPeriod_;
-        result.walletActive_ = walletActive_;
-        result.mplActive_ = mplActive_;
-        result.walletAgreementAccepted_ = walletAgreementAccepted_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.iGap.proto.ProtoUserLogin.UserLoginResponse) {
-          return mergeFrom((net.iGap.proto.ProtoUserLogin.UserLoginResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.iGap.proto.ProtoUserLogin.UserLoginResponse other) {
-        if (other == net.iGap.proto.ProtoUserLogin.UserLoginResponse.getDefaultInstance()) return this;
-        if (other.hasResponse()) {
-          mergeResponse(other.getResponse());
-        }
-        if (other.getDeprecatedClient() != false) {
-          setDeprecatedClient(other.getDeprecatedClient());
-        }
-        if (!other.getSecondaryNodeName().isEmpty()) {
-          secondaryNodeName_ = other.secondaryNodeName_;
-          onChanged();
-        }
-        if (other.getUpdateAvailable() != false) {
-          setUpdateAvailable(other.getUpdateAvailable());
-        }
-        if (other.getChatDeleteMessageForBothPeriod() != 0) {
-          setChatDeleteMessageForBothPeriod(other.getChatDeleteMessageForBothPeriod());
-        }
-        if (other.getWalletActive() != false) {
-          setWalletActive(other.getWalletActive());
-        }
-        if (other.getMplActive() != false) {
-          setMplActive(other.getMplActive());
-        }
-        if (other.getWalletAgreementAccepted() != false) {
-          setWalletAgreementAccepted(other.getWalletAgreementAccepted());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.iGap.proto.ProtoUserLogin.UserLoginResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.iGap.proto.ProtoUserLogin.UserLoginResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private net.iGap.proto.ProtoResponse.Response response_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return responseBuilder_ != null || response_ != null;
+        return instance.hasResponse();
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        if (responseBuilder_ == null) {
-          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
-        } else {
-          return responseBuilder_.getMessage();
-        }
+        return instance.getResponse();
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        if (responseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          response_ = value;
-          onChanged();
-        } else {
-          responseBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setResponse(value);
         return this;
-      }
+        }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        if (responseBuilder_ == null) {
-          response_ = builderForValue.build();
-          onChanged();
-        } else {
-          responseBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setResponse(builderForValue);
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        if (responseBuilder_ == null) {
-          if (response_ != null) {
-            response_ =
-              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-          } else {
-            response_ = value;
-          }
-          onChanged();
-        } else {
-          responseBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeResponse(value);
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {
-        if (responseBuilder_ == null) {
-          response_ = null;
-          onChanged();
-        } else {
-          response_ = null;
-          responseBuilder_ = null;
-        }
-
+      public Builder clearResponse() {  copyOnWrite();
+        instance.clearResponse();
         return this;
       }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
-        
-        onChanged();
-        return getResponseFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
-        if (responseBuilder_ != null) {
-          return responseBuilder_.getMessageOrBuilder();
-        } else {
-          return response_ == null ?
-              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
-        }
-      }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
-          getResponseFieldBuilder() {
-        if (responseBuilder_ == null) {
-          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
-                  getResponse(),
-                  getParentForChildren(),
-                  isClean());
-          response_ = null;
-        }
-        return responseBuilder_;
-      }
 
-      private boolean deprecatedClient_ ;
       /**
        * <code>optional bool deprecated_client = 2;</code>
        */
       public boolean getDeprecatedClient() {
-        return deprecatedClient_;
+        return instance.getDeprecatedClient();
       }
       /**
        * <code>optional bool deprecated_client = 2;</code>
        */
       public Builder setDeprecatedClient(boolean value) {
-        
-        deprecatedClient_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setDeprecatedClient(value);
         return this;
       }
       /**
        * <code>optional bool deprecated_client = 2;</code>
        */
       public Builder clearDeprecatedClient() {
-        
-        deprecatedClient_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearDeprecatedClient();
         return this;
       }
 
-      private java.lang.Object secondaryNodeName_ = "";
       /**
        * <code>optional string secondary_node_name = 3;</code>
        */
       public java.lang.String getSecondaryNodeName() {
-        java.lang.Object ref = secondaryNodeName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          secondaryNodeName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getSecondaryNodeName();
       }
       /**
        * <code>optional string secondary_node_name = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSecondaryNodeNameBytes() {
-        java.lang.Object ref = secondaryNodeName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          secondaryNodeName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getSecondaryNodeNameBytes();
       }
       /**
        * <code>optional string secondary_node_name = 3;</code>
        */
       public Builder setSecondaryNodeName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        secondaryNodeName_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSecondaryNodeName(value);
         return this;
       }
       /**
        * <code>optional string secondary_node_name = 3;</code>
        */
       public Builder clearSecondaryNodeName() {
-        
-        secondaryNodeName_ = getDefaultInstance().getSecondaryNodeName();
-        onChanged();
+        copyOnWrite();
+        instance.clearSecondaryNodeName();
         return this;
       }
       /**
@@ -2553,261 +1876,283 @@ public final class ProtoUserLogin {
        */
       public Builder setSecondaryNodeNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        secondaryNodeName_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSecondaryNodeNameBytes(value);
         return this;
       }
 
-      private boolean updateAvailable_ ;
       /**
        * <code>optional bool update_available = 4;</code>
        */
       public boolean getUpdateAvailable() {
-        return updateAvailable_;
+        return instance.getUpdateAvailable();
       }
       /**
        * <code>optional bool update_available = 4;</code>
        */
       public Builder setUpdateAvailable(boolean value) {
-        
-        updateAvailable_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setUpdateAvailable(value);
         return this;
       }
       /**
        * <code>optional bool update_available = 4;</code>
        */
       public Builder clearUpdateAvailable() {
-        
-        updateAvailable_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearUpdateAvailable();
         return this;
       }
 
-      private int chatDeleteMessageForBothPeriod_ ;
       /**
        * <code>optional uint32 chat_delete_message_for_both_period = 5;</code>
        */
       public int getChatDeleteMessageForBothPeriod() {
-        return chatDeleteMessageForBothPeriod_;
+        return instance.getChatDeleteMessageForBothPeriod();
       }
       /**
        * <code>optional uint32 chat_delete_message_for_both_period = 5;</code>
        */
       public Builder setChatDeleteMessageForBothPeriod(int value) {
-        
-        chatDeleteMessageForBothPeriod_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setChatDeleteMessageForBothPeriod(value);
         return this;
       }
       /**
        * <code>optional uint32 chat_delete_message_for_both_period = 5;</code>
        */
       public Builder clearChatDeleteMessageForBothPeriod() {
-        
-        chatDeleteMessageForBothPeriod_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearChatDeleteMessageForBothPeriod();
         return this;
       }
 
-      private boolean walletActive_ ;
       /**
        * <code>optional bool wallet_active = 6;</code>
        */
       public boolean getWalletActive() {
-        return walletActive_;
+        return instance.getWalletActive();
       }
       /**
        * <code>optional bool wallet_active = 6;</code>
        */
       public Builder setWalletActive(boolean value) {
-        
-        walletActive_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setWalletActive(value);
         return this;
       }
       /**
        * <code>optional bool wallet_active = 6;</code>
        */
       public Builder clearWalletActive() {
-        
-        walletActive_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearWalletActive();
         return this;
       }
 
-      private boolean mplActive_ ;
       /**
        * <code>optional bool mpl_active = 7;</code>
        */
       public boolean getMplActive() {
-        return mplActive_;
+        return instance.getMplActive();
       }
       /**
        * <code>optional bool mpl_active = 7;</code>
        */
       public Builder setMplActive(boolean value) {
-        
-        mplActive_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setMplActive(value);
         return this;
       }
       /**
        * <code>optional bool mpl_active = 7;</code>
        */
       public Builder clearMplActive() {
-        
-        mplActive_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearMplActive();
         return this;
       }
 
-      private boolean walletAgreementAccepted_ ;
       /**
        * <code>optional bool wallet_agreement_accepted = 8;</code>
        */
       public boolean getWalletAgreementAccepted() {
-        return walletAgreementAccepted_;
+        return instance.getWalletAgreementAccepted();
       }
       /**
        * <code>optional bool wallet_agreement_accepted = 8;</code>
        */
       public Builder setWalletAgreementAccepted(boolean value) {
-        
-        walletAgreementAccepted_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setWalletAgreementAccepted(value);
         return this;
       }
       /**
        * <code>optional bool wallet_agreement_accepted = 8;</code>
        */
       public Builder clearWalletAgreementAccepted() {
-        
-        walletAgreementAccepted_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearWalletAgreementAccepted();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:proto.UserLoginResponse)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoUserLogin.UserLoginResponse();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoUserLogin.UserLoginResponse other = (net.iGap.proto.ProtoUserLogin.UserLoginResponse) arg1;
+          response_ = visitor.visitMessage(response_, other.response_);
+          deprecatedClient_ = visitor.visitBoolean(deprecatedClient_ != false, deprecatedClient_,
+              other.deprecatedClient_ != false, other.deprecatedClient_);
+          secondaryNodeName_ = visitor.visitString(!secondaryNodeName_.isEmpty(), secondaryNodeName_,
+              !other.secondaryNodeName_.isEmpty(), other.secondaryNodeName_);
+          updateAvailable_ = visitor.visitBoolean(updateAvailable_ != false, updateAvailable_,
+              other.updateAvailable_ != false, other.updateAvailable_);
+          chatDeleteMessageForBothPeriod_ = visitor.visitInt(chatDeleteMessageForBothPeriod_ != 0, chatDeleteMessageForBothPeriod_,
+              other.chatDeleteMessageForBothPeriod_ != 0, other.chatDeleteMessageForBothPeriod_);
+          walletActive_ = visitor.visitBoolean(walletActive_ != false, walletActive_,
+              other.walletActive_ != false, other.walletActive_);
+          mplActive_ = visitor.visitBoolean(mplActive_ != false, mplActive_,
+              other.mplActive_ != false, other.mplActive_);
+          walletAgreementAccepted_ = visitor.visitBoolean(walletAgreementAccepted_ != false, walletAgreementAccepted_,
+              other.walletAgreementAccepted_ != false, other.walletAgreementAccepted_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+                  if (response_ != null) {
+                    subBuilder = response_.toBuilder();
+                  }
+                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(response_);
+                    response_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 16: {
+
+                  deprecatedClient_ = input.readBool();
+                  break;
+                }
+                case 26: {
+                  String s = input.readStringRequireUtf8();
+
+                  secondaryNodeName_ = s;
+                  break;
+                }
+                case 32: {
+
+                  updateAvailable_ = input.readBool();
+                  break;
+                }
+                case 40: {
+
+                  chatDeleteMessageForBothPeriod_ = input.readUInt32();
+                  break;
+                }
+                case 48: {
+
+                  walletActive_ = input.readBool();
+                  break;
+                }
+                case 56: {
+
+                  mplActive_ = input.readBool();
+                  break;
+                }
+                case 64: {
+
+                  walletAgreementAccepted_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserLogin.UserLoginResponse.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:proto.UserLoginResponse)
     private static final net.iGap.proto.ProtoUserLogin.UserLoginResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserLogin.UserLoginResponse();
+      DEFAULT_INSTANCE = new UserLoginResponse();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static net.iGap.proto.ProtoUserLogin.UserLoginResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserLoginResponse>
-        PARSER = new com.google.protobuf.AbstractParser<UserLoginResponse>() {
-      public UserLoginResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UserLoginResponse(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<UserLoginResponse> PARSER;
 
     public static com.google.protobuf.Parser<UserLoginResponse> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<UserLoginResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public net.iGap.proto.ProtoUserLogin.UserLoginResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_UserLogin_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_UserLogin_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_UserLoginResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_UserLoginResponse_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\017UserLogin.proto\022\005proto\032\rRequest.proto\032" +
-      "\016Response.proto\032\014Global.proto\"\241\002\n\tUserLo" +
-      "gin\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\r\n\005" +
-      "token\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\016\n\006app_id\030" +
-      "\004 \001(\r\022\031\n\021app_build_version\030\005 \001(\r\022\023\n\013app_" +
-      "version\030\006 \001(\t\022!\n\010platform\030\007 \001(\0162\017.proto." +
-      "Platform\022\030\n\020platform_version\030\010 \001(\t\022\035\n\006de" +
-      "vice\030\t \001(\0162\r.proto.Device\022\023\n\013device_name" +
-      "\030\n \001(\t\022!\n\010language\030\013 \001(\0162\017.proto.Languag" +
-      "e\"\203\002\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
-      "\0132\017.proto.Response\022\031\n\021deprecated_client\030" +
-      "\002 \001(\010\022\033\n\023secondary_node_name\030\003 \001(\t\022\030\n\020up" +
-      "date_available\030\004 \001(\010\022+\n#chat_delete_mess" +
-      "age_for_both_period\030\005 \001(\r\022\025\n\rwallet_acti" +
-      "ve\030\006 \001(\010\022\022\n\nmpl_active\030\007 \001(\010\022!\n\031wallet_a" +
-      "greement_accepted\030\010 \001(\010B \n\016net.iGap.prot" +
-      "oB\016ProtoUserLoginb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          net.iGap.proto.ProtoRequest.getDescriptor(),
-          net.iGap.proto.ProtoResponse.getDescriptor(),
-          net.iGap.proto.ProtoGlobal.getDescriptor(),
-        }, assigner);
-    internal_static_proto_UserLogin_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_proto_UserLogin_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_UserLogin_descriptor,
-        new java.lang.String[] { "Request", "Token", "AppName", "AppId", "AppBuildVersion", "AppVersion", "Platform", "PlatformVersion", "Device", "DeviceName", "Language", });
-    internal_static_proto_UserLoginResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_proto_UserLoginResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_UserLoginResponse_descriptor,
-        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", "WalletAgreementAccepted", });
-    net.iGap.proto.ProtoRequest.getDescriptor();
-    net.iGap.proto.ProtoResponse.getDescriptor();
-    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
