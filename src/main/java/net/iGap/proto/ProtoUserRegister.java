@@ -35,6 +35,15 @@ public final class ProtoUserRegister {
      */
     com.google.protobuf.ByteString
         getCountryCodeBytes();
+
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    int getPreferenceMethodValue();
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod();
   }
   /**
    * Protobuf type {@code proto.UserRegister}
@@ -47,6 +56,82 @@ public final class ProtoUserRegister {
     private UserRegister() {
       countryCode_ = "";
     }
+    /**
+     * Protobuf enum {@code proto.UserRegister.PreferenceMethod}
+     */
+    public enum PreferenceMethod
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>VERIFY_CODE_AUTO = 0;</code>
+       */
+      VERIFY_CODE_AUTO(0),
+      /**
+       * <code>VERIFY_CODE_SMS = 1;</code>
+       */
+      VERIFY_CODE_SMS(1),
+      /**
+       * <code>VERIFY_CODE_CALL = 2;</code>
+       */
+      VERIFY_CODE_CALL(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>VERIFY_CODE_AUTO = 0;</code>
+       */
+      public static final int VERIFY_CODE_AUTO_VALUE = 0;
+      /**
+       * <code>VERIFY_CODE_SMS = 1;</code>
+       */
+      public static final int VERIFY_CODE_SMS_VALUE = 1;
+      /**
+       * <code>VERIFY_CODE_CALL = 2;</code>
+       */
+      public static final int VERIFY_CODE_CALL_VALUE = 2;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PreferenceMethod valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static PreferenceMethod forNumber(int value) {
+        switch (value) {
+          case 0: return VERIFY_CODE_AUTO;
+          case 1: return VERIFY_CODE_SMS;
+          case 2: return VERIFY_CODE_CALL;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PreferenceMethod>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PreferenceMethod> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PreferenceMethod>() {
+              public PreferenceMethod findValueByNumber(int number) {
+                return PreferenceMethod.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private PreferenceMethod(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.UserRegister.PreferenceMethod)
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -168,6 +253,45 @@ public final class ProtoUserRegister {
       countryCode_ = value.toStringUtf8();
     }
 
+    public static final int PREFERENCE_METHOD_FIELD_NUMBER = 4;
+    private int preferenceMethod_;
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    public int getPreferenceMethodValue() {
+      return preferenceMethod_;
+    }
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    public net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod() {
+      net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod result = net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.forNumber(preferenceMethod_);
+      return result == null ? net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    private void setPreferenceMethodValue(int value) {
+        preferenceMethod_ = value;
+    }
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    private void setPreferenceMethod(net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      preferenceMethod_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     */
+    private void clearPreferenceMethod() {
+      
+      preferenceMethod_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -178,6 +302,9 @@ public final class ProtoUserRegister {
       }
       if (!countryCode_.isEmpty()) {
         output.writeString(3, getCountryCode());
+      }
+      if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
+        output.writeEnum(4, preferenceMethod_);
       }
     }
 
@@ -197,6 +324,10 @@ public final class ProtoUserRegister {
       if (!countryCode_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(3, getCountryCode());
+      }
+      if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, preferenceMethod_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -392,6 +523,43 @@ public final class ProtoUserRegister {
         return this;
       }
 
+      /**
+       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       */
+      public int getPreferenceMethodValue() {
+        return instance.getPreferenceMethodValue();
+      }
+      /**
+       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       */
+      public Builder setPreferenceMethodValue(int value) {
+        copyOnWrite();
+        instance.setPreferenceMethodValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       */
+      public net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod() {
+        return instance.getPreferenceMethod();
+      }
+      /**
+       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       */
+      public Builder setPreferenceMethod(net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod value) {
+        copyOnWrite();
+        instance.setPreferenceMethod(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       */
+      public Builder clearPreferenceMethod() {
+        copyOnWrite();
+        instance.clearPreferenceMethod();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserRegister)
     }
     protected final Object dynamicMethod(
@@ -418,6 +586,7 @@ public final class ProtoUserRegister {
               other.phoneNumber_ != 0L, other.phoneNumber_);
           countryCode_ = visitor.visitString(!countryCode_.isEmpty(), countryCode_,
               !other.countryCode_.isEmpty(), other.countryCode_);
+          preferenceMethod_ = visitor.visitInt(preferenceMethod_ != 0, preferenceMethod_,    other.preferenceMethod_ != 0, other.preferenceMethod_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -464,6 +633,12 @@ public final class ProtoUserRegister {
                   String s = input.readStringRequireUtf8();
 
                   countryCode_ = s;
+                  break;
+                }
+                case 32: {
+                  int rawValue = input.readEnum();
+
+                  preferenceMethod_ = rawValue;
                   break;
                 }
               }
@@ -591,6 +766,11 @@ public final class ProtoUserRegister {
      * <code>optional uint32 verify_code_digit_count = 9;</code>
      */
     int getVerifyCodeDigitCount();
+
+    /**
+     * <code>optional bool call_method_supported = 10;</code>
+     */
+    boolean getCallMethodSupported();
   }
   /**
    * Protobuf type {@code proto.UserRegisterResponse}
@@ -623,6 +803,10 @@ public final class ProtoUserRegister {
        * <code>VERIFY_CODE_SMS_SOCKET = 2;</code>
        */
       VERIFY_CODE_SMS_SOCKET(2),
+      /**
+       * <code>VERIFY_CODE_CALL = 3;</code>
+       */
+      VERIFY_CODE_CALL(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -638,6 +822,10 @@ public final class ProtoUserRegister {
        * <code>VERIFY_CODE_SMS_SOCKET = 2;</code>
        */
       public static final int VERIFY_CODE_SMS_SOCKET_VALUE = 2;
+      /**
+       * <code>VERIFY_CODE_CALL = 3;</code>
+       */
+      public static final int VERIFY_CODE_CALL_VALUE = 3;
 
 
       public final int getNumber() {
@@ -657,6 +845,7 @@ public final class ProtoUserRegister {
           case 0: return VERIFY_CODE_SMS;
           case 1: return VERIFY_CODE_SOCKET;
           case 2: return VERIFY_CODE_SMS_SOCKET;
+          case 3: return VERIFY_CODE_CALL;
           default: return null;
         }
       }
@@ -1039,6 +1228,29 @@ public final class ProtoUserRegister {
       verifyCodeDigitCount_ = 0;
     }
 
+    public static final int CALL_METHOD_SUPPORTED_FIELD_NUMBER = 10;
+    private boolean callMethodSupported_;
+    /**
+     * <code>optional bool call_method_supported = 10;</code>
+     */
+    public boolean getCallMethodSupported() {
+      return callMethodSupported_;
+    }
+    /**
+     * <code>optional bool call_method_supported = 10;</code>
+     */
+    private void setCallMethodSupported(boolean value) {
+      
+      callMethodSupported_ = value;
+    }
+    /**
+     * <code>optional bool call_method_supported = 10;</code>
+     */
+    private void clearCallMethodSupported() {
+      
+      callMethodSupported_ = false;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -1068,6 +1280,9 @@ public final class ProtoUserRegister {
       }
       if (verifyCodeDigitCount_ != 0) {
         output.writeUInt32(9, verifyCodeDigitCount_);
+      }
+      if (callMethodSupported_ != false) {
+        output.writeBool(10, callMethodSupported_);
       }
     }
 
@@ -1116,6 +1331,10 @@ public final class ProtoUserRegister {
       if (verifyCodeDigitCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, verifyCodeDigitCount_);
+      }
+      if (callMethodSupported_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, callMethodSupported_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1529,6 +1748,29 @@ public final class ProtoUserRegister {
         return this;
       }
 
+      /**
+       * <code>optional bool call_method_supported = 10;</code>
+       */
+      public boolean getCallMethodSupported() {
+        return instance.getCallMethodSupported();
+      }
+      /**
+       * <code>optional bool call_method_supported = 10;</code>
+       */
+      public Builder setCallMethodSupported(boolean value) {
+        copyOnWrite();
+        instance.setCallMethodSupported(value);
+        return this;
+      }
+      /**
+       * <code>optional bool call_method_supported = 10;</code>
+       */
+      public Builder clearCallMethodSupported() {
+        copyOnWrite();
+        instance.clearCallMethodSupported();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserRegisterResponse)
     }
     protected final Object dynamicMethod(
@@ -1566,6 +1808,8 @@ public final class ProtoUserRegister {
               !other.verifyCodeRegex_.isEmpty(), other.verifyCodeRegex_);
           verifyCodeDigitCount_ = visitor.visitInt(verifyCodeDigitCount_ != 0, verifyCodeDigitCount_,
               other.verifyCodeDigitCount_ != 0, other.verifyCodeDigitCount_);
+          callMethodSupported_ = visitor.visitBoolean(callMethodSupported_ != false, callMethodSupported_,
+              other.callMethodSupported_ != false, other.callMethodSupported_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
             bitField0_ |= other.bitField0_;
@@ -1662,6 +1906,11 @@ public final class ProtoUserRegister {
                 case 72: {
 
                   verifyCodeDigitCount_ = input.readUInt32();
+                  break;
+                }
+                case 80: {
+
+                  callMethodSupported_ = input.readBool();
                   break;
                 }
               }
