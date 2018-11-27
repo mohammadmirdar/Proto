@@ -5118,6 +5118,11 @@ public final class ProtoGlobal {
      * <code>optional bool verified = 17;</code>
      */
     boolean getVerified();
+
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    boolean getBot();
   }
   /**
    * Protobuf type {@code proto.RegisteredUser}
@@ -5878,6 +5883,29 @@ public final class ProtoGlobal {
       verified_ = false;
     }
 
+    public static final int BOT_FIELD_NUMBER = 18;
+    private boolean bot_;
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    public boolean getBot() {
+      return bot_;
+    }
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    private void setBot(boolean value) {
+      
+      bot_ = value;
+    }
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    private void clearBot() {
+      
+      bot_ = false;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0L) {
@@ -5930,6 +5958,9 @@ public final class ProtoGlobal {
       }
       if (verified_ != false) {
         output.writeBool(17, verified_);
+      }
+      if (bot_ != false) {
+        output.writeBool(18, bot_);
       }
     }
 
@@ -6005,6 +6036,10 @@ public final class ProtoGlobal {
       if (verified_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(17, verified_);
+      }
+      if (bot_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(18, bot_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -6655,6 +6690,29 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional bool bot = 18;</code>
+       */
+      public boolean getBot() {
+        return instance.getBot();
+      }
+      /**
+       * <code>optional bool bot = 18;</code>
+       */
+      public Builder setBot(boolean value) {
+        copyOnWrite();
+        instance.setBot(value);
+        return this;
+      }
+      /**
+       * <code>optional bool bot = 18;</code>
+       */
+      public Builder clearBot() {
+        copyOnWrite();
+        instance.clearBot();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RegisteredUser)
     }
     protected final Object dynamicMethod(
@@ -6708,6 +6766,8 @@ public final class ProtoGlobal {
               !other.bio_.isEmpty(), other.bio_);
           verified_ = visitor.visitBoolean(verified_ != false, verified_,
               other.verified_ != false, other.verified_);
+          bot_ = visitor.visitBoolean(bot_ != false, bot_,
+              other.bot_ != false, other.bot_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -6832,6 +6892,11 @@ public final class ProtoGlobal {
                 case 136: {
 
                   verified_ = input.readBool();
+                  break;
+                }
+                case 144: {
+
+                  bot_ = input.readBool();
                   break;
                 }
               }
@@ -12023,6 +12088,11 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMessage getPinnedMessage();
 
     /**
+     * <code>optional uint32 priority = 18;</code>
+     */
+    int getPriority();
+
+    /**
      * <code>optional .proto.ChatRoom chat_room_extra = 11;</code>
      */
     boolean hasChatRoomExtra();
@@ -12677,6 +12747,29 @@ public final class ProtoGlobal {
       
     }
 
+    public static final int PRIORITY_FIELD_NUMBER = 18;
+    private int priority_;
+    /**
+     * <code>optional uint32 priority = 18;</code>
+     */
+    public int getPriority() {
+      return priority_;
+    }
+    /**
+     * <code>optional uint32 priority = 18;</code>
+     */
+    private void setPriority(int value) {
+      
+      priority_ = value;
+    }
+    /**
+     * <code>optional uint32 priority = 18;</code>
+     */
+    private void clearPriority() {
+      
+      priority_ = 0;
+    }
+
     public static final int CHAT_ROOM_EXTRA_FIELD_NUMBER = 11;
     private net.iGap.proto.ProtoGlobal.ChatRoom chatRoomExtra_;
     /**
@@ -12886,6 +12979,9 @@ public final class ProtoGlobal {
       if (pinnedMessage_ != null) {
         output.writeMessage(17, getPinnedMessage());
       }
+      if (priority_ != 0) {
+        output.writeUInt32(18, priority_);
+      }
     }
 
     public int getSerializedSize() {
@@ -12960,6 +13056,10 @@ public final class ProtoGlobal {
       if (pinnedMessage_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getPinnedMessage());
+      }
+      if (priority_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(18, priority_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -13537,6 +13637,29 @@ public final class ProtoGlobal {
       }
 
       /**
+       * <code>optional uint32 priority = 18;</code>
+       */
+      public int getPriority() {
+        return instance.getPriority();
+      }
+      /**
+       * <code>optional uint32 priority = 18;</code>
+       */
+      public Builder setPriority(int value) {
+        copyOnWrite();
+        instance.setPriority(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 priority = 18;</code>
+       */
+      public Builder clearPriority() {
+        copyOnWrite();
+        instance.clearPriority();
+        return this;
+      }
+
+      /**
        * <code>optional .proto.ChatRoom chat_room_extra = 11;</code>
        */
       public boolean hasChatRoomExtra() {
@@ -13714,6 +13837,8 @@ public final class ProtoGlobal {
           pinId_ = visitor.visitLong(pinId_ != 0L, pinId_,
               other.pinId_ != 0L, other.pinId_);
           pinnedMessage_ = visitor.visitMessage(pinnedMessage_, other.pinnedMessage_);
+          priority_ = visitor.visitInt(priority_ != 0, priority_,
+              other.priority_ != 0, other.priority_);
           chatRoomExtra_ = visitor.visitMessage(chatRoomExtra_, other.chatRoomExtra_);
           groupRoomExtra_ = visitor.visitMessage(groupRoomExtra_, other.groupRoomExtra_);
           channelRoomExtra_ = visitor.visitMessage(channelRoomExtra_, other.channelRoomExtra_);
@@ -13885,6 +14010,11 @@ public final class ProtoGlobal {
                     pinnedMessage_ = subBuilder.buildPartial();
                   }
 
+                  break;
+                }
+                case 144: {
+
+                  priority_ = input.readUInt32();
                   break;
                 }
               }
