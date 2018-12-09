@@ -7487,6 +7487,21 @@ public final class ProtoGlobal {
     long getRandomId();
 
     /**
+     * <code>optional uint32 additional_type = 23;</code>
+     */
+    int getAdditionalType();
+
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    java.lang.String getAdditionalData();
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdditionalDataBytes();
+
+    /**
      * <code>optional .proto.RoomMessage.ExtraType extra_type = 19;</code>
      */
     int getExtraTypeValue();
@@ -7514,6 +7529,7 @@ public final class ProtoGlobal {
       RoomMessageOrBuilder {
     private RoomMessage() {
       message_ = "";
+      additionalData_ = "";
     }
     /**
      * Protobuf enum {@code proto.RoomMessage.ExtraType}
@@ -10185,6 +10201,75 @@ public final class ProtoGlobal {
       randomId_ = 0L;
     }
 
+    public static final int ADDITIONAL_TYPE_FIELD_NUMBER = 23;
+    private int additionalType_;
+    /**
+     * <code>optional uint32 additional_type = 23;</code>
+     */
+    public int getAdditionalType() {
+      return additionalType_;
+    }
+    /**
+     * <code>optional uint32 additional_type = 23;</code>
+     */
+    private void setAdditionalType(int value) {
+      
+      additionalType_ = value;
+    }
+    /**
+     * <code>optional uint32 additional_type = 23;</code>
+     */
+    private void clearAdditionalType() {
+      
+      additionalType_ = 0;
+    }
+
+    public static final int ADDITIONAL_DATA_FIELD_NUMBER = 24;
+    private java.lang.String additionalData_;
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    public java.lang.String getAdditionalData() {
+      return additionalData_;
+    }
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalDataBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(additionalData_);
+    }
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    private void setAdditionalData(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      additionalData_ = value;
+    }
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    private void clearAdditionalData() {
+      
+      additionalData_ = getDefaultInstance().getAdditionalData();
+    }
+    /**
+     * <code>optional string additional_data = 24;</code>
+     */
+    private void setAdditionalDataBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      additionalData_ = value.toStringUtf8();
+    }
+
     public static final int EXTRA_TYPE_FIELD_NUMBER = 19;
     private int extraType_;
     /**
@@ -10344,6 +10429,12 @@ public final class ProtoGlobal {
       if (wallet_ != null) {
         output.writeMessage(22, getWallet());
       }
+      if (additionalType_ != 0) {
+        output.writeUInt32(23, additionalType_);
+      }
+      if (!additionalData_.isEmpty()) {
+        output.writeString(24, getAdditionalData());
+      }
     }
 
     public int getSerializedSize() {
@@ -10438,6 +10529,14 @@ public final class ProtoGlobal {
       if (wallet_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, getWallet());
+      }
+      if (additionalType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(23, additionalType_);
+      }
+      if (!additionalData_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(24, getAdditionalData());
       }
       memoizedSerializedSize = size;
       return size;
@@ -11207,6 +11306,69 @@ public final class ProtoGlobal {
       }
 
       /**
+       * <code>optional uint32 additional_type = 23;</code>
+       */
+      public int getAdditionalType() {
+        return instance.getAdditionalType();
+      }
+      /**
+       * <code>optional uint32 additional_type = 23;</code>
+       */
+      public Builder setAdditionalType(int value) {
+        copyOnWrite();
+        instance.setAdditionalType(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 additional_type = 23;</code>
+       */
+      public Builder clearAdditionalType() {
+        copyOnWrite();
+        instance.clearAdditionalType();
+        return this;
+      }
+
+      /**
+       * <code>optional string additional_data = 24;</code>
+       */
+      public java.lang.String getAdditionalData() {
+        return instance.getAdditionalData();
+      }
+      /**
+       * <code>optional string additional_data = 24;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdditionalDataBytes() {
+        return instance.getAdditionalDataBytes();
+      }
+      /**
+       * <code>optional string additional_data = 24;</code>
+       */
+      public Builder setAdditionalData(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setAdditionalData(value);
+        return this;
+      }
+      /**
+       * <code>optional string additional_data = 24;</code>
+       */
+      public Builder clearAdditionalData() {
+        copyOnWrite();
+        instance.clearAdditionalData();
+        return this;
+      }
+      /**
+       * <code>optional string additional_data = 24;</code>
+       */
+      public Builder setAdditionalDataBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setAdditionalDataBytes(value);
+        return this;
+      }
+
+      /**
        * <code>optional .proto.RoomMessage.ExtraType extra_type = 19;</code>
        */
       public int getExtraTypeValue() {
@@ -11339,6 +11501,10 @@ public final class ProtoGlobal {
               other.previousMessageId_ != 0L, other.previousMessageId_);
           randomId_ = visitor.visitLong(randomId_ != 0L, randomId_,
               other.randomId_ != 0L, other.randomId_);
+          additionalType_ = visitor.visitInt(additionalType_ != 0, additionalType_,
+              other.additionalType_ != 0, other.additionalType_);
+          additionalData_ = visitor.visitString(!additionalData_.isEmpty(), additionalData_,
+              !other.additionalData_.isEmpty(), other.additionalData_);
           extraType_ = visitor.visitInt(extraType_ != 0, extraType_,    other.extraType_ != 0, other.extraType_);
           channelExtra_ = visitor.visitMessage(channelExtra_, other.channelExtra_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
@@ -11549,6 +11715,17 @@ public final class ProtoGlobal {
                     wallet_ = subBuilder.buildPartial();
                   }
 
+                  break;
+                }
+                case 184: {
+
+                  additionalType_ = input.readUInt32();
+                  break;
+                }
+                case 194: {
+                  String s = input.readStringRequireUtf8();
+
+                  additionalData_ = s;
                   break;
                 }
               }
