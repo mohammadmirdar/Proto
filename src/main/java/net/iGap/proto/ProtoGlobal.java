@@ -417,6 +417,10 @@ public final class ProtoGlobal {
      * <code>WALLET = 15;</code>
      */
     WALLET(15),
+    /**
+     * <code>STICKER = 16;</code>
+     */
+    STICKER(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -484,6 +488,10 @@ public final class ProtoGlobal {
      * <code>WALLET = 15;</code>
      */
     public static final int WALLET_VALUE = 15;
+    /**
+     * <code>STICKER = 16;</code>
+     */
+    public static final int STICKER_VALUE = 16;
 
 
     public final int getNumber() {
@@ -516,6 +524,7 @@ public final class ProtoGlobal {
         case 12: return LOG;
         case 13: return CONTACT;
         case 15: return WALLET;
+        case 16: return STICKER;
         default: return null;
       }
     }
@@ -11792,6 +11801,11 @@ public final class ProtoGlobal {
      * <code>optional uint64 reply_to = 2;</code>
      */
     long getReplyTo();
+
+    /**
+     * <code>optional uint32 draft_time = 3;</code>
+     */
+    int getDraftTime();
   }
   /**
    * Protobuf type {@code proto.RoomDraft}
@@ -11873,6 +11887,29 @@ public final class ProtoGlobal {
       replyTo_ = 0L;
     }
 
+    public static final int DRAFT_TIME_FIELD_NUMBER = 3;
+    private int draftTime_;
+    /**
+     * <code>optional uint32 draft_time = 3;</code>
+     */
+    public int getDraftTime() {
+      return draftTime_;
+    }
+    /**
+     * <code>optional uint32 draft_time = 3;</code>
+     */
+    private void setDraftTime(int value) {
+      
+      draftTime_ = value;
+    }
+    /**
+     * <code>optional uint32 draft_time = 3;</code>
+     */
+    private void clearDraftTime() {
+      
+      draftTime_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!message_.isEmpty()) {
@@ -11880,6 +11917,9 @@ public final class ProtoGlobal {
       }
       if (replyTo_ != 0L) {
         output.writeUInt64(2, replyTo_);
+      }
+      if (draftTime_ != 0) {
+        output.writeUInt32(3, draftTime_);
       }
     }
 
@@ -11895,6 +11935,10 @@ public final class ProtoGlobal {
       if (replyTo_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, replyTo_);
+      }
+      if (draftTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, draftTime_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -12045,6 +12089,29 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional uint32 draft_time = 3;</code>
+       */
+      public int getDraftTime() {
+        return instance.getDraftTime();
+      }
+      /**
+       * <code>optional uint32 draft_time = 3;</code>
+       */
+      public Builder setDraftTime(int value) {
+        copyOnWrite();
+        instance.setDraftTime(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 draft_time = 3;</code>
+       */
+      public Builder clearDraftTime() {
+        copyOnWrite();
+        instance.clearDraftTime();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RoomDraft)
     }
     protected final Object dynamicMethod(
@@ -12070,6 +12137,8 @@ public final class ProtoGlobal {
               !other.message_.isEmpty(), other.message_);
           replyTo_ = visitor.visitLong(replyTo_ != 0L, replyTo_,
               other.replyTo_ != 0L, other.replyTo_);
+          draftTime_ = visitor.visitInt(draftTime_ != 0, draftTime_,
+              other.draftTime_ != 0, other.draftTime_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -12103,6 +12172,11 @@ public final class ProtoGlobal {
                 case 16: {
 
                   replyTo_ = input.readUInt64();
+                  break;
+                }
+                case 24: {
+
+                  draftTime_ = input.readUInt32();
                   break;
                 }
               }
