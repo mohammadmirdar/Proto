@@ -22021,6 +22021,766 @@ public final class ProtoGlobal {
     }
   }
 
+  public interface FavoriteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Favorite)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    java.lang.String getTextcolor();
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTextcolorBytes();
+
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    java.lang.String getBgcolor();
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getBgcolorBytes();
+
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    java.lang.String getImage();
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
+  }
+  /**
+   * Protobuf type {@code proto.Favorite}
+   */
+  public  static final class Favorite extends
+      com.google.protobuf.GeneratedMessageLite<
+          Favorite, Favorite.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.Favorite)
+      FavoriteOrBuilder {
+    private Favorite() {
+      name_ = "";
+      textcolor_ = "";
+      bgcolor_ = "";
+      value_ = "";
+      image_ = "";
+    }
+    public static final int NAME_FIELD_NUMBER = 1;
+    private java.lang.String name_;
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      return name_;
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(name_);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    private void setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    private void clearName() {
+      
+      name_ = getDefaultInstance().getName();
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    private void setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value.toStringUtf8();
+    }
+
+    public static final int TEXTCOLOR_FIELD_NUMBER = 2;
+    private java.lang.String textcolor_;
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    public java.lang.String getTextcolor() {
+      return textcolor_;
+    }
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTextcolorBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(textcolor_);
+    }
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    private void setTextcolor(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      textcolor_ = value;
+    }
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    private void clearTextcolor() {
+      
+      textcolor_ = getDefaultInstance().getTextcolor();
+    }
+    /**
+     * <code>optional string textcolor = 2;</code>
+     */
+    private void setTextcolorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      textcolor_ = value.toStringUtf8();
+    }
+
+    public static final int BGCOLOR_FIELD_NUMBER = 3;
+    private java.lang.String bgcolor_;
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    public java.lang.String getBgcolor() {
+      return bgcolor_;
+    }
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBgcolorBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(bgcolor_);
+    }
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    private void setBgcolor(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bgcolor_ = value;
+    }
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    private void clearBgcolor() {
+      
+      bgcolor_ = getDefaultInstance().getBgcolor();
+    }
+    /**
+     * <code>optional string bgcolor = 3;</code>
+     */
+    private void setBgcolorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bgcolor_ = value.toStringUtf8();
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 4;
+    private java.lang.String value_;
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    public java.lang.String getValue() {
+      return value_;
+    }
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(value_);
+    }
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    private void setValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      value_ = value;
+    }
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    private void clearValue() {
+      
+      value_ = getDefaultInstance().getValue();
+    }
+    /**
+     * <code>optional string value = 4;</code>
+     */
+    private void setValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      value_ = value.toStringUtf8();
+    }
+
+    public static final int IMAGE_FIELD_NUMBER = 5;
+    private java.lang.String image_;
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    public java.lang.String getImage() {
+      return image_;
+    }
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(image_);
+    }
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    private void setImage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      image_ = value;
+    }
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    private void clearImage() {
+      
+      image_ = getDefaultInstance().getImage();
+    }
+    /**
+     * <code>optional string image = 5;</code>
+     */
+    private void setImageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      image_ = value.toStringUtf8();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!name_.isEmpty()) {
+        output.writeString(1, getName());
+      }
+      if (!textcolor_.isEmpty()) {
+        output.writeString(2, getTextcolor());
+      }
+      if (!bgcolor_.isEmpty()) {
+        output.writeString(3, getBgcolor());
+      }
+      if (!value_.isEmpty()) {
+        output.writeString(4, getValue());
+      }
+      if (!image_.isEmpty()) {
+        output.writeString(5, getImage());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!name_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getName());
+      }
+      if (!textcolor_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getTextcolor());
+      }
+      if (!bgcolor_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getBgcolor());
+      }
+      if (!value_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, getValue());
+      }
+      if (!image_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(5, getImage());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Favorite parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.Favorite prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.Favorite}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.Favorite, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Favorite)
+        net.iGap.proto.ProtoGlobal.FavoriteOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.Favorite.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        return instance.getName();
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        return instance.getNameBytes();
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setName(value);
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        copyOnWrite();
+        instance.clearName();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setNameBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional string textcolor = 2;</code>
+       */
+      public java.lang.String getTextcolor() {
+        return instance.getTextcolor();
+      }
+      /**
+       * <code>optional string textcolor = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTextcolorBytes() {
+        return instance.getTextcolorBytes();
+      }
+      /**
+       * <code>optional string textcolor = 2;</code>
+       */
+      public Builder setTextcolor(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setTextcolor(value);
+        return this;
+      }
+      /**
+       * <code>optional string textcolor = 2;</code>
+       */
+      public Builder clearTextcolor() {
+        copyOnWrite();
+        instance.clearTextcolor();
+        return this;
+      }
+      /**
+       * <code>optional string textcolor = 2;</code>
+       */
+      public Builder setTextcolorBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setTextcolorBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional string bgcolor = 3;</code>
+       */
+      public java.lang.String getBgcolor() {
+        return instance.getBgcolor();
+      }
+      /**
+       * <code>optional string bgcolor = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBgcolorBytes() {
+        return instance.getBgcolorBytes();
+      }
+      /**
+       * <code>optional string bgcolor = 3;</code>
+       */
+      public Builder setBgcolor(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setBgcolor(value);
+        return this;
+      }
+      /**
+       * <code>optional string bgcolor = 3;</code>
+       */
+      public Builder clearBgcolor() {
+        copyOnWrite();
+        instance.clearBgcolor();
+        return this;
+      }
+      /**
+       * <code>optional string bgcolor = 3;</code>
+       */
+      public Builder setBgcolorBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setBgcolorBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional string value = 4;</code>
+       */
+      public java.lang.String getValue() {
+        return instance.getValue();
+      }
+      /**
+       * <code>optional string value = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        return instance.getValueBytes();
+      }
+      /**
+       * <code>optional string value = 4;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setValue(value);
+        return this;
+      }
+      /**
+       * <code>optional string value = 4;</code>
+       */
+      public Builder clearValue() {
+        copyOnWrite();
+        instance.clearValue();
+        return this;
+      }
+      /**
+       * <code>optional string value = 4;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setValueBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional string image = 5;</code>
+       */
+      public java.lang.String getImage() {
+        return instance.getImage();
+      }
+      /**
+       * <code>optional string image = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        return instance.getImageBytes();
+      }
+      /**
+       * <code>optional string image = 5;</code>
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setImage(value);
+        return this;
+      }
+      /**
+       * <code>optional string image = 5;</code>
+       */
+      public Builder clearImage() {
+        copyOnWrite();
+        instance.clearImage();
+        return this;
+      }
+      /**
+       * <code>optional string image = 5;</code>
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setImageBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.Favorite)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.Favorite();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.Favorite other = (net.iGap.proto.ProtoGlobal.Favorite) arg1;
+          name_ = visitor.visitString(!name_.isEmpty(), name_,
+              !other.name_.isEmpty(), other.name_);
+          textcolor_ = visitor.visitString(!textcolor_.isEmpty(), textcolor_,
+              !other.textcolor_.isEmpty(), other.textcolor_);
+          bgcolor_ = visitor.visitString(!bgcolor_.isEmpty(), bgcolor_,
+              !other.bgcolor_.isEmpty(), other.bgcolor_);
+          value_ = visitor.visitString(!value_.isEmpty(), value_,
+              !other.value_.isEmpty(), other.value_);
+          image_ = visitor.visitString(!image_.isEmpty(), image_,
+              !other.image_.isEmpty(), other.image_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  name_ = s;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  textcolor_ = s;
+                  break;
+                }
+                case 26: {
+                  String s = input.readStringRequireUtf8();
+
+                  bgcolor_ = s;
+                  break;
+                }
+                case 34: {
+                  String s = input.readStringRequireUtf8();
+
+                  value_ = s;
+                  break;
+                }
+                case 42: {
+                  String s = input.readStringRequireUtf8();
+
+                  image_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.Favorite.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.Favorite)
+    private static final net.iGap.proto.ProtoGlobal.Favorite DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Favorite();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Favorite getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Favorite> PARSER;
+
+    public static com.google.protobuf.Parser<Favorite> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
 
   static {
   }
