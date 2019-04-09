@@ -22815,12 +22815,7 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.DiscoveryField.ButtonActionType getActiontype();
 
     /**
-     * <code>optional uint32 height = 4;</code>
-     */
-    int getHeight();
-
-    /**
-     * <code>optional uint32 orderid = 5;</code>
+     * <code>optional uint32 orderid = 4;</code>
      */
     int getOrderid();
   }
@@ -22925,6 +22920,14 @@ public final class ProtoGlobal {
        * <code>NEARBY_MENU = 20;</code>
        */
       NEARBY_MENU(20),
+      /**
+       * <code>CALL = 21;</code>
+       */
+      CALL(21),
+      /**
+       * <code>STICKER_SHOP = 22;</code>
+       */
+      STICKER_SHOP(22),
       UNRECOGNIZED(-1),
       ;
 
@@ -23012,6 +23015,14 @@ public final class ProtoGlobal {
        * <code>NEARBY_MENU = 20;</code>
        */
       public static final int NEARBY_MENU_VALUE = 20;
+      /**
+       * <code>CALL = 21;</code>
+       */
+      public static final int CALL_VALUE = 21;
+      /**
+       * <code>STICKER_SHOP = 22;</code>
+       */
+      public static final int STICKER_SHOP_VALUE = 22;
 
 
       public final int getNumber() {
@@ -23049,6 +23060,8 @@ public final class ProtoGlobal {
           case 18: return TOPUP_MENU;
           case 19: return WALLET_MENU;
           case 20: return NEARBY_MENU;
+          case 21: return CALL;
+          case 22: return STICKER_SHOP;
           default: return null;
         }
       }
@@ -23205,46 +23218,23 @@ public final class ProtoGlobal {
       actiontype_ = 0;
     }
 
-    public static final int HEIGHT_FIELD_NUMBER = 4;
-    private int height_;
-    /**
-     * <code>optional uint32 height = 4;</code>
-     */
-    public int getHeight() {
-      return height_;
-    }
-    /**
-     * <code>optional uint32 height = 4;</code>
-     */
-    private void setHeight(int value) {
-      
-      height_ = value;
-    }
-    /**
-     * <code>optional uint32 height = 4;</code>
-     */
-    private void clearHeight() {
-      
-      height_ = 0;
-    }
-
-    public static final int ORDERID_FIELD_NUMBER = 5;
+    public static final int ORDERID_FIELD_NUMBER = 4;
     private int orderid_;
     /**
-     * <code>optional uint32 orderid = 5;</code>
+     * <code>optional uint32 orderid = 4;</code>
      */
     public int getOrderid() {
       return orderid_;
     }
     /**
-     * <code>optional uint32 orderid = 5;</code>
+     * <code>optional uint32 orderid = 4;</code>
      */
     private void setOrderid(int value) {
       
       orderid_ = value;
     }
     /**
-     * <code>optional uint32 orderid = 5;</code>
+     * <code>optional uint32 orderid = 4;</code>
      */
     private void clearOrderid() {
       
@@ -23262,11 +23252,8 @@ public final class ProtoGlobal {
       if (actiontype_ != net.iGap.proto.ProtoGlobal.DiscoveryField.ButtonActionType.NONE.getNumber()) {
         output.writeEnum(3, actiontype_);
       }
-      if (height_ != 0) {
-        output.writeUInt32(4, height_);
-      }
       if (orderid_ != 0) {
-        output.writeUInt32(5, orderid_);
+        output.writeUInt32(4, orderid_);
       }
     }
 
@@ -23287,13 +23274,9 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, actiontype_);
       }
-      if (height_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, height_);
-      }
       if (orderid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, orderid_);
+          .computeUInt32Size(4, orderid_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -23499,36 +23482,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint32 height = 4;</code>
-       */
-      public int getHeight() {
-        return instance.getHeight();
-      }
-      /**
-       * <code>optional uint32 height = 4;</code>
-       */
-      public Builder setHeight(int value) {
-        copyOnWrite();
-        instance.setHeight(value);
-        return this;
-      }
-      /**
-       * <code>optional uint32 height = 4;</code>
-       */
-      public Builder clearHeight() {
-        copyOnWrite();
-        instance.clearHeight();
-        return this;
-      }
-
-      /**
-       * <code>optional uint32 orderid = 5;</code>
+       * <code>optional uint32 orderid = 4;</code>
        */
       public int getOrderid() {
         return instance.getOrderid();
       }
       /**
-       * <code>optional uint32 orderid = 5;</code>
+       * <code>optional uint32 orderid = 4;</code>
        */
       public Builder setOrderid(int value) {
         copyOnWrite();
@@ -23536,7 +23496,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint32 orderid = 5;</code>
+       * <code>optional uint32 orderid = 4;</code>
        */
       public Builder clearOrderid() {
         copyOnWrite();
@@ -23570,8 +23530,6 @@ public final class ProtoGlobal {
           value_ = visitor.visitString(!value_.isEmpty(), value_,
               !other.value_.isEmpty(), other.value_);
           actiontype_ = visitor.visitInt(actiontype_ != 0, actiontype_,    other.actiontype_ != 0, other.actiontype_);
-          height_ = visitor.visitInt(height_ != 0, height_,
-              other.height_ != 0, other.height_);
           orderid_ = visitor.visitInt(orderid_ != 0, orderid_,
               other.orderid_ != 0, other.orderid_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
@@ -23617,11 +23575,6 @@ public final class ProtoGlobal {
                   break;
                 }
                 case 32: {
-
-                  height_ = input.readUInt32();
-                  break;
-                }
-                case 40: {
 
                   orderid_ = input.readUInt32();
                   break;
@@ -23686,16 +23639,21 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel getModel();
 
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>optional uint32 height = 2;</code>
+     */
+    int getHeight();
+
+    /**
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     java.util.List<net.iGap.proto.ProtoGlobal.DiscoveryField> 
         getDiscoveryfieldsList();
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     net.iGap.proto.ProtoGlobal.DiscoveryField getDiscoveryfields(int index);
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     int getDiscoveryfieldsCount();
   }
@@ -23853,35 +23811,58 @@ public final class ProtoGlobal {
       model_ = 0;
     }
 
-    public static final int DISCOVERYFIELDS_FIELD_NUMBER = 2;
+    public static final int HEIGHT_FIELD_NUMBER = 2;
+    private int height_;
+    /**
+     * <code>optional uint32 height = 2;</code>
+     */
+    public int getHeight() {
+      return height_;
+    }
+    /**
+     * <code>optional uint32 height = 2;</code>
+     */
+    private void setHeight(int value) {
+      
+      height_ = value;
+    }
+    /**
+     * <code>optional uint32 height = 2;</code>
+     */
+    private void clearHeight() {
+      
+      height_ = 0;
+    }
+
+    public static final int DISCOVERYFIELDS_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoGlobal.DiscoveryField> discoveryfields_;
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     public java.util.List<net.iGap.proto.ProtoGlobal.DiscoveryField> getDiscoveryfieldsList() {
       return discoveryfields_;
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     public java.util.List<? extends net.iGap.proto.ProtoGlobal.DiscoveryFieldOrBuilder> 
         getDiscoveryfieldsOrBuilderList() {
       return discoveryfields_;
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     public int getDiscoveryfieldsCount() {
       return discoveryfields_.size();
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     public net.iGap.proto.ProtoGlobal.DiscoveryField getDiscoveryfields(int index) {
       return discoveryfields_.get(index);
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     public net.iGap.proto.ProtoGlobal.DiscoveryFieldOrBuilder getDiscoveryfieldsOrBuilder(
         int index) {
@@ -23895,7 +23876,7 @@ public final class ProtoGlobal {
     }
 
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void setDiscoveryfields(
         int index, net.iGap.proto.ProtoGlobal.DiscoveryField value) {
@@ -23906,7 +23887,7 @@ public final class ProtoGlobal {
       discoveryfields_.set(index, value);
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void setDiscoveryfields(
         int index, net.iGap.proto.ProtoGlobal.DiscoveryField.Builder builderForValue) {
@@ -23914,7 +23895,7 @@ public final class ProtoGlobal {
       discoveryfields_.set(index, builderForValue.build());
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void addDiscoveryfields(net.iGap.proto.ProtoGlobal.DiscoveryField value) {
       if (value == null) {
@@ -23924,7 +23905,7 @@ public final class ProtoGlobal {
       discoveryfields_.add(value);
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void addDiscoveryfields(
         int index, net.iGap.proto.ProtoGlobal.DiscoveryField value) {
@@ -23935,7 +23916,7 @@ public final class ProtoGlobal {
       discoveryfields_.add(index, value);
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void addDiscoveryfields(
         net.iGap.proto.ProtoGlobal.DiscoveryField.Builder builderForValue) {
@@ -23943,7 +23924,7 @@ public final class ProtoGlobal {
       discoveryfields_.add(builderForValue.build());
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void addDiscoveryfields(
         int index, net.iGap.proto.ProtoGlobal.DiscoveryField.Builder builderForValue) {
@@ -23951,7 +23932,7 @@ public final class ProtoGlobal {
       discoveryfields_.add(index, builderForValue.build());
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void addAllDiscoveryfields(
         java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.DiscoveryField> values) {
@@ -23960,13 +23941,13 @@ public final class ProtoGlobal {
           values, discoveryfields_);
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void clearDiscoveryfields() {
       discoveryfields_ = emptyProtobufList();
     }
     /**
-     * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+     * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
      */
     private void removeDiscoveryfields(int index) {
       ensureDiscoveryfieldsIsMutable();
@@ -23978,8 +23959,11 @@ public final class ProtoGlobal {
       if (model_ != net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.MODEL1.getNumber()) {
         output.writeEnum(1, model_);
       }
+      if (height_ != 0) {
+        output.writeUInt32(2, height_);
+      }
       for (int i = 0; i < discoveryfields_.size(); i++) {
-        output.writeMessage(2, discoveryfields_.get(i));
+        output.writeMessage(3, discoveryfields_.get(i));
       }
     }
 
@@ -23992,9 +23976,13 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, model_);
       }
+      if (height_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, height_);
+      }
       for (int i = 0; i < discoveryfields_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, discoveryfields_.get(i));
+          .computeMessageSize(3, discoveryfields_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -24120,25 +24108,48 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>optional uint32 height = 2;</code>
+       */
+      public int getHeight() {
+        return instance.getHeight();
+      }
+      /**
+       * <code>optional uint32 height = 2;</code>
+       */
+      public Builder setHeight(int value) {
+        copyOnWrite();
+        instance.setHeight(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 height = 2;</code>
+       */
+      public Builder clearHeight() {
+        copyOnWrite();
+        instance.clearHeight();
+        return this;
+      }
+
+      /**
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGlobal.DiscoveryField> getDiscoveryfieldsList() {
         return java.util.Collections.unmodifiableList(
             instance.getDiscoveryfieldsList());
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public int getDiscoveryfieldsCount() {
         return instance.getDiscoveryfieldsCount();
       }/**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.DiscoveryField getDiscoveryfields(int index) {
         return instance.getDiscoveryfields(index);
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder setDiscoveryfields(
           int index, net.iGap.proto.ProtoGlobal.DiscoveryField value) {
@@ -24147,7 +24158,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder setDiscoveryfields(
           int index, net.iGap.proto.ProtoGlobal.DiscoveryField.Builder builderForValue) {
@@ -24156,7 +24167,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder addDiscoveryfields(net.iGap.proto.ProtoGlobal.DiscoveryField value) {
         copyOnWrite();
@@ -24164,7 +24175,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder addDiscoveryfields(
           int index, net.iGap.proto.ProtoGlobal.DiscoveryField value) {
@@ -24173,7 +24184,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder addDiscoveryfields(
           net.iGap.proto.ProtoGlobal.DiscoveryField.Builder builderForValue) {
@@ -24182,7 +24193,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder addDiscoveryfields(
           int index, net.iGap.proto.ProtoGlobal.DiscoveryField.Builder builderForValue) {
@@ -24191,7 +24202,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder addAllDiscoveryfields(
           java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.DiscoveryField> values) {
@@ -24200,7 +24211,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder clearDiscoveryfields() {
         copyOnWrite();
@@ -24208,7 +24219,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>repeated .proto.DiscoveryField discoveryfields = 2;</code>
+       * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
        */
       public Builder removeDiscoveryfields(int index) {
         copyOnWrite();
@@ -24239,6 +24250,8 @@ public final class ProtoGlobal {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoGlobal.Discovery other = (net.iGap.proto.ProtoGlobal.Discovery) arg1;
           model_ = visitor.visitInt(model_ != 0, model_,    other.model_ != 0, other.model_);
+          height_ = visitor.visitInt(height_ != 0, height_,
+              other.height_ != 0, other.height_);
           discoveryfields_= visitor.visitList(discoveryfields_, other.discoveryfields_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
@@ -24271,7 +24284,12 @@ public final class ProtoGlobal {
                   model_ = rawValue;
                   break;
                 }
-                case 18: {
+                case 16: {
+
+                  height_ = input.readUInt32();
+                  break;
+                }
+                case 26: {
                   if (!discoveryfields_.isModifiable()) {
                     discoveryfields_ =
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(discoveryfields_);
