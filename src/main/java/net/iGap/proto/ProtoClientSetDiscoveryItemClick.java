@@ -400,8 +400,8 @@ public final class ProtoClientSetDiscoveryItemClick {
     }
   }
 
-  public interface ClientGetDiscoveryResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.ClientGetDiscoveryResponse)
+  public interface ClientSetDiscoveryItemClickResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ClientSetDiscoveryItemClickResponse)
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
@@ -414,14 +414,14 @@ public final class ProtoClientSetDiscoveryItemClick {
     net.iGap.proto.ProtoResponse.Response getResponse();
   }
   /**
-   * Protobuf type {@code proto.ClientGetDiscoveryResponse}
+   * Protobuf type {@code proto.ClientSetDiscoveryItemClickResponse}
    */
-  public  static final class ClientGetDiscoveryResponse extends
+  public  static final class ClientSetDiscoveryItemClickResponse extends
       com.google.protobuf.GeneratedMessageLite<
-          ClientGetDiscoveryResponse, ClientGetDiscoveryResponse.Builder> implements
-      // @@protoc_insertion_point(message_implements:proto.ClientGetDiscoveryResponse)
-      ClientGetDiscoveryResponseOrBuilder {
-    private ClientGetDiscoveryResponse() {
+          ClientSetDiscoveryItemClickResponse, ClientSetDiscoveryItemClickResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.ClientSetDiscoveryItemClickResponse)
+      ClientSetDiscoveryItemClickResponseOrBuilder {
+    private ClientSetDiscoveryItemClickResponse() {
     }
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
@@ -495,60 +495,60 @@ public final class ProtoClientSetDiscoveryItemClick {
       return size;
     }
 
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(byte[] data)
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(java.io.InputStream input)
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseDelimitedFrom(java.io.InputStream input)
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseDelimitedFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse parseFrom(
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -559,19 +559,19 @@ public final class ProtoClientSetDiscoveryItemClick {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse prototype) {
+    public static Builder newBuilder(net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
     /**
-     * Protobuf type {@code proto.ClientGetDiscoveryResponse}
+     * Protobuf type {@code proto.ClientSetDiscoveryItemClickResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse, Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.ClientGetDiscoveryResponse)
-        net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponseOrBuilder {
-      // Construct using net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse.newBuilder()
+          net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ClientSetDiscoveryItemClickResponse)
+        net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponseOrBuilder {
+      // Construct using net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
       }
@@ -622,14 +622,14 @@ public final class ProtoClientSetDiscoveryItemClick {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:proto.ClientGetDiscoveryResponse)
+      // @@protoc_insertion_point(builder_scope:proto.ClientSetDiscoveryItemClickResponse)
     }
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse();
+          return new net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -642,7 +642,7 @@ public final class ProtoClientSetDiscoveryItemClick {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse other = (net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse) arg1;
+          net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse other = (net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse) arg1;
           response_ = visitor.visitMessage(response_, other.response_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
@@ -696,7 +696,7 @@ public final class ProtoClientSetDiscoveryItemClick {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse.class) {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -709,20 +709,20 @@ public final class ProtoClientSetDiscoveryItemClick {
     }
 
 
-    // @@protoc_insertion_point(class_scope:proto.ClientGetDiscoveryResponse)
-    private static final net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:proto.ClientSetDiscoveryItemClickResponse)
+    private static final net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetDiscoveryResponse();
+      DEFAULT_INSTANCE = new ClientSetDiscoveryItemClickResponse();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientGetDiscoveryResponse getDefaultInstance() {
+    public static net.iGap.proto.ProtoClientSetDiscoveryItemClick.ClientSetDiscoveryItemClickResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetDiscoveryResponse> PARSER;
+    private static volatile com.google.protobuf.Parser<ClientSetDiscoveryItemClickResponse> PARSER;
 
-    public static com.google.protobuf.Parser<ClientGetDiscoveryResponse> parser() {
+    public static com.google.protobuf.Parser<ClientSetDiscoveryItemClickResponse> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }
