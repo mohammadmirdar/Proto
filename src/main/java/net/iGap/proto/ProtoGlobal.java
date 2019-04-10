@@ -23768,6 +23768,10 @@ public final class ProtoGlobal {
        * <code>MODEL6 = 5;</code>
        */
       MODEL6(5),
+      /**
+       * <code>MODEL7 = 6;</code>
+       */
+      MODEL7(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -23795,6 +23799,10 @@ public final class ProtoGlobal {
        * <code>MODEL6 = 5;</code>
        */
       public static final int MODEL6_VALUE = 5;
+      /**
+       * <code>MODEL7 = 6;</code>
+       */
+      public static final int MODEL7_VALUE = 6;
 
 
       public final int getNumber() {
@@ -23817,6 +23825,7 @@ public final class ProtoGlobal {
           case 3: return MODEL4;
           case 4: return MODEL5;
           case 5: return MODEL6;
+          case 6: return MODEL7;
           default: return null;
         }
       }
