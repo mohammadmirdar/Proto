@@ -22818,6 +22818,11 @@ public final class ProtoGlobal {
      * <code>optional uint32 orderid = 4;</code>
      */
     int getOrderid();
+
+    /**
+     * <code>optional uint32 id = 5;</code>
+     */
+    int getId();
   }
   /**
    * Protobuf type {@code proto.DiscoveryField}
@@ -23241,6 +23246,29 @@ public final class ProtoGlobal {
       orderid_ = 0;
     }
 
+    public static final int ID_FIELD_NUMBER = 5;
+    private int id_;
+    /**
+     * <code>optional uint32 id = 5;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+    /**
+     * <code>optional uint32 id = 5;</code>
+     */
+    private void setId(int value) {
+      
+      id_ = value;
+    }
+    /**
+     * <code>optional uint32 id = 5;</code>
+     */
+    private void clearId() {
+      
+      id_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!imageurl_.isEmpty()) {
@@ -23254,6 +23282,9 @@ public final class ProtoGlobal {
       }
       if (orderid_ != 0) {
         output.writeUInt32(4, orderid_);
+      }
+      if (id_ != 0) {
+        output.writeUInt32(5, id_);
       }
     }
 
@@ -23277,6 +23308,10 @@ public final class ProtoGlobal {
       if (orderid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, orderid_);
+      }
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, id_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -23504,6 +23539,29 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional uint32 id = 5;</code>
+       */
+      public int getId() {
+        return instance.getId();
+      }
+      /**
+       * <code>optional uint32 id = 5;</code>
+       */
+      public Builder setId(int value) {
+        copyOnWrite();
+        instance.setId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 id = 5;</code>
+       */
+      public Builder clearId() {
+        copyOnWrite();
+        instance.clearId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.DiscoveryField)
     }
     protected final Object dynamicMethod(
@@ -23532,6 +23590,8 @@ public final class ProtoGlobal {
           actiontype_ = visitor.visitInt(actiontype_ != 0, actiontype_,    other.actiontype_ != 0, other.actiontype_);
           orderid_ = visitor.visitInt(orderid_ != 0, orderid_,
               other.orderid_ != 0, other.orderid_);
+          id_ = visitor.visitInt(id_ != 0, id_,
+              other.id_ != 0, other.id_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -23577,6 +23637,11 @@ public final class ProtoGlobal {
                 case 32: {
 
                   orderid_ = input.readUInt32();
+                  break;
+                }
+                case 40: {
+
+                  id_ = input.readUInt32();
                   break;
                 }
               }
@@ -23639,9 +23704,14 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel getModel();
 
     /**
-     * <code>optional uint32 height = 2;</code>
+     * <code>optional string scale = 2;</code>
      */
-    int getHeight();
+    java.lang.String getScale();
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getScaleBytes();
 
     /**
      * <code>repeated .proto.DiscoveryField discoveryfields = 3;</code>
@@ -23666,6 +23736,7 @@ public final class ProtoGlobal {
       // @@protoc_insertion_point(message_implements:proto.Discovery)
       DiscoveryOrBuilder {
     private Discovery() {
+      scale_ = "";
       discoveryfields_ = emptyProtobufList();
     }
     /**
@@ -23811,27 +23882,50 @@ public final class ProtoGlobal {
       model_ = 0;
     }
 
-    public static final int HEIGHT_FIELD_NUMBER = 2;
-    private int height_;
+    public static final int SCALE_FIELD_NUMBER = 2;
+    private java.lang.String scale_;
     /**
-     * <code>optional uint32 height = 2;</code>
+     * <code>optional string scale = 2;</code>
      */
-    public int getHeight() {
-      return height_;
+    public java.lang.String getScale() {
+      return scale_;
     }
     /**
-     * <code>optional uint32 height = 2;</code>
+     * <code>optional string scale = 2;</code>
      */
-    private void setHeight(int value) {
-      
-      height_ = value;
+    public com.google.protobuf.ByteString
+        getScaleBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(scale_);
     }
     /**
-     * <code>optional uint32 height = 2;</code>
+     * <code>optional string scale = 2;</code>
      */
-    private void clearHeight() {
+    private void setScale(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      scale_ = value;
+    }
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    private void clearScale() {
       
-      height_ = 0;
+      scale_ = getDefaultInstance().getScale();
+    }
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    private void setScaleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      scale_ = value.toStringUtf8();
     }
 
     public static final int DISCOVERYFIELDS_FIELD_NUMBER = 3;
@@ -23959,8 +24053,8 @@ public final class ProtoGlobal {
       if (model_ != net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.MODEL1.getNumber()) {
         output.writeEnum(1, model_);
       }
-      if (height_ != 0) {
-        output.writeUInt32(2, height_);
+      if (!scale_.isEmpty()) {
+        output.writeString(2, getScale());
       }
       for (int i = 0; i < discoveryfields_.size(); i++) {
         output.writeMessage(3, discoveryfields_.get(i));
@@ -23976,9 +24070,9 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, model_);
       }
-      if (height_ != 0) {
+      if (!scale_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, height_);
+          .computeStringSize(2, getScale());
       }
       for (int i = 0; i < discoveryfields_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -24108,25 +24202,42 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint32 height = 2;</code>
+       * <code>optional string scale = 2;</code>
        */
-      public int getHeight() {
-        return instance.getHeight();
+      public java.lang.String getScale() {
+        return instance.getScale();
       }
       /**
-       * <code>optional uint32 height = 2;</code>
+       * <code>optional string scale = 2;</code>
        */
-      public Builder setHeight(int value) {
+      public com.google.protobuf.ByteString
+          getScaleBytes() {
+        return instance.getScaleBytes();
+      }
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public Builder setScale(
+          java.lang.String value) {
         copyOnWrite();
-        instance.setHeight(value);
+        instance.setScale(value);
         return this;
       }
       /**
-       * <code>optional uint32 height = 2;</code>
+       * <code>optional string scale = 2;</code>
        */
-      public Builder clearHeight() {
+      public Builder clearScale() {
         copyOnWrite();
-        instance.clearHeight();
+        instance.clearScale();
+        return this;
+      }
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public Builder setScaleBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setScaleBytes(value);
         return this;
       }
 
@@ -24250,8 +24361,8 @@ public final class ProtoGlobal {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoGlobal.Discovery other = (net.iGap.proto.ProtoGlobal.Discovery) arg1;
           model_ = visitor.visitInt(model_ != 0, model_,    other.model_ != 0, other.model_);
-          height_ = visitor.visitInt(height_ != 0, height_,
-              other.height_ != 0, other.height_);
+          scale_ = visitor.visitString(!scale_.isEmpty(), scale_,
+              !other.scale_.isEmpty(), other.scale_);
           discoveryfields_= visitor.visitList(discoveryfields_, other.discoveryfields_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
@@ -24284,9 +24395,10 @@ public final class ProtoGlobal {
                   model_ = rawValue;
                   break;
                 }
-                case 16: {
+                case 18: {
+                  String s = input.readStringRequireUtf8();
 
-                  height_ = input.readUInt32();
+                  scale_ = s;
                   break;
                 }
                 case 26: {
