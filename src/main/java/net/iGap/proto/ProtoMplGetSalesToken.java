@@ -27,9 +27,29 @@ public final class ProtoMplGetSalesToken {
     long getAmount();
 
     /**
-     * <code>optional uint64 bot_id = 3;</code>
+     * <code>optional uint64 to_user_id = 3;</code>
      */
-    long getBotId();
+    long getToUserId();
+
+    /**
+     * <code>optional uint64 invoice_number = 4;</code>
+     */
+    long getInvoiceNumber();
+
+    /**
+     * <code>optional bool inquiry = 5;</code>
+     */
+    boolean getInquiry();
+
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
   }
   /**
    * Protobuf type {@code proto.MplGetSalesToken}
@@ -40,6 +60,7 @@ public final class ProtoMplGetSalesToken {
       // @@protoc_insertion_point(message_implements:proto.MplGetSalesToken)
       MplGetSalesTokenOrBuilder {
     private MplGetSalesToken() {
+      description_ = "";
     }
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
@@ -116,27 +137,119 @@ public final class ProtoMplGetSalesToken {
       amount_ = 0L;
     }
 
-    public static final int BOT_ID_FIELD_NUMBER = 3;
-    private long botId_;
+    public static final int TO_USER_ID_FIELD_NUMBER = 3;
+    private long toUserId_;
     /**
-     * <code>optional uint64 bot_id = 3;</code>
+     * <code>optional uint64 to_user_id = 3;</code>
      */
-    public long getBotId() {
-      return botId_;
+    public long getToUserId() {
+      return toUserId_;
     }
     /**
-     * <code>optional uint64 bot_id = 3;</code>
+     * <code>optional uint64 to_user_id = 3;</code>
      */
-    private void setBotId(long value) {
+    private void setToUserId(long value) {
       
-      botId_ = value;
+      toUserId_ = value;
     }
     /**
-     * <code>optional uint64 bot_id = 3;</code>
+     * <code>optional uint64 to_user_id = 3;</code>
      */
-    private void clearBotId() {
+    private void clearToUserId() {
       
-      botId_ = 0L;
+      toUserId_ = 0L;
+    }
+
+    public static final int INVOICE_NUMBER_FIELD_NUMBER = 4;
+    private long invoiceNumber_;
+    /**
+     * <code>optional uint64 invoice_number = 4;</code>
+     */
+    public long getInvoiceNumber() {
+      return invoiceNumber_;
+    }
+    /**
+     * <code>optional uint64 invoice_number = 4;</code>
+     */
+    private void setInvoiceNumber(long value) {
+      
+      invoiceNumber_ = value;
+    }
+    /**
+     * <code>optional uint64 invoice_number = 4;</code>
+     */
+    private void clearInvoiceNumber() {
+      
+      invoiceNumber_ = 0L;
+    }
+
+    public static final int INQUIRY_FIELD_NUMBER = 5;
+    private boolean inquiry_;
+    /**
+     * <code>optional bool inquiry = 5;</code>
+     */
+    public boolean getInquiry() {
+      return inquiry_;
+    }
+    /**
+     * <code>optional bool inquiry = 5;</code>
+     */
+    private void setInquiry(boolean value) {
+      
+      inquiry_ = value;
+    }
+    /**
+     * <code>optional bool inquiry = 5;</code>
+     */
+    private void clearInquiry() {
+      
+      inquiry_ = false;
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
+    private java.lang.String description_;
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    public java.lang.String getDescription() {
+      return description_;
+    }
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(description_);
+    }
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    private void setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+    }
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    private void clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+    }
+    /**
+     * <code>optional string description = 6;</code>
+     */
+    private void setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value.toStringUtf8();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -147,8 +260,17 @@ public final class ProtoMplGetSalesToken {
       if (amount_ != 0L) {
         output.writeUInt64(2, amount_);
       }
-      if (botId_ != 0L) {
-        output.writeUInt64(3, botId_);
+      if (toUserId_ != 0L) {
+        output.writeUInt64(3, toUserId_);
+      }
+      if (invoiceNumber_ != 0L) {
+        output.writeUInt64(4, invoiceNumber_);
+      }
+      if (inquiry_ != false) {
+        output.writeBool(5, inquiry_);
+      }
+      if (!description_.isEmpty()) {
+        output.writeString(6, getDescription());
       }
     }
 
@@ -165,9 +287,21 @@ public final class ProtoMplGetSalesToken {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, amount_);
       }
-      if (botId_ != 0L) {
+      if (toUserId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, botId_);
+          .computeUInt64Size(3, toUserId_);
+      }
+      if (invoiceNumber_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, invoiceNumber_);
+      }
+      if (inquiry_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, inquiry_);
+      }
+      if (!description_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(6, getDescription());
       }
       memoizedSerializedSize = size;
       return size;
@@ -324,25 +458,111 @@ public final class ProtoMplGetSalesToken {
       }
 
       /**
-       * <code>optional uint64 bot_id = 3;</code>
+       * <code>optional uint64 to_user_id = 3;</code>
        */
-      public long getBotId() {
-        return instance.getBotId();
+      public long getToUserId() {
+        return instance.getToUserId();
       }
       /**
-       * <code>optional uint64 bot_id = 3;</code>
+       * <code>optional uint64 to_user_id = 3;</code>
        */
-      public Builder setBotId(long value) {
+      public Builder setToUserId(long value) {
         copyOnWrite();
-        instance.setBotId(value);
+        instance.setToUserId(value);
         return this;
       }
       /**
-       * <code>optional uint64 bot_id = 3;</code>
+       * <code>optional uint64 to_user_id = 3;</code>
        */
-      public Builder clearBotId() {
+      public Builder clearToUserId() {
         copyOnWrite();
-        instance.clearBotId();
+        instance.clearToUserId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 invoice_number = 4;</code>
+       */
+      public long getInvoiceNumber() {
+        return instance.getInvoiceNumber();
+      }
+      /**
+       * <code>optional uint64 invoice_number = 4;</code>
+       */
+      public Builder setInvoiceNumber(long value) {
+        copyOnWrite();
+        instance.setInvoiceNumber(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 invoice_number = 4;</code>
+       */
+      public Builder clearInvoiceNumber() {
+        copyOnWrite();
+        instance.clearInvoiceNumber();
+        return this;
+      }
+
+      /**
+       * <code>optional bool inquiry = 5;</code>
+       */
+      public boolean getInquiry() {
+        return instance.getInquiry();
+      }
+      /**
+       * <code>optional bool inquiry = 5;</code>
+       */
+      public Builder setInquiry(boolean value) {
+        copyOnWrite();
+        instance.setInquiry(value);
+        return this;
+      }
+      /**
+       * <code>optional bool inquiry = 5;</code>
+       */
+      public Builder clearInquiry() {
+        copyOnWrite();
+        instance.clearInquiry();
+        return this;
+      }
+
+      /**
+       * <code>optional string description = 6;</code>
+       */
+      public java.lang.String getDescription() {
+        return instance.getDescription();
+      }
+      /**
+       * <code>optional string description = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        return instance.getDescriptionBytes();
+      }
+      /**
+       * <code>optional string description = 6;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setDescription(value);
+        return this;
+      }
+      /**
+       * <code>optional string description = 6;</code>
+       */
+      public Builder clearDescription() {
+        copyOnWrite();
+        instance.clearDescription();
+        return this;
+      }
+      /**
+       * <code>optional string description = 6;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setDescriptionBytes(value);
         return this;
       }
 
@@ -370,8 +590,14 @@ public final class ProtoMplGetSalesToken {
           request_ = visitor.visitMessage(request_, other.request_);
           amount_ = visitor.visitLong(amount_ != 0L, amount_,
               other.amount_ != 0L, other.amount_);
-          botId_ = visitor.visitLong(botId_ != 0L, botId_,
-              other.botId_ != 0L, other.botId_);
+          toUserId_ = visitor.visitLong(toUserId_ != 0L, toUserId_,
+              other.toUserId_ != 0L, other.toUserId_);
+          invoiceNumber_ = visitor.visitLong(invoiceNumber_ != 0L, invoiceNumber_,
+              other.invoiceNumber_ != 0L, other.invoiceNumber_);
+          inquiry_ = visitor.visitBoolean(inquiry_ != false, inquiry_,
+              other.inquiry_ != false, other.inquiry_);
+          description_ = visitor.visitString(!description_.isEmpty(), description_,
+              !other.description_.isEmpty(), other.description_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -416,7 +642,23 @@ public final class ProtoMplGetSalesToken {
                 }
                 case 24: {
 
-                  botId_ = input.readUInt64();
+                  toUserId_ = input.readUInt64();
+                  break;
+                }
+                case 32: {
+
+                  invoiceNumber_ = input.readUInt64();
+                  break;
+                }
+                case 40: {
+
+                  inquiry_ = input.readBool();
+                  break;
+                }
+                case 50: {
+                  String s = input.readStringRequireUtf8();
+
+                  description_ = s;
                   break;
                 }
               }
