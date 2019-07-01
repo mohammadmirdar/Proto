@@ -24631,6 +24631,36 @@ public final class ProtoGlobal {
      * <code>optional uint32 id = 5;</code>
      */
     int getId();
+
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    java.lang.String getParam();
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getParamBytes();
+
+    /**
+     * <code>optional bool agreement = 7;</code>
+     */
+    boolean getAgreement();
+
+    /**
+     * <code>optional bool refresh = 8;</code>
+     */
+    boolean getRefresh();
+
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    java.lang.String getAgreementSlug();
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getAgreementSlugBytes();
   }
   /**
    * Protobuf type {@code proto.DiscoveryField}
@@ -24643,6 +24673,8 @@ public final class ProtoGlobal {
     private DiscoveryField() {
       imageurl_ = "";
       value_ = "";
+      param_ = "";
+      agreementSlug_ = "";
     }
     /**
      * Protobuf enum {@code proto.DiscoveryField.ButtonActionType}
@@ -24761,6 +24793,14 @@ public final class ProtoGlobal {
        * <code>CARD_TO_CARD = 27;</code>
        */
       CARD_TO_CARD(27),
+      /**
+       * <code>FAVORITE_CHANNEL = 28;</code>
+       */
+      FAVORITE_CHANNEL(28),
+      /**
+       * <code>MUSIC = 29;</code>
+       */
+      MUSIC(29),
       UNRECOGNIZED(-1),
       ;
 
@@ -24876,6 +24916,14 @@ public final class ProtoGlobal {
        * <code>CARD_TO_CARD = 27;</code>
        */
       public static final int CARD_TO_CARD_VALUE = 27;
+      /**
+       * <code>FAVORITE_CHANNEL = 28;</code>
+       */
+      public static final int FAVORITE_CHANNEL_VALUE = 28;
+      /**
+       * <code>MUSIC = 29;</code>
+       */
+      public static final int MUSIC_VALUE = 29;
 
 
       public final int getNumber() {
@@ -24920,6 +24968,8 @@ public final class ProtoGlobal {
           case 25: return IVANDLIST;
           case 26: return IVANDSCORE;
           case 27: return CARD_TO_CARD;
+          case 28: return FAVORITE_CHANNEL;
+          case 29: return MUSIC;
           default: return null;
         }
       }
@@ -25122,6 +25172,144 @@ public final class ProtoGlobal {
       id_ = 0;
     }
 
+    public static final int PARAM_FIELD_NUMBER = 6;
+    private java.lang.String param_;
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    public java.lang.String getParam() {
+      return param_;
+    }
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getParamBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(param_);
+    }
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    private void setParam(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      param_ = value;
+    }
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    private void clearParam() {
+      
+      param_ = getDefaultInstance().getParam();
+    }
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    private void setParamBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      param_ = value.toStringUtf8();
+    }
+
+    public static final int AGREEMENT_FIELD_NUMBER = 7;
+    private boolean agreement_;
+    /**
+     * <code>optional bool agreement = 7;</code>
+     */
+    public boolean getAgreement() {
+      return agreement_;
+    }
+    /**
+     * <code>optional bool agreement = 7;</code>
+     */
+    private void setAgreement(boolean value) {
+      
+      agreement_ = value;
+    }
+    /**
+     * <code>optional bool agreement = 7;</code>
+     */
+    private void clearAgreement() {
+      
+      agreement_ = false;
+    }
+
+    public static final int REFRESH_FIELD_NUMBER = 8;
+    private boolean refresh_;
+    /**
+     * <code>optional bool refresh = 8;</code>
+     */
+    public boolean getRefresh() {
+      return refresh_;
+    }
+    /**
+     * <code>optional bool refresh = 8;</code>
+     */
+    private void setRefresh(boolean value) {
+      
+      refresh_ = value;
+    }
+    /**
+     * <code>optional bool refresh = 8;</code>
+     */
+    private void clearRefresh() {
+      
+      refresh_ = false;
+    }
+
+    public static final int AGREEMENTSLUG_FIELD_NUMBER = 9;
+    private java.lang.String agreementSlug_;
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    public java.lang.String getAgreementSlug() {
+      return agreementSlug_;
+    }
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgreementSlugBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(agreementSlug_);
+    }
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    private void setAgreementSlug(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      agreementSlug_ = value;
+    }
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    private void clearAgreementSlug() {
+      
+      agreementSlug_ = getDefaultInstance().getAgreementSlug();
+    }
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    private void setAgreementSlugBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      agreementSlug_ = value.toStringUtf8();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!imageurl_.isEmpty()) {
@@ -25138,6 +25326,18 @@ public final class ProtoGlobal {
       }
       if (id_ != 0) {
         output.writeUInt32(5, id_);
+      }
+      if (!param_.isEmpty()) {
+        output.writeString(6, getParam());
+      }
+      if (agreement_ != false) {
+        output.writeBool(7, agreement_);
+      }
+      if (refresh_ != false) {
+        output.writeBool(8, refresh_);
+      }
+      if (!agreementSlug_.isEmpty()) {
+        output.writeString(9, getAgreementSlug());
       }
     }
 
@@ -25165,6 +25365,22 @@ public final class ProtoGlobal {
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, id_);
+      }
+      if (!param_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(6, getParam());
+      }
+      if (agreement_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, agreement_);
+      }
+      if (refresh_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, refresh_);
+      }
+      if (!agreementSlug_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(9, getAgreementSlug());
       }
       memoizedSerializedSize = size;
       return size;
@@ -25415,6 +25631,132 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public java.lang.String getParam() {
+        return instance.getParam();
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getParamBytes() {
+        return instance.getParamBytes();
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public Builder setParam(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setParam(value);
+        return this;
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public Builder clearParam() {
+        copyOnWrite();
+        instance.clearParam();
+        return this;
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public Builder setParamBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setParamBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional bool agreement = 7;</code>
+       */
+      public boolean getAgreement() {
+        return instance.getAgreement();
+      }
+      /**
+       * <code>optional bool agreement = 7;</code>
+       */
+      public Builder setAgreement(boolean value) {
+        copyOnWrite();
+        instance.setAgreement(value);
+        return this;
+      }
+      /**
+       * <code>optional bool agreement = 7;</code>
+       */
+      public Builder clearAgreement() {
+        copyOnWrite();
+        instance.clearAgreement();
+        return this;
+      }
+
+      /**
+       * <code>optional bool refresh = 8;</code>
+       */
+      public boolean getRefresh() {
+        return instance.getRefresh();
+      }
+      /**
+       * <code>optional bool refresh = 8;</code>
+       */
+      public Builder setRefresh(boolean value) {
+        copyOnWrite();
+        instance.setRefresh(value);
+        return this;
+      }
+      /**
+       * <code>optional bool refresh = 8;</code>
+       */
+      public Builder clearRefresh() {
+        copyOnWrite();
+        instance.clearRefresh();
+        return this;
+      }
+
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public java.lang.String getAgreementSlug() {
+        return instance.getAgreementSlug();
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAgreementSlugBytes() {
+        return instance.getAgreementSlugBytes();
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public Builder setAgreementSlug(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setAgreementSlug(value);
+        return this;
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public Builder clearAgreementSlug() {
+        copyOnWrite();
+        instance.clearAgreementSlug();
+        return this;
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public Builder setAgreementSlugBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setAgreementSlugBytes(value);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.DiscoveryField)
     }
     protected final Object dynamicMethod(
@@ -25445,6 +25787,14 @@ public final class ProtoGlobal {
               other.orderid_ != 0, other.orderid_);
           id_ = visitor.visitInt(id_ != 0, id_,
               other.id_ != 0, other.id_);
+          param_ = visitor.visitString(!param_.isEmpty(), param_,
+              !other.param_.isEmpty(), other.param_);
+          agreement_ = visitor.visitBoolean(agreement_ != false, agreement_,
+              other.agreement_ != false, other.agreement_);
+          refresh_ = visitor.visitBoolean(refresh_ != false, refresh_,
+              other.refresh_ != false, other.refresh_);
+          agreementSlug_ = visitor.visitString(!agreementSlug_.isEmpty(), agreementSlug_,
+              !other.agreementSlug_.isEmpty(), other.agreementSlug_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -25495,6 +25845,28 @@ public final class ProtoGlobal {
                 case 40: {
 
                   id_ = input.readUInt32();
+                  break;
+                }
+                case 50: {
+                  String s = input.readStringRequireUtf8();
+
+                  param_ = s;
+                  break;
+                }
+                case 56: {
+
+                  agreement_ = input.readBool();
+                  break;
+                }
+                case 64: {
+
+                  refresh_ = input.readBool();
+                  break;
+                }
+                case 74: {
+                  String s = input.readStringRequireUtf8();
+
+                  agreementSlug_ = s;
                   break;
                 }
               }
