@@ -25,6 +25,15 @@ public final class ProtoSignalingClearLog {
      * <code>optional uint64 clear_id = 2;</code>
      */
     long getClearId();
+
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    int getClearTypeValue();
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType getClearType();
   }
   /**
    * Protobuf type {@code proto.SignalingClearLog}
@@ -36,6 +45,73 @@ public final class ProtoSignalingClearLog {
       SignalingClearLogOrBuilder {
     private SignalingClearLog() {
     }
+    /**
+     * Protobuf enum {@code proto.SignalingClearLog.ClearType}
+     */
+    public enum ClearType
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>ALL = 0;</code>
+       */
+      ALL(0),
+      /**
+       * <code>SINGLE = 1;</code>
+       */
+      SINGLE(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ALL = 0;</code>
+       */
+      public static final int ALL_VALUE = 0;
+      /**
+       * <code>SINGLE = 1;</code>
+       */
+      public static final int SINGLE_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ClearType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ClearType forNumber(int value) {
+        switch (value) {
+          case 0: return ALL;
+          case 1: return SINGLE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ClearType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ClearType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ClearType>() {
+              public ClearType findValueByNumber(int number) {
+                return ClearType.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private ClearType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.SignalingClearLog.ClearType)
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -111,6 +187,45 @@ public final class ProtoSignalingClearLog {
       clearId_ = 0L;
     }
 
+    public static final int CLEARTYPE_FIELD_NUMBER = 3;
+    private int clearType_;
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    public int getClearTypeValue() {
+      return clearType_;
+    }
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    public net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType getClearType() {
+      net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType result = net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType.forNumber(clearType_);
+      return result == null ? net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    private void setClearTypeValue(int value) {
+        clearType_ = value;
+    }
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    private void setClearType(net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      clearType_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+     */
+    private void clearClearType() {
+      
+      clearType_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -118,6 +233,9 @@ public final class ProtoSignalingClearLog {
       }
       if (clearId_ != 0L) {
         output.writeUInt64(2, clearId_);
+      }
+      if (clearType_ != net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType.ALL.getNumber()) {
+        output.writeEnum(3, clearType_);
       }
     }
 
@@ -133,6 +251,10 @@ public final class ProtoSignalingClearLog {
       if (clearId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, clearId_);
+      }
+      if (clearType_ != net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType.ALL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, clearType_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -288,6 +410,43 @@ public final class ProtoSignalingClearLog {
         return this;
       }
 
+      /**
+       * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+       */
+      public int getClearTypeValue() {
+        return instance.getClearTypeValue();
+      }
+      /**
+       * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+       */
+      public Builder setClearTypeValue(int value) {
+        copyOnWrite();
+        instance.setClearTypeValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+       */
+      public net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType getClearType() {
+        return instance.getClearType();
+      }
+      /**
+       * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+       */
+      public Builder setClearType(net.iGap.proto.ProtoSignalingClearLog.SignalingClearLog.ClearType value) {
+        copyOnWrite();
+        instance.setClearType(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.SignalingClearLog.ClearType clearType = 3;</code>
+       */
+      public Builder clearClearType() {
+        copyOnWrite();
+        instance.clearClearType();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.SignalingClearLog)
     }
     protected final Object dynamicMethod(
@@ -312,6 +471,7 @@ public final class ProtoSignalingClearLog {
           request_ = visitor.visitMessage(request_, other.request_);
           clearId_ = visitor.visitLong(clearId_ != 0L, clearId_,
               other.clearId_ != 0L, other.clearId_);
+          clearType_ = visitor.visitInt(clearType_ != 0, clearType_,    other.clearType_ != 0, other.clearType_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -352,6 +512,12 @@ public final class ProtoSignalingClearLog {
                 case 16: {
 
                   clearId_ = input.readUInt64();
+                  break;
+                }
+                case 24: {
+                  int rawValue = input.readEnum();
+
+                  clearType_ = rawValue;
                   break;
                 }
               }

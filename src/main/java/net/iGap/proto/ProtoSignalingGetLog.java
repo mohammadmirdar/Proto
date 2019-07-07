@@ -738,6 +738,11 @@ public final class ProtoSignalingGetLog {
        * <code>optional uint32 duration = 6;</code>
        */
       int getDuration();
+
+      /**
+       * <code>optional uint64 log_id = 7;</code>
+       */
+      long getLogId();
     }
     /**
      * Protobuf type {@code proto.SignalingGetLogResponse.SignalingLog}
@@ -1033,6 +1038,29 @@ public final class ProtoSignalingGetLog {
         duration_ = 0;
       }
 
+      public static final int LOG_ID_FIELD_NUMBER = 7;
+      private long logId_;
+      /**
+       * <code>optional uint64 log_id = 7;</code>
+       */
+      public long getLogId() {
+        return logId_;
+      }
+      /**
+       * <code>optional uint64 log_id = 7;</code>
+       */
+      private void setLogId(long value) {
+        
+        logId_ = value;
+      }
+      /**
+       * <code>optional uint64 log_id = 7;</code>
+       */
+      private void clearLogId() {
+        
+        logId_ = 0L;
+      }
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (id_ != 0L) {
@@ -1052,6 +1080,9 @@ public final class ProtoSignalingGetLog {
         }
         if (duration_ != 0) {
           output.writeUInt32(6, duration_);
+        }
+        if (logId_ != 0L) {
+          output.writeUInt64(7, logId_);
         }
       }
 
@@ -1083,6 +1114,10 @@ public final class ProtoSignalingGetLog {
         if (duration_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(6, duration_);
+        }
+        if (logId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(7, logId_);
         }
         memoizedSerializedSize = size;
         return size;
@@ -1358,6 +1393,29 @@ public final class ProtoSignalingGetLog {
           return this;
         }
 
+        /**
+         * <code>optional uint64 log_id = 7;</code>
+         */
+        public long getLogId() {
+          return instance.getLogId();
+        }
+        /**
+         * <code>optional uint64 log_id = 7;</code>
+         */
+        public Builder setLogId(long value) {
+          copyOnWrite();
+          instance.setLogId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 log_id = 7;</code>
+         */
+        public Builder clearLogId() {
+          copyOnWrite();
+          instance.clearLogId();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:proto.SignalingGetLogResponse.SignalingLog)
       }
       protected final Object dynamicMethod(
@@ -1388,6 +1446,8 @@ public final class ProtoSignalingGetLog {
                 other.offerTime_ != 0, other.offerTime_);
             duration_ = visitor.visitInt(duration_ != 0, duration_,
                 other.duration_ != 0, other.duration_);
+            logId_ = visitor.visitLong(logId_ != 0L, logId_,
+                other.logId_ != 0L, other.logId_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -1450,6 +1510,11 @@ public final class ProtoSignalingGetLog {
                   case 48: {
 
                     duration_ = input.readUInt32();
+                    break;
+                  }
+                  case 56: {
+
+                    logId_ = input.readUInt64();
                     break;
                   }
                 }
