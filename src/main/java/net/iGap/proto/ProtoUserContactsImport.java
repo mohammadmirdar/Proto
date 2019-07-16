@@ -39,6 +39,16 @@ public final class ProtoUserContactsImport {
      * <code>optional bool force = 3;</code>
      */
     boolean getForce();
+
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    java.lang.String getContactHash();
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getContactHashBytes();
   }
   /**
    * Protobuf type {@code proto.UserContactsImport}
@@ -50,6 +60,7 @@ public final class ProtoUserContactsImport {
       UserContactsImportOrBuilder {
     private UserContactsImport() {
       contacts_ = emptyProtobufList();
+      contactHash_ = "";
     }
     public interface ContactOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.UserContactsImport.Contact)
@@ -895,6 +906,52 @@ public final class ProtoUserContactsImport {
       force_ = false;
     }
 
+    public static final int CONTACT_HASH_FIELD_NUMBER = 4;
+    private java.lang.String contactHash_;
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    public java.lang.String getContactHash() {
+      return contactHash_;
+    }
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContactHashBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(contactHash_);
+    }
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    private void setContactHash(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      contactHash_ = value;
+    }
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    private void clearContactHash() {
+      
+      contactHash_ = getDefaultInstance().getContactHash();
+    }
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    private void setContactHashBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      contactHash_ = value.toStringUtf8();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -905,6 +962,9 @@ public final class ProtoUserContactsImport {
       }
       if (force_ != false) {
         output.writeBool(3, force_);
+      }
+      if (!contactHash_.isEmpty()) {
+        output.writeString(4, getContactHash());
       }
     }
 
@@ -924,6 +984,10 @@ public final class ProtoUserContactsImport {
       if (force_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, force_);
+      }
+      if (!contactHash_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, getContactHash());
       }
       memoizedSerializedSize = size;
       return size;
@@ -1176,6 +1240,46 @@ public final class ProtoUserContactsImport {
         return this;
       }
 
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public java.lang.String getContactHash() {
+        return instance.getContactHash();
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContactHashBytes() {
+        return instance.getContactHashBytes();
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public Builder setContactHash(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setContactHash(value);
+        return this;
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public Builder clearContactHash() {
+        copyOnWrite();
+        instance.clearContactHash();
+        return this;
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public Builder setContactHashBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setContactHashBytes(value);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserContactsImport)
     }
     protected final Object dynamicMethod(
@@ -1202,6 +1306,8 @@ public final class ProtoUserContactsImport {
           contacts_= visitor.visitList(contacts_, other.contacts_);
           force_ = visitor.visitBoolean(force_ != false, force_,
               other.force_ != false, other.force_);
+          contactHash_ = visitor.visitString(!contactHash_.isEmpty(), contactHash_,
+              !other.contactHash_.isEmpty(), other.contactHash_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
             bitField0_ |= other.bitField0_;
@@ -1252,6 +1358,12 @@ public final class ProtoUserContactsImport {
                 case 24: {
 
                   force_ = input.readBool();
+                  break;
+                }
+                case 34: {
+                  String s = input.readStringRequireUtf8();
+
+                  contactHash_ = s;
                   break;
                 }
               }
