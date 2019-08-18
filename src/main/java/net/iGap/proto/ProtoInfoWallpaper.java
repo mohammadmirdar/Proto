@@ -29,6 +29,15 @@ public final class ProtoInfoWallpaper {
      * <code>optional .proto.InfoWallpaper.Fit fit = 2;</code>
      */
     net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit getFit();
+
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type getType();
   }
   /**
    * Protobuf type {@code proto.InfoWallpaper}
@@ -114,6 +123,73 @@ public final class ProtoInfoWallpaper {
       }
 
       // @@protoc_insertion_point(enum_scope:proto.InfoWallpaper.Fit)
+    }
+
+    /**
+     * Protobuf enum {@code proto.InfoWallpaper.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>CHAT_BACKGROUND = 0;</code>
+       */
+      CHAT_BACKGROUND(0),
+      /**
+       * <code>PROFILE_WALLPAPER = 1;</code>
+       */
+      PROFILE_WALLPAPER(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CHAT_BACKGROUND = 0;</code>
+       */
+      public static final int CHAT_BACKGROUND_VALUE = 0;
+      /**
+       * <code>PROFILE_WALLPAPER = 1;</code>
+       */
+      public static final int PROFILE_WALLPAPER_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return CHAT_BACKGROUND;
+          case 1: return PROFILE_WALLPAPER;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.InfoWallpaper.Type)
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
@@ -207,6 +283,45 @@ public final class ProtoInfoWallpaper {
       fit_ = 0;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private int type_;
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    public net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type getType() {
+      net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type result = net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.forNumber(type_);
+      return result == null ? net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    private void setTypeValue(int value) {
+        type_ = value;
+    }
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    private void setType(net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    private void clearType() {
+      
+      type_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -214,6 +329,9 @@ public final class ProtoInfoWallpaper {
       }
       if (fit_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit.PHONE.getNumber()) {
         output.writeEnum(2, fit_);
+      }
+      if (type_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.CHAT_BACKGROUND.getNumber()) {
+        output.writeEnum(3, type_);
       }
     }
 
@@ -229,6 +347,10 @@ public final class ProtoInfoWallpaper {
       if (fit_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit.PHONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, fit_);
+      }
+      if (type_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.CHAT_BACKGROUND.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, type_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -398,6 +520,43 @@ public final class ProtoInfoWallpaper {
         return this;
       }
 
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public int getTypeValue() {
+        return instance.getTypeValue();
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public Builder setTypeValue(int value) {
+        copyOnWrite();
+        instance.setTypeValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type getType() {
+        return instance.getType();
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type value) {
+        copyOnWrite();
+        instance.setType(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public Builder clearType() {
+        copyOnWrite();
+        instance.clearType();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.InfoWallpaper)
     }
     protected final Object dynamicMethod(
@@ -421,6 +580,7 @@ public final class ProtoInfoWallpaper {
           net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper other = (net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper) arg1;
           request_ = visitor.visitMessage(request_, other.request_);
           fit_ = visitor.visitInt(fit_ != 0, fit_,    other.fit_ != 0, other.fit_);
+          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -462,6 +622,12 @@ public final class ProtoInfoWallpaper {
                   int rawValue = input.readEnum();
 
                   fit_ = rawValue;
+                  break;
+                }
+                case 24: {
+                  int rawValue = input.readEnum();
+
+                  type_ = rawValue;
                   break;
                 }
               }
