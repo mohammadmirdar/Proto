@@ -44,6 +44,11 @@ public final class ProtoUserRegister {
      * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
      */
     net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod();
+
+    /**
+     * <code>optional uint32 app_id = 5;</code>
+     */
+    int getAppId();
   }
   /**
    * Protobuf type {@code proto.UserRegister}
@@ -292,6 +297,29 @@ public final class ProtoUserRegister {
       preferenceMethod_ = 0;
     }
 
+    public static final int APP_ID_FIELD_NUMBER = 5;
+    private int appId_;
+    /**
+     * <code>optional uint32 app_id = 5;</code>
+     */
+    public int getAppId() {
+      return appId_;
+    }
+    /**
+     * <code>optional uint32 app_id = 5;</code>
+     */
+    private void setAppId(int value) {
+      
+      appId_ = value;
+    }
+    /**
+     * <code>optional uint32 app_id = 5;</code>
+     */
+    private void clearAppId() {
+      
+      appId_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -305,6 +333,9 @@ public final class ProtoUserRegister {
       }
       if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
         output.writeEnum(4, preferenceMethod_);
+      }
+      if (appId_ != 0) {
+        output.writeUInt32(5, appId_);
       }
     }
 
@@ -328,6 +359,10 @@ public final class ProtoUserRegister {
       if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, preferenceMethod_);
+      }
+      if (appId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, appId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -560,6 +595,29 @@ public final class ProtoUserRegister {
         return this;
       }
 
+      /**
+       * <code>optional uint32 app_id = 5;</code>
+       */
+      public int getAppId() {
+        return instance.getAppId();
+      }
+      /**
+       * <code>optional uint32 app_id = 5;</code>
+       */
+      public Builder setAppId(int value) {
+        copyOnWrite();
+        instance.setAppId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 app_id = 5;</code>
+       */
+      public Builder clearAppId() {
+        copyOnWrite();
+        instance.clearAppId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserRegister)
     }
     protected final Object dynamicMethod(
@@ -587,6 +645,8 @@ public final class ProtoUserRegister {
           countryCode_ = visitor.visitString(!countryCode_.isEmpty(), countryCode_,
               !other.countryCode_.isEmpty(), other.countryCode_);
           preferenceMethod_ = visitor.visitInt(preferenceMethod_ != 0, preferenceMethod_,    other.preferenceMethod_ != 0, other.preferenceMethod_);
+          appId_ = visitor.visitInt(appId_ != 0, appId_,
+              other.appId_ != 0, other.appId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -639,6 +699,11 @@ public final class ProtoUserRegister {
                   int rawValue = input.readEnum();
 
                   preferenceMethod_ = rawValue;
+                  break;
+                }
+                case 40: {
+
+                  appId_ = input.readUInt32();
                   break;
                 }
               }

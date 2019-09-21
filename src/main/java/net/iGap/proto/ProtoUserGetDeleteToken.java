@@ -20,6 +20,11 @@ public final class ProtoUserGetDeleteToken {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+
+    /**
+     * <code>optional uint32 app_id = 2;</code>
+     */
+    int getAppId();
   }
   /**
    * Protobuf type {@code proto.UserGetDeleteToken}
@@ -83,10 +88,36 @@ public final class ProtoUserGetDeleteToken {
       
     }
 
+    public static final int APP_ID_FIELD_NUMBER = 2;
+    private int appId_;
+    /**
+     * <code>optional uint32 app_id = 2;</code>
+     */
+    public int getAppId() {
+      return appId_;
+    }
+    /**
+     * <code>optional uint32 app_id = 2;</code>
+     */
+    private void setAppId(int value) {
+      
+      appId_ = value;
+    }
+    /**
+     * <code>optional uint32 app_id = 2;</code>
+     */
+    private void clearAppId() {
+      
+      appId_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
+      }
+      if (appId_ != 0) {
+        output.writeUInt32(2, appId_);
       }
     }
 
@@ -98,6 +129,10 @@ public final class ProtoUserGetDeleteToken {
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
+      }
+      if (appId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, appId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -230,6 +265,29 @@ public final class ProtoUserGetDeleteToken {
         return this;
       }
 
+      /**
+       * <code>optional uint32 app_id = 2;</code>
+       */
+      public int getAppId() {
+        return instance.getAppId();
+      }
+      /**
+       * <code>optional uint32 app_id = 2;</code>
+       */
+      public Builder setAppId(int value) {
+        copyOnWrite();
+        instance.setAppId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 app_id = 2;</code>
+       */
+      public Builder clearAppId() {
+        copyOnWrite();
+        instance.clearAppId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserGetDeleteToken)
     }
     protected final Object dynamicMethod(
@@ -252,6 +310,8 @@ public final class ProtoUserGetDeleteToken {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken other = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken) arg1;
           request_ = visitor.visitMessage(request_, other.request_);
+          appId_ = visitor.visitInt(appId_ != 0, appId_,
+              other.appId_ != 0, other.appId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -287,6 +347,11 @@ public final class ProtoUserGetDeleteToken {
                     request_ = subBuilder.buildPartial();
                   }
 
+                  break;
+                }
+                case 16: {
+
+                  appId_ = input.readUInt32();
                   break;
                 }
               }
