@@ -24829,6 +24829,10 @@ public final class ProtoGlobal {
        * <code>FINANCIAL_HISTORY = 36;</code>
        */
       FINANCIAL_HISTORY(36),
+      /**
+       * <code>INVITE_FRIEND = 37;</code>
+       */
+      INVITE_FRIEND(37),
       UNRECOGNIZED(-1),
       ;
 
@@ -24980,6 +24984,10 @@ public final class ProtoGlobal {
        * <code>FINANCIAL_HISTORY = 36;</code>
        */
       public static final int FINANCIAL_HISTORY_VALUE = 36;
+      /**
+       * <code>INVITE_FRIEND = 37;</code>
+       */
+      public static final int INVITE_FRIEND_VALUE = 37;
 
 
       public final int getNumber() {
@@ -25033,6 +25041,7 @@ public final class ProtoGlobal {
           case 34: return POLL;
           case 35: return INTERNET_PACKAGE_MENU;
           case 36: return FINANCIAL_HISTORY;
+          case 37: return INVITE_FRIEND;
           default: return null;
         }
       }
