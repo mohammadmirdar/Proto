@@ -24833,6 +24833,10 @@ public final class ProtoGlobal {
        * <code>INVITE_FRIEND = 37;</code>
        */
       INVITE_FRIEND(37),
+      /**
+       * <code>NEWS = 38;</code>
+       */
+      NEWS(38),
       UNRECOGNIZED(-1),
       ;
 
@@ -24988,6 +24992,10 @@ public final class ProtoGlobal {
        * <code>INVITE_FRIEND = 37;</code>
        */
       public static final int INVITE_FRIEND_VALUE = 37;
+      /**
+       * <code>NEWS = 38;</code>
+       */
+      public static final int NEWS_VALUE = 38;
 
 
       public final int getNumber() {
@@ -25042,6 +25050,7 @@ public final class ProtoGlobal {
           case 35: return INTERNET_PACKAGE_MENU;
           case 36: return FINANCIAL_HISTORY;
           case 37: return INVITE_FRIEND;
+          case 38: return NEWS;
           default: return null;
         }
       }
