@@ -24837,6 +24837,10 @@ public final class ProtoGlobal {
        * <code>NEWS = 38;</code>
        */
       NEWS(38),
+      /**
+       * <code>ELECTRIC_BILL_MENU = 39;</code>
+       */
+      ELECTRIC_BILL_MENU(39),
       UNRECOGNIZED(-1),
       ;
 
@@ -24996,6 +25000,10 @@ public final class ProtoGlobal {
        * <code>NEWS = 38;</code>
        */
       public static final int NEWS_VALUE = 38;
+      /**
+       * <code>ELECTRIC_BILL_MENU = 39;</code>
+       */
+      public static final int ELECTRIC_BILL_MENU_VALUE = 39;
 
 
       public final int getNumber() {
@@ -25051,6 +25059,7 @@ public final class ProtoGlobal {
           case 36: return FINANCIAL_HISTORY;
           case 37: return INVITE_FRIEND;
           case 38: return NEWS;
+          case 39: return ELECTRIC_BILL_MENU;
           default: return null;
         }
       }
