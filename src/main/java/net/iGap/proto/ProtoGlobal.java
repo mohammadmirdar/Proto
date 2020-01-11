@@ -24841,6 +24841,14 @@ public final class ProtoGlobal {
        * <code>ELECTRIC_BILL_MENU = 39;</code>
        */
       ELECTRIC_BILL_MENU(39),
+      /**
+       * <code>BLOCKCHAIN = 40;</code>
+       */
+      BLOCKCHAIN(40),
+      /**
+       * <code>PARSLAND = 41;</code>
+       */
+      PARSLAND(41),
       UNRECOGNIZED(-1),
       ;
 
@@ -25004,6 +25012,14 @@ public final class ProtoGlobal {
        * <code>ELECTRIC_BILL_MENU = 39;</code>
        */
       public static final int ELECTRIC_BILL_MENU_VALUE = 39;
+      /**
+       * <code>BLOCKCHAIN = 40;</code>
+       */
+      public static final int BLOCKCHAIN_VALUE = 40;
+      /**
+       * <code>PARSLAND = 41;</code>
+       */
+      public static final int PARSLAND_VALUE = 41;
 
 
       public final int getNumber() {
@@ -25060,6 +25076,8 @@ public final class ProtoGlobal {
           case 37: return INVITE_FRIEND;
           case 38: return NEWS;
           case 39: return ELECTRIC_BILL_MENU;
+          case 40: return BLOCKCHAIN;
+          case 41: return PARSLAND;
           default: return null;
         }
       }
