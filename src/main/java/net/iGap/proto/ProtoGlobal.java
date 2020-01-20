@@ -3505,6 +3505,24 @@ public final class ProtoGlobal {
      * <code>optional .proto.RoomMessageWallet.CardToCard card_to_card = 3;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomMessageWallet.CardToCard getCardToCard();
+
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    boolean hasTopup();
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup getTopup();
+
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    boolean hasBill();
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill getBill();
   }
   /**
    * Protobuf type {@code proto.RoomMessageWallet}
@@ -3533,6 +3551,14 @@ public final class ProtoGlobal {
        * <code>CARD_TO_CARD = 2;</code>
        */
       CARD_TO_CARD(2),
+      /**
+       * <code>TOPUP = 3;</code>
+       */
+      TOPUP(3),
+      /**
+       * <code>BILL = 4;</code>
+       */
+      BILL(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -3548,6 +3574,14 @@ public final class ProtoGlobal {
        * <code>CARD_TO_CARD = 2;</code>
        */
       public static final int CARD_TO_CARD_VALUE = 2;
+      /**
+       * <code>TOPUP = 3;</code>
+       */
+      public static final int TOPUP_VALUE = 3;
+      /**
+       * <code>BILL = 4;</code>
+       */
+      public static final int BILL_VALUE = 4;
 
 
       public final int getNumber() {
@@ -3567,6 +3601,8 @@ public final class ProtoGlobal {
           case 0: return MONEY_TRANSFER;
           case 1: return PAYMENT;
           case 2: return CARD_TO_CARD;
+          case 3: return TOPUP;
+          case 4: return BILL;
           default: return null;
         }
       }
@@ -5957,6 +5993,3234 @@ public final class ProtoGlobal {
       }
     }
 
+    public interface TopupOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.RoomMessageWallet.Topup)
+        com.google.protobuf.MessageLiteOrBuilder {
+
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      long getFromUserId();
+
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      long getOrderId();
+
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      java.lang.String getMyToken();
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getMyTokenBytes();
+
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      long getToken();
+
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      long getAmount();
+
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      java.lang.String getRequesterMobileNumber();
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      com.google.protobuf.ByteString
+          getRequesterMobileNumberBytes();
+
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      java.lang.String getChargeMobileNumber();
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      com.google.protobuf.ByteString
+          getChargeMobileNumberBytes();
+
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      int getTopupTypeValue();
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type getTopupType();
+
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      java.lang.String getCardNumber();
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      com.google.protobuf.ByteString
+          getCardNumberBytes();
+
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      java.lang.String getMerchantName();
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      com.google.protobuf.ByteString
+          getMerchantNameBytes();
+
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      long getTerminalNo();
+
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      long getRrn();
+
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      long getTraceNumber();
+
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      int getRequestTime();
+
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      boolean getStatus();
+
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      java.lang.String getStatusDescription();
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      com.google.protobuf.ByteString
+          getStatusDescriptionBytes();
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageWallet.Topup}
+     */
+    public  static final class Topup extends
+        com.google.protobuf.GeneratedMessageLite<
+            Topup, Topup.Builder> implements
+        // @@protoc_insertion_point(message_implements:proto.RoomMessageWallet.Topup)
+        TopupOrBuilder {
+      private Topup() {
+        myToken_ = "";
+        requesterMobileNumber_ = "";
+        chargeMobileNumber_ = "";
+        cardNumber_ = "";
+        merchantName_ = "";
+        statusDescription_ = "";
+      }
+      /**
+       * Protobuf enum {@code proto.RoomMessageWallet.Topup.Type}
+       */
+      public enum Type
+          implements com.google.protobuf.Internal.EnumLite {
+        /**
+         * <code>IRANCELL_PREPAID = 0;</code>
+         */
+        IRANCELL_PREPAID(0),
+        /**
+         * <code>IRANCELL_WOW = 1;</code>
+         */
+        IRANCELL_WOW(1),
+        /**
+         * <code>IRANCELL_WIMAX = 2;</code>
+         */
+        IRANCELL_WIMAX(2),
+        /**
+         * <code>IRANCELL_POSTPAID = 3;</code>
+         */
+        IRANCELL_POSTPAID(3),
+        /**
+         * <code>MCI = 4;</code>
+         */
+        MCI(4),
+        /**
+         * <code>RIGHTEL = 5;</code>
+         */
+        RIGHTEL(5),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <code>IRANCELL_PREPAID = 0;</code>
+         */
+        public static final int IRANCELL_PREPAID_VALUE = 0;
+        /**
+         * <code>IRANCELL_WOW = 1;</code>
+         */
+        public static final int IRANCELL_WOW_VALUE = 1;
+        /**
+         * <code>IRANCELL_WIMAX = 2;</code>
+         */
+        public static final int IRANCELL_WIMAX_VALUE = 2;
+        /**
+         * <code>IRANCELL_POSTPAID = 3;</code>
+         */
+        public static final int IRANCELL_POSTPAID_VALUE = 3;
+        /**
+         * <code>MCI = 4;</code>
+         */
+        public static final int MCI_VALUE = 4;
+        /**
+         * <code>RIGHTEL = 5;</code>
+         */
+        public static final int RIGHTEL_VALUE = 5;
+
+
+        public final int getNumber() {
+          return value;
+        }
+
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static Type valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static Type forNumber(int value) {
+          switch (value) {
+            case 0: return IRANCELL_PREPAID;
+            case 1: return IRANCELL_WOW;
+            case 2: return IRANCELL_WIMAX;
+            case 3: return IRANCELL_POSTPAID;
+            case 4: return MCI;
+            case 5: return RIGHTEL;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<Type>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+            Type> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+                public Type findValueByNumber(int number) {
+                  return Type.forNumber(number);
+                }
+              };
+
+        private final int value;
+
+        private Type(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:proto.RoomMessageWallet.Topup.Type)
+      }
+
+      public static final int FROM_USER_ID_FIELD_NUMBER = 1;
+      private long fromUserId_;
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      public long getFromUserId() {
+        return fromUserId_;
+      }
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      private void setFromUserId(long value) {
+        
+        fromUserId_ = value;
+      }
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      private void clearFromUserId() {
+        
+        fromUserId_ = 0L;
+      }
+
+      public static final int ORDER_ID_FIELD_NUMBER = 2;
+      private long orderId_;
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      public long getOrderId() {
+        return orderId_;
+      }
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      private void setOrderId(long value) {
+        
+        orderId_ = value;
+      }
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      private void clearOrderId() {
+        
+        orderId_ = 0L;
+      }
+
+      public static final int MY_TOKEN_FIELD_NUMBER = 3;
+      private java.lang.String myToken_;
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      public java.lang.String getMyToken() {
+        return myToken_;
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMyTokenBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(myToken_);
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      private void setMyToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        myToken_ = value;
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      private void clearMyToken() {
+        
+        myToken_ = getDefaultInstance().getMyToken();
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      private void setMyTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        myToken_ = value.toStringUtf8();
+      }
+
+      public static final int TOKEN_FIELD_NUMBER = 4;
+      private long token_;
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      public long getToken() {
+        return token_;
+      }
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      private void setToken(long value) {
+        
+        token_ = value;
+      }
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      private void clearToken() {
+        
+        token_ = 0L;
+      }
+
+      public static final int AMOUNT_FIELD_NUMBER = 5;
+      private long amount_;
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      public long getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      private void setAmount(long value) {
+        
+        amount_ = value;
+      }
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      private void clearAmount() {
+        
+        amount_ = 0L;
+      }
+
+      public static final int REQUESTER_MOBILE_NUMBER_FIELD_NUMBER = 6;
+      private java.lang.String requesterMobileNumber_;
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      public java.lang.String getRequesterMobileNumber() {
+        return requesterMobileNumber_;
+      }
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequesterMobileNumberBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(requesterMobileNumber_);
+      }
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      private void setRequesterMobileNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requesterMobileNumber_ = value;
+      }
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      private void clearRequesterMobileNumber() {
+        
+        requesterMobileNumber_ = getDefaultInstance().getRequesterMobileNumber();
+      }
+      /**
+       * <code>optional string requester_mobile_number = 6;</code>
+       */
+      private void setRequesterMobileNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requesterMobileNumber_ = value.toStringUtf8();
+      }
+
+      public static final int CHARGE_MOBILE_NUMBER_FIELD_NUMBER = 7;
+      private java.lang.String chargeMobileNumber_;
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      public java.lang.String getChargeMobileNumber() {
+        return chargeMobileNumber_;
+      }
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getChargeMobileNumberBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(chargeMobileNumber_);
+      }
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      private void setChargeMobileNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        chargeMobileNumber_ = value;
+      }
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      private void clearChargeMobileNumber() {
+        
+        chargeMobileNumber_ = getDefaultInstance().getChargeMobileNumber();
+      }
+      /**
+       * <code>optional string charge_mobile_number = 7;</code>
+       */
+      private void setChargeMobileNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        chargeMobileNumber_ = value.toStringUtf8();
+      }
+
+      public static final int TOPUP_TYPE_FIELD_NUMBER = 8;
+      private int topupType_;
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      public int getTopupTypeValue() {
+        return topupType_;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type getTopupType() {
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type result = net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type.forNumber(topupType_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      private void setTopupTypeValue(int value) {
+          topupType_ = value;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      private void setTopupType(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        topupType_ = value.getNumber();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+       */
+      private void clearTopupType() {
+        
+        topupType_ = 0;
+      }
+
+      public static final int CARD_NUMBER_FIELD_NUMBER = 9;
+      private java.lang.String cardNumber_;
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      public java.lang.String getCardNumber() {
+        return cardNumber_;
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCardNumberBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(cardNumber_);
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      private void setCardNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cardNumber_ = value;
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      private void clearCardNumber() {
+        
+        cardNumber_ = getDefaultInstance().getCardNumber();
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      private void setCardNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cardNumber_ = value.toStringUtf8();
+      }
+
+      public static final int MERCHANT_NAME_FIELD_NUMBER = 10;
+      private java.lang.String merchantName_;
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      public java.lang.String getMerchantName() {
+        return merchantName_;
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMerchantNameBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(merchantName_);
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      private void setMerchantName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        merchantName_ = value;
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      private void clearMerchantName() {
+        
+        merchantName_ = getDefaultInstance().getMerchantName();
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      private void setMerchantNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        merchantName_ = value.toStringUtf8();
+      }
+
+      public static final int TERMINAL_NO_FIELD_NUMBER = 11;
+      private long terminalNo_;
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      public long getTerminalNo() {
+        return terminalNo_;
+      }
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      private void setTerminalNo(long value) {
+        
+        terminalNo_ = value;
+      }
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      private void clearTerminalNo() {
+        
+        terminalNo_ = 0L;
+      }
+
+      public static final int RRN_FIELD_NUMBER = 12;
+      private long rrn_;
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      public long getRrn() {
+        return rrn_;
+      }
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      private void setRrn(long value) {
+        
+        rrn_ = value;
+      }
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      private void clearRrn() {
+        
+        rrn_ = 0L;
+      }
+
+      public static final int TRACE_NUMBER_FIELD_NUMBER = 13;
+      private long traceNumber_;
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      public long getTraceNumber() {
+        return traceNumber_;
+      }
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      private void setTraceNumber(long value) {
+        
+        traceNumber_ = value;
+      }
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      private void clearTraceNumber() {
+        
+        traceNumber_ = 0L;
+      }
+
+      public static final int REQUEST_TIME_FIELD_NUMBER = 14;
+      private int requestTime_;
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      public int getRequestTime() {
+        return requestTime_;
+      }
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      private void setRequestTime(int value) {
+        
+        requestTime_ = value;
+      }
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      private void clearRequestTime() {
+        
+        requestTime_ = 0;
+      }
+
+      public static final int STATUS_FIELD_NUMBER = 15;
+      private boolean status_;
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      private void setStatus(boolean value) {
+        
+        status_ = value;
+      }
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      private void clearStatus() {
+        
+        status_ = false;
+      }
+
+      public static final int STATUS_DESCRIPTION_FIELD_NUMBER = 16;
+      private java.lang.String statusDescription_;
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      public java.lang.String getStatusDescription() {
+        return statusDescription_;
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusDescriptionBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(statusDescription_);
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      private void setStatusDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        statusDescription_ = value;
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      private void clearStatusDescription() {
+        
+        statusDescription_ = getDefaultInstance().getStatusDescription();
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      private void setStatusDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        statusDescription_ = value.toStringUtf8();
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (fromUserId_ != 0L) {
+          output.writeUInt64(1, fromUserId_);
+        }
+        if (orderId_ != 0L) {
+          output.writeUInt64(2, orderId_);
+        }
+        if (!myToken_.isEmpty()) {
+          output.writeString(3, getMyToken());
+        }
+        if (token_ != 0L) {
+          output.writeUInt64(4, token_);
+        }
+        if (amount_ != 0L) {
+          output.writeUInt64(5, amount_);
+        }
+        if (!requesterMobileNumber_.isEmpty()) {
+          output.writeString(6, getRequesterMobileNumber());
+        }
+        if (!chargeMobileNumber_.isEmpty()) {
+          output.writeString(7, getChargeMobileNumber());
+        }
+        if (topupType_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type.IRANCELL_PREPAID.getNumber()) {
+          output.writeEnum(8, topupType_);
+        }
+        if (!cardNumber_.isEmpty()) {
+          output.writeString(9, getCardNumber());
+        }
+        if (!merchantName_.isEmpty()) {
+          output.writeString(10, getMerchantName());
+        }
+        if (terminalNo_ != 0L) {
+          output.writeUInt64(11, terminalNo_);
+        }
+        if (rrn_ != 0L) {
+          output.writeUInt64(12, rrn_);
+        }
+        if (traceNumber_ != 0L) {
+          output.writeUInt64(13, traceNumber_);
+        }
+        if (requestTime_ != 0) {
+          output.writeUInt32(14, requestTime_);
+        }
+        if (status_ != false) {
+          output.writeBool(15, status_);
+        }
+        if (!statusDescription_.isEmpty()) {
+          output.writeString(16, getStatusDescription());
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (fromUserId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(1, fromUserId_);
+        }
+        if (orderId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(2, orderId_);
+        }
+        if (!myToken_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(3, getMyToken());
+        }
+        if (token_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(4, token_);
+        }
+        if (amount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(5, amount_);
+        }
+        if (!requesterMobileNumber_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(6, getRequesterMobileNumber());
+        }
+        if (!chargeMobileNumber_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(7, getChargeMobileNumber());
+        }
+        if (topupType_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type.IRANCELL_PREPAID.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(8, topupType_);
+        }
+        if (!cardNumber_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(9, getCardNumber());
+        }
+        if (!merchantName_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(10, getMerchantName());
+        }
+        if (terminalNo_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(11, terminalNo_);
+        }
+        if (rrn_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(12, rrn_);
+        }
+        if (traceNumber_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(13, traceNumber_);
+        }
+        if (requestTime_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(14, requestTime_);
+        }
+        if (status_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(15, status_);
+        }
+        if (!statusDescription_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(16, getStatusDescription());
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      /**
+       * Protobuf type {@code proto.RoomMessageWallet.Topup}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup, Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.RoomMessageWallet.Topup)
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.TopupOrBuilder {
+        // Construct using net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.newBuilder()
+        private Builder() {
+          super(DEFAULT_INSTANCE);
+        }
+
+
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public long getFromUserId() {
+          return instance.getFromUserId();
+        }
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public Builder setFromUserId(long value) {
+          copyOnWrite();
+          instance.setFromUserId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public Builder clearFromUserId() {
+          copyOnWrite();
+          instance.clearFromUserId();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 order_id = 2;</code>
+         */
+        public long getOrderId() {
+          return instance.getOrderId();
+        }
+        /**
+         * <code>optional uint64 order_id = 2;</code>
+         */
+        public Builder setOrderId(long value) {
+          copyOnWrite();
+          instance.setOrderId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 order_id = 2;</code>
+         */
+        public Builder clearOrderId() {
+          copyOnWrite();
+          instance.clearOrderId();
+          return this;
+        }
+
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public java.lang.String getMyToken() {
+          return instance.getMyToken();
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getMyTokenBytes() {
+          return instance.getMyTokenBytes();
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public Builder setMyToken(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setMyToken(value);
+          return this;
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public Builder clearMyToken() {
+          copyOnWrite();
+          instance.clearMyToken();
+          return this;
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public Builder setMyTokenBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setMyTokenBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 token = 4;</code>
+         */
+        public long getToken() {
+          return instance.getToken();
+        }
+        /**
+         * <code>optional uint64 token = 4;</code>
+         */
+        public Builder setToken(long value) {
+          copyOnWrite();
+          instance.setToken(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 token = 4;</code>
+         */
+        public Builder clearToken() {
+          copyOnWrite();
+          instance.clearToken();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 amount = 5;</code>
+         */
+        public long getAmount() {
+          return instance.getAmount();
+        }
+        /**
+         * <code>optional uint64 amount = 5;</code>
+         */
+        public Builder setAmount(long value) {
+          copyOnWrite();
+          instance.setAmount(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 amount = 5;</code>
+         */
+        public Builder clearAmount() {
+          copyOnWrite();
+          instance.clearAmount();
+          return this;
+        }
+
+        /**
+         * <code>optional string requester_mobile_number = 6;</code>
+         */
+        public java.lang.String getRequesterMobileNumber() {
+          return instance.getRequesterMobileNumber();
+        }
+        /**
+         * <code>optional string requester_mobile_number = 6;</code>
+         */
+        public com.google.protobuf.ByteString
+            getRequesterMobileNumberBytes() {
+          return instance.getRequesterMobileNumberBytes();
+        }
+        /**
+         * <code>optional string requester_mobile_number = 6;</code>
+         */
+        public Builder setRequesterMobileNumber(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setRequesterMobileNumber(value);
+          return this;
+        }
+        /**
+         * <code>optional string requester_mobile_number = 6;</code>
+         */
+        public Builder clearRequesterMobileNumber() {
+          copyOnWrite();
+          instance.clearRequesterMobileNumber();
+          return this;
+        }
+        /**
+         * <code>optional string requester_mobile_number = 6;</code>
+         */
+        public Builder setRequesterMobileNumberBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setRequesterMobileNumberBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string charge_mobile_number = 7;</code>
+         */
+        public java.lang.String getChargeMobileNumber() {
+          return instance.getChargeMobileNumber();
+        }
+        /**
+         * <code>optional string charge_mobile_number = 7;</code>
+         */
+        public com.google.protobuf.ByteString
+            getChargeMobileNumberBytes() {
+          return instance.getChargeMobileNumberBytes();
+        }
+        /**
+         * <code>optional string charge_mobile_number = 7;</code>
+         */
+        public Builder setChargeMobileNumber(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setChargeMobileNumber(value);
+          return this;
+        }
+        /**
+         * <code>optional string charge_mobile_number = 7;</code>
+         */
+        public Builder clearChargeMobileNumber() {
+          copyOnWrite();
+          instance.clearChargeMobileNumber();
+          return this;
+        }
+        /**
+         * <code>optional string charge_mobile_number = 7;</code>
+         */
+        public Builder setChargeMobileNumberBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setChargeMobileNumberBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+         */
+        public int getTopupTypeValue() {
+          return instance.getTopupTypeValue();
+        }
+        /**
+         * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+         */
+        public Builder setTopupTypeValue(int value) {
+          copyOnWrite();
+          instance.setTopupTypeValue(value);
+          return this;
+        }
+        /**
+         * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type getTopupType() {
+          return instance.getTopupType();
+        }
+        /**
+         * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+         */
+        public Builder setTopupType(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Type value) {
+          copyOnWrite();
+          instance.setTopupType(value);
+          return this;
+        }
+        /**
+         * <code>optional .proto.RoomMessageWallet.Topup.Type topup_type = 8;</code>
+         */
+        public Builder clearTopupType() {
+          copyOnWrite();
+          instance.clearTopupType();
+          return this;
+        }
+
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public java.lang.String getCardNumber() {
+          return instance.getCardNumber();
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public com.google.protobuf.ByteString
+            getCardNumberBytes() {
+          return instance.getCardNumberBytes();
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public Builder setCardNumber(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setCardNumber(value);
+          return this;
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public Builder clearCardNumber() {
+          copyOnWrite();
+          instance.clearCardNumber();
+          return this;
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public Builder setCardNumberBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setCardNumberBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public java.lang.String getMerchantName() {
+          return instance.getMerchantName();
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public com.google.protobuf.ByteString
+            getMerchantNameBytes() {
+          return instance.getMerchantNameBytes();
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public Builder setMerchantName(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setMerchantName(value);
+          return this;
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public Builder clearMerchantName() {
+          copyOnWrite();
+          instance.clearMerchantName();
+          return this;
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public Builder setMerchantNameBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setMerchantNameBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 terminal_no = 11;</code>
+         */
+        public long getTerminalNo() {
+          return instance.getTerminalNo();
+        }
+        /**
+         * <code>optional uint64 terminal_no = 11;</code>
+         */
+        public Builder setTerminalNo(long value) {
+          copyOnWrite();
+          instance.setTerminalNo(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 terminal_no = 11;</code>
+         */
+        public Builder clearTerminalNo() {
+          copyOnWrite();
+          instance.clearTerminalNo();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 rrn = 12;</code>
+         */
+        public long getRrn() {
+          return instance.getRrn();
+        }
+        /**
+         * <code>optional uint64 rrn = 12;</code>
+         */
+        public Builder setRrn(long value) {
+          copyOnWrite();
+          instance.setRrn(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 rrn = 12;</code>
+         */
+        public Builder clearRrn() {
+          copyOnWrite();
+          instance.clearRrn();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 trace_number = 13;</code>
+         */
+        public long getTraceNumber() {
+          return instance.getTraceNumber();
+        }
+        /**
+         * <code>optional uint64 trace_number = 13;</code>
+         */
+        public Builder setTraceNumber(long value) {
+          copyOnWrite();
+          instance.setTraceNumber(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 trace_number = 13;</code>
+         */
+        public Builder clearTraceNumber() {
+          copyOnWrite();
+          instance.clearTraceNumber();
+          return this;
+        }
+
+        /**
+         * <code>optional uint32 request_time = 14;</code>
+         */
+        public int getRequestTime() {
+          return instance.getRequestTime();
+        }
+        /**
+         * <code>optional uint32 request_time = 14;</code>
+         */
+        public Builder setRequestTime(int value) {
+          copyOnWrite();
+          instance.setRequestTime(value);
+          return this;
+        }
+        /**
+         * <code>optional uint32 request_time = 14;</code>
+         */
+        public Builder clearRequestTime() {
+          copyOnWrite();
+          instance.clearRequestTime();
+          return this;
+        }
+
+        /**
+         * <code>optional bool status = 15;</code>
+         */
+        public boolean getStatus() {
+          return instance.getStatus();
+        }
+        /**
+         * <code>optional bool status = 15;</code>
+         */
+        public Builder setStatus(boolean value) {
+          copyOnWrite();
+          instance.setStatus(value);
+          return this;
+        }
+        /**
+         * <code>optional bool status = 15;</code>
+         */
+        public Builder clearStatus() {
+          copyOnWrite();
+          instance.clearStatus();
+          return this;
+        }
+
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public java.lang.String getStatusDescription() {
+          return instance.getStatusDescription();
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public com.google.protobuf.ByteString
+            getStatusDescriptionBytes() {
+          return instance.getStatusDescriptionBytes();
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public Builder setStatusDescription(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setStatusDescription(value);
+          return this;
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public Builder clearStatusDescription() {
+          copyOnWrite();
+          instance.clearStatusDescription();
+          return this;
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public Builder setStatusDescriptionBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setStatusDescriptionBytes(value);
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:proto.RoomMessageWallet.Topup)
+      }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup other = (net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup) arg1;
+            fromUserId_ = visitor.visitLong(fromUserId_ != 0L, fromUserId_,
+                other.fromUserId_ != 0L, other.fromUserId_);
+            orderId_ = visitor.visitLong(orderId_ != 0L, orderId_,
+                other.orderId_ != 0L, other.orderId_);
+            myToken_ = visitor.visitString(!myToken_.isEmpty(), myToken_,
+                !other.myToken_.isEmpty(), other.myToken_);
+            token_ = visitor.visitLong(token_ != 0L, token_,
+                other.token_ != 0L, other.token_);
+            amount_ = visitor.visitLong(amount_ != 0L, amount_,
+                other.amount_ != 0L, other.amount_);
+            requesterMobileNumber_ = visitor.visitString(!requesterMobileNumber_.isEmpty(), requesterMobileNumber_,
+                !other.requesterMobileNumber_.isEmpty(), other.requesterMobileNumber_);
+            chargeMobileNumber_ = visitor.visitString(!chargeMobileNumber_.isEmpty(), chargeMobileNumber_,
+                !other.chargeMobileNumber_.isEmpty(), other.chargeMobileNumber_);
+            topupType_ = visitor.visitInt(topupType_ != 0, topupType_,    other.topupType_ != 0, other.topupType_);
+            cardNumber_ = visitor.visitString(!cardNumber_.isEmpty(), cardNumber_,
+                !other.cardNumber_.isEmpty(), other.cardNumber_);
+            merchantName_ = visitor.visitString(!merchantName_.isEmpty(), merchantName_,
+                !other.merchantName_.isEmpty(), other.merchantName_);
+            terminalNo_ = visitor.visitLong(terminalNo_ != 0L, terminalNo_,
+                other.terminalNo_ != 0L, other.terminalNo_);
+            rrn_ = visitor.visitLong(rrn_ != 0L, rrn_,
+                other.rrn_ != 0L, other.rrn_);
+            traceNumber_ = visitor.visitLong(traceNumber_ != 0L, traceNumber_,
+                other.traceNumber_ != 0L, other.traceNumber_);
+            requestTime_ = visitor.visitInt(requestTime_ != 0, requestTime_,
+                other.requestTime_ != 0, other.requestTime_);
+            status_ = visitor.visitBoolean(status_ != false, status_,
+                other.status_ != false, other.status_);
+            statusDescription_ = visitor.visitString(!statusDescription_.isEmpty(), statusDescription_,
+                !other.statusDescription_.isEmpty(), other.statusDescription_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+
+                    fromUserId_ = input.readUInt64();
+                    break;
+                  }
+                  case 16: {
+
+                    orderId_ = input.readUInt64();
+                    break;
+                  }
+                  case 26: {
+                    String s = input.readStringRequireUtf8();
+
+                    myToken_ = s;
+                    break;
+                  }
+                  case 32: {
+
+                    token_ = input.readUInt64();
+                    break;
+                  }
+                  case 40: {
+
+                    amount_ = input.readUInt64();
+                    break;
+                  }
+                  case 50: {
+                    String s = input.readStringRequireUtf8();
+
+                    requesterMobileNumber_ = s;
+                    break;
+                  }
+                  case 58: {
+                    String s = input.readStringRequireUtf8();
+
+                    chargeMobileNumber_ = s;
+                    break;
+                  }
+                  case 64: {
+                    int rawValue = input.readEnum();
+
+                    topupType_ = rawValue;
+                    break;
+                  }
+                  case 74: {
+                    String s = input.readStringRequireUtf8();
+
+                    cardNumber_ = s;
+                    break;
+                  }
+                  case 82: {
+                    String s = input.readStringRequireUtf8();
+
+                    merchantName_ = s;
+                    break;
+                  }
+                  case 88: {
+
+                    terminalNo_ = input.readUInt64();
+                    break;
+                  }
+                  case 96: {
+
+                    rrn_ = input.readUInt64();
+                    break;
+                  }
+                  case 104: {
+
+                    traceNumber_ = input.readUInt64();
+                    break;
+                  }
+                  case 112: {
+
+                    requestTime_ = input.readUInt32();
+                    break;
+                  }
+                  case 120: {
+
+                    status_ = input.readBool();
+                    break;
+                  }
+                  case 130: {
+                    String s = input.readStringRequireUtf8();
+
+                    statusDescription_ = s;
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
+
+      // @@protoc_insertion_point(class_scope:proto.RoomMessageWallet.Topup)
+      private static final net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new Topup();
+        DEFAULT_INSTANCE.makeImmutable();
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static volatile com.google.protobuf.Parser<Topup> PARSER;
+
+      public static com.google.protobuf.Parser<Topup> parser() {
+        return DEFAULT_INSTANCE.getParserForType();
+      }
+    }
+
+    public interface BillOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.RoomMessageWallet.Bill)
+        com.google.protobuf.MessageLiteOrBuilder {
+
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      long getFromUserId();
+
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      long getOrderId();
+
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      java.lang.String getMyToken();
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getMyTokenBytes();
+
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      long getToken();
+
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      long getAmount();
+
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      java.lang.String getPayId();
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      com.google.protobuf.ByteString
+          getPayIdBytes();
+
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      java.lang.String getBillId();
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      com.google.protobuf.ByteString
+          getBillIdBytes();
+
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      java.lang.String getBillType();
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      com.google.protobuf.ByteString
+          getBillTypeBytes();
+
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      java.lang.String getCardNumber();
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      com.google.protobuf.ByteString
+          getCardNumberBytes();
+
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      java.lang.String getMerchantName();
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      com.google.protobuf.ByteString
+          getMerchantNameBytes();
+
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      long getTerminalNo();
+
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      long getRrn();
+
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      long getTraceNumber();
+
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      int getRequestTime();
+
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      boolean getStatus();
+
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      java.lang.String getStatusDescription();
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      com.google.protobuf.ByteString
+          getStatusDescriptionBytes();
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageWallet.Bill}
+     */
+    public  static final class Bill extends
+        com.google.protobuf.GeneratedMessageLite<
+            Bill, Bill.Builder> implements
+        // @@protoc_insertion_point(message_implements:proto.RoomMessageWallet.Bill)
+        BillOrBuilder {
+      private Bill() {
+        myToken_ = "";
+        payId_ = "";
+        billId_ = "";
+        billType_ = "";
+        cardNumber_ = "";
+        merchantName_ = "";
+        statusDescription_ = "";
+      }
+      public static final int FROM_USER_ID_FIELD_NUMBER = 1;
+      private long fromUserId_;
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      public long getFromUserId() {
+        return fromUserId_;
+      }
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      private void setFromUserId(long value) {
+        
+        fromUserId_ = value;
+      }
+      /**
+       * <code>optional uint64 from_user_id = 1;</code>
+       */
+      private void clearFromUserId() {
+        
+        fromUserId_ = 0L;
+      }
+
+      public static final int ORDER_ID_FIELD_NUMBER = 2;
+      private long orderId_;
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      public long getOrderId() {
+        return orderId_;
+      }
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      private void setOrderId(long value) {
+        
+        orderId_ = value;
+      }
+      /**
+       * <code>optional uint64 order_id = 2;</code>
+       */
+      private void clearOrderId() {
+        
+        orderId_ = 0L;
+      }
+
+      public static final int MY_TOKEN_FIELD_NUMBER = 3;
+      private java.lang.String myToken_;
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      public java.lang.String getMyToken() {
+        return myToken_;
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMyTokenBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(myToken_);
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      private void setMyToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        myToken_ = value;
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      private void clearMyToken() {
+        
+        myToken_ = getDefaultInstance().getMyToken();
+      }
+      /**
+       * <code>optional string my_token = 3;</code>
+       */
+      private void setMyTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        myToken_ = value.toStringUtf8();
+      }
+
+      public static final int TOKEN_FIELD_NUMBER = 4;
+      private long token_;
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      public long getToken() {
+        return token_;
+      }
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      private void setToken(long value) {
+        
+        token_ = value;
+      }
+      /**
+       * <code>optional uint64 token = 4;</code>
+       */
+      private void clearToken() {
+        
+        token_ = 0L;
+      }
+
+      public static final int AMOUNT_FIELD_NUMBER = 5;
+      private long amount_;
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      public long getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      private void setAmount(long value) {
+        
+        amount_ = value;
+      }
+      /**
+       * <code>optional uint64 amount = 5;</code>
+       */
+      private void clearAmount() {
+        
+        amount_ = 0L;
+      }
+
+      public static final int PAY_ID_FIELD_NUMBER = 6;
+      private java.lang.String payId_;
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      public java.lang.String getPayId() {
+        return payId_;
+      }
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPayIdBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(payId_);
+      }
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      private void setPayId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        payId_ = value;
+      }
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      private void clearPayId() {
+        
+        payId_ = getDefaultInstance().getPayId();
+      }
+      /**
+       * <code>optional string pay_id = 6;</code>
+       */
+      private void setPayIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        payId_ = value.toStringUtf8();
+      }
+
+      public static final int BILL_ID_FIELD_NUMBER = 7;
+      private java.lang.String billId_;
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      public java.lang.String getBillId() {
+        return billId_;
+      }
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBillIdBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(billId_);
+      }
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      private void setBillId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        billId_ = value;
+      }
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      private void clearBillId() {
+        
+        billId_ = getDefaultInstance().getBillId();
+      }
+      /**
+       * <code>optional string bill_id = 7;</code>
+       */
+      private void setBillIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        billId_ = value.toStringUtf8();
+      }
+
+      public static final int BILL_TYPE_FIELD_NUMBER = 8;
+      private java.lang.String billType_;
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      public java.lang.String getBillType() {
+        return billType_;
+      }
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBillTypeBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(billType_);
+      }
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      private void setBillType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        billType_ = value;
+      }
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      private void clearBillType() {
+        
+        billType_ = getDefaultInstance().getBillType();
+      }
+      /**
+       * <code>optional string bill_type = 8;</code>
+       */
+      private void setBillTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        billType_ = value.toStringUtf8();
+      }
+
+      public static final int CARD_NUMBER_FIELD_NUMBER = 9;
+      private java.lang.String cardNumber_;
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      public java.lang.String getCardNumber() {
+        return cardNumber_;
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCardNumberBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(cardNumber_);
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      private void setCardNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cardNumber_ = value;
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      private void clearCardNumber() {
+        
+        cardNumber_ = getDefaultInstance().getCardNumber();
+      }
+      /**
+       * <code>optional string card_number = 9;</code>
+       */
+      private void setCardNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cardNumber_ = value.toStringUtf8();
+      }
+
+      public static final int MERCHANT_NAME_FIELD_NUMBER = 10;
+      private java.lang.String merchantName_;
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      public java.lang.String getMerchantName() {
+        return merchantName_;
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMerchantNameBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(merchantName_);
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      private void setMerchantName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        merchantName_ = value;
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      private void clearMerchantName() {
+        
+        merchantName_ = getDefaultInstance().getMerchantName();
+      }
+      /**
+       * <code>optional string merchant_name = 10;</code>
+       */
+      private void setMerchantNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        merchantName_ = value.toStringUtf8();
+      }
+
+      public static final int TERMINAL_NO_FIELD_NUMBER = 11;
+      private long terminalNo_;
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      public long getTerminalNo() {
+        return terminalNo_;
+      }
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      private void setTerminalNo(long value) {
+        
+        terminalNo_ = value;
+      }
+      /**
+       * <code>optional uint64 terminal_no = 11;</code>
+       */
+      private void clearTerminalNo() {
+        
+        terminalNo_ = 0L;
+      }
+
+      public static final int RRN_FIELD_NUMBER = 12;
+      private long rrn_;
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      public long getRrn() {
+        return rrn_;
+      }
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      private void setRrn(long value) {
+        
+        rrn_ = value;
+      }
+      /**
+       * <code>optional uint64 rrn = 12;</code>
+       */
+      private void clearRrn() {
+        
+        rrn_ = 0L;
+      }
+
+      public static final int TRACE_NUMBER_FIELD_NUMBER = 13;
+      private long traceNumber_;
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      public long getTraceNumber() {
+        return traceNumber_;
+      }
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      private void setTraceNumber(long value) {
+        
+        traceNumber_ = value;
+      }
+      /**
+       * <code>optional uint64 trace_number = 13;</code>
+       */
+      private void clearTraceNumber() {
+        
+        traceNumber_ = 0L;
+      }
+
+      public static final int REQUEST_TIME_FIELD_NUMBER = 14;
+      private int requestTime_;
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      public int getRequestTime() {
+        return requestTime_;
+      }
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      private void setRequestTime(int value) {
+        
+        requestTime_ = value;
+      }
+      /**
+       * <code>optional uint32 request_time = 14;</code>
+       */
+      private void clearRequestTime() {
+        
+        requestTime_ = 0;
+      }
+
+      public static final int STATUS_FIELD_NUMBER = 15;
+      private boolean status_;
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      private void setStatus(boolean value) {
+        
+        status_ = value;
+      }
+      /**
+       * <code>optional bool status = 15;</code>
+       */
+      private void clearStatus() {
+        
+        status_ = false;
+      }
+
+      public static final int STATUS_DESCRIPTION_FIELD_NUMBER = 16;
+      private java.lang.String statusDescription_;
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      public java.lang.String getStatusDescription() {
+        return statusDescription_;
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusDescriptionBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(statusDescription_);
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      private void setStatusDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        statusDescription_ = value;
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      private void clearStatusDescription() {
+        
+        statusDescription_ = getDefaultInstance().getStatusDescription();
+      }
+      /**
+       * <code>optional string status_description = 16;</code>
+       */
+      private void setStatusDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        statusDescription_ = value.toStringUtf8();
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (fromUserId_ != 0L) {
+          output.writeUInt64(1, fromUserId_);
+        }
+        if (orderId_ != 0L) {
+          output.writeUInt64(2, orderId_);
+        }
+        if (!myToken_.isEmpty()) {
+          output.writeString(3, getMyToken());
+        }
+        if (token_ != 0L) {
+          output.writeUInt64(4, token_);
+        }
+        if (amount_ != 0L) {
+          output.writeUInt64(5, amount_);
+        }
+        if (!payId_.isEmpty()) {
+          output.writeString(6, getPayId());
+        }
+        if (!billId_.isEmpty()) {
+          output.writeString(7, getBillId());
+        }
+        if (!billType_.isEmpty()) {
+          output.writeString(8, getBillType());
+        }
+        if (!cardNumber_.isEmpty()) {
+          output.writeString(9, getCardNumber());
+        }
+        if (!merchantName_.isEmpty()) {
+          output.writeString(10, getMerchantName());
+        }
+        if (terminalNo_ != 0L) {
+          output.writeUInt64(11, terminalNo_);
+        }
+        if (rrn_ != 0L) {
+          output.writeUInt64(12, rrn_);
+        }
+        if (traceNumber_ != 0L) {
+          output.writeUInt64(13, traceNumber_);
+        }
+        if (requestTime_ != 0) {
+          output.writeUInt32(14, requestTime_);
+        }
+        if (status_ != false) {
+          output.writeBool(15, status_);
+        }
+        if (!statusDescription_.isEmpty()) {
+          output.writeString(16, getStatusDescription());
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (fromUserId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(1, fromUserId_);
+        }
+        if (orderId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(2, orderId_);
+        }
+        if (!myToken_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(3, getMyToken());
+        }
+        if (token_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(4, token_);
+        }
+        if (amount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(5, amount_);
+        }
+        if (!payId_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(6, getPayId());
+        }
+        if (!billId_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(7, getBillId());
+        }
+        if (!billType_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(8, getBillType());
+        }
+        if (!cardNumber_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(9, getCardNumber());
+        }
+        if (!merchantName_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(10, getMerchantName());
+        }
+        if (terminalNo_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(11, terminalNo_);
+        }
+        if (rrn_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(12, rrn_);
+        }
+        if (traceNumber_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(13, traceNumber_);
+        }
+        if (requestTime_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(14, requestTime_);
+        }
+        if (status_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(15, status_);
+        }
+        if (!statusDescription_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(16, getStatusDescription());
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      /**
+       * Protobuf type {@code proto.RoomMessageWallet.Bill}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill, Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.RoomMessageWallet.Bill)
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.BillOrBuilder {
+        // Construct using net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.newBuilder()
+        private Builder() {
+          super(DEFAULT_INSTANCE);
+        }
+
+
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public long getFromUserId() {
+          return instance.getFromUserId();
+        }
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public Builder setFromUserId(long value) {
+          copyOnWrite();
+          instance.setFromUserId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 from_user_id = 1;</code>
+         */
+        public Builder clearFromUserId() {
+          copyOnWrite();
+          instance.clearFromUserId();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 order_id = 2;</code>
+         */
+        public long getOrderId() {
+          return instance.getOrderId();
+        }
+        /**
+         * <code>optional uint64 order_id = 2;</code>
+         */
+        public Builder setOrderId(long value) {
+          copyOnWrite();
+          instance.setOrderId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 order_id = 2;</code>
+         */
+        public Builder clearOrderId() {
+          copyOnWrite();
+          instance.clearOrderId();
+          return this;
+        }
+
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public java.lang.String getMyToken() {
+          return instance.getMyToken();
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getMyTokenBytes() {
+          return instance.getMyTokenBytes();
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public Builder setMyToken(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setMyToken(value);
+          return this;
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public Builder clearMyToken() {
+          copyOnWrite();
+          instance.clearMyToken();
+          return this;
+        }
+        /**
+         * <code>optional string my_token = 3;</code>
+         */
+        public Builder setMyTokenBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setMyTokenBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 token = 4;</code>
+         */
+        public long getToken() {
+          return instance.getToken();
+        }
+        /**
+         * <code>optional uint64 token = 4;</code>
+         */
+        public Builder setToken(long value) {
+          copyOnWrite();
+          instance.setToken(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 token = 4;</code>
+         */
+        public Builder clearToken() {
+          copyOnWrite();
+          instance.clearToken();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 amount = 5;</code>
+         */
+        public long getAmount() {
+          return instance.getAmount();
+        }
+        /**
+         * <code>optional uint64 amount = 5;</code>
+         */
+        public Builder setAmount(long value) {
+          copyOnWrite();
+          instance.setAmount(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 amount = 5;</code>
+         */
+        public Builder clearAmount() {
+          copyOnWrite();
+          instance.clearAmount();
+          return this;
+        }
+
+        /**
+         * <code>optional string pay_id = 6;</code>
+         */
+        public java.lang.String getPayId() {
+          return instance.getPayId();
+        }
+        /**
+         * <code>optional string pay_id = 6;</code>
+         */
+        public com.google.protobuf.ByteString
+            getPayIdBytes() {
+          return instance.getPayIdBytes();
+        }
+        /**
+         * <code>optional string pay_id = 6;</code>
+         */
+        public Builder setPayId(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setPayId(value);
+          return this;
+        }
+        /**
+         * <code>optional string pay_id = 6;</code>
+         */
+        public Builder clearPayId() {
+          copyOnWrite();
+          instance.clearPayId();
+          return this;
+        }
+        /**
+         * <code>optional string pay_id = 6;</code>
+         */
+        public Builder setPayIdBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setPayIdBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string bill_id = 7;</code>
+         */
+        public java.lang.String getBillId() {
+          return instance.getBillId();
+        }
+        /**
+         * <code>optional string bill_id = 7;</code>
+         */
+        public com.google.protobuf.ByteString
+            getBillIdBytes() {
+          return instance.getBillIdBytes();
+        }
+        /**
+         * <code>optional string bill_id = 7;</code>
+         */
+        public Builder setBillId(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setBillId(value);
+          return this;
+        }
+        /**
+         * <code>optional string bill_id = 7;</code>
+         */
+        public Builder clearBillId() {
+          copyOnWrite();
+          instance.clearBillId();
+          return this;
+        }
+        /**
+         * <code>optional string bill_id = 7;</code>
+         */
+        public Builder setBillIdBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setBillIdBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string bill_type = 8;</code>
+         */
+        public java.lang.String getBillType() {
+          return instance.getBillType();
+        }
+        /**
+         * <code>optional string bill_type = 8;</code>
+         */
+        public com.google.protobuf.ByteString
+            getBillTypeBytes() {
+          return instance.getBillTypeBytes();
+        }
+        /**
+         * <code>optional string bill_type = 8;</code>
+         */
+        public Builder setBillType(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setBillType(value);
+          return this;
+        }
+        /**
+         * <code>optional string bill_type = 8;</code>
+         */
+        public Builder clearBillType() {
+          copyOnWrite();
+          instance.clearBillType();
+          return this;
+        }
+        /**
+         * <code>optional string bill_type = 8;</code>
+         */
+        public Builder setBillTypeBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setBillTypeBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public java.lang.String getCardNumber() {
+          return instance.getCardNumber();
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public com.google.protobuf.ByteString
+            getCardNumberBytes() {
+          return instance.getCardNumberBytes();
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public Builder setCardNumber(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setCardNumber(value);
+          return this;
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public Builder clearCardNumber() {
+          copyOnWrite();
+          instance.clearCardNumber();
+          return this;
+        }
+        /**
+         * <code>optional string card_number = 9;</code>
+         */
+        public Builder setCardNumberBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setCardNumberBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public java.lang.String getMerchantName() {
+          return instance.getMerchantName();
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public com.google.protobuf.ByteString
+            getMerchantNameBytes() {
+          return instance.getMerchantNameBytes();
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public Builder setMerchantName(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setMerchantName(value);
+          return this;
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public Builder clearMerchantName() {
+          copyOnWrite();
+          instance.clearMerchantName();
+          return this;
+        }
+        /**
+         * <code>optional string merchant_name = 10;</code>
+         */
+        public Builder setMerchantNameBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setMerchantNameBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 terminal_no = 11;</code>
+         */
+        public long getTerminalNo() {
+          return instance.getTerminalNo();
+        }
+        /**
+         * <code>optional uint64 terminal_no = 11;</code>
+         */
+        public Builder setTerminalNo(long value) {
+          copyOnWrite();
+          instance.setTerminalNo(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 terminal_no = 11;</code>
+         */
+        public Builder clearTerminalNo() {
+          copyOnWrite();
+          instance.clearTerminalNo();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 rrn = 12;</code>
+         */
+        public long getRrn() {
+          return instance.getRrn();
+        }
+        /**
+         * <code>optional uint64 rrn = 12;</code>
+         */
+        public Builder setRrn(long value) {
+          copyOnWrite();
+          instance.setRrn(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 rrn = 12;</code>
+         */
+        public Builder clearRrn() {
+          copyOnWrite();
+          instance.clearRrn();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 trace_number = 13;</code>
+         */
+        public long getTraceNumber() {
+          return instance.getTraceNumber();
+        }
+        /**
+         * <code>optional uint64 trace_number = 13;</code>
+         */
+        public Builder setTraceNumber(long value) {
+          copyOnWrite();
+          instance.setTraceNumber(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 trace_number = 13;</code>
+         */
+        public Builder clearTraceNumber() {
+          copyOnWrite();
+          instance.clearTraceNumber();
+          return this;
+        }
+
+        /**
+         * <code>optional uint32 request_time = 14;</code>
+         */
+        public int getRequestTime() {
+          return instance.getRequestTime();
+        }
+        /**
+         * <code>optional uint32 request_time = 14;</code>
+         */
+        public Builder setRequestTime(int value) {
+          copyOnWrite();
+          instance.setRequestTime(value);
+          return this;
+        }
+        /**
+         * <code>optional uint32 request_time = 14;</code>
+         */
+        public Builder clearRequestTime() {
+          copyOnWrite();
+          instance.clearRequestTime();
+          return this;
+        }
+
+        /**
+         * <code>optional bool status = 15;</code>
+         */
+        public boolean getStatus() {
+          return instance.getStatus();
+        }
+        /**
+         * <code>optional bool status = 15;</code>
+         */
+        public Builder setStatus(boolean value) {
+          copyOnWrite();
+          instance.setStatus(value);
+          return this;
+        }
+        /**
+         * <code>optional bool status = 15;</code>
+         */
+        public Builder clearStatus() {
+          copyOnWrite();
+          instance.clearStatus();
+          return this;
+        }
+
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public java.lang.String getStatusDescription() {
+          return instance.getStatusDescription();
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public com.google.protobuf.ByteString
+            getStatusDescriptionBytes() {
+          return instance.getStatusDescriptionBytes();
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public Builder setStatusDescription(
+            java.lang.String value) {
+          copyOnWrite();
+          instance.setStatusDescription(value);
+          return this;
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public Builder clearStatusDescription() {
+          copyOnWrite();
+          instance.clearStatusDescription();
+          return this;
+        }
+        /**
+         * <code>optional string status_description = 16;</code>
+         */
+        public Builder setStatusDescriptionBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setStatusDescriptionBytes(value);
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:proto.RoomMessageWallet.Bill)
+      }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill other = (net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill) arg1;
+            fromUserId_ = visitor.visitLong(fromUserId_ != 0L, fromUserId_,
+                other.fromUserId_ != 0L, other.fromUserId_);
+            orderId_ = visitor.visitLong(orderId_ != 0L, orderId_,
+                other.orderId_ != 0L, other.orderId_);
+            myToken_ = visitor.visitString(!myToken_.isEmpty(), myToken_,
+                !other.myToken_.isEmpty(), other.myToken_);
+            token_ = visitor.visitLong(token_ != 0L, token_,
+                other.token_ != 0L, other.token_);
+            amount_ = visitor.visitLong(amount_ != 0L, amount_,
+                other.amount_ != 0L, other.amount_);
+            payId_ = visitor.visitString(!payId_.isEmpty(), payId_,
+                !other.payId_.isEmpty(), other.payId_);
+            billId_ = visitor.visitString(!billId_.isEmpty(), billId_,
+                !other.billId_.isEmpty(), other.billId_);
+            billType_ = visitor.visitString(!billType_.isEmpty(), billType_,
+                !other.billType_.isEmpty(), other.billType_);
+            cardNumber_ = visitor.visitString(!cardNumber_.isEmpty(), cardNumber_,
+                !other.cardNumber_.isEmpty(), other.cardNumber_);
+            merchantName_ = visitor.visitString(!merchantName_.isEmpty(), merchantName_,
+                !other.merchantName_.isEmpty(), other.merchantName_);
+            terminalNo_ = visitor.visitLong(terminalNo_ != 0L, terminalNo_,
+                other.terminalNo_ != 0L, other.terminalNo_);
+            rrn_ = visitor.visitLong(rrn_ != 0L, rrn_,
+                other.rrn_ != 0L, other.rrn_);
+            traceNumber_ = visitor.visitLong(traceNumber_ != 0L, traceNumber_,
+                other.traceNumber_ != 0L, other.traceNumber_);
+            requestTime_ = visitor.visitInt(requestTime_ != 0, requestTime_,
+                other.requestTime_ != 0, other.requestTime_);
+            status_ = visitor.visitBoolean(status_ != false, status_,
+                other.status_ != false, other.status_);
+            statusDescription_ = visitor.visitString(!statusDescription_.isEmpty(), statusDescription_,
+                !other.statusDescription_.isEmpty(), other.statusDescription_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+
+                    fromUserId_ = input.readUInt64();
+                    break;
+                  }
+                  case 16: {
+
+                    orderId_ = input.readUInt64();
+                    break;
+                  }
+                  case 26: {
+                    String s = input.readStringRequireUtf8();
+
+                    myToken_ = s;
+                    break;
+                  }
+                  case 32: {
+
+                    token_ = input.readUInt64();
+                    break;
+                  }
+                  case 40: {
+
+                    amount_ = input.readUInt64();
+                    break;
+                  }
+                  case 50: {
+                    String s = input.readStringRequireUtf8();
+
+                    payId_ = s;
+                    break;
+                  }
+                  case 58: {
+                    String s = input.readStringRequireUtf8();
+
+                    billId_ = s;
+                    break;
+                  }
+                  case 66: {
+                    String s = input.readStringRequireUtf8();
+
+                    billType_ = s;
+                    break;
+                  }
+                  case 74: {
+                    String s = input.readStringRequireUtf8();
+
+                    cardNumber_ = s;
+                    break;
+                  }
+                  case 82: {
+                    String s = input.readStringRequireUtf8();
+
+                    merchantName_ = s;
+                    break;
+                  }
+                  case 88: {
+
+                    terminalNo_ = input.readUInt64();
+                    break;
+                  }
+                  case 96: {
+
+                    rrn_ = input.readUInt64();
+                    break;
+                  }
+                  case 104: {
+
+                    traceNumber_ = input.readUInt64();
+                    break;
+                  }
+                  case 112: {
+
+                    requestTime_ = input.readUInt32();
+                    break;
+                  }
+                  case 120: {
+
+                    status_ = input.readBool();
+                    break;
+                  }
+                  case 130: {
+                    String s = input.readStringRequireUtf8();
+
+                    statusDescription_ = s;
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
+
+      // @@protoc_insertion_point(class_scope:proto.RoomMessageWallet.Bill)
+      private static final net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new Bill();
+        DEFAULT_INSTANCE.makeImmutable();
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static volatile com.google.protobuf.Parser<Bill> PARSER;
+
+      public static com.google.protobuf.Parser<Bill> parser() {
+        return DEFAULT_INSTANCE.getParserForType();
+      }
+    }
+
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
@@ -6100,6 +9364,110 @@ public final class ProtoGlobal {
       
     }
 
+    public static final int TOPUP_FIELD_NUMBER = 4;
+    private net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup topup_;
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    public boolean hasTopup() {
+      return topup_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup getTopup() {
+      return topup_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.getDefaultInstance() : topup_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    private void setTopup(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      topup_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    private void setTopup(
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Builder builderForValue) {
+      topup_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    private void mergeTopup(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup value) {
+      if (topup_ != null &&
+          topup_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.getDefaultInstance()) {
+        topup_ =
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.newBuilder(topup_).mergeFrom(value).buildPartial();
+      } else {
+        topup_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+     */
+    private void clearTopup() {  topup_ = null;
+      
+    }
+
+    public static final int BILL_FIELD_NUMBER = 5;
+    private net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill bill_;
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    public boolean hasBill() {
+      return bill_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill getBill() {
+      return bill_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.getDefaultInstance() : bill_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    private void setBill(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bill_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    private void setBill(
+        net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.Builder builderForValue) {
+      bill_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    private void mergeBill(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill value) {
+      if (bill_ != null &&
+          bill_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.getDefaultInstance()) {
+        bill_ =
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.newBuilder(bill_).mergeFrom(value).buildPartial();
+      } else {
+        bill_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+     */
+    private void clearBill() {  bill_ = null;
+      
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != net.iGap.proto.ProtoGlobal.RoomMessageWallet.Type.MONEY_TRANSFER.getNumber()) {
@@ -6110,6 +9478,12 @@ public final class ProtoGlobal {
       }
       if (cardToCard_ != null) {
         output.writeMessage(3, getCardToCard());
+      }
+      if (topup_ != null) {
+        output.writeMessage(4, getTopup());
+      }
+      if (bill_ != null) {
+        output.writeMessage(5, getBill());
       }
     }
 
@@ -6129,6 +9503,14 @@ public final class ProtoGlobal {
       if (cardToCard_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getCardToCard());
+      }
+      if (topup_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getTopup());
+      }
+      if (bill_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getBill());
       }
       memoizedSerializedSize = size;
       return size;
@@ -6343,6 +9725,96 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+       */
+      public boolean hasTopup() {
+        return instance.hasTopup();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup getTopup() {
+        return instance.getTopup();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+       */
+      public Builder setTopup(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup value) {
+        copyOnWrite();
+        instance.setTopup(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+       */
+      public Builder setTopup(
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Builder builderForValue) {
+        copyOnWrite();
+        instance.setTopup(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+       */
+      public Builder mergeTopup(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup value) {
+        copyOnWrite();
+        instance.mergeTopup(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Topup topup = 4;</code>
+       */
+      public Builder clearTopup() {  copyOnWrite();
+        instance.clearTopup();
+        return this;
+      }
+
+      /**
+       * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+       */
+      public boolean hasBill() {
+        return instance.hasBill();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill getBill() {
+        return instance.getBill();
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+       */
+      public Builder setBill(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill value) {
+        copyOnWrite();
+        instance.setBill(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+       */
+      public Builder setBill(
+          net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.Builder builderForValue) {
+        copyOnWrite();
+        instance.setBill(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+       */
+      public Builder mergeBill(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill value) {
+        copyOnWrite();
+        instance.mergeBill(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageWallet.Bill bill = 5;</code>
+       */
+      public Builder clearBill() {  copyOnWrite();
+        instance.clearBill();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RoomMessageWallet)
     }
     protected final Object dynamicMethod(
@@ -6367,6 +9839,8 @@ public final class ProtoGlobal {
           type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
           moneyTransfer_ = visitor.visitMessage(moneyTransfer_, other.moneyTransfer_);
           cardToCard_ = visitor.visitMessage(cardToCard_, other.cardToCard_);
+          topup_ = visitor.visitMessage(topup_, other.topup_);
+          bill_ = visitor.visitMessage(bill_, other.bill_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -6419,6 +9893,32 @@ public final class ProtoGlobal {
                   if (subBuilder != null) {
                     subBuilder.mergeFrom(cardToCard_);
                     cardToCard_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 34: {
+                  net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.Builder subBuilder = null;
+                  if (topup_ != null) {
+                    subBuilder = topup_.toBuilder();
+                  }
+                  topup_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Topup.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(topup_);
+                    topup_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 42: {
+                  net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.Builder subBuilder = null;
+                  if (bill_ != null) {
+                    subBuilder = bill_.toBuilder();
+                  }
+                  bill_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageWallet.Bill.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(bill_);
+                    bill_ = subBuilder.buildPartial();
                   }
 
                   break;

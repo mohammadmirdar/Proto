@@ -20,6 +20,11 @@ public final class ProtoMplGetCardToCardToken {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+
+    /**
+     * <code>optional uint64 to_user_id = 2;</code>
+     */
+    long getToUserId();
   }
   /**
    * Protobuf type {@code proto.MplGetCardToCardToken}
@@ -83,10 +88,36 @@ public final class ProtoMplGetCardToCardToken {
       
     }
 
+    public static final int TO_USER_ID_FIELD_NUMBER = 2;
+    private long toUserId_;
+    /**
+     * <code>optional uint64 to_user_id = 2;</code>
+     */
+    public long getToUserId() {
+      return toUserId_;
+    }
+    /**
+     * <code>optional uint64 to_user_id = 2;</code>
+     */
+    private void setToUserId(long value) {
+      
+      toUserId_ = value;
+    }
+    /**
+     * <code>optional uint64 to_user_id = 2;</code>
+     */
+    private void clearToUserId() {
+      
+      toUserId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
+      }
+      if (toUserId_ != 0L) {
+        output.writeUInt64(2, toUserId_);
       }
     }
 
@@ -98,6 +129,10 @@ public final class ProtoMplGetCardToCardToken {
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
+      }
+      if (toUserId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, toUserId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -230,6 +265,29 @@ public final class ProtoMplGetCardToCardToken {
         return this;
       }
 
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public long getToUserId() {
+        return instance.getToUserId();
+      }
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public Builder setToUserId(long value) {
+        copyOnWrite();
+        instance.setToUserId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public Builder clearToUserId() {
+        copyOnWrite();
+        instance.clearToUserId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.MplGetCardToCardToken)
     }
     protected final Object dynamicMethod(
@@ -252,6 +310,8 @@ public final class ProtoMplGetCardToCardToken {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoMplGetCardToCardToken.MplGetCardToCardToken other = (net.iGap.proto.ProtoMplGetCardToCardToken.MplGetCardToCardToken) arg1;
           request_ = visitor.visitMessage(request_, other.request_);
+          toUserId_ = visitor.visitLong(toUserId_ != 0L, toUserId_,
+              other.toUserId_ != 0L, other.toUserId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -287,6 +347,11 @@ public final class ProtoMplGetCardToCardToken {
                     request_ = subBuilder.buildPartial();
                   }
 
+                  break;
+                }
+                case 16: {
+
+                  toUserId_ = input.readUInt64();
                   break;
                 }
               }
