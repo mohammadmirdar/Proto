@@ -28349,6 +28349,10 @@ public final class ProtoGlobal {
        * <code>PARSLAND = 41;</code>
        */
       PARSLAND(41),
+      /**
+       * <code>POLL_RESULT = 42;</code>
+       */
+      POLL_RESULT(42),
       UNRECOGNIZED(-1),
       ;
 
@@ -28520,6 +28524,10 @@ public final class ProtoGlobal {
        * <code>PARSLAND = 41;</code>
        */
       public static final int PARSLAND_VALUE = 41;
+      /**
+       * <code>POLL_RESULT = 42;</code>
+       */
+      public static final int POLL_RESULT_VALUE = 42;
 
 
       public final int getNumber() {
@@ -28578,6 +28586,7 @@ public final class ProtoGlobal {
           case 39: return ELECTRIC_BILL_MENU;
           case 40: return BLOCKCHAIN;
           case 41: return PARSLAND;
+          case 42: return POLL_RESULT;
           default: return null;
         }
       }
