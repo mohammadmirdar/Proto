@@ -107,6 +107,11 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Language language = 11;</code>
      */
     net.iGap.proto.ProtoGlobal.Language getLanguage();
+
+    /**
+     * <code>optional bytes symmetric_key = 12;</code>
+     */
+    com.google.protobuf.ByteString getSymmetricKey();
   }
   /**
    * Protobuf type {@code proto.UserLogin}
@@ -122,6 +127,7 @@ public final class ProtoUserLogin {
       appVersion_ = "";
       platformVersion_ = "";
       deviceName_ = "";
+      symmetricKey_ = com.google.protobuf.ByteString.EMPTY;
     }
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
@@ -568,6 +574,32 @@ public final class ProtoUserLogin {
       language_ = 0;
     }
 
+    public static final int SYMMETRIC_KEY_FIELD_NUMBER = 12;
+    private com.google.protobuf.ByteString symmetricKey_;
+    /**
+     * <code>optional bytes symmetric_key = 12;</code>
+     */
+    public com.google.protobuf.ByteString getSymmetricKey() {
+      return symmetricKey_;
+    }
+    /**
+     * <code>optional bytes symmetric_key = 12;</code>
+     */
+    private void setSymmetricKey(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      symmetricKey_ = value;
+    }
+    /**
+     * <code>optional bytes symmetric_key = 12;</code>
+     */
+    private void clearSymmetricKey() {
+      
+      symmetricKey_ = getDefaultInstance().getSymmetricKey();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -602,6 +634,9 @@ public final class ProtoUserLogin {
       }
       if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
         output.writeEnum(11, language_);
+      }
+      if (!symmetricKey_.isEmpty()) {
+        output.writeBytes(12, symmetricKey_);
       }
     }
 
@@ -653,6 +688,10 @@ public final class ProtoUserLogin {
       if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, language_);
+      }
+      if (!symmetricKey_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, symmetricKey_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1142,6 +1181,29 @@ public final class ProtoUserLogin {
         return this;
       }
 
+      /**
+       * <code>optional bytes symmetric_key = 12;</code>
+       */
+      public com.google.protobuf.ByteString getSymmetricKey() {
+        return instance.getSymmetricKey();
+      }
+      /**
+       * <code>optional bytes symmetric_key = 12;</code>
+       */
+      public Builder setSymmetricKey(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setSymmetricKey(value);
+        return this;
+      }
+      /**
+       * <code>optional bytes symmetric_key = 12;</code>
+       */
+      public Builder clearSymmetricKey() {
+        copyOnWrite();
+        instance.clearSymmetricKey();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserLogin)
     }
     protected final Object dynamicMethod(
@@ -1181,6 +1243,8 @@ public final class ProtoUserLogin {
           deviceName_ = visitor.visitString(!deviceName_.isEmpty(), deviceName_,
               !other.deviceName_.isEmpty(), other.deviceName_);
           language_ = visitor.visitInt(language_ != 0, language_,    other.language_ != 0, other.language_);
+          symmetricKey_ = visitor.visitByteString(symmetricKey_ != com.google.protobuf.ByteString.EMPTY, symmetricKey_,
+              other.symmetricKey_ != com.google.protobuf.ByteString.EMPTY, other.symmetricKey_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -1274,6 +1338,11 @@ public final class ProtoUserLogin {
                   int rawValue = input.readEnum();
 
                   language_ = rawValue;
+                  break;
+                }
+                case 98: {
+
+                  symmetricKey_ = input.readBytes();
                   break;
                 }
               }
