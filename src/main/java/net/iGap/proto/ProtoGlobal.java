@@ -28357,6 +28357,10 @@ public final class ProtoGlobal {
        * <code>VIRTUAL_GIFT_CARD = 43;</code>
        */
       VIRTUAL_GIFT_CARD(43),
+      /**
+       * <code>NEWS_DETAIL = 44;</code>
+       */
+      NEWS_DETAIL(44),
       UNRECOGNIZED(-1),
       ;
 
@@ -28536,6 +28540,10 @@ public final class ProtoGlobal {
        * <code>VIRTUAL_GIFT_CARD = 43;</code>
        */
       public static final int VIRTUAL_GIFT_CARD_VALUE = 43;
+      /**
+       * <code>NEWS_DETAIL = 44;</code>
+       */
+      public static final int NEWS_DETAIL_VALUE = 44;
 
 
       public final int getNumber() {
@@ -28596,6 +28604,7 @@ public final class ProtoGlobal {
           case 41: return PARSLAND;
           case 42: return POLL_RESULT;
           case 43: return VIRTUAL_GIFT_CARD;
+          case 44: return NEWS_DETAIL;
           default: return null;
         }
       }
