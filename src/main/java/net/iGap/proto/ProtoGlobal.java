@@ -17677,6 +17677,11 @@ public final class ProtoGlobal {
      * <code>optional .proto.ChannelRoom channel_room_extra = 13;</code>
      */
     net.iGap.proto.ProtoGlobal.ChannelRoom getChannelRoomExtra();
+
+    /**
+     * <code>optional uint32 app_id = 19;</code>
+     */
+    int getAppId();
   }
   /**
    * Protobuf type {@code proto.Room}
@@ -18485,6 +18490,29 @@ public final class ProtoGlobal {
       
     }
 
+    public static final int APP_ID_FIELD_NUMBER = 19;
+    private int appId_;
+    /**
+     * <code>optional uint32 app_id = 19;</code>
+     */
+    public int getAppId() {
+      return appId_;
+    }
+    /**
+     * <code>optional uint32 app_id = 19;</code>
+     */
+    private void setAppId(int value) {
+      
+      appId_ = value;
+    }
+    /**
+     * <code>optional uint32 app_id = 19;</code>
+     */
+    private void clearAppId() {
+      
+      appId_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0L) {
@@ -18540,6 +18568,9 @@ public final class ProtoGlobal {
       }
       if (priority_ != 0) {
         output.writeUInt32(18, priority_);
+      }
+      if (appId_ != 0) {
+        output.writeUInt32(19, appId_);
       }
     }
 
@@ -18619,6 +18650,10 @@ public final class ProtoGlobal {
       if (priority_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(18, priority_);
+      }
+      if (appId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(19, appId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -19353,6 +19388,29 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional uint32 app_id = 19;</code>
+       */
+      public int getAppId() {
+        return instance.getAppId();
+      }
+      /**
+       * <code>optional uint32 app_id = 19;</code>
+       */
+      public Builder setAppId(int value) {
+        copyOnWrite();
+        instance.setAppId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 app_id = 19;</code>
+       */
+      public Builder clearAppId() {
+        copyOnWrite();
+        instance.clearAppId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.Room)
     }
     protected final Object dynamicMethod(
@@ -19401,6 +19459,8 @@ public final class ProtoGlobal {
           chatRoomExtra_ = visitor.visitMessage(chatRoomExtra_, other.chatRoomExtra_);
           groupRoomExtra_ = visitor.visitMessage(groupRoomExtra_, other.groupRoomExtra_);
           channelRoomExtra_ = visitor.visitMessage(channelRoomExtra_, other.channelRoomExtra_);
+          appId_ = visitor.visitInt(appId_ != 0, appId_,
+              other.appId_ != 0, other.appId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -19574,6 +19634,11 @@ public final class ProtoGlobal {
                 case 144: {
 
                   priority_ = input.readUInt32();
+                  break;
+                }
+                case 152: {
+
+                  appId_ = input.readUInt32();
                   break;
                 }
               }
