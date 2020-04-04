@@ -17682,6 +17682,15 @@ public final class ProtoGlobal {
      * <code>optional uint32 app_id = 19;</code>
      */
     int getAppId();
+
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    boolean hasPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
   }
   /**
    * Protobuf type {@code proto.Room}
@@ -18513,6 +18522,58 @@ public final class ProtoGlobal {
       appId_ = 0;
     }
 
+    public static final int PERMISSION_FIELD_NUMBER = 20;
+    private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    public boolean hasPermission() {
+      return permission_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+      return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    private void setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      permission_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    private void setPermission(
+        net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+      permission_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    private void mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+      if (permission_ != null &&
+          permission_ != net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance()) {
+        permission_ =
+          net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+      } else {
+        permission_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    private void clearPermission() {  permission_ = null;
+      
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0L) {
@@ -18571,6 +18632,9 @@ public final class ProtoGlobal {
       }
       if (appId_ != 0) {
         output.writeUInt32(19, appId_);
+      }
+      if (permission_ != null) {
+        output.writeMessage(20, getPermission());
       }
     }
 
@@ -18654,6 +18718,10 @@ public final class ProtoGlobal {
       if (appId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(19, appId_);
+      }
+      if (permission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, getPermission());
       }
       memoizedSerializedSize = size;
       return size;
@@ -19411,6 +19479,51 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public boolean hasPermission() {
+        return instance.hasPermission();
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+        return instance.getPermission();
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        copyOnWrite();
+        instance.setPermission(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder setPermission(
+          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        copyOnWrite();
+        instance.setPermission(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        copyOnWrite();
+        instance.mergePermission(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder clearPermission() {  copyOnWrite();
+        instance.clearPermission();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.Room)
     }
     protected final Object dynamicMethod(
@@ -19461,6 +19574,7 @@ public final class ProtoGlobal {
           channelRoomExtra_ = visitor.visitMessage(channelRoomExtra_, other.channelRoomExtra_);
           appId_ = visitor.visitInt(appId_ != 0, appId_,
               other.appId_ != 0, other.appId_);
+          permission_ = visitor.visitMessage(permission_, other.permission_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -19639,6 +19753,19 @@ public final class ProtoGlobal {
                 case 152: {
 
                   appId_ = input.readUInt32();
+                  break;
+                }
+                case 162: {
+                  net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
+                  if (permission_ != null) {
+                    subBuilder = permission_.toBuilder();
+                  }
+                  permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(permission_);
+                    permission_ = subBuilder.buildPartial();
+                  }
+
                   break;
                 }
               }
@@ -26621,6 +26748,791 @@ public final class ProtoGlobal {
     private static volatile com.google.protobuf.Parser<File> PARSER;
 
     public static com.google.protobuf.Parser<File> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface RoomAccessOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomAccess)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional bool modify_room = 1;</code>
+     */
+    boolean getModifyRoom();
+
+    /**
+     * <code>optional bool post_message = 2;</code>
+     */
+    boolean getPostMessage();
+
+    /**
+     * <code>optional bool edit_message = 3;</code>
+     */
+    boolean getEditMessage();
+
+    /**
+     * <code>optional bool delete_message = 4;</code>
+     */
+    boolean getDeleteMessage();
+
+    /**
+     * <code>optional bool pin_message = 5;</code>
+     */
+    boolean getPinMessage();
+
+    /**
+     * <code>optional bool add_member = 6;</code>
+     */
+    boolean getAddMember();
+
+    /**
+     * <code>optional bool ban_member = 7;</code>
+     */
+    boolean getBanMember();
+
+    /**
+     * <code>optional bool get_member = 8;</code>
+     */
+    boolean getGetMember();
+
+    /**
+     * <code>optional bool add_admin = 9;</code>
+     */
+    boolean getAddAdmin();
+  }
+  /**
+   * Protobuf type {@code proto.RoomAccess}
+   */
+  public  static final class RoomAccess extends
+      com.google.protobuf.GeneratedMessageLite<
+          RoomAccess, RoomAccess.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.RoomAccess)
+      RoomAccessOrBuilder {
+    private RoomAccess() {
+    }
+    public static final int MODIFY_ROOM_FIELD_NUMBER = 1;
+    private boolean modifyRoom_;
+    /**
+     * <code>optional bool modify_room = 1;</code>
+     */
+    public boolean getModifyRoom() {
+      return modifyRoom_;
+    }
+    /**
+     * <code>optional bool modify_room = 1;</code>
+     */
+    private void setModifyRoom(boolean value) {
+      
+      modifyRoom_ = value;
+    }
+    /**
+     * <code>optional bool modify_room = 1;</code>
+     */
+    private void clearModifyRoom() {
+      
+      modifyRoom_ = false;
+    }
+
+    public static final int POST_MESSAGE_FIELD_NUMBER = 2;
+    private boolean postMessage_;
+    /**
+     * <code>optional bool post_message = 2;</code>
+     */
+    public boolean getPostMessage() {
+      return postMessage_;
+    }
+    /**
+     * <code>optional bool post_message = 2;</code>
+     */
+    private void setPostMessage(boolean value) {
+      
+      postMessage_ = value;
+    }
+    /**
+     * <code>optional bool post_message = 2;</code>
+     */
+    private void clearPostMessage() {
+      
+      postMessage_ = false;
+    }
+
+    public static final int EDIT_MESSAGE_FIELD_NUMBER = 3;
+    private boolean editMessage_;
+    /**
+     * <code>optional bool edit_message = 3;</code>
+     */
+    public boolean getEditMessage() {
+      return editMessage_;
+    }
+    /**
+     * <code>optional bool edit_message = 3;</code>
+     */
+    private void setEditMessage(boolean value) {
+      
+      editMessage_ = value;
+    }
+    /**
+     * <code>optional bool edit_message = 3;</code>
+     */
+    private void clearEditMessage() {
+      
+      editMessage_ = false;
+    }
+
+    public static final int DELETE_MESSAGE_FIELD_NUMBER = 4;
+    private boolean deleteMessage_;
+    /**
+     * <code>optional bool delete_message = 4;</code>
+     */
+    public boolean getDeleteMessage() {
+      return deleteMessage_;
+    }
+    /**
+     * <code>optional bool delete_message = 4;</code>
+     */
+    private void setDeleteMessage(boolean value) {
+      
+      deleteMessage_ = value;
+    }
+    /**
+     * <code>optional bool delete_message = 4;</code>
+     */
+    private void clearDeleteMessage() {
+      
+      deleteMessage_ = false;
+    }
+
+    public static final int PIN_MESSAGE_FIELD_NUMBER = 5;
+    private boolean pinMessage_;
+    /**
+     * <code>optional bool pin_message = 5;</code>
+     */
+    public boolean getPinMessage() {
+      return pinMessage_;
+    }
+    /**
+     * <code>optional bool pin_message = 5;</code>
+     */
+    private void setPinMessage(boolean value) {
+      
+      pinMessage_ = value;
+    }
+    /**
+     * <code>optional bool pin_message = 5;</code>
+     */
+    private void clearPinMessage() {
+      
+      pinMessage_ = false;
+    }
+
+    public static final int ADD_MEMBER_FIELD_NUMBER = 6;
+    private boolean addMember_;
+    /**
+     * <code>optional bool add_member = 6;</code>
+     */
+    public boolean getAddMember() {
+      return addMember_;
+    }
+    /**
+     * <code>optional bool add_member = 6;</code>
+     */
+    private void setAddMember(boolean value) {
+      
+      addMember_ = value;
+    }
+    /**
+     * <code>optional bool add_member = 6;</code>
+     */
+    private void clearAddMember() {
+      
+      addMember_ = false;
+    }
+
+    public static final int BAN_MEMBER_FIELD_NUMBER = 7;
+    private boolean banMember_;
+    /**
+     * <code>optional bool ban_member = 7;</code>
+     */
+    public boolean getBanMember() {
+      return banMember_;
+    }
+    /**
+     * <code>optional bool ban_member = 7;</code>
+     */
+    private void setBanMember(boolean value) {
+      
+      banMember_ = value;
+    }
+    /**
+     * <code>optional bool ban_member = 7;</code>
+     */
+    private void clearBanMember() {
+      
+      banMember_ = false;
+    }
+
+    public static final int GET_MEMBER_FIELD_NUMBER = 8;
+    private boolean getMember_;
+    /**
+     * <code>optional bool get_member = 8;</code>
+     */
+    public boolean getGetMember() {
+      return getMember_;
+    }
+    /**
+     * <code>optional bool get_member = 8;</code>
+     */
+    private void setGetMember(boolean value) {
+      
+      getMember_ = value;
+    }
+    /**
+     * <code>optional bool get_member = 8;</code>
+     */
+    private void clearGetMember() {
+      
+      getMember_ = false;
+    }
+
+    public static final int ADD_ADMIN_FIELD_NUMBER = 9;
+    private boolean addAdmin_;
+    /**
+     * <code>optional bool add_admin = 9;</code>
+     */
+    public boolean getAddAdmin() {
+      return addAdmin_;
+    }
+    /**
+     * <code>optional bool add_admin = 9;</code>
+     */
+    private void setAddAdmin(boolean value) {
+      
+      addAdmin_ = value;
+    }
+    /**
+     * <code>optional bool add_admin = 9;</code>
+     */
+    private void clearAddAdmin() {
+      
+      addAdmin_ = false;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (modifyRoom_ != false) {
+        output.writeBool(1, modifyRoom_);
+      }
+      if (postMessage_ != false) {
+        output.writeBool(2, postMessage_);
+      }
+      if (editMessage_ != false) {
+        output.writeBool(3, editMessage_);
+      }
+      if (deleteMessage_ != false) {
+        output.writeBool(4, deleteMessage_);
+      }
+      if (pinMessage_ != false) {
+        output.writeBool(5, pinMessage_);
+      }
+      if (addMember_ != false) {
+        output.writeBool(6, addMember_);
+      }
+      if (banMember_ != false) {
+        output.writeBool(7, banMember_);
+      }
+      if (getMember_ != false) {
+        output.writeBool(8, getMember_);
+      }
+      if (addAdmin_ != false) {
+        output.writeBool(9, addAdmin_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modifyRoom_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, modifyRoom_);
+      }
+      if (postMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, postMessage_);
+      }
+      if (editMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, editMessage_);
+      }
+      if (deleteMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, deleteMessage_);
+      }
+      if (pinMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, pinMessage_);
+      }
+      if (addMember_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, addMember_);
+      }
+      if (banMember_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, banMember_);
+      }
+      if (getMember_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, getMember_);
+      }
+      if (addAdmin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, addAdmin_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomAccess prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.RoomAccess}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.RoomAccess, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomAccess)
+        net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional bool modify_room = 1;</code>
+       */
+      public boolean getModifyRoom() {
+        return instance.getModifyRoom();
+      }
+      /**
+       * <code>optional bool modify_room = 1;</code>
+       */
+      public Builder setModifyRoom(boolean value) {
+        copyOnWrite();
+        instance.setModifyRoom(value);
+        return this;
+      }
+      /**
+       * <code>optional bool modify_room = 1;</code>
+       */
+      public Builder clearModifyRoom() {
+        copyOnWrite();
+        instance.clearModifyRoom();
+        return this;
+      }
+
+      /**
+       * <code>optional bool post_message = 2;</code>
+       */
+      public boolean getPostMessage() {
+        return instance.getPostMessage();
+      }
+      /**
+       * <code>optional bool post_message = 2;</code>
+       */
+      public Builder setPostMessage(boolean value) {
+        copyOnWrite();
+        instance.setPostMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional bool post_message = 2;</code>
+       */
+      public Builder clearPostMessage() {
+        copyOnWrite();
+        instance.clearPostMessage();
+        return this;
+      }
+
+      /**
+       * <code>optional bool edit_message = 3;</code>
+       */
+      public boolean getEditMessage() {
+        return instance.getEditMessage();
+      }
+      /**
+       * <code>optional bool edit_message = 3;</code>
+       */
+      public Builder setEditMessage(boolean value) {
+        copyOnWrite();
+        instance.setEditMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional bool edit_message = 3;</code>
+       */
+      public Builder clearEditMessage() {
+        copyOnWrite();
+        instance.clearEditMessage();
+        return this;
+      }
+
+      /**
+       * <code>optional bool delete_message = 4;</code>
+       */
+      public boolean getDeleteMessage() {
+        return instance.getDeleteMessage();
+      }
+      /**
+       * <code>optional bool delete_message = 4;</code>
+       */
+      public Builder setDeleteMessage(boolean value) {
+        copyOnWrite();
+        instance.setDeleteMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional bool delete_message = 4;</code>
+       */
+      public Builder clearDeleteMessage() {
+        copyOnWrite();
+        instance.clearDeleteMessage();
+        return this;
+      }
+
+      /**
+       * <code>optional bool pin_message = 5;</code>
+       */
+      public boolean getPinMessage() {
+        return instance.getPinMessage();
+      }
+      /**
+       * <code>optional bool pin_message = 5;</code>
+       */
+      public Builder setPinMessage(boolean value) {
+        copyOnWrite();
+        instance.setPinMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional bool pin_message = 5;</code>
+       */
+      public Builder clearPinMessage() {
+        copyOnWrite();
+        instance.clearPinMessage();
+        return this;
+      }
+
+      /**
+       * <code>optional bool add_member = 6;</code>
+       */
+      public boolean getAddMember() {
+        return instance.getAddMember();
+      }
+      /**
+       * <code>optional bool add_member = 6;</code>
+       */
+      public Builder setAddMember(boolean value) {
+        copyOnWrite();
+        instance.setAddMember(value);
+        return this;
+      }
+      /**
+       * <code>optional bool add_member = 6;</code>
+       */
+      public Builder clearAddMember() {
+        copyOnWrite();
+        instance.clearAddMember();
+        return this;
+      }
+
+      /**
+       * <code>optional bool ban_member = 7;</code>
+       */
+      public boolean getBanMember() {
+        return instance.getBanMember();
+      }
+      /**
+       * <code>optional bool ban_member = 7;</code>
+       */
+      public Builder setBanMember(boolean value) {
+        copyOnWrite();
+        instance.setBanMember(value);
+        return this;
+      }
+      /**
+       * <code>optional bool ban_member = 7;</code>
+       */
+      public Builder clearBanMember() {
+        copyOnWrite();
+        instance.clearBanMember();
+        return this;
+      }
+
+      /**
+       * <code>optional bool get_member = 8;</code>
+       */
+      public boolean getGetMember() {
+        return instance.getGetMember();
+      }
+      /**
+       * <code>optional bool get_member = 8;</code>
+       */
+      public Builder setGetMember(boolean value) {
+        copyOnWrite();
+        instance.setGetMember(value);
+        return this;
+      }
+      /**
+       * <code>optional bool get_member = 8;</code>
+       */
+      public Builder clearGetMember() {
+        copyOnWrite();
+        instance.clearGetMember();
+        return this;
+      }
+
+      /**
+       * <code>optional bool add_admin = 9;</code>
+       */
+      public boolean getAddAdmin() {
+        return instance.getAddAdmin();
+      }
+      /**
+       * <code>optional bool add_admin = 9;</code>
+       */
+      public Builder setAddAdmin(boolean value) {
+        copyOnWrite();
+        instance.setAddAdmin(value);
+        return this;
+      }
+      /**
+       * <code>optional bool add_admin = 9;</code>
+       */
+      public Builder clearAddAdmin() {
+        copyOnWrite();
+        instance.clearAddAdmin();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomAccess)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.RoomAccess();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.RoomAccess other = (net.iGap.proto.ProtoGlobal.RoomAccess) arg1;
+          modifyRoom_ = visitor.visitBoolean(modifyRoom_ != false, modifyRoom_,
+              other.modifyRoom_ != false, other.modifyRoom_);
+          postMessage_ = visitor.visitBoolean(postMessage_ != false, postMessage_,
+              other.postMessage_ != false, other.postMessage_);
+          editMessage_ = visitor.visitBoolean(editMessage_ != false, editMessage_,
+              other.editMessage_ != false, other.editMessage_);
+          deleteMessage_ = visitor.visitBoolean(deleteMessage_ != false, deleteMessage_,
+              other.deleteMessage_ != false, other.deleteMessage_);
+          pinMessage_ = visitor.visitBoolean(pinMessage_ != false, pinMessage_,
+              other.pinMessage_ != false, other.pinMessage_);
+          addMember_ = visitor.visitBoolean(addMember_ != false, addMember_,
+              other.addMember_ != false, other.addMember_);
+          banMember_ = visitor.visitBoolean(banMember_ != false, banMember_,
+              other.banMember_ != false, other.banMember_);
+          getMember_ = visitor.visitBoolean(getMember_ != false, getMember_,
+              other.getMember_ != false, other.getMember_);
+          addAdmin_ = visitor.visitBoolean(addAdmin_ != false, addAdmin_,
+              other.addAdmin_ != false, other.addAdmin_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  modifyRoom_ = input.readBool();
+                  break;
+                }
+                case 16: {
+
+                  postMessage_ = input.readBool();
+                  break;
+                }
+                case 24: {
+
+                  editMessage_ = input.readBool();
+                  break;
+                }
+                case 32: {
+
+                  deleteMessage_ = input.readBool();
+                  break;
+                }
+                case 40: {
+
+                  pinMessage_ = input.readBool();
+                  break;
+                }
+                case 48: {
+
+                  addMember_ = input.readBool();
+                  break;
+                }
+                case 56: {
+
+                  banMember_ = input.readBool();
+                  break;
+                }
+                case 64: {
+
+                  getMember_ = input.readBool();
+                  break;
+                }
+                case 72: {
+
+                  addAdmin_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.RoomAccess.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.RoomAccess)
+    private static final net.iGap.proto.ProtoGlobal.RoomAccess DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RoomAccess();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomAccess getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<RoomAccess> PARSER;
+
+    public static com.google.protobuf.Parser<RoomAccess> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }
