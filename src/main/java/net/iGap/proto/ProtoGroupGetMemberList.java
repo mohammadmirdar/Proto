@@ -766,6 +766,15 @@ public final class ProtoGroupGetMemberList {
        * <code>optional .proto.GroupRoom.Role role = 2;</code>
        */
       net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole();
+
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      boolean hasPermission();
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
     }
     /**
      * Protobuf type {@code proto.GroupGetMemberListResponse.Member}
@@ -839,6 +848,58 @@ public final class ProtoGroupGetMemberList {
         role_ = 0;
       }
 
+      public static final int PERMISSION_FIELD_NUMBER = 3;
+      private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      public boolean hasPermission() {
+        return permission_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+        return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      private void setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        permission_ = value;
+        
+        }
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      private void setPermission(
+          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        permission_ = builderForValue.build();
+        
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      private void mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permission_ != null &&
+            permission_ != net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance()) {
+          permission_ =
+            net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+        } else {
+          permission_ = value;
+        }
+        
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 3;</code>
+       */
+      private void clearPermission() {  permission_ = null;
+        
+      }
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (userId_ != 0L) {
@@ -846,6 +907,9 @@ public final class ProtoGroupGetMemberList {
         }
         if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
           output.writeEnum(2, role_);
+        }
+        if (permission_ != null) {
+          output.writeMessage(3, getPermission());
         }
       }
 
@@ -861,6 +925,10 @@ public final class ProtoGroupGetMemberList {
         if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(2, role_);
+        }
+        if (permission_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, getPermission());
         }
         memoizedSerializedSize = size;
         return size;
@@ -1008,6 +1076,51 @@ public final class ProtoGroupGetMemberList {
           return this;
         }
 
+        /**
+         * <code>optional .proto.RoomAccess permission = 3;</code>
+         */
+        public boolean hasPermission() {
+          return instance.hasPermission();
+        }
+        /**
+         * <code>optional .proto.RoomAccess permission = 3;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+          return instance.getPermission();
+        }
+        /**
+         * <code>optional .proto.RoomAccess permission = 3;</code>
+         */
+        public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+          copyOnWrite();
+          instance.setPermission(value);
+          return this;
+          }
+        /**
+         * <code>optional .proto.RoomAccess permission = 3;</code>
+         */
+        public Builder setPermission(
+            net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+          copyOnWrite();
+          instance.setPermission(builderForValue);
+          return this;
+        }
+        /**
+         * <code>optional .proto.RoomAccess permission = 3;</code>
+         */
+        public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+          copyOnWrite();
+          instance.mergePermission(value);
+          return this;
+        }
+        /**
+         * <code>optional .proto.RoomAccess permission = 3;</code>
+         */
+        public Builder clearPermission() {  copyOnWrite();
+          instance.clearPermission();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:proto.GroupGetMemberListResponse.Member)
       }
       protected final Object dynamicMethod(
@@ -1032,6 +1145,7 @@ public final class ProtoGroupGetMemberList {
             userId_ = visitor.visitLong(userId_ != 0L, userId_,
                 other.userId_ != 0L, other.userId_);
             role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
+            permission_ = visitor.visitMessage(permission_, other.permission_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -1065,6 +1179,19 @@ public final class ProtoGroupGetMemberList {
                     int rawValue = input.readEnum();
 
                     role_ = rawValue;
+                    break;
+                  }
+                  case 26: {
+                    net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
+                    if (permission_ != null) {
+                      subBuilder = permission_.toBuilder();
+                    }
+                    permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(permission_);
+                      permission_ = subBuilder.buildPartial();
+                    }
+
                     break;
                   }
                 }
