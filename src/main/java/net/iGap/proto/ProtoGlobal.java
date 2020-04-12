@@ -26752,6 +26752,531 @@ public final class ProtoGlobal {
     }
   }
 
+  public interface PostMessageRightsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.PostMessageRights)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional bool send_text = 1;</code>
+     */
+    boolean getSendText();
+
+    /**
+     * <code>optional bool send_media = 3;</code>
+     */
+    boolean getSendMedia();
+
+    /**
+     * <code>optional bool send_gif = 4;</code>
+     */
+    boolean getSendGif();
+
+    /**
+     * <code>optional bool send_sticker = 5;</code>
+     */
+    boolean getSendSticker();
+
+    /**
+     * <code>optional bool send_link = 6;</code>
+     */
+    boolean getSendLink();
+  }
+  /**
+   * Protobuf type {@code proto.PostMessageRights}
+   */
+  public  static final class PostMessageRights extends
+      com.google.protobuf.GeneratedMessageLite<
+          PostMessageRights, PostMessageRights.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.PostMessageRights)
+      PostMessageRightsOrBuilder {
+    private PostMessageRights() {
+    }
+    public static final int SEND_TEXT_FIELD_NUMBER = 1;
+    private boolean sendText_;
+    /**
+     * <code>optional bool send_text = 1;</code>
+     */
+    public boolean getSendText() {
+      return sendText_;
+    }
+    /**
+     * <code>optional bool send_text = 1;</code>
+     */
+    private void setSendText(boolean value) {
+      
+      sendText_ = value;
+    }
+    /**
+     * <code>optional bool send_text = 1;</code>
+     */
+    private void clearSendText() {
+      
+      sendText_ = false;
+    }
+
+    public static final int SEND_MEDIA_FIELD_NUMBER = 3;
+    private boolean sendMedia_;
+    /**
+     * <code>optional bool send_media = 3;</code>
+     */
+    public boolean getSendMedia() {
+      return sendMedia_;
+    }
+    /**
+     * <code>optional bool send_media = 3;</code>
+     */
+    private void setSendMedia(boolean value) {
+      
+      sendMedia_ = value;
+    }
+    /**
+     * <code>optional bool send_media = 3;</code>
+     */
+    private void clearSendMedia() {
+      
+      sendMedia_ = false;
+    }
+
+    public static final int SEND_GIF_FIELD_NUMBER = 4;
+    private boolean sendGif_;
+    /**
+     * <code>optional bool send_gif = 4;</code>
+     */
+    public boolean getSendGif() {
+      return sendGif_;
+    }
+    /**
+     * <code>optional bool send_gif = 4;</code>
+     */
+    private void setSendGif(boolean value) {
+      
+      sendGif_ = value;
+    }
+    /**
+     * <code>optional bool send_gif = 4;</code>
+     */
+    private void clearSendGif() {
+      
+      sendGif_ = false;
+    }
+
+    public static final int SEND_STICKER_FIELD_NUMBER = 5;
+    private boolean sendSticker_;
+    /**
+     * <code>optional bool send_sticker = 5;</code>
+     */
+    public boolean getSendSticker() {
+      return sendSticker_;
+    }
+    /**
+     * <code>optional bool send_sticker = 5;</code>
+     */
+    private void setSendSticker(boolean value) {
+      
+      sendSticker_ = value;
+    }
+    /**
+     * <code>optional bool send_sticker = 5;</code>
+     */
+    private void clearSendSticker() {
+      
+      sendSticker_ = false;
+    }
+
+    public static final int SEND_LINK_FIELD_NUMBER = 6;
+    private boolean sendLink_;
+    /**
+     * <code>optional bool send_link = 6;</code>
+     */
+    public boolean getSendLink() {
+      return sendLink_;
+    }
+    /**
+     * <code>optional bool send_link = 6;</code>
+     */
+    private void setSendLink(boolean value) {
+      
+      sendLink_ = value;
+    }
+    /**
+     * <code>optional bool send_link = 6;</code>
+     */
+    private void clearSendLink() {
+      
+      sendLink_ = false;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (sendText_ != false) {
+        output.writeBool(1, sendText_);
+      }
+      if (sendMedia_ != false) {
+        output.writeBool(3, sendMedia_);
+      }
+      if (sendGif_ != false) {
+        output.writeBool(4, sendGif_);
+      }
+      if (sendSticker_ != false) {
+        output.writeBool(5, sendSticker_);
+      }
+      if (sendLink_ != false) {
+        output.writeBool(6, sendLink_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sendText_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, sendText_);
+      }
+      if (sendMedia_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, sendMedia_);
+      }
+      if (sendGif_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, sendGif_);
+      }
+      if (sendSticker_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, sendSticker_);
+      }
+      if (sendLink_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, sendLink_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.PostMessageRights prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.PostMessageRights}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.PostMessageRights, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.PostMessageRights)
+        net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.PostMessageRights.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional bool send_text = 1;</code>
+       */
+      public boolean getSendText() {
+        return instance.getSendText();
+      }
+      /**
+       * <code>optional bool send_text = 1;</code>
+       */
+      public Builder setSendText(boolean value) {
+        copyOnWrite();
+        instance.setSendText(value);
+        return this;
+      }
+      /**
+       * <code>optional bool send_text = 1;</code>
+       */
+      public Builder clearSendText() {
+        copyOnWrite();
+        instance.clearSendText();
+        return this;
+      }
+
+      /**
+       * <code>optional bool send_media = 3;</code>
+       */
+      public boolean getSendMedia() {
+        return instance.getSendMedia();
+      }
+      /**
+       * <code>optional bool send_media = 3;</code>
+       */
+      public Builder setSendMedia(boolean value) {
+        copyOnWrite();
+        instance.setSendMedia(value);
+        return this;
+      }
+      /**
+       * <code>optional bool send_media = 3;</code>
+       */
+      public Builder clearSendMedia() {
+        copyOnWrite();
+        instance.clearSendMedia();
+        return this;
+      }
+
+      /**
+       * <code>optional bool send_gif = 4;</code>
+       */
+      public boolean getSendGif() {
+        return instance.getSendGif();
+      }
+      /**
+       * <code>optional bool send_gif = 4;</code>
+       */
+      public Builder setSendGif(boolean value) {
+        copyOnWrite();
+        instance.setSendGif(value);
+        return this;
+      }
+      /**
+       * <code>optional bool send_gif = 4;</code>
+       */
+      public Builder clearSendGif() {
+        copyOnWrite();
+        instance.clearSendGif();
+        return this;
+      }
+
+      /**
+       * <code>optional bool send_sticker = 5;</code>
+       */
+      public boolean getSendSticker() {
+        return instance.getSendSticker();
+      }
+      /**
+       * <code>optional bool send_sticker = 5;</code>
+       */
+      public Builder setSendSticker(boolean value) {
+        copyOnWrite();
+        instance.setSendSticker(value);
+        return this;
+      }
+      /**
+       * <code>optional bool send_sticker = 5;</code>
+       */
+      public Builder clearSendSticker() {
+        copyOnWrite();
+        instance.clearSendSticker();
+        return this;
+      }
+
+      /**
+       * <code>optional bool send_link = 6;</code>
+       */
+      public boolean getSendLink() {
+        return instance.getSendLink();
+      }
+      /**
+       * <code>optional bool send_link = 6;</code>
+       */
+      public Builder setSendLink(boolean value) {
+        copyOnWrite();
+        instance.setSendLink(value);
+        return this;
+      }
+      /**
+       * <code>optional bool send_link = 6;</code>
+       */
+      public Builder clearSendLink() {
+        copyOnWrite();
+        instance.clearSendLink();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.PostMessageRights)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.PostMessageRights();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.PostMessageRights other = (net.iGap.proto.ProtoGlobal.PostMessageRights) arg1;
+          sendText_ = visitor.visitBoolean(sendText_ != false, sendText_,
+              other.sendText_ != false, other.sendText_);
+          sendMedia_ = visitor.visitBoolean(sendMedia_ != false, sendMedia_,
+              other.sendMedia_ != false, other.sendMedia_);
+          sendGif_ = visitor.visitBoolean(sendGif_ != false, sendGif_,
+              other.sendGif_ != false, other.sendGif_);
+          sendSticker_ = visitor.visitBoolean(sendSticker_ != false, sendSticker_,
+              other.sendSticker_ != false, other.sendSticker_);
+          sendLink_ = visitor.visitBoolean(sendLink_ != false, sendLink_,
+              other.sendLink_ != false, other.sendLink_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  sendText_ = input.readBool();
+                  break;
+                }
+                case 24: {
+
+                  sendMedia_ = input.readBool();
+                  break;
+                }
+                case 32: {
+
+                  sendGif_ = input.readBool();
+                  break;
+                }
+                case 40: {
+
+                  sendSticker_ = input.readBool();
+                  break;
+                }
+                case 48: {
+
+                  sendLink_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.PostMessageRights.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.PostMessageRights)
+    private static final net.iGap.proto.ProtoGlobal.PostMessageRights DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new PostMessageRights();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<PostMessageRights> PARSER;
+
+    public static com.google.protobuf.Parser<PostMessageRights> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
   public interface RoomAccessOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.RoomAccess)
       com.google.protobuf.MessageLiteOrBuilder {
@@ -26762,9 +27287,13 @@ public final class ProtoGlobal {
     boolean getModifyRoom();
 
     /**
-     * <code>optional bool post_message = 2;</code>
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
      */
-    boolean getPostMessage();
+    boolean hasPostMessage();
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PostMessageRights getPostMessage();
 
     /**
      * <code>optional bool edit_message = 3;</code>
@@ -26835,26 +27364,55 @@ public final class ProtoGlobal {
     }
 
     public static final int POST_MESSAGE_FIELD_NUMBER = 2;
-    private boolean postMessage_;
+    private net.iGap.proto.ProtoGlobal.PostMessageRights postMessage_;
     /**
-     * <code>optional bool post_message = 2;</code>
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
      */
-    public boolean getPostMessage() {
-      return postMessage_;
+    public boolean hasPostMessage() {
+      return postMessage_ != null;
     }
     /**
-     * <code>optional bool post_message = 2;</code>
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
      */
-    private void setPostMessage(boolean value) {
-      
+    public net.iGap.proto.ProtoGlobal.PostMessageRights getPostMessage() {
+      return postMessage_ == null ? net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance() : postMessage_;
+    }
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    private void setPostMessage(net.iGap.proto.ProtoGlobal.PostMessageRights value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       postMessage_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    private void setPostMessage(
+        net.iGap.proto.ProtoGlobal.PostMessageRights.Builder builderForValue) {
+      postMessage_ = builderForValue.build();
+      
     }
     /**
-     * <code>optional bool post_message = 2;</code>
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
      */
-    private void clearPostMessage() {
+    private void mergePostMessage(net.iGap.proto.ProtoGlobal.PostMessageRights value) {
+      if (postMessage_ != null &&
+          postMessage_ != net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance()) {
+        postMessage_ =
+          net.iGap.proto.ProtoGlobal.PostMessageRights.newBuilder(postMessage_).mergeFrom(value).buildPartial();
+      } else {
+        postMessage_ = value;
+      }
       
-      postMessage_ = false;
+    }
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    private void clearPostMessage() {  postMessage_ = null;
+      
     }
 
     public static final int EDIT_MESSAGE_FIELD_NUMBER = 3;
@@ -27023,8 +27581,8 @@ public final class ProtoGlobal {
       if (modifyRoom_ != false) {
         output.writeBool(1, modifyRoom_);
       }
-      if (postMessage_ != false) {
-        output.writeBool(2, postMessage_);
+      if (postMessage_ != null) {
+        output.writeMessage(2, getPostMessage());
       }
       if (editMessage_ != false) {
         output.writeBool(3, editMessage_);
@@ -27058,9 +27616,9 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, modifyRoom_);
       }
-      if (postMessage_ != false) {
+      if (postMessage_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, postMessage_);
+          .computeMessageSize(2, getPostMessage());
       }
       if (editMessage_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -27200,24 +27758,46 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
        */
-      public boolean getPostMessage() {
+      public boolean hasPostMessage() {
+        return instance.hasPostMessage();
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PostMessageRights getPostMessage() {
         return instance.getPostMessage();
       }
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
        */
-      public Builder setPostMessage(boolean value) {
+      public Builder setPostMessage(net.iGap.proto.ProtoGlobal.PostMessageRights value) {
         copyOnWrite();
         instance.setPostMessage(value);
         return this;
+        }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public Builder setPostMessage(
+          net.iGap.proto.ProtoGlobal.PostMessageRights.Builder builderForValue) {
+        copyOnWrite();
+        instance.setPostMessage(builderForValue);
+        return this;
       }
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
        */
-      public Builder clearPostMessage() {
+      public Builder mergePostMessage(net.iGap.proto.ProtoGlobal.PostMessageRights value) {
         copyOnWrite();
+        instance.mergePostMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public Builder clearPostMessage() {  copyOnWrite();
         instance.clearPostMessage();
         return this;
       }
@@ -27406,8 +27986,7 @@ public final class ProtoGlobal {
           net.iGap.proto.ProtoGlobal.RoomAccess other = (net.iGap.proto.ProtoGlobal.RoomAccess) arg1;
           modifyRoom_ = visitor.visitBoolean(modifyRoom_ != false, modifyRoom_,
               other.modifyRoom_ != false, other.modifyRoom_);
-          postMessage_ = visitor.visitBoolean(postMessage_ != false, postMessage_,
-              other.postMessage_ != false, other.postMessage_);
+          postMessage_ = visitor.visitMessage(postMessage_, other.postMessage_);
           editMessage_ = visitor.visitBoolean(editMessage_ != false, editMessage_,
               other.editMessage_ != false, other.editMessage_);
           deleteMessage_ = visitor.visitBoolean(deleteMessage_ != false, deleteMessage_,
@@ -27451,9 +28030,17 @@ public final class ProtoGlobal {
                   modifyRoom_ = input.readBool();
                   break;
                 }
-                case 16: {
+                case 18: {
+                  net.iGap.proto.ProtoGlobal.PostMessageRights.Builder subBuilder = null;
+                  if (postMessage_ != null) {
+                    subBuilder = postMessage_.toBuilder();
+                  }
+                  postMessage_ = input.readMessage(net.iGap.proto.ProtoGlobal.PostMessageRights.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(postMessage_);
+                    postMessage_ = subBuilder.buildPartial();
+                  }
 
-                  postMessage_ = input.readBool();
                   break;
                 }
                 case 24: {

@@ -768,13 +768,13 @@ public final class ProtoChannelGetMemberList {
       net.iGap.proto.ProtoGlobal.ChannelRoom.Role getRole();
 
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      boolean hasPermission();
+      boolean hasAdminRights();
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
+      net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getAdminRights();
     }
     /**
      * Protobuf type {@code proto.ChannelGetMemberListResponse.Member}
@@ -848,55 +848,55 @@ public final class ProtoChannelGetMemberList {
         role_ = 0;
       }
 
-      public static final int PERMISSION_FIELD_NUMBER = 3;
-      private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+      public static final int ADMINRIGHTS_FIELD_NUMBER = 3;
+      private net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights adminRights_;
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      public boolean hasPermission() {
-        return permission_ != null;
+      public boolean hasAdminRights() {
+        return adminRights_ != null;
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
-        return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getAdminRights() {
+        return adminRights_ == null ? net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : adminRights_;
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+      private void setAdminRights(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        permission_ = value;
+        adminRights_ = value;
         
         }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void setPermission(
-          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
-        permission_ = builderForValue.build();
+      private void setAdminRights(
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder builderForValue) {
+        adminRights_ = builderForValue.build();
         
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
-        if (permission_ != null &&
-            permission_ != net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance()) {
-          permission_ =
-            net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+      private void mergeAdminRights(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
+        if (adminRights_ != null &&
+            adminRights_ != net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance()) {
+          adminRights_ =
+            net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.newBuilder(adminRights_).mergeFrom(value).buildPartial();
         } else {
-          permission_ = value;
+          adminRights_ = value;
         }
         
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void clearPermission() {  permission_ = null;
+      private void clearAdminRights() {  adminRights_ = null;
         
       }
 
@@ -908,8 +908,8 @@ public final class ProtoChannelGetMemberList {
         if (role_ != net.iGap.proto.ProtoGlobal.ChannelRoom.Role.MEMBER.getNumber()) {
           output.writeEnum(2, role_);
         }
-        if (permission_ != null) {
-          output.writeMessage(3, getPermission());
+        if (adminRights_ != null) {
+          output.writeMessage(3, getAdminRights());
         }
       }
 
@@ -926,9 +926,9 @@ public final class ProtoChannelGetMemberList {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(2, role_);
         }
-        if (permission_ != null) {
+        if (adminRights_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getPermission());
+            .computeMessageSize(3, getAdminRights());
         }
         memoizedSerializedSize = size;
         return size;
@@ -1077,47 +1077,47 @@ public final class ProtoChannelGetMemberList {
         }
 
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public boolean hasPermission() {
-          return instance.hasPermission();
+        public boolean hasAdminRights() {
+          return instance.hasAdminRights();
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
-          return instance.getPermission();
+        public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getAdminRights() {
+          return instance.getAdminRights();
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        public Builder setAdminRights(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
           copyOnWrite();
-          instance.setPermission(value);
+          instance.setAdminRights(value);
           return this;
           }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder setPermission(
-            net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        public Builder setAdminRights(
+            net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder builderForValue) {
           copyOnWrite();
-          instance.setPermission(builderForValue);
+          instance.setAdminRights(builderForValue);
           return this;
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        public Builder mergeAdminRights(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
           copyOnWrite();
-          instance.mergePermission(value);
+          instance.mergeAdminRights(value);
           return this;
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder clearPermission() {  copyOnWrite();
-          instance.clearPermission();
+        public Builder clearAdminRights() {  copyOnWrite();
+          instance.clearAdminRights();
           return this;
         }
 
@@ -1145,7 +1145,7 @@ public final class ProtoChannelGetMemberList {
             userId_ = visitor.visitLong(userId_ != 0L, userId_,
                 other.userId_ != 0L, other.userId_);
             role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
-            permission_ = visitor.visitMessage(permission_, other.permission_);
+            adminRights_ = visitor.visitMessage(adminRights_, other.adminRights_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -1182,14 +1182,14 @@ public final class ProtoChannelGetMemberList {
                     break;
                   }
                   case 26: {
-                    net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
-                    if (permission_ != null) {
-                      subBuilder = permission_.toBuilder();
+                    net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder subBuilder = null;
+                    if (adminRights_ != null) {
+                      subBuilder = adminRights_.toBuilder();
                     }
-                    permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+                    adminRights_ = input.readMessage(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.parser(), extensionRegistry);
                     if (subBuilder != null) {
-                      subBuilder.mergeFrom(permission_);
-                      permission_ = subBuilder.buildPartial();
+                      subBuilder.mergeFrom(adminRights_);
+                      adminRights_ = subBuilder.buildPartial();
                     }
 
                     break;

@@ -768,13 +768,22 @@ public final class ProtoGroupGetMemberList {
       net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole();
 
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      boolean hasPermission();
+      boolean hasAdminRights();
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
+      net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights getAdminRights();
+
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      boolean hasMemberRights();
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getMemberRights();
     }
     /**
      * Protobuf type {@code proto.GroupGetMemberListResponse.Member}
@@ -848,55 +857,107 @@ public final class ProtoGroupGetMemberList {
         role_ = 0;
       }
 
-      public static final int PERMISSION_FIELD_NUMBER = 3;
-      private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+      public static final int ADMINRIGHTS_FIELD_NUMBER = 3;
+      private net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights adminRights_;
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      public boolean hasPermission() {
-        return permission_ != null;
+      public boolean hasAdminRights() {
+        return adminRights_ != null;
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
-        return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+      public net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights getAdminRights() {
+        return adminRights_ == null ? net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.getDefaultInstance() : adminRights_;
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+      private void setAdminRights(net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        permission_ = value;
+        adminRights_ = value;
         
         }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void setPermission(
-          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
-        permission_ = builderForValue.build();
+      private void setAdminRights(
+          net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.Builder builderForValue) {
+        adminRights_ = builderForValue.build();
         
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
-        if (permission_ != null &&
-            permission_ != net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance()) {
-          permission_ =
-            net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+      private void mergeAdminRights(net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights value) {
+        if (adminRights_ != null &&
+            adminRights_ != net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.getDefaultInstance()) {
+          adminRights_ =
+            net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.newBuilder(adminRights_).mergeFrom(value).buildPartial();
         } else {
-          permission_ = value;
+          adminRights_ = value;
         }
         
       }
       /**
-       * <code>optional .proto.RoomAccess permission = 3;</code>
+       * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
        */
-      private void clearPermission() {  permission_ = null;
+      private void clearAdminRights() {  adminRights_ = null;
+        
+      }
+
+      public static final int MEMBERRIGHTS_FIELD_NUMBER = 4;
+      private net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights memberRights_;
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      public boolean hasMemberRights() {
+        return memberRights_ != null;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getMemberRights() {
+        return memberRights_ == null ? net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance() : memberRights_;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      private void setMemberRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        memberRights_ = value;
+        
+        }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      private void setMemberRights(
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder builderForValue) {
+        memberRights_ = builderForValue.build();
+        
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      private void mergeMemberRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+        if (memberRights_ != null &&
+            memberRights_ != net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance()) {
+          memberRights_ =
+            net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.newBuilder(memberRights_).mergeFrom(value).buildPartial();
+        } else {
+          memberRights_ = value;
+        }
+        
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+       */
+      private void clearMemberRights() {  memberRights_ = null;
         
       }
 
@@ -908,8 +969,11 @@ public final class ProtoGroupGetMemberList {
         if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
           output.writeEnum(2, role_);
         }
-        if (permission_ != null) {
-          output.writeMessage(3, getPermission());
+        if (adminRights_ != null) {
+          output.writeMessage(3, getAdminRights());
+        }
+        if (memberRights_ != null) {
+          output.writeMessage(4, getMemberRights());
         }
       }
 
@@ -926,9 +990,13 @@ public final class ProtoGroupGetMemberList {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(2, role_);
         }
-        if (permission_ != null) {
+        if (adminRights_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getPermission());
+            .computeMessageSize(3, getAdminRights());
+        }
+        if (memberRights_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, getMemberRights());
         }
         memoizedSerializedSize = size;
         return size;
@@ -1077,47 +1145,92 @@ public final class ProtoGroupGetMemberList {
         }
 
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public boolean hasPermission() {
-          return instance.hasPermission();
+        public boolean hasAdminRights() {
+          return instance.hasAdminRights();
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
-          return instance.getPermission();
+        public net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights getAdminRights() {
+          return instance.getAdminRights();
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        public Builder setAdminRights(net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights value) {
           copyOnWrite();
-          instance.setPermission(value);
+          instance.setAdminRights(value);
           return this;
           }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder setPermission(
-            net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        public Builder setAdminRights(
+            net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.Builder builderForValue) {
           copyOnWrite();
-          instance.setPermission(builderForValue);
+          instance.setAdminRights(builderForValue);
           return this;
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        public Builder mergeAdminRights(net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights value) {
           copyOnWrite();
-          instance.mergePermission(value);
+          instance.mergeAdminRights(value);
           return this;
         }
         /**
-         * <code>optional .proto.RoomAccess permission = 3;</code>
+         * <code>optional .proto.GroupAddAdmin.AdminRights adminRights = 3;</code>
          */
-        public Builder clearPermission() {  copyOnWrite();
-          instance.clearPermission();
+        public Builder clearAdminRights() {  copyOnWrite();
+          instance.clearAdminRights();
+          return this;
+        }
+
+        /**
+         * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+         */
+        public boolean hasMemberRights() {
+          return instance.hasMemberRights();
+        }
+        /**
+         * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+         */
+        public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getMemberRights() {
+          return instance.getMemberRights();
+        }
+        /**
+         * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+         */
+        public Builder setMemberRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+          copyOnWrite();
+          instance.setMemberRights(value);
+          return this;
+          }
+        /**
+         * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+         */
+        public Builder setMemberRights(
+            net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder builderForValue) {
+          copyOnWrite();
+          instance.setMemberRights(builderForValue);
+          return this;
+        }
+        /**
+         * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+         */
+        public Builder mergeMemberRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+          copyOnWrite();
+          instance.mergeMemberRights(value);
+          return this;
+        }
+        /**
+         * <code>optional .proto.GroupChangeMemberRights.MemberRights memberRights = 4;</code>
+         */
+        public Builder clearMemberRights() {  copyOnWrite();
+          instance.clearMemberRights();
           return this;
         }
 
@@ -1145,7 +1258,8 @@ public final class ProtoGroupGetMemberList {
             userId_ = visitor.visitLong(userId_ != 0L, userId_,
                 other.userId_ != 0L, other.userId_);
             role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
-            permission_ = visitor.visitMessage(permission_, other.permission_);
+            adminRights_ = visitor.visitMessage(adminRights_, other.adminRights_);
+            memberRights_ = visitor.visitMessage(memberRights_, other.memberRights_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -1182,14 +1296,27 @@ public final class ProtoGroupGetMemberList {
                     break;
                   }
                   case 26: {
-                    net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
-                    if (permission_ != null) {
-                      subBuilder = permission_.toBuilder();
+                    net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.Builder subBuilder = null;
+                    if (adminRights_ != null) {
+                      subBuilder = adminRights_.toBuilder();
                     }
-                    permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+                    adminRights_ = input.readMessage(net.iGap.proto.ProtoGroupAddAdmin.GroupAddAdmin.AdminRights.parser(), extensionRegistry);
                     if (subBuilder != null) {
-                      subBuilder.mergeFrom(permission_);
-                      permission_ = subBuilder.buildPartial();
+                      subBuilder.mergeFrom(adminRights_);
+                      adminRights_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                  case 34: {
+                    net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder subBuilder = null;
+                    if (memberRights_ != null) {
+                      subBuilder = memberRights_.toBuilder();
+                    }
+                    memberRights_ = input.readMessage(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(memberRights_);
+                      memberRights_ = subBuilder.buildPartial();
                     }
 
                     break;
