@@ -1312,8 +1312,8 @@ public final class ProtoGroupChangeMemberRights {
     }
   }
 
-  public interface GroupChangeMemberRoleResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.GroupChangeMemberRoleResponse)
+  public interface GroupChangeMemberRightsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.GroupChangeMemberRightsResponse)
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
@@ -1345,14 +1345,14 @@ public final class ProtoGroupChangeMemberRights {
     net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getPermission();
   }
   /**
-   * Protobuf type {@code proto.GroupChangeMemberRoleResponse}
+   * Protobuf type {@code proto.GroupChangeMemberRightsResponse}
    */
-  public  static final class GroupChangeMemberRoleResponse extends
+  public  static final class GroupChangeMemberRightsResponse extends
       com.google.protobuf.GeneratedMessageLite<
-          GroupChangeMemberRoleResponse, GroupChangeMemberRoleResponse.Builder> implements
-      // @@protoc_insertion_point(message_implements:proto.GroupChangeMemberRoleResponse)
-      GroupChangeMemberRoleResponseOrBuilder {
-    private GroupChangeMemberRoleResponse() {
+          GroupChangeMemberRightsResponse, GroupChangeMemberRightsResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.GroupChangeMemberRightsResponse)
+      GroupChangeMemberRightsResponseOrBuilder {
+    private GroupChangeMemberRightsResponse() {
     }
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
@@ -1545,60 +1545,60 @@ public final class ProtoGroupChangeMemberRights {
       return size;
     }
 
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(byte[] data)
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(java.io.InputStream input)
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseDelimitedFrom(java.io.InputStream input)
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseDelimitedFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse parseFrom(
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1609,19 +1609,19 @@ public final class ProtoGroupChangeMemberRights {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse prototype) {
+    public static Builder newBuilder(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
     /**
-     * Protobuf type {@code proto.GroupChangeMemberRoleResponse}
+     * Protobuf type {@code proto.GroupChangeMemberRightsResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse, Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.GroupChangeMemberRoleResponse)
-        net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponseOrBuilder {
-      // Construct using net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse.newBuilder()
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.GroupChangeMemberRightsResponse)
+        net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponseOrBuilder {
+      // Construct using net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
       }
@@ -1763,14 +1763,14 @@ public final class ProtoGroupChangeMemberRights {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:proto.GroupChangeMemberRoleResponse)
+      // @@protoc_insertion_point(builder_scope:proto.GroupChangeMemberRightsResponse)
     }
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse();
+          return new net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -1783,7 +1783,7 @@ public final class ProtoGroupChangeMemberRights {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse other = (net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse) arg1;
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse other = (net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse) arg1;
           response_ = visitor.visitMessage(response_, other.response_);
           roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
               other.roomId_ != 0L, other.roomId_);
@@ -1865,7 +1865,7 @@ public final class ProtoGroupChangeMemberRights {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse.class) {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -1878,20 +1878,20 @@ public final class ProtoGroupChangeMemberRights {
     }
 
 
-    // @@protoc_insertion_point(class_scope:proto.GroupChangeMemberRoleResponse)
-    private static final net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:proto.GroupChangeMemberRightsResponse)
+    private static final net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GroupChangeMemberRoleResponse();
+      DEFAULT_INSTANCE = new GroupChangeMemberRightsResponse();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRoleResponse getDefaultInstance() {
+    public static net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRightsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<GroupChangeMemberRoleResponse> PARSER;
+    private static volatile com.google.protobuf.Parser<GroupChangeMemberRightsResponse> PARSER;
 
-    public static com.google.protobuf.Parser<GroupChangeMemberRoleResponse> parser() {
+    public static com.google.protobuf.Parser<GroupChangeMemberRightsResponse> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }
