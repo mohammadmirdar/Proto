@@ -20234,6 +20234,15 @@ public final class ProtoGlobal {
      * <code>optional .proto.GroupRoom.PublicExtra public_extra = 11;</code>
      */
     net.iGap.proto.ProtoGlobal.GroupRoom.PublicExtra getPublicExtra();
+
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    boolean hasRoomRights();
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getRoomRights();
   }
   /**
    * Protobuf type {@code proto.GroupRoom}
@@ -21577,6 +21586,58 @@ public final class ProtoGlobal {
       
     }
 
+    public static final int ROOM_RIGHTS_FIELD_NUMBER = 12;
+    private net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights roomRights_;
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    public boolean hasRoomRights() {
+      return roomRights_ != null;
+    }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getRoomRights() {
+      return roomRights_ == null ? net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance() : roomRights_;
+    }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    private void setRoomRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      roomRights_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    private void setRoomRights(
+        net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder builderForValue) {
+      roomRights_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    private void mergeRoomRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+      if (roomRights_ != null &&
+          roomRights_ != net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance()) {
+        roomRights_ =
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.newBuilder(roomRights_).mergeFrom(value).buildPartial();
+      } else {
+        roomRights_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    private void clearRoomRights() {  roomRights_ = null;
+      
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != net.iGap.proto.ProtoGlobal.GroupRoom.Type.PRIVATE_ROOM.getNumber()) {
@@ -21611,6 +21672,9 @@ public final class ProtoGlobal {
       }
       if (publicExtra_ != null) {
         output.writeMessage(11, getPublicExtra());
+      }
+      if (roomRights_ != null) {
+        output.writeMessage(12, getRoomRights());
       }
     }
 
@@ -21662,6 +21726,10 @@ public final class ProtoGlobal {
       if (publicExtra_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getPublicExtra());
+      }
+      if (roomRights_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getRoomRights());
       }
       memoizedSerializedSize = size;
       return size;
@@ -22147,6 +22215,51 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public boolean hasRoomRights() {
+        return instance.hasRoomRights();
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getRoomRights() {
+        return instance.getRoomRights();
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder setRoomRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+        copyOnWrite();
+        instance.setRoomRights(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder setRoomRights(
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder builderForValue) {
+        copyOnWrite();
+        instance.setRoomRights(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder mergeRoomRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+        copyOnWrite();
+        instance.mergeRoomRights(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder clearRoomRights() {  copyOnWrite();
+        instance.clearRoomRights();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.GroupRoom)
     }
     protected final Object dynamicMethod(
@@ -22185,6 +22298,7 @@ public final class ProtoGlobal {
           avatar_ = visitor.visitMessage(avatar_, other.avatar_);
           privateExtra_ = visitor.visitMessage(privateExtra_, other.privateExtra_);
           publicExtra_ = visitor.visitMessage(publicExtra_, other.publicExtra_);
+          roomRights_ = visitor.visitMessage(roomRights_, other.roomRights_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -22289,6 +22403,19 @@ public final class ProtoGlobal {
                   if (subBuilder != null) {
                     subBuilder.mergeFrom(publicExtra_);
                     publicExtra_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 98: {
+                  net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder subBuilder = null;
+                  if (roomRights_ != null) {
+                    subBuilder = roomRights_.toBuilder();
+                  }
+                  roomRights_ = input.readMessage(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(roomRights_);
+                    roomRights_ = subBuilder.buildPartial();
                   }
 
                   break;
