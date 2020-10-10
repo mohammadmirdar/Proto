@@ -30,6 +30,11 @@ public final class ProtoUserIVandSetActivity {
      */
     com.google.protobuf.ByteString
         getPlancodeBytes();
+
+    /**
+     * <code>optional uint64 value = 3;</code>
+     */
+    long getValue();
   }
   /**
    * Protobuf type {@code proto.UserIVandSetActivity}
@@ -140,6 +145,29 @@ public final class ProtoUserIVandSetActivity {
       plancode_ = value.toStringUtf8();
     }
 
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private long value_;
+    /**
+     * <code>optional uint64 value = 3;</code>
+     */
+    public long getValue() {
+      return value_;
+    }
+    /**
+     * <code>optional uint64 value = 3;</code>
+     */
+    private void setValue(long value) {
+      
+      value_ = value;
+    }
+    /**
+     * <code>optional uint64 value = 3;</code>
+     */
+    private void clearValue() {
+      
+      value_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -147,6 +175,9 @@ public final class ProtoUserIVandSetActivity {
       }
       if (!plancode_.isEmpty()) {
         output.writeString(2, getPlancode());
+      }
+      if (value_ != 0L) {
+        output.writeUInt64(3, value_);
       }
     }
 
@@ -162,6 +193,10 @@ public final class ProtoUserIVandSetActivity {
       if (!plancode_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(2, getPlancode());
+      }
+      if (value_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, value_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -334,6 +369,29 @@ public final class ProtoUserIVandSetActivity {
         return this;
       }
 
+      /**
+       * <code>optional uint64 value = 3;</code>
+       */
+      public long getValue() {
+        return instance.getValue();
+      }
+      /**
+       * <code>optional uint64 value = 3;</code>
+       */
+      public Builder setValue(long value) {
+        copyOnWrite();
+        instance.setValue(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 value = 3;</code>
+       */
+      public Builder clearValue() {
+        copyOnWrite();
+        instance.clearValue();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserIVandSetActivity)
     }
     protected final Object dynamicMethod(
@@ -358,6 +416,8 @@ public final class ProtoUserIVandSetActivity {
           request_ = visitor.visitMessage(request_, other.request_);
           plancode_ = visitor.visitString(!plancode_.isEmpty(), plancode_,
               !other.plancode_.isEmpty(), other.plancode_);
+          value_ = visitor.visitLong(value_ != 0L, value_,
+              other.value_ != 0L, other.value_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -399,6 +459,11 @@ public final class ProtoUserIVandSetActivity {
                   String s = input.readStringRequireUtf8();
 
                   plancode_ = s;
+                  break;
+                }
+                case 24: {
+
+                  value_ = input.readUInt64();
                   break;
                 }
               }
