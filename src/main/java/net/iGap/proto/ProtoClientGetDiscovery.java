@@ -30,6 +30,11 @@ public final class ProtoClientGetDiscovery {
      * <code>optional uint32 project_id = 3;</code>
      */
     int getProjectId();
+
+    /**
+     * <code>optional uint32 item_id = 4;</code>
+     */
+    int getItemId();
   }
   /**
    * Protobuf type {@code proto.ClientGetDiscovery}
@@ -139,6 +144,29 @@ public final class ProtoClientGetDiscovery {
       projectId_ = 0;
     }
 
+    public static final int ITEM_ID_FIELD_NUMBER = 4;
+    private int itemId_;
+    /**
+     * <code>optional uint32 item_id = 4;</code>
+     */
+    public int getItemId() {
+      return itemId_;
+    }
+    /**
+     * <code>optional uint32 item_id = 4;</code>
+     */
+    private void setItemId(int value) {
+      
+      itemId_ = value;
+    }
+    /**
+     * <code>optional uint32 item_id = 4;</code>
+     */
+    private void clearItemId() {
+      
+      itemId_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -149,6 +177,9 @@ public final class ProtoClientGetDiscovery {
       }
       if (projectId_ != 0) {
         output.writeUInt32(3, projectId_);
+      }
+      if (itemId_ != 0) {
+        output.writeUInt32(4, itemId_);
       }
     }
 
@@ -168,6 +199,10 @@ public final class ProtoClientGetDiscovery {
       if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, projectId_);
+      }
+      if (itemId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, itemId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -346,6 +381,29 @@ public final class ProtoClientGetDiscovery {
         return this;
       }
 
+      /**
+       * <code>optional uint32 item_id = 4;</code>
+       */
+      public int getItemId() {
+        return instance.getItemId();
+      }
+      /**
+       * <code>optional uint32 item_id = 4;</code>
+       */
+      public Builder setItemId(int value) {
+        copyOnWrite();
+        instance.setItemId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 item_id = 4;</code>
+       */
+      public Builder clearItemId() {
+        copyOnWrite();
+        instance.clearItemId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ClientGetDiscovery)
     }
     protected final Object dynamicMethod(
@@ -372,6 +430,8 @@ public final class ProtoClientGetDiscovery {
               other.pageId_ != 0, other.pageId_);
           projectId_ = visitor.visitInt(projectId_ != 0, projectId_,
               other.projectId_ != 0, other.projectId_);
+          itemId_ = visitor.visitInt(itemId_ != 0, itemId_,
+              other.itemId_ != 0, other.itemId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -417,6 +477,11 @@ public final class ProtoClientGetDiscovery {
                 case 24: {
 
                   projectId_ = input.readUInt32();
+                  break;
+                }
+                case 32: {
+
+                  itemId_ = input.readUInt32();
                   break;
                 }
               }
