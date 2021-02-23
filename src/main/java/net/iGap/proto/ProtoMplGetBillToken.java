@@ -697,6 +697,16 @@ public final class ProtoMplGetBillToken {
      * <code>optional uint32 new_pay_id = 8;</code>
      */
     int getNewPayId();
+
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    java.lang.String getOrganizationName();
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getOrganizationNameBytes();
   }
   /**
    * Protobuf type {@code proto.MplGetBillTokenResponse}
@@ -709,6 +719,7 @@ public final class ProtoMplGetBillToken {
     private MplGetBillTokenResponse() {
       token_ = "";
       message_ = "";
+      organizationName_ = "";
     }
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
@@ -969,6 +980,52 @@ public final class ProtoMplGetBillToken {
       newPayId_ = 0;
     }
 
+    public static final int ORGANIZATION_NAME_FIELD_NUMBER = 9;
+    private java.lang.String organizationName_;
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    public java.lang.String getOrganizationName() {
+      return organizationName_;
+    }
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationNameBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(organizationName_);
+    }
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    private void setOrganizationName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      organizationName_ = value;
+    }
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    private void clearOrganizationName() {
+      
+      organizationName_ = getDefaultInstance().getOrganizationName();
+    }
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    private void setOrganizationNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      organizationName_ = value.toStringUtf8();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -994,6 +1051,9 @@ public final class ProtoMplGetBillToken {
       }
       if (newPayId_ != 0) {
         output.writeUInt32(8, newPayId_);
+      }
+      if (!organizationName_.isEmpty()) {
+        output.writeString(9, getOrganizationName());
       }
     }
 
@@ -1033,6 +1093,10 @@ public final class ProtoMplGetBillToken {
       if (newPayId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, newPayId_);
+      }
+      if (!organizationName_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(9, getOrganizationName());
       }
       memoizedSerializedSize = size;
       return size;
@@ -1360,6 +1424,46 @@ public final class ProtoMplGetBillToken {
         return this;
       }
 
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public java.lang.String getOrganizationName() {
+        return instance.getOrganizationName();
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationNameBytes() {
+        return instance.getOrganizationNameBytes();
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public Builder setOrganizationName(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setOrganizationName(value);
+        return this;
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public Builder clearOrganizationName() {
+        copyOnWrite();
+        instance.clearOrganizationName();
+        return this;
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public Builder setOrganizationNameBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setOrganizationNameBytes(value);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.MplGetBillTokenResponse)
     }
     protected final Object dynamicMethod(
@@ -1396,6 +1500,8 @@ public final class ProtoMplGetBillToken {
               other.originalAmount_ != 0, other.originalAmount_);
           newPayId_ = visitor.visitInt(newPayId_ != 0, newPayId_,
               other.newPayId_ != 0, other.newPayId_);
+          organizationName_ = visitor.visitString(!organizationName_.isEmpty(), organizationName_,
+              !other.organizationName_.isEmpty(), other.organizationName_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -1468,6 +1574,12 @@ public final class ProtoMplGetBillToken {
                 case 64: {
 
                   newPayId_ = input.readUInt32();
+                  break;
+                }
+                case 74: {
+                  String s = input.readStringRequireUtf8();
+
+                  organizationName_ = s;
                   break;
                 }
               }
