@@ -31331,6 +31331,14 @@ public final class ProtoGlobal {
        * <code>MODEL9 = 8;</code>
        */
       MODEL9(8),
+      /**
+       * <code>MODEL10 = 9;</code>
+       */
+      MODEL10(9),
+      /**
+       * <code>MODEL11 = 10;</code>
+       */
+      MODEL11(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -31370,6 +31378,14 @@ public final class ProtoGlobal {
        * <code>MODEL9 = 8;</code>
        */
       public static final int MODEL9_VALUE = 8;
+      /**
+       * <code>MODEL10 = 9;</code>
+       */
+      public static final int MODEL10_VALUE = 9;
+      /**
+       * <code>MODEL11 = 10;</code>
+       */
+      public static final int MODEL11_VALUE = 10;
 
 
       public final int getNumber() {
@@ -31395,6 +31411,8 @@ public final class ProtoGlobal {
           case 6: return MODEL7;
           case 7: return MODEL8;
           case 8: return MODEL9;
+          case 9: return MODEL10;
+          case 10: return MODEL11;
           default: return null;
         }
       }
