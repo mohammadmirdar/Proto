@@ -93,6 +93,24 @@ public final class ProtoChatSendMessage {
     long getRandomId();
 
     /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    boolean hasStoryReply();
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getStoryReply();
+
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    boolean hasStoryForward();
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getStoryForward();
+
+    /**
      * <code>optional uint32 additional_type = 11;</code>
      */
     int getAdditionalType();
@@ -528,6 +546,110 @@ public final class ProtoChatSendMessage {
       randomId_ = 0L;
     }
 
+    public static final int STORY_REPLY_FIELD_NUMBER = 13;
+    private net.iGap.proto.ProtoGlobal.RoomMessageStoryReply storyReply_;
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    public boolean hasStoryReply() {
+      return storyReply_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getStoryReply() {
+      return storyReply_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.getDefaultInstance() : storyReply_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    private void setStoryReply(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storyReply_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    private void setStoryReply(
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.Builder builderForValue) {
+      storyReply_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    private void mergeStoryReply(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply value) {
+      if (storyReply_ != null &&
+          storyReply_ != net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.getDefaultInstance()) {
+        storyReply_ =
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.newBuilder(storyReply_).mergeFrom(value).buildPartial();
+      } else {
+        storyReply_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+     */
+    private void clearStoryReply() {  storyReply_ = null;
+      
+    }
+
+    public static final int STORY_FORWARD_FIELD_NUMBER = 14;
+    private net.iGap.proto.ProtoGlobal.RoomMessageStoryForward storyForward_;
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    public boolean hasStoryForward() {
+      return storyForward_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getStoryForward() {
+      return storyForward_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.getDefaultInstance() : storyForward_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    private void setStoryForward(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storyForward_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    private void setStoryForward(
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.Builder builderForValue) {
+      storyForward_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    private void mergeStoryForward(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward value) {
+      if (storyForward_ != null &&
+          storyForward_ != net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.getDefaultInstance()) {
+        storyForward_ =
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.newBuilder(storyForward_).mergeFrom(value).buildPartial();
+      } else {
+        storyForward_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+     */
+    private void clearStoryForward() {  storyForward_ = null;
+      
+    }
+
     public static final int ADDITIONAL_TYPE_FIELD_NUMBER = 11;
     private int additionalType_;
     /**
@@ -635,6 +757,12 @@ public final class ProtoChatSendMessage {
       if (!additionalData_.isEmpty()) {
         output.writeString(12, getAdditionalData());
       }
+      if (storyReply_ != null) {
+        output.writeMessage(13, getStoryReply());
+      }
+      if (storyForward_ != null) {
+        output.writeMessage(14, getStoryForward());
+      }
     }
 
     public int getSerializedSize() {
@@ -689,6 +817,14 @@ public final class ProtoChatSendMessage {
       if (!additionalData_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(12, getAdditionalData());
+      }
+      if (storyReply_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getStoryReply());
+      }
+      if (storyForward_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getStoryForward());
       }
       memoizedSerializedSize = size;
       return size;
@@ -1143,6 +1279,96 @@ public final class ProtoChatSendMessage {
       }
 
       /**
+       * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+       */
+      public boolean hasStoryReply() {
+        return instance.hasStoryReply();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getStoryReply() {
+        return instance.getStoryReply();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+       */
+      public Builder setStoryReply(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply value) {
+        copyOnWrite();
+        instance.setStoryReply(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+       */
+      public Builder setStoryReply(
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.Builder builderForValue) {
+        copyOnWrite();
+        instance.setStoryReply(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+       */
+      public Builder mergeStoryReply(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply value) {
+        copyOnWrite();
+        instance.mergeStoryReply(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
+       */
+      public Builder clearStoryReply() {  copyOnWrite();
+        instance.clearStoryReply();
+        return this;
+      }
+
+      /**
+       * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+       */
+      public boolean hasStoryForward() {
+        return instance.hasStoryForward();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getStoryForward() {
+        return instance.getStoryForward();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+       */
+      public Builder setStoryForward(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward value) {
+        copyOnWrite();
+        instance.setStoryForward(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+       */
+      public Builder setStoryForward(
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.Builder builderForValue) {
+        copyOnWrite();
+        instance.setStoryForward(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+       */
+      public Builder mergeStoryForward(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward value) {
+        copyOnWrite();
+        instance.mergeStoryForward(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStoryForward story_forward = 14;</code>
+       */
+      public Builder clearStoryForward() {  copyOnWrite();
+        instance.clearStoryForward();
+        return this;
+      }
+
+      /**
        * <code>optional uint32 additional_type = 11;</code>
        */
       public int getAdditionalType() {
@@ -1241,6 +1467,8 @@ public final class ProtoChatSendMessage {
           forwardFrom_ = visitor.visitMessage(forwardFrom_, other.forwardFrom_);
           randomId_ = visitor.visitLong(randomId_ != 0L, randomId_,
               other.randomId_ != 0L, other.randomId_);
+          storyReply_ = visitor.visitMessage(storyReply_, other.storyReply_);
+          storyForward_ = visitor.visitMessage(storyForward_, other.storyForward_);
           additionalType_ = visitor.visitInt(additionalType_ != 0, additionalType_,
               other.additionalType_ != 0, other.additionalType_);
           additionalData_ = visitor.visitString(!additionalData_.isEmpty(), additionalData_,
@@ -1363,6 +1591,32 @@ public final class ProtoChatSendMessage {
                   String s = input.readStringRequireUtf8();
 
                   additionalData_ = s;
+                  break;
+                }
+                case 106: {
+                  net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.Builder subBuilder = null;
+                  if (storyReply_ != null) {
+                    subBuilder = storyReply_.toBuilder();
+                  }
+                  storyReply_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(storyReply_);
+                    storyReply_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 114: {
+                  net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.Builder subBuilder = null;
+                  if (storyForward_ != null) {
+                    subBuilder = storyForward_.toBuilder();
+                  }
+                  storyForward_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(storyForward_);
+                    storyForward_ = subBuilder.buildPartial();
+                  }
+
                   break;
                 }
               }

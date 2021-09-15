@@ -421,6 +421,14 @@ public final class ProtoGlobal {
      * <code>STICKER = 16;</code>
      */
     STICKER(16),
+    /**
+     * <code>STORY = 17;</code>
+     */
+    STORY(17),
+    /**
+     * <code>STORY_REPLY = 18;</code>
+     */
+    STORY_REPLY(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -492,6 +500,14 @@ public final class ProtoGlobal {
      * <code>STICKER = 16;</code>
      */
     public static final int STICKER_VALUE = 16;
+    /**
+     * <code>STORY = 17;</code>
+     */
+    public static final int STORY_VALUE = 17;
+    /**
+     * <code>STORY_REPLY = 18;</code>
+     */
+    public static final int STORY_REPLY_VALUE = 18;
 
 
     public final int getNumber() {
@@ -525,6 +541,8 @@ public final class ProtoGlobal {
         case 13: return CONTACT;
         case 15: return WALLET;
         case 16: return STICKER;
+        case 17: return STORY;
+        case 18: return STORY_REPLY;
         default: return null;
       }
     }
@@ -1795,7 +1813,7 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageLiteOrBuilder {
 
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       long getId();
     }
@@ -1812,20 +1830,20 @@ public final class ProtoGlobal {
       public static final int ID_FIELD_NUMBER = 1;
       private long id_;
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return id_;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       private void setId(long value) {
         
         id_ = value;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       private void clearId() {
         
@@ -1935,13 +1953,13 @@ public final class ProtoGlobal {
 
 
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
          */
         public long getId() {
           return instance.getId();
         }
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setId(long value) {
           copyOnWrite();
@@ -1949,7 +1967,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearId() {
           copyOnWrite();
@@ -3633,17 +3651,17 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageLiteOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       long getToUserId();
 
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -3702,20 +3720,20 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void setFromUserId(long value) {
         
         fromUserId_ = value;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void clearFromUserId() {
         
@@ -3725,20 +3743,20 @@ public final class ProtoGlobal {
       public static final int TO_USER_ID_FIELD_NUMBER = 2;
       private long toUserId_;
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       public long getToUserId() {
         return toUserId_;
       }
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       private void setToUserId(long value) {
         
         toUserId_ = value;
       }
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       private void clearToUserId() {
         
@@ -3748,20 +3766,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 3;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -4111,13 +4129,13 @@ public final class ProtoGlobal {
 
 
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return instance.getFromUserId();
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           copyOnWrite();
@@ -4125,7 +4143,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           copyOnWrite();
@@ -4134,13 +4152,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public long getToUserId() {
           return instance.getToUserId();
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setToUserId(long value) {
           copyOnWrite();
@@ -4148,7 +4166,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearToUserId() {
           copyOnWrite();
@@ -4157,13 +4175,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -4171,7 +4189,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -4512,17 +4530,17 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageLiteOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       long getToUserId();
 
       /**
-       * <code>optional uint64 order_id = 3;</code>
+       * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
@@ -4537,7 +4555,7 @@ public final class ProtoGlobal {
           getTokenBytes();
 
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -4642,20 +4660,20 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void setFromUserId(long value) {
         
         fromUserId_ = value;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void clearFromUserId() {
         
@@ -4665,20 +4683,20 @@ public final class ProtoGlobal {
       public static final int TO_USER_ID_FIELD_NUMBER = 2;
       private long toUserId_;
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       public long getToUserId() {
         return toUserId_;
       }
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       private void setToUserId(long value) {
         
         toUserId_ = value;
       }
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       private void clearToUserId() {
         
@@ -4688,20 +4706,20 @@ public final class ProtoGlobal {
       public static final int ORDER_ID_FIELD_NUMBER = 3;
       private long orderId_;
       /**
-       * <code>optional uint64 order_id = 3;</code>
+       * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 order_id = 3;</code>
+       * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 order_id = 3;</code>
+       * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -4757,20 +4775,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -5339,13 +5357,13 @@ public final class ProtoGlobal {
 
 
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return instance.getFromUserId();
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           copyOnWrite();
@@ -5353,7 +5371,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           copyOnWrite();
@@ -5362,13 +5380,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public long getToUserId() {
           return instance.getToUserId();
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setToUserId(long value) {
           copyOnWrite();
@@ -5376,7 +5394,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearToUserId() {
           copyOnWrite();
@@ -5385,13 +5403,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 order_id = 3;</code>
+         * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 order_id = 3;</code>
+         * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -5399,7 +5417,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 order_id = 3;</code>
+         * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -5448,13 +5466,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -5462,7 +5480,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -5998,12 +6016,12 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageLiteOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
@@ -6018,12 +6036,12 @@ public final class ProtoGlobal {
           getMyTokenBytes();
 
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       long getToken();
 
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -6077,17 +6095,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       long getTerminalNo();
 
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       long getRrn();
 
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       long getTraceNumber();
 
@@ -6233,20 +6251,20 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void setFromUserId(long value) {
         
         fromUserId_ = value;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void clearFromUserId() {
         
@@ -6256,20 +6274,20 @@ public final class ProtoGlobal {
       public static final int ORDER_ID_FIELD_NUMBER = 2;
       private long orderId_;
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -6325,20 +6343,20 @@ public final class ProtoGlobal {
       public static final int TOKEN_FIELD_NUMBER = 4;
       private long token_;
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       public long getToken() {
         return token_;
       }
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       private void setToken(long value) {
         
         token_ = value;
       }
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       private void clearToken() {
         
@@ -6348,20 +6366,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -6594,20 +6612,20 @@ public final class ProtoGlobal {
       public static final int TERMINAL_NO_FIELD_NUMBER = 11;
       private long terminalNo_;
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       public long getTerminalNo() {
         return terminalNo_;
       }
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       private void setTerminalNo(long value) {
         
         terminalNo_ = value;
       }
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       private void clearTerminalNo() {
         
@@ -6617,20 +6635,20 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 12;
       private long rrn_;
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       public long getRrn() {
         return rrn_;
       }
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       private void setRrn(long value) {
         
         rrn_ = value;
       }
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       private void clearRrn() {
         
@@ -6640,20 +6658,20 @@ public final class ProtoGlobal {
       public static final int TRACE_NUMBER_FIELD_NUMBER = 13;
       private long traceNumber_;
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       public long getTraceNumber() {
         return traceNumber_;
       }
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       private void setTraceNumber(long value) {
         
         traceNumber_ = value;
       }
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       private void clearTraceNumber() {
         
@@ -6960,13 +6978,13 @@ public final class ProtoGlobal {
 
 
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return instance.getFromUserId();
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           copyOnWrite();
@@ -6974,7 +6992,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           copyOnWrite();
@@ -6983,13 +7001,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -6997,7 +7015,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -7046,13 +7064,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public long getToken() {
           return instance.getToken();
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder setToken(long value) {
           copyOnWrite();
@@ -7060,7 +7078,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder clearToken() {
           copyOnWrite();
@@ -7069,13 +7087,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -7083,7 +7101,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -7289,13 +7307,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public long getTerminalNo() {
           return instance.getTerminalNo();
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder setTerminalNo(long value) {
           copyOnWrite();
@@ -7303,7 +7321,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder clearTerminalNo() {
           copyOnWrite();
@@ -7312,13 +7330,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public long getRrn() {
           return instance.getRrn();
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder setRrn(long value) {
           copyOnWrite();
@@ -7326,7 +7344,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder clearRrn() {
           copyOnWrite();
@@ -7335,13 +7353,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public long getTraceNumber() {
           return instance.getTraceNumber();
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder setTraceNumber(long value) {
           copyOnWrite();
@@ -7349,7 +7367,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder clearTraceNumber() {
           copyOnWrite();
@@ -7657,12 +7675,12 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageLiteOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
@@ -7677,12 +7695,12 @@ public final class ProtoGlobal {
           getMyTokenBytes();
 
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       long getToken();
 
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -7737,17 +7755,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       long getTerminalNo();
 
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       long getRrn();
 
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       long getTraceNumber();
 
@@ -7791,20 +7809,20 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void setFromUserId(long value) {
         
         fromUserId_ = value;
       }
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       private void clearFromUserId() {
         
@@ -7814,20 +7832,20 @@ public final class ProtoGlobal {
       public static final int ORDER_ID_FIELD_NUMBER = 2;
       private long orderId_;
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -7883,20 +7901,20 @@ public final class ProtoGlobal {
       public static final int TOKEN_FIELD_NUMBER = 4;
       private long token_;
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       public long getToken() {
         return token_;
       }
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       private void setToken(long value) {
         
         token_ = value;
       }
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       private void clearToken() {
         
@@ -7906,20 +7924,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -8159,20 +8177,20 @@ public final class ProtoGlobal {
       public static final int TERMINAL_NO_FIELD_NUMBER = 11;
       private long terminalNo_;
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       public long getTerminalNo() {
         return terminalNo_;
       }
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       private void setTerminalNo(long value) {
         
         terminalNo_ = value;
       }
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       private void clearTerminalNo() {
         
@@ -8182,20 +8200,20 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 12;
       private long rrn_;
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       public long getRrn() {
         return rrn_;
       }
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       private void setRrn(long value) {
         
         rrn_ = value;
       }
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       private void clearRrn() {
         
@@ -8205,20 +8223,20 @@ public final class ProtoGlobal {
       public static final int TRACE_NUMBER_FIELD_NUMBER = 13;
       private long traceNumber_;
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       public long getTraceNumber() {
         return traceNumber_;
       }
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       private void setTraceNumber(long value) {
         
         traceNumber_ = value;
       }
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       private void clearTraceNumber() {
         
@@ -8525,13 +8543,13 @@ public final class ProtoGlobal {
 
 
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return instance.getFromUserId();
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           copyOnWrite();
@@ -8539,7 +8557,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           copyOnWrite();
@@ -8548,13 +8566,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -8562,7 +8580,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -8611,13 +8629,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public long getToken() {
           return instance.getToken();
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder setToken(long value) {
           copyOnWrite();
@@ -8625,7 +8643,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder clearToken() {
           copyOnWrite();
@@ -8634,13 +8652,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -8648,7 +8666,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -8857,13 +8875,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public long getTerminalNo() {
           return instance.getTerminalNo();
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder setTerminalNo(long value) {
           copyOnWrite();
@@ -8871,7 +8889,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder clearTerminalNo() {
           copyOnWrite();
@@ -8880,13 +8898,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public long getRrn() {
           return instance.getRrn();
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder setRrn(long value) {
           copyOnWrite();
@@ -8894,7 +8912,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder clearRrn() {
           copyOnWrite();
@@ -8903,13 +8921,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public long getTraceNumber() {
           return instance.getTraceNumber();
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder setTraceNumber(long value) {
           copyOnWrite();
@@ -8917,7 +8935,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder clearTraceNumber() {
           copyOnWrite();
@@ -9974,12 +9992,12 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 room_id = 1;</code>
+     * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
      */
     long getRoomId();
 
     /**
-     * <code>optional uint64 message_id = 2;</code>
+     * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     long getMessageId();
   }
@@ -9996,20 +10014,20 @@ public final class ProtoGlobal {
     public static final int ROOM_ID_FIELD_NUMBER = 1;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 1;</code>
+     * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
      */
     public long getRoomId() {
       return roomId_;
     }
     /**
-     * <code>optional uint64 room_id = 1;</code>
+     * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
      */
     private void setRoomId(long value) {
       
       roomId_ = value;
     }
     /**
-     * <code>optional uint64 room_id = 1;</code>
+     * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
      */
     private void clearRoomId() {
       
@@ -10019,20 +10037,20 @@ public final class ProtoGlobal {
     public static final int MESSAGE_ID_FIELD_NUMBER = 2;
     private long messageId_;
     /**
-     * <code>optional uint64 message_id = 2;</code>
+     * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     public long getMessageId() {
       return messageId_;
     }
     /**
-     * <code>optional uint64 message_id = 2;</code>
+     * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     private void setMessageId(long value) {
       
       messageId_ = value;
     }
     /**
-     * <code>optional uint64 message_id = 2;</code>
+     * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     private void clearMessageId() {
       
@@ -10149,13 +10167,13 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 room_id = 1;</code>
+       * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
        */
       public long getRoomId() {
         return instance.getRoomId();
       }
       /**
-       * <code>optional uint64 room_id = 1;</code>
+       * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setRoomId(long value) {
         copyOnWrite();
@@ -10163,7 +10181,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 1;</code>
+       * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearRoomId() {
         copyOnWrite();
@@ -10172,13 +10190,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 message_id = 2;</code>
+       * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
        */
       public long getMessageId() {
         return instance.getMessageId();
       }
       /**
-       * <code>optional uint64 message_id = 2;</code>
+       * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder setMessageId(long value) {
         copyOnWrite();
@@ -10186,7 +10204,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 message_id = 2;</code>
+       * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearMessageId() {
         copyOnWrite();
@@ -10299,12 +10317,2449 @@ public final class ProtoGlobal {
     }
   }
 
+  public interface RoomMessageStoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageStory)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    int getStatusValue();
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStory.Status getStatus();
+
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    boolean hasStory();
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Story getStory();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageStory}
+   */
+  public  static final class RoomMessageStory extends
+      com.google.protobuf.GeneratedMessageLite<
+          RoomMessageStory, RoomMessageStory.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageStory)
+      RoomMessageStoryOrBuilder {
+    private RoomMessageStory() {
+    }
+    /**
+     * Protobuf enum {@code proto.RoomMessageStory.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>ACTIVE = 0;</code>
+       */
+      ACTIVE(0),
+      /**
+       * <code>EXPIRED = 1;</code>
+       */
+      EXPIRED(1),
+      /**
+       * <code>PRIVATE = 2;</code>
+       */
+      PRIVATE(2),
+      /**
+       * <code>DELETED = 3;</code>
+       */
+      DELETED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ACTIVE = 0;</code>
+       */
+      public static final int ACTIVE_VALUE = 0;
+      /**
+       * <code>EXPIRED = 1;</code>
+       */
+      public static final int EXPIRED_VALUE = 1;
+      /**
+       * <code>PRIVATE = 2;</code>
+       */
+      public static final int PRIVATE_VALUE = 2;
+      /**
+       * <code>DELETED = 3;</code>
+       */
+      public static final int DELETED_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return ACTIVE;
+          case 1: return EXPIRED;
+          case 2: return PRIVATE;
+          case 3: return DELETED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.RoomMessageStory.Status)
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_;
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStory.Status getStatus() {
+      net.iGap.proto.ProtoGlobal.RoomMessageStory.Status result = net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.forNumber(status_);
+      return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    private void setStatusValue(int value) {
+        status_ = value;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    private void setStatus(net.iGap.proto.ProtoGlobal.RoomMessageStory.Status value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      status_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    private void clearStatus() {
+      
+      status_ = 0;
+    }
+
+    public static final int STORY_FIELD_NUMBER = 2;
+    private net.iGap.proto.ProtoGlobal.Story story_;
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    public boolean hasStory() {
+      return story_ != null;
+    }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Story getStory() {
+      return story_ == null ? net.iGap.proto.ProtoGlobal.Story.getDefaultInstance() : story_;
+    }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    private void setStory(net.iGap.proto.ProtoGlobal.Story value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      story_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    private void setStory(
+        net.iGap.proto.ProtoGlobal.Story.Builder builderForValue) {
+      story_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    private void mergeStory(net.iGap.proto.ProtoGlobal.Story value) {
+      if (story_ != null &&
+          story_ != net.iGap.proto.ProtoGlobal.Story.getDefaultInstance()) {
+        story_ =
+          net.iGap.proto.ProtoGlobal.Story.newBuilder(story_).mergeFrom(value).buildPartial();
+      } else {
+        story_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    private void clearStory() {  story_ = null;
+      
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.ACTIVE.getNumber()) {
+        output.writeEnum(1, status_);
+      }
+      if (story_ != null) {
+        output.writeMessage(2, getStory());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.ACTIVE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, status_);
+      }
+      if (story_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getStory());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageStory prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.RoomMessageStory}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.RoomMessageStory, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageStory)
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageStory.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public int getStatusValue() {
+        return instance.getStatusValue();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public Builder setStatusValue(int value) {
+        copyOnWrite();
+        instance.setStatusValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory.Status getStatus() {
+        return instance.getStatus();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public Builder setStatus(net.iGap.proto.ProtoGlobal.RoomMessageStory.Status value) {
+        copyOnWrite();
+        instance.setStatus(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public Builder clearStatus() {
+        copyOnWrite();
+        instance.clearStatus();
+        return this;
+      }
+
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public boolean hasStory() {
+        return instance.hasStory();
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Story getStory() {
+        return instance.getStory();
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder setStory(net.iGap.proto.ProtoGlobal.Story value) {
+        copyOnWrite();
+        instance.setStory(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder setStory(
+          net.iGap.proto.ProtoGlobal.Story.Builder builderForValue) {
+        copyOnWrite();
+        instance.setStory(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder mergeStory(net.iGap.proto.ProtoGlobal.Story value) {
+        copyOnWrite();
+        instance.mergeStory(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder clearStory() {  copyOnWrite();
+        instance.clearStory();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageStory)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.RoomMessageStory();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.RoomMessageStory other = (net.iGap.proto.ProtoGlobal.RoomMessageStory) arg1;
+          status_ = visitor.visitInt(status_ != 0, status_,    other.status_ != 0, other.status_);
+          story_ = visitor.visitMessage(story_, other.story_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  status_ = rawValue;
+                  break;
+                }
+                case 18: {
+                  net.iGap.proto.ProtoGlobal.Story.Builder subBuilder = null;
+                  if (story_ != null) {
+                    subBuilder = story_.toBuilder();
+                  }
+                  story_ = input.readMessage(net.iGap.proto.ProtoGlobal.Story.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(story_);
+                    story_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.RoomMessageStory.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageStory)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageStory DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RoomMessageStory();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<RoomMessageStory> PARSER;
+
+    public static com.google.protobuf.Parser<RoomMessageStory> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface RoomMessageStoryReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageStoryReply)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    long getStoryId();
+
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    java.lang.String getCaption();
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getCaptionBytes();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageStoryReply}
+   */
+  public  static final class RoomMessageStoryReply extends
+      com.google.protobuf.GeneratedMessageLite<
+          RoomMessageStoryReply, RoomMessageStoryReply.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageStoryReply)
+      RoomMessageStoryReplyOrBuilder {
+    private RoomMessageStoryReply() {
+      caption_ = "";
+    }
+    public static final int STORY_ID_FIELD_NUMBER = 1;
+    private long storyId_;
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    public long getStoryId() {
+      return storyId_;
+    }
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    private void setStoryId(long value) {
+      
+      storyId_ = value;
+    }
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    private void clearStoryId() {
+      
+      storyId_ = 0L;
+    }
+
+    public static final int CAPTION_FIELD_NUMBER = 2;
+    private java.lang.String caption_;
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    public java.lang.String getCaption() {
+      return caption_;
+    }
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCaptionBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(caption_);
+    }
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    private void setCaption(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      caption_ = value;
+    }
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    private void clearCaption() {
+      
+      caption_ = getDefaultInstance().getCaption();
+    }
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    private void setCaptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      caption_ = value.toStringUtf8();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (storyId_ != 0L) {
+        output.writeUInt64(1, storyId_);
+      }
+      if (!caption_.isEmpty()) {
+        output.writeString(2, getCaption());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (storyId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, storyId_);
+      }
+      if (!caption_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getCaption());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.RoomMessageStoryReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryReply, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageStoryReply)
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryReplyOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public long getStoryId() {
+        return instance.getStoryId();
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder setStoryId(long value) {
+        copyOnWrite();
+        instance.setStoryId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder clearStoryId() {
+        copyOnWrite();
+        instance.clearStoryId();
+        return this;
+      }
+
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public java.lang.String getCaption() {
+        return instance.getCaption();
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCaptionBytes() {
+        return instance.getCaptionBytes();
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public Builder setCaption(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setCaption(value);
+        return this;
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public Builder clearCaption() {
+        copyOnWrite();
+        instance.clearCaption();
+        return this;
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public Builder setCaptionBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setCaptionBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageStoryReply)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.RoomMessageStoryReply();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryReply other = (net.iGap.proto.ProtoGlobal.RoomMessageStoryReply) arg1;
+          storyId_ = visitor.visitLong(storyId_ != 0L, storyId_,
+              other.storyId_ != 0L, other.storyId_);
+          caption_ = visitor.visitString(!caption_.isEmpty(), caption_,
+              !other.caption_.isEmpty(), other.caption_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  storyId_ = input.readUInt64();
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  caption_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageStoryReply)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageStoryReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RoomMessageStoryReply();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<RoomMessageStoryReply> PARSER;
+
+    public static com.google.protobuf.Parser<RoomMessageStoryReply> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface RoomMessageStoryForwardOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageStoryForward)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    long getStoryId();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageStoryForward}
+   */
+  public  static final class RoomMessageStoryForward extends
+      com.google.protobuf.GeneratedMessageLite<
+          RoomMessageStoryForward, RoomMessageStoryForward.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageStoryForward)
+      RoomMessageStoryForwardOrBuilder {
+    private RoomMessageStoryForward() {
+    }
+    public static final int STORY_ID_FIELD_NUMBER = 1;
+    private long storyId_;
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    public long getStoryId() {
+      return storyId_;
+    }
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    private void setStoryId(long value) {
+      
+      storyId_ = value;
+    }
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    private void clearStoryId() {
+      
+      storyId_ = 0L;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (storyId_ != 0L) {
+        output.writeUInt64(1, storyId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (storyId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, storyId_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.RoomMessageStoryForward}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryForward, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageStoryForward)
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryForwardOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public long getStoryId() {
+        return instance.getStoryId();
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder setStoryId(long value) {
+        copyOnWrite();
+        instance.setStoryId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder clearStoryId() {
+        copyOnWrite();
+        instance.clearStoryId();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageStoryForward)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.RoomMessageStoryForward();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.RoomMessageStoryForward other = (net.iGap.proto.ProtoGlobal.RoomMessageStoryForward) arg1;
+          storyId_ = visitor.visitLong(storyId_ != 0L, storyId_,
+              other.storyId_ != 0L, other.storyId_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  storyId_ = input.readUInt64();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageStoryForward)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageStoryForward DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RoomMessageStoryForward();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<RoomMessageStoryForward> PARSER;
+
+    public static com.google.protobuf.Parser<RoomMessageStoryForward> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface StoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Story)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+     */
+    long getId();
+
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    java.lang.String getFileToken();
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFileTokenBytes();
+
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    boolean hasFileDetails();
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.File getFileDetails();
+
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Story.Type getType();
+
+    /**
+     * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+     */
+    long getUserId();
+
+    /**
+     * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    java.lang.String getCaption();
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getCaptionBytes();
+
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    java.lang.String getLink();
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getLinkBytes();
+
+    /**
+     * <code>optional uint32 created_at = 9;</code>
+     */
+    int getCreatedAt();
+
+    /**
+     * <code>optional uint32 end_at = 10;</code>
+     */
+    int getEndAt();
+
+    /**
+     * <code>optional bool seen = 11;</code>
+     */
+    boolean getSeen();
+
+    /**
+     * <code>optional bool duplicated = 12;</code>
+     */
+    boolean getDuplicated();
+  }
+  /**
+   * Protobuf type {@code proto.Story}
+   */
+  public  static final class Story extends
+      com.google.protobuf.GeneratedMessageLite<
+          Story, Story.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.Story)
+      StoryOrBuilder {
+    private Story() {
+      fileToken_ = "";
+      caption_ = "";
+      link_ = "";
+    }
+    /**
+     * Protobuf enum {@code proto.Story.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>STORY = 0;</code>
+       */
+      STORY(0),
+      /**
+       * <code>LIVE = 1;</code>
+       */
+      LIVE(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>STORY = 0;</code>
+       */
+      public static final int STORY_VALUE = 0;
+      /**
+       * <code>LIVE = 1;</code>
+       */
+      public static final int LIVE_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return STORY;
+          case 1: return LIVE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Story.Type)
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+     */
+    public long getId() {
+      return id_;
+    }
+    /**
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+     */
+    private void setId(long value) {
+      
+      id_ = value;
+    }
+    /**
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+     */
+    private void clearId() {
+      
+      id_ = 0L;
+    }
+
+    public static final int FILE_TOKEN_FIELD_NUMBER = 2;
+    private java.lang.String fileToken_;
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    public java.lang.String getFileToken() {
+      return fileToken_;
+    }
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFileTokenBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(fileToken_);
+    }
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    private void setFileToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fileToken_ = value;
+    }
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    private void clearFileToken() {
+      
+      fileToken_ = getDefaultInstance().getFileToken();
+    }
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    private void setFileTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fileToken_ = value.toStringUtf8();
+    }
+
+    public static final int FILE_DETAILS_FIELD_NUMBER = 3;
+    private net.iGap.proto.ProtoGlobal.File fileDetails_;
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    public boolean hasFileDetails() {
+      return fileDetails_ != null;
+    }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.File getFileDetails() {
+      return fileDetails_ == null ? net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : fileDetails_;
+    }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    private void setFileDetails(net.iGap.proto.ProtoGlobal.File value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      fileDetails_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    private void setFileDetails(
+        net.iGap.proto.ProtoGlobal.File.Builder builderForValue) {
+      fileDetails_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    private void mergeFileDetails(net.iGap.proto.ProtoGlobal.File value) {
+      if (fileDetails_ != null &&
+          fileDetails_ != net.iGap.proto.ProtoGlobal.File.getDefaultInstance()) {
+        fileDetails_ =
+          net.iGap.proto.ProtoGlobal.File.newBuilder(fileDetails_).mergeFrom(value).buildPartial();
+      } else {
+        fileDetails_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    private void clearFileDetails() {  fileDetails_ = null;
+      
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Story.Type getType() {
+      net.iGap.proto.ProtoGlobal.Story.Type result = net.iGap.proto.ProtoGlobal.Story.Type.forNumber(type_);
+      return result == null ? net.iGap.proto.ProtoGlobal.Story.Type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    private void setTypeValue(int value) {
+        type_ = value;
+    }
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    private void setType(net.iGap.proto.ProtoGlobal.Story.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    private void clearType() {
+      
+      type_ = 0;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 5;
+    private long userId_;
+    /**
+     * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+     */
+    public long getUserId() {
+      return userId_;
+    }
+    /**
+     * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+     */
+    private void setUserId(long value) {
+      
+      userId_ = value;
+    }
+    /**
+     * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+     */
+    private void clearUserId() {
+      
+      userId_ = 0L;
+    }
+
+    public static final int ROOM_ID_FIELD_NUMBER = 6;
+    private long roomId_;
+    /**
+     * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+    /**
+     * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+     */
+    private void setRoomId(long value) {
+      
+      roomId_ = value;
+    }
+    /**
+     * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+     */
+    private void clearRoomId() {
+      
+      roomId_ = 0L;
+    }
+
+    public static final int CAPTION_FIELD_NUMBER = 7;
+    private java.lang.String caption_;
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    public java.lang.String getCaption() {
+      return caption_;
+    }
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCaptionBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(caption_);
+    }
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    private void setCaption(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      caption_ = value;
+    }
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    private void clearCaption() {
+      
+      caption_ = getDefaultInstance().getCaption();
+    }
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    private void setCaptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      caption_ = value.toStringUtf8();
+    }
+
+    public static final int LINK_FIELD_NUMBER = 8;
+    private java.lang.String link_;
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    public java.lang.String getLink() {
+      return link_;
+    }
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLinkBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(link_);
+    }
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    private void setLink(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      link_ = value;
+    }
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    private void clearLink() {
+      
+      link_ = getDefaultInstance().getLink();
+    }
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    private void setLinkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      link_ = value.toStringUtf8();
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 9;
+    private int createdAt_;
+    /**
+     * <code>optional uint32 created_at = 9;</code>
+     */
+    public int getCreatedAt() {
+      return createdAt_;
+    }
+    /**
+     * <code>optional uint32 created_at = 9;</code>
+     */
+    private void setCreatedAt(int value) {
+      
+      createdAt_ = value;
+    }
+    /**
+     * <code>optional uint32 created_at = 9;</code>
+     */
+    private void clearCreatedAt() {
+      
+      createdAt_ = 0;
+    }
+
+    public static final int END_AT_FIELD_NUMBER = 10;
+    private int endAt_;
+    /**
+     * <code>optional uint32 end_at = 10;</code>
+     */
+    public int getEndAt() {
+      return endAt_;
+    }
+    /**
+     * <code>optional uint32 end_at = 10;</code>
+     */
+    private void setEndAt(int value) {
+      
+      endAt_ = value;
+    }
+    /**
+     * <code>optional uint32 end_at = 10;</code>
+     */
+    private void clearEndAt() {
+      
+      endAt_ = 0;
+    }
+
+    public static final int SEEN_FIELD_NUMBER = 11;
+    private boolean seen_;
+    /**
+     * <code>optional bool seen = 11;</code>
+     */
+    public boolean getSeen() {
+      return seen_;
+    }
+    /**
+     * <code>optional bool seen = 11;</code>
+     */
+    private void setSeen(boolean value) {
+      
+      seen_ = value;
+    }
+    /**
+     * <code>optional bool seen = 11;</code>
+     */
+    private void clearSeen() {
+      
+      seen_ = false;
+    }
+
+    public static final int DUPLICATED_FIELD_NUMBER = 12;
+    private boolean duplicated_;
+    /**
+     * <code>optional bool duplicated = 12;</code>
+     */
+    public boolean getDuplicated() {
+      return duplicated_;
+    }
+    /**
+     * <code>optional bool duplicated = 12;</code>
+     */
+    private void setDuplicated(boolean value) {
+      
+      duplicated_ = value;
+    }
+    /**
+     * <code>optional bool duplicated = 12;</code>
+     */
+    private void clearDuplicated() {
+      
+      duplicated_ = false;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeUInt64(1, id_);
+      }
+      if (!fileToken_.isEmpty()) {
+        output.writeString(2, getFileToken());
+      }
+      if (fileDetails_ != null) {
+        output.writeMessage(3, getFileDetails());
+      }
+      if (type_ != net.iGap.proto.ProtoGlobal.Story.Type.STORY.getNumber()) {
+        output.writeEnum(4, type_);
+      }
+      if (userId_ != 0L) {
+        output.writeUInt64(5, userId_);
+      }
+      if (roomId_ != 0L) {
+        output.writeUInt64(6, roomId_);
+      }
+      if (!caption_.isEmpty()) {
+        output.writeString(7, getCaption());
+      }
+      if (!link_.isEmpty()) {
+        output.writeString(8, getLink());
+      }
+      if (createdAt_ != 0) {
+        output.writeUInt32(9, createdAt_);
+      }
+      if (endAt_ != 0) {
+        output.writeUInt32(10, endAt_);
+      }
+      if (seen_ != false) {
+        output.writeBool(11, seen_);
+      }
+      if (duplicated_ != false) {
+        output.writeBool(12, duplicated_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, id_);
+      }
+      if (!fileToken_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getFileToken());
+      }
+      if (fileDetails_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getFileDetails());
+      }
+      if (type_ != net.iGap.proto.ProtoGlobal.Story.Type.STORY.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, type_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, userId_);
+      }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, roomId_);
+      }
+      if (!caption_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(7, getCaption());
+      }
+      if (!link_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(8, getLink());
+      }
+      if (createdAt_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, createdAt_);
+      }
+      if (endAt_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, endAt_);
+      }
+      if (seen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, seen_);
+      }
+      if (duplicated_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, duplicated_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.Story prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.Story}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.Story, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Story)
+        net.iGap.proto.ProtoGlobal.StoryOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.Story.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+       */
+      public long getId() {
+        return instance.getId();
+      }
+      /**
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder setId(long value) {
+        copyOnWrite();
+        instance.setId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder clearId() {
+        copyOnWrite();
+        instance.clearId();
+        return this;
+      }
+
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public java.lang.String getFileToken() {
+        return instance.getFileToken();
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFileTokenBytes() {
+        return instance.getFileTokenBytes();
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public Builder setFileToken(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setFileToken(value);
+        return this;
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public Builder clearFileToken() {
+        copyOnWrite();
+        instance.clearFileToken();
+        return this;
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public Builder setFileTokenBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setFileTokenBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public boolean hasFileDetails() {
+        return instance.hasFileDetails();
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.File getFileDetails() {
+        return instance.getFileDetails();
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder setFileDetails(net.iGap.proto.ProtoGlobal.File value) {
+        copyOnWrite();
+        instance.setFileDetails(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder setFileDetails(
+          net.iGap.proto.ProtoGlobal.File.Builder builderForValue) {
+        copyOnWrite();
+        instance.setFileDetails(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder mergeFileDetails(net.iGap.proto.ProtoGlobal.File value) {
+        copyOnWrite();
+        instance.mergeFileDetails(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder clearFileDetails() {  copyOnWrite();
+        instance.clearFileDetails();
+        return this;
+      }
+
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public int getTypeValue() {
+        return instance.getTypeValue();
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public Builder setTypeValue(int value) {
+        copyOnWrite();
+        instance.setTypeValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Story.Type getType() {
+        return instance.getType();
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoGlobal.Story.Type value) {
+        copyOnWrite();
+        instance.setType(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public Builder clearType() {
+        copyOnWrite();
+        instance.clearType();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+       */
+      public long getUserId() {
+        return instance.getUserId();
+      }
+      /**
+       * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+       */
+      public Builder setUserId(long value) {
+        copyOnWrite();
+        instance.setUserId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+       */
+      public Builder clearUserId() {
+        copyOnWrite();
+        instance.clearUserId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+       */
+      public long getRoomId() {
+        return instance.getRoomId();
+      }
+      /**
+       * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+       */
+      public Builder setRoomId(long value) {
+        copyOnWrite();
+        instance.setRoomId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+       */
+      public Builder clearRoomId() {
+        copyOnWrite();
+        instance.clearRoomId();
+        return this;
+      }
+
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public java.lang.String getCaption() {
+        return instance.getCaption();
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCaptionBytes() {
+        return instance.getCaptionBytes();
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public Builder setCaption(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setCaption(value);
+        return this;
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public Builder clearCaption() {
+        copyOnWrite();
+        instance.clearCaption();
+        return this;
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public Builder setCaptionBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setCaptionBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public java.lang.String getLink() {
+        return instance.getLink();
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLinkBytes() {
+        return instance.getLinkBytes();
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public Builder setLink(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setLink(value);
+        return this;
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public Builder clearLink() {
+        copyOnWrite();
+        instance.clearLink();
+        return this;
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public Builder setLinkBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setLinkBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 created_at = 9;</code>
+       */
+      public int getCreatedAt() {
+        return instance.getCreatedAt();
+      }
+      /**
+       * <code>optional uint32 created_at = 9;</code>
+       */
+      public Builder setCreatedAt(int value) {
+        copyOnWrite();
+        instance.setCreatedAt(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 created_at = 9;</code>
+       */
+      public Builder clearCreatedAt() {
+        copyOnWrite();
+        instance.clearCreatedAt();
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 end_at = 10;</code>
+       */
+      public int getEndAt() {
+        return instance.getEndAt();
+      }
+      /**
+       * <code>optional uint32 end_at = 10;</code>
+       */
+      public Builder setEndAt(int value) {
+        copyOnWrite();
+        instance.setEndAt(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 end_at = 10;</code>
+       */
+      public Builder clearEndAt() {
+        copyOnWrite();
+        instance.clearEndAt();
+        return this;
+      }
+
+      /**
+       * <code>optional bool seen = 11;</code>
+       */
+      public boolean getSeen() {
+        return instance.getSeen();
+      }
+      /**
+       * <code>optional bool seen = 11;</code>
+       */
+      public Builder setSeen(boolean value) {
+        copyOnWrite();
+        instance.setSeen(value);
+        return this;
+      }
+      /**
+       * <code>optional bool seen = 11;</code>
+       */
+      public Builder clearSeen() {
+        copyOnWrite();
+        instance.clearSeen();
+        return this;
+      }
+
+      /**
+       * <code>optional bool duplicated = 12;</code>
+       */
+      public boolean getDuplicated() {
+        return instance.getDuplicated();
+      }
+      /**
+       * <code>optional bool duplicated = 12;</code>
+       */
+      public Builder setDuplicated(boolean value) {
+        copyOnWrite();
+        instance.setDuplicated(value);
+        return this;
+      }
+      /**
+       * <code>optional bool duplicated = 12;</code>
+       */
+      public Builder clearDuplicated() {
+        copyOnWrite();
+        instance.clearDuplicated();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.Story)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.Story();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.Story other = (net.iGap.proto.ProtoGlobal.Story) arg1;
+          id_ = visitor.visitLong(id_ != 0L, id_,
+              other.id_ != 0L, other.id_);
+          fileToken_ = visitor.visitString(!fileToken_.isEmpty(), fileToken_,
+              !other.fileToken_.isEmpty(), other.fileToken_);
+          fileDetails_ = visitor.visitMessage(fileDetails_, other.fileDetails_);
+          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
+          userId_ = visitor.visitLong(userId_ != 0L, userId_,
+              other.userId_ != 0L, other.userId_);
+          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
+              other.roomId_ != 0L, other.roomId_);
+          caption_ = visitor.visitString(!caption_.isEmpty(), caption_,
+              !other.caption_.isEmpty(), other.caption_);
+          link_ = visitor.visitString(!link_.isEmpty(), link_,
+              !other.link_.isEmpty(), other.link_);
+          createdAt_ = visitor.visitInt(createdAt_ != 0, createdAt_,
+              other.createdAt_ != 0, other.createdAt_);
+          endAt_ = visitor.visitInt(endAt_ != 0, endAt_,
+              other.endAt_ != 0, other.endAt_);
+          seen_ = visitor.visitBoolean(seen_ != false, seen_,
+              other.seen_ != false, other.seen_);
+          duplicated_ = visitor.visitBoolean(duplicated_ != false, duplicated_,
+              other.duplicated_ != false, other.duplicated_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  id_ = input.readUInt64();
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  fileToken_ = s;
+                  break;
+                }
+                case 26: {
+                  net.iGap.proto.ProtoGlobal.File.Builder subBuilder = null;
+                  if (fileDetails_ != null) {
+                    subBuilder = fileDetails_.toBuilder();
+                  }
+                  fileDetails_ = input.readMessage(net.iGap.proto.ProtoGlobal.File.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(fileDetails_);
+                    fileDetails_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 32: {
+                  int rawValue = input.readEnum();
+
+                  type_ = rawValue;
+                  break;
+                }
+                case 40: {
+
+                  userId_ = input.readUInt64();
+                  break;
+                }
+                case 48: {
+
+                  roomId_ = input.readUInt64();
+                  break;
+                }
+                case 58: {
+                  String s = input.readStringRequireUtf8();
+
+                  caption_ = s;
+                  break;
+                }
+                case 66: {
+                  String s = input.readStringRequireUtf8();
+
+                  link_ = s;
+                  break;
+                }
+                case 72: {
+
+                  createdAt_ = input.readUInt32();
+                  break;
+                }
+                case 80: {
+
+                  endAt_ = input.readUInt32();
+                  break;
+                }
+                case 88: {
+
+                  seen_ = input.readBool();
+                  break;
+                }
+                case 96: {
+
+                  duplicated_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.Story.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.Story)
+    private static final net.iGap.proto.ProtoGlobal.Story DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Story();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Story getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<Story> PARSER;
+
+    public static com.google.protobuf.Parser<Story> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
   public interface RegisteredUserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.RegisteredUser)
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     long getId();
 
@@ -10319,7 +12774,7 @@ public final class ProtoGlobal {
         getUsernameBytes();
 
     /**
-     * <code>optional uint64 phone = 3;</code>
+     * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
      */
     long getPhone();
 
@@ -10583,20 +13038,20 @@ public final class ProtoGlobal {
     public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     public long getId() {
       return id_;
     }
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     private void setId(long value) {
       
       id_ = value;
     }
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     private void clearId() {
       
@@ -10652,20 +13107,20 @@ public final class ProtoGlobal {
     public static final int PHONE_FIELD_NUMBER = 3;
     private long phone_;
     /**
-     * <code>optional uint64 phone = 3;</code>
+     * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
      */
     public long getPhone() {
       return phone_;
     }
     /**
-     * <code>optional uint64 phone = 3;</code>
+     * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
      */
     private void setPhone(long value) {
       
       phone_ = value;
     }
     /**
-     * <code>optional uint64 phone = 3;</code>
+     * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
      */
     private void clearPhone() {
       
@@ -11445,13 +13900,13 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return instance.getId();
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setId(long value) {
         copyOnWrite();
@@ -11459,7 +13914,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -11508,13 +13963,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 phone = 3;</code>
+       * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
        */
       public long getPhone() {
         return instance.getPhone();
       }
       /**
-       * <code>optional uint64 phone = 3;</code>
+       * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
        */
       public Builder setPhone(long value) {
         copyOnWrite();
@@ -11522,7 +13977,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 phone = 3;</code>
+       * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
        */
       public Builder clearPhone() {
         copyOnWrite();
@@ -12267,7 +14722,7 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     long getId();
 
@@ -12293,20 +14748,20 @@ public final class ProtoGlobal {
     public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     public long getId() {
       return id_;
     }
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     private void setId(long value) {
       
       id_ = value;
     }
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     private void clearId() {
       
@@ -12475,13 +14930,13 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return instance.getId();
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setId(long value) {
         copyOnWrite();
@@ -12489,7 +14944,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -12659,12 +15114,17 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 message_id = 1;</code>
+     * <code>optional uint64 room_id = 26;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
      */
     long getMessageId();
 
     /**
-     * <code>optional uint64 message_version = 2;</code>
+     * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
      */
     long getMessageVersion();
 
@@ -12678,7 +15138,7 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMessageStatus getStatus();
 
     /**
-     * <code>optional uint64 status_version = 4;</code>
+     * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
      */
     long getStatusVersion();
 
@@ -12794,12 +15254,21 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMessage getReplyTo();
 
     /**
-     * <code>optional uint64 previous_message_id = 18;</code>
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    boolean hasStory();
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStory getStory();
+
+    /**
+     * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
      */
     long getPreviousMessageId();
 
     /**
-     * <code>optional uint64 random_id = 21;</code>
+     * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
      */
     long getRandomId();
 
@@ -12963,7 +15432,7 @@ public final class ProtoGlobal {
           com.google.protobuf.MessageLiteOrBuilder {
 
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
          */
         long getUserId();
 
@@ -12991,20 +15460,20 @@ public final class ProtoGlobal {
         public static final int USER_ID_FIELD_NUMBER = 1;
         private long userId_;
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getUserId() {
           return userId_;
         }
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
          */
         private void setUserId(long value) {
           
           userId_ = value;
         }
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
          */
         private void clearUserId() {
           
@@ -13167,13 +15636,13 @@ public final class ProtoGlobal {
 
 
           /**
-           * <code>optional uint64 user_id = 1;</code>
+           * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
            */
           public long getUserId() {
             return instance.getUserId();
           }
           /**
-           * <code>optional uint64 user_id = 1;</code>
+           * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder setUserId(long value) {
             copyOnWrite();
@@ -13181,7 +15650,7 @@ public final class ProtoGlobal {
             return this;
           }
           /**
-           * <code>optional uint64 user_id = 1;</code>
+           * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder clearUserId() {
             copyOnWrite();
@@ -13340,7 +15809,7 @@ public final class ProtoGlobal {
           com.google.protobuf.MessageLiteOrBuilder {
 
         /**
-         * <code>optional uint64 room_id = 1;</code>
+         * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
          */
         long getRoomId();
       }
@@ -13357,20 +15826,20 @@ public final class ProtoGlobal {
         public static final int ROOM_ID_FIELD_NUMBER = 1;
         private long roomId_;
         /**
-         * <code>optional uint64 room_id = 1;</code>
+         * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
          */
         public long getRoomId() {
           return roomId_;
         }
         /**
-         * <code>optional uint64 room_id = 1;</code>
+         * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
          */
         private void setRoomId(long value) {
           
           roomId_ = value;
         }
         /**
-         * <code>optional uint64 room_id = 1;</code>
+         * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
          */
         private void clearRoomId() {
           
@@ -13480,13 +15949,13 @@ public final class ProtoGlobal {
 
 
           /**
-           * <code>optional uint64 room_id = 1;</code>
+           * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
            */
           public long getRoomId() {
             return instance.getRoomId();
           }
           /**
-           * <code>optional uint64 room_id = 1;</code>
+           * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder setRoomId(long value) {
             copyOnWrite();
@@ -13494,7 +15963,7 @@ public final class ProtoGlobal {
             return this;
           }
           /**
-           * <code>optional uint64 room_id = 1;</code>
+           * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder clearRoomId() {
             copyOnWrite();
@@ -14771,23 +17240,46 @@ public final class ProtoGlobal {
       }
     }
 
+    public static final int ROOM_ID_FIELD_NUMBER = 26;
+    private long roomId_;
+    /**
+     * <code>optional uint64 room_id = 26;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+    /**
+     * <code>optional uint64 room_id = 26;</code>
+     */
+    private void setRoomId(long value) {
+      
+      roomId_ = value;
+    }
+    /**
+     * <code>optional uint64 room_id = 26;</code>
+     */
+    private void clearRoomId() {
+      
+      roomId_ = 0L;
+    }
+
     public static final int MESSAGE_ID_FIELD_NUMBER = 1;
     private long messageId_;
     /**
-     * <code>optional uint64 message_id = 1;</code>
+     * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
      */
     public long getMessageId() {
       return messageId_;
     }
     /**
-     * <code>optional uint64 message_id = 1;</code>
+     * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
      */
     private void setMessageId(long value) {
       
       messageId_ = value;
     }
     /**
-     * <code>optional uint64 message_id = 1;</code>
+     * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
      */
     private void clearMessageId() {
       
@@ -14797,20 +17289,20 @@ public final class ProtoGlobal {
     public static final int MESSAGE_VERSION_FIELD_NUMBER = 2;
     private long messageVersion_;
     /**
-     * <code>optional uint64 message_version = 2;</code>
+     * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
      */
     public long getMessageVersion() {
       return messageVersion_;
     }
     /**
-     * <code>optional uint64 message_version = 2;</code>
+     * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
      */
     private void setMessageVersion(long value) {
       
       messageVersion_ = value;
     }
     /**
-     * <code>optional uint64 message_version = 2;</code>
+     * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
      */
     private void clearMessageVersion() {
       
@@ -14859,20 +17351,20 @@ public final class ProtoGlobal {
     public static final int STATUS_VERSION_FIELD_NUMBER = 4;
     private long statusVersion_;
     /**
-     * <code>optional uint64 status_version = 4;</code>
+     * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
      */
     public long getStatusVersion() {
       return statusVersion_;
     }
     /**
-     * <code>optional uint64 status_version = 4;</code>
+     * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
      */
     private void setStatusVersion(long value) {
       
       statusVersion_ = value;
     }
     /**
-     * <code>optional uint64 status_version = 4;</code>
+     * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
      */
     private void clearStatusVersion() {
       
@@ -15472,23 +17964,75 @@ public final class ProtoGlobal {
       
     }
 
+    public static final int STORY_FIELD_NUMBER = 25;
+    private net.iGap.proto.ProtoGlobal.RoomMessageStory story_;
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    public boolean hasStory() {
+      return story_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStory getStory() {
+      return story_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance() : story_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    private void setStory(net.iGap.proto.ProtoGlobal.RoomMessageStory value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      story_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    private void setStory(
+        net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder builderForValue) {
+      story_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    private void mergeStory(net.iGap.proto.ProtoGlobal.RoomMessageStory value) {
+      if (story_ != null &&
+          story_ != net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance()) {
+        story_ =
+          net.iGap.proto.ProtoGlobal.RoomMessageStory.newBuilder(story_).mergeFrom(value).buildPartial();
+      } else {
+        story_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    private void clearStory() {  story_ = null;
+      
+    }
+
     public static final int PREVIOUS_MESSAGE_ID_FIELD_NUMBER = 18;
     private long previousMessageId_;
     /**
-     * <code>optional uint64 previous_message_id = 18;</code>
+     * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
      */
     public long getPreviousMessageId() {
       return previousMessageId_;
     }
     /**
-     * <code>optional uint64 previous_message_id = 18;</code>
+     * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
      */
     private void setPreviousMessageId(long value) {
       
       previousMessageId_ = value;
     }
     /**
-     * <code>optional uint64 previous_message_id = 18;</code>
+     * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
      */
     private void clearPreviousMessageId() {
       
@@ -15498,20 +18042,20 @@ public final class ProtoGlobal {
     public static final int RANDOM_ID_FIELD_NUMBER = 21;
     private long randomId_;
     /**
-     * <code>optional uint64 random_id = 21;</code>
+     * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
      */
     public long getRandomId() {
       return randomId_;
     }
     /**
-     * <code>optional uint64 random_id = 21;</code>
+     * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
      */
     private void setRandomId(long value) {
       
       randomId_ = value;
     }
     /**
-     * <code>optional uint64 random_id = 21;</code>
+     * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
      */
     private void clearRandomId() {
       
@@ -15752,6 +18296,12 @@ public final class ProtoGlobal {
       if (!additionalData_.isEmpty()) {
         output.writeString(24, getAdditionalData());
       }
+      if (story_ != null) {
+        output.writeMessage(25, getStory());
+      }
+      if (roomId_ != 0L) {
+        output.writeUInt64(26, roomId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -15855,6 +18405,14 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(24, getAdditionalData());
       }
+      if (story_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(25, getStory());
+      }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(26, roomId_);
+      }
       memoizedSerializedSize = size;
       return size;
     }
@@ -15942,13 +18500,36 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>optional uint64 room_id = 26;</code>
+       */
+      public long getRoomId() {
+        return instance.getRoomId();
+      }
+      /**
+       * <code>optional uint64 room_id = 26;</code>
+       */
+      public Builder setRoomId(long value) {
+        copyOnWrite();
+        instance.setRoomId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 room_id = 26;</code>
+       */
+      public Builder clearRoomId() {
+        copyOnWrite();
+        instance.clearRoomId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
        */
       public long getMessageId() {
         return instance.getMessageId();
       }
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setMessageId(long value) {
         copyOnWrite();
@@ -15956,7 +18537,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearMessageId() {
         copyOnWrite();
@@ -15965,13 +18546,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 message_version = 2;</code>
+       * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
        */
       public long getMessageVersion() {
         return instance.getMessageVersion();
       }
       /**
-       * <code>optional uint64 message_version = 2;</code>
+       * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
        */
       public Builder setMessageVersion(long value) {
         copyOnWrite();
@@ -15979,7 +18560,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 message_version = 2;</code>
+       * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearMessageVersion() {
         copyOnWrite();
@@ -16025,13 +18606,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
        */
       public long getStatusVersion() {
         return instance.getStatusVersion();
       }
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
        */
       public Builder setStatusVersion(long value) {
         copyOnWrite();
@@ -16039,7 +18620,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
        */
       public Builder clearStatusVersion() {
         copyOnWrite();
@@ -16577,13 +19158,58 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 previous_message_id = 18;</code>
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public boolean hasStory() {
+        return instance.hasStory();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory getStory() {
+        return instance.getStory();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder setStory(net.iGap.proto.ProtoGlobal.RoomMessageStory value) {
+        copyOnWrite();
+        instance.setStory(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder setStory(
+          net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder builderForValue) {
+        copyOnWrite();
+        instance.setStory(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder mergeStory(net.iGap.proto.ProtoGlobal.RoomMessageStory value) {
+        copyOnWrite();
+        instance.mergeStory(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder clearStory() {  copyOnWrite();
+        instance.clearStory();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
        */
       public long getPreviousMessageId() {
         return instance.getPreviousMessageId();
       }
       /**
-       * <code>optional uint64 previous_message_id = 18;</code>
+       * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
        */
       public Builder setPreviousMessageId(long value) {
         copyOnWrite();
@@ -16591,7 +19217,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 previous_message_id = 18;</code>
+       * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
        */
       public Builder clearPreviousMessageId() {
         copyOnWrite();
@@ -16600,13 +19226,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 random_id = 21;</code>
+       * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
        */
       public long getRandomId() {
         return instance.getRandomId();
       }
       /**
-       * <code>optional uint64 random_id = 21;</code>
+       * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
        */
       public Builder setRandomId(long value) {
         copyOnWrite();
@@ -16614,7 +19240,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 random_id = 21;</code>
+       * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
        */
       public Builder clearRandomId() {
         copyOnWrite();
@@ -16788,6 +19414,8 @@ public final class ProtoGlobal {
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoGlobal.RoomMessage other = (net.iGap.proto.ProtoGlobal.RoomMessage) arg1;
+          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
+              other.roomId_ != 0L, other.roomId_);
           messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
               other.messageId_ != 0L, other.messageId_);
           messageVersion_ = visitor.visitLong(messageVersion_ != 0L, messageVersion_,
@@ -16814,6 +19442,7 @@ public final class ProtoGlobal {
               other.deleted_ != false, other.deleted_);
           forwardFrom_ = visitor.visitMessage(forwardFrom_, other.forwardFrom_);
           replyTo_ = visitor.visitMessage(replyTo_, other.replyTo_);
+          story_ = visitor.visitMessage(story_, other.story_);
           previousMessageId_ = visitor.visitLong(previousMessageId_ != 0L, previousMessageId_,
               other.previousMessageId_ != 0L, other.previousMessageId_);
           randomId_ = visitor.visitLong(randomId_ != 0L, randomId_,
@@ -17045,6 +19674,24 @@ public final class ProtoGlobal {
                   additionalData_ = s;
                   break;
                 }
+                case 202: {
+                  net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder subBuilder = null;
+                  if (story_ != null) {
+                    subBuilder = story_.toBuilder();
+                  }
+                  story_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageStory.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(story_);
+                    story_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 208: {
+
+                  roomId_ = input.readUInt64();
+                  break;
+                }
               }
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -17106,7 +19753,7 @@ public final class ProtoGlobal {
         getMessageBytes();
 
     /**
-     * <code>optional uint64 reply_to = 2;</code>
+     * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
      */
     long getReplyTo();
 
@@ -17175,20 +19822,20 @@ public final class ProtoGlobal {
     public static final int REPLY_TO_FIELD_NUMBER = 2;
     private long replyTo_;
     /**
-     * <code>optional uint64 reply_to = 2;</code>
+     * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
      */
     public long getReplyTo() {
       return replyTo_;
     }
     /**
-     * <code>optional uint64 reply_to = 2;</code>
+     * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
      */
     private void setReplyTo(long value) {
       
       replyTo_ = value;
     }
     /**
-     * <code>optional uint64 reply_to = 2;</code>
+     * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
      */
     private void clearReplyTo() {
       
@@ -17375,13 +20022,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 reply_to = 2;</code>
+       * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
        */
       public long getReplyTo() {
         return instance.getReplyTo();
       }
       /**
-       * <code>optional uint64 reply_to = 2;</code>
+       * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
        */
       public Builder setReplyTo(long value) {
         copyOnWrite();
@@ -17389,7 +20036,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 reply_to = 2;</code>
+       * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearReplyTo() {
         copyOnWrite();
@@ -17538,7 +20185,7 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     long getId();
 
@@ -17633,7 +20280,7 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMute getRoomMute();
 
     /**
-     * <code>optional uint64 pin_id = 16;</code>
+     * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
      */
     long getPinId();
 
@@ -17784,20 +20431,20 @@ public final class ProtoGlobal {
     public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     public long getId() {
       return id_;
     }
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     private void setId(long value) {
       
       id_ = value;
     }
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     private void clearId() {
       
@@ -18248,20 +20895,20 @@ public final class ProtoGlobal {
     public static final int PIN_ID_FIELD_NUMBER = 16;
     private long pinId_;
     /**
-     * <code>optional uint64 pin_id = 16;</code>
+     * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
      */
     public long getPinId() {
       return pinId_;
     }
     /**
-     * <code>optional uint64 pin_id = 16;</code>
+     * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
      */
     private void setPinId(long value) {
       
       pinId_ = value;
     }
     /**
-     * <code>optional uint64 pin_id = 16;</code>
+     * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
      */
     private void clearPinId() {
       
@@ -18810,13 +21457,13 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return instance.getId();
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setId(long value) {
         copyOnWrite();
@@ -18824,7 +21471,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -19231,13 +21878,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 pin_id = 16;</code>
+       * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
        */
       public long getPinId() {
         return instance.getPinId();
       }
       /**
-       * <code>optional uint64 pin_id = 16;</code>
+       * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
        */
       public Builder setPinId(long value) {
         copyOnWrite();
@@ -19245,7 +21892,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 pin_id = 16;</code>
+       * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
        */
       public Builder clearPinId() {
         copyOnWrite();
@@ -22551,7 +25198,7 @@ public final class ProtoGlobal {
     boolean getSignature();
 
     /**
-     * <code>optional uint64 seen_id = 11;</code>
+     * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
      */
     long getSeenId();
 
@@ -23863,20 +26510,20 @@ public final class ProtoGlobal {
     public static final int SEEN_ID_FIELD_NUMBER = 11;
     private long seenId_;
     /**
-     * <code>optional uint64 seen_id = 11;</code>
+     * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
      */
     public long getSeenId() {
       return seenId_;
     }
     /**
-     * <code>optional uint64 seen_id = 11;</code>
+     * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
      */
     private void setSeenId(long value) {
       
       seenId_ = value;
     }
     /**
-     * <code>optional uint64 seen_id = 11;</code>
+     * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
      */
     private void clearSeenId() {
       
@@ -24474,13 +27121,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 seen_id = 11;</code>
+       * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
        */
       public long getSeenId() {
         return instance.getSeenId();
       }
       /**
-       * <code>optional uint64 seen_id = 11;</code>
+       * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
        */
       public Builder setSeenId(long value) {
         copyOnWrite();
@@ -24488,7 +27135,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 seen_id = 11;</code>
+       * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
        */
       public Builder clearSeenId() {
         copyOnWrite();
@@ -32082,7 +34729,7 @@ public final class ProtoGlobal {
     boolean getClicked();
 
     /**
-     * <code>optional uint64 sum = 5;</code>
+     * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
      */
     long getSum();
 
@@ -32231,20 +34878,20 @@ public final class ProtoGlobal {
     public static final int SUM_FIELD_NUMBER = 5;
     private long sum_;
     /**
-     * <code>optional uint64 sum = 5;</code>
+     * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
      */
     public long getSum() {
       return sum_;
     }
     /**
-     * <code>optional uint64 sum = 5;</code>
+     * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
      */
     private void setSum(long value) {
       
       sum_ = value;
     }
     /**
-     * <code>optional uint64 sum = 5;</code>
+     * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
      */
     private void clearSum() {
       
@@ -32574,13 +35221,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 sum = 5;</code>
+       * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
        */
       public long getSum() {
         return instance.getSum();
       }
       /**
-       * <code>optional uint64 sum = 5;</code>
+       * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
        */
       public Builder setSum(long value) {
         copyOnWrite();
@@ -32588,7 +35235,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 sum = 5;</code>
+       * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
        */
       public Builder clearSum() {
         copyOnWrite();
@@ -33976,17 +36623,17 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 invoice_number = 1;</code>
+     * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
      */
     long getInvoiceNumber();
 
     /**
-     * <code>optional uint64 from_user_id = 2;</code>
+     * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
      */
     long getFromUserId();
 
     /**
-     * <code>optional uint64 amount = 3;</code>
+     * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
      */
     long getAmount();
 
@@ -34134,20 +36781,20 @@ public final class ProtoGlobal {
     public static final int INVOICE_NUMBER_FIELD_NUMBER = 1;
     private long invoiceNumber_;
     /**
-     * <code>optional uint64 invoice_number = 1;</code>
+     * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
      */
     public long getInvoiceNumber() {
       return invoiceNumber_;
     }
     /**
-     * <code>optional uint64 invoice_number = 1;</code>
+     * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
      */
     private void setInvoiceNumber(long value) {
       
       invoiceNumber_ = value;
     }
     /**
-     * <code>optional uint64 invoice_number = 1;</code>
+     * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
      */
     private void clearInvoiceNumber() {
       
@@ -34157,20 +36804,20 @@ public final class ProtoGlobal {
     public static final int FROM_USER_ID_FIELD_NUMBER = 2;
     private long fromUserId_;
     /**
-     * <code>optional uint64 from_user_id = 2;</code>
+     * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
      */
     public long getFromUserId() {
       return fromUserId_;
     }
     /**
-     * <code>optional uint64 from_user_id = 2;</code>
+     * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
      */
     private void setFromUserId(long value) {
       
       fromUserId_ = value;
     }
     /**
-     * <code>optional uint64 from_user_id = 2;</code>
+     * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
      */
     private void clearFromUserId() {
       
@@ -34180,20 +36827,20 @@ public final class ProtoGlobal {
     public static final int AMOUNT_FIELD_NUMBER = 3;
     private long amount_;
     /**
-     * <code>optional uint64 amount = 3;</code>
+     * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
      */
     public long getAmount() {
       return amount_;
     }
     /**
-     * <code>optional uint64 amount = 3;</code>
+     * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
      */
     private void setAmount(long value) {
       
       amount_ = value;
     }
     /**
-     * <code>optional uint64 amount = 3;</code>
+     * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
      */
     private void clearAmount() {
       
@@ -34559,13 +37206,13 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 invoice_number = 1;</code>
+       * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
        */
       public long getInvoiceNumber() {
         return instance.getInvoiceNumber();
       }
       /**
-       * <code>optional uint64 invoice_number = 1;</code>
+       * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
        */
       public Builder setInvoiceNumber(long value) {
         copyOnWrite();
@@ -34573,7 +37220,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 invoice_number = 1;</code>
+       * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearInvoiceNumber() {
         copyOnWrite();
@@ -34582,13 +37229,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 from_user_id = 2;</code>
+       * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return instance.getFromUserId();
       }
       /**
-       * <code>optional uint64 from_user_id = 2;</code>
+       * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder setFromUserId(long value) {
         copyOnWrite();
@@ -34596,7 +37243,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 from_user_id = 2;</code>
+       * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearFromUserId() {
         copyOnWrite();
@@ -34605,13 +37252,13 @@ public final class ProtoGlobal {
       }
 
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return instance.getAmount();
       }
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public Builder setAmount(long value) {
         copyOnWrite();
@@ -34619,7 +37266,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public Builder clearAmount() {
         copyOnWrite();
@@ -34974,7 +37621,7 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional uint64 order_id = 1;</code>
+     * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
      */
     long getOrderId();
 
@@ -35183,7 +37830,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -35208,17 +37855,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -35422,20 +38069,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -35537,20 +38184,20 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 8;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -35560,20 +38207,20 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 9;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       private void setRequestDateTime(long value) {
         
         requestDateTime_ = value;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       private void clearRequestDateTime() {
         
@@ -35583,20 +38230,20 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 10;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
       }
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       private void setRRN(long value) {
         
         rRN_ = value;
       }
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       private void clearRRN() {
         
@@ -36025,13 +38672,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -36039,7 +38686,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -36128,13 +38775,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -36142,7 +38789,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -36151,13 +38798,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return instance.getRequestDateTime();
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           copyOnWrite();
@@ -36165,7 +38812,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           copyOnWrite();
@@ -36174,13 +38821,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return instance.getRRN();
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           copyOnWrite();
@@ -36188,7 +38835,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           copyOnWrite();
@@ -36475,12 +39122,12 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageLiteOrBuilder {
 
       /**
-       * <code>optional uint64 RequesterMobileNumber = 1;</code>
+       * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
        */
       long getRequesterMobileNumber();
 
       /**
-       * <code>optional uint64 ChargeMobileNumber = 2;</code>
+       * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
        */
       long getChargeMobileNumber();
 
@@ -36495,7 +39142,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -36520,17 +39167,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -36570,20 +39217,20 @@ public final class ProtoGlobal {
       public static final int REQUESTERMOBILENUMBER_FIELD_NUMBER = 1;
       private long requesterMobileNumber_;
       /**
-       * <code>optional uint64 RequesterMobileNumber = 1;</code>
+       * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
        */
       public long getRequesterMobileNumber() {
         return requesterMobileNumber_;
       }
       /**
-       * <code>optional uint64 RequesterMobileNumber = 1;</code>
+       * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
        */
       private void setRequesterMobileNumber(long value) {
         
         requesterMobileNumber_ = value;
       }
       /**
-       * <code>optional uint64 RequesterMobileNumber = 1;</code>
+       * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
        */
       private void clearRequesterMobileNumber() {
         
@@ -36593,20 +39240,20 @@ public final class ProtoGlobal {
       public static final int CHARGEMOBILENUMBER_FIELD_NUMBER = 2;
       private long chargeMobileNumber_;
       /**
-       * <code>optional uint64 ChargeMobileNumber = 2;</code>
+       * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
        */
       public long getChargeMobileNumber() {
         return chargeMobileNumber_;
       }
       /**
-       * <code>optional uint64 ChargeMobileNumber = 2;</code>
+       * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
        */
       private void setChargeMobileNumber(long value) {
         
         chargeMobileNumber_ = value;
       }
       /**
-       * <code>optional uint64 ChargeMobileNumber = 2;</code>
+       * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
        */
       private void clearChargeMobileNumber() {
         
@@ -36662,20 +39309,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -36777,20 +39424,20 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 8;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -36800,20 +39447,20 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 9;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       private void setRequestDateTime(long value) {
         
         requestDateTime_ = value;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       private void clearRequestDateTime() {
         
@@ -36823,20 +39470,20 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 10;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
       }
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       private void setRRN(long value) {
         
         rRN_ = value;
       }
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       private void clearRRN() {
         
@@ -37122,13 +39769,13 @@ public final class ProtoGlobal {
 
 
         /**
-         * <code>optional uint64 RequesterMobileNumber = 1;</code>
+         * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
          */
         public long getRequesterMobileNumber() {
           return instance.getRequesterMobileNumber();
         }
         /**
-         * <code>optional uint64 RequesterMobileNumber = 1;</code>
+         * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
          */
         public Builder setRequesterMobileNumber(long value) {
           copyOnWrite();
@@ -37136,7 +39783,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequesterMobileNumber = 1;</code>
+         * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearRequesterMobileNumber() {
           copyOnWrite();
@@ -37145,13 +39792,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 ChargeMobileNumber = 2;</code>
+         * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
          */
         public long getChargeMobileNumber() {
           return instance.getChargeMobileNumber();
         }
         /**
-         * <code>optional uint64 ChargeMobileNumber = 2;</code>
+         * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
          */
         public Builder setChargeMobileNumber(long value) {
           copyOnWrite();
@@ -37159,7 +39806,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 ChargeMobileNumber = 2;</code>
+         * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearChargeMobileNumber() {
           copyOnWrite();
@@ -37214,13 +39861,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -37228,7 +39875,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -37317,13 +39964,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -37331,7 +39978,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -37340,13 +39987,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return instance.getRequestDateTime();
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           copyOnWrite();
@@ -37354,7 +40001,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           copyOnWrite();
@@ -37363,13 +40010,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return instance.getRRN();
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           copyOnWrite();
@@ -37377,7 +40024,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           copyOnWrite();
@@ -37666,7 +40313,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -37691,17 +40338,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 5;</code>
+       * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 6;</code>
+       * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 7;</code>
+       * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -37764,20 +40411,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 2;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -37879,20 +40526,20 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 5;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 5;</code>
+       * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 OrderId = 5;</code>
+       * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 OrderId = 5;</code>
+       * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -37902,20 +40549,20 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 6;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 6;</code>
+       * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 6;</code>
+       * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
        */
       private void setRequestDateTime(long value) {
         
         requestDateTime_ = value;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 6;</code>
+       * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
        */
       private void clearRequestDateTime() {
         
@@ -37925,20 +40572,20 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 7;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 7;</code>
+       * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
       }
       /**
-       * <code>optional uint64 RRN = 7;</code>
+       * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
        */
       private void setRRN(long value) {
         
         rRN_ = value;
       }
       /**
-       * <code>optional uint64 RRN = 7;</code>
+       * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
        */
       private void clearRRN() {
         
@@ -38226,13 +40873,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -38240,7 +40887,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -38329,13 +40976,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 OrderId = 5;</code>
+         * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 OrderId = 5;</code>
+         * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -38343,7 +40990,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 5;</code>
+         * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -38352,13 +40999,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RequestDateTime = 6;</code>
+         * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return instance.getRequestDateTime();
         }
         /**
-         * <code>optional uint64 RequestDateTime = 6;</code>
+         * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           copyOnWrite();
@@ -38366,7 +41013,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 6;</code>
+         * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           copyOnWrite();
@@ -38375,13 +41022,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RRN = 7;</code>
+         * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return instance.getRRN();
         }
         /**
-         * <code>optional uint64 RRN = 7;</code>
+         * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           copyOnWrite();
@@ -38389,7 +41036,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 7;</code>
+         * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           copyOnWrite();
@@ -38657,7 +41304,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -38712,17 +41359,17 @@ public final class ProtoGlobal {
           getCardOwnerNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -38783,20 +41430,20 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 2;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       private void setAmount(long value) {
         
         amount_ = value;
       }
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       private void clearAmount() {
         
@@ -39036,20 +41683,20 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 8;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       private void setOrderId(long value) {
         
         orderId_ = value;
       }
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       private void clearOrderId() {
         
@@ -39059,20 +41706,20 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 9;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       private void setRequestDateTime(long value) {
         
         requestDateTime_ = value;
       }
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       private void clearRequestDateTime() {
         
@@ -39082,20 +41729,20 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 10;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
       }
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       private void setRRN(long value) {
         
         rRN_ = value;
       }
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       private void clearRRN() {
         
@@ -39374,13 +42021,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return instance.getAmount();
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           copyOnWrite();
@@ -39388,7 +42035,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           copyOnWrite();
@@ -39597,13 +42244,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return instance.getOrderId();
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           copyOnWrite();
@@ -39611,7 +42258,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           copyOnWrite();
@@ -39620,13 +42267,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return instance.getRequestDateTime();
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           copyOnWrite();
@@ -39634,7 +42281,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           copyOnWrite();
@@ -39643,13 +42290,13 @@ public final class ProtoGlobal {
         }
 
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return instance.getRRN();
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           copyOnWrite();
@@ -39657,7 +42304,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           copyOnWrite();
@@ -39912,20 +42559,20 @@ public final class ProtoGlobal {
     public static final int ORDER_ID_FIELD_NUMBER = 1;
     private long orderId_;
     /**
-     * <code>optional uint64 order_id = 1;</code>
+     * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
      */
     public long getOrderId() {
       return orderId_;
     }
     /**
-     * <code>optional uint64 order_id = 1;</code>
+     * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
      */
     private void setOrderId(long value) {
       
       orderId_ = value;
     }
     /**
-     * <code>optional uint64 order_id = 1;</code>
+     * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
      */
     private void clearOrderId() {
       
@@ -40400,13 +43047,13 @@ public final class ProtoGlobal {
 
 
       /**
-       * <code>optional uint64 order_id = 1;</code>
+       * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return instance.getOrderId();
       }
       /**
-       * <code>optional uint64 order_id = 1;</code>
+       * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setOrderId(long value) {
         copyOnWrite();
@@ -40414,7 +43061,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 order_id = 1;</code>
+       * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearOrderId() {
         copyOnWrite();
