@@ -32699,6 +32699,10 @@ public final class ProtoGlobal {
        * <code>NEWS_DETAIL = 44;</code>
        */
       NEWS_DETAIL(44),
+      /**
+       * <code>QRPAY = 45;</code>
+       */
+      QRPAY(45),
       UNRECOGNIZED(-1),
       ;
 
@@ -32882,6 +32886,10 @@ public final class ProtoGlobal {
        * <code>NEWS_DETAIL = 44;</code>
        */
       public static final int NEWS_DETAIL_VALUE = 44;
+      /**
+       * <code>QRPAY = 45;</code>
+       */
+      public static final int QRPAY_VALUE = 45;
 
 
       public final int getNumber() {
@@ -32943,6 +32951,7 @@ public final class ProtoGlobal {
           case 42: return POLL_RESULT;
           case 43: return VIRTUAL_GIFT_CARD;
           case 44: return NEWS_DETAIL;
+          case 45: return QRPAY;
           default: return null;
         }
       }
