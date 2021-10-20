@@ -48,6 +48,11 @@ public final class ProtoClientSearchRoomHistory {
      * <code>optional uint64 offset_message_id = 5;</code>
      */
     long getOffsetMessageId();
+
+    /**
+     * <code>optional uint64 offset_document_id = 6;</code>
+     */
+    long getOffsetDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientSearchRoomHistory}
@@ -343,6 +348,29 @@ public final class ProtoClientSearchRoomHistory {
       offsetMessageId_ = 0L;
     }
 
+    public static final int OFFSET_DOCUMENT_ID_FIELD_NUMBER = 6;
+    private long offsetDocumentId_;
+    /**
+     * <code>optional uint64 offset_document_id = 6;</code>
+     */
+    public long getOffsetDocumentId() {
+      return offsetDocumentId_;
+    }
+    /**
+     * <code>optional uint64 offset_document_id = 6;</code>
+     */
+    private void setOffsetDocumentId(long value) {
+      
+      offsetDocumentId_ = value;
+    }
+    /**
+     * <code>optional uint64 offset_document_id = 6;</code>
+     */
+    private void clearOffsetDocumentId() {
+      
+      offsetDocumentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -359,6 +387,9 @@ public final class ProtoClientSearchRoomHistory {
       }
       if (offsetMessageId_ != 0L) {
         output.writeUInt64(5, offsetMessageId_);
+      }
+      if (offsetDocumentId_ != 0L) {
+        output.writeUInt64(6, offsetDocumentId_);
       }
     }
 
@@ -386,6 +417,10 @@ public final class ProtoClientSearchRoomHistory {
       if (offsetMessageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, offsetMessageId_);
+      }
+      if (offsetDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, offsetDocumentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -636,6 +671,29 @@ public final class ProtoClientSearchRoomHistory {
         return this;
       }
 
+      /**
+       * <code>optional uint64 offset_document_id = 6;</code>
+       */
+      public long getOffsetDocumentId() {
+        return instance.getOffsetDocumentId();
+      }
+      /**
+       * <code>optional uint64 offset_document_id = 6;</code>
+       */
+      public Builder setOffsetDocumentId(long value) {
+        copyOnWrite();
+        instance.setOffsetDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 offset_document_id = 6;</code>
+       */
+      public Builder clearOffsetDocumentId() {
+        copyOnWrite();
+        instance.clearOffsetDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ClientSearchRoomHistory)
     }
     protected final Object dynamicMethod(
@@ -665,6 +723,8 @@ public final class ProtoClientSearchRoomHistory {
           filter_ = visitor.visitInt(filter_ != 0, filter_,    other.filter_ != 0, other.filter_);
           offsetMessageId_ = visitor.visitLong(offsetMessageId_ != 0L, offsetMessageId_,
               other.offsetMessageId_ != 0L, other.offsetMessageId_);
+          offsetDocumentId_ = visitor.visitLong(offsetDocumentId_ != 0L, offsetDocumentId_,
+              other.offsetDocumentId_ != 0L, other.offsetDocumentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -721,6 +781,11 @@ public final class ProtoClientSearchRoomHistory {
                 case 40: {
 
                   offsetMessageId_ = input.readUInt64();
+                  break;
+                }
+                case 48: {
+
+                  offsetDocumentId_ = input.readUInt64();
                   break;
                 }
               }

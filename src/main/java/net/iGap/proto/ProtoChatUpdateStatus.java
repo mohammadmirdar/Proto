@@ -39,6 +39,11 @@ public final class ProtoChatUpdateStatus {
      * <code>optional .proto.RoomMessageStatus status = 4;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomMessageStatus getStatus();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatUpdateStatus}
@@ -187,6 +192,29 @@ public final class ProtoChatUpdateStatus {
       status_ = 0;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -200,6 +228,9 @@ public final class ProtoChatUpdateStatus {
       }
       if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStatus.FAILED.getNumber()) {
         output.writeEnum(4, status_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
       }
     }
 
@@ -223,6 +254,10 @@ public final class ProtoChatUpdateStatus {
       if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStatus.FAILED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, status_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -438,6 +473,29 @@ public final class ProtoChatUpdateStatus {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ChatUpdateStatus)
     }
     protected final Object dynamicMethod(
@@ -465,6 +523,8 @@ public final class ProtoChatUpdateStatus {
           messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
               other.messageId_ != 0L, other.messageId_);
           status_ = visitor.visitInt(status_ != 0, status_,    other.status_ != 0, other.status_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -516,6 +576,11 @@ public final class ProtoChatUpdateStatus {
                   int rawValue = input.readEnum();
 
                   status_ = rawValue;
+                  break;
+                }
+                case 40: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -610,6 +675,16 @@ public final class ProtoChatUpdateStatus {
      */
     com.google.protobuf.ByteString
         getUpdaterAuthorHashBytes();
+
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    long getDocumentId();
+
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    long getVersionDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatUpdateStatusResponse}
@@ -828,6 +903,52 @@ public final class ProtoChatUpdateStatus {
       updaterAuthorHash_ = value.toStringUtf8();
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 7;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
+    public static final int VERSION_DOCUMENT_ID_FIELD_NUMBER = 8;
+    private long versionDocumentId_;
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    public long getVersionDocumentId() {
+      return versionDocumentId_;
+    }
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    private void setVersionDocumentId(long value) {
+      
+      versionDocumentId_ = value;
+    }
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    private void clearVersionDocumentId() {
+      
+      versionDocumentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -847,6 +968,12 @@ public final class ProtoChatUpdateStatus {
       }
       if (!updaterAuthorHash_.isEmpty()) {
         output.writeString(6, getUpdaterAuthorHash());
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(7, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        output.writeUInt64(8, versionDocumentId_);
       }
     }
 
@@ -878,6 +1005,14 @@ public final class ProtoChatUpdateStatus {
       if (!updaterAuthorHash_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(6, getUpdaterAuthorHash());
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, versionDocumentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1156,6 +1291,52 @@ public final class ProtoChatUpdateStatus {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public long getVersionDocumentId() {
+        return instance.getVersionDocumentId();
+      }
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public Builder setVersionDocumentId(long value) {
+        copyOnWrite();
+        instance.setVersionDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public Builder clearVersionDocumentId() {
+        copyOnWrite();
+        instance.clearVersionDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ChatUpdateStatusResponse)
     }
     protected final Object dynamicMethod(
@@ -1187,6 +1368,10 @@ public final class ProtoChatUpdateStatus {
               other.statusVersion_ != 0L, other.statusVersion_);
           updaterAuthorHash_ = visitor.visitString(!updaterAuthorHash_.isEmpty(), updaterAuthorHash_,
               !other.updaterAuthorHash_.isEmpty(), other.updaterAuthorHash_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
+          versionDocumentId_ = visitor.visitLong(versionDocumentId_ != 0L, versionDocumentId_,
+              other.versionDocumentId_ != 0L, other.versionDocumentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -1249,6 +1434,16 @@ public final class ProtoChatUpdateStatus {
                   String s = input.readStringRequireUtf8();
 
                   updaterAuthorHash_ = s;
+                  break;
+                }
+                case 56: {
+
+                  documentId_ = input.readUInt64();
+                  break;
+                }
+                case 64: {
+
+                  versionDocumentId_ = input.readUInt64();
                   break;
                 }
               }

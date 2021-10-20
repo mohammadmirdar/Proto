@@ -44,6 +44,11 @@ public final class ProtoClientGetRoomHistory {
      * <code>optional uint32 limit = 5;</code>
      */
     int getLimit();
+
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientGetRoomHistory}
@@ -282,6 +287,29 @@ public final class ProtoClientGetRoomHistory {
       limit_ = 0;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 6;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -298,6 +326,9 @@ public final class ProtoClientGetRoomHistory {
       }
       if (limit_ != 0) {
         output.writeUInt32(5, limit_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(6, documentId_);
       }
     }
 
@@ -325,6 +356,10 @@ public final class ProtoClientGetRoomHistory {
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, limit_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -563,6 +598,29 @@ public final class ProtoClientGetRoomHistory {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ClientGetRoomHistory)
     }
     protected final Object dynamicMethod(
@@ -592,6 +650,8 @@ public final class ProtoClientGetRoomHistory {
           direction_ = visitor.visitInt(direction_ != 0, direction_,    other.direction_ != 0, other.direction_);
           limit_ = visitor.visitInt(limit_ != 0, limit_,
               other.limit_ != 0, other.limit_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -648,6 +708,11 @@ public final class ProtoClientGetRoomHistory {
                 case 40: {
 
                   limit_ = input.readUInt32();
+                  break;
+                }
+                case 48: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }

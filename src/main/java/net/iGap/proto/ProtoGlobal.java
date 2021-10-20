@@ -10000,6 +10000,11 @@ public final class ProtoGlobal {
      * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     long getMessageId();
+
+    /**
+     * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.RoomMessageForwardFrom}
@@ -10057,6 +10062,29 @@ public final class ProtoGlobal {
       messageId_ = 0L;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (roomId_ != 0L) {
@@ -10064,6 +10092,9 @@ public final class ProtoGlobal {
       }
       if (messageId_ != 0L) {
         output.writeUInt64(2, messageId_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(3, documentId_);
       }
     }
 
@@ -10079,6 +10110,10 @@ public final class ProtoGlobal {
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, messageId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -10212,6 +10247,29 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 3 [jstype = JS_STRING];</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RoomMessageForwardFrom)
     }
     protected final Object dynamicMethod(
@@ -10237,6 +10295,8 @@ public final class ProtoGlobal {
               other.roomId_ != 0L, other.roomId_);
           messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
               other.messageId_ != 0L, other.messageId_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -10269,6 +10329,11 @@ public final class ProtoGlobal {
                 case 16: {
 
                   messageId_ = input.readUInt64();
+                  break;
+                }
+                case 24: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -15304,6 +15369,16 @@ public final class ProtoGlobal {
      * <code>optional .proto.RoomMessage.ChannelExtra channel_extra = 20;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomMessage.ChannelExtra getChannelExtra();
+
+    /**
+     * <code>optional uint64 document_id = 27;</code>
+     */
+    long getDocumentId();
+
+    /**
+     * <code>optional uint64 version_document_id = 28;</code>
+     */
+    long getVersionDocumentId();
   }
   /**
    * Protobuf type {@code proto.RoomMessage}
@@ -18222,6 +18297,52 @@ public final class ProtoGlobal {
       
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 27;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 27;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 27;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 27;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
+    public static final int VERSION_DOCUMENT_ID_FIELD_NUMBER = 28;
+    private long versionDocumentId_;
+    /**
+     * <code>optional uint64 version_document_id = 28;</code>
+     */
+    public long getVersionDocumentId() {
+      return versionDocumentId_;
+    }
+    /**
+     * <code>optional uint64 version_document_id = 28;</code>
+     */
+    private void setVersionDocumentId(long value) {
+      
+      versionDocumentId_ = value;
+    }
+    /**
+     * <code>optional uint64 version_document_id = 28;</code>
+     */
+    private void clearVersionDocumentId() {
+      
+      versionDocumentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (messageId_ != 0L) {
@@ -18301,6 +18422,12 @@ public final class ProtoGlobal {
       }
       if (roomId_ != 0L) {
         output.writeUInt64(26, roomId_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(27, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        output.writeUInt64(28, versionDocumentId_);
       }
     }
 
@@ -18412,6 +18539,14 @@ public final class ProtoGlobal {
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(26, roomId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(27, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(28, versionDocumentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -19393,6 +19528,52 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 27;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 27;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 27;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 version_document_id = 28;</code>
+       */
+      public long getVersionDocumentId() {
+        return instance.getVersionDocumentId();
+      }
+      /**
+       * <code>optional uint64 version_document_id = 28;</code>
+       */
+      public Builder setVersionDocumentId(long value) {
+        copyOnWrite();
+        instance.setVersionDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 version_document_id = 28;</code>
+       */
+      public Builder clearVersionDocumentId() {
+        copyOnWrite();
+        instance.clearVersionDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RoomMessage)
     }
     protected final Object dynamicMethod(
@@ -19453,6 +19634,10 @@ public final class ProtoGlobal {
               !other.additionalData_.isEmpty(), other.additionalData_);
           extraType_ = visitor.visitInt(extraType_ != 0, extraType_,    other.extraType_ != 0, other.extraType_);
           channelExtra_ = visitor.visitMessage(channelExtra_, other.channelExtra_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
+          versionDocumentId_ = visitor.visitLong(versionDocumentId_ != 0L, versionDocumentId_,
+              other.versionDocumentId_ != 0L, other.versionDocumentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -19690,6 +19875,16 @@ public final class ProtoGlobal {
                 case 208: {
 
                   roomId_ = input.readUInt64();
+                  break;
+                }
+                case 216: {
+
+                  documentId_ = input.readUInt64();
+                  break;
+                }
+                case 224: {
+
+                  versionDocumentId_ = input.readUInt64();
                   break;
                 }
               }

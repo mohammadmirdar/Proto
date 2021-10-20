@@ -30,6 +30,11 @@ public final class ProtoChannelPinMessage {
      * <code>optional uint64 message_id = 3;</code>
      */
     long getMessageId();
+
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChannelPinMessage}
@@ -139,6 +144,29 @@ public final class ProtoChannelPinMessage {
       messageId_ = 0L;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -149,6 +177,9 @@ public final class ProtoChannelPinMessage {
       }
       if (messageId_ != 0L) {
         output.writeUInt64(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(4, documentId_);
       }
     }
 
@@ -168,6 +199,10 @@ public final class ProtoChannelPinMessage {
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -346,6 +381,29 @@ public final class ProtoChannelPinMessage {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ChannelPinMessage)
     }
     protected final Object dynamicMethod(
@@ -372,6 +430,8 @@ public final class ProtoChannelPinMessage {
               other.roomId_ != 0L, other.roomId_);
           messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
               other.messageId_ != 0L, other.messageId_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -417,6 +477,11 @@ public final class ProtoChannelPinMessage {
                 case 24: {
 
                   messageId_ = input.readUInt64();
+                  break;
+                }
+                case 32: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }

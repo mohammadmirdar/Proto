@@ -40,6 +40,11 @@ public final class ProtoChannelEditMessage {
      */
     com.google.protobuf.ByteString
         getMessageBytes();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChannelEditMessage}
@@ -196,6 +201,29 @@ public final class ProtoChannelEditMessage {
       message_ = value.toStringUtf8();
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -209,6 +237,9 @@ public final class ProtoChannelEditMessage {
       }
       if (!message_.isEmpty()) {
         output.writeString(4, getMessage());
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
       }
     }
 
@@ -232,6 +263,10 @@ public final class ProtoChannelEditMessage {
       if (!message_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(4, getMessage());
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -450,6 +485,29 @@ public final class ProtoChannelEditMessage {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ChannelEditMessage)
     }
     protected final Object dynamicMethod(
@@ -478,6 +536,8 @@ public final class ProtoChannelEditMessage {
               other.messageId_ != 0L, other.messageId_);
           message_ = visitor.visitString(!message_.isEmpty(), message_,
               !other.message_.isEmpty(), other.message_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -529,6 +589,11 @@ public final class ProtoChannelEditMessage {
                   String s = input.readStringRequireUtf8();
 
                   message_ = s;
+                  break;
+                }
+                case 40: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -623,6 +688,11 @@ public final class ProtoChannelEditMessage {
      * <code>optional .proto.RoomMessageType message_type = 6;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomMessageType getMessageType();
+
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChannelEditMessageResponse}
@@ -841,6 +911,29 @@ public final class ProtoChannelEditMessage {
       messageType_ = 0;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 7;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -860,6 +953,9 @@ public final class ProtoChannelEditMessage {
       }
       if (messageType_ != net.iGap.proto.ProtoGlobal.RoomMessageType.TEXT.getNumber()) {
         output.writeEnum(6, messageType_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(7, documentId_);
       }
     }
 
@@ -891,6 +987,10 @@ public final class ProtoChannelEditMessage {
       if (messageType_ != net.iGap.proto.ProtoGlobal.RoomMessageType.TEXT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, messageType_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1169,6 +1269,29 @@ public final class ProtoChannelEditMessage {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ChannelEditMessageResponse)
     }
     protected final Object dynamicMethod(
@@ -1200,6 +1323,8 @@ public final class ProtoChannelEditMessage {
           message_ = visitor.visitString(!message_.isEmpty(), message_,
               !other.message_.isEmpty(), other.message_);
           messageType_ = visitor.visitInt(messageType_ != 0, messageType_,    other.messageType_ != 0, other.messageType_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -1262,6 +1387,11 @@ public final class ProtoChannelEditMessage {
                   int rawValue = input.readEnum();
 
                   messageType_ = rawValue;
+                  break;
+                }
+                case 56: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }

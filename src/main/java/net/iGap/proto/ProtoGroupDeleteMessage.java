@@ -30,6 +30,11 @@ public final class ProtoGroupDeleteMessage {
      * <code>optional uint64 message_id = 3;</code>
      */
     long getMessageId();
+
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.GroupDeleteMessage}
@@ -139,6 +144,29 @@ public final class ProtoGroupDeleteMessage {
       messageId_ = 0L;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -149,6 +177,9 @@ public final class ProtoGroupDeleteMessage {
       }
       if (messageId_ != 0L) {
         output.writeUInt64(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(4, documentId_);
       }
     }
 
@@ -168,6 +199,10 @@ public final class ProtoGroupDeleteMessage {
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -346,6 +381,29 @@ public final class ProtoGroupDeleteMessage {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.GroupDeleteMessage)
     }
     protected final Object dynamicMethod(
@@ -372,6 +430,8 @@ public final class ProtoGroupDeleteMessage {
               other.roomId_ != 0L, other.roomId_);
           messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
               other.messageId_ != 0L, other.messageId_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -417,6 +477,11 @@ public final class ProtoGroupDeleteMessage {
                 case 24: {
 
                   messageId_ = input.readUInt64();
+                  break;
+                }
+                case 32: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -492,6 +557,11 @@ public final class ProtoGroupDeleteMessage {
      * <code>optional uint64 delete_version = 4;</code>
      */
     long getDeleteVersion();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.GroupDeleteMessageResponse}
@@ -624,6 +694,29 @@ public final class ProtoGroupDeleteMessage {
       deleteVersion_ = 0L;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -637,6 +730,9 @@ public final class ProtoGroupDeleteMessage {
       }
       if (deleteVersion_ != 0L) {
         output.writeUInt64(4, deleteVersion_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
       }
     }
 
@@ -660,6 +756,10 @@ public final class ProtoGroupDeleteMessage {
       if (deleteVersion_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, deleteVersion_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -861,6 +961,29 @@ public final class ProtoGroupDeleteMessage {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.GroupDeleteMessageResponse)
     }
     protected final Object dynamicMethod(
@@ -889,6 +1012,8 @@ public final class ProtoGroupDeleteMessage {
               other.messageId_ != 0L, other.messageId_);
           deleteVersion_ = visitor.visitLong(deleteVersion_ != 0L, deleteVersion_,
               other.deleteVersion_ != 0L, other.deleteVersion_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -939,6 +1064,11 @@ public final class ProtoGroupDeleteMessage {
                 case 32: {
 
                   deleteVersion_ = input.readUInt64();
+                  break;
+                }
+                case 40: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }

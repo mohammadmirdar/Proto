@@ -71,29 +71,17 @@ public final class ProtoClientCondition {
       long getDeleteVersion();
 
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      java.util.List<java.lang.Long> getOfflineDeletedDeprecatedList();
+      @java.lang.Deprecated java.util.List<java.lang.Long> getOfflineDeletedDeprecatedList();
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      int getOfflineDeletedDeprecatedCount();
+      @java.lang.Deprecated int getOfflineDeletedDeprecatedCount();
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      long getOfflineDeletedDeprecated(int index);
+      @java.lang.Deprecated long getOfflineDeletedDeprecated(int index);
 
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
@@ -282,6 +270,11 @@ public final class ProtoClientCondition {
          */
         com.google.protobuf.ByteString
             getMessageBytes();
+
+        /**
+         * <code>optional uint64 document_id = 3;</code>
+         */
+        long getDocumentId();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineEdited}
@@ -363,6 +356,29 @@ public final class ProtoClientCondition {
           message_ = value.toStringUtf8();
         }
 
+        public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
+        private long documentId_;
+        /**
+         * <code>optional uint64 document_id = 3;</code>
+         */
+        public long getDocumentId() {
+          return documentId_;
+        }
+        /**
+         * <code>optional uint64 document_id = 3;</code>
+         */
+        private void setDocumentId(long value) {
+          
+          documentId_ = value;
+        }
+        /**
+         * <code>optional uint64 document_id = 3;</code>
+         */
+        private void clearDocumentId() {
+          
+          documentId_ = 0L;
+        }
+
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (messageId_ != 0L) {
@@ -370,6 +386,9 @@ public final class ProtoClientCondition {
           }
           if (!message_.isEmpty()) {
             output.writeString(2, getMessage());
+          }
+          if (documentId_ != 0L) {
+            output.writeUInt64(3, documentId_);
           }
         }
 
@@ -385,6 +404,10 @@ public final class ProtoClientCondition {
           if (!message_.isEmpty()) {
             size += com.google.protobuf.CodedOutputStream
               .computeStringSize(2, getMessage());
+          }
+          if (documentId_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeUInt64Size(3, documentId_);
           }
           memoizedSerializedSize = size;
           return size;
@@ -535,6 +558,29 @@ public final class ProtoClientCondition {
             return this;
           }
 
+          /**
+           * <code>optional uint64 document_id = 3;</code>
+           */
+          public long getDocumentId() {
+            return instance.getDocumentId();
+          }
+          /**
+           * <code>optional uint64 document_id = 3;</code>
+           */
+          public Builder setDocumentId(long value) {
+            copyOnWrite();
+            instance.setDocumentId(value);
+            return this;
+          }
+          /**
+           * <code>optional uint64 document_id = 3;</code>
+           */
+          public Builder clearDocumentId() {
+            copyOnWrite();
+            instance.clearDocumentId();
+            return this;
+          }
+
           // @@protoc_insertion_point(builder_scope:proto.ClientCondition.Room.OfflineEdited)
         }
         protected final Object dynamicMethod(
@@ -560,6 +606,8 @@ public final class ProtoClientCondition {
                   other.messageId_ != 0L, other.messageId_);
               message_ = visitor.visitString(!message_.isEmpty(), message_,
                   !other.message_.isEmpty(), other.message_);
+              documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+                  other.documentId_ != 0L, other.documentId_);
               if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                   .INSTANCE) {
               }
@@ -593,6 +641,11 @@ public final class ProtoClientCondition {
                       String s = input.readStringRequireUtf8();
 
                       message_ = s;
+                      break;
+                    }
+                    case 24: {
+
+                      documentId_ = input.readUInt64();
                       break;
                     }
                   }
@@ -654,6 +707,11 @@ public final class ProtoClientCondition {
          * <code>optional bool both = 4;</code>
          */
         boolean getBoth();
+
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        long getDocumentId();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineDeleted}
@@ -711,6 +769,29 @@ public final class ProtoClientCondition {
           both_ = false;
         }
 
+        public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+        private long documentId_;
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        public long getDocumentId() {
+          return documentId_;
+        }
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        private void setDocumentId(long value) {
+          
+          documentId_ = value;
+        }
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        private void clearDocumentId() {
+          
+          documentId_ = 0L;
+        }
+
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (messageId_ != 0L) {
@@ -718,6 +799,9 @@ public final class ProtoClientCondition {
           }
           if (both_ != false) {
             output.writeBool(4, both_);
+          }
+          if (documentId_ != 0L) {
+            output.writeUInt64(5, documentId_);
           }
         }
 
@@ -733,6 +817,10 @@ public final class ProtoClientCondition {
           if (both_ != false) {
             size += com.google.protobuf.CodedOutputStream
               .computeBoolSize(4, both_);
+          }
+          if (documentId_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeUInt64Size(5, documentId_);
           }
           memoizedSerializedSize = size;
           return size;
@@ -866,6 +954,29 @@ public final class ProtoClientCondition {
             return this;
           }
 
+          /**
+           * <code>optional uint64 document_id = 5;</code>
+           */
+          public long getDocumentId() {
+            return instance.getDocumentId();
+          }
+          /**
+           * <code>optional uint64 document_id = 5;</code>
+           */
+          public Builder setDocumentId(long value) {
+            copyOnWrite();
+            instance.setDocumentId(value);
+            return this;
+          }
+          /**
+           * <code>optional uint64 document_id = 5;</code>
+           */
+          public Builder clearDocumentId() {
+            copyOnWrite();
+            instance.clearDocumentId();
+            return this;
+          }
+
           // @@protoc_insertion_point(builder_scope:proto.ClientCondition.Room.OfflineDeleted)
         }
         protected final Object dynamicMethod(
@@ -891,6 +1002,8 @@ public final class ProtoClientCondition {
                   other.messageId_ != 0L, other.messageId_);
               both_ = visitor.visitBoolean(both_ != false, both_,
                   other.both_ != false, other.both_);
+              documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+                  other.documentId_ != 0L, other.documentId_);
               if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                   .INSTANCE) {
               }
@@ -923,6 +1036,11 @@ public final class ProtoClientCondition {
                     case 32: {
 
                       both_ = input.readBool();
+                      break;
+                    }
+                    case 40: {
+
+                      documentId_ = input.readUInt64();
                       break;
                     }
                   }
@@ -1067,34 +1185,22 @@ public final class ProtoClientCondition {
       public static final int OFFLINE_DELETED_DEPRECATED_FIELD_NUMBER = 6;
       private com.google.protobuf.Internal.LongList offlineDeletedDeprecated_;
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      public java.util.List<java.lang.Long>
+      @java.lang.Deprecated public java.util.List<java.lang.Long>
           getOfflineDeletedDeprecatedList() {
         return offlineDeletedDeprecated_;
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      public int getOfflineDeletedDeprecatedCount() {
+      @java.lang.Deprecated public int getOfflineDeletedDeprecatedCount() {
         return offlineDeletedDeprecated_.size();
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      public long getOfflineDeletedDeprecated(int index) {
+      @java.lang.Deprecated public long getOfflineDeletedDeprecated(int index) {
         return offlineDeletedDeprecated_.getLong(index);
       }
       private void ensureOfflineDeletedDeprecatedIsMutable() {
@@ -1104,11 +1210,7 @@ public final class ProtoClientCondition {
          }
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
       private void setOfflineDeletedDeprecated(
           int index, long value) {
@@ -1116,22 +1218,14 @@ public final class ProtoClientCondition {
         offlineDeletedDeprecated_.setLong(index, value);
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
       private void addOfflineDeletedDeprecated(long value) {
         ensureOfflineDeletedDeprecatedIsMutable();
         offlineDeletedDeprecated_.addLong(value);
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
       private void addAllOfflineDeletedDeprecated(
           java.lang.Iterable<? extends java.lang.Long> values) {
@@ -1140,11 +1234,7 @@ public final class ProtoClientCondition {
             values, offlineDeletedDeprecated_);
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
       private void clearOfflineDeletedDeprecated() {
         offlineDeletedDeprecated_ = emptyLongList();
@@ -1909,83 +1999,55 @@ public final class ProtoClientCondition {
         }
 
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public java.util.List<java.lang.Long>
+        @java.lang.Deprecated public java.util.List<java.lang.Long>
             getOfflineDeletedDeprecatedList() {
           return java.util.Collections.unmodifiableList(
               instance.getOfflineDeletedDeprecatedList());
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public int getOfflineDeletedDeprecatedCount() {
+        @java.lang.Deprecated public int getOfflineDeletedDeprecatedCount() {
           return instance.getOfflineDeletedDeprecatedCount();
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public long getOfflineDeletedDeprecated(int index) {
+        @java.lang.Deprecated public long getOfflineDeletedDeprecated(int index) {
           return instance.getOfflineDeletedDeprecated(index);
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder setOfflineDeletedDeprecated(
+        @java.lang.Deprecated public Builder setOfflineDeletedDeprecated(
             int index, long value) {
           copyOnWrite();
           instance.setOfflineDeletedDeprecated(index, value);
           return this;
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder addOfflineDeletedDeprecated(long value) {
+        @java.lang.Deprecated public Builder addOfflineDeletedDeprecated(long value) {
           copyOnWrite();
           instance.addOfflineDeletedDeprecated(value);
           return this;
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder addAllOfflineDeletedDeprecated(
+        @java.lang.Deprecated public Builder addAllOfflineDeletedDeprecated(
             java.lang.Iterable<? extends java.lang.Long> values) {
           copyOnWrite();
           instance.addAllOfflineDeletedDeprecated(values);
           return this;
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder clearOfflineDeletedDeprecated() {
+        @java.lang.Deprecated public Builder clearOfflineDeletedDeprecated() {
           copyOnWrite();
           instance.clearOfflineDeletedDeprecated();
           return this;

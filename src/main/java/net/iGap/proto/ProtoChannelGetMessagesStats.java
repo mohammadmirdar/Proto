@@ -27,17 +27,31 @@ public final class ProtoChannelGetMessagesStats {
     long getRoomId();
 
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
-    java.util.List<java.lang.Long> getMessageIdList();
+    @java.lang.Deprecated java.util.List<java.lang.Long> getMessageIdList();
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
-    int getMessageIdCount();
+    @java.lang.Deprecated int getMessageIdCount();
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
-    long getMessageId(int index);
+    @java.lang.Deprecated long getMessageId(int index);
+
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> 
+        getMessageIdInfoList();
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getMessageIdInfo(int index);
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    int getMessageIdInfoCount();
   }
   /**
    * Protobuf type {@code proto.ChannelGetMessagesStats}
@@ -49,7 +63,338 @@ public final class ProtoChannelGetMessagesStats {
       ChannelGetMessagesStatsOrBuilder {
     private ChannelGetMessagesStats() {
       messageId_ = emptyLongList();
+      messageIdInfo_ = emptyProtobufList();
     }
+    public interface messageIdInfoOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.ChannelGetMessagesStats.messageIdInfo)
+        com.google.protobuf.MessageLiteOrBuilder {
+
+      /**
+       * <code>optional uint64 message_id = 1;</code>
+       */
+      long getMessageId();
+
+      /**
+       * <code>optional uint64 document_id = 2;</code>
+       */
+      long getDocumentId();
+    }
+    /**
+     * Protobuf type {@code proto.ChannelGetMessagesStats.messageIdInfo}
+     */
+    public  static final class messageIdInfo extends
+        com.google.protobuf.GeneratedMessageLite<
+            messageIdInfo, messageIdInfo.Builder> implements
+        // @@protoc_insertion_point(message_implements:proto.ChannelGetMessagesStats.messageIdInfo)
+        messageIdInfoOrBuilder {
+      private messageIdInfo() {
+      }
+      public static final int MESSAGE_ID_FIELD_NUMBER = 1;
+      private long messageId_;
+      /**
+       * <code>optional uint64 message_id = 1;</code>
+       */
+      public long getMessageId() {
+        return messageId_;
+      }
+      /**
+       * <code>optional uint64 message_id = 1;</code>
+       */
+      private void setMessageId(long value) {
+        
+        messageId_ = value;
+      }
+      /**
+       * <code>optional uint64 message_id = 1;</code>
+       */
+      private void clearMessageId() {
+        
+        messageId_ = 0L;
+      }
+
+      public static final int DOCUMENT_ID_FIELD_NUMBER = 2;
+      private long documentId_;
+      /**
+       * <code>optional uint64 document_id = 2;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 2;</code>
+       */
+      private void setDocumentId(long value) {
+        
+        documentId_ = value;
+      }
+      /**
+       * <code>optional uint64 document_id = 2;</code>
+       */
+      private void clearDocumentId() {
+        
+        documentId_ = 0L;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (messageId_ != 0L) {
+          output.writeUInt64(1, messageId_);
+        }
+        if (documentId_ != 0L) {
+          output.writeUInt64(2, documentId_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (messageId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(1, messageId_);
+        }
+        if (documentId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(2, documentId_);
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      /**
+       * Protobuf type {@code proto.ChannelGetMessagesStats.messageIdInfo}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo, Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.ChannelGetMessagesStats.messageIdInfo)
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder {
+        // Construct using net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.newBuilder()
+        private Builder() {
+          super(DEFAULT_INSTANCE);
+        }
+
+
+        /**
+         * <code>optional uint64 message_id = 1;</code>
+         */
+        public long getMessageId() {
+          return instance.getMessageId();
+        }
+        /**
+         * <code>optional uint64 message_id = 1;</code>
+         */
+        public Builder setMessageId(long value) {
+          copyOnWrite();
+          instance.setMessageId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 message_id = 1;</code>
+         */
+        public Builder clearMessageId() {
+          copyOnWrite();
+          instance.clearMessageId();
+          return this;
+        }
+
+        /**
+         * <code>optional uint64 document_id = 2;</code>
+         */
+        public long getDocumentId() {
+          return instance.getDocumentId();
+        }
+        /**
+         * <code>optional uint64 document_id = 2;</code>
+         */
+        public Builder setDocumentId(long value) {
+          copyOnWrite();
+          instance.setDocumentId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 document_id = 2;</code>
+         */
+        public Builder clearDocumentId() {
+          copyOnWrite();
+          instance.clearDocumentId();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:proto.ChannelGetMessagesStats.messageIdInfo)
+      }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo) arg1;
+            messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
+                other.messageId_ != 0L, other.messageId_);
+            documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+                other.documentId_ != 0L, other.documentId_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+
+                    messageId_ = input.readUInt64();
+                    break;
+                  }
+                  case 16: {
+
+                    documentId_ = input.readUInt64();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
+
+      // @@protoc_insertion_point(class_scope:proto.ChannelGetMessagesStats.messageIdInfo)
+      private static final net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new messageIdInfo();
+        DEFAULT_INSTANCE.makeImmutable();
+      }
+
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static volatile com.google.protobuf.Parser<messageIdInfo> PARSER;
+
+      public static com.google.protobuf.Parser<messageIdInfo> parser() {
+        return DEFAULT_INSTANCE.getParserForType();
+      }
+    }
+
     private int bitField0_;
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
@@ -129,22 +474,22 @@ public final class ProtoChannelGetMessagesStats {
     public static final int MESSAGE_ID_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.LongList messageId_;
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
-    public java.util.List<java.lang.Long>
+    @java.lang.Deprecated public java.util.List<java.lang.Long>
         getMessageIdList() {
       return messageId_;
     }
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
-    public int getMessageIdCount() {
+    @java.lang.Deprecated public int getMessageIdCount() {
       return messageId_.size();
     }
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
-    public long getMessageId(int index) {
+    @java.lang.Deprecated public long getMessageId(int index) {
       return messageId_.getLong(index);
     }
     private void ensureMessageIdIsMutable() {
@@ -154,7 +499,7 @@ public final class ProtoChannelGetMessagesStats {
        }
     }
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
     private void setMessageId(
         int index, long value) {
@@ -162,14 +507,14 @@ public final class ProtoChannelGetMessagesStats {
       messageId_.setLong(index, value);
     }
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
     private void addMessageId(long value) {
       ensureMessageIdIsMutable();
       messageId_.addLong(value);
     }
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
     private void addAllMessageId(
         java.lang.Iterable<? extends java.lang.Long> values) {
@@ -178,10 +523,130 @@ public final class ProtoChannelGetMessagesStats {
           values, messageId_);
     }
     /**
-     * <code>repeated uint64 message_id = 3;</code>
+     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
      */
     private void clearMessageId() {
       messageId_ = emptyLongList();
+    }
+
+    public static final int MESSAGE_ID_INFO_FIELD_NUMBER = 4;
+    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> messageIdInfo_;
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> getMessageIdInfoList() {
+      return messageIdInfo_;
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder> 
+        getMessageIdInfoOrBuilderList() {
+      return messageIdInfo_;
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    public int getMessageIdInfoCount() {
+      return messageIdInfo_.size();
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getMessageIdInfo(int index) {
+      return messageIdInfo_.get(index);
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder getMessageIdInfoOrBuilder(
+        int index) {
+      return messageIdInfo_.get(index);
+    }
+    private void ensureMessageIdInfoIsMutable() {
+      if (!messageIdInfo_.isModifiable()) {
+        messageIdInfo_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(messageIdInfo_);
+       }
+    }
+
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void setMessageIdInfo(
+        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.set(index, value);
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void setMessageIdInfo(
+        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void addMessageIdInfo(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.add(value);
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void addMessageIdInfo(
+        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.add(index, value);
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void addMessageIdInfo(
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void addMessageIdInfo(
+        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void addAllMessageIdInfo(
+        java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> values) {
+      ensureMessageIdInfoIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, messageIdInfo_);
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void clearMessageIdInfo() {
+      messageIdInfo_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    private void removeMessageIdInfo(int index) {
+      ensureMessageIdInfoIsMutable();
+      messageIdInfo_.remove(index);
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -195,6 +660,9 @@ public final class ProtoChannelGetMessagesStats {
       }
       for (int i = 0; i < messageId_.size(); i++) {
         output.writeUInt64(3, messageId_.getLong(i));
+      }
+      for (int i = 0; i < messageIdInfo_.size(); i++) {
+        output.writeMessage(4, messageIdInfo_.get(i));
       }
     }
 
@@ -219,6 +687,10 @@ public final class ProtoChannelGetMessagesStats {
         }
         size += dataSize;
         size += 1 * getMessageIdList().size();
+      }
+      for (int i = 0; i < messageIdInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, messageIdInfo_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -375,57 +847,154 @@ public final class ProtoChannelGetMessagesStats {
       }
 
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public java.util.List<java.lang.Long>
+      @java.lang.Deprecated public java.util.List<java.lang.Long>
           getMessageIdList() {
         return java.util.Collections.unmodifiableList(
             instance.getMessageIdList());
       }
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public int getMessageIdCount() {
+      @java.lang.Deprecated public int getMessageIdCount() {
         return instance.getMessageIdCount();
       }
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public long getMessageId(int index) {
+      @java.lang.Deprecated public long getMessageId(int index) {
         return instance.getMessageId(index);
       }
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public Builder setMessageId(
+      @java.lang.Deprecated public Builder setMessageId(
           int index, long value) {
         copyOnWrite();
         instance.setMessageId(index, value);
         return this;
       }
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public Builder addMessageId(long value) {
+      @java.lang.Deprecated public Builder addMessageId(long value) {
         copyOnWrite();
         instance.addMessageId(value);
         return this;
       }
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public Builder addAllMessageId(
+      @java.lang.Deprecated public Builder addAllMessageId(
           java.lang.Iterable<? extends java.lang.Long> values) {
         copyOnWrite();
         instance.addAllMessageId(values);
         return this;
       }
       /**
-       * <code>repeated uint64 message_id = 3;</code>
+       * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
        */
-      public Builder clearMessageId() {
+      @java.lang.Deprecated public Builder clearMessageId() {
         copyOnWrite();
         instance.clearMessageId();
+        return this;
+      }
+
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> getMessageIdInfoList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getMessageIdInfoList());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public int getMessageIdInfoCount() {
+        return instance.getMessageIdInfoCount();
+      }/**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getMessageIdInfo(int index) {
+        return instance.getMessageIdInfo(index);
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder setMessageIdInfo(
+          int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
+        copyOnWrite();
+        instance.setMessageIdInfo(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder setMessageIdInfo(
+          int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
+        copyOnWrite();
+        instance.setMessageIdInfo(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder addMessageIdInfo(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
+        copyOnWrite();
+        instance.addMessageIdInfo(value);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder addMessageIdInfo(
+          int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
+        copyOnWrite();
+        instance.addMessageIdInfo(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder addMessageIdInfo(
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addMessageIdInfo(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder addMessageIdInfo(
+          int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
+        copyOnWrite();
+        instance.addMessageIdInfo(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder addAllMessageIdInfo(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> values) {
+        copyOnWrite();
+        instance.addAllMessageIdInfo(values);
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder clearMessageIdInfo() {
+        copyOnWrite();
+        instance.clearMessageIdInfo();
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public Builder removeMessageIdInfo(int index) {
+        copyOnWrite();
+        instance.removeMessageIdInfo(index);
         return this;
       }
 
@@ -443,6 +1012,7 @@ public final class ProtoChannelGetMessagesStats {
         }
         case MAKE_IMMUTABLE: {
           messageId_.makeImmutable();
+          messageIdInfo_.makeImmutable();
           return null;
         }
         case NEW_BUILDER: {
@@ -455,6 +1025,7 @@ public final class ProtoChannelGetMessagesStats {
           roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
               other.roomId_ != 0L, other.roomId_);
           messageId_= visitor.visitLongList(messageId_, other.messageId_);
+          messageIdInfo_= visitor.visitList(messageIdInfo_, other.messageIdInfo_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
             bitField0_ |= other.bitField0_;
@@ -517,6 +1088,15 @@ public final class ProtoChannelGetMessagesStats {
                     messageId_.addLong(input.readUInt64());
                   }
                   input.popLimit(limit);
+                  break;
+                }
+                case 34: {
+                  if (!messageIdInfo_.isModifiable()) {
+                    messageIdInfo_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(messageIdInfo_);
+                  }
+                  messageIdInfo_.add(
+                      input.readMessage(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.parser(), extensionRegistry));
                   break;
                 }
               }
@@ -641,6 +1221,11 @@ public final class ProtoChannelGetMessagesStats {
        */
       com.google.protobuf.ByteString
           getThumbsDownLabelBytes();
+
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      long getDocumentId();
     }
     /**
      * Protobuf type {@code proto.ChannelGetMessagesStatsResponse.Stats}
@@ -816,6 +1401,29 @@ public final class ProtoChannelGetMessagesStats {
         thumbsDownLabel_ = value.toStringUtf8();
       }
 
+      public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+      private long documentId_;
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      private void setDocumentId(long value) {
+        
+        documentId_ = value;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      private void clearDocumentId() {
+        
+        documentId_ = 0L;
+      }
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (messageId_ != 0L) {
@@ -829,6 +1437,9 @@ public final class ProtoChannelGetMessagesStats {
         }
         if (!thumbsDownLabel_.isEmpty()) {
           output.writeString(4, getThumbsDownLabel());
+        }
+        if (documentId_ != 0L) {
+          output.writeUInt64(5, documentId_);
         }
       }
 
@@ -852,6 +1463,10 @@ public final class ProtoChannelGetMessagesStats {
         if (!thumbsDownLabel_.isEmpty()) {
           size += com.google.protobuf.CodedOutputStream
             .computeStringSize(4, getThumbsDownLabel());
+        }
+        if (documentId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(5, documentId_);
         }
         memoizedSerializedSize = size;
         return size;
@@ -1082,6 +1697,29 @@ public final class ProtoChannelGetMessagesStats {
           return this;
         }
 
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        public long getDocumentId() {
+          return instance.getDocumentId();
+        }
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        public Builder setDocumentId(long value) {
+          copyOnWrite();
+          instance.setDocumentId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        public Builder clearDocumentId() {
+          copyOnWrite();
+          instance.clearDocumentId();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:proto.ChannelGetMessagesStatsResponse.Stats)
       }
       protected final Object dynamicMethod(
@@ -1111,6 +1749,8 @@ public final class ProtoChannelGetMessagesStats {
                 !other.thumbsUpLabel_.isEmpty(), other.thumbsUpLabel_);
             thumbsDownLabel_ = visitor.visitString(!thumbsDownLabel_.isEmpty(), thumbsDownLabel_,
                 !other.thumbsDownLabel_.isEmpty(), other.thumbsDownLabel_);
+            documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+                other.documentId_ != 0L, other.documentId_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -1156,6 +1796,11 @@ public final class ProtoChannelGetMessagesStats {
                     String s = input.readStringRequireUtf8();
 
                     thumbsDownLabel_ = s;
+                    break;
+                  }
+                  case 40: {
+
+                    documentId_ = input.readUInt64();
                     break;
                   }
                 }

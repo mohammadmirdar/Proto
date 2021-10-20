@@ -49,6 +49,11 @@ public final class ProtoClientRoomReport {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientRoomReport}
@@ -338,6 +343,29 @@ public final class ProtoClientRoomReport {
       description_ = value.toStringUtf8();
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 6;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    private void setDocumentId(long value) {
+      
+      documentId_ = value;
+    }
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    private void clearDocumentId() {
+      
+      documentId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -354,6 +382,9 @@ public final class ProtoClientRoomReport {
       }
       if (!description_.isEmpty()) {
         output.writeString(5, getDescription());
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(6, documentId_);
       }
     }
 
@@ -381,6 +412,10 @@ public final class ProtoClientRoomReport {
       if (!description_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(5, getDescription());
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, documentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -636,6 +671,29 @@ public final class ProtoClientRoomReport {
         return this;
       }
 
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public long getDocumentId() {
+        return instance.getDocumentId();
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder setDocumentId(long value) {
+        copyOnWrite();
+        instance.setDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder clearDocumentId() {
+        copyOnWrite();
+        instance.clearDocumentId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ClientRoomReport)
     }
     protected final Object dynamicMethod(
@@ -665,6 +723,8 @@ public final class ProtoClientRoomReport {
           reason_ = visitor.visitInt(reason_ != 0, reason_,    other.reason_ != 0, other.reason_);
           description_ = visitor.visitString(!description_.isEmpty(), description_,
               !other.description_.isEmpty(), other.description_);
+          documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
+              other.documentId_ != 0L, other.documentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -722,6 +782,11 @@ public final class ProtoClientRoomReport {
                   String s = input.readStringRequireUtf8();
 
                   description_ = s;
+                  break;
+                }
+                case 48: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
