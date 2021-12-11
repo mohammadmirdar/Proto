@@ -739,6 +739,73 @@ public final class ProtoGlobal {
   }
 
   /**
+   * Protobuf enum {@code proto.Originator}
+   */
+  public enum Originator
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>USER = 0;</code>
+     */
+    USER(0),
+    /**
+     * <code>ROOM = 1;</code>
+     */
+    ROOM(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>USER = 0;</code>
+     */
+    public static final int USER_VALUE = 0;
+    /**
+     * <code>ROOM = 1;</code>
+     */
+    public static final int ROOM_VALUE = 1;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Originator valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Originator forNumber(int value) {
+      switch (value) {
+        case 0: return USER;
+        case 1: return ROOM;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Originator>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Originator> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Originator>() {
+            public Originator findValueByNumber(int number) {
+              return Originator.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private Originator(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:proto.Originator)
+  }
+
+  /**
    * Protobuf enum {@code proto.ClientAction}
    */
   public enum ClientAction
@@ -11621,6 +11688,15 @@ public final class ProtoGlobal {
      * <code>optional bool duplicated = 12;</code>
      */
     boolean getDuplicated();
+
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    int getOriginatorValue();
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Originator getOriginator();
   }
   /**
    * Protobuf type {@code proto.Story}
@@ -12092,6 +12168,45 @@ public final class ProtoGlobal {
       duplicated_ = false;
     }
 
+    public static final int ORIGINATOR_FIELD_NUMBER = 13;
+    private int originator_;
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    public int getOriginatorValue() {
+      return originator_;
+    }
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Originator getOriginator() {
+      net.iGap.proto.ProtoGlobal.Originator result = net.iGap.proto.ProtoGlobal.Originator.forNumber(originator_);
+      return result == null ? net.iGap.proto.ProtoGlobal.Originator.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    private void setOriginatorValue(int value) {
+        originator_ = value;
+    }
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    private void setOriginator(net.iGap.proto.ProtoGlobal.Originator value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      originator_ = value.getNumber();
+    }
+    /**
+     * <code>optional .proto.Originator originator = 13;</code>
+     */
+    private void clearOriginator() {
+      
+      originator_ = 0;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0L) {
@@ -12129,6 +12244,9 @@ public final class ProtoGlobal {
       }
       if (duplicated_ != false) {
         output.writeBool(12, duplicated_);
+      }
+      if (originator_ != net.iGap.proto.ProtoGlobal.Originator.USER.getNumber()) {
+        output.writeEnum(13, originator_);
       }
     }
 
@@ -12184,6 +12302,10 @@ public final class ProtoGlobal {
       if (duplicated_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, duplicated_);
+      }
+      if (originator_ != net.iGap.proto.ProtoGlobal.Originator.USER.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(13, originator_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -12634,6 +12756,43 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional .proto.Originator originator = 13;</code>
+       */
+      public int getOriginatorValue() {
+        return instance.getOriginatorValue();
+      }
+      /**
+       * <code>optional .proto.Originator originator = 13;</code>
+       */
+      public Builder setOriginatorValue(int value) {
+        copyOnWrite();
+        instance.setOriginatorValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Originator originator = 13;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Originator getOriginator() {
+        return instance.getOriginator();
+      }
+      /**
+       * <code>optional .proto.Originator originator = 13;</code>
+       */
+      public Builder setOriginator(net.iGap.proto.ProtoGlobal.Originator value) {
+        copyOnWrite();
+        instance.setOriginator(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Originator originator = 13;</code>
+       */
+      public Builder clearOriginator() {
+        copyOnWrite();
+        instance.clearOriginator();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.Story)
     }
     protected final Object dynamicMethod(
@@ -12677,6 +12836,7 @@ public final class ProtoGlobal {
               other.seen_ != false, other.seen_);
           duplicated_ = visitor.visitBoolean(duplicated_ != false, duplicated_,
               other.duplicated_ != false, other.duplicated_);
+          originator_ = visitor.visitInt(originator_ != 0, originator_,    other.originator_ != 0, other.originator_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -12771,6 +12931,12 @@ public final class ProtoGlobal {
                 case 96: {
 
                   duplicated_ = input.readBool();
+                  break;
+                }
+                case 104: {
+                  int rawValue = input.readEnum();
+
+                  originator_ = rawValue;
                   break;
                 }
               }
