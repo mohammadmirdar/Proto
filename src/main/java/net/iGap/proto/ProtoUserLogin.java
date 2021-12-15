@@ -1468,6 +1468,11 @@ public final class ProtoUserLogin {
      * <code>optional int32 role = 11;</code>
      */
     int getRole();
+
+    /**
+     * <code>optional bool need_fcm_token = 12;</code>
+     */
+    boolean getNeedFcmToken();
   }
   /**
    * Protobuf type {@code proto.UserLoginResponse}
@@ -1833,6 +1838,29 @@ public final class ProtoUserLogin {
       role_ = 0;
     }
 
+    public static final int NEED_FCM_TOKEN_FIELD_NUMBER = 12;
+    private boolean needFcmToken_;
+    /**
+     * <code>optional bool need_fcm_token = 12;</code>
+     */
+    public boolean getNeedFcmToken() {
+      return needFcmToken_;
+    }
+    /**
+     * <code>optional bool need_fcm_token = 12;</code>
+     */
+    private void setNeedFcmToken(boolean value) {
+      
+      needFcmToken_ = value;
+    }
+    /**
+     * <code>optional bool need_fcm_token = 12;</code>
+     */
+    private void clearNeedFcmToken() {
+      
+      needFcmToken_ = false;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1867,6 +1895,9 @@ public final class ProtoUserLogin {
       }
       if (role_ != 0) {
         output.writeInt32(11, role_);
+      }
+      if (needFcmToken_ != false) {
+        output.writeBool(12, needFcmToken_);
       }
     }
 
@@ -1918,6 +1949,10 @@ public final class ProtoUserLogin {
       if (role_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, role_);
+      }
+      if (needFcmToken_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, needFcmToken_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -2331,6 +2366,29 @@ public final class ProtoUserLogin {
         return this;
       }
 
+      /**
+       * <code>optional bool need_fcm_token = 12;</code>
+       */
+      public boolean getNeedFcmToken() {
+        return instance.getNeedFcmToken();
+      }
+      /**
+       * <code>optional bool need_fcm_token = 12;</code>
+       */
+      public Builder setNeedFcmToken(boolean value) {
+        copyOnWrite();
+        instance.setNeedFcmToken(value);
+        return this;
+      }
+      /**
+       * <code>optional bool need_fcm_token = 12;</code>
+       */
+      public Builder clearNeedFcmToken() {
+        copyOnWrite();
+        instance.clearNeedFcmToken();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserLoginResponse)
     }
     protected final Object dynamicMethod(
@@ -2373,6 +2431,8 @@ public final class ProtoUserLogin {
               !other.contactHash_.isEmpty(), other.contactHash_);
           role_ = visitor.visitInt(role_ != 0, role_,
               other.role_ != 0, other.role_);
+          needFcmToken_ = visitor.visitBoolean(needFcmToken_ != false, needFcmToken_,
+              other.needFcmToken_ != false, other.needFcmToken_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -2461,6 +2521,11 @@ public final class ProtoUserLogin {
                 case 88: {
 
                   role_ = input.readInt32();
+                  break;
+                }
+                case 96: {
+
+                  needFcmToken_ = input.readBool();
                   break;
                 }
               }
