@@ -98,6 +98,21 @@ public final class ProtoChannelAddAdmin {
        * <code>optional bool add_admin = 9;</code>
        */
       boolean getAddAdmin();
+
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      boolean getAddStory();
+
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      boolean getDeleteStory();
+
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      boolean getShowStoryViews();
     }
     /**
      * Protobuf type {@code proto.ChannelAddAdmin.AdminRights}
@@ -316,6 +331,75 @@ public final class ProtoChannelAddAdmin {
         addAdmin_ = false;
       }
 
+      public static final int ADD_STORY_FIELD_NUMBER = 10;
+      private boolean addStory_;
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      public boolean getAddStory() {
+        return addStory_;
+      }
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      private void setAddStory(boolean value) {
+        
+        addStory_ = value;
+      }
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      private void clearAddStory() {
+        
+        addStory_ = false;
+      }
+
+      public static final int DELETE_STORY_FIELD_NUMBER = 11;
+      private boolean deleteStory_;
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      public boolean getDeleteStory() {
+        return deleteStory_;
+      }
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      private void setDeleteStory(boolean value) {
+        
+        deleteStory_ = value;
+      }
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      private void clearDeleteStory() {
+        
+        deleteStory_ = false;
+      }
+
+      public static final int SHOW_STORY_VIEWS_FIELD_NUMBER = 12;
+      private boolean showStoryViews_;
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      public boolean getShowStoryViews() {
+        return showStoryViews_;
+      }
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      private void setShowStoryViews(boolean value) {
+        
+        showStoryViews_ = value;
+      }
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      private void clearShowStoryViews() {
+        
+        showStoryViews_ = false;
+      }
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (modifyRoom_ != false) {
@@ -344,6 +428,15 @@ public final class ProtoChannelAddAdmin {
         }
         if (addAdmin_ != false) {
           output.writeBool(9, addAdmin_);
+        }
+        if (addStory_ != false) {
+          output.writeBool(10, addStory_);
+        }
+        if (deleteStory_ != false) {
+          output.writeBool(11, deleteStory_);
+        }
+        if (showStoryViews_ != false) {
+          output.writeBool(12, showStoryViews_);
         }
       }
 
@@ -387,6 +480,18 @@ public final class ProtoChannelAddAdmin {
         if (addAdmin_ != false) {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(9, addAdmin_);
+        }
+        if (addStory_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(10, addStory_);
+        }
+        if (deleteStory_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(11, deleteStory_);
+        }
+        if (showStoryViews_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(12, showStoryViews_);
         }
         memoizedSerializedSize = size;
         return size;
@@ -681,6 +786,75 @@ public final class ProtoChannelAddAdmin {
           return this;
         }
 
+        /**
+         * <code>optional bool add_story = 10;</code>
+         */
+        public boolean getAddStory() {
+          return instance.getAddStory();
+        }
+        /**
+         * <code>optional bool add_story = 10;</code>
+         */
+        public Builder setAddStory(boolean value) {
+          copyOnWrite();
+          instance.setAddStory(value);
+          return this;
+        }
+        /**
+         * <code>optional bool add_story = 10;</code>
+         */
+        public Builder clearAddStory() {
+          copyOnWrite();
+          instance.clearAddStory();
+          return this;
+        }
+
+        /**
+         * <code>optional bool delete_story = 11;</code>
+         */
+        public boolean getDeleteStory() {
+          return instance.getDeleteStory();
+        }
+        /**
+         * <code>optional bool delete_story = 11;</code>
+         */
+        public Builder setDeleteStory(boolean value) {
+          copyOnWrite();
+          instance.setDeleteStory(value);
+          return this;
+        }
+        /**
+         * <code>optional bool delete_story = 11;</code>
+         */
+        public Builder clearDeleteStory() {
+          copyOnWrite();
+          instance.clearDeleteStory();
+          return this;
+        }
+
+        /**
+         * <code>optional bool show_story_views = 12;</code>
+         */
+        public boolean getShowStoryViews() {
+          return instance.getShowStoryViews();
+        }
+        /**
+         * <code>optional bool show_story_views = 12;</code>
+         */
+        public Builder setShowStoryViews(boolean value) {
+          copyOnWrite();
+          instance.setShowStoryViews(value);
+          return this;
+        }
+        /**
+         * <code>optional bool show_story_views = 12;</code>
+         */
+        public Builder clearShowStoryViews() {
+          copyOnWrite();
+          instance.clearShowStoryViews();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:proto.ChannelAddAdmin.AdminRights)
       }
       protected final Object dynamicMethod(
@@ -720,6 +894,12 @@ public final class ProtoChannelAddAdmin {
                 other.getMember_ != false, other.getMember_);
             addAdmin_ = visitor.visitBoolean(addAdmin_ != false, addAdmin_,
                 other.addAdmin_ != false, other.addAdmin_);
+            addStory_ = visitor.visitBoolean(addStory_ != false, addStory_,
+                other.addStory_ != false, other.addStory_);
+            deleteStory_ = visitor.visitBoolean(deleteStory_ != false, deleteStory_,
+                other.deleteStory_ != false, other.deleteStory_);
+            showStoryViews_ = visitor.visitBoolean(showStoryViews_ != false, showStoryViews_,
+                other.showStoryViews_ != false, other.showStoryViews_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -787,6 +967,21 @@ public final class ProtoChannelAddAdmin {
                   case 72: {
 
                     addAdmin_ = input.readBool();
+                    break;
+                  }
+                  case 80: {
+
+                    addStory_ = input.readBool();
+                    break;
+                  }
+                  case 88: {
+
+                    deleteStory_ = input.readBool();
+                    break;
+                  }
+                  case 96: {
+
+                    showStoryViews_ = input.readBool();
                     break;
                   }
                 }

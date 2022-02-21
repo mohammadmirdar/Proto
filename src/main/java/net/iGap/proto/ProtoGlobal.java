@@ -990,6 +990,100 @@ public final class ProtoGlobal {
   }
 
   /**
+   * Protobuf enum {@code proto.RoomType}
+   */
+  public enum RoomType
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>CHAT = 0;</code>
+     */
+    CHAT(0),
+    /**
+     * <code>PRIVATE_GROUP = 1;</code>
+     */
+    PRIVATE_GROUP(1),
+    /**
+     * <code>PUBLIC_GROUP = 2;</code>
+     */
+    PUBLIC_GROUP(2),
+    /**
+     * <code>PRIVATE_CHANNEL = 3;</code>
+     */
+    PRIVATE_CHANNEL(3),
+    /**
+     * <code>PUBLIC_CHANNEL = 4;</code>
+     */
+    PUBLIC_CHANNEL(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CHAT = 0;</code>
+     */
+    public static final int CHAT_VALUE = 0;
+    /**
+     * <code>PRIVATE_GROUP = 1;</code>
+     */
+    public static final int PRIVATE_GROUP_VALUE = 1;
+    /**
+     * <code>PUBLIC_GROUP = 2;</code>
+     */
+    public static final int PUBLIC_GROUP_VALUE = 2;
+    /**
+     * <code>PRIVATE_CHANNEL = 3;</code>
+     */
+    public static final int PRIVATE_CHANNEL_VALUE = 3;
+    /**
+     * <code>PUBLIC_CHANNEL = 4;</code>
+     */
+    public static final int PUBLIC_CHANNEL_VALUE = 4;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RoomType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RoomType forNumber(int value) {
+      switch (value) {
+        case 0: return CHAT;
+        case 1: return PRIVATE_GROUP;
+        case 2: return PUBLIC_GROUP;
+        case 3: return PRIVATE_CHANNEL;
+        case 4: return PUBLIC_CHANNEL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RoomType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        RoomType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RoomType>() {
+            public RoomType findValueByNumber(int number) {
+              return RoomType.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private RoomType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:proto.RoomType)
+  }
+
+  /**
    * Protobuf enum {@code proto.RoomMute}
    */
   public enum RoomMute
@@ -1689,6 +1783,10 @@ public final class ProtoGlobal {
        * <code>PINNED_MESSAGE = 14;</code>
        */
       PINNED_MESSAGE(14),
+      /**
+       * <code>CHANGE_PHONE_NUMBER = 15;</code>
+       */
+      CHANGE_PHONE_NUMBER(15),
       UNRECOGNIZED(-1),
       ;
 
@@ -1752,6 +1850,10 @@ public final class ProtoGlobal {
        * <code>PINNED_MESSAGE = 14;</code>
        */
       public static final int PINNED_MESSAGE_VALUE = 14;
+      /**
+       * <code>CHANGE_PHONE_NUMBER = 15;</code>
+       */
+      public static final int CHANGE_PHONE_NUMBER_VALUE = 15;
 
 
       public final int getNumber() {
@@ -1783,6 +1885,7 @@ public final class ProtoGlobal {
           case 12: return MISSED_SCREEN_SHARE;
           case 13: return MISSED_SECRET_CHAT;
           case 14: return PINNED_MESSAGE;
+          case 15: return CHANGE_PHONE_NUMBER;
           default: return null;
         }
       }
@@ -30529,6 +30632,21 @@ public final class ProtoGlobal {
      * <code>optional bool add_admin = 9;</code>
      */
     boolean getAddAdmin();
+
+    /**
+     * <code>optional bool add_story = 10;</code>
+     */
+    boolean getAddStory();
+
+    /**
+     * <code>optional bool delete_story = 11;</code>
+     */
+    boolean getDeleteStory();
+
+    /**
+     * <code>optional bool show_story_views = 12;</code>
+     */
+    boolean getShowStoryViews();
   }
   /**
    * Protobuf type {@code proto.RoomAccess}
@@ -30776,6 +30894,75 @@ public final class ProtoGlobal {
       addAdmin_ = false;
     }
 
+    public static final int ADD_STORY_FIELD_NUMBER = 10;
+    private boolean addStory_;
+    /**
+     * <code>optional bool add_story = 10;</code>
+     */
+    public boolean getAddStory() {
+      return addStory_;
+    }
+    /**
+     * <code>optional bool add_story = 10;</code>
+     */
+    private void setAddStory(boolean value) {
+      
+      addStory_ = value;
+    }
+    /**
+     * <code>optional bool add_story = 10;</code>
+     */
+    private void clearAddStory() {
+      
+      addStory_ = false;
+    }
+
+    public static final int DELETE_STORY_FIELD_NUMBER = 11;
+    private boolean deleteStory_;
+    /**
+     * <code>optional bool delete_story = 11;</code>
+     */
+    public boolean getDeleteStory() {
+      return deleteStory_;
+    }
+    /**
+     * <code>optional bool delete_story = 11;</code>
+     */
+    private void setDeleteStory(boolean value) {
+      
+      deleteStory_ = value;
+    }
+    /**
+     * <code>optional bool delete_story = 11;</code>
+     */
+    private void clearDeleteStory() {
+      
+      deleteStory_ = false;
+    }
+
+    public static final int SHOW_STORY_VIEWS_FIELD_NUMBER = 12;
+    private boolean showStoryViews_;
+    /**
+     * <code>optional bool show_story_views = 12;</code>
+     */
+    public boolean getShowStoryViews() {
+      return showStoryViews_;
+    }
+    /**
+     * <code>optional bool show_story_views = 12;</code>
+     */
+    private void setShowStoryViews(boolean value) {
+      
+      showStoryViews_ = value;
+    }
+    /**
+     * <code>optional bool show_story_views = 12;</code>
+     */
+    private void clearShowStoryViews() {
+      
+      showStoryViews_ = false;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (modifyRoom_ != false) {
@@ -30804,6 +30991,15 @@ public final class ProtoGlobal {
       }
       if (addAdmin_ != false) {
         output.writeBool(9, addAdmin_);
+      }
+      if (addStory_ != false) {
+        output.writeBool(10, addStory_);
+      }
+      if (deleteStory_ != false) {
+        output.writeBool(11, deleteStory_);
+      }
+      if (showStoryViews_ != false) {
+        output.writeBool(12, showStoryViews_);
       }
     }
 
@@ -30847,6 +31043,18 @@ public final class ProtoGlobal {
       if (addAdmin_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, addAdmin_);
+      }
+      if (addStory_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, addStory_);
+      }
+      if (deleteStory_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, deleteStory_);
+      }
+      if (showStoryViews_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, showStoryViews_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -31163,6 +31371,75 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      public boolean getAddStory() {
+        return instance.getAddStory();
+      }
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      public Builder setAddStory(boolean value) {
+        copyOnWrite();
+        instance.setAddStory(value);
+        return this;
+      }
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      public Builder clearAddStory() {
+        copyOnWrite();
+        instance.clearAddStory();
+        return this;
+      }
+
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      public boolean getDeleteStory() {
+        return instance.getDeleteStory();
+      }
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      public Builder setDeleteStory(boolean value) {
+        copyOnWrite();
+        instance.setDeleteStory(value);
+        return this;
+      }
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      public Builder clearDeleteStory() {
+        copyOnWrite();
+        instance.clearDeleteStory();
+        return this;
+      }
+
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      public boolean getShowStoryViews() {
+        return instance.getShowStoryViews();
+      }
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      public Builder setShowStoryViews(boolean value) {
+        copyOnWrite();
+        instance.setShowStoryViews(value);
+        return this;
+      }
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      public Builder clearShowStoryViews() {
+        copyOnWrite();
+        instance.clearShowStoryViews();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RoomAccess)
     }
     protected final Object dynamicMethod(
@@ -31201,6 +31478,12 @@ public final class ProtoGlobal {
               other.getMember_ != false, other.getMember_);
           addAdmin_ = visitor.visitBoolean(addAdmin_ != false, addAdmin_,
               other.addAdmin_ != false, other.addAdmin_);
+          addStory_ = visitor.visitBoolean(addStory_ != false, addStory_,
+              other.addStory_ != false, other.addStory_);
+          deleteStory_ = visitor.visitBoolean(deleteStory_ != false, deleteStory_,
+              other.deleteStory_ != false, other.deleteStory_);
+          showStoryViews_ = visitor.visitBoolean(showStoryViews_ != false, showStoryViews_,
+              other.showStoryViews_ != false, other.showStoryViews_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -31276,6 +31559,21 @@ public final class ProtoGlobal {
                 case 72: {
 
                   addAdmin_ = input.readBool();
+                  break;
+                }
+                case 80: {
+
+                  addStory_ = input.readBool();
+                  break;
+                }
+                case 88: {
+
+                  deleteStory_ = input.readBool();
+                  break;
+                }
+                case 96: {
+
+                  showStoryViews_ = input.readBool();
                   break;
                 }
               }
