@@ -22,21 +22,21 @@ public final class ProtoChangePhoneNumber {
     net.iGap.proto.ProtoRequest.Request getRequest();
 
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     java.lang.String getPhoneNumber();
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     com.google.protobuf.ByteString
         getPhoneNumberBytes();
 
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     java.lang.String getCountryCode();
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     com.google.protobuf.ByteString
         getCountryCodeBytes();
@@ -105,23 +105,23 @@ public final class ProtoChangePhoneNumber {
       
     }
 
-    public static final int PHONENUMBER_FIELD_NUMBER = 2;
+    public static final int PHONE_NUMBER_FIELD_NUMBER = 2;
     private java.lang.String phoneNumber_;
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     public java.lang.String getPhoneNumber() {
       return phoneNumber_;
     }
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     public com.google.protobuf.ByteString
         getPhoneNumberBytes() {
       return com.google.protobuf.ByteString.copyFromUtf8(phoneNumber_);
     }
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     private void setPhoneNumber(
         java.lang.String value) {
@@ -132,14 +132,14 @@ public final class ProtoChangePhoneNumber {
       phoneNumber_ = value;
     }
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     private void clearPhoneNumber() {
       
       phoneNumber_ = getDefaultInstance().getPhoneNumber();
     }
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     private void setPhoneNumberBytes(
         com.google.protobuf.ByteString value) {
@@ -151,23 +151,23 @@ public final class ProtoChangePhoneNumber {
       phoneNumber_ = value.toStringUtf8();
     }
 
-    public static final int COUNTRYCODE_FIELD_NUMBER = 3;
+    public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
     private java.lang.String countryCode_;
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     public java.lang.String getCountryCode() {
       return countryCode_;
     }
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
       return com.google.protobuf.ByteString.copyFromUtf8(countryCode_);
     }
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     private void setCountryCode(
         java.lang.String value) {
@@ -178,14 +178,14 @@ public final class ProtoChangePhoneNumber {
       countryCode_ = value;
     }
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     private void clearCountryCode() {
       
       countryCode_ = getDefaultInstance().getCountryCode();
     }
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     private void setCountryCodeBytes(
         com.google.protobuf.ByteString value) {
@@ -359,20 +359,20 @@ public final class ProtoChangePhoneNumber {
       }
 
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public java.lang.String getPhoneNumber() {
         return instance.getPhoneNumber();
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public com.google.protobuf.ByteString
           getPhoneNumberBytes() {
         return instance.getPhoneNumberBytes();
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public Builder setPhoneNumber(
           java.lang.String value) {
@@ -381,7 +381,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public Builder clearPhoneNumber() {
         copyOnWrite();
@@ -389,7 +389,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public Builder setPhoneNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -399,20 +399,20 @@ public final class ProtoChangePhoneNumber {
       }
 
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public java.lang.String getCountryCode() {
         return instance.getCountryCode();
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public com.google.protobuf.ByteString
           getCountryCodeBytes() {
         return instance.getCountryCodeBytes();
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public Builder setCountryCode(
           java.lang.String value) {
@@ -421,7 +421,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public Builder clearCountryCode() {
         copyOnWrite();
@@ -429,7 +429,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public Builder setCountryCodeBytes(
           com.google.protobuf.ByteString value) {

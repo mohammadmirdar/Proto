@@ -22,11 +22,11 @@ public final class ProtoVerifyNewPhoneNumber {
     net.iGap.proto.ProtoRequest.Request getRequest();
 
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     java.lang.String getVerifyCode();
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     com.google.protobuf.ByteString
         getVerifyCodeBytes();
@@ -94,23 +94,23 @@ public final class ProtoVerifyNewPhoneNumber {
       
     }
 
-    public static final int VERIFYCODE_FIELD_NUMBER = 2;
+    public static final int VERIFY_CODE_FIELD_NUMBER = 2;
     private java.lang.String verifyCode_;
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     public java.lang.String getVerifyCode() {
       return verifyCode_;
     }
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     public com.google.protobuf.ByteString
         getVerifyCodeBytes() {
       return com.google.protobuf.ByteString.copyFromUtf8(verifyCode_);
     }
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     private void setVerifyCode(
         java.lang.String value) {
@@ -121,14 +121,14 @@ public final class ProtoVerifyNewPhoneNumber {
       verifyCode_ = value;
     }
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     private void clearVerifyCode() {
       
       verifyCode_ = getDefaultInstance().getVerifyCode();
     }
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     private void setVerifyCodeBytes(
         com.google.protobuf.ByteString value) {
@@ -295,20 +295,20 @@ public final class ProtoVerifyNewPhoneNumber {
       }
 
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public java.lang.String getVerifyCode() {
         return instance.getVerifyCode();
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public com.google.protobuf.ByteString
           getVerifyCodeBytes() {
         return instance.getVerifyCodeBytes();
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public Builder setVerifyCode(
           java.lang.String value) {
@@ -317,7 +317,7 @@ public final class ProtoVerifyNewPhoneNumber {
         return this;
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public Builder clearVerifyCode() {
         copyOnWrite();
@@ -325,7 +325,7 @@ public final class ProtoVerifyNewPhoneNumber {
         return this;
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public Builder setVerifyCodeBytes(
           com.google.protobuf.ByteString value) {
