@@ -22,14 +22,9 @@ public final class ProtoChangePhoneNumber {
     net.iGap.proto.ProtoRequest.Request getRequest();
 
     /**
-     * <code>optional string phone_number = 2;</code>
+     * <code>optional uint64 phone_number = 2;</code>
      */
-    java.lang.String getPhoneNumber();
-    /**
-     * <code>optional string phone_number = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getPhoneNumberBytes();
+    long getPhoneNumber();
 
     /**
      * <code>optional string country_code = 3;</code>
@@ -50,7 +45,6 @@ public final class ProtoChangePhoneNumber {
       // @@protoc_insertion_point(message_implements:proto.ChangePhoneNumber)
       ChangePhoneNumberOrBuilder {
     private ChangePhoneNumber() {
-      phoneNumber_ = "";
       countryCode_ = "";
     }
     public static final int REQUEST_FIELD_NUMBER = 1;
@@ -106,49 +100,26 @@ public final class ProtoChangePhoneNumber {
     }
 
     public static final int PHONE_NUMBER_FIELD_NUMBER = 2;
-    private java.lang.String phoneNumber_;
+    private long phoneNumber_;
     /**
-     * <code>optional string phone_number = 2;</code>
+     * <code>optional uint64 phone_number = 2;</code>
      */
-    public java.lang.String getPhoneNumber() {
+    public long getPhoneNumber() {
       return phoneNumber_;
     }
     /**
-     * <code>optional string phone_number = 2;</code>
+     * <code>optional uint64 phone_number = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(phoneNumber_);
-    }
-    /**
-     * <code>optional string phone_number = 2;</code>
-     */
-    private void setPhoneNumber(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    private void setPhoneNumber(long value) {
+      
       phoneNumber_ = value;
     }
     /**
-     * <code>optional string phone_number = 2;</code>
+     * <code>optional uint64 phone_number = 2;</code>
      */
     private void clearPhoneNumber() {
       
-      phoneNumber_ = getDefaultInstance().getPhoneNumber();
-    }
-    /**
-     * <code>optional string phone_number = 2;</code>
-     */
-    private void setPhoneNumberBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      phoneNumber_ = value.toStringUtf8();
+      phoneNumber_ = 0L;
     }
 
     public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
@@ -202,8 +173,8 @@ public final class ProtoChangePhoneNumber {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
-      if (!phoneNumber_.isEmpty()) {
-        output.writeString(2, getPhoneNumber());
+      if (phoneNumber_ != 0L) {
+        output.writeUInt64(2, phoneNumber_);
       }
       if (!countryCode_.isEmpty()) {
         output.writeString(3, getCountryCode());
@@ -219,9 +190,9 @@ public final class ProtoChangePhoneNumber {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      if (!phoneNumber_.isEmpty()) {
+      if (phoneNumber_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getPhoneNumber());
+          .computeUInt64Size(2, phoneNumber_);
       }
       if (!countryCode_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -359,42 +330,25 @@ public final class ProtoChangePhoneNumber {
       }
 
       /**
-       * <code>optional string phone_number = 2;</code>
+       * <code>optional uint64 phone_number = 2;</code>
        */
-      public java.lang.String getPhoneNumber() {
+      public long getPhoneNumber() {
         return instance.getPhoneNumber();
       }
       /**
-       * <code>optional string phone_number = 2;</code>
+       * <code>optional uint64 phone_number = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPhoneNumberBytes() {
-        return instance.getPhoneNumberBytes();
-      }
-      /**
-       * <code>optional string phone_number = 2;</code>
-       */
-      public Builder setPhoneNumber(
-          java.lang.String value) {
+      public Builder setPhoneNumber(long value) {
         copyOnWrite();
         instance.setPhoneNumber(value);
         return this;
       }
       /**
-       * <code>optional string phone_number = 2;</code>
+       * <code>optional uint64 phone_number = 2;</code>
        */
       public Builder clearPhoneNumber() {
         copyOnWrite();
         instance.clearPhoneNumber();
-        return this;
-      }
-      /**
-       * <code>optional string phone_number = 2;</code>
-       */
-      public Builder setPhoneNumberBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setPhoneNumberBytes(value);
         return this;
       }
 
@@ -460,8 +414,8 @@ public final class ProtoChangePhoneNumber {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoChangePhoneNumber.ChangePhoneNumber other = (net.iGap.proto.ProtoChangePhoneNumber.ChangePhoneNumber) arg1;
           request_ = visitor.visitMessage(request_, other.request_);
-          phoneNumber_ = visitor.visitString(!phoneNumber_.isEmpty(), phoneNumber_,
-              !other.phoneNumber_.isEmpty(), other.phoneNumber_);
+          phoneNumber_ = visitor.visitLong(phoneNumber_ != 0L, phoneNumber_,
+              other.phoneNumber_ != 0L, other.phoneNumber_);
           countryCode_ = visitor.visitString(!countryCode_.isEmpty(), countryCode_,
               !other.countryCode_.isEmpty(), other.countryCode_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
@@ -501,10 +455,9 @@ public final class ProtoChangePhoneNumber {
 
                   break;
                 }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
+                case 16: {
 
-                  phoneNumber_ = s;
+                  phoneNumber_ = input.readUInt64();
                   break;
                 }
                 case 26: {
