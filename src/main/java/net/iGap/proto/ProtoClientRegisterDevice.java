@@ -39,6 +39,16 @@ public final class ProtoClientRegisterDevice {
      * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
      */
     net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type getType();
+
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    java.lang.String getMetrix();
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getMetrixBytes();
   }
   /**
    * Protobuf type {@code proto.ClientRegisterDevice}
@@ -50,6 +60,7 @@ public final class ProtoClientRegisterDevice {
       ClientRegisterDeviceOrBuilder {
     private ClientRegisterDevice() {
       token_ = "";
+      metrix_ = "";
     }
     /**
      * Protobuf enum {@code proto.ClientRegisterDevice.Type}
@@ -273,6 +284,52 @@ public final class ProtoClientRegisterDevice {
       type_ = 0;
     }
 
+    public static final int METRIX_FIELD_NUMBER = 4;
+    private java.lang.String metrix_;
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    public java.lang.String getMetrix() {
+      return metrix_;
+    }
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMetrixBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(metrix_);
+    }
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    private void setMetrix(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      metrix_ = value;
+    }
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    private void clearMetrix() {
+      
+      metrix_ = getDefaultInstance().getMetrix();
+    }
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    private void setMetrixBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      metrix_ = value.toStringUtf8();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -283,6 +340,9 @@ public final class ProtoClientRegisterDevice {
       }
       if (type_ != net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.GENERIC.getNumber()) {
         output.writeEnum(3, type_);
+      }
+      if (!metrix_.isEmpty()) {
+        output.writeString(4, getMetrix());
       }
     }
 
@@ -302,6 +362,10 @@ public final class ProtoClientRegisterDevice {
       if (type_ != net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.GENERIC.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, type_);
+      }
+      if (!metrix_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, getMetrix());
       }
       memoizedSerializedSize = size;
       return size;
@@ -511,6 +575,46 @@ public final class ProtoClientRegisterDevice {
         return this;
       }
 
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public java.lang.String getMetrix() {
+        return instance.getMetrix();
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMetrixBytes() {
+        return instance.getMetrixBytes();
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public Builder setMetrix(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setMetrix(value);
+        return this;
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public Builder clearMetrix() {
+        copyOnWrite();
+        instance.clearMetrix();
+        return this;
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public Builder setMetrixBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setMetrixBytes(value);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ClientRegisterDevice)
     }
     protected final Object dynamicMethod(
@@ -536,6 +640,8 @@ public final class ProtoClientRegisterDevice {
           token_ = visitor.visitString(!token_.isEmpty(), token_,
               !other.token_.isEmpty(), other.token_);
           type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
+          metrix_ = visitor.visitString(!metrix_.isEmpty(), metrix_,
+              !other.metrix_.isEmpty(), other.metrix_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -583,6 +689,12 @@ public final class ProtoClientRegisterDevice {
                   int rawValue = input.readEnum();
 
                   type_ = rawValue;
+                  break;
+                }
+                case 34: {
+                  String s = input.readStringRequireUtf8();
+
+                  metrix_ = s;
                   break;
                 }
               }
