@@ -107,21 +107,26 @@ public final class ProtoClientRoomMemberSearch {
     net.iGap.proto.ProtoRequest.Request getRequest();
 
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional int64 room_id = 2;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional string query = 3;</code>
      */
     java.lang.String getQuery();
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     com.google.protobuf.ByteString
         getQueryBytes();
 
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     int getRoleValue();
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     net.iGap.proto.ProtoClientRoomMemberSearch.Role getRole();
   }
@@ -188,23 +193,46 @@ public final class ProtoClientRoomMemberSearch {
       
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    private long roomId_;
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    private void setRoomId(long value) {
+      
+      roomId_ = value;
+    }
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    private void clearRoomId() {
+      
+      roomId_ = 0L;
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private java.lang.String query_;
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     public java.lang.String getQuery() {
       return query_;
     }
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     public com.google.protobuf.ByteString
         getQueryBytes() {
       return com.google.protobuf.ByteString.copyFromUtf8(query_);
     }
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     private void setQuery(
         java.lang.String value) {
@@ -215,14 +243,14 @@ public final class ProtoClientRoomMemberSearch {
       query_ = value;
     }
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     private void clearQuery() {
       
       query_ = getDefaultInstance().getQuery();
     }
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     private void setQueryBytes(
         com.google.protobuf.ByteString value) {
@@ -234,29 +262,29 @@ public final class ProtoClientRoomMemberSearch {
       query_ = value.toStringUtf8();
     }
 
-    public static final int ROLE_FIELD_NUMBER = 3;
+    public static final int ROLE_FIELD_NUMBER = 4;
     private int role_;
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     public int getRoleValue() {
       return role_;
     }
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     public net.iGap.proto.ProtoClientRoomMemberSearch.Role getRole() {
       net.iGap.proto.ProtoClientRoomMemberSearch.Role result = net.iGap.proto.ProtoClientRoomMemberSearch.Role.forNumber(role_);
       return result == null ? net.iGap.proto.ProtoClientRoomMemberSearch.Role.UNRECOGNIZED : result;
     }
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     private void setRoleValue(int value) {
         role_ = value;
     }
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     private void setRole(net.iGap.proto.ProtoClientRoomMemberSearch.Role value) {
       if (value == null) {
@@ -266,7 +294,7 @@ public final class ProtoClientRoomMemberSearch {
       role_ = value.getNumber();
     }
     /**
-     * <code>optional .proto.Role role = 3;</code>
+     * <code>optional .proto.Role role = 4;</code>
      */
     private void clearRole() {
       
@@ -278,11 +306,14 @@ public final class ProtoClientRoomMemberSearch {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      if (roomId_ != 0L) {
+        output.writeInt64(2, roomId_);
+      }
       if (!query_.isEmpty()) {
-        output.writeString(2, getQuery());
+        output.writeString(3, getQuery());
       }
       if (role_ != net.iGap.proto.ProtoClientRoomMemberSearch.Role.MEMBER.getNumber()) {
-        output.writeEnum(3, role_);
+        output.writeEnum(4, role_);
       }
     }
 
@@ -295,13 +326,17 @@ public final class ProtoClientRoomMemberSearch {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, roomId_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getQuery());
+          .computeStringSize(3, getQuery());
       }
       if (role_ != net.iGap.proto.ProtoClientRoomMemberSearch.Role.MEMBER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, role_);
+          .computeEnumSize(4, role_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -435,20 +470,43 @@ public final class ProtoClientRoomMemberSearch {
       }
 
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public long getRoomId() {
+        return instance.getRoomId();
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder setRoomId(long value) {
+        copyOnWrite();
+        instance.setRoomId(value);
+        return this;
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder clearRoomId() {
+        copyOnWrite();
+        instance.clearRoomId();
+        return this;
+      }
+
+      /**
+       * <code>optional string query = 3;</code>
        */
       public java.lang.String getQuery() {
         return instance.getQuery();
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public com.google.protobuf.ByteString
           getQueryBytes() {
         return instance.getQueryBytes();
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public Builder setQuery(
           java.lang.String value) {
@@ -457,7 +515,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public Builder clearQuery() {
         copyOnWrite();
@@ -465,7 +523,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public Builder setQueryBytes(
           com.google.protobuf.ByteString value) {
@@ -475,13 +533,13 @@ public final class ProtoClientRoomMemberSearch {
       }
 
       /**
-       * <code>optional .proto.Role role = 3;</code>
+       * <code>optional .proto.Role role = 4;</code>
        */
       public int getRoleValue() {
         return instance.getRoleValue();
       }
       /**
-       * <code>optional .proto.Role role = 3;</code>
+       * <code>optional .proto.Role role = 4;</code>
        */
       public Builder setRoleValue(int value) {
         copyOnWrite();
@@ -489,13 +547,13 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>optional .proto.Role role = 3;</code>
+       * <code>optional .proto.Role role = 4;</code>
        */
       public net.iGap.proto.ProtoClientRoomMemberSearch.Role getRole() {
         return instance.getRole();
       }
       /**
-       * <code>optional .proto.Role role = 3;</code>
+       * <code>optional .proto.Role role = 4;</code>
        */
       public Builder setRole(net.iGap.proto.ProtoClientRoomMemberSearch.Role value) {
         copyOnWrite();
@@ -503,7 +561,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>optional .proto.Role role = 3;</code>
+       * <code>optional .proto.Role role = 4;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -533,6 +591,8 @@ public final class ProtoClientRoomMemberSearch {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearch other = (net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearch) arg1;
           request_ = visitor.visitMessage(request_, other.request_);
+          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
+              other.roomId_ != 0L, other.roomId_);
           query_ = visitor.visitString(!query_.isEmpty(), query_,
               !other.query_.isEmpty(), other.query_);
           role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
@@ -573,13 +633,18 @@ public final class ProtoClientRoomMemberSearch {
 
                   break;
                 }
-                case 18: {
+                case 16: {
+
+                  roomId_ = input.readInt64();
+                  break;
+                }
+                case 26: {
                   String s = input.readStringRequireUtf8();
 
                   query_ = s;
                   break;
                 }
-                case 24: {
+                case 32: {
                   int rawValue = input.readEnum();
 
                   role_ = rawValue;
@@ -645,16 +710,21 @@ public final class ProtoClientRoomMemberSearch {
     net.iGap.proto.ProtoResponse.Response getResponse();
 
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>optional int64 room_id = 2;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     java.util.List<net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info> 
         getInfosList();
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info getInfos(int index);
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     int getInfosCount();
   }
@@ -1275,35 +1345,58 @@ public final class ProtoClientRoomMemberSearch {
       
     }
 
-    public static final int INFOS_FIELD_NUMBER = 2;
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    private long roomId_;
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    private void setRoomId(long value) {
+      
+      roomId_ = value;
+    }
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    private void clearRoomId() {
+      
+      roomId_ = 0L;
+    }
+
+    public static final int INFOS_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info> infos_;
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     public java.util.List<net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info> getInfosList() {
       return infos_;
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     public java.util.List<? extends net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.InfoOrBuilder> 
         getInfosOrBuilderList() {
       return infos_;
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     public int getInfosCount() {
       return infos_.size();
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     public net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info getInfos(int index) {
       return infos_.get(index);
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     public net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.InfoOrBuilder getInfosOrBuilder(
         int index) {
@@ -1317,7 +1410,7 @@ public final class ProtoClientRoomMemberSearch {
     }
 
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void setInfos(
         int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info value) {
@@ -1328,7 +1421,7 @@ public final class ProtoClientRoomMemberSearch {
       infos_.set(index, value);
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void setInfos(
         int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info.Builder builderForValue) {
@@ -1336,7 +1429,7 @@ public final class ProtoClientRoomMemberSearch {
       infos_.set(index, builderForValue.build());
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void addInfos(net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info value) {
       if (value == null) {
@@ -1346,7 +1439,7 @@ public final class ProtoClientRoomMemberSearch {
       infos_.add(value);
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void addInfos(
         int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info value) {
@@ -1357,7 +1450,7 @@ public final class ProtoClientRoomMemberSearch {
       infos_.add(index, value);
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void addInfos(
         net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info.Builder builderForValue) {
@@ -1365,7 +1458,7 @@ public final class ProtoClientRoomMemberSearch {
       infos_.add(builderForValue.build());
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void addInfos(
         int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info.Builder builderForValue) {
@@ -1373,7 +1466,7 @@ public final class ProtoClientRoomMemberSearch {
       infos_.add(index, builderForValue.build());
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void addAllInfos(
         java.lang.Iterable<? extends net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info> values) {
@@ -1382,13 +1475,13 @@ public final class ProtoClientRoomMemberSearch {
           values, infos_);
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void clearInfos() {
       infos_ = emptyProtobufList();
     }
     /**
-     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+     * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
      */
     private void removeInfos(int index) {
       ensureInfosIsMutable();
@@ -1400,8 +1493,11 @@ public final class ProtoClientRoomMemberSearch {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
+      if (roomId_ != 0L) {
+        output.writeInt64(2, roomId_);
+      }
       for (int i = 0; i < infos_.size(); i++) {
-        output.writeMessage(2, infos_.get(i));
+        output.writeMessage(3, infos_.get(i));
       }
     }
 
@@ -1414,9 +1510,13 @@ public final class ProtoClientRoomMemberSearch {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, roomId_);
+      }
       for (int i = 0; i < infos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, infos_.get(i));
+          .computeMessageSize(3, infos_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -1550,25 +1650,48 @@ public final class ProtoClientRoomMemberSearch {
       }
 
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public long getRoomId() {
+        return instance.getRoomId();
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder setRoomId(long value) {
+        copyOnWrite();
+        instance.setRoomId(value);
+        return this;
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder clearRoomId() {
+        copyOnWrite();
+        instance.clearRoomId();
+        return this;
+      }
+
+      /**
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public java.util.List<net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info> getInfosList() {
         return java.util.Collections.unmodifiableList(
             instance.getInfosList());
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public int getInfosCount() {
         return instance.getInfosCount();
       }/**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info getInfos(int index) {
         return instance.getInfos(index);
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder setInfos(
           int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info value) {
@@ -1577,7 +1700,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder setInfos(
           int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info.Builder builderForValue) {
@@ -1586,7 +1709,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder addInfos(net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info value) {
         copyOnWrite();
@@ -1594,7 +1717,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder addInfos(
           int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info value) {
@@ -1603,7 +1726,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder addInfos(
           net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info.Builder builderForValue) {
@@ -1612,7 +1735,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder addInfos(
           int index, net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info.Builder builderForValue) {
@@ -1621,7 +1744,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder addAllInfos(
           java.lang.Iterable<? extends net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse.Info> values) {
@@ -1630,7 +1753,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder clearInfos() {
         copyOnWrite();
@@ -1638,7 +1761,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 2;</code>
+       * <code>repeated .proto.ClientRoomMemberSearchResponse.Info infos = 3;</code>
        */
       public Builder removeInfos(int index) {
         copyOnWrite();
@@ -1669,6 +1792,8 @@ public final class ProtoClientRoomMemberSearch {
           Visitor visitor = (Visitor) arg0;
           net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse other = (net.iGap.proto.ProtoClientRoomMemberSearch.ClientRoomMemberSearchResponse) arg1;
           response_ = visitor.visitMessage(response_, other.response_);
+          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
+              other.roomId_ != 0L, other.roomId_);
           infos_= visitor.visitList(infos_, other.infos_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
@@ -1708,7 +1833,12 @@ public final class ProtoClientRoomMemberSearch {
 
                   break;
                 }
-                case 18: {
+                case 16: {
+
+                  roomId_ = input.readInt64();
+                  break;
+                }
+                case 26: {
                   if (!infos_.isModifiable()) {
                     infos_ =
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(infos_);
