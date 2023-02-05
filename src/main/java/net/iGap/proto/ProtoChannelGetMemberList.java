@@ -775,6 +775,15 @@ public final class ProtoChannelGetMemberList {
        * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
       net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getAdminRights();
+
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      boolean hasUserInfo();
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      net.iGap.proto.ProtoGlobal.RegisteredUser getUserInfo();
     }
     /**
      * Protobuf type {@code proto.ChannelGetMemberListResponse.Member}
@@ -900,6 +909,58 @@ public final class ProtoChannelGetMemberList {
         
       }
 
+      public static final int USERINFO_FIELD_NUMBER = 4;
+      private net.iGap.proto.ProtoGlobal.RegisteredUser userInfo_;
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      public boolean hasUserInfo() {
+        return userInfo_ != null;
+      }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RegisteredUser getUserInfo() {
+        return userInfo_ == null ? net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : userInfo_;
+      }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      private void setUserInfo(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userInfo_ = value;
+        
+        }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      private void setUserInfo(
+          net.iGap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
+        userInfo_ = builderForValue.build();
+        
+      }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      private void mergeUserInfo(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
+        if (userInfo_ != null &&
+            userInfo_ != net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance()) {
+          userInfo_ =
+            net.iGap.proto.ProtoGlobal.RegisteredUser.newBuilder(userInfo_).mergeFrom(value).buildPartial();
+        } else {
+          userInfo_ = value;
+        }
+        
+      }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      private void clearUserInfo() {  userInfo_ = null;
+        
+      }
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (userId_ != 0L) {
@@ -910,6 +971,9 @@ public final class ProtoChannelGetMemberList {
         }
         if (adminRights_ != null) {
           output.writeMessage(3, getAdminRights());
+        }
+        if (userInfo_ != null) {
+          output.writeMessage(4, getUserInfo());
         }
       }
 
@@ -929,6 +993,10 @@ public final class ProtoChannelGetMemberList {
         if (adminRights_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, getAdminRights());
+        }
+        if (userInfo_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, getUserInfo());
         }
         memoizedSerializedSize = size;
         return size;
@@ -1121,6 +1189,51 @@ public final class ProtoChannelGetMemberList {
           return this;
         }
 
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public boolean hasUserInfo() {
+          return instance.hasUserInfo();
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RegisteredUser getUserInfo() {
+          return instance.getUserInfo();
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder setUserInfo(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
+          copyOnWrite();
+          instance.setUserInfo(value);
+          return this;
+          }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder setUserInfo(
+            net.iGap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
+          copyOnWrite();
+          instance.setUserInfo(builderForValue);
+          return this;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder mergeUserInfo(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
+          copyOnWrite();
+          instance.mergeUserInfo(value);
+          return this;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder clearUserInfo() {  copyOnWrite();
+          instance.clearUserInfo();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:proto.ChannelGetMemberListResponse.Member)
       }
       protected final Object dynamicMethod(
@@ -1146,6 +1259,7 @@ public final class ProtoChannelGetMemberList {
                 other.userId_ != 0L, other.userId_);
             role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
             adminRights_ = visitor.visitMessage(adminRights_, other.adminRights_);
+            userInfo_ = visitor.visitMessage(userInfo_, other.userInfo_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -1190,6 +1304,19 @@ public final class ProtoChannelGetMemberList {
                     if (subBuilder != null) {
                       subBuilder.mergeFrom(adminRights_);
                       adminRights_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                  case 34: {
+                    net.iGap.proto.ProtoGlobal.RegisteredUser.Builder subBuilder = null;
+                    if (userInfo_ != null) {
+                      subBuilder = userInfo_.toBuilder();
+                    }
+                    userInfo_ = input.readMessage(net.iGap.proto.ProtoGlobal.RegisteredUser.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(userInfo_);
+                      userInfo_ = subBuilder.buildPartial();
                     }
 
                     break;

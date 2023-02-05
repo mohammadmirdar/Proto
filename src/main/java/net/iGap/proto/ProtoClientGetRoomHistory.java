@@ -46,7 +46,7 @@ public final class ProtoClientGetRoomHistory {
     int getLimit();
 
     /**
-     * <code>optional uint64 document_id = 6;</code>
+     * <code>optional uint64 documentId = 6;</code>
      */
     long getDocumentId();
   }
@@ -287,23 +287,23 @@ public final class ProtoClientGetRoomHistory {
       limit_ = 0;
     }
 
-    public static final int DOCUMENT_ID_FIELD_NUMBER = 6;
+    public static final int DOCUMENTID_FIELD_NUMBER = 6;
     private long documentId_;
     /**
-     * <code>optional uint64 document_id = 6;</code>
+     * <code>optional uint64 documentId = 6;</code>
      */
     public long getDocumentId() {
       return documentId_;
     }
     /**
-     * <code>optional uint64 document_id = 6;</code>
+     * <code>optional uint64 documentId = 6;</code>
      */
     private void setDocumentId(long value) {
       
       documentId_ = value;
     }
     /**
-     * <code>optional uint64 document_id = 6;</code>
+     * <code>optional uint64 documentId = 6;</code>
      */
     private void clearDocumentId() {
       
@@ -599,13 +599,13 @@ public final class ProtoClientGetRoomHistory {
       }
 
       /**
-       * <code>optional uint64 document_id = 6;</code>
+       * <code>optional uint64 documentId = 6;</code>
        */
       public long getDocumentId() {
         return instance.getDocumentId();
       }
       /**
-       * <code>optional uint64 document_id = 6;</code>
+       * <code>optional uint64 documentId = 6;</code>
        */
       public Builder setDocumentId(long value) {
         copyOnWrite();
@@ -613,7 +613,7 @@ public final class ProtoClientGetRoomHistory {
         return this;
       }
       /**
-       * <code>optional uint64 document_id = 6;</code>
+       * <code>optional uint64 documentId = 6;</code>
        */
       public Builder clearDocumentId() {
         copyOnWrite();

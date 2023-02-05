@@ -467,13 +467,13 @@ public final class ProtoStoryGetStories {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
     int getOriginatorValue();
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
-    net.iGap.proto.ProtoGlobal.Originator getOriginator();
+    net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator getOriginator();
 
     /**
      * <code>optional uint64 originator_id = 2 [jstype = JS_STRING];</code>
@@ -526,32 +526,99 @@ public final class ProtoStoryGetStories {
       originatorName_ = "";
       stories_ = emptyProtobufList();
     }
+    /**
+     * Protobuf enum {@code proto.GroupedStories.Originator}
+     */
+    public enum Originator
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>User = 0;</code>
+       */
+      User(0),
+      /**
+       * <code>Room = 1;</code>
+       */
+      Room(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>User = 0;</code>
+       */
+      public static final int User_VALUE = 0;
+      /**
+       * <code>Room = 1;</code>
+       */
+      public static final int Room_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Originator valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Originator forNumber(int value) {
+        switch (value) {
+          case 0: return User;
+          case 1: return Room;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Originator>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Originator> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Originator>() {
+              public Originator findValueByNumber(int number) {
+                return Originator.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private Originator(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.GroupedStories.Originator)
+    }
+
     private int bitField0_;
     public static final int ORIGINATOR_FIELD_NUMBER = 1;
     private int originator_;
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
     public int getOriginatorValue() {
       return originator_;
     }
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
-    public net.iGap.proto.ProtoGlobal.Originator getOriginator() {
-      net.iGap.proto.ProtoGlobal.Originator result = net.iGap.proto.ProtoGlobal.Originator.forNumber(originator_);
-      return result == null ? net.iGap.proto.ProtoGlobal.Originator.UNRECOGNIZED : result;
+    public net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator getOriginator() {
+      net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator result = net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.forNumber(originator_);
+      return result == null ? net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.UNRECOGNIZED : result;
     }
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
     private void setOriginatorValue(int value) {
         originator_ = value;
     }
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
-    private void setOriginator(net.iGap.proto.ProtoGlobal.Originator value) {
+    private void setOriginator(net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -559,7 +626,7 @@ public final class ProtoStoryGetStories {
       originator_ = value.getNumber();
     }
     /**
-     * <code>optional .proto.Originator originator = 1;</code>
+     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
      */
     private void clearOriginator() {
       
@@ -803,7 +870,7 @@ public final class ProtoStoryGetStories {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (originator_ != net.iGap.proto.ProtoGlobal.Originator.USER.getNumber()) {
+      if (originator_ != net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.User.getNumber()) {
         output.writeEnum(1, originator_);
       }
       if (originatorId_ != 0L) {
@@ -828,7 +895,7 @@ public final class ProtoStoryGetStories {
       if (size != -1) return size;
 
       size = 0;
-      if (originator_ != net.iGap.proto.ProtoGlobal.Originator.USER.getNumber()) {
+      if (originator_ != net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.User.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, originator_);
       }
@@ -939,13 +1006,13 @@ public final class ProtoStoryGetStories {
 
 
       /**
-       * <code>optional .proto.Originator originator = 1;</code>
+       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
        */
       public int getOriginatorValue() {
         return instance.getOriginatorValue();
       }
       /**
-       * <code>optional .proto.Originator originator = 1;</code>
+       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
        */
       public Builder setOriginatorValue(int value) {
         copyOnWrite();
@@ -953,21 +1020,21 @@ public final class ProtoStoryGetStories {
         return this;
       }
       /**
-       * <code>optional .proto.Originator originator = 1;</code>
+       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
        */
-      public net.iGap.proto.ProtoGlobal.Originator getOriginator() {
+      public net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator getOriginator() {
         return instance.getOriginator();
       }
       /**
-       * <code>optional .proto.Originator originator = 1;</code>
+       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
        */
-      public Builder setOriginator(net.iGap.proto.ProtoGlobal.Originator value) {
+      public Builder setOriginator(net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator value) {
         copyOnWrite();
         instance.setOriginator(value);
         return this;
       }
       /**
-       * <code>optional .proto.Originator originator = 1;</code>
+       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
        */
       public Builder clearOriginator() {
         copyOnWrite();

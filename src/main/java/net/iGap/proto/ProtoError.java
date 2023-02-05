@@ -45,6 +45,11 @@ public final class ProtoError {
      */
     com.google.protobuf.ByteString
         getMessageBytes();
+
+    /**
+     * <code>optional uint64 request_action_id = 6;</code>
+     */
+    long getRequestActionId();
   }
   /**
    * Protobuf type {@code proto.ErrorResponse}
@@ -224,6 +229,29 @@ public final class ProtoError {
       message_ = value.toStringUtf8();
     }
 
+    public static final int REQUEST_ACTION_ID_FIELD_NUMBER = 6;
+    private long requestActionId_;
+    /**
+     * <code>optional uint64 request_action_id = 6;</code>
+     */
+    public long getRequestActionId() {
+      return requestActionId_;
+    }
+    /**
+     * <code>optional uint64 request_action_id = 6;</code>
+     */
+    private void setRequestActionId(long value) {
+      
+      requestActionId_ = value;
+    }
+    /**
+     * <code>optional uint64 request_action_id = 6;</code>
+     */
+    private void clearRequestActionId() {
+      
+      requestActionId_ = 0L;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -240,6 +268,9 @@ public final class ProtoError {
       }
       if (!message_.isEmpty()) {
         output.writeString(5, getMessage());
+      }
+      if (requestActionId_ != 0L) {
+        output.writeUInt64(6, requestActionId_);
       }
     }
 
@@ -267,6 +298,10 @@ public final class ProtoError {
       if (!message_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(5, getMessage());
+      }
+      if (requestActionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, requestActionId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -508,6 +543,29 @@ public final class ProtoError {
         return this;
       }
 
+      /**
+       * <code>optional uint64 request_action_id = 6;</code>
+       */
+      public long getRequestActionId() {
+        return instance.getRequestActionId();
+      }
+      /**
+       * <code>optional uint64 request_action_id = 6;</code>
+       */
+      public Builder setRequestActionId(long value) {
+        copyOnWrite();
+        instance.setRequestActionId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 request_action_id = 6;</code>
+       */
+      public Builder clearRequestActionId() {
+        copyOnWrite();
+        instance.clearRequestActionId();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.ErrorResponse)
     }
     protected final Object dynamicMethod(
@@ -538,6 +596,8 @@ public final class ProtoError {
               other.wait_ != 0, other.wait_);
           message_ = visitor.visitString(!message_.isEmpty(), message_,
               !other.message_.isEmpty(), other.message_);
+          requestActionId_ = visitor.visitLong(requestActionId_ != 0L, requestActionId_,
+              other.requestActionId_ != 0L, other.requestActionId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -594,6 +654,11 @@ public final class ProtoError {
                   String s = input.readStringRequireUtf8();
 
                   message_ = s;
+                  break;
+                }
+                case 48: {
+
+                  requestActionId_ = input.readUInt64();
                   break;
                 }
               }

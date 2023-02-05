@@ -27,9 +27,14 @@ public final class ProtoGroupClearMessage {
     long getRoomId();
 
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    long getClearId();
+    long getClearMessageId();
+
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    long getClearDocumentId();
   }
   /**
    * Protobuf type {@code proto.GroupClearMessage}
@@ -116,27 +121,50 @@ public final class ProtoGroupClearMessage {
       roomId_ = 0L;
     }
 
-    public static final int CLEAR_ID_FIELD_NUMBER = 3;
-    private long clearId_;
+    public static final int CLEAR_MESSAGE_ID_FIELD_NUMBER = 3;
+    private long clearMessageId_;
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    public long getClearId() {
-      return clearId_;
+    public long getClearMessageId() {
+      return clearMessageId_;
     }
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    private void setClearId(long value) {
+    private void setClearMessageId(long value) {
       
-      clearId_ = value;
+      clearMessageId_ = value;
     }
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    private void clearClearId() {
+    private void clearClearMessageId() {
       
-      clearId_ = 0L;
+      clearMessageId_ = 0L;
+    }
+
+    public static final int CLEAR_DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long clearDocumentId_;
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    public long getClearDocumentId() {
+      return clearDocumentId_;
+    }
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    private void setClearDocumentId(long value) {
+      
+      clearDocumentId_ = value;
+    }
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    private void clearClearDocumentId() {
+      
+      clearDocumentId_ = 0L;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -147,8 +175,11 @@ public final class ProtoGroupClearMessage {
       if (roomId_ != 0L) {
         output.writeUInt64(2, roomId_);
       }
-      if (clearId_ != 0L) {
-        output.writeUInt64(3, clearId_);
+      if (clearMessageId_ != 0L) {
+        output.writeUInt64(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        output.writeUInt64(4, clearDocumentId_);
       }
     }
 
@@ -165,9 +196,13 @@ public final class ProtoGroupClearMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, roomId_);
       }
-      if (clearId_ != 0L) {
+      if (clearMessageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, clearId_);
+          .computeUInt64Size(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, clearDocumentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -324,25 +359,48 @@ public final class ProtoGroupClearMessage {
       }
 
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public long getClearId() {
-        return instance.getClearId();
+      public long getClearMessageId() {
+        return instance.getClearMessageId();
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder setClearId(long value) {
+      public Builder setClearMessageId(long value) {
         copyOnWrite();
-        instance.setClearId(value);
+        instance.setClearMessageId(value);
         return this;
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder clearClearId() {
+      public Builder clearClearMessageId() {
         copyOnWrite();
-        instance.clearClearId();
+        instance.clearClearMessageId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public long getClearDocumentId() {
+        return instance.getClearDocumentId();
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder setClearDocumentId(long value) {
+        copyOnWrite();
+        instance.setClearDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder clearClearDocumentId() {
+        copyOnWrite();
+        instance.clearClearDocumentId();
         return this;
       }
 
@@ -370,8 +428,10 @@ public final class ProtoGroupClearMessage {
           request_ = visitor.visitMessage(request_, other.request_);
           roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
               other.roomId_ != 0L, other.roomId_);
-          clearId_ = visitor.visitLong(clearId_ != 0L, clearId_,
-              other.clearId_ != 0L, other.clearId_);
+          clearMessageId_ = visitor.visitLong(clearMessageId_ != 0L, clearMessageId_,
+              other.clearMessageId_ != 0L, other.clearMessageId_);
+          clearDocumentId_ = visitor.visitLong(clearDocumentId_ != 0L, clearDocumentId_,
+              other.clearDocumentId_ != 0L, other.clearDocumentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -416,7 +476,12 @@ public final class ProtoGroupClearMessage {
                 }
                 case 24: {
 
-                  clearId_ = input.readUInt64();
+                  clearMessageId_ = input.readUInt64();
+                  break;
+                }
+                case 32: {
+
+                  clearDocumentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -484,9 +549,14 @@ public final class ProtoGroupClearMessage {
     long getRoomId();
 
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    long getClearId();
+    long getClearMessageId();
+
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    long getClearDocumentId();
   }
   /**
    * Protobuf type {@code proto.GroupClearMessageResponse}
@@ -573,27 +643,50 @@ public final class ProtoGroupClearMessage {
       roomId_ = 0L;
     }
 
-    public static final int CLEAR_ID_FIELD_NUMBER = 3;
-    private long clearId_;
+    public static final int CLEAR_MESSAGE_ID_FIELD_NUMBER = 3;
+    private long clearMessageId_;
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    public long getClearId() {
-      return clearId_;
+    public long getClearMessageId() {
+      return clearMessageId_;
     }
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    private void setClearId(long value) {
+    private void setClearMessageId(long value) {
       
-      clearId_ = value;
+      clearMessageId_ = value;
     }
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    private void clearClearId() {
+    private void clearClearMessageId() {
       
-      clearId_ = 0L;
+      clearMessageId_ = 0L;
+    }
+
+    public static final int CLEAR_DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long clearDocumentId_;
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    public long getClearDocumentId() {
+      return clearDocumentId_;
+    }
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    private void setClearDocumentId(long value) {
+      
+      clearDocumentId_ = value;
+    }
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    private void clearClearDocumentId() {
+      
+      clearDocumentId_ = 0L;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -604,8 +697,11 @@ public final class ProtoGroupClearMessage {
       if (roomId_ != 0L) {
         output.writeUInt64(2, roomId_);
       }
-      if (clearId_ != 0L) {
-        output.writeUInt64(3, clearId_);
+      if (clearMessageId_ != 0L) {
+        output.writeUInt64(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        output.writeUInt64(4, clearDocumentId_);
       }
     }
 
@@ -622,9 +718,13 @@ public final class ProtoGroupClearMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, roomId_);
       }
-      if (clearId_ != 0L) {
+      if (clearMessageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, clearId_);
+          .computeUInt64Size(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, clearDocumentId_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -781,25 +881,48 @@ public final class ProtoGroupClearMessage {
       }
 
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public long getClearId() {
-        return instance.getClearId();
+      public long getClearMessageId() {
+        return instance.getClearMessageId();
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder setClearId(long value) {
+      public Builder setClearMessageId(long value) {
         copyOnWrite();
-        instance.setClearId(value);
+        instance.setClearMessageId(value);
         return this;
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder clearClearId() {
+      public Builder clearClearMessageId() {
         copyOnWrite();
-        instance.clearClearId();
+        instance.clearClearMessageId();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public long getClearDocumentId() {
+        return instance.getClearDocumentId();
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder setClearDocumentId(long value) {
+        copyOnWrite();
+        instance.setClearDocumentId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder clearClearDocumentId() {
+        copyOnWrite();
+        instance.clearClearDocumentId();
         return this;
       }
 
@@ -827,8 +950,10 @@ public final class ProtoGroupClearMessage {
           response_ = visitor.visitMessage(response_, other.response_);
           roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
               other.roomId_ != 0L, other.roomId_);
-          clearId_ = visitor.visitLong(clearId_ != 0L, clearId_,
-              other.clearId_ != 0L, other.clearId_);
+          clearMessageId_ = visitor.visitLong(clearMessageId_ != 0L, clearMessageId_,
+              other.clearMessageId_ != 0L, other.clearMessageId_);
+          clearDocumentId_ = visitor.visitLong(clearDocumentId_ != 0L, clearDocumentId_,
+              other.clearDocumentId_ != 0L, other.clearDocumentId_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -873,7 +998,12 @@ public final class ProtoGroupClearMessage {
                 }
                 case 24: {
 
-                  clearId_ = input.readUInt64();
+                  clearMessageId_ = input.readUInt64();
+                  break;
+                }
+                case 32: {
+
+                  clearDocumentId_ = input.readUInt64();
                   break;
                 }
               }

@@ -21,6 +21,16 @@ public final class ProtoRequest {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
   }
   /**
    * Protobuf type {@code proto.Request}
@@ -32,6 +42,7 @@ public final class ProtoRequest {
       RequestOrBuilder {
     private Request() {
       id_ = "";
+      token_ = "";
     }
     public static final int ID_FIELD_NUMBER = 1;
     private java.lang.String id_;
@@ -79,10 +90,59 @@ public final class ProtoRequest {
       id_ = value.toStringUtf8();
     }
 
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    private java.lang.String token_;
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    public java.lang.String getToken() {
+      return token_;
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(token_);
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    private void setToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      token_ = value;
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    private void clearToken() {
+      
+      token_ = getDefaultInstance().getToken();
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    private void setTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      token_ = value.toStringUtf8();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!id_.isEmpty()) {
         output.writeString(1, getId());
+      }
+      if (!token_.isEmpty()) {
+        output.writeString(2, getToken());
       }
     }
 
@@ -94,6 +154,10 @@ public final class ProtoRequest {
       if (!id_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(1, getId());
+      }
+      if (!token_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getToken());
       }
       memoizedSerializedSize = size;
       return size;
@@ -221,6 +285,46 @@ public final class ProtoRequest {
         return this;
       }
 
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public java.lang.String getToken() {
+        return instance.getToken();
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        return instance.getTokenBytes();
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setToken(value);
+        return this;
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public Builder clearToken() {
+        copyOnWrite();
+        instance.clearToken();
+        return this;
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setTokenBytes(value);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.Request)
     }
     protected final Object dynamicMethod(
@@ -244,6 +348,8 @@ public final class ProtoRequest {
           net.iGap.proto.ProtoRequest.Request other = (net.iGap.proto.ProtoRequest.Request) arg1;
           id_ = visitor.visitString(!id_.isEmpty(), id_,
               !other.id_.isEmpty(), other.id_);
+          token_ = visitor.visitString(!token_.isEmpty(), token_,
+              !other.token_.isEmpty(), other.token_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -272,6 +378,12 @@ public final class ProtoRequest {
                   String s = input.readStringRequireUtf8();
 
                   id_ = s;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  token_ = s;
                   break;
                 }
               }

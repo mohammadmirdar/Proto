@@ -32,7 +32,7 @@ public final class ProtoClientGetRoomMessage {
     long getMessageId();
 
     /**
-     * <code>optional uint64 document_id = 4;</code>
+     * <code>optional uint64 documentId = 4;</code>
      */
     long getDocumentId();
   }
@@ -144,23 +144,23 @@ public final class ProtoClientGetRoomMessage {
       messageId_ = 0L;
     }
 
-    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    public static final int DOCUMENTID_FIELD_NUMBER = 4;
     private long documentId_;
     /**
-     * <code>optional uint64 document_id = 4;</code>
+     * <code>optional uint64 documentId = 4;</code>
      */
     public long getDocumentId() {
       return documentId_;
     }
     /**
-     * <code>optional uint64 document_id = 4;</code>
+     * <code>optional uint64 documentId = 4;</code>
      */
     private void setDocumentId(long value) {
       
       documentId_ = value;
     }
     /**
-     * <code>optional uint64 document_id = 4;</code>
+     * <code>optional uint64 documentId = 4;</code>
      */
     private void clearDocumentId() {
       
@@ -382,13 +382,13 @@ public final class ProtoClientGetRoomMessage {
       }
 
       /**
-       * <code>optional uint64 document_id = 4;</code>
+       * <code>optional uint64 documentId = 4;</code>
        */
       public long getDocumentId() {
         return instance.getDocumentId();
       }
       /**
-       * <code>optional uint64 document_id = 4;</code>
+       * <code>optional uint64 documentId = 4;</code>
        */
       public Builder setDocumentId(long value) {
         copyOnWrite();
@@ -396,7 +396,7 @@ public final class ProtoClientGetRoomMessage {
         return this;
       }
       /**
-       * <code>optional uint64 document_id = 4;</code>
+       * <code>optional uint64 documentId = 4;</code>
        */
       public Builder clearDocumentId() {
         copyOnWrite();

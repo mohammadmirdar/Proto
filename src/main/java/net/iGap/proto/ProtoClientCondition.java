@@ -275,6 +275,24 @@ public final class ProtoClientCondition {
          * <code>optional uint64 document_id = 3;</code>
          */
         long getDocumentId();
+
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        boolean hasMentions();
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        net.iGap.proto.ProtoGlobal.Mention getMentions();
+
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        boolean hasTextSigns();
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        net.iGap.proto.ProtoGlobal.TextSigns getTextSigns();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineEdited}
@@ -379,6 +397,110 @@ public final class ProtoClientCondition {
           documentId_ = 0L;
         }
 
+        public static final int MENTIONS_FIELD_NUMBER = 4;
+        private net.iGap.proto.ProtoGlobal.Mention mentions_;
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        public boolean hasMentions() {
+          return mentions_ != null;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.Mention getMentions() {
+          return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        private void setMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mentions_ = value;
+          
+          }
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        private void setMentions(
+            net.iGap.proto.ProtoGlobal.Mention.Builder builderForValue) {
+          mentions_ = builderForValue.build();
+          
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        private void mergeMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+          if (mentions_ != null &&
+              mentions_ != net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance()) {
+            mentions_ =
+              net.iGap.proto.ProtoGlobal.Mention.newBuilder(mentions_).mergeFrom(value).buildPartial();
+          } else {
+            mentions_ = value;
+          }
+          
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 4;</code>
+         */
+        private void clearMentions() {  mentions_ = null;
+          
+        }
+
+        public static final int TEXT_SIGNS_FIELD_NUMBER = 5;
+        private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        public boolean hasTextSigns() {
+          return textSigns_ != null;
+        }
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+          return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        }
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        private void setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          textSigns_ = value;
+          
+          }
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        private void setTextSigns(
+            net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
+          textSigns_ = builderForValue.build();
+          
+        }
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        private void mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+          if (textSigns_ != null &&
+              textSigns_ != net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance()) {
+            textSigns_ =
+              net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
+          } else {
+            textSigns_ = value;
+          }
+          
+        }
+        /**
+         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         */
+        private void clearTextSigns() {  textSigns_ = null;
+          
+        }
+
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (messageId_ != 0L) {
@@ -389,6 +511,12 @@ public final class ProtoClientCondition {
           }
           if (documentId_ != 0L) {
             output.writeUInt64(3, documentId_);
+          }
+          if (mentions_ != null) {
+            output.writeMessage(4, getMentions());
+          }
+          if (textSigns_ != null) {
+            output.writeMessage(5, getTextSigns());
           }
         }
 
@@ -408,6 +536,14 @@ public final class ProtoClientCondition {
           if (documentId_ != 0L) {
             size += com.google.protobuf.CodedOutputStream
               .computeUInt64Size(3, documentId_);
+          }
+          if (mentions_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(4, getMentions());
+          }
+          if (textSigns_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(5, getTextSigns());
           }
           memoizedSerializedSize = size;
           return size;
@@ -581,6 +717,96 @@ public final class ProtoClientCondition {
             return this;
           }
 
+          /**
+           * <code>optional .proto.Mention mentions = 4;</code>
+           */
+          public boolean hasMentions() {
+            return instance.hasMentions();
+          }
+          /**
+           * <code>optional .proto.Mention mentions = 4;</code>
+           */
+          public net.iGap.proto.ProtoGlobal.Mention getMentions() {
+            return instance.getMentions();
+          }
+          /**
+           * <code>optional .proto.Mention mentions = 4;</code>
+           */
+          public Builder setMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+            copyOnWrite();
+            instance.setMentions(value);
+            return this;
+            }
+          /**
+           * <code>optional .proto.Mention mentions = 4;</code>
+           */
+          public Builder setMentions(
+              net.iGap.proto.ProtoGlobal.Mention.Builder builderForValue) {
+            copyOnWrite();
+            instance.setMentions(builderForValue);
+            return this;
+          }
+          /**
+           * <code>optional .proto.Mention mentions = 4;</code>
+           */
+          public Builder mergeMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+            copyOnWrite();
+            instance.mergeMentions(value);
+            return this;
+          }
+          /**
+           * <code>optional .proto.Mention mentions = 4;</code>
+           */
+          public Builder clearMentions() {  copyOnWrite();
+            instance.clearMentions();
+            return this;
+          }
+
+          /**
+           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           */
+          public boolean hasTextSigns() {
+            return instance.hasTextSigns();
+          }
+          /**
+           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           */
+          public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+            return instance.getTextSigns();
+          }
+          /**
+           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           */
+          public Builder setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+            copyOnWrite();
+            instance.setTextSigns(value);
+            return this;
+            }
+          /**
+           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           */
+          public Builder setTextSigns(
+              net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
+            copyOnWrite();
+            instance.setTextSigns(builderForValue);
+            return this;
+          }
+          /**
+           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           */
+          public Builder mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+            copyOnWrite();
+            instance.mergeTextSigns(value);
+            return this;
+          }
+          /**
+           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           */
+          public Builder clearTextSigns() {  copyOnWrite();
+            instance.clearTextSigns();
+            return this;
+          }
+
           // @@protoc_insertion_point(builder_scope:proto.ClientCondition.Room.OfflineEdited)
         }
         protected final Object dynamicMethod(
@@ -608,6 +834,8 @@ public final class ProtoClientCondition {
                   !other.message_.isEmpty(), other.message_);
               documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
                   other.documentId_ != 0L, other.documentId_);
+              mentions_ = visitor.visitMessage(mentions_, other.mentions_);
+              textSigns_ = visitor.visitMessage(textSigns_, other.textSigns_);
               if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                   .INSTANCE) {
               }
@@ -646,6 +874,32 @@ public final class ProtoClientCondition {
                     case 24: {
 
                       documentId_ = input.readUInt64();
+                      break;
+                    }
+                    case 34: {
+                      net.iGap.proto.ProtoGlobal.Mention.Builder subBuilder = null;
+                      if (mentions_ != null) {
+                        subBuilder = mentions_.toBuilder();
+                      }
+                      mentions_ = input.readMessage(net.iGap.proto.ProtoGlobal.Mention.parser(), extensionRegistry);
+                      if (subBuilder != null) {
+                        subBuilder.mergeFrom(mentions_);
+                        mentions_ = subBuilder.buildPartial();
+                      }
+
+                      break;
+                    }
+                    case 42: {
+                      net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
+                      if (textSigns_ != null) {
+                        subBuilder = textSigns_.toBuilder();
+                      }
+                      textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
+                      if (subBuilder != null) {
+                        subBuilder.mergeFrom(textSigns_);
+                        textSigns_ = subBuilder.buildPartial();
+                      }
+
                       break;
                     }
                   }

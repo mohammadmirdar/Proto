@@ -479,14 +479,23 @@ public final class ProtoClientPinRoom {
     net.iGap.proto.ProtoResponse.Response getResponse();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2 [deprecated = true];</code>
      */
-    long getRoomId();
+    @java.lang.Deprecated long getRoomId();
 
     /**
      * <code>optional uint64 pin_id = 3;</code>
      */
     long getPinId();
+
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    boolean hasRoom();
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Room getRoom();
   }
   /**
    * Protobuf type {@code proto.ClientPinRoomResponse}
@@ -553,20 +562,20 @@ public final class ProtoClientPinRoom {
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2 [deprecated = true];</code>
      */
-    public long getRoomId() {
+    @java.lang.Deprecated public long getRoomId() {
       return roomId_;
     }
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2 [deprecated = true];</code>
      */
     private void setRoomId(long value) {
       
       roomId_ = value;
     }
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2 [deprecated = true];</code>
      */
     private void clearRoomId() {
       
@@ -596,6 +605,58 @@ public final class ProtoClientPinRoom {
       pinId_ = 0L;
     }
 
+    public static final int ROOM_FIELD_NUMBER = 4;
+    private net.iGap.proto.ProtoGlobal.Room room_;
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    public boolean hasRoom() {
+      return room_ != null;
+    }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Room getRoom() {
+      return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+    }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    private void setRoom(net.iGap.proto.ProtoGlobal.Room value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      room_ = value;
+      
+      }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    private void setRoom(
+        net.iGap.proto.ProtoGlobal.Room.Builder builderForValue) {
+      room_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    private void mergeRoom(net.iGap.proto.ProtoGlobal.Room value) {
+      if (room_ != null &&
+          room_ != net.iGap.proto.ProtoGlobal.Room.getDefaultInstance()) {
+        room_ =
+          net.iGap.proto.ProtoGlobal.Room.newBuilder(room_).mergeFrom(value).buildPartial();
+      } else {
+        room_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    private void clearRoom() {  room_ = null;
+      
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -606,6 +667,9 @@ public final class ProtoClientPinRoom {
       }
       if (pinId_ != 0L) {
         output.writeUInt64(3, pinId_);
+      }
+      if (room_ != null) {
+        output.writeMessage(4, getRoom());
       }
     }
 
@@ -625,6 +689,10 @@ public final class ProtoClientPinRoom {
       if (pinId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, pinId_);
+      }
+      if (room_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getRoom());
       }
       memoizedSerializedSize = size;
       return size;
@@ -758,23 +826,23 @@ public final class ProtoClientPinRoom {
       }
 
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2 [deprecated = true];</code>
        */
-      public long getRoomId() {
+      @java.lang.Deprecated public long getRoomId() {
         return instance.getRoomId();
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2 [deprecated = true];</code>
        */
-      public Builder setRoomId(long value) {
+      @java.lang.Deprecated public Builder setRoomId(long value) {
         copyOnWrite();
         instance.setRoomId(value);
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2 [deprecated = true];</code>
        */
-      public Builder clearRoomId() {
+      @java.lang.Deprecated public Builder clearRoomId() {
         copyOnWrite();
         instance.clearRoomId();
         return this;
@@ -800,6 +868,51 @@ public final class ProtoClientPinRoom {
       public Builder clearPinId() {
         copyOnWrite();
         instance.clearPinId();
+        return this;
+      }
+
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public boolean hasRoom() {
+        return instance.hasRoom();
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Room getRoom() {
+        return instance.getRoom();
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder setRoom(net.iGap.proto.ProtoGlobal.Room value) {
+        copyOnWrite();
+        instance.setRoom(value);
+        return this;
+        }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder setRoom(
+          net.iGap.proto.ProtoGlobal.Room.Builder builderForValue) {
+        copyOnWrite();
+        instance.setRoom(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder mergeRoom(net.iGap.proto.ProtoGlobal.Room value) {
+        copyOnWrite();
+        instance.mergeRoom(value);
+        return this;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder clearRoom() {  copyOnWrite();
+        instance.clearRoom();
         return this;
       }
 
@@ -829,6 +942,7 @@ public final class ProtoClientPinRoom {
               other.roomId_ != 0L, other.roomId_);
           pinId_ = visitor.visitLong(pinId_ != 0L, pinId_,
               other.pinId_ != 0L, other.pinId_);
+          room_ = visitor.visitMessage(room_, other.room_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -874,6 +988,19 @@ public final class ProtoClientPinRoom {
                 case 24: {
 
                   pinId_ = input.readUInt64();
+                  break;
+                }
+                case 34: {
+                  net.iGap.proto.ProtoGlobal.Room.Builder subBuilder = null;
+                  if (room_ != null) {
+                    subBuilder = room_.toBuilder();
+                  }
+                  room_ = input.readMessage(net.iGap.proto.ProtoGlobal.Room.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(room_);
+                    room_ = subBuilder.buildPartial();
+                  }
+
                   break;
                 }
               }

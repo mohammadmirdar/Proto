@@ -35,6 +35,16 @@ public final class ProtoUserVerify {
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
+
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    java.lang.String getPhoneHash();
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPhoneHashBytes();
   }
   /**
    * Protobuf type {@code proto.UserVerify}
@@ -46,6 +56,7 @@ public final class ProtoUserVerify {
       UserVerifyOrBuilder {
     private UserVerify() {
       username_ = "";
+      phoneHash_ = "";
     }
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
@@ -168,6 +179,52 @@ public final class ProtoUserVerify {
       username_ = value.toStringUtf8();
     }
 
+    public static final int PHONE_HASH_FIELD_NUMBER = 4;
+    private java.lang.String phoneHash_;
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    public java.lang.String getPhoneHash() {
+      return phoneHash_;
+    }
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPhoneHashBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(phoneHash_);
+    }
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    private void setPhoneHash(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      phoneHash_ = value;
+    }
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    private void clearPhoneHash() {
+      
+      phoneHash_ = getDefaultInstance().getPhoneHash();
+    }
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    private void setPhoneHashBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      phoneHash_ = value.toStringUtf8();
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -178,6 +235,9 @@ public final class ProtoUserVerify {
       }
       if (!username_.isEmpty()) {
         output.writeString(3, getUsername());
+      }
+      if (!phoneHash_.isEmpty()) {
+        output.writeString(4, getPhoneHash());
       }
     }
 
@@ -197,6 +257,10 @@ public final class ProtoUserVerify {
       if (!username_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(3, getUsername());
+      }
+      if (!phoneHash_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, getPhoneHash());
       }
       memoizedSerializedSize = size;
       return size;
@@ -392,6 +456,46 @@ public final class ProtoUserVerify {
         return this;
       }
 
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public java.lang.String getPhoneHash() {
+        return instance.getPhoneHash();
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPhoneHashBytes() {
+        return instance.getPhoneHashBytes();
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public Builder setPhoneHash(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setPhoneHash(value);
+        return this;
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public Builder clearPhoneHash() {
+        copyOnWrite();
+        instance.clearPhoneHash();
+        return this;
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public Builder setPhoneHashBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setPhoneHashBytes(value);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.UserVerify)
     }
     protected final Object dynamicMethod(
@@ -418,6 +522,8 @@ public final class ProtoUserVerify {
               other.code_ != 0, other.code_);
           username_ = visitor.visitString(!username_.isEmpty(), username_,
               !other.username_.isEmpty(), other.username_);
+          phoneHash_ = visitor.visitString(!phoneHash_.isEmpty(), phoneHash_,
+              !other.phoneHash_.isEmpty(), other.phoneHash_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -464,6 +570,12 @@ public final class ProtoUserVerify {
                   String s = input.readStringRequireUtf8();
 
                   username_ = s;
+                  break;
+                }
+                case 34: {
+                  String s = input.readStringRequireUtf8();
+
+                  phoneHash_ = s;
                   break;
                 }
               }

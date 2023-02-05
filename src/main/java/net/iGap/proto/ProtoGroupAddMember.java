@@ -58,6 +58,11 @@ public final class ProtoGroupAddMember {
        * <code>optional uint64 start_message_id = 2;</code>
        */
       long getStartMessageId();
+
+      /**
+       * <code>optional uint64 start_document_id = 3;</code>
+       */
+      long getStartDocumentId();
     }
     /**
      * Protobuf type {@code proto.GroupAddMember.Member}
@@ -115,6 +120,29 @@ public final class ProtoGroupAddMember {
         startMessageId_ = 0L;
       }
 
+      public static final int START_DOCUMENT_ID_FIELD_NUMBER = 3;
+      private long startDocumentId_;
+      /**
+       * <code>optional uint64 start_document_id = 3;</code>
+       */
+      public long getStartDocumentId() {
+        return startDocumentId_;
+      }
+      /**
+       * <code>optional uint64 start_document_id = 3;</code>
+       */
+      private void setStartDocumentId(long value) {
+        
+        startDocumentId_ = value;
+      }
+      /**
+       * <code>optional uint64 start_document_id = 3;</code>
+       */
+      private void clearStartDocumentId() {
+        
+        startDocumentId_ = 0L;
+      }
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (userId_ != 0L) {
@@ -122,6 +150,9 @@ public final class ProtoGroupAddMember {
         }
         if (startMessageId_ != 0L) {
           output.writeUInt64(2, startMessageId_);
+        }
+        if (startDocumentId_ != 0L) {
+          output.writeUInt64(3, startDocumentId_);
         }
       }
 
@@ -137,6 +168,10 @@ public final class ProtoGroupAddMember {
         if (startMessageId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(2, startMessageId_);
+        }
+        if (startDocumentId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(3, startDocumentId_);
         }
         memoizedSerializedSize = size;
         return size;
@@ -270,6 +305,29 @@ public final class ProtoGroupAddMember {
           return this;
         }
 
+        /**
+         * <code>optional uint64 start_document_id = 3;</code>
+         */
+        public long getStartDocumentId() {
+          return instance.getStartDocumentId();
+        }
+        /**
+         * <code>optional uint64 start_document_id = 3;</code>
+         */
+        public Builder setStartDocumentId(long value) {
+          copyOnWrite();
+          instance.setStartDocumentId(value);
+          return this;
+        }
+        /**
+         * <code>optional uint64 start_document_id = 3;</code>
+         */
+        public Builder clearStartDocumentId() {
+          copyOnWrite();
+          instance.clearStartDocumentId();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:proto.GroupAddMember.Member)
       }
       protected final Object dynamicMethod(
@@ -295,6 +353,8 @@ public final class ProtoGroupAddMember {
                 other.userId_ != 0L, other.userId_);
             startMessageId_ = visitor.visitLong(startMessageId_ != 0L, startMessageId_,
                 other.startMessageId_ != 0L, other.startMessageId_);
+            startDocumentId_ = visitor.visitLong(startDocumentId_ != 0L, startDocumentId_,
+                other.startDocumentId_ != 0L, other.startDocumentId_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                 .INSTANCE) {
             }
@@ -327,6 +387,11 @@ public final class ProtoGroupAddMember {
                   case 16: {
 
                     startMessageId_ = input.readUInt64();
+                    break;
+                  }
+                  case 24: {
+
+                    startDocumentId_ = input.readUInt64();
                     break;
                   }
                 }
