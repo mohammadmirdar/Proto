@@ -8,137 +8,203 @@ public final class ProtoGeoGetNearbyDistance {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface GeoGetNearbyDistanceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.GeoGetNearbyDistance)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional double lat = 2;</code>
+     * <code>double lat = 2;</code>
+     * @return The lat.
      */
     double getLat();
 
     /**
-     * <code>optional double lon = 3;</code>
+     * <code>double lon = 3;</code>
+     * @return The lon.
      */
     double getLon();
   }
   /**
    * Protobuf type {@code proto.GeoGetNearbyDistance}
    */
-  public  static final class GeoGetNearbyDistance extends
-      com.google.protobuf.GeneratedMessageLite<
-          GeoGetNearbyDistance, GeoGetNearbyDistance.Builder> implements
+  public static final class GeoGetNearbyDistance extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.GeoGetNearbyDistance)
       GeoGetNearbyDistanceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GeoGetNearbyDistance.newBuilder() to construct.
+    private GeoGetNearbyDistance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private GeoGetNearbyDistance() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GeoGetNearbyDistance();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GeoGetNearbyDistance(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 17: {
+
+              lat_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              lon_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistance_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistance_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.class, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int LAT_FIELD_NUMBER = 2;
     private double lat_;
     /**
-     * <code>optional double lat = 2;</code>
+     * <code>double lat = 2;</code>
+     * @return The lat.
      */
+    @java.lang.Override
     public double getLat() {
       return lat_;
-    }
-    /**
-     * <code>optional double lat = 2;</code>
-     */
-    private void setLat(double value) {
-      
-      lat_ = value;
-    }
-    /**
-     * <code>optional double lat = 2;</code>
-     */
-    private void clearLat() {
-      
-      lat_ = 0D;
     }
 
     public static final int LON_FIELD_NUMBER = 3;
     private double lon_;
     /**
-     * <code>optional double lon = 3;</code>
+     * <code>double lon = 3;</code>
+     * @return The lon.
      */
+    @java.lang.Override
     public double getLon() {
       return lon_;
     }
-    /**
-     * <code>optional double lon = 3;</code>
-     */
-    private void setLon(double value) {
-      
-      lon_ = value;
-    }
-    /**
-     * <code>optional double lon = 3;</code>
-     */
-    private void clearLon() {
-      
-      lon_ = 0D;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -150,10 +216,12 @@ public final class ProtoGeoGetNearbyDistance {
       if (lon_ != 0D) {
         output.writeDouble(3, lon_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -169,314 +237,566 @@ public final class ProtoGeoGetNearbyDistance {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, lon_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance other = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (java.lang.Double.doubleToLongBits(getLat())
+          != java.lang.Double.doubleToLongBits(
+              other.getLat())) return false;
+      if (java.lang.Double.doubleToLongBits(getLon())
+          != java.lang.Double.doubleToLongBits(
+              other.getLon())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + LAT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLat()));
+      hash = (37 * hash) + LON_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLon()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.GeoGetNearbyDistance}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.GeoGetNearbyDistance)
         net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistance_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistance_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.class, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        lat_ = 0D;
 
+        lon_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistance_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance build() {
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance buildPartial() {
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance result = new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.lat_ = lat_;
+        result.lon_ = lon_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance) {
+          return mergeFrom((net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance other) {
+        if (other == net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getLat() != 0D) {
+          setLat(other.getLat());
+        }
+        if (other.getLon() != 0D) {
+          setLon(other.getLon());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private double lat_ ;
       /**
-       * <code>optional double lat = 2;</code>
+       * <code>double lat = 2;</code>
+       * @return The lat.
        */
+      @java.lang.Override
       public double getLat() {
-        return instance.getLat();
+        return lat_;
       }
       /**
-       * <code>optional double lat = 2;</code>
+       * <code>double lat = 2;</code>
+       * @param value The lat to set.
+       * @return This builder for chaining.
        */
       public Builder setLat(double value) {
-        copyOnWrite();
-        instance.setLat(value);
+        
+        lat_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional double lat = 2;</code>
+       * <code>double lat = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLat() {
-        copyOnWrite();
-        instance.clearLat();
+        
+        lat_ = 0D;
+        onChanged();
         return this;
       }
 
+      private double lon_ ;
       /**
-       * <code>optional double lon = 3;</code>
+       * <code>double lon = 3;</code>
+       * @return The lon.
        */
+      @java.lang.Override
       public double getLon() {
-        return instance.getLon();
+        return lon_;
       }
       /**
-       * <code>optional double lon = 3;</code>
+       * <code>double lon = 3;</code>
+       * @param value The lon to set.
+       * @return This builder for chaining.
        */
       public Builder setLon(double value) {
-        copyOnWrite();
-        instance.setLon(value);
+        
+        lon_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional double lon = 3;</code>
+       * <code>double lon = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLon() {
-        copyOnWrite();
-        instance.clearLon();
+        
+        lon_ = 0D;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.GeoGetNearbyDistance)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance other = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          lat_ = visitor.visitDouble(lat_ != 0D, lat_,
-              other.lat_ != 0D, other.lat_);
-          lon_ = visitor.visitDouble(lon_ != 0D, lon_,
-              other.lon_ != 0D, other.lon_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 17: {
-
-                  lat_ = input.readDouble();
-                  break;
-                }
-                case 25: {
-
-                  lon_ = input.readDouble();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.GeoGetNearbyDistance)
     private static final net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GeoGetNearbyDistance();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance();
     }
 
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<GeoGetNearbyDistance> PARSER;
+    private static final com.google.protobuf.Parser<GeoGetNearbyDistance>
+        PARSER = new com.google.protobuf.AbstractParser<GeoGetNearbyDistance>() {
+      @java.lang.Override
+      public GeoGetNearbyDistance parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GeoGetNearbyDistance(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<GeoGetNearbyDistance> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeoGetNearbyDistance> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistance getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface GeoGetNearbyDistanceResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.GeoGetNearbyDistanceResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
@@ -491,116 +811,280 @@ public final class ProtoGeoGetNearbyDistance {
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
      */
     int getResultCount();
+    /**
+     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder> 
+        getResultOrBuilderList();
+    /**
+     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+     */
+    net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder getResultOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.GeoGetNearbyDistanceResponse}
    */
-  public  static final class GeoGetNearbyDistanceResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          GeoGetNearbyDistanceResponse, GeoGetNearbyDistanceResponse.Builder> implements
+  public static final class GeoGetNearbyDistanceResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.GeoGetNearbyDistanceResponse)
       GeoGetNearbyDistanceResponseOrBuilder {
-    private GeoGetNearbyDistanceResponse() {
-      result_ = emptyProtobufList();
+  private static final long serialVersionUID = 0L;
+    // Use GeoGetNearbyDistanceResponse.newBuilder() to construct.
+    private GeoGetNearbyDistanceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private GeoGetNearbyDistanceResponse() {
+      result_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GeoGetNearbyDistanceResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GeoGetNearbyDistanceResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                result_ = new java.util.ArrayList<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              result_.add(
+                  input.readMessage(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          result_ = java.util.Collections.unmodifiableList(result_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.class, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Builder.class);
+    }
+
     public interface ResultOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.GeoGetNearbyDistanceResponse.Result)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 user_id = 1;</code>
+       * <code>uint64 user_id = 1;</code>
+       * @return The userId.
        */
       long getUserId();
 
       /**
-       * <code>optional bool has_comment = 2;</code>
+       * <code>bool has_comment = 2;</code>
+       * @return The hasComment.
        */
       boolean getHasComment();
 
       /**
-       * <code>optional uint32 distance = 3;</code>
+       * <code>uint32 distance = 3;</code>
+       * @return The distance.
        */
       int getDistance();
     }
     /**
      * Protobuf type {@code proto.GeoGetNearbyDistanceResponse.Result}
      */
-    public  static final class Result extends
-        com.google.protobuf.GeneratedMessageLite<
-            Result, Result.Builder> implements
+    public static final class Result extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.GeoGetNearbyDistanceResponse.Result)
         ResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Result.newBuilder() to construct.
+      private Result(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private Result() {
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Result();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Result(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                userId_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+
+                hasComment_ = input.readBool();
+                break;
+              }
+              case 24: {
+
+                distance_ = input.readUInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_Result_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_Result_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.class, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder.class);
+      }
+
       public static final int USER_ID_FIELD_NUMBER = 1;
       private long userId_;
       /**
-       * <code>optional uint64 user_id = 1;</code>
+       * <code>uint64 user_id = 1;</code>
+       * @return The userId.
        */
+      @java.lang.Override
       public long getUserId() {
         return userId_;
-      }
-      /**
-       * <code>optional uint64 user_id = 1;</code>
-       */
-      private void setUserId(long value) {
-        
-        userId_ = value;
-      }
-      /**
-       * <code>optional uint64 user_id = 1;</code>
-       */
-      private void clearUserId() {
-        
-        userId_ = 0L;
       }
 
       public static final int HAS_COMMENT_FIELD_NUMBER = 2;
       private boolean hasComment_;
       /**
-       * <code>optional bool has_comment = 2;</code>
+       * <code>bool has_comment = 2;</code>
+       * @return The hasComment.
        */
+      @java.lang.Override
       public boolean getHasComment() {
         return hasComment_;
-      }
-      /**
-       * <code>optional bool has_comment = 2;</code>
-       */
-      private void setHasComment(boolean value) {
-        
-        hasComment_ = value;
-      }
-      /**
-       * <code>optional bool has_comment = 2;</code>
-       */
-      private void clearHasComment() {
-        
-        hasComment_ = false;
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 3;
       private int distance_;
       /**
-       * <code>optional uint32 distance = 3;</code>
+       * <code>uint32 distance = 3;</code>
+       * @return The distance.
        */
+      @java.lang.Override
       public int getDistance() {
         return distance_;
       }
-      /**
-       * <code>optional uint32 distance = 3;</code>
-       */
-      private void setDistance(int value) {
-        
-        distance_ = value;
-      }
-      /**
-       * <code>optional uint32 distance = 3;</code>
-       */
-      private void clearDistance() {
-        
-        distance_ = 0;
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (userId_ != 0L) {
@@ -612,10 +1096,12 @@ public final class ProtoGeoGetNearbyDistance {
         if (distance_ != 0) {
           output.writeUInt32(3, distance_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -631,337 +1117,484 @@ public final class ProtoGeoGetNearbyDistance {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(3, distance_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result other = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result) obj;
+
+        if (getUserId()
+            != other.getUserId()) return false;
+        if (getHasComment()
+            != other.getHasComment()) return false;
+        if (getDistance()
+            != other.getDistance()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUserId());
+        hash = (37 * hash) + HAS_COMMENT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getHasComment());
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDistance();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.GeoGetNearbyDistanceResponse.Result}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.GeoGetNearbyDistanceResponse.Result)
           net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_Result_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_Result_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.class, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          userId_ = 0L;
 
+          hasComment_ = false;
+
+          distance_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_Result_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result build() {
+          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result buildPartial() {
+          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result result = new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result(this);
+          result.userId_ = userId_;
+          result.hasComment_ = hasComment_;
+          result.distance_ = distance_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result) {
+            return mergeFrom((net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result other) {
+          if (other == net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.getDefaultInstance()) return this;
+          if (other.getUserId() != 0L) {
+            setUserId(other.getUserId());
+          }
+          if (other.getHasComment() != false) {
+            setHasComment(other.getHasComment());
+          }
+          if (other.getDistance() != 0) {
+            setDistance(other.getDistance());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long userId_ ;
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>uint64 user_id = 1;</code>
+         * @return The userId.
          */
+        @java.lang.Override
         public long getUserId() {
-          return instance.getUserId();
+          return userId_;
         }
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>uint64 user_id = 1;</code>
+         * @param value The userId to set.
+         * @return This builder for chaining.
          */
         public Builder setUserId(long value) {
-          copyOnWrite();
-          instance.setUserId(value);
+          
+          userId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>uint64 user_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearUserId() {
-          copyOnWrite();
-          instance.clearUserId();
+          
+          userId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private boolean hasComment_ ;
         /**
-         * <code>optional bool has_comment = 2;</code>
+         * <code>bool has_comment = 2;</code>
+         * @return The hasComment.
          */
+        @java.lang.Override
         public boolean getHasComment() {
-          return instance.getHasComment();
+          return hasComment_;
         }
         /**
-         * <code>optional bool has_comment = 2;</code>
+         * <code>bool has_comment = 2;</code>
+         * @param value The hasComment to set.
+         * @return This builder for chaining.
          */
         public Builder setHasComment(boolean value) {
-          copyOnWrite();
-          instance.setHasComment(value);
+          
+          hasComment_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool has_comment = 2;</code>
+         * <code>bool has_comment = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearHasComment() {
-          copyOnWrite();
-          instance.clearHasComment();
+          
+          hasComment_ = false;
+          onChanged();
           return this;
         }
 
+        private int distance_ ;
         /**
-         * <code>optional uint32 distance = 3;</code>
+         * <code>uint32 distance = 3;</code>
+         * @return The distance.
          */
+        @java.lang.Override
         public int getDistance() {
-          return instance.getDistance();
+          return distance_;
         }
         /**
-         * <code>optional uint32 distance = 3;</code>
+         * <code>uint32 distance = 3;</code>
+         * @param value The distance to set.
+         * @return This builder for chaining.
          */
         public Builder setDistance(int value) {
-          copyOnWrite();
-          instance.setDistance(value);
+          
+          distance_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 distance = 3;</code>
+         * <code>uint32 distance = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDistance() {
-          copyOnWrite();
-          instance.clearDistance();
+          
+          distance_ = 0;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.GeoGetNearbyDistanceResponse.Result)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result other = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result) arg1;
-            userId_ = visitor.visitLong(userId_ != 0L, userId_,
-                other.userId_ != 0L, other.userId_);
-            hasComment_ = visitor.visitBoolean(hasComment_ != false, hasComment_,
-                other.hasComment_ != false, other.hasComment_);
-            distance_ = visitor.visitInt(distance_ != 0, distance_,
-                other.distance_ != 0, other.distance_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    userId_ = input.readUInt64();
-                    break;
-                  }
-                  case 16: {
-
-                    hasComment_ = input.readBool();
-                    break;
-                  }
-                  case 24: {
-
-                    distance_ = input.readUInt32();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.GeoGetNearbyDistanceResponse.Result)
       private static final net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Result();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result();
       }
 
       public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Result> PARSER;
+      private static final com.google.protobuf.Parser<Result>
+          PARSER = new com.google.protobuf.AbstractParser<Result>() {
+        @java.lang.Override
+        public Result parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Result(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Result> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Result> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int RESULT_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> result_;
+    private java.util.List<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> result_;
     /**
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> getResultList() {
       return result_;
     }
     /**
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder> 
         getResultOrBuilderList() {
       return result_;
@@ -969,108 +1602,38 @@ public final class ProtoGeoGetNearbyDistance {
     /**
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
      */
+    @java.lang.Override
     public int getResultCount() {
       return result_.size();
     }
     /**
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result getResult(int index) {
       return result_.get(index);
     }
     /**
      * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder getResultOrBuilder(
         int index) {
       return result_.get(index);
     }
-    private void ensureResultIsMutable() {
-      if (!result_.isModifiable()) {
-        result_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(result_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void setResult(
-        int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResultIsMutable();
-      result_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void setResult(
-        int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder builderForValue) {
-      ensureResultIsMutable();
-      result_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void addResult(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResultIsMutable();
-      result_.add(value);
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void addResult(
-        int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResultIsMutable();
-      result_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void addResult(
-        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder builderForValue) {
-      ensureResultIsMutable();
-      result_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void addResult(
-        int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder builderForValue) {
-      ensureResultIsMutable();
-      result_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void addAllResult(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> values) {
-      ensureResultIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, result_);
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void clearResult() {
-      result_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
-     */
-    private void removeResult(int index) {
-      ensureResultIsMutable();
-      result_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1079,10 +1642,12 @@ public final class ProtoGeoGetNearbyDistance {
       for (int i = 0; i < result_.size(); i++) {
         output.writeMessage(2, result_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1094,162 +1659,517 @@ public final class ProtoGeoGetNearbyDistance {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, result_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse other = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getResultList()
+          .equals(other.getResultList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getResultCount() > 0) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResultList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.GeoGetNearbyDistanceResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.GeoGetNearbyDistanceResponse)
         net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.class, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getResultFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          resultBuilder_.clear();
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.internal_static_proto_GeoGetNearbyDistanceResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse build() {
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse buildPartial() {
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse result = new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            result_ = java.util.Collections.unmodifiableList(result_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse) {
+          return mergeFrom((net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse other) {
+        if (other == net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (resultBuilder_ == null) {
+          if (!other.result_.isEmpty()) {
+            if (result_.isEmpty()) {
+              result_ = other.result_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResultIsMutable();
+              result_.addAll(other.result_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.result_.isEmpty()) {
+            if (resultBuilder_.isEmpty()) {
+              resultBuilder_.dispose();
+              resultBuilder_ = null;
+              result_ = other.result_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              resultBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResultFieldBuilder() : null;
+            } else {
+              resultBuilder_.addAllMessages(other.result_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> result_ =
+        java.util.Collections.emptyList();
+      private void ensureResultIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          result_ = new java.util.ArrayList<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result>(result_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder> resultBuilder_;
 
       /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> getResultList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getResultList());
+        if (resultBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(result_);
+        } else {
+          return resultBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public int getResultCount() {
-        return instance.getResultCount();
-      }/**
+        if (resultBuilder_ == null) {
+          return result_.size();
+        } else {
+          return resultBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result getResult(int index) {
-        return instance.getResult(index);
+        if (resultBuilder_ == null) {
+          return result_.get(index);
+        } else {
+          return resultBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public Builder setResult(
           int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result value) {
-        copyOnWrite();
-        instance.setResult(index, value);
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultIsMutable();
+          result_.set(index, value);
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1257,16 +2177,29 @@ public final class ProtoGeoGetNearbyDistance {
        */
       public Builder setResult(
           int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResult(index, builderForValue);
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public Builder addResult(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result value) {
-        copyOnWrite();
-        instance.addResult(value);
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultIsMutable();
+          result_.add(value);
+          onChanged();
+        } else {
+          resultBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -1274,8 +2207,16 @@ public final class ProtoGeoGetNearbyDistance {
        */
       public Builder addResult(
           int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result value) {
-        copyOnWrite();
-        instance.addResult(index, value);
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultIsMutable();
+          result_.add(index, value);
+          onChanged();
+        } else {
+          resultBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1283,8 +2224,13 @@ public final class ProtoGeoGetNearbyDistance {
        */
       public Builder addResult(
           net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder builderForValue) {
-        copyOnWrite();
-        instance.addResult(builderForValue);
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.add(builderForValue.build());
+          onChanged();
+        } else {
+          resultBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1292,8 +2238,13 @@ public final class ProtoGeoGetNearbyDistance {
        */
       public Builder addResult(
           int index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder builderForValue) {
-        copyOnWrite();
-        instance.addResult(index, builderForValue);
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1301,146 +2252,220 @@ public final class ProtoGeoGetNearbyDistance {
        */
       public Builder addAllResult(
           java.lang.Iterable<? extends net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result> values) {
-        copyOnWrite();
-        instance.addAllResult(values);
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, result_);
+          onChanged();
+        } else {
+          resultBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public Builder clearResult() {
-        copyOnWrite();
-        instance.clearResult();
+        if (resultBuilder_ == null) {
+          result_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          resultBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
        */
       public Builder removeResult(int index) {
-        copyOnWrite();
-        instance.removeResult(index);
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.remove(index);
+          onChanged();
+        } else {
+          resultBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+       */
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder getResultBuilder(
+          int index) {
+        return getResultFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+       */
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder getResultOrBuilder(
+          int index) {
+        if (resultBuilder_ == null) {
+          return result_.get(index);  } else {
+          return resultBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder> 
+           getResultOrBuilderList() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(result_);
+        }
+      }
+      /**
+       * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+       */
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder addResultBuilder() {
+        return getResultFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+       */
+      public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder addResultBuilder(
+          int index) {
+        return getResultFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.GeoGetNearbyDistanceResponse.Result result = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder> 
+           getResultBuilderList() {
+        return getResultFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.Builder, net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.ResultOrBuilder>(
+                  result_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.GeoGetNearbyDistanceResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          result_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse other = (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          result_= visitor.visitList(result_, other.result_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!result_.isModifiable()) {
-                    result_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(result_);
-                  }
-                  result_.add(
-                      input.readMessage(net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.Result.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.GeoGetNearbyDistanceResponse)
     private static final net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GeoGetNearbyDistanceResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse();
     }
 
     public static net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<GeoGetNearbyDistanceResponse> PARSER;
+    private static final com.google.protobuf.Parser<GeoGetNearbyDistanceResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GeoGetNearbyDistanceResponse>() {
+      @java.lang.Override
+      public GeoGetNearbyDistanceResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GeoGetNearbyDistanceResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<GeoGetNearbyDistanceResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeoGetNearbyDistanceResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoGeoGetNearbyDistance.GeoGetNearbyDistanceResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GeoGetNearbyDistance_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GeoGetNearbyDistance_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GeoGetNearbyDistanceResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GeoGetNearbyDistanceResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GeoGetNearbyDistanceResponse_Result_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GeoGetNearbyDistanceResponse_Result_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\032GeoGetNearbyDistance.proto\022\005proto\032\rReq" +
+      "uest.proto\032\016Response.proto\"Q\n\024GeoGetNear" +
+      "byDistance\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
+      "est\022\013\n\003lat\030\002 \001(\001\022\013\n\003lon\030\003 \001(\001\"\277\001\n\034GeoGet" +
+      "NearbyDistanceResponse\022!\n\010response\030\001 \001(\013" +
+      "2\017.proto.Response\022:\n\006result\030\002 \003(\0132*.prot" +
+      "o.GeoGetNearbyDistanceResponse.Result\032@\n" +
+      "\006Result\022\017\n\007user_id\030\001 \001(\004\022\023\n\013has_comment\030" +
+      "\002 \001(\010\022\020\n\010distance\030\003 \001(\rB+\n\016net.iGap.prot" +
+      "oB\031ProtoGeoGetNearbyDistanceb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_GeoGetNearbyDistance_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_GeoGetNearbyDistance_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GeoGetNearbyDistance_descriptor,
+        new java.lang.String[] { "Request", "Lat", "Lon", });
+    internal_static_proto_GeoGetNearbyDistanceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_GeoGetNearbyDistanceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GeoGetNearbyDistanceResponse_descriptor,
+        new java.lang.String[] { "Response", "Result", });
+    internal_static_proto_GeoGetNearbyDistanceResponse_Result_descriptor =
+      internal_static_proto_GeoGetNearbyDistanceResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_GeoGetNearbyDistanceResponse_Result_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GeoGetNearbyDistanceResponse_Result_descriptor,
+        new java.lang.String[] { "UserId", "HasComment", "Distance", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

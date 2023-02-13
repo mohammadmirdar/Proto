@@ -8,90 +8,170 @@ public final class ProtoUserSessionGetActiveList {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface UserSessionGetActiveListOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserSessionGetActiveList)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
   }
   /**
    * Protobuf type {@code proto.UserSessionGetActiveList}
    */
-  public  static final class UserSessionGetActiveList extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserSessionGetActiveList, UserSessionGetActiveList.Builder> implements
+  public static final class UserSessionGetActiveList extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserSessionGetActiveList)
       UserSessionGetActiveListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserSessionGetActiveList.newBuilder() to construct.
+    private UserSessionGetActiveList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserSessionGetActiveList() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserSessionGetActiveList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserSessionGetActiveList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.class, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -99,254 +179,480 @@ public final class ProtoUserSessionGetActiveList {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList other = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserSessionGetActiveList}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserSessionGetActiveList)
         net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.class, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveList_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList build() {
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList buildPartial() {
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList result = new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList) {
+          return mergeFrom((net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList other) {
+        if (other == net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserSessionGetActiveList)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList other = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserSessionGetActiveList)
     private static final net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserSessionGetActiveList();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList();
     }
 
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserSessionGetActiveList> PARSER;
+    private static final com.google.protobuf.Parser<UserSessionGetActiveList>
+        PARSER = new com.google.protobuf.AbstractParser<UserSessionGetActiveList>() {
+      @java.lang.Override
+      public UserSessionGetActiveList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserSessionGetActiveList(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserSessionGetActiveList> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserSessionGetActiveList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface UserSessionGetActiveListResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserSessionGetActiveListResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
@@ -361,135 +667,262 @@ public final class ProtoUserSessionGetActiveList {
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
      */
     int getSessionCount();
+    /**
+     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder> 
+        getSessionOrBuilderList();
+    /**
+     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+     */
+    net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder getSessionOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.UserSessionGetActiveListResponse}
    */
-  public  static final class UserSessionGetActiveListResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserSessionGetActiveListResponse, UserSessionGetActiveListResponse.Builder> implements
+  public static final class UserSessionGetActiveListResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserSessionGetActiveListResponse)
       UserSessionGetActiveListResponseOrBuilder {
-    private UserSessionGetActiveListResponse() {
-      session_ = emptyProtobufList();
+  private static final long serialVersionUID = 0L;
+    // Use UserSessionGetActiveListResponse.newBuilder() to construct.
+    private UserSessionGetActiveListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private UserSessionGetActiveListResponse() {
+      session_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserSessionGetActiveListResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserSessionGetActiveListResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                session_ = new java.util.ArrayList<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              session_.add(
+                  input.readMessage(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          session_ = java.util.Collections.unmodifiableList(session_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.class, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Builder.class);
+    }
+
     public interface SessionOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.UserSessionGetActiveListResponse.Session)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 session_id = 1;</code>
+       * <code>uint64 session_id = 1;</code>
+       * @return The sessionId.
        */
       long getSessionId();
 
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return The appName.
        */
       java.lang.String getAppName();
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return The bytes for appName.
        */
       com.google.protobuf.ByteString
           getAppNameBytes();
 
       /**
-       * <code>optional uint32 app_id = 3;</code>
+       * <code>uint32 app_id = 3;</code>
+       * @return The appId.
        */
       int getAppId();
 
       /**
-       * <code>optional uint32 app_build_version = 4;</code>
+       * <code>uint32 app_build_version = 4;</code>
+       * @return The appBuildVersion.
        */
       int getAppBuildVersion();
 
       /**
-       * <code>optional string app_version = 5;</code>
+       * <code>string app_version = 5;</code>
+       * @return The appVersion.
        */
       java.lang.String getAppVersion();
       /**
-       * <code>optional string app_version = 5;</code>
+       * <code>string app_version = 5;</code>
+       * @return The bytes for appVersion.
        */
       com.google.protobuf.ByteString
           getAppVersionBytes();
 
       /**
-       * <code>optional .proto.Platform platform = 6;</code>
+       * <code>.proto.Platform platform = 6;</code>
+       * @return The enum numeric value on the wire for platform.
        */
       int getPlatformValue();
       /**
-       * <code>optional .proto.Platform platform = 6;</code>
+       * <code>.proto.Platform platform = 6;</code>
+       * @return The platform.
        */
       net.iGap.proto.ProtoGlobal.Platform getPlatform();
 
       /**
-       * <code>optional string platform_version = 7;</code>
+       * <code>string platform_version = 7;</code>
+       * @return The platformVersion.
        */
       java.lang.String getPlatformVersion();
       /**
-       * <code>optional string platform_version = 7;</code>
+       * <code>string platform_version = 7;</code>
+       * @return The bytes for platformVersion.
        */
       com.google.protobuf.ByteString
           getPlatformVersionBytes();
 
       /**
-       * <code>optional .proto.Device device = 8;</code>
+       * <code>.proto.Device device = 8;</code>
+       * @return The enum numeric value on the wire for device.
        */
       int getDeviceValue();
       /**
-       * <code>optional .proto.Device device = 8;</code>
+       * <code>.proto.Device device = 8;</code>
+       * @return The device.
        */
       net.iGap.proto.ProtoGlobal.Device getDevice();
 
       /**
-       * <code>optional string device_name = 9;</code>
+       * <code>string device_name = 9;</code>
+       * @return The deviceName.
        */
       java.lang.String getDeviceName();
       /**
-       * <code>optional string device_name = 9;</code>
+       * <code>string device_name = 9;</code>
+       * @return The bytes for deviceName.
        */
       com.google.protobuf.ByteString
           getDeviceNameBytes();
 
       /**
-       * <code>optional .proto.Language language = 10;</code>
+       * <code>.proto.Language language = 10;</code>
+       * @return The enum numeric value on the wire for language.
        */
       int getLanguageValue();
       /**
-       * <code>optional .proto.Language language = 10;</code>
+       * <code>.proto.Language language = 10;</code>
+       * @return The language.
        */
       net.iGap.proto.ProtoGlobal.Language getLanguage();
 
       /**
-       * <code>optional string country = 11;</code>
+       * <code>string country = 11;</code>
+       * @return The country.
        */
       java.lang.String getCountry();
       /**
-       * <code>optional string country = 11;</code>
+       * <code>string country = 11;</code>
+       * @return The bytes for country.
        */
       com.google.protobuf.ByteString
           getCountryBytes();
 
       /**
-       * <code>optional bool current = 12;</code>
+       * <code>bool current = 12;</code>
+       * @return The current.
        */
       boolean getCurrent();
 
       /**
-       * <code>optional uint32 create_time = 13;</code>
+       * <code>uint32 create_time = 13;</code>
+       * @return The createTime.
        */
       int getCreateTime();
 
       /**
-       * <code>optional uint32 active_time = 14;</code>
+       * <code>uint32 active_time = 14;</code>
+       * @return The activeTime.
        */
       int getActiveTime();
 
       /**
-       * <code>optional string ip = 15;</code>
+       * <code>string ip = 15;</code>
+       * @return The ip.
        */
       java.lang.String getIp();
       /**
-       * <code>optional string ip = 15;</code>
+       * <code>string ip = 15;</code>
+       * @return The bytes for ip.
        */
       com.google.protobuf.ByteString
           getIpBytes();
@@ -497,557 +930,543 @@ public final class ProtoUserSessionGetActiveList {
     /**
      * Protobuf type {@code proto.UserSessionGetActiveListResponse.Session}
      */
-    public  static final class Session extends
-        com.google.protobuf.GeneratedMessageLite<
-            Session, Session.Builder> implements
+    public static final class Session extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.UserSessionGetActiveListResponse.Session)
         SessionOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Session.newBuilder() to construct.
+      private Session(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private Session() {
         appName_ = "";
         appVersion_ = "";
+        platform_ = 0;
         platformVersion_ = "";
+        device_ = 0;
         deviceName_ = "";
+        language_ = 0;
         country_ = "";
         ip_ = "";
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Session();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Session(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                sessionId_ = input.readUInt64();
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                appName_ = s;
+                break;
+              }
+              case 24: {
+
+                appId_ = input.readUInt32();
+                break;
+              }
+              case 32: {
+
+                appBuildVersion_ = input.readUInt32();
+                break;
+              }
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                appVersion_ = s;
+                break;
+              }
+              case 48: {
+                int rawValue = input.readEnum();
+
+                platform_ = rawValue;
+                break;
+              }
+              case 58: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                platformVersion_ = s;
+                break;
+              }
+              case 64: {
+                int rawValue = input.readEnum();
+
+                device_ = rawValue;
+                break;
+              }
+              case 74: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                deviceName_ = s;
+                break;
+              }
+              case 80: {
+                int rawValue = input.readEnum();
+
+                language_ = rawValue;
+                break;
+              }
+              case 90: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                country_ = s;
+                break;
+              }
+              case 96: {
+
+                current_ = input.readBool();
+                break;
+              }
+              case 104: {
+
+                createTime_ = input.readUInt32();
+                break;
+              }
+              case 112: {
+
+                activeTime_ = input.readUInt32();
+                break;
+              }
+              case 122: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                ip_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_Session_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_Session_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.class, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder.class);
+      }
+
       public static final int SESSION_ID_FIELD_NUMBER = 1;
       private long sessionId_;
       /**
-       * <code>optional uint64 session_id = 1;</code>
+       * <code>uint64 session_id = 1;</code>
+       * @return The sessionId.
        */
+      @java.lang.Override
       public long getSessionId() {
         return sessionId_;
       }
-      /**
-       * <code>optional uint64 session_id = 1;</code>
-       */
-      private void setSessionId(long value) {
-        
-        sessionId_ = value;
-      }
-      /**
-       * <code>optional uint64 session_id = 1;</code>
-       */
-      private void clearSessionId() {
-        
-        sessionId_ = 0L;
-      }
 
       public static final int APP_NAME_FIELD_NUMBER = 2;
-      private java.lang.String appName_;
+      private volatile java.lang.Object appName_;
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return The appName.
        */
+      @java.lang.Override
       public java.lang.String getAppName() {
-        return appName_;
+        java.lang.Object ref = appName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appName_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string app_name = 2;</code>
+       * <code>string app_name = 2;</code>
+       * @return The bytes for appName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getAppNameBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(appName_);
-      }
-      /**
-       * <code>optional string app_name = 2;</code>
-       */
-      private void setAppName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appName_ = value;
-      }
-      /**
-       * <code>optional string app_name = 2;</code>
-       */
-      private void clearAppName() {
-        
-        appName_ = getDefaultInstance().getAppName();
-      }
-      /**
-       * <code>optional string app_name = 2;</code>
-       */
-      private void setAppNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appName_ = value.toStringUtf8();
+        java.lang.Object ref = appName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int APP_ID_FIELD_NUMBER = 3;
       private int appId_;
       /**
-       * <code>optional uint32 app_id = 3;</code>
+       * <code>uint32 app_id = 3;</code>
+       * @return The appId.
        */
+      @java.lang.Override
       public int getAppId() {
         return appId_;
-      }
-      /**
-       * <code>optional uint32 app_id = 3;</code>
-       */
-      private void setAppId(int value) {
-        
-        appId_ = value;
-      }
-      /**
-       * <code>optional uint32 app_id = 3;</code>
-       */
-      private void clearAppId() {
-        
-        appId_ = 0;
       }
 
       public static final int APP_BUILD_VERSION_FIELD_NUMBER = 4;
       private int appBuildVersion_;
       /**
-       * <code>optional uint32 app_build_version = 4;</code>
+       * <code>uint32 app_build_version = 4;</code>
+       * @return The appBuildVersion.
        */
+      @java.lang.Override
       public int getAppBuildVersion() {
         return appBuildVersion_;
       }
-      /**
-       * <code>optional uint32 app_build_version = 4;</code>
-       */
-      private void setAppBuildVersion(int value) {
-        
-        appBuildVersion_ = value;
-      }
-      /**
-       * <code>optional uint32 app_build_version = 4;</code>
-       */
-      private void clearAppBuildVersion() {
-        
-        appBuildVersion_ = 0;
-      }
 
       public static final int APP_VERSION_FIELD_NUMBER = 5;
-      private java.lang.String appVersion_;
+      private volatile java.lang.Object appVersion_;
       /**
-       * <code>optional string app_version = 5;</code>
+       * <code>string app_version = 5;</code>
+       * @return The appVersion.
        */
+      @java.lang.Override
       public java.lang.String getAppVersion() {
-        return appVersion_;
+        java.lang.Object ref = appVersion_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appVersion_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string app_version = 5;</code>
+       * <code>string app_version = 5;</code>
+       * @return The bytes for appVersion.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getAppVersionBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(appVersion_);
-      }
-      /**
-       * <code>optional string app_version = 5;</code>
-       */
-      private void setAppVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appVersion_ = value;
-      }
-      /**
-       * <code>optional string app_version = 5;</code>
-       */
-      private void clearAppVersion() {
-        
-        appVersion_ = getDefaultInstance().getAppVersion();
-      }
-      /**
-       * <code>optional string app_version = 5;</code>
-       */
-      private void setAppVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appVersion_ = value.toStringUtf8();
+        java.lang.Object ref = appVersion_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int PLATFORM_FIELD_NUMBER = 6;
       private int platform_;
       /**
-       * <code>optional .proto.Platform platform = 6;</code>
+       * <code>.proto.Platform platform = 6;</code>
+       * @return The enum numeric value on the wire for platform.
        */
-      public int getPlatformValue() {
+      @java.lang.Override public int getPlatformValue() {
         return platform_;
       }
       /**
-       * <code>optional .proto.Platform platform = 6;</code>
+       * <code>.proto.Platform platform = 6;</code>
+       * @return The platform.
        */
-      public net.iGap.proto.ProtoGlobal.Platform getPlatform() {
-        net.iGap.proto.ProtoGlobal.Platform result = net.iGap.proto.ProtoGlobal.Platform.forNumber(platform_);
+      @java.lang.Override public net.iGap.proto.ProtoGlobal.Platform getPlatform() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.Platform result = net.iGap.proto.ProtoGlobal.Platform.valueOf(platform_);
         return result == null ? net.iGap.proto.ProtoGlobal.Platform.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .proto.Platform platform = 6;</code>
-       */
-      private void setPlatformValue(int value) {
-          platform_ = value;
-      }
-      /**
-       * <code>optional .proto.Platform platform = 6;</code>
-       */
-      private void setPlatform(net.iGap.proto.ProtoGlobal.Platform value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        platform_ = value.getNumber();
-      }
-      /**
-       * <code>optional .proto.Platform platform = 6;</code>
-       */
-      private void clearPlatform() {
-        
-        platform_ = 0;
       }
 
       public static final int PLATFORM_VERSION_FIELD_NUMBER = 7;
-      private java.lang.String platformVersion_;
+      private volatile java.lang.Object platformVersion_;
       /**
-       * <code>optional string platform_version = 7;</code>
+       * <code>string platform_version = 7;</code>
+       * @return The platformVersion.
        */
+      @java.lang.Override
       public java.lang.String getPlatformVersion() {
-        return platformVersion_;
+        java.lang.Object ref = platformVersion_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          platformVersion_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string platform_version = 7;</code>
+       * <code>string platform_version = 7;</code>
+       * @return The bytes for platformVersion.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getPlatformVersionBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(platformVersion_);
-      }
-      /**
-       * <code>optional string platform_version = 7;</code>
-       */
-      private void setPlatformVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        platformVersion_ = value;
-      }
-      /**
-       * <code>optional string platform_version = 7;</code>
-       */
-      private void clearPlatformVersion() {
-        
-        platformVersion_ = getDefaultInstance().getPlatformVersion();
-      }
-      /**
-       * <code>optional string platform_version = 7;</code>
-       */
-      private void setPlatformVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        platformVersion_ = value.toStringUtf8();
+        java.lang.Object ref = platformVersion_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          platformVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int DEVICE_FIELD_NUMBER = 8;
       private int device_;
       /**
-       * <code>optional .proto.Device device = 8;</code>
+       * <code>.proto.Device device = 8;</code>
+       * @return The enum numeric value on the wire for device.
        */
-      public int getDeviceValue() {
+      @java.lang.Override public int getDeviceValue() {
         return device_;
       }
       /**
-       * <code>optional .proto.Device device = 8;</code>
+       * <code>.proto.Device device = 8;</code>
+       * @return The device.
        */
-      public net.iGap.proto.ProtoGlobal.Device getDevice() {
-        net.iGap.proto.ProtoGlobal.Device result = net.iGap.proto.ProtoGlobal.Device.forNumber(device_);
+      @java.lang.Override public net.iGap.proto.ProtoGlobal.Device getDevice() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.Device result = net.iGap.proto.ProtoGlobal.Device.valueOf(device_);
         return result == null ? net.iGap.proto.ProtoGlobal.Device.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .proto.Device device = 8;</code>
-       */
-      private void setDeviceValue(int value) {
-          device_ = value;
-      }
-      /**
-       * <code>optional .proto.Device device = 8;</code>
-       */
-      private void setDevice(net.iGap.proto.ProtoGlobal.Device value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        device_ = value.getNumber();
-      }
-      /**
-       * <code>optional .proto.Device device = 8;</code>
-       */
-      private void clearDevice() {
-        
-        device_ = 0;
       }
 
       public static final int DEVICE_NAME_FIELD_NUMBER = 9;
-      private java.lang.String deviceName_;
+      private volatile java.lang.Object deviceName_;
       /**
-       * <code>optional string device_name = 9;</code>
+       * <code>string device_name = 9;</code>
+       * @return The deviceName.
        */
+      @java.lang.Override
       public java.lang.String getDeviceName() {
-        return deviceName_;
+        java.lang.Object ref = deviceName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceName_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string device_name = 9;</code>
+       * <code>string device_name = 9;</code>
+       * @return The bytes for deviceName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getDeviceNameBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(deviceName_);
-      }
-      /**
-       * <code>optional string device_name = 9;</code>
-       */
-      private void setDeviceName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deviceName_ = value;
-      }
-      /**
-       * <code>optional string device_name = 9;</code>
-       */
-      private void clearDeviceName() {
-        
-        deviceName_ = getDefaultInstance().getDeviceName();
-      }
-      /**
-       * <code>optional string device_name = 9;</code>
-       */
-      private void setDeviceNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deviceName_ = value.toStringUtf8();
+        java.lang.Object ref = deviceName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int LANGUAGE_FIELD_NUMBER = 10;
       private int language_;
       /**
-       * <code>optional .proto.Language language = 10;</code>
+       * <code>.proto.Language language = 10;</code>
+       * @return The enum numeric value on the wire for language.
        */
-      public int getLanguageValue() {
+      @java.lang.Override public int getLanguageValue() {
         return language_;
       }
       /**
-       * <code>optional .proto.Language language = 10;</code>
+       * <code>.proto.Language language = 10;</code>
+       * @return The language.
        */
-      public net.iGap.proto.ProtoGlobal.Language getLanguage() {
-        net.iGap.proto.ProtoGlobal.Language result = net.iGap.proto.ProtoGlobal.Language.forNumber(language_);
+      @java.lang.Override public net.iGap.proto.ProtoGlobal.Language getLanguage() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.Language result = net.iGap.proto.ProtoGlobal.Language.valueOf(language_);
         return result == null ? net.iGap.proto.ProtoGlobal.Language.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .proto.Language language = 10;</code>
-       */
-      private void setLanguageValue(int value) {
-          language_ = value;
-      }
-      /**
-       * <code>optional .proto.Language language = 10;</code>
-       */
-      private void setLanguage(net.iGap.proto.ProtoGlobal.Language value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        language_ = value.getNumber();
-      }
-      /**
-       * <code>optional .proto.Language language = 10;</code>
-       */
-      private void clearLanguage() {
-        
-        language_ = 0;
       }
 
       public static final int COUNTRY_FIELD_NUMBER = 11;
-      private java.lang.String country_;
+      private volatile java.lang.Object country_;
       /**
-       * <code>optional string country = 11;</code>
+       * <code>string country = 11;</code>
+       * @return The country.
        */
+      @java.lang.Override
       public java.lang.String getCountry() {
-        return country_;
+        java.lang.Object ref = country_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          country_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string country = 11;</code>
+       * <code>string country = 11;</code>
+       * @return The bytes for country.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getCountryBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(country_);
-      }
-      /**
-       * <code>optional string country = 11;</code>
-       */
-      private void setCountry(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        country_ = value;
-      }
-      /**
-       * <code>optional string country = 11;</code>
-       */
-      private void clearCountry() {
-        
-        country_ = getDefaultInstance().getCountry();
-      }
-      /**
-       * <code>optional string country = 11;</code>
-       */
-      private void setCountryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        country_ = value.toStringUtf8();
+        java.lang.Object ref = country_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          country_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int CURRENT_FIELD_NUMBER = 12;
       private boolean current_;
       /**
-       * <code>optional bool current = 12;</code>
+       * <code>bool current = 12;</code>
+       * @return The current.
        */
+      @java.lang.Override
       public boolean getCurrent() {
         return current_;
-      }
-      /**
-       * <code>optional bool current = 12;</code>
-       */
-      private void setCurrent(boolean value) {
-        
-        current_ = value;
-      }
-      /**
-       * <code>optional bool current = 12;</code>
-       */
-      private void clearCurrent() {
-        
-        current_ = false;
       }
 
       public static final int CREATE_TIME_FIELD_NUMBER = 13;
       private int createTime_;
       /**
-       * <code>optional uint32 create_time = 13;</code>
+       * <code>uint32 create_time = 13;</code>
+       * @return The createTime.
        */
+      @java.lang.Override
       public int getCreateTime() {
         return createTime_;
-      }
-      /**
-       * <code>optional uint32 create_time = 13;</code>
-       */
-      private void setCreateTime(int value) {
-        
-        createTime_ = value;
-      }
-      /**
-       * <code>optional uint32 create_time = 13;</code>
-       */
-      private void clearCreateTime() {
-        
-        createTime_ = 0;
       }
 
       public static final int ACTIVE_TIME_FIELD_NUMBER = 14;
       private int activeTime_;
       /**
-       * <code>optional uint32 active_time = 14;</code>
+       * <code>uint32 active_time = 14;</code>
+       * @return The activeTime.
        */
+      @java.lang.Override
       public int getActiveTime() {
         return activeTime_;
       }
-      /**
-       * <code>optional uint32 active_time = 14;</code>
-       */
-      private void setActiveTime(int value) {
-        
-        activeTime_ = value;
-      }
-      /**
-       * <code>optional uint32 active_time = 14;</code>
-       */
-      private void clearActiveTime() {
-        
-        activeTime_ = 0;
-      }
 
       public static final int IP_FIELD_NUMBER = 15;
-      private java.lang.String ip_;
+      private volatile java.lang.Object ip_;
       /**
-       * <code>optional string ip = 15;</code>
+       * <code>string ip = 15;</code>
+       * @return The ip.
        */
+      @java.lang.Override
       public java.lang.String getIp() {
-        return ip_;
+        java.lang.Object ref = ip_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ip_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string ip = 15;</code>
+       * <code>string ip = 15;</code>
+       * @return The bytes for ip.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getIpBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(ip_);
-      }
-      /**
-       * <code>optional string ip = 15;</code>
-       */
-      private void setIp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ip_ = value;
-      }
-      /**
-       * <code>optional string ip = 15;</code>
-       */
-      private void clearIp() {
-        
-        ip_ = getDefaultInstance().getIp();
-      }
-      /**
-       * <code>optional string ip = 15;</code>
-       */
-      private void setIpBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ip_ = value.toStringUtf8();
+        java.lang.Object ref = ip_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ip_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (sessionId_ != 0L) {
           output.writeUInt64(1, sessionId_);
         }
-        if (!appName_.isEmpty()) {
-          output.writeString(2, getAppName());
+        if (!getAppNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appName_);
         }
         if (appId_ != 0) {
           output.writeUInt32(3, appId_);
@@ -1055,26 +1474,26 @@ public final class ProtoUserSessionGetActiveList {
         if (appBuildVersion_ != 0) {
           output.writeUInt32(4, appBuildVersion_);
         }
-        if (!appVersion_.isEmpty()) {
-          output.writeString(5, getAppVersion());
+        if (!getAppVersionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appVersion_);
         }
         if (platform_ != net.iGap.proto.ProtoGlobal.Platform.UNKNOWN_PLATFORM.getNumber()) {
           output.writeEnum(6, platform_);
         }
-        if (!platformVersion_.isEmpty()) {
-          output.writeString(7, getPlatformVersion());
+        if (!getPlatformVersionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 7, platformVersion_);
         }
         if (device_ != net.iGap.proto.ProtoGlobal.Device.UNKNOWN_DEVICE.getNumber()) {
           output.writeEnum(8, device_);
         }
-        if (!deviceName_.isEmpty()) {
-          output.writeString(9, getDeviceName());
+        if (!getDeviceNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 9, deviceName_);
         }
         if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
           output.writeEnum(10, language_);
         }
-        if (!country_.isEmpty()) {
-          output.writeString(11, getCountry());
+        if (!getCountryBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 11, country_);
         }
         if (current_ != false) {
           output.writeBool(12, current_);
@@ -1085,13 +1504,15 @@ public final class ProtoUserSessionGetActiveList {
         if (activeTime_ != 0) {
           output.writeUInt32(14, activeTime_);
         }
-        if (!ip_.isEmpty()) {
-          output.writeString(15, getIp());
+        if (!getIpBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 15, ip_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -1099,9 +1520,8 @@ public final class ProtoUserSessionGetActiveList {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(1, sessionId_);
         }
-        if (!appName_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(2, getAppName());
+        if (!getAppNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appName_);
         }
         if (appId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
@@ -1111,33 +1531,29 @@ public final class ProtoUserSessionGetActiveList {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(4, appBuildVersion_);
         }
-        if (!appVersion_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(5, getAppVersion());
+        if (!getAppVersionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appVersion_);
         }
         if (platform_ != net.iGap.proto.ProtoGlobal.Platform.UNKNOWN_PLATFORM.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(6, platform_);
         }
-        if (!platformVersion_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(7, getPlatformVersion());
+        if (!getPlatformVersionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, platformVersion_);
         }
         if (device_ != net.iGap.proto.ProtoGlobal.Device.UNKNOWN_DEVICE.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(8, device_);
         }
-        if (!deviceName_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(9, getDeviceName());
+        if (!getDeviceNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, deviceName_);
         }
         if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(10, language_);
         }
-        if (!country_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(11, getCountry());
+        if (!getCountryBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, country_);
         }
         if (current_ != false) {
           size += com.google.protobuf.CodedOutputStream
@@ -1151,851 +1567,1321 @@ public final class ProtoUserSessionGetActiveList {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(14, activeTime_);
         }
-        if (!ip_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(15, getIp());
+        if (!getIpBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, ip_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session other = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session) obj;
+
+        if (getSessionId()
+            != other.getSessionId()) return false;
+        if (!getAppName()
+            .equals(other.getAppName())) return false;
+        if (getAppId()
+            != other.getAppId()) return false;
+        if (getAppBuildVersion()
+            != other.getAppBuildVersion()) return false;
+        if (!getAppVersion()
+            .equals(other.getAppVersion())) return false;
+        if (platform_ != other.platform_) return false;
+        if (!getPlatformVersion()
+            .equals(other.getPlatformVersion())) return false;
+        if (device_ != other.device_) return false;
+        if (!getDeviceName()
+            .equals(other.getDeviceName())) return false;
+        if (language_ != other.language_) return false;
+        if (!getCountry()
+            .equals(other.getCountry())) return false;
+        if (getCurrent()
+            != other.getCurrent()) return false;
+        if (getCreateTime()
+            != other.getCreateTime()) return false;
+        if (getActiveTime()
+            != other.getActiveTime()) return false;
+        if (!getIp()
+            .equals(other.getIp())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getSessionId());
+        hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getAppName().hashCode();
+        hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getAppId();
+        hash = (37 * hash) + APP_BUILD_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getAppBuildVersion();
+        hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getAppVersion().hashCode();
+        hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+        hash = (53 * hash) + platform_;
+        hash = (37 * hash) + PLATFORM_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatformVersion().hashCode();
+        hash = (37 * hash) + DEVICE_FIELD_NUMBER;
+        hash = (53 * hash) + device_;
+        hash = (37 * hash) + DEVICE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceName().hashCode();
+        hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+        hash = (53 * hash) + language_;
+        hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+        hash = (53 * hash) + getCountry().hashCode();
+        hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getCurrent());
+        hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTime();
+        hash = (37 * hash) + ACTIVE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getActiveTime();
+        hash = (37 * hash) + IP_FIELD_NUMBER;
+        hash = (53 * hash) + getIp().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.UserSessionGetActiveListResponse.Session}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.UserSessionGetActiveListResponse.Session)
           net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_Session_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_Session_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.class, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          sessionId_ = 0L;
 
+          appName_ = "";
+
+          appId_ = 0;
+
+          appBuildVersion_ = 0;
+
+          appVersion_ = "";
+
+          platform_ = 0;
+
+          platformVersion_ = "";
+
+          device_ = 0;
+
+          deviceName_ = "";
+
+          language_ = 0;
+
+          country_ = "";
+
+          current_ = false;
+
+          createTime_ = 0;
+
+          activeTime_ = 0;
+
+          ip_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_Session_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session build() {
+          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session buildPartial() {
+          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session result = new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session(this);
+          result.sessionId_ = sessionId_;
+          result.appName_ = appName_;
+          result.appId_ = appId_;
+          result.appBuildVersion_ = appBuildVersion_;
+          result.appVersion_ = appVersion_;
+          result.platform_ = platform_;
+          result.platformVersion_ = platformVersion_;
+          result.device_ = device_;
+          result.deviceName_ = deviceName_;
+          result.language_ = language_;
+          result.country_ = country_;
+          result.current_ = current_;
+          result.createTime_ = createTime_;
+          result.activeTime_ = activeTime_;
+          result.ip_ = ip_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session) {
+            return mergeFrom((net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session other) {
+          if (other == net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.getDefaultInstance()) return this;
+          if (other.getSessionId() != 0L) {
+            setSessionId(other.getSessionId());
+          }
+          if (!other.getAppName().isEmpty()) {
+            appName_ = other.appName_;
+            onChanged();
+          }
+          if (other.getAppId() != 0) {
+            setAppId(other.getAppId());
+          }
+          if (other.getAppBuildVersion() != 0) {
+            setAppBuildVersion(other.getAppBuildVersion());
+          }
+          if (!other.getAppVersion().isEmpty()) {
+            appVersion_ = other.appVersion_;
+            onChanged();
+          }
+          if (other.platform_ != 0) {
+            setPlatformValue(other.getPlatformValue());
+          }
+          if (!other.getPlatformVersion().isEmpty()) {
+            platformVersion_ = other.platformVersion_;
+            onChanged();
+          }
+          if (other.device_ != 0) {
+            setDeviceValue(other.getDeviceValue());
+          }
+          if (!other.getDeviceName().isEmpty()) {
+            deviceName_ = other.deviceName_;
+            onChanged();
+          }
+          if (other.language_ != 0) {
+            setLanguageValue(other.getLanguageValue());
+          }
+          if (!other.getCountry().isEmpty()) {
+            country_ = other.country_;
+            onChanged();
+          }
+          if (other.getCurrent() != false) {
+            setCurrent(other.getCurrent());
+          }
+          if (other.getCreateTime() != 0) {
+            setCreateTime(other.getCreateTime());
+          }
+          if (other.getActiveTime() != 0) {
+            setActiveTime(other.getActiveTime());
+          }
+          if (!other.getIp().isEmpty()) {
+            ip_ = other.ip_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long sessionId_ ;
         /**
-         * <code>optional uint64 session_id = 1;</code>
+         * <code>uint64 session_id = 1;</code>
+         * @return The sessionId.
          */
+        @java.lang.Override
         public long getSessionId() {
-          return instance.getSessionId();
+          return sessionId_;
         }
         /**
-         * <code>optional uint64 session_id = 1;</code>
+         * <code>uint64 session_id = 1;</code>
+         * @param value The sessionId to set.
+         * @return This builder for chaining.
          */
         public Builder setSessionId(long value) {
-          copyOnWrite();
-          instance.setSessionId(value);
+          
+          sessionId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 session_id = 1;</code>
+         * <code>uint64 session_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearSessionId() {
-          copyOnWrite();
-          instance.clearSessionId();
+          
+          sessionId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object appName_ = "";
         /**
-         * <code>optional string app_name = 2;</code>
+         * <code>string app_name = 2;</code>
+         * @return The appName.
          */
         public java.lang.String getAppName() {
-          return instance.getAppName();
+          java.lang.Object ref = appName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            appName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string app_name = 2;</code>
+         * <code>string app_name = 2;</code>
+         * @return The bytes for appName.
          */
         public com.google.protobuf.ByteString
             getAppNameBytes() {
-          return instance.getAppNameBytes();
+          java.lang.Object ref = appName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            appName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string app_name = 2;</code>
+         * <code>string app_name = 2;</code>
+         * @param value The appName to set.
+         * @return This builder for chaining.
          */
         public Builder setAppName(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setAppName(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          appName_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string app_name = 2;</code>
+         * <code>string app_name = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAppName() {
-          copyOnWrite();
-          instance.clearAppName();
+          
+          appName_ = getDefaultInstance().getAppName();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string app_name = 2;</code>
+         * <code>string app_name = 2;</code>
+         * @param value The bytes for appName to set.
+         * @return This builder for chaining.
          */
         public Builder setAppNameBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setAppNameBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          appName_ = value;
+          onChanged();
           return this;
         }
 
+        private int appId_ ;
         /**
-         * <code>optional uint32 app_id = 3;</code>
+         * <code>uint32 app_id = 3;</code>
+         * @return The appId.
          */
+        @java.lang.Override
         public int getAppId() {
-          return instance.getAppId();
+          return appId_;
         }
         /**
-         * <code>optional uint32 app_id = 3;</code>
+         * <code>uint32 app_id = 3;</code>
+         * @param value The appId to set.
+         * @return This builder for chaining.
          */
         public Builder setAppId(int value) {
-          copyOnWrite();
-          instance.setAppId(value);
+          
+          appId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 app_id = 3;</code>
+         * <code>uint32 app_id = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAppId() {
-          copyOnWrite();
-          instance.clearAppId();
+          
+          appId_ = 0;
+          onChanged();
           return this;
         }
 
+        private int appBuildVersion_ ;
         /**
-         * <code>optional uint32 app_build_version = 4;</code>
+         * <code>uint32 app_build_version = 4;</code>
+         * @return The appBuildVersion.
          */
+        @java.lang.Override
         public int getAppBuildVersion() {
-          return instance.getAppBuildVersion();
+          return appBuildVersion_;
         }
         /**
-         * <code>optional uint32 app_build_version = 4;</code>
+         * <code>uint32 app_build_version = 4;</code>
+         * @param value The appBuildVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setAppBuildVersion(int value) {
-          copyOnWrite();
-          instance.setAppBuildVersion(value);
+          
+          appBuildVersion_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 app_build_version = 4;</code>
+         * <code>uint32 app_build_version = 4;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAppBuildVersion() {
-          copyOnWrite();
-          instance.clearAppBuildVersion();
+          
+          appBuildVersion_ = 0;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object appVersion_ = "";
         /**
-         * <code>optional string app_version = 5;</code>
+         * <code>string app_version = 5;</code>
+         * @return The appVersion.
          */
         public java.lang.String getAppVersion() {
-          return instance.getAppVersion();
+          java.lang.Object ref = appVersion_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            appVersion_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string app_version = 5;</code>
+         * <code>string app_version = 5;</code>
+         * @return The bytes for appVersion.
          */
         public com.google.protobuf.ByteString
             getAppVersionBytes() {
-          return instance.getAppVersionBytes();
+          java.lang.Object ref = appVersion_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            appVersion_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string app_version = 5;</code>
+         * <code>string app_version = 5;</code>
+         * @param value The appVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setAppVersion(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setAppVersion(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          appVersion_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string app_version = 5;</code>
+         * <code>string app_version = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAppVersion() {
-          copyOnWrite();
-          instance.clearAppVersion();
+          
+          appVersion_ = getDefaultInstance().getAppVersion();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string app_version = 5;</code>
+         * <code>string app_version = 5;</code>
+         * @param value The bytes for appVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setAppVersionBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setAppVersionBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          appVersion_ = value;
+          onChanged();
           return this;
         }
 
+        private int platform_ = 0;
         /**
-         * <code>optional .proto.Platform platform = 6;</code>
+         * <code>.proto.Platform platform = 6;</code>
+         * @return The enum numeric value on the wire for platform.
          */
-        public int getPlatformValue() {
-          return instance.getPlatformValue();
+        @java.lang.Override public int getPlatformValue() {
+          return platform_;
         }
         /**
-         * <code>optional .proto.Platform platform = 6;</code>
+         * <code>.proto.Platform platform = 6;</code>
+         * @param value The enum numeric value on the wire for platform to set.
+         * @return This builder for chaining.
          */
         public Builder setPlatformValue(int value) {
-          copyOnWrite();
-          instance.setPlatformValue(value);
+          
+          platform_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.Platform platform = 6;</code>
+         * <code>.proto.Platform platform = 6;</code>
+         * @return The platform.
          */
+        @java.lang.Override
         public net.iGap.proto.ProtoGlobal.Platform getPlatform() {
-          return instance.getPlatform();
+          @SuppressWarnings("deprecation")
+          net.iGap.proto.ProtoGlobal.Platform result = net.iGap.proto.ProtoGlobal.Platform.valueOf(platform_);
+          return result == null ? net.iGap.proto.ProtoGlobal.Platform.UNRECOGNIZED : result;
         }
         /**
-         * <code>optional .proto.Platform platform = 6;</code>
+         * <code>.proto.Platform platform = 6;</code>
+         * @param value The platform to set.
+         * @return This builder for chaining.
          */
         public Builder setPlatform(net.iGap.proto.ProtoGlobal.Platform value) {
-          copyOnWrite();
-          instance.setPlatform(value);
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          platform_ = value.getNumber();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.Platform platform = 6;</code>
+         * <code>.proto.Platform platform = 6;</code>
+         * @return This builder for chaining.
          */
         public Builder clearPlatform() {
-          copyOnWrite();
-          instance.clearPlatform();
+          
+          platform_ = 0;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object platformVersion_ = "";
         /**
-         * <code>optional string platform_version = 7;</code>
+         * <code>string platform_version = 7;</code>
+         * @return The platformVersion.
          */
         public java.lang.String getPlatformVersion() {
-          return instance.getPlatformVersion();
+          java.lang.Object ref = platformVersion_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            platformVersion_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string platform_version = 7;</code>
+         * <code>string platform_version = 7;</code>
+         * @return The bytes for platformVersion.
          */
         public com.google.protobuf.ByteString
             getPlatformVersionBytes() {
-          return instance.getPlatformVersionBytes();
+          java.lang.Object ref = platformVersion_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            platformVersion_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string platform_version = 7;</code>
+         * <code>string platform_version = 7;</code>
+         * @param value The platformVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setPlatformVersion(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setPlatformVersion(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          platformVersion_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string platform_version = 7;</code>
+         * <code>string platform_version = 7;</code>
+         * @return This builder for chaining.
          */
         public Builder clearPlatformVersion() {
-          copyOnWrite();
-          instance.clearPlatformVersion();
+          
+          platformVersion_ = getDefaultInstance().getPlatformVersion();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string platform_version = 7;</code>
+         * <code>string platform_version = 7;</code>
+         * @param value The bytes for platformVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setPlatformVersionBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setPlatformVersionBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          platformVersion_ = value;
+          onChanged();
           return this;
         }
 
+        private int device_ = 0;
         /**
-         * <code>optional .proto.Device device = 8;</code>
+         * <code>.proto.Device device = 8;</code>
+         * @return The enum numeric value on the wire for device.
          */
-        public int getDeviceValue() {
-          return instance.getDeviceValue();
+        @java.lang.Override public int getDeviceValue() {
+          return device_;
         }
         /**
-         * <code>optional .proto.Device device = 8;</code>
+         * <code>.proto.Device device = 8;</code>
+         * @param value The enum numeric value on the wire for device to set.
+         * @return This builder for chaining.
          */
         public Builder setDeviceValue(int value) {
-          copyOnWrite();
-          instance.setDeviceValue(value);
+          
+          device_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.Device device = 8;</code>
+         * <code>.proto.Device device = 8;</code>
+         * @return The device.
          */
+        @java.lang.Override
         public net.iGap.proto.ProtoGlobal.Device getDevice() {
-          return instance.getDevice();
+          @SuppressWarnings("deprecation")
+          net.iGap.proto.ProtoGlobal.Device result = net.iGap.proto.ProtoGlobal.Device.valueOf(device_);
+          return result == null ? net.iGap.proto.ProtoGlobal.Device.UNRECOGNIZED : result;
         }
         /**
-         * <code>optional .proto.Device device = 8;</code>
+         * <code>.proto.Device device = 8;</code>
+         * @param value The device to set.
+         * @return This builder for chaining.
          */
         public Builder setDevice(net.iGap.proto.ProtoGlobal.Device value) {
-          copyOnWrite();
-          instance.setDevice(value);
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          device_ = value.getNumber();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.Device device = 8;</code>
+         * <code>.proto.Device device = 8;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDevice() {
-          copyOnWrite();
-          instance.clearDevice();
+          
+          device_ = 0;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object deviceName_ = "";
         /**
-         * <code>optional string device_name = 9;</code>
+         * <code>string device_name = 9;</code>
+         * @return The deviceName.
          */
         public java.lang.String getDeviceName() {
-          return instance.getDeviceName();
+          java.lang.Object ref = deviceName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deviceName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string device_name = 9;</code>
+         * <code>string device_name = 9;</code>
+         * @return The bytes for deviceName.
          */
         public com.google.protobuf.ByteString
             getDeviceNameBytes() {
-          return instance.getDeviceNameBytes();
+          java.lang.Object ref = deviceName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            deviceName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string device_name = 9;</code>
+         * <code>string device_name = 9;</code>
+         * @param value The deviceName to set.
+         * @return This builder for chaining.
          */
         public Builder setDeviceName(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setDeviceName(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          deviceName_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string device_name = 9;</code>
+         * <code>string device_name = 9;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDeviceName() {
-          copyOnWrite();
-          instance.clearDeviceName();
+          
+          deviceName_ = getDefaultInstance().getDeviceName();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string device_name = 9;</code>
+         * <code>string device_name = 9;</code>
+         * @param value The bytes for deviceName to set.
+         * @return This builder for chaining.
          */
         public Builder setDeviceNameBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setDeviceNameBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          deviceName_ = value;
+          onChanged();
           return this;
         }
 
+        private int language_ = 0;
         /**
-         * <code>optional .proto.Language language = 10;</code>
+         * <code>.proto.Language language = 10;</code>
+         * @return The enum numeric value on the wire for language.
          */
-        public int getLanguageValue() {
-          return instance.getLanguageValue();
+        @java.lang.Override public int getLanguageValue() {
+          return language_;
         }
         /**
-         * <code>optional .proto.Language language = 10;</code>
+         * <code>.proto.Language language = 10;</code>
+         * @param value The enum numeric value on the wire for language to set.
+         * @return This builder for chaining.
          */
         public Builder setLanguageValue(int value) {
-          copyOnWrite();
-          instance.setLanguageValue(value);
+          
+          language_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.Language language = 10;</code>
+         * <code>.proto.Language language = 10;</code>
+         * @return The language.
          */
+        @java.lang.Override
         public net.iGap.proto.ProtoGlobal.Language getLanguage() {
-          return instance.getLanguage();
+          @SuppressWarnings("deprecation")
+          net.iGap.proto.ProtoGlobal.Language result = net.iGap.proto.ProtoGlobal.Language.valueOf(language_);
+          return result == null ? net.iGap.proto.ProtoGlobal.Language.UNRECOGNIZED : result;
         }
         /**
-         * <code>optional .proto.Language language = 10;</code>
+         * <code>.proto.Language language = 10;</code>
+         * @param value The language to set.
+         * @return This builder for chaining.
          */
         public Builder setLanguage(net.iGap.proto.ProtoGlobal.Language value) {
-          copyOnWrite();
-          instance.setLanguage(value);
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          language_ = value.getNumber();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.Language language = 10;</code>
+         * <code>.proto.Language language = 10;</code>
+         * @return This builder for chaining.
          */
         public Builder clearLanguage() {
-          copyOnWrite();
-          instance.clearLanguage();
+          
+          language_ = 0;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object country_ = "";
         /**
-         * <code>optional string country = 11;</code>
+         * <code>string country = 11;</code>
+         * @return The country.
          */
         public java.lang.String getCountry() {
-          return instance.getCountry();
+          java.lang.Object ref = country_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            country_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string country = 11;</code>
+         * <code>string country = 11;</code>
+         * @return The bytes for country.
          */
         public com.google.protobuf.ByteString
             getCountryBytes() {
-          return instance.getCountryBytes();
+          java.lang.Object ref = country_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            country_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string country = 11;</code>
+         * <code>string country = 11;</code>
+         * @param value The country to set.
+         * @return This builder for chaining.
          */
         public Builder setCountry(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setCountry(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          country_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string country = 11;</code>
+         * <code>string country = 11;</code>
+         * @return This builder for chaining.
          */
         public Builder clearCountry() {
-          copyOnWrite();
-          instance.clearCountry();
+          
+          country_ = getDefaultInstance().getCountry();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string country = 11;</code>
+         * <code>string country = 11;</code>
+         * @param value The bytes for country to set.
+         * @return This builder for chaining.
          */
         public Builder setCountryBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setCountryBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          country_ = value;
+          onChanged();
           return this;
         }
 
+        private boolean current_ ;
         /**
-         * <code>optional bool current = 12;</code>
+         * <code>bool current = 12;</code>
+         * @return The current.
          */
+        @java.lang.Override
         public boolean getCurrent() {
-          return instance.getCurrent();
+          return current_;
         }
         /**
-         * <code>optional bool current = 12;</code>
+         * <code>bool current = 12;</code>
+         * @param value The current to set.
+         * @return This builder for chaining.
          */
         public Builder setCurrent(boolean value) {
-          copyOnWrite();
-          instance.setCurrent(value);
+          
+          current_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool current = 12;</code>
+         * <code>bool current = 12;</code>
+         * @return This builder for chaining.
          */
         public Builder clearCurrent() {
-          copyOnWrite();
-          instance.clearCurrent();
+          
+          current_ = false;
+          onChanged();
           return this;
         }
 
+        private int createTime_ ;
         /**
-         * <code>optional uint32 create_time = 13;</code>
+         * <code>uint32 create_time = 13;</code>
+         * @return The createTime.
          */
+        @java.lang.Override
         public int getCreateTime() {
-          return instance.getCreateTime();
+          return createTime_;
         }
         /**
-         * <code>optional uint32 create_time = 13;</code>
+         * <code>uint32 create_time = 13;</code>
+         * @param value The createTime to set.
+         * @return This builder for chaining.
          */
         public Builder setCreateTime(int value) {
-          copyOnWrite();
-          instance.setCreateTime(value);
+          
+          createTime_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 create_time = 13;</code>
+         * <code>uint32 create_time = 13;</code>
+         * @return This builder for chaining.
          */
         public Builder clearCreateTime() {
-          copyOnWrite();
-          instance.clearCreateTime();
+          
+          createTime_ = 0;
+          onChanged();
           return this;
         }
 
+        private int activeTime_ ;
         /**
-         * <code>optional uint32 active_time = 14;</code>
+         * <code>uint32 active_time = 14;</code>
+         * @return The activeTime.
          */
+        @java.lang.Override
         public int getActiveTime() {
-          return instance.getActiveTime();
+          return activeTime_;
         }
         /**
-         * <code>optional uint32 active_time = 14;</code>
+         * <code>uint32 active_time = 14;</code>
+         * @param value The activeTime to set.
+         * @return This builder for chaining.
          */
         public Builder setActiveTime(int value) {
-          copyOnWrite();
-          instance.setActiveTime(value);
+          
+          activeTime_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 active_time = 14;</code>
+         * <code>uint32 active_time = 14;</code>
+         * @return This builder for chaining.
          */
         public Builder clearActiveTime() {
-          copyOnWrite();
-          instance.clearActiveTime();
+          
+          activeTime_ = 0;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object ip_ = "";
         /**
-         * <code>optional string ip = 15;</code>
+         * <code>string ip = 15;</code>
+         * @return The ip.
          */
         public java.lang.String getIp() {
-          return instance.getIp();
+          java.lang.Object ref = ip_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            ip_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string ip = 15;</code>
+         * <code>string ip = 15;</code>
+         * @return The bytes for ip.
          */
         public com.google.protobuf.ByteString
             getIpBytes() {
-          return instance.getIpBytes();
+          java.lang.Object ref = ip_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            ip_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string ip = 15;</code>
+         * <code>string ip = 15;</code>
+         * @param value The ip to set.
+         * @return This builder for chaining.
          */
         public Builder setIp(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setIp(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          ip_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string ip = 15;</code>
+         * <code>string ip = 15;</code>
+         * @return This builder for chaining.
          */
         public Builder clearIp() {
-          copyOnWrite();
-          instance.clearIp();
+          
+          ip_ = getDefaultInstance().getIp();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string ip = 15;</code>
+         * <code>string ip = 15;</code>
+         * @param value The bytes for ip to set.
+         * @return This builder for chaining.
          */
         public Builder setIpBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setIpBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          ip_ = value;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.UserSessionGetActiveListResponse.Session)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session other = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session) arg1;
-            sessionId_ = visitor.visitLong(sessionId_ != 0L, sessionId_,
-                other.sessionId_ != 0L, other.sessionId_);
-            appName_ = visitor.visitString(!appName_.isEmpty(), appName_,
-                !other.appName_.isEmpty(), other.appName_);
-            appId_ = visitor.visitInt(appId_ != 0, appId_,
-                other.appId_ != 0, other.appId_);
-            appBuildVersion_ = visitor.visitInt(appBuildVersion_ != 0, appBuildVersion_,
-                other.appBuildVersion_ != 0, other.appBuildVersion_);
-            appVersion_ = visitor.visitString(!appVersion_.isEmpty(), appVersion_,
-                !other.appVersion_.isEmpty(), other.appVersion_);
-            platform_ = visitor.visitInt(platform_ != 0, platform_,    other.platform_ != 0, other.platform_);
-            platformVersion_ = visitor.visitString(!platformVersion_.isEmpty(), platformVersion_,
-                !other.platformVersion_.isEmpty(), other.platformVersion_);
-            device_ = visitor.visitInt(device_ != 0, device_,    other.device_ != 0, other.device_);
-            deviceName_ = visitor.visitString(!deviceName_.isEmpty(), deviceName_,
-                !other.deviceName_.isEmpty(), other.deviceName_);
-            language_ = visitor.visitInt(language_ != 0, language_,    other.language_ != 0, other.language_);
-            country_ = visitor.visitString(!country_.isEmpty(), country_,
-                !other.country_.isEmpty(), other.country_);
-            current_ = visitor.visitBoolean(current_ != false, current_,
-                other.current_ != false, other.current_);
-            createTime_ = visitor.visitInt(createTime_ != 0, createTime_,
-                other.createTime_ != 0, other.createTime_);
-            activeTime_ = visitor.visitInt(activeTime_ != 0, activeTime_,
-                other.activeTime_ != 0, other.activeTime_);
-            ip_ = visitor.visitString(!ip_.isEmpty(), ip_,
-                !other.ip_.isEmpty(), other.ip_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    sessionId_ = input.readUInt64();
-                    break;
-                  }
-                  case 18: {
-                    String s = input.readStringRequireUtf8();
-
-                    appName_ = s;
-                    break;
-                  }
-                  case 24: {
-
-                    appId_ = input.readUInt32();
-                    break;
-                  }
-                  case 32: {
-
-                    appBuildVersion_ = input.readUInt32();
-                    break;
-                  }
-                  case 42: {
-                    String s = input.readStringRequireUtf8();
-
-                    appVersion_ = s;
-                    break;
-                  }
-                  case 48: {
-                    int rawValue = input.readEnum();
-
-                    platform_ = rawValue;
-                    break;
-                  }
-                  case 58: {
-                    String s = input.readStringRequireUtf8();
-
-                    platformVersion_ = s;
-                    break;
-                  }
-                  case 64: {
-                    int rawValue = input.readEnum();
-
-                    device_ = rawValue;
-                    break;
-                  }
-                  case 74: {
-                    String s = input.readStringRequireUtf8();
-
-                    deviceName_ = s;
-                    break;
-                  }
-                  case 80: {
-                    int rawValue = input.readEnum();
-
-                    language_ = rawValue;
-                    break;
-                  }
-                  case 90: {
-                    String s = input.readStringRequireUtf8();
-
-                    country_ = s;
-                    break;
-                  }
-                  case 96: {
-
-                    current_ = input.readBool();
-                    break;
-                  }
-                  case 104: {
-
-                    createTime_ = input.readUInt32();
-                    break;
-                  }
-                  case 112: {
-
-                    activeTime_ = input.readUInt32();
-                    break;
-                  }
-                  case 122: {
-                    String s = input.readStringRequireUtf8();
-
-                    ip_ = s;
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.UserSessionGetActiveListResponse.Session)
       private static final net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Session();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session();
       }
 
       public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Session> PARSER;
+      private static final com.google.protobuf.Parser<Session>
+          PARSER = new com.google.protobuf.AbstractParser<Session>() {
+        @java.lang.Override
+        public Session parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Session(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Session> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Session> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int SESSION_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> session_;
+    private java.util.List<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> session_;
     /**
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> getSessionList() {
       return session_;
     }
     /**
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder> 
         getSessionOrBuilderList() {
       return session_;
@@ -2003,108 +2889,38 @@ public final class ProtoUserSessionGetActiveList {
     /**
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
      */
+    @java.lang.Override
     public int getSessionCount() {
       return session_.size();
     }
     /**
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session getSession(int index) {
       return session_.get(index);
     }
     /**
      * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder getSessionOrBuilder(
         int index) {
       return session_.get(index);
     }
-    private void ensureSessionIsMutable() {
-      if (!session_.isModifiable()) {
-        session_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(session_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void setSession(
-        int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSessionIsMutable();
-      session_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void setSession(
-        int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder builderForValue) {
-      ensureSessionIsMutable();
-      session_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void addSession(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSessionIsMutable();
-      session_.add(value);
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void addSession(
-        int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSessionIsMutable();
-      session_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void addSession(
-        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder builderForValue) {
-      ensureSessionIsMutable();
-      session_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void addSession(
-        int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder builderForValue) {
-      ensureSessionIsMutable();
-      session_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void addAllSession(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> values) {
-      ensureSessionIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, session_);
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void clearSession() {
-      session_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
-     */
-    private void removeSession(int index) {
-      ensureSessionIsMutable();
-      session_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -2113,10 +2929,12 @@ public final class ProtoUserSessionGetActiveList {
       for (int i = 0; i < session_.size(); i++) {
         output.writeMessage(2, session_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -2128,162 +2946,517 @@ public final class ProtoUserSessionGetActiveList {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, session_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse other = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getSessionList()
+          .equals(other.getSessionList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getSessionCount() > 0) {
+        hash = (37 * hash) + SESSION_FIELD_NUMBER;
+        hash = (53 * hash) + getSessionList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserSessionGetActiveListResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserSessionGetActiveListResponse)
         net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.class, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSessionFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (sessionBuilder_ == null) {
+          session_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          sessionBuilder_.clear();
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.internal_static_proto_UserSessionGetActiveListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse build() {
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse buildPartial() {
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse result = new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (sessionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            session_ = java.util.Collections.unmodifiableList(session_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.session_ = session_;
+        } else {
+          result.session_ = sessionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse) {
+          return mergeFrom((net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse other) {
+        if (other == net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (sessionBuilder_ == null) {
+          if (!other.session_.isEmpty()) {
+            if (session_.isEmpty()) {
+              session_ = other.session_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSessionIsMutable();
+              session_.addAll(other.session_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.session_.isEmpty()) {
+            if (sessionBuilder_.isEmpty()) {
+              sessionBuilder_.dispose();
+              sessionBuilder_ = null;
+              session_ = other.session_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              sessionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSessionFieldBuilder() : null;
+            } else {
+              sessionBuilder_.addAllMessages(other.session_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> session_ =
+        java.util.Collections.emptyList();
+      private void ensureSessionIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          session_ = new java.util.ArrayList<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session>(session_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder> sessionBuilder_;
 
       /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> getSessionList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getSessionList());
+        if (sessionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(session_);
+        } else {
+          return sessionBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public int getSessionCount() {
-        return instance.getSessionCount();
-      }/**
+        if (sessionBuilder_ == null) {
+          return session_.size();
+        } else {
+          return sessionBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session getSession(int index) {
-        return instance.getSession(index);
+        if (sessionBuilder_ == null) {
+          return session_.get(index);
+        } else {
+          return sessionBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public Builder setSession(
           int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session value) {
-        copyOnWrite();
-        instance.setSession(index, value);
+        if (sessionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSessionIsMutable();
+          session_.set(index, value);
+          onChanged();
+        } else {
+          sessionBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -2291,16 +3464,29 @@ public final class ProtoUserSessionGetActiveList {
        */
       public Builder setSession(
           int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder builderForValue) {
-        copyOnWrite();
-        instance.setSession(index, builderForValue);
+        if (sessionBuilder_ == null) {
+          ensureSessionIsMutable();
+          session_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sessionBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public Builder addSession(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session value) {
-        copyOnWrite();
-        instance.addSession(value);
+        if (sessionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSessionIsMutable();
+          session_.add(value);
+          onChanged();
+        } else {
+          sessionBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -2308,8 +3494,16 @@ public final class ProtoUserSessionGetActiveList {
        */
       public Builder addSession(
           int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session value) {
-        copyOnWrite();
-        instance.addSession(index, value);
+        if (sessionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSessionIsMutable();
+          session_.add(index, value);
+          onChanged();
+        } else {
+          sessionBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -2317,8 +3511,13 @@ public final class ProtoUserSessionGetActiveList {
        */
       public Builder addSession(
           net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder builderForValue) {
-        copyOnWrite();
-        instance.addSession(builderForValue);
+        if (sessionBuilder_ == null) {
+          ensureSessionIsMutable();
+          session_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sessionBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -2326,8 +3525,13 @@ public final class ProtoUserSessionGetActiveList {
        */
       public Builder addSession(
           int index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder builderForValue) {
-        copyOnWrite();
-        instance.addSession(index, builderForValue);
+        if (sessionBuilder_ == null) {
+          ensureSessionIsMutable();
+          session_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sessionBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -2335,146 +3539,230 @@ public final class ProtoUserSessionGetActiveList {
        */
       public Builder addAllSession(
           java.lang.Iterable<? extends net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session> values) {
-        copyOnWrite();
-        instance.addAllSession(values);
+        if (sessionBuilder_ == null) {
+          ensureSessionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, session_);
+          onChanged();
+        } else {
+          sessionBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public Builder clearSession() {
-        copyOnWrite();
-        instance.clearSession();
+        if (sessionBuilder_ == null) {
+          session_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          sessionBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
        */
       public Builder removeSession(int index) {
-        copyOnWrite();
-        instance.removeSession(index);
+        if (sessionBuilder_ == null) {
+          ensureSessionIsMutable();
+          session_.remove(index);
+          onChanged();
+        } else {
+          sessionBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+       */
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder getSessionBuilder(
+          int index) {
+        return getSessionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+       */
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder getSessionOrBuilder(
+          int index) {
+        if (sessionBuilder_ == null) {
+          return session_.get(index);  } else {
+          return sessionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder> 
+           getSessionOrBuilderList() {
+        if (sessionBuilder_ != null) {
+          return sessionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(session_);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+       */
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder addSessionBuilder() {
+        return getSessionFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+       */
+      public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder addSessionBuilder(
+          int index) {
+        return getSessionFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.UserSessionGetActiveListResponse.Session session = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder> 
+           getSessionBuilderList() {
+        return getSessionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder> 
+          getSessionFieldBuilder() {
+        if (sessionBuilder_ == null) {
+          sessionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.Builder, net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.SessionOrBuilder>(
+                  session_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          session_ = null;
+        }
+        return sessionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserSessionGetActiveListResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          session_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse other = (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          session_= visitor.visitList(session_, other.session_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!session_.isModifiable()) {
-                    session_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(session_);
-                  }
-                  session_.add(
-                      input.readMessage(net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.Session.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserSessionGetActiveListResponse)
     private static final net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserSessionGetActiveListResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse();
     }
 
     public static net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserSessionGetActiveListResponse> PARSER;
+    private static final com.google.protobuf.Parser<UserSessionGetActiveListResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserSessionGetActiveListResponse>() {
+      @java.lang.Override
+      public UserSessionGetActiveListResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserSessionGetActiveListResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserSessionGetActiveListResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserSessionGetActiveListResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserSessionGetActiveList.UserSessionGetActiveListResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserSessionGetActiveList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserSessionGetActiveList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserSessionGetActiveListResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserSessionGetActiveListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserSessionGetActiveListResponse_Session_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserSessionGetActiveListResponse_Session_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\036UserSessionGetActiveList.proto\022\005proto\032" +
+      "\rRequest.proto\032\016Response.proto\032\014Global.p" +
+      "roto\";\n\030UserSessionGetActiveList\022\037\n\007requ" +
+      "est\030\001 \001(\0132\016.proto.Request\"\345\003\n UserSessio" +
+      "nGetActiveListResponse\022!\n\010response\030\001 \001(\013" +
+      "2\017.proto.Response\022@\n\007session\030\002 \003(\0132/.pro" +
+      "to.UserSessionGetActiveListResponse.Sess" +
+      "ion\032\333\002\n\007Session\022\022\n\nsession_id\030\001 \001(\004\022\020\n\010a" +
+      "pp_name\030\002 \001(\t\022\016\n\006app_id\030\003 \001(\r\022\031\n\021app_bui" +
+      "ld_version\030\004 \001(\r\022\023\n\013app_version\030\005 \001(\t\022!\n" +
+      "\010platform\030\006 \001(\0162\017.proto.Platform\022\030\n\020plat" +
+      "form_version\030\007 \001(\t\022\035\n\006device\030\010 \001(\0162\r.pro" +
+      "to.Device\022\023\n\013device_name\030\t \001(\t\022!\n\010langua" +
+      "ge\030\n \001(\0162\017.proto.Language\022\017\n\007country\030\013 \001" +
+      "(\t\022\017\n\007current\030\014 \001(\010\022\023\n\013create_time\030\r \001(\r" +
+      "\022\023\n\013active_time\030\016 \001(\r\022\n\n\002ip\030\017 \001(\tB/\n\016net" +
+      ".iGap.protoB\035ProtoUserSessionGetActiveLi" +
+      "stb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        });
+    internal_static_proto_UserSessionGetActiveList_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_UserSessionGetActiveList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserSessionGetActiveList_descriptor,
+        new java.lang.String[] { "Request", });
+    internal_static_proto_UserSessionGetActiveListResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_UserSessionGetActiveListResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserSessionGetActiveListResponse_descriptor,
+        new java.lang.String[] { "Response", "Session", });
+    internal_static_proto_UserSessionGetActiveListResponse_Session_descriptor =
+      internal_static_proto_UserSessionGetActiveListResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_UserSessionGetActiveListResponse_Session_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserSessionGetActiveListResponse_Session_descriptor,
+        new java.lang.String[] { "SessionId", "AppName", "AppId", "AppBuildVersion", "AppVersion", "Platform", "PlatformVersion", "Device", "DeviceName", "Language", "Country", "Current", "CreateTime", "ActiveTime", "Ip", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

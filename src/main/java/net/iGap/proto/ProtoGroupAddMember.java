@@ -3,146 +3,325 @@
 
 package net.iGap.proto;
 
+
 public final class ProtoGroupAddMember {
   private ProtoGroupAddMember() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface GroupAddMemberOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.GroupAddMember)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
     long getRoomId();
 
     /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+     * <code>.proto.GroupAddMember.Member member = 3;</code>
+     * @return Whether the member field is set.
      */
     boolean hasMember();
     /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+     * <code>.proto.GroupAddMember.Member member = 3;</code>
+     * @return The member.
      */
     net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member getMember();
+    /**
+     * <code>.proto.GroupAddMember.Member member = 3;</code>
+     */
+    net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder getMemberOrBuilder();
   }
   /**
    * Protobuf type {@code proto.GroupAddMember}
    */
-  public  static final class GroupAddMember extends
-      com.google.protobuf.GeneratedMessageLite<
-          GroupAddMember, GroupAddMember.Builder> implements
+  public static final class GroupAddMember extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.GroupAddMember)
       GroupAddMemberOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GroupAddMember.newBuilder() to construct.
+    private GroupAddMember(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private GroupAddMember() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GroupAddMember();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GroupAddMember(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder subBuilder = null;
+              if (member_ != null) {
+                subBuilder = member_.toBuilder();
+              }
+              member_ = input.readMessage(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(member_);
+                member_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGroupAddMember.GroupAddMember.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Builder.class);
+    }
+
     public interface MemberOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.GroupAddMember.Member)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 user_id = 1;</code>
+       * <code>uint64 user_id = 1;</code>
+       * @return The userId.
        */
       long getUserId();
 
       /**
-       * <code>optional uint64 start_message_id = 2;</code>
+       * <code>uint64 start_message_id = 2;</code>
+       * @return The startMessageId.
        */
       long getStartMessageId();
 
       /**
-       * <code>optional uint64 start_document_id = 3;</code>
+       * <code>uint64 start_document_id = 3;</code>
+       * @return The startDocumentId.
        */
       long getStartDocumentId();
     }
     /**
      * Protobuf type {@code proto.GroupAddMember.Member}
      */
-    public  static final class Member extends
-        com.google.protobuf.GeneratedMessageLite<
-            Member, Member.Builder> implements
+    public static final class Member extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.GroupAddMember.Member)
         MemberOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Member.newBuilder() to construct.
+      private Member(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private Member() {
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Member();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Member(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                userId_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+
+                startMessageId_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+
+                startDocumentId_ = input.readUInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_Member_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_Member_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder.class);
+      }
+
       public static final int USER_ID_FIELD_NUMBER = 1;
       private long userId_;
       /**
-       * <code>optional uint64 user_id = 1;</code>
+       * <code>uint64 user_id = 1;</code>
+       * @return The userId.
        */
+      @java.lang.Override
       public long getUserId() {
         return userId_;
-      }
-      /**
-       * <code>optional uint64 user_id = 1;</code>
-       */
-      private void setUserId(long value) {
-        
-        userId_ = value;
-      }
-      /**
-       * <code>optional uint64 user_id = 1;</code>
-       */
-      private void clearUserId() {
-        
-        userId_ = 0L;
       }
 
       public static final int START_MESSAGE_ID_FIELD_NUMBER = 2;
       private long startMessageId_;
       /**
-       * <code>optional uint64 start_message_id = 2;</code>
+       * <code>uint64 start_message_id = 2;</code>
+       * @return The startMessageId.
        */
+      @java.lang.Override
       public long getStartMessageId() {
         return startMessageId_;
-      }
-      /**
-       * <code>optional uint64 start_message_id = 2;</code>
-       */
-      private void setStartMessageId(long value) {
-        
-        startMessageId_ = value;
-      }
-      /**
-       * <code>optional uint64 start_message_id = 2;</code>
-       */
-      private void clearStartMessageId() {
-        
-        startMessageId_ = 0L;
       }
 
       public static final int START_DOCUMENT_ID_FIELD_NUMBER = 3;
       private long startDocumentId_;
       /**
-       * <code>optional uint64 start_document_id = 3;</code>
+       * <code>uint64 start_document_id = 3;</code>
+       * @return The startDocumentId.
        */
+      @java.lang.Override
       public long getStartDocumentId() {
         return startDocumentId_;
       }
-      /**
-       * <code>optional uint64 start_document_id = 3;</code>
-       */
-      private void setStartDocumentId(long value) {
-        
-        startDocumentId_ = value;
-      }
-      /**
-       * <code>optional uint64 start_document_id = 3;</code>
-       */
-      private void clearStartDocumentId() {
-        
-        startDocumentId_ = 0L;
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (userId_ != 0L) {
@@ -154,10 +333,12 @@ public final class ProtoGroupAddMember {
         if (startDocumentId_ != 0L) {
           output.writeUInt64(3, startDocumentId_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -173,400 +354,521 @@ public final class ProtoGroupAddMember {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(3, startDocumentId_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member) obj;
+
+        if (getUserId()
+            != other.getUserId()) return false;
+        if (getStartMessageId()
+            != other.getStartMessageId()) return false;
+        if (getStartDocumentId()
+            != other.getStartDocumentId()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUserId());
+        hash = (37 * hash) + START_MESSAGE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getStartMessageId());
+        hash = (37 * hash) + START_DOCUMENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getStartDocumentId());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.GroupAddMember.Member}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.GroupAddMember.Member)
           net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_Member_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_Member_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          userId_ = 0L;
 
+          startMessageId_ = 0L;
+
+          startDocumentId_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_Member_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member build() {
+          net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member buildPartial() {
+          net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member result = new net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member(this);
+          result.userId_ = userId_;
+          result.startMessageId_ = startMessageId_;
+          result.startDocumentId_ = startDocumentId_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member) {
+            return mergeFrom((net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member other) {
+          if (other == net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.getDefaultInstance()) return this;
+          if (other.getUserId() != 0L) {
+            setUserId(other.getUserId());
+          }
+          if (other.getStartMessageId() != 0L) {
+            setStartMessageId(other.getStartMessageId());
+          }
+          if (other.getStartDocumentId() != 0L) {
+            setStartDocumentId(other.getStartDocumentId());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long userId_ ;
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>uint64 user_id = 1;</code>
+         * @return The userId.
          */
+        @java.lang.Override
         public long getUserId() {
-          return instance.getUserId();
+          return userId_;
         }
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>uint64 user_id = 1;</code>
+         * @param value The userId to set.
+         * @return This builder for chaining.
          */
         public Builder setUserId(long value) {
-          copyOnWrite();
-          instance.setUserId(value);
+          
+          userId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>uint64 user_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearUserId() {
-          copyOnWrite();
-          instance.clearUserId();
+          
+          userId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long startMessageId_ ;
         /**
-         * <code>optional uint64 start_message_id = 2;</code>
+         * <code>uint64 start_message_id = 2;</code>
+         * @return The startMessageId.
          */
+        @java.lang.Override
         public long getStartMessageId() {
-          return instance.getStartMessageId();
+          return startMessageId_;
         }
         /**
-         * <code>optional uint64 start_message_id = 2;</code>
+         * <code>uint64 start_message_id = 2;</code>
+         * @param value The startMessageId to set.
+         * @return This builder for chaining.
          */
         public Builder setStartMessageId(long value) {
-          copyOnWrite();
-          instance.setStartMessageId(value);
+          
+          startMessageId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 start_message_id = 2;</code>
+         * <code>uint64 start_message_id = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearStartMessageId() {
-          copyOnWrite();
-          instance.clearStartMessageId();
+          
+          startMessageId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long startDocumentId_ ;
         /**
-         * <code>optional uint64 start_document_id = 3;</code>
+         * <code>uint64 start_document_id = 3;</code>
+         * @return The startDocumentId.
          */
+        @java.lang.Override
         public long getStartDocumentId() {
-          return instance.getStartDocumentId();
+          return startDocumentId_;
         }
         /**
-         * <code>optional uint64 start_document_id = 3;</code>
+         * <code>uint64 start_document_id = 3;</code>
+         * @param value The startDocumentId to set.
+         * @return This builder for chaining.
          */
         public Builder setStartDocumentId(long value) {
-          copyOnWrite();
-          instance.setStartDocumentId(value);
+          
+          startDocumentId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 start_document_id = 3;</code>
+         * <code>uint64 start_document_id = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearStartDocumentId() {
-          copyOnWrite();
-          instance.clearStartDocumentId();
+          
+          startDocumentId_ = 0L;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.GroupAddMember.Member)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member) arg1;
-            userId_ = visitor.visitLong(userId_ != 0L, userId_,
-                other.userId_ != 0L, other.userId_);
-            startMessageId_ = visitor.visitLong(startMessageId_ != 0L, startMessageId_,
-                other.startMessageId_ != 0L, other.startMessageId_);
-            startDocumentId_ = visitor.visitLong(startDocumentId_ != 0L, startDocumentId_,
-                other.startDocumentId_ != 0L, other.startDocumentId_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    userId_ = input.readUInt64();
-                    break;
-                  }
-                  case 16: {
-
-                    startMessageId_ = input.readUInt64();
-                    break;
-                  }
-                  case 24: {
-
-                    startDocumentId_ = input.readUInt64();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.GroupAddMember.Member)
       private static final net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Member();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member();
       }
 
       public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Member> PARSER;
+      private static final com.google.protobuf.Parser<Member>
+          PARSER = new com.google.protobuf.AbstractParser<Member>() {
+        @java.lang.Override
+        public Member parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Member(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Member> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Member> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
+    @java.lang.Override
     public long getRoomId() {
       return roomId_;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void setRoomId(long value) {
-      
-      roomId_ = value;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void clearRoomId() {
-      
-      roomId_ = 0L;
     }
 
     public static final int MEMBER_FIELD_NUMBER = 3;
     private net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member member_;
     /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+     * <code>.proto.GroupAddMember.Member member = 3;</code>
+     * @return Whether the member field is set.
      */
+    @java.lang.Override
     public boolean hasMember() {
       return member_ != null;
     }
     /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+     * <code>.proto.GroupAddMember.Member member = 3;</code>
+     * @return The member.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member getMember() {
       return member_ == null ? net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.getDefaultInstance() : member_;
     }
     /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+     * <code>.proto.GroupAddMember.Member member = 3;</code>
      */
-    private void setMember(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      member_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
-     */
-    private void setMember(
-        net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder builderForValue) {
-      member_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
-     */
-    private void mergeMember(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member value) {
-      if (member_ != null &&
-          member_ != net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.getDefaultInstance()) {
-        member_ =
-          net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.newBuilder(member_).mergeFrom(value).buildPartial();
-      } else {
-        member_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.GroupAddMember.Member member = 3;</code>
-     */
-    private void clearMember() {  member_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder getMemberOrBuilder() {
+      return getMember();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -578,10 +880,12 @@ public final class ProtoGroupAddMember {
       if (member_ != null) {
         output.writeMessage(3, getMember());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -597,510 +901,874 @@ public final class ProtoGroupAddMember {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getMember());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGroupAddMember.GroupAddMember)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGroupAddMember.GroupAddMember other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMember) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (hasMember() != other.hasMember()) return false;
+      if (hasMember()) {
+        if (!getMember()
+            .equals(other.getMember())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      if (hasMember()) {
+        hash = (37 * hash) + MEMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getMember().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoGroupAddMember.GroupAddMember prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.GroupAddMember}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoGroupAddMember.GroupAddMember, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.GroupAddMember)
         net.iGap.proto.ProtoGroupAddMember.GroupAddMemberOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGroupAddMember.GroupAddMember.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoGroupAddMember.GroupAddMember.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        roomId_ = 0L;
 
+        if (memberBuilder_ == null) {
+          member_ = null;
+        } else {
+          member_ = null;
+          memberBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMember_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMember getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGroupAddMember.GroupAddMember.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMember build() {
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMember result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMember buildPartial() {
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMember result = new net.iGap.proto.ProtoGroupAddMember.GroupAddMember(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        if (memberBuilder_ == null) {
+          result.member_ = member_;
+        } else {
+          result.member_ = memberBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGroupAddMember.GroupAddMember) {
+          return mergeFrom((net.iGap.proto.ProtoGroupAddMember.GroupAddMember)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGroupAddMember.GroupAddMember other) {
+        if (other == net.iGap.proto.ProtoGroupAddMember.GroupAddMember.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.hasMember()) {
+          mergeMember(other.getMember());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMember parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGroupAddMember.GroupAddMember) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
+      @java.lang.Override
       public long getRoomId() {
-        return instance.getRoomId();
+        return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoomId(long value) {
-        copyOnWrite();
-        instance.setRoomId(value);
+        
+        roomId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoomId() {
-        copyOnWrite();
-        instance.clearRoomId();
+        
+        roomId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member member_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder> memberBuilder_;
       /**
-       * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
+       * @return Whether the member field is set.
        */
       public boolean hasMember() {
-        return instance.hasMember();
+        return memberBuilder_ != null || member_ != null;
       }
       /**
-       * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
+       * @return The member.
        */
       public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member getMember() {
-        return instance.getMember();
+        if (memberBuilder_ == null) {
+          return member_ == null ? net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.getDefaultInstance() : member_;
+        } else {
+          return memberBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
        */
       public Builder setMember(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member value) {
-        copyOnWrite();
-        instance.setMember(value);
-        return this;
+        if (memberBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          member_ = value;
+          onChanged();
+        } else {
+          memberBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
        */
       public Builder setMember(
           net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder builderForValue) {
-        copyOnWrite();
-        instance.setMember(builderForValue);
+        if (memberBuilder_ == null) {
+          member_ = builderForValue.build();
+          onChanged();
+        } else {
+          memberBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
        */
       public Builder mergeMember(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member value) {
-        copyOnWrite();
-        instance.mergeMember(value);
+        if (memberBuilder_ == null) {
+          if (member_ != null) {
+            member_ =
+              net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.newBuilder(member_).mergeFrom(value).buildPartial();
+          } else {
+            member_ = value;
+          }
+          onChanged();
+        } else {
+          memberBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.GroupAddMember.Member member = 3;</code>
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
        */
-      public Builder clearMember() {  copyOnWrite();
-        instance.clearMember();
+      public Builder clearMember() {
+        if (memberBuilder_ == null) {
+          member_ = null;
+          onChanged();
+        } else {
+          member_ = null;
+          memberBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
+       */
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder getMemberBuilder() {
+        
+        onChanged();
+        return getMemberFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
+       */
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder getMemberOrBuilder() {
+        if (memberBuilder_ != null) {
+          return memberBuilder_.getMessageOrBuilder();
+        } else {
+          return member_ == null ?
+              net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.getDefaultInstance() : member_;
+        }
+      }
+      /**
+       * <code>.proto.GroupAddMember.Member member = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder> 
+          getMemberFieldBuilder() {
+        if (memberBuilder_ == null) {
+          memberBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder, net.iGap.proto.ProtoGroupAddMember.GroupAddMember.MemberOrBuilder>(
+                  getMember(),
+                  getParentForChildren(),
+                  isClean());
+          member_ = null;
+        }
+        return memberBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.GroupAddMember)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoGroupAddMember.GroupAddMember();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoGroupAddMember.GroupAddMember other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMember) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-              other.roomId_ != 0L, other.roomId_);
-          member_ = visitor.visitMessage(member_, other.member_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  roomId_ = input.readUInt64();
-                  break;
-                }
-                case 26: {
-                  net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.Builder subBuilder = null;
-                  if (member_ != null) {
-                    subBuilder = member_.toBuilder();
-                  }
-                  member_ = input.readMessage(net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(member_);
-                    member_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGroupAddMember.GroupAddMember.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.GroupAddMember)
     private static final net.iGap.proto.ProtoGroupAddMember.GroupAddMember DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GroupAddMember();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGroupAddMember.GroupAddMember();
     }
 
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMember getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<GroupAddMember> PARSER;
+    private static final com.google.protobuf.Parser<GroupAddMember>
+        PARSER = new com.google.protobuf.AbstractParser<GroupAddMember>() {
+      @java.lang.Override
+      public GroupAddMember parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GroupAddMember(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<GroupAddMember> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroupAddMember> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoGroupAddMember.GroupAddMember getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface GroupAddMemberResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.GroupAddMemberResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
     long getRoomId();
 
     /**
-     * <code>optional uint64 user_id = 3;</code>
+     * <code>uint64 user_id = 3;</code>
+     * @return The userId.
      */
     long getUserId();
 
     /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
+     * <code>.proto.GroupRoom.Role role = 4;</code>
+     * @return The enum numeric value on the wire for role.
      */
     int getRoleValue();
     /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
+     * <code>.proto.GroupRoom.Role role = 4;</code>
+     * @return The role.
      */
-    net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole();
+    ProtoGlobal.GroupRoom.Role getRole();
   }
   /**
    * Protobuf type {@code proto.GroupAddMemberResponse}
    */
-  public  static final class GroupAddMemberResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          GroupAddMemberResponse, GroupAddMemberResponse.Builder> implements
+  public static final class GroupAddMemberResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.GroupAddMemberResponse)
       GroupAddMemberResponseOrBuilder {
-    private GroupAddMemberResponse() {
+  private static final long serialVersionUID = 0L;
+    // Use GroupAddMemberResponse.newBuilder() to construct.
+    private GroupAddMemberResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private GroupAddMemberResponse() {
+      role_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GroupAddMemberResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GroupAddMemberResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              userId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              role_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMemberResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMemberResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
+    @java.lang.Override
     public long getRoomId() {
       return roomId_;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void setRoomId(long value) {
-      
-      roomId_ = value;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void clearRoomId() {
-      
-      roomId_ = 0L;
     }
 
     public static final int USER_ID_FIELD_NUMBER = 3;
     private long userId_;
     /**
-     * <code>optional uint64 user_id = 3;</code>
+     * <code>uint64 user_id = 3;</code>
+     * @return The userId.
      */
+    @java.lang.Override
     public long getUserId() {
       return userId_;
-    }
-    /**
-     * <code>optional uint64 user_id = 3;</code>
-     */
-    private void setUserId(long value) {
-      
-      userId_ = value;
-    }
-    /**
-     * <code>optional uint64 user_id = 3;</code>
-     */
-    private void clearUserId() {
-      
-      userId_ = 0L;
     }
 
     public static final int ROLE_FIELD_NUMBER = 4;
     private int role_;
     /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
+     * <code>.proto.GroupRoom.Role role = 4;</code>
+     * @return The enum numeric value on the wire for role.
      */
-    public int getRoleValue() {
+    @java.lang.Override public int getRoleValue() {
       return role_;
     }
     /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
+     * <code>.proto.GroupRoom.Role role = 4;</code>
+     * @return The role.
      */
-    public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
-      net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.forNumber(role_);
+    @java.lang.Override public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
       return result == null ? net.iGap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
     }
-    /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
-     */
-    private void setRoleValue(int value) {
-        role_ = value;
-    }
-    /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
-     */
-    private void setRole(net.iGap.proto.ProtoGlobal.GroupRoom.Role value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      role_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.GroupRoom.Role role = 4;</code>
-     */
-    private void clearRole() {
-      
-      role_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1112,13 +1780,15 @@ public final class ProtoGroupAddMember {
       if (userId_ != 0L) {
         output.writeUInt64(3, userId_);
       }
-      if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
+      if (role_ != ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
         output.writeEnum(4, role_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1138,348 +1808,674 @@ public final class ProtoGroupAddMember {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, role_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (role_ != other.role_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + role_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.GroupAddMemberResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.GroupAddMemberResponse)
         net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMemberResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMemberResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        roomId_ = 0L;
 
+        userId_ = 0L;
+
+        role_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGroupAddMember.internal_static_proto_GroupAddMemberResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse build() {
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse buildPartial() {
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse result = new net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        result.userId_ = userId_;
+        result.role_ = role_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse) {
+          return mergeFrom((net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse other) {
+        if (other == net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (other.role_ != 0) {
+          setRoleValue(other.getRoleValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
+      @java.lang.Override
       public long getRoomId() {
-        return instance.getRoomId();
+        return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoomId(long value) {
-        copyOnWrite();
-        instance.setRoomId(value);
+        
+        roomId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoomId() {
-        copyOnWrite();
-        instance.clearRoomId();
+        
+        roomId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private long userId_ ;
       /**
-       * <code>optional uint64 user_id = 3;</code>
+       * <code>uint64 user_id = 3;</code>
+       * @return The userId.
        */
+      @java.lang.Override
       public long getUserId() {
-        return instance.getUserId();
+        return userId_;
       }
       /**
-       * <code>optional uint64 user_id = 3;</code>
+       * <code>uint64 user_id = 3;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
        */
       public Builder setUserId(long value) {
-        copyOnWrite();
-        instance.setUserId(value);
+        
+        userId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 user_id = 3;</code>
+       * <code>uint64 user_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUserId() {
-        copyOnWrite();
-        instance.clearUserId();
+        
+        userId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private int role_ = 0;
       /**
-       * <code>optional .proto.GroupRoom.Role role = 4;</code>
+       * <code>.proto.GroupRoom.Role role = 4;</code>
+       * @return The enum numeric value on the wire for role.
        */
-      public int getRoleValue() {
-        return instance.getRoleValue();
+      @java.lang.Override public int getRoleValue() {
+        return role_;
       }
       /**
-       * <code>optional .proto.GroupRoom.Role role = 4;</code>
+       * <code>.proto.GroupRoom.Role role = 4;</code>
+       * @param value The enum numeric value on the wire for role to set.
+       * @return This builder for chaining.
        */
       public Builder setRoleValue(int value) {
-        copyOnWrite();
-        instance.setRoleValue(value);
+        
+        role_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.GroupRoom.Role role = 4;</code>
+       * <code>.proto.GroupRoom.Role role = 4;</code>
+       * @return The role.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
-        return instance.getRole();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
+        return result == null ? net.iGap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.GroupRoom.Role role = 4;</code>
+       * <code>.proto.GroupRoom.Role role = 4;</code>
+       * @param value The role to set.
+       * @return This builder for chaining.
        */
       public Builder setRole(net.iGap.proto.ProtoGlobal.GroupRoom.Role value) {
-        copyOnWrite();
-        instance.setRole(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        role_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.GroupRoom.Role role = 4;</code>
+       * <code>.proto.GroupRoom.Role role = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRole() {
-        copyOnWrite();
-        instance.clearRole();
+        
+        role_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.GroupAddMemberResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-              other.roomId_ != 0L, other.roomId_);
-          userId_ = visitor.visitLong(userId_ != 0L, userId_,
-              other.userId_ != 0L, other.userId_);
-          role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  roomId_ = input.readUInt64();
-                  break;
-                }
-                case 24: {
-
-                  userId_ = input.readUInt64();
-                  break;
-                }
-                case 32: {
-                  int rawValue = input.readEnum();
-
-                  role_ = rawValue;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.GroupAddMemberResponse)
     private static final net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GroupAddMemberResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse();
     }
 
     public static net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<GroupAddMemberResponse> PARSER;
+    private static final com.google.protobuf.Parser<GroupAddMemberResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GroupAddMemberResponse>() {
+      @java.lang.Override
+      public GroupAddMemberResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GroupAddMemberResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<GroupAddMemberResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroupAddMemberResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GroupAddMember_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GroupAddMember_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GroupAddMember_Member_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GroupAddMember_Member_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GroupAddMemberResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GroupAddMemberResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\024GroupAddMember.proto\022\005proto\032\rRequest.p" +
+      "roto\032\016Response.proto\032\014Global.proto\"\300\001\n\016G" +
+      "roupAddMember\022\037\n\007request\030\001 \001(\0132\016.proto.R" +
+      "equest\022\017\n\007room_id\030\002 \001(\004\022,\n\006member\030\003 \001(\0132" +
+      "\034.proto.GroupAddMember.Member\032N\n\006Member\022" +
+      "\017\n\007user_id\030\001 \001(\004\022\030\n\020start_message_id\030\002 \001" +
+      "(\004\022\031\n\021start_document_id\030\003 \001(\004\"\202\001\n\026GroupA" +
+      "ddMemberResponse\022!\n\010response\030\001 \001(\0132\017.pro" +
+      "to.Response\022\017\n\007room_id\030\002 \001(\004\022\017\n\007user_id\030" +
+      "\003 \001(\004\022#\n\004role\030\004 \001(\0162\025.proto.GroupRoom.Ro" +
+      "leB%\n\016net.iGap.protoB\023ProtoGroupAddMembe" +
+      "rb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        });
+    internal_static_proto_GroupAddMember_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_GroupAddMember_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GroupAddMember_descriptor,
+        new java.lang.String[] { "Request", "RoomId", "Member", });
+    internal_static_proto_GroupAddMember_Member_descriptor =
+      internal_static_proto_GroupAddMember_descriptor.getNestedTypes().get(0);
+    internal_static_proto_GroupAddMember_Member_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GroupAddMember_Member_descriptor,
+        new java.lang.String[] { "UserId", "StartMessageId", "StartDocumentId", });
+    internal_static_proto_GroupAddMemberResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_GroupAddMemberResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GroupAddMemberResponse_descriptor,
+        new java.lang.String[] { "Response", "RoomId", "UserId", "Role", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -8,177 +8,233 @@ public final class ProtoUserPrivacySetRule {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface UserPrivacySetRuleOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserPrivacySetRule)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The type.
      */
     net.iGap.proto.ProtoGlobal.PrivacyType getType();
 
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The enum numeric value on the wire for level.
      */
     int getLevelValue();
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The level.
      */
     net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel();
   }
   /**
    * Protobuf type {@code proto.UserPrivacySetRule}
    */
-  public  static final class UserPrivacySetRule extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserPrivacySetRule, UserPrivacySetRule.Builder> implements
+  public static final class UserPrivacySetRule extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserPrivacySetRule)
       UserPrivacySetRuleOrBuilder {
-    private UserPrivacySetRule() {
+  private static final long serialVersionUID = 0L;
+    // Use UserPrivacySetRule.newBuilder() to construct.
+    private UserPrivacySetRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private UserPrivacySetRule() {
+      type_ = 0;
+      level_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserPrivacySetRule();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserPrivacySetRule(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              level_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRule_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRule_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.class, net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_;
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The type.
      */
-    public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
-      net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.forNumber(type_);
+    @java.lang.Override public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.valueOf(type_);
       return result == null ? net.iGap.proto.ProtoGlobal.PrivacyType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
-     */
-    private void setTypeValue(int value) {
-        type_ = value;
-    }
-    /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
-     */
-    private void setType(net.iGap.proto.ProtoGlobal.PrivacyType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      type_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
-     */
-    private void clearType() {
-      
-      type_ = 0;
     }
 
     public static final int LEVEL_FIELD_NUMBER = 3;
     private int level_;
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The enum numeric value on the wire for level.
      */
-    public int getLevelValue() {
+    @java.lang.Override public int getLevelValue() {
       return level_;
     }
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The level.
      */
-    public net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel() {
-      net.iGap.proto.ProtoGlobal.PrivacyLevel result = net.iGap.proto.ProtoGlobal.PrivacyLevel.forNumber(level_);
+    @java.lang.Override public net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoGlobal.PrivacyLevel result = net.iGap.proto.ProtoGlobal.PrivacyLevel.valueOf(level_);
       return result == null ? net.iGap.proto.ProtoGlobal.PrivacyLevel.UNRECOGNIZED : result;
     }
-    /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
-     */
-    private void setLevelValue(int value) {
-        level_ = value;
-    }
-    /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
-     */
-    private void setLevel(net.iGap.proto.ProtoGlobal.PrivacyLevel value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      level_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
-     */
-    private void clearLevel() {
-      
-      level_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -190,10 +246,12 @@ public final class ProtoUserPrivacySetRule {
       if (level_ != net.iGap.proto.ProtoGlobal.PrivacyLevel.ALLOW_ALL.getNumber()) {
         output.writeEnum(3, level_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -209,501 +267,809 @@ public final class ProtoUserPrivacySetRule {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, level_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule other = (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (type_ != other.type_) return false;
+      if (level_ != other.level_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + level_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserPrivacySetRule}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserPrivacySetRule)
         net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.class, net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        type_ = 0;
 
+        level_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRule_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule build() {
+        net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule buildPartial() {
+        net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule result = new net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.type_ = type_;
+        result.level_ = level_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule) {
+          return mergeFrom((net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule other) {
+        if (other == net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.level_ != 0) {
+          setLevelValue(other.getLevelValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private int type_ = 0;
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return The enum numeric value on the wire for type.
        */
-      public int getTypeValue() {
-        return instance.getTypeValue();
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        copyOnWrite();
-        instance.setTypeValue(value);
+        
+        type_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return The type.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
-        return instance.getType();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.PrivacyType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(net.iGap.proto.ProtoGlobal.PrivacyType value) {
-        copyOnWrite();
-        instance.setType(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
-        copyOnWrite();
-        instance.clearType();
+        
+        type_ = 0;
+        onChanged();
         return this;
       }
 
+      private int level_ = 0;
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @return The enum numeric value on the wire for level.
        */
-      public int getLevelValue() {
-        return instance.getLevelValue();
+      @java.lang.Override public int getLevelValue() {
+        return level_;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @param value The enum numeric value on the wire for level to set.
+       * @return This builder for chaining.
        */
       public Builder setLevelValue(int value) {
-        copyOnWrite();
-        instance.setLevelValue(value);
+        
+        level_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @return The level.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel() {
-        return instance.getLevel();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.PrivacyLevel result = net.iGap.proto.ProtoGlobal.PrivacyLevel.valueOf(level_);
+        return result == null ? net.iGap.proto.ProtoGlobal.PrivacyLevel.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
        */
       public Builder setLevel(net.iGap.proto.ProtoGlobal.PrivacyLevel value) {
-        copyOnWrite();
-        instance.setLevel(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        level_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        copyOnWrite();
-        instance.clearLevel();
+        
+        level_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserPrivacySetRule)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule other = (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
-          level_ = visitor.visitInt(level_ != 0, level_,    other.level_ != 0, other.level_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-                  int rawValue = input.readEnum();
-
-                  type_ = rawValue;
-                  break;
-                }
-                case 24: {
-                  int rawValue = input.readEnum();
-
-                  level_ = rawValue;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserPrivacySetRule)
     private static final net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserPrivacySetRule();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule();
     }
 
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserPrivacySetRule> PARSER;
+    private static final com.google.protobuf.Parser<UserPrivacySetRule>
+        PARSER = new com.google.protobuf.AbstractParser<UserPrivacySetRule>() {
+      @java.lang.Override
+      public UserPrivacySetRule parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserPrivacySetRule(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserPrivacySetRule> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserPrivacySetRule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRule getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface UserPrivacySetRuleResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserPrivacySetRuleResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The type.
      */
     net.iGap.proto.ProtoGlobal.PrivacyType getType();
 
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The enum numeric value on the wire for level.
      */
     int getLevelValue();
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The level.
      */
     net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel();
   }
   /**
    * Protobuf type {@code proto.UserPrivacySetRuleResponse}
    */
-  public  static final class UserPrivacySetRuleResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserPrivacySetRuleResponse, UserPrivacySetRuleResponse.Builder> implements
+  public static final class UserPrivacySetRuleResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserPrivacySetRuleResponse)
       UserPrivacySetRuleResponseOrBuilder {
-    private UserPrivacySetRuleResponse() {
+  private static final long serialVersionUID = 0L;
+    // Use UserPrivacySetRuleResponse.newBuilder() to construct.
+    private UserPrivacySetRuleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private UserPrivacySetRuleResponse() {
+      type_ = 0;
+      level_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserPrivacySetRuleResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserPrivacySetRuleResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              level_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRuleResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRuleResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.class, net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_;
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The type.
      */
-    public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
-      net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.forNumber(type_);
+    @java.lang.Override public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.valueOf(type_);
       return result == null ? net.iGap.proto.ProtoGlobal.PrivacyType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
-     */
-    private void setTypeValue(int value) {
-        type_ = value;
-    }
-    /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
-     */
-    private void setType(net.iGap.proto.ProtoGlobal.PrivacyType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      type_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.PrivacyType type = 2;</code>
-     */
-    private void clearType() {
-      
-      type_ = 0;
     }
 
     public static final int LEVEL_FIELD_NUMBER = 3;
     private int level_;
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The enum numeric value on the wire for level.
      */
-    public int getLevelValue() {
+    @java.lang.Override public int getLevelValue() {
       return level_;
     }
     /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
+     * <code>.proto.PrivacyLevel level = 3;</code>
+     * @return The level.
      */
-    public net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel() {
-      net.iGap.proto.ProtoGlobal.PrivacyLevel result = net.iGap.proto.ProtoGlobal.PrivacyLevel.forNumber(level_);
+    @java.lang.Override public net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoGlobal.PrivacyLevel result = net.iGap.proto.ProtoGlobal.PrivacyLevel.valueOf(level_);
       return result == null ? net.iGap.proto.ProtoGlobal.PrivacyLevel.UNRECOGNIZED : result;
     }
-    /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
-     */
-    private void setLevelValue(int value) {
-        level_ = value;
-    }
-    /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
-     */
-    private void setLevel(net.iGap.proto.ProtoGlobal.PrivacyLevel value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      level_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.PrivacyLevel level = 3;</code>
-     */
-    private void clearLevel() {
-      
-      level_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -715,10 +1081,12 @@ public final class ProtoUserPrivacySetRule {
       if (level_ != net.iGap.proto.ProtoGlobal.PrivacyLevel.ALLOW_ALL.getNumber()) {
         output.writeEnum(3, level_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -734,332 +1102,640 @@ public final class ProtoUserPrivacySetRule {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, level_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse other = (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (type_ != other.type_) return false;
+      if (level_ != other.level_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + level_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserPrivacySetRuleResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserPrivacySetRuleResponse)
         net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRuleResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRuleResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.class, net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        type_ = 0;
 
+        level_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.internal_static_proto_UserPrivacySetRuleResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse build() {
+        net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse buildPartial() {
+        net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse result = new net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.type_ = type_;
+        result.level_ = level_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse) {
+          return mergeFrom((net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse other) {
+        if (other == net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.level_ != 0) {
+          setLevelValue(other.getLevelValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private int type_ = 0;
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return The enum numeric value on the wire for type.
        */
-      public int getTypeValue() {
-        return instance.getTypeValue();
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        copyOnWrite();
-        instance.setTypeValue(value);
+        
+        type_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return The type.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
-        return instance.getType();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.PrivacyType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(net.iGap.proto.ProtoGlobal.PrivacyType value) {
-        copyOnWrite();
-        instance.setType(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyType type = 2;</code>
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
-        copyOnWrite();
-        instance.clearType();
+        
+        type_ = 0;
+        onChanged();
         return this;
       }
 
+      private int level_ = 0;
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @return The enum numeric value on the wire for level.
        */
-      public int getLevelValue() {
-        return instance.getLevelValue();
+      @java.lang.Override public int getLevelValue() {
+        return level_;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @param value The enum numeric value on the wire for level to set.
+       * @return This builder for chaining.
        */
       public Builder setLevelValue(int value) {
-        copyOnWrite();
-        instance.setLevelValue(value);
+        
+        level_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @return The level.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel() {
-        return instance.getLevel();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.PrivacyLevel result = net.iGap.proto.ProtoGlobal.PrivacyLevel.valueOf(level_);
+        return result == null ? net.iGap.proto.ProtoGlobal.PrivacyLevel.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
        */
       public Builder setLevel(net.iGap.proto.ProtoGlobal.PrivacyLevel value) {
-        copyOnWrite();
-        instance.setLevel(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        level_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.PrivacyLevel level = 3;</code>
+       * <code>.proto.PrivacyLevel level = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        copyOnWrite();
-        instance.clearLevel();
+        
+        level_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserPrivacySetRuleResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse other = (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
-          level_ = visitor.visitInt(level_ != 0, level_,    other.level_ != 0, other.level_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-                  int rawValue = input.readEnum();
-
-                  type_ = rawValue;
-                  break;
-                }
-                case 24: {
-                  int rawValue = input.readEnum();
-
-                  level_ = rawValue;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserPrivacySetRuleResponse)
     private static final net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserPrivacySetRuleResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse();
     }
 
     public static net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserPrivacySetRuleResponse> PARSER;
+    private static final com.google.protobuf.Parser<UserPrivacySetRuleResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserPrivacySetRuleResponse>() {
+      @java.lang.Override
+      public UserPrivacySetRuleResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserPrivacySetRuleResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserPrivacySetRuleResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserPrivacySetRuleResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserPrivacySetRule.UserPrivacySetRuleResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserPrivacySetRule_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserPrivacySetRule_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserPrivacySetRuleResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserPrivacySetRuleResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\030UserPrivacySetRule.proto\022\005proto\032\rReque" +
+      "st.proto\032\016Response.proto\032\014Global.proto\"{" +
+      "\n\022UserPrivacySetRule\022\037\n\007request\030\001 \001(\0132\016." +
+      "proto.Request\022 \n\004type\030\002 \001(\0162\022.proto.Priv" +
+      "acyType\022\"\n\005level\030\003 \001(\0162\023.proto.PrivacyLe" +
+      "vel\"\205\001\n\032UserPrivacySetRuleResponse\022!\n\010re" +
+      "sponse\030\001 \001(\0132\017.proto.Response\022 \n\004type\030\002 " +
+      "\001(\0162\022.proto.PrivacyType\022\"\n\005level\030\003 \001(\0162\023" +
+      ".proto.PrivacyLevelB)\n\016net.iGap.protoB\027P" +
+      "rotoUserPrivacySetRuleb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        });
+    internal_static_proto_UserPrivacySetRule_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_UserPrivacySetRule_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserPrivacySetRule_descriptor,
+        new java.lang.String[] { "Request", "Type", "Level", });
+    internal_static_proto_UserPrivacySetRuleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_UserPrivacySetRuleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserPrivacySetRuleResponse_descriptor,
+        new java.lang.String[] { "Response", "Type", "Level", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

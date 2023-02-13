@@ -8,53 +8,166 @@ public final class ProtoMplGetBillToken {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface MplGetBillTokenOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MplGetBillToken)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint64 bill_id = 2;</code>
+     * <code>uint64 bill_id = 2;</code>
+     * @return The billId.
      */
     long getBillId();
 
     /**
-     * <code>optional uint64 pay_id = 3;</code>
+     * <code>uint64 pay_id = 3;</code>
+     * @return The payId.
      */
     long getPayId();
 
     /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     * <code>.proto.MplGetBillToken.Type type = 4;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     * <code>.proto.MplGetBillToken.Type type = 4;</code>
+     * @return The type.
      */
     net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType();
   }
   /**
    * Protobuf type {@code proto.MplGetBillToken}
    */
-  public  static final class MplGetBillToken extends
-      com.google.protobuf.GeneratedMessageLite<
-          MplGetBillToken, MplGetBillToken.Builder> implements
+  public static final class MplGetBillToken extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MplGetBillToken)
       MplGetBillTokenOrBuilder {
-    private MplGetBillToken() {
+  private static final long serialVersionUID = 0L;
+    // Use MplGetBillToken.newBuilder() to construct.
+    private MplGetBillToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private MplGetBillToken() {
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MplGetBillToken();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MplGetBillToken(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              billId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              payId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillToken_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillToken_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.class, net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Builder.class);
+    }
+
     /**
      * Protobuf enum {@code proto.MplGetBillToken.Type}
      */
     public enum Type
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>NONE = 0;</code>
        */
@@ -85,10 +198,16 @@ public final class ProtoMplGetBillToken {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -96,6 +215,10 @@ public final class ProtoMplGetBillToken {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Type forNumber(int value) {
         switch (value) {
           case 0: return NONE;
@@ -117,6 +240,37 @@ public final class ProtoMplGetBillToken {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private Type(int value) {
@@ -129,140 +283,82 @@ public final class ProtoMplGetBillToken {
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int BILL_ID_FIELD_NUMBER = 2;
     private long billId_;
     /**
-     * <code>optional uint64 bill_id = 2;</code>
+     * <code>uint64 bill_id = 2;</code>
+     * @return The billId.
      */
+    @java.lang.Override
     public long getBillId() {
       return billId_;
-    }
-    /**
-     * <code>optional uint64 bill_id = 2;</code>
-     */
-    private void setBillId(long value) {
-      
-      billId_ = value;
-    }
-    /**
-     * <code>optional uint64 bill_id = 2;</code>
-     */
-    private void clearBillId() {
-      
-      billId_ = 0L;
     }
 
     public static final int PAY_ID_FIELD_NUMBER = 3;
     private long payId_;
     /**
-     * <code>optional uint64 pay_id = 3;</code>
+     * <code>uint64 pay_id = 3;</code>
+     * @return The payId.
      */
+    @java.lang.Override
     public long getPayId() {
       return payId_;
-    }
-    /**
-     * <code>optional uint64 pay_id = 3;</code>
-     */
-    private void setPayId(long value) {
-      
-      payId_ = value;
-    }
-    /**
-     * <code>optional uint64 pay_id = 3;</code>
-     */
-    private void clearPayId() {
-      
-      payId_ = 0L;
     }
 
     public static final int TYPE_FIELD_NUMBER = 4;
     private int type_;
     /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     * <code>.proto.MplGetBillToken.Type type = 4;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     * <code>.proto.MplGetBillToken.Type type = 4;</code>
+     * @return The type.
      */
-    public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType() {
-      net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type result = net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.forNumber(type_);
+    @java.lang.Override public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type result = net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.valueOf(type_);
       return result == null ? net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.UNRECOGNIZED : result;
     }
-    /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
-     */
-    private void setTypeValue(int value) {
-        type_ = value;
-    }
-    /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
-     */
-    private void setType(net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      type_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
-     */
-    private void clearType() {
-      
-      type_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -277,10 +373,12 @@ public final class ProtoMplGetBillToken {
       if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.NONE.getNumber()) {
         output.writeEnum(4, type_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -300,410 +398,690 @@ public final class ProtoMplGetBillToken {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, type_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken other = (net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getBillId()
+          != other.getBillId()) return false;
+      if (getPayId()
+          != other.getPayId()) return false;
+      if (type_ != other.type_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + BILL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBillId());
+      hash = (37 * hash) + PAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPayId());
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MplGetBillToken}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MplGetBillToken)
         net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillToken_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillToken_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.class, net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        billId_ = 0L;
 
+        payId_ = 0L;
+
+        type_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillToken_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken build() {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken buildPartial() {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken result = new net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.billId_ = billId_;
+        result.payId_ = payId_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken) {
+          return mergeFrom((net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken other) {
+        if (other == net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getBillId() != 0L) {
+          setBillId(other.getBillId());
+        }
+        if (other.getPayId() != 0L) {
+          setPayId(other.getPayId());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private long billId_ ;
       /**
-       * <code>optional uint64 bill_id = 2;</code>
+       * <code>uint64 bill_id = 2;</code>
+       * @return The billId.
        */
+      @java.lang.Override
       public long getBillId() {
-        return instance.getBillId();
+        return billId_;
       }
       /**
-       * <code>optional uint64 bill_id = 2;</code>
+       * <code>uint64 bill_id = 2;</code>
+       * @param value The billId to set.
+       * @return This builder for chaining.
        */
       public Builder setBillId(long value) {
-        copyOnWrite();
-        instance.setBillId(value);
+        
+        billId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 bill_id = 2;</code>
+       * <code>uint64 bill_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBillId() {
-        copyOnWrite();
-        instance.clearBillId();
+        
+        billId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private long payId_ ;
       /**
-       * <code>optional uint64 pay_id = 3;</code>
+       * <code>uint64 pay_id = 3;</code>
+       * @return The payId.
        */
+      @java.lang.Override
       public long getPayId() {
-        return instance.getPayId();
+        return payId_;
       }
       /**
-       * <code>optional uint64 pay_id = 3;</code>
+       * <code>uint64 pay_id = 3;</code>
+       * @param value The payId to set.
+       * @return This builder for chaining.
        */
       public Builder setPayId(long value) {
-        copyOnWrite();
-        instance.setPayId(value);
+        
+        payId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 pay_id = 3;</code>
+       * <code>uint64 pay_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPayId() {
-        copyOnWrite();
-        instance.clearPayId();
+        
+        payId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private int type_ = 0;
       /**
-       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       * <code>.proto.MplGetBillToken.Type type = 4;</code>
+       * @return The enum numeric value on the wire for type.
        */
-      public int getTypeValue() {
-        return instance.getTypeValue();
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
-       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       * <code>.proto.MplGetBillToken.Type type = 4;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        copyOnWrite();
-        instance.setTypeValue(value);
+        
+        type_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       * <code>.proto.MplGetBillToken.Type type = 4;</code>
+       * @return The type.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType() {
-        return instance.getType();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type result = net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       * <code>.proto.MplGetBillToken.Type type = 4;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type value) {
-        copyOnWrite();
-        instance.setType(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       * <code>.proto.MplGetBillToken.Type type = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
-        copyOnWrite();
-        instance.clearType();
+        
+        type_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.MplGetBillToken)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken other = (net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          billId_ = visitor.visitLong(billId_ != 0L, billId_,
-              other.billId_ != 0L, other.billId_);
-          payId_ = visitor.visitLong(payId_ != 0L, payId_,
-              other.payId_ != 0L, other.payId_);
-          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  billId_ = input.readUInt64();
-                  break;
-                }
-                case 24: {
-
-                  payId_ = input.readUInt64();
-                  break;
-                }
-                case 32: {
-                  int rawValue = input.readEnum();
-
-                  type_ = rawValue;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MplGetBillToken)
     private static final net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MplGetBillToken();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken();
     }
 
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MplGetBillToken> PARSER;
+    private static final com.google.protobuf.Parser<MplGetBillToken>
+        PARSER = new com.google.protobuf.AbstractParser<MplGetBillToken>() {
+      @java.lang.Override
+      public MplGetBillToken parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MplGetBillToken(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MplGetBillToken> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MplGetBillToken> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface MplGetBillTokenResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MplGetBillTokenResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional uint32 status = 2;</code>
+     * <code>uint32 status = 2;</code>
+     * @return The status.
      */
     int getStatus();
 
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
+     * @return The token.
      */
     java.lang.String getToken();
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
+     * @return The bytes for token.
      */
     com.google.protobuf.ByteString
         getTokenBytes();
 
     /**
-     * <code>optional uint32 expire_time = 4;</code>
+     * <code>uint32 expire_time = 4;</code>
+     * @return The expireTime.
      */
     int getExpireTime();
 
     /**
-     * <code>optional string message = 5;</code>
+     * <code>string message = 5;</code>
+     * @return The message.
      */
     java.lang.String getMessage();
     /**
-     * <code>optional string message = 5;</code>
+     * <code>string message = 5;</code>
+     * @return The bytes for message.
      */
     com.google.protobuf.ByteString
         getMessageBytes();
 
     /**
-     * <code>optional uint32 discount_amount = 6;</code>
+     * <code>uint32 discount_amount = 6;</code>
+     * @return The discountAmount.
      */
     int getDiscountAmount();
 
     /**
-     * <code>optional uint32 original_amount = 7;</code>
+     * <code>uint32 original_amount = 7;</code>
+     * @return The originalAmount.
      */
     int getOriginalAmount();
 
     /**
-     * <code>optional uint32 new_pay_id = 8;</code>
+     * <code>uint32 new_pay_id = 8;</code>
+     * @return The newPayId.
      */
     int getNewPayId();
 
     /**
-     * <code>optional string organization_name = 9;</code>
+     * <code>string organization_name = 9;</code>
+     * @return The organizationName.
      */
     java.lang.String getOrganizationName();
     /**
-     * <code>optional string organization_name = 9;</code>
+     * <code>string organization_name = 9;</code>
+     * @return The bytes for organizationName.
      */
     com.google.protobuf.ByteString
         getOrganizationNameBytes();
@@ -711,321 +1089,346 @@ public final class ProtoMplGetBillToken {
   /**
    * Protobuf type {@code proto.MplGetBillTokenResponse}
    */
-  public  static final class MplGetBillTokenResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          MplGetBillTokenResponse, MplGetBillTokenResponse.Builder> implements
+  public static final class MplGetBillTokenResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MplGetBillTokenResponse)
       MplGetBillTokenResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MplGetBillTokenResponse.newBuilder() to construct.
+    private MplGetBillTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private MplGetBillTokenResponse() {
       token_ = "";
       message_ = "";
       organizationName_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MplGetBillTokenResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MplGetBillTokenResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              status_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 32: {
+
+              expireTime_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 48: {
+
+              discountAmount_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              originalAmount_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              newPayId_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillTokenResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillTokenResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.class, net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private int status_;
     /**
-     * <code>optional uint32 status = 2;</code>
+     * <code>uint32 status = 2;</code>
+     * @return The status.
      */
+    @java.lang.Override
     public int getStatus() {
       return status_;
     }
-    /**
-     * <code>optional uint32 status = 2;</code>
-     */
-    private void setStatus(int value) {
-      
-      status_ = value;
-    }
-    /**
-     * <code>optional uint32 status = 2;</code>
-     */
-    private void clearStatus() {
-      
-      status_ = 0;
-    }
 
     public static final int TOKEN_FIELD_NUMBER = 3;
-    private java.lang.String token_;
+    private volatile java.lang.Object token_;
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
+     * @return The token.
      */
+    @java.lang.Override
     public java.lang.String getToken() {
-      return token_;
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
+     * @return The bytes for token.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTokenBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(token_);
-    }
-    /**
-     * <code>optional string token = 3;</code>
-     */
-    private void setToken(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      token_ = value;
-    }
-    /**
-     * <code>optional string token = 3;</code>
-     */
-    private void clearToken() {
-      
-      token_ = getDefaultInstance().getToken();
-    }
-    /**
-     * <code>optional string token = 3;</code>
-     */
-    private void setTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      token_ = value.toStringUtf8();
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
     private int expireTime_;
     /**
-     * <code>optional uint32 expire_time = 4;</code>
+     * <code>uint32 expire_time = 4;</code>
+     * @return The expireTime.
      */
+    @java.lang.Override
     public int getExpireTime() {
       return expireTime_;
     }
-    /**
-     * <code>optional uint32 expire_time = 4;</code>
-     */
-    private void setExpireTime(int value) {
-      
-      expireTime_ = value;
-    }
-    /**
-     * <code>optional uint32 expire_time = 4;</code>
-     */
-    private void clearExpireTime() {
-      
-      expireTime_ = 0;
-    }
 
     public static final int MESSAGE_FIELD_NUMBER = 5;
-    private java.lang.String message_;
+    private volatile java.lang.Object message_;
     /**
-     * <code>optional string message = 5;</code>
+     * <code>string message = 5;</code>
+     * @return The message.
      */
+    @java.lang.Override
     public java.lang.String getMessage() {
-      return message_;
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string message = 5;</code>
+     * <code>string message = 5;</code>
+     * @return The bytes for message.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(message_);
-    }
-    /**
-     * <code>optional string message = 5;</code>
-     */
-    private void setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-    }
-    /**
-     * <code>optional string message = 5;</code>
-     */
-    private void clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-    }
-    /**
-     * <code>optional string message = 5;</code>
-     */
-    private void setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value.toStringUtf8();
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int DISCOUNT_AMOUNT_FIELD_NUMBER = 6;
     private int discountAmount_;
     /**
-     * <code>optional uint32 discount_amount = 6;</code>
+     * <code>uint32 discount_amount = 6;</code>
+     * @return The discountAmount.
      */
+    @java.lang.Override
     public int getDiscountAmount() {
       return discountAmount_;
-    }
-    /**
-     * <code>optional uint32 discount_amount = 6;</code>
-     */
-    private void setDiscountAmount(int value) {
-      
-      discountAmount_ = value;
-    }
-    /**
-     * <code>optional uint32 discount_amount = 6;</code>
-     */
-    private void clearDiscountAmount() {
-      
-      discountAmount_ = 0;
     }
 
     public static final int ORIGINAL_AMOUNT_FIELD_NUMBER = 7;
     private int originalAmount_;
     /**
-     * <code>optional uint32 original_amount = 7;</code>
+     * <code>uint32 original_amount = 7;</code>
+     * @return The originalAmount.
      */
+    @java.lang.Override
     public int getOriginalAmount() {
       return originalAmount_;
-    }
-    /**
-     * <code>optional uint32 original_amount = 7;</code>
-     */
-    private void setOriginalAmount(int value) {
-      
-      originalAmount_ = value;
-    }
-    /**
-     * <code>optional uint32 original_amount = 7;</code>
-     */
-    private void clearOriginalAmount() {
-      
-      originalAmount_ = 0;
     }
 
     public static final int NEW_PAY_ID_FIELD_NUMBER = 8;
     private int newPayId_;
     /**
-     * <code>optional uint32 new_pay_id = 8;</code>
+     * <code>uint32 new_pay_id = 8;</code>
+     * @return The newPayId.
      */
+    @java.lang.Override
     public int getNewPayId() {
       return newPayId_;
     }
-    /**
-     * <code>optional uint32 new_pay_id = 8;</code>
-     */
-    private void setNewPayId(int value) {
-      
-      newPayId_ = value;
-    }
-    /**
-     * <code>optional uint32 new_pay_id = 8;</code>
-     */
-    private void clearNewPayId() {
-      
-      newPayId_ = 0;
-    }
 
     public static final int ORGANIZATION_NAME_FIELD_NUMBER = 9;
-    private java.lang.String organizationName_;
+    private volatile java.lang.Object organizationName_;
     /**
-     * <code>optional string organization_name = 9;</code>
+     * <code>string organization_name = 9;</code>
+     * @return The organizationName.
      */
+    @java.lang.Override
     public java.lang.String getOrganizationName() {
-      return organizationName_;
+      java.lang.Object ref = organizationName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationName_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string organization_name = 9;</code>
+     * <code>string organization_name = 9;</code>
+     * @return The bytes for organizationName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOrganizationNameBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(organizationName_);
-    }
-    /**
-     * <code>optional string organization_name = 9;</code>
-     */
-    private void setOrganizationName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      organizationName_ = value;
-    }
-    /**
-     * <code>optional string organization_name = 9;</code>
-     */
-    private void clearOrganizationName() {
-      
-      organizationName_ = getDefaultInstance().getOrganizationName();
-    }
-    /**
-     * <code>optional string organization_name = 9;</code>
-     */
-    private void setOrganizationNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      organizationName_ = value.toStringUtf8();
+      java.lang.Object ref = organizationName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1034,14 +1437,14 @@ public final class ProtoMplGetBillToken {
       if (status_ != 0) {
         output.writeUInt32(2, status_);
       }
-      if (!token_.isEmpty()) {
-        output.writeString(3, getToken());
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
       }
       if (expireTime_ != 0) {
         output.writeUInt32(4, expireTime_);
       }
-      if (!message_.isEmpty()) {
-        output.writeString(5, getMessage());
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
       }
       if (discountAmount_ != 0) {
         output.writeUInt32(6, discountAmount_);
@@ -1052,13 +1455,15 @@ public final class ProtoMplGetBillToken {
       if (newPayId_ != 0) {
         output.writeUInt32(8, newPayId_);
       }
-      if (!organizationName_.isEmpty()) {
-        output.writeString(9, getOrganizationName());
+      if (!getOrganizationNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, organizationName_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1070,17 +1475,15 @@ public final class ProtoMplGetBillToken {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, status_);
       }
-      if (!token_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(3, getToken());
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
       }
       if (expireTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, expireTime_);
       }
-      if (!message_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(5, getMessage());
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
       }
       if (discountAmount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1094,542 +1497,984 @@ public final class ProtoMplGetBillToken {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, newPayId_);
       }
-      if (!organizationName_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(9, getOrganizationName());
+      if (!getOrganizationNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, organizationName_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse other = (net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (getExpireTime()
+          != other.getExpireTime()) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (getDiscountAmount()
+          != other.getDiscountAmount()) return false;
+      if (getOriginalAmount()
+          != other.getOriginalAmount()) return false;
+      if (getNewPayId()
+          != other.getNewPayId()) return false;
+      if (!getOrganizationName()
+          .equals(other.getOrganizationName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + DISCOUNT_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getDiscountAmount();
+      hash = (37 * hash) + ORIGINAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getOriginalAmount();
+      hash = (37 * hash) + NEW_PAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNewPayId();
+      hash = (37 * hash) + ORGANIZATION_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MplGetBillTokenResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MplGetBillTokenResponse)
         net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillTokenResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillTokenResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.class, net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        status_ = 0;
 
+        token_ = "";
+
+        expireTime_ = 0;
+
+        message_ = "";
+
+        discountAmount_ = 0;
+
+        originalAmount_ = 0;
+
+        newPayId_ = 0;
+
+        organizationName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillTokenResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse build() {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse buildPartial() {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse result = new net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.status_ = status_;
+        result.token_ = token_;
+        result.expireTime_ = expireTime_;
+        result.message_ = message_;
+        result.discountAmount_ = discountAmount_;
+        result.originalAmount_ = originalAmount_;
+        result.newPayId_ = newPayId_;
+        result.organizationName_ = organizationName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse) {
+          return mergeFrom((net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse other) {
+        if (other == net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (other.getExpireTime() != 0) {
+          setExpireTime(other.getExpireTime());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (other.getDiscountAmount() != 0) {
+          setDiscountAmount(other.getDiscountAmount());
+        }
+        if (other.getOriginalAmount() != 0) {
+          setOriginalAmount(other.getOriginalAmount());
+        }
+        if (other.getNewPayId() != 0) {
+          setNewPayId(other.getNewPayId());
+        }
+        if (!other.getOrganizationName().isEmpty()) {
+          organizationName_ = other.organizationName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private int status_ ;
       /**
-       * <code>optional uint32 status = 2;</code>
+       * <code>uint32 status = 2;</code>
+       * @return The status.
        */
+      @java.lang.Override
       public int getStatus() {
-        return instance.getStatus();
+        return status_;
       }
       /**
-       * <code>optional uint32 status = 2;</code>
+       * <code>uint32 status = 2;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
        */
       public Builder setStatus(int value) {
-        copyOnWrite();
-        instance.setStatus(value);
+        
+        status_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 status = 2;</code>
+       * <code>uint32 status = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        copyOnWrite();
-        instance.clearStatus();
+        
+        status_ = 0;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object token_ = "";
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
+       * @return The token.
        */
       public java.lang.String getToken() {
-        return instance.getToken();
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
+       * @return The bytes for token.
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
-        return instance.getTokenBytes();
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
        */
       public Builder setToken(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setToken(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearToken() {
-        copyOnWrite();
-        instance.clearToken();
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setTokenBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
         return this;
       }
 
+      private int expireTime_ ;
       /**
-       * <code>optional uint32 expire_time = 4;</code>
+       * <code>uint32 expire_time = 4;</code>
+       * @return The expireTime.
        */
+      @java.lang.Override
       public int getExpireTime() {
-        return instance.getExpireTime();
+        return expireTime_;
       }
       /**
-       * <code>optional uint32 expire_time = 4;</code>
+       * <code>uint32 expire_time = 4;</code>
+       * @param value The expireTime to set.
+       * @return This builder for chaining.
        */
       public Builder setExpireTime(int value) {
-        copyOnWrite();
-        instance.setExpireTime(value);
+        
+        expireTime_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 expire_time = 4;</code>
+       * <code>uint32 expire_time = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExpireTime() {
-        copyOnWrite();
-        instance.clearExpireTime();
+        
+        expireTime_ = 0;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object message_ = "";
       /**
-       * <code>optional string message = 5;</code>
+       * <code>string message = 5;</code>
+       * @return The message.
        */
       public java.lang.String getMessage() {
-        return instance.getMessage();
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string message = 5;</code>
+       * <code>string message = 5;</code>
+       * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
-        return instance.getMessageBytes();
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string message = 5;</code>
+       * <code>string message = 5;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
        */
       public Builder setMessage(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setMessage(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string message = 5;</code>
+       * <code>string message = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMessage() {
-        copyOnWrite();
-        instance.clearMessage();
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string message = 5;</code>
+       * <code>string message = 5;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setMessageBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
         return this;
       }
 
+      private int discountAmount_ ;
       /**
-       * <code>optional uint32 discount_amount = 6;</code>
+       * <code>uint32 discount_amount = 6;</code>
+       * @return The discountAmount.
        */
+      @java.lang.Override
       public int getDiscountAmount() {
-        return instance.getDiscountAmount();
+        return discountAmount_;
       }
       /**
-       * <code>optional uint32 discount_amount = 6;</code>
+       * <code>uint32 discount_amount = 6;</code>
+       * @param value The discountAmount to set.
+       * @return This builder for chaining.
        */
       public Builder setDiscountAmount(int value) {
-        copyOnWrite();
-        instance.setDiscountAmount(value);
+        
+        discountAmount_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 discount_amount = 6;</code>
+       * <code>uint32 discount_amount = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDiscountAmount() {
-        copyOnWrite();
-        instance.clearDiscountAmount();
+        
+        discountAmount_ = 0;
+        onChanged();
         return this;
       }
 
+      private int originalAmount_ ;
       /**
-       * <code>optional uint32 original_amount = 7;</code>
+       * <code>uint32 original_amount = 7;</code>
+       * @return The originalAmount.
        */
+      @java.lang.Override
       public int getOriginalAmount() {
-        return instance.getOriginalAmount();
+        return originalAmount_;
       }
       /**
-       * <code>optional uint32 original_amount = 7;</code>
+       * <code>uint32 original_amount = 7;</code>
+       * @param value The originalAmount to set.
+       * @return This builder for chaining.
        */
       public Builder setOriginalAmount(int value) {
-        copyOnWrite();
-        instance.setOriginalAmount(value);
+        
+        originalAmount_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 original_amount = 7;</code>
+       * <code>uint32 original_amount = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOriginalAmount() {
-        copyOnWrite();
-        instance.clearOriginalAmount();
+        
+        originalAmount_ = 0;
+        onChanged();
         return this;
       }
 
+      private int newPayId_ ;
       /**
-       * <code>optional uint32 new_pay_id = 8;</code>
+       * <code>uint32 new_pay_id = 8;</code>
+       * @return The newPayId.
        */
+      @java.lang.Override
       public int getNewPayId() {
-        return instance.getNewPayId();
+        return newPayId_;
       }
       /**
-       * <code>optional uint32 new_pay_id = 8;</code>
+       * <code>uint32 new_pay_id = 8;</code>
+       * @param value The newPayId to set.
+       * @return This builder for chaining.
        */
       public Builder setNewPayId(int value) {
-        copyOnWrite();
-        instance.setNewPayId(value);
+        
+        newPayId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 new_pay_id = 8;</code>
+       * <code>uint32 new_pay_id = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNewPayId() {
-        copyOnWrite();
-        instance.clearNewPayId();
+        
+        newPayId_ = 0;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object organizationName_ = "";
       /**
-       * <code>optional string organization_name = 9;</code>
+       * <code>string organization_name = 9;</code>
+       * @return The organizationName.
        */
       public java.lang.String getOrganizationName() {
-        return instance.getOrganizationName();
+        java.lang.Object ref = organizationName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string organization_name = 9;</code>
+       * <code>string organization_name = 9;</code>
+       * @return The bytes for organizationName.
        */
       public com.google.protobuf.ByteString
           getOrganizationNameBytes() {
-        return instance.getOrganizationNameBytes();
+        java.lang.Object ref = organizationName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string organization_name = 9;</code>
+       * <code>string organization_name = 9;</code>
+       * @param value The organizationName to set.
+       * @return This builder for chaining.
        */
       public Builder setOrganizationName(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setOrganizationName(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationName_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string organization_name = 9;</code>
+       * <code>string organization_name = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOrganizationName() {
-        copyOnWrite();
-        instance.clearOrganizationName();
+        
+        organizationName_ = getDefaultInstance().getOrganizationName();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string organization_name = 9;</code>
+       * <code>string organization_name = 9;</code>
+       * @param value The bytes for organizationName to set.
+       * @return This builder for chaining.
        */
       public Builder setOrganizationNameBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setOrganizationNameBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationName_ = value;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.MplGetBillTokenResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse other = (net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          status_ = visitor.visitInt(status_ != 0, status_,
-              other.status_ != 0, other.status_);
-          token_ = visitor.visitString(!token_.isEmpty(), token_,
-              !other.token_.isEmpty(), other.token_);
-          expireTime_ = visitor.visitInt(expireTime_ != 0, expireTime_,
-              other.expireTime_ != 0, other.expireTime_);
-          message_ = visitor.visitString(!message_.isEmpty(), message_,
-              !other.message_.isEmpty(), other.message_);
-          discountAmount_ = visitor.visitInt(discountAmount_ != 0, discountAmount_,
-              other.discountAmount_ != 0, other.discountAmount_);
-          originalAmount_ = visitor.visitInt(originalAmount_ != 0, originalAmount_,
-              other.originalAmount_ != 0, other.originalAmount_);
-          newPayId_ = visitor.visitInt(newPayId_ != 0, newPayId_,
-              other.newPayId_ != 0, other.newPayId_);
-          organizationName_ = visitor.visitString(!organizationName_.isEmpty(), organizationName_,
-              !other.organizationName_.isEmpty(), other.organizationName_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  status_ = input.readUInt32();
-                  break;
-                }
-                case 26: {
-                  String s = input.readStringRequireUtf8();
-
-                  token_ = s;
-                  break;
-                }
-                case 32: {
-
-                  expireTime_ = input.readUInt32();
-                  break;
-                }
-                case 42: {
-                  String s = input.readStringRequireUtf8();
-
-                  message_ = s;
-                  break;
-                }
-                case 48: {
-
-                  discountAmount_ = input.readUInt32();
-                  break;
-                }
-                case 56: {
-
-                  originalAmount_ = input.readUInt32();
-                  break;
-                }
-                case 64: {
-
-                  newPayId_ = input.readUInt32();
-                  break;
-                }
-                case 74: {
-                  String s = input.readStringRequireUtf8();
-
-                  organizationName_ = s;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MplGetBillTokenResponse)
     private static final net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MplGetBillTokenResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse();
     }
 
     public static net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MplGetBillTokenResponse> PARSER;
+    private static final com.google.protobuf.Parser<MplGetBillTokenResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MplGetBillTokenResponse>() {
+      @java.lang.Override
+      public MplGetBillTokenResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MplGetBillTokenResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MplGetBillTokenResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MplGetBillTokenResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoMplGetBillToken.MplGetBillTokenResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MplGetBillToken_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MplGetBillToken_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MplGetBillTokenResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MplGetBillTokenResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\025MplGetBillToken.proto\022\005proto\032\rRequest." +
+      "proto\032\016Response.proto\"\255\001\n\017MplGetBillToke" +
+      "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007bi" +
+      "ll_id\030\002 \001(\004\022\016\n\006pay_id\030\003 \001(\004\022)\n\004type\030\004 \001(" +
+      "\0162\033.proto.MplGetBillToken.Type\"-\n\004Type\022\010" +
+      "\n\004NONE\020\000\022\014\n\010MID_TERM\020\001\022\r\n\tLAST_TERM\020\002\"\342\001" +
+      "\n\027MplGetBillTokenResponse\022!\n\010response\030\001 " +
+      "\001(\0132\017.proto.Response\022\016\n\006status\030\002 \001(\r\022\r\n\005" +
+      "token\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007mess" +
+      "age\030\005 \001(\t\022\027\n\017discount_amount\030\006 \001(\r\022\027\n\017or" +
+      "iginal_amount\030\007 \001(\r\022\022\n\nnew_pay_id\030\010 \001(\r\022" +
+      "\031\n\021organization_name\030\t \001(\tB&\n\016net.iGap.p" +
+      "rotoB\024ProtoMplGetBillTokenb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_MplGetBillToken_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_MplGetBillToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MplGetBillToken_descriptor,
+        new java.lang.String[] { "Request", "BillId", "PayId", "Type", });
+    internal_static_proto_MplGetBillTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_MplGetBillTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MplGetBillTokenResponse_descriptor,
+        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", "Message", "DiscountAmount", "OriginalAmount", "NewPayId", "OrganizationName", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

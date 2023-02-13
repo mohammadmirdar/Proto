@@ -8,95 +8,123 @@ public final class ProtoUserTwoStepVerificationSetPassword {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface UserTwoStepVerificationSetPasswordOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserTwoStepVerificationSetPassword)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional string old_password = 2;</code>
+     * <code>string old_password = 2;</code>
+     * @return The oldPassword.
      */
     java.lang.String getOldPassword();
     /**
-     * <code>optional string old_password = 2;</code>
+     * <code>string old_password = 2;</code>
+     * @return The bytes for oldPassword.
      */
     com.google.protobuf.ByteString
         getOldPasswordBytes();
 
     /**
-     * <code>optional string new_password = 3;</code>
+     * <code>string new_password = 3;</code>
+     * @return The newPassword.
      */
     java.lang.String getNewPassword();
     /**
-     * <code>optional string new_password = 3;</code>
+     * <code>string new_password = 3;</code>
+     * @return The bytes for newPassword.
      */
     com.google.protobuf.ByteString
         getNewPasswordBytes();
 
     /**
-     * <code>optional string recovery_email = 4;</code>
+     * <code>string recovery_email = 4;</code>
+     * @return The recoveryEmail.
      */
     java.lang.String getRecoveryEmail();
     /**
-     * <code>optional string recovery_email = 4;</code>
+     * <code>string recovery_email = 4;</code>
+     * @return The bytes for recoveryEmail.
      */
     com.google.protobuf.ByteString
         getRecoveryEmailBytes();
 
     /**
-     * <code>optional string question_one = 5;</code>
+     * <code>string question_one = 5;</code>
+     * @return The questionOne.
      */
     java.lang.String getQuestionOne();
     /**
-     * <code>optional string question_one = 5;</code>
+     * <code>string question_one = 5;</code>
+     * @return The bytes for questionOne.
      */
     com.google.protobuf.ByteString
         getQuestionOneBytes();
 
     /**
-     * <code>optional string answer_one = 6;</code>
+     * <code>string answer_one = 6;</code>
+     * @return The answerOne.
      */
     java.lang.String getAnswerOne();
     /**
-     * <code>optional string answer_one = 6;</code>
+     * <code>string answer_one = 6;</code>
+     * @return The bytes for answerOne.
      */
     com.google.protobuf.ByteString
         getAnswerOneBytes();
 
     /**
-     * <code>optional string question_two = 7;</code>
+     * <code>string question_two = 7;</code>
+     * @return The questionTwo.
      */
     java.lang.String getQuestionTwo();
     /**
-     * <code>optional string question_two = 7;</code>
+     * <code>string question_two = 7;</code>
+     * @return The bytes for questionTwo.
      */
     com.google.protobuf.ByteString
         getQuestionTwoBytes();
 
     /**
-     * <code>optional string answer_two = 8;</code>
+     * <code>string answer_two = 8;</code>
+     * @return The answerTwo.
      */
     java.lang.String getAnswerTwo();
     /**
-     * <code>optional string answer_two = 8;</code>
+     * <code>string answer_two = 8;</code>
+     * @return The bytes for answerTwo.
      */
     com.google.protobuf.ByteString
         getAnswerTwoBytes();
 
     /**
-     * <code>optional string hint = 9;</code>
+     * <code>string hint = 9;</code>
+     * @return The hint.
      */
     java.lang.String getHint();
     /**
-     * <code>optional string hint = 9;</code>
+     * <code>string hint = 9;</code>
+     * @return The bytes for hint.
      */
     com.google.protobuf.ByteString
         getHintBytes();
@@ -104,11 +132,15 @@ public final class ProtoUserTwoStepVerificationSetPassword {
   /**
    * Protobuf type {@code proto.UserTwoStepVerificationSetPassword}
    */
-  public  static final class UserTwoStepVerificationSetPassword extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserTwoStepVerificationSetPassword, UserTwoStepVerificationSetPassword.Builder> implements
+  public static final class UserTwoStepVerificationSetPassword extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserTwoStepVerificationSetPassword)
       UserTwoStepVerificationSetPasswordOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserTwoStepVerificationSetPassword.newBuilder() to construct.
+    private UserTwoStepVerificationSetPassword(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserTwoStepVerificationSetPassword() {
       oldPassword_ = "";
       newPassword_ = "";
@@ -119,459 +151,507 @@ public final class ProtoUserTwoStepVerificationSetPassword {
       answerTwo_ = "";
       hint_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserTwoStepVerificationSetPassword();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserTwoStepVerificationSetPassword(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              oldPassword_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              newPassword_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              recoveryEmail_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              questionOne_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              answerOne_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              questionTwo_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              answerTwo_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hint_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPassword_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPassword_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.class, net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int OLD_PASSWORD_FIELD_NUMBER = 2;
-    private java.lang.String oldPassword_;
+    private volatile java.lang.Object oldPassword_;
     /**
-     * <code>optional string old_password = 2;</code>
+     * <code>string old_password = 2;</code>
+     * @return The oldPassword.
      */
+    @java.lang.Override
     public java.lang.String getOldPassword() {
-      return oldPassword_;
+      java.lang.Object ref = oldPassword_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oldPassword_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string old_password = 2;</code>
+     * <code>string old_password = 2;</code>
+     * @return The bytes for oldPassword.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOldPasswordBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(oldPassword_);
-    }
-    /**
-     * <code>optional string old_password = 2;</code>
-     */
-    private void setOldPassword(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      oldPassword_ = value;
-    }
-    /**
-     * <code>optional string old_password = 2;</code>
-     */
-    private void clearOldPassword() {
-      
-      oldPassword_ = getDefaultInstance().getOldPassword();
-    }
-    /**
-     * <code>optional string old_password = 2;</code>
-     */
-    private void setOldPasswordBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      oldPassword_ = value.toStringUtf8();
+      java.lang.Object ref = oldPassword_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oldPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NEW_PASSWORD_FIELD_NUMBER = 3;
-    private java.lang.String newPassword_;
+    private volatile java.lang.Object newPassword_;
     /**
-     * <code>optional string new_password = 3;</code>
+     * <code>string new_password = 3;</code>
+     * @return The newPassword.
      */
+    @java.lang.Override
     public java.lang.String getNewPassword() {
-      return newPassword_;
+      java.lang.Object ref = newPassword_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        newPassword_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string new_password = 3;</code>
+     * <code>string new_password = 3;</code>
+     * @return The bytes for newPassword.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNewPasswordBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(newPassword_);
-    }
-    /**
-     * <code>optional string new_password = 3;</code>
-     */
-    private void setNewPassword(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      newPassword_ = value;
-    }
-    /**
-     * <code>optional string new_password = 3;</code>
-     */
-    private void clearNewPassword() {
-      
-      newPassword_ = getDefaultInstance().getNewPassword();
-    }
-    /**
-     * <code>optional string new_password = 3;</code>
-     */
-    private void setNewPasswordBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      newPassword_ = value.toStringUtf8();
+      java.lang.Object ref = newPassword_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        newPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int RECOVERY_EMAIL_FIELD_NUMBER = 4;
-    private java.lang.String recoveryEmail_;
+    private volatile java.lang.Object recoveryEmail_;
     /**
-     * <code>optional string recovery_email = 4;</code>
+     * <code>string recovery_email = 4;</code>
+     * @return The recoveryEmail.
      */
+    @java.lang.Override
     public java.lang.String getRecoveryEmail() {
-      return recoveryEmail_;
+      java.lang.Object ref = recoveryEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        recoveryEmail_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string recovery_email = 4;</code>
+     * <code>string recovery_email = 4;</code>
+     * @return The bytes for recoveryEmail.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRecoveryEmailBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(recoveryEmail_);
-    }
-    /**
-     * <code>optional string recovery_email = 4;</code>
-     */
-    private void setRecoveryEmail(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      recoveryEmail_ = value;
-    }
-    /**
-     * <code>optional string recovery_email = 4;</code>
-     */
-    private void clearRecoveryEmail() {
-      
-      recoveryEmail_ = getDefaultInstance().getRecoveryEmail();
-    }
-    /**
-     * <code>optional string recovery_email = 4;</code>
-     */
-    private void setRecoveryEmailBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      recoveryEmail_ = value.toStringUtf8();
+      java.lang.Object ref = recoveryEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        recoveryEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int QUESTION_ONE_FIELD_NUMBER = 5;
-    private java.lang.String questionOne_;
+    private volatile java.lang.Object questionOne_;
     /**
-     * <code>optional string question_one = 5;</code>
+     * <code>string question_one = 5;</code>
+     * @return The questionOne.
      */
+    @java.lang.Override
     public java.lang.String getQuestionOne() {
-      return questionOne_;
+      java.lang.Object ref = questionOne_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        questionOne_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string question_one = 5;</code>
+     * <code>string question_one = 5;</code>
+     * @return The bytes for questionOne.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getQuestionOneBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(questionOne_);
-    }
-    /**
-     * <code>optional string question_one = 5;</code>
-     */
-    private void setQuestionOne(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      questionOne_ = value;
-    }
-    /**
-     * <code>optional string question_one = 5;</code>
-     */
-    private void clearQuestionOne() {
-      
-      questionOne_ = getDefaultInstance().getQuestionOne();
-    }
-    /**
-     * <code>optional string question_one = 5;</code>
-     */
-    private void setQuestionOneBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      questionOne_ = value.toStringUtf8();
+      java.lang.Object ref = questionOne_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        questionOne_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ANSWER_ONE_FIELD_NUMBER = 6;
-    private java.lang.String answerOne_;
+    private volatile java.lang.Object answerOne_;
     /**
-     * <code>optional string answer_one = 6;</code>
+     * <code>string answer_one = 6;</code>
+     * @return The answerOne.
      */
+    @java.lang.Override
     public java.lang.String getAnswerOne() {
-      return answerOne_;
+      java.lang.Object ref = answerOne_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        answerOne_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string answer_one = 6;</code>
+     * <code>string answer_one = 6;</code>
+     * @return The bytes for answerOne.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAnswerOneBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(answerOne_);
-    }
-    /**
-     * <code>optional string answer_one = 6;</code>
-     */
-    private void setAnswerOne(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      answerOne_ = value;
-    }
-    /**
-     * <code>optional string answer_one = 6;</code>
-     */
-    private void clearAnswerOne() {
-      
-      answerOne_ = getDefaultInstance().getAnswerOne();
-    }
-    /**
-     * <code>optional string answer_one = 6;</code>
-     */
-    private void setAnswerOneBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      answerOne_ = value.toStringUtf8();
+      java.lang.Object ref = answerOne_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        answerOne_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int QUESTION_TWO_FIELD_NUMBER = 7;
-    private java.lang.String questionTwo_;
+    private volatile java.lang.Object questionTwo_;
     /**
-     * <code>optional string question_two = 7;</code>
+     * <code>string question_two = 7;</code>
+     * @return The questionTwo.
      */
+    @java.lang.Override
     public java.lang.String getQuestionTwo() {
-      return questionTwo_;
+      java.lang.Object ref = questionTwo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        questionTwo_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string question_two = 7;</code>
+     * <code>string question_two = 7;</code>
+     * @return The bytes for questionTwo.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getQuestionTwoBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(questionTwo_);
-    }
-    /**
-     * <code>optional string question_two = 7;</code>
-     */
-    private void setQuestionTwo(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      questionTwo_ = value;
-    }
-    /**
-     * <code>optional string question_two = 7;</code>
-     */
-    private void clearQuestionTwo() {
-      
-      questionTwo_ = getDefaultInstance().getQuestionTwo();
-    }
-    /**
-     * <code>optional string question_two = 7;</code>
-     */
-    private void setQuestionTwoBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      questionTwo_ = value.toStringUtf8();
+      java.lang.Object ref = questionTwo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        questionTwo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ANSWER_TWO_FIELD_NUMBER = 8;
-    private java.lang.String answerTwo_;
+    private volatile java.lang.Object answerTwo_;
     /**
-     * <code>optional string answer_two = 8;</code>
+     * <code>string answer_two = 8;</code>
+     * @return The answerTwo.
      */
+    @java.lang.Override
     public java.lang.String getAnswerTwo() {
-      return answerTwo_;
+      java.lang.Object ref = answerTwo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        answerTwo_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string answer_two = 8;</code>
+     * <code>string answer_two = 8;</code>
+     * @return The bytes for answerTwo.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAnswerTwoBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(answerTwo_);
-    }
-    /**
-     * <code>optional string answer_two = 8;</code>
-     */
-    private void setAnswerTwo(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      answerTwo_ = value;
-    }
-    /**
-     * <code>optional string answer_two = 8;</code>
-     */
-    private void clearAnswerTwo() {
-      
-      answerTwo_ = getDefaultInstance().getAnswerTwo();
-    }
-    /**
-     * <code>optional string answer_two = 8;</code>
-     */
-    private void setAnswerTwoBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      answerTwo_ = value.toStringUtf8();
+      java.lang.Object ref = answerTwo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        answerTwo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int HINT_FIELD_NUMBER = 9;
-    private java.lang.String hint_;
+    private volatile java.lang.Object hint_;
     /**
-     * <code>optional string hint = 9;</code>
+     * <code>string hint = 9;</code>
+     * @return The hint.
      */
+    @java.lang.Override
     public java.lang.String getHint() {
-      return hint_;
+      java.lang.Object ref = hint_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hint_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string hint = 9;</code>
+     * <code>string hint = 9;</code>
+     * @return The bytes for hint.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getHintBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(hint_);
-    }
-    /**
-     * <code>optional string hint = 9;</code>
-     */
-    private void setHint(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      hint_ = value;
-    }
-    /**
-     * <code>optional string hint = 9;</code>
-     */
-    private void clearHint() {
-      
-      hint_ = getDefaultInstance().getHint();
-    }
-    /**
-     * <code>optional string hint = 9;</code>
-     */
-    private void setHintBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      hint_ = value.toStringUtf8();
+      java.lang.Object ref = hint_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
-      if (!oldPassword_.isEmpty()) {
-        output.writeString(2, getOldPassword());
+      if (!getOldPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, oldPassword_);
       }
-      if (!newPassword_.isEmpty()) {
-        output.writeString(3, getNewPassword());
+      if (!getNewPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, newPassword_);
       }
-      if (!recoveryEmail_.isEmpty()) {
-        output.writeString(4, getRecoveryEmail());
+      if (!getRecoveryEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, recoveryEmail_);
       }
-      if (!questionOne_.isEmpty()) {
-        output.writeString(5, getQuestionOne());
+      if (!getQuestionOneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, questionOne_);
       }
-      if (!answerOne_.isEmpty()) {
-        output.writeString(6, getAnswerOne());
+      if (!getAnswerOneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, answerOne_);
       }
-      if (!questionTwo_.isEmpty()) {
-        output.writeString(7, getQuestionTwo());
+      if (!getQuestionTwoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, questionTwo_);
       }
-      if (!answerTwo_.isEmpty()) {
-        output.writeString(8, getAnswerTwo());
+      if (!getAnswerTwoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, answerTwo_);
       }
-      if (!hint_.isEmpty()) {
-        output.writeString(9, getHint());
+      if (!getHintBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, hint_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -579,677 +659,1209 @@ public final class ProtoUserTwoStepVerificationSetPassword {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      if (!oldPassword_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getOldPassword());
+      if (!getOldPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, oldPassword_);
       }
-      if (!newPassword_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(3, getNewPassword());
+      if (!getNewPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, newPassword_);
       }
-      if (!recoveryEmail_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(4, getRecoveryEmail());
+      if (!getRecoveryEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, recoveryEmail_);
       }
-      if (!questionOne_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(5, getQuestionOne());
+      if (!getQuestionOneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, questionOne_);
       }
-      if (!answerOne_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(6, getAnswerOne());
+      if (!getAnswerOneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, answerOne_);
       }
-      if (!questionTwo_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(7, getQuestionTwo());
+      if (!getQuestionTwoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, questionTwo_);
       }
-      if (!answerTwo_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(8, getAnswerTwo());
+      if (!getAnswerTwoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, answerTwo_);
       }
-      if (!hint_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(9, getHint());
+      if (!getHintBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, hint_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword other = (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!getOldPassword()
+          .equals(other.getOldPassword())) return false;
+      if (!getNewPassword()
+          .equals(other.getNewPassword())) return false;
+      if (!getRecoveryEmail()
+          .equals(other.getRecoveryEmail())) return false;
+      if (!getQuestionOne()
+          .equals(other.getQuestionOne())) return false;
+      if (!getAnswerOne()
+          .equals(other.getAnswerOne())) return false;
+      if (!getQuestionTwo()
+          .equals(other.getQuestionTwo())) return false;
+      if (!getAnswerTwo()
+          .equals(other.getAnswerTwo())) return false;
+      if (!getHint()
+          .equals(other.getHint())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + OLD_PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getOldPassword().hashCode();
+      hash = (37 * hash) + NEW_PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getNewPassword().hashCode();
+      hash = (37 * hash) + RECOVERY_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getRecoveryEmail().hashCode();
+      hash = (37 * hash) + QUESTION_ONE_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestionOne().hashCode();
+      hash = (37 * hash) + ANSWER_ONE_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswerOne().hashCode();
+      hash = (37 * hash) + QUESTION_TWO_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestionTwo().hashCode();
+      hash = (37 * hash) + ANSWER_TWO_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswerTwo().hashCode();
+      hash = (37 * hash) + HINT_FIELD_NUMBER;
+      hash = (53 * hash) + getHint().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserTwoStepVerificationSetPassword}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserTwoStepVerificationSetPassword)
         net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPassword_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPassword_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.class, net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        oldPassword_ = "";
 
+        newPassword_ = "";
+
+        recoveryEmail_ = "";
+
+        questionOne_ = "";
+
+        answerOne_ = "";
+
+        questionTwo_ = "";
+
+        answerTwo_ = "";
+
+        hint_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPassword_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword build() {
+        net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword buildPartial() {
+        net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword result = new net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.oldPassword_ = oldPassword_;
+        result.newPassword_ = newPassword_;
+        result.recoveryEmail_ = recoveryEmail_;
+        result.questionOne_ = questionOne_;
+        result.answerOne_ = answerOne_;
+        result.questionTwo_ = questionTwo_;
+        result.answerTwo_ = answerTwo_;
+        result.hint_ = hint_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword) {
+          return mergeFrom((net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword other) {
+        if (other == net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (!other.getOldPassword().isEmpty()) {
+          oldPassword_ = other.oldPassword_;
+          onChanged();
+        }
+        if (!other.getNewPassword().isEmpty()) {
+          newPassword_ = other.newPassword_;
+          onChanged();
+        }
+        if (!other.getRecoveryEmail().isEmpty()) {
+          recoveryEmail_ = other.recoveryEmail_;
+          onChanged();
+        }
+        if (!other.getQuestionOne().isEmpty()) {
+          questionOne_ = other.questionOne_;
+          onChanged();
+        }
+        if (!other.getAnswerOne().isEmpty()) {
+          answerOne_ = other.answerOne_;
+          onChanged();
+        }
+        if (!other.getQuestionTwo().isEmpty()) {
+          questionTwo_ = other.questionTwo_;
+          onChanged();
+        }
+        if (!other.getAnswerTwo().isEmpty()) {
+          answerTwo_ = other.answerTwo_;
+          onChanged();
+        }
+        if (!other.getHint().isEmpty()) {
+          hint_ = other.hint_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private java.lang.Object oldPassword_ = "";
       /**
-       * <code>optional string old_password = 2;</code>
+       * <code>string old_password = 2;</code>
+       * @return The oldPassword.
        */
       public java.lang.String getOldPassword() {
-        return instance.getOldPassword();
+        java.lang.Object ref = oldPassword_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oldPassword_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string old_password = 2;</code>
+       * <code>string old_password = 2;</code>
+       * @return The bytes for oldPassword.
        */
       public com.google.protobuf.ByteString
           getOldPasswordBytes() {
-        return instance.getOldPasswordBytes();
+        java.lang.Object ref = oldPassword_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oldPassword_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string old_password = 2;</code>
+       * <code>string old_password = 2;</code>
+       * @param value The oldPassword to set.
+       * @return This builder for chaining.
        */
       public Builder setOldPassword(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setOldPassword(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        oldPassword_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string old_password = 2;</code>
+       * <code>string old_password = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOldPassword() {
-        copyOnWrite();
-        instance.clearOldPassword();
+        
+        oldPassword_ = getDefaultInstance().getOldPassword();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string old_password = 2;</code>
+       * <code>string old_password = 2;</code>
+       * @param value The bytes for oldPassword to set.
+       * @return This builder for chaining.
        */
       public Builder setOldPasswordBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setOldPasswordBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        oldPassword_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object newPassword_ = "";
       /**
-       * <code>optional string new_password = 3;</code>
+       * <code>string new_password = 3;</code>
+       * @return The newPassword.
        */
       public java.lang.String getNewPassword() {
-        return instance.getNewPassword();
+        java.lang.Object ref = newPassword_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          newPassword_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string new_password = 3;</code>
+       * <code>string new_password = 3;</code>
+       * @return The bytes for newPassword.
        */
       public com.google.protobuf.ByteString
           getNewPasswordBytes() {
-        return instance.getNewPasswordBytes();
+        java.lang.Object ref = newPassword_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          newPassword_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string new_password = 3;</code>
+       * <code>string new_password = 3;</code>
+       * @param value The newPassword to set.
+       * @return This builder for chaining.
        */
       public Builder setNewPassword(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setNewPassword(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        newPassword_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string new_password = 3;</code>
+       * <code>string new_password = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNewPassword() {
-        copyOnWrite();
-        instance.clearNewPassword();
+        
+        newPassword_ = getDefaultInstance().getNewPassword();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string new_password = 3;</code>
+       * <code>string new_password = 3;</code>
+       * @param value The bytes for newPassword to set.
+       * @return This builder for chaining.
        */
       public Builder setNewPasswordBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setNewPasswordBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        newPassword_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object recoveryEmail_ = "";
       /**
-       * <code>optional string recovery_email = 4;</code>
+       * <code>string recovery_email = 4;</code>
+       * @return The recoveryEmail.
        */
       public java.lang.String getRecoveryEmail() {
-        return instance.getRecoveryEmail();
+        java.lang.Object ref = recoveryEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          recoveryEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string recovery_email = 4;</code>
+       * <code>string recovery_email = 4;</code>
+       * @return The bytes for recoveryEmail.
        */
       public com.google.protobuf.ByteString
           getRecoveryEmailBytes() {
-        return instance.getRecoveryEmailBytes();
+        java.lang.Object ref = recoveryEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          recoveryEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string recovery_email = 4;</code>
+       * <code>string recovery_email = 4;</code>
+       * @param value The recoveryEmail to set.
+       * @return This builder for chaining.
        */
       public Builder setRecoveryEmail(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setRecoveryEmail(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        recoveryEmail_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string recovery_email = 4;</code>
+       * <code>string recovery_email = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRecoveryEmail() {
-        copyOnWrite();
-        instance.clearRecoveryEmail();
+        
+        recoveryEmail_ = getDefaultInstance().getRecoveryEmail();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string recovery_email = 4;</code>
+       * <code>string recovery_email = 4;</code>
+       * @param value The bytes for recoveryEmail to set.
+       * @return This builder for chaining.
        */
       public Builder setRecoveryEmailBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setRecoveryEmailBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        recoveryEmail_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object questionOne_ = "";
       /**
-       * <code>optional string question_one = 5;</code>
+       * <code>string question_one = 5;</code>
+       * @return The questionOne.
        */
       public java.lang.String getQuestionOne() {
-        return instance.getQuestionOne();
+        java.lang.Object ref = questionOne_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          questionOne_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string question_one = 5;</code>
+       * <code>string question_one = 5;</code>
+       * @return The bytes for questionOne.
        */
       public com.google.protobuf.ByteString
           getQuestionOneBytes() {
-        return instance.getQuestionOneBytes();
+        java.lang.Object ref = questionOne_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          questionOne_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string question_one = 5;</code>
+       * <code>string question_one = 5;</code>
+       * @param value The questionOne to set.
+       * @return This builder for chaining.
        */
       public Builder setQuestionOne(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setQuestionOne(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        questionOne_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string question_one = 5;</code>
+       * <code>string question_one = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearQuestionOne() {
-        copyOnWrite();
-        instance.clearQuestionOne();
+        
+        questionOne_ = getDefaultInstance().getQuestionOne();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string question_one = 5;</code>
+       * <code>string question_one = 5;</code>
+       * @param value The bytes for questionOne to set.
+       * @return This builder for chaining.
        */
       public Builder setQuestionOneBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setQuestionOneBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        questionOne_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object answerOne_ = "";
       /**
-       * <code>optional string answer_one = 6;</code>
+       * <code>string answer_one = 6;</code>
+       * @return The answerOne.
        */
       public java.lang.String getAnswerOne() {
-        return instance.getAnswerOne();
+        java.lang.Object ref = answerOne_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          answerOne_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string answer_one = 6;</code>
+       * <code>string answer_one = 6;</code>
+       * @return The bytes for answerOne.
        */
       public com.google.protobuf.ByteString
           getAnswerOneBytes() {
-        return instance.getAnswerOneBytes();
+        java.lang.Object ref = answerOne_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          answerOne_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string answer_one = 6;</code>
+       * <code>string answer_one = 6;</code>
+       * @param value The answerOne to set.
+       * @return This builder for chaining.
        */
       public Builder setAnswerOne(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setAnswerOne(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        answerOne_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string answer_one = 6;</code>
+       * <code>string answer_one = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAnswerOne() {
-        copyOnWrite();
-        instance.clearAnswerOne();
+        
+        answerOne_ = getDefaultInstance().getAnswerOne();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string answer_one = 6;</code>
+       * <code>string answer_one = 6;</code>
+       * @param value The bytes for answerOne to set.
+       * @return This builder for chaining.
        */
       public Builder setAnswerOneBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setAnswerOneBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        answerOne_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object questionTwo_ = "";
       /**
-       * <code>optional string question_two = 7;</code>
+       * <code>string question_two = 7;</code>
+       * @return The questionTwo.
        */
       public java.lang.String getQuestionTwo() {
-        return instance.getQuestionTwo();
+        java.lang.Object ref = questionTwo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          questionTwo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string question_two = 7;</code>
+       * <code>string question_two = 7;</code>
+       * @return The bytes for questionTwo.
        */
       public com.google.protobuf.ByteString
           getQuestionTwoBytes() {
-        return instance.getQuestionTwoBytes();
+        java.lang.Object ref = questionTwo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          questionTwo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string question_two = 7;</code>
+       * <code>string question_two = 7;</code>
+       * @param value The questionTwo to set.
+       * @return This builder for chaining.
        */
       public Builder setQuestionTwo(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setQuestionTwo(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        questionTwo_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string question_two = 7;</code>
+       * <code>string question_two = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearQuestionTwo() {
-        copyOnWrite();
-        instance.clearQuestionTwo();
+        
+        questionTwo_ = getDefaultInstance().getQuestionTwo();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string question_two = 7;</code>
+       * <code>string question_two = 7;</code>
+       * @param value The bytes for questionTwo to set.
+       * @return This builder for chaining.
        */
       public Builder setQuestionTwoBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setQuestionTwoBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        questionTwo_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object answerTwo_ = "";
       /**
-       * <code>optional string answer_two = 8;</code>
+       * <code>string answer_two = 8;</code>
+       * @return The answerTwo.
        */
       public java.lang.String getAnswerTwo() {
-        return instance.getAnswerTwo();
+        java.lang.Object ref = answerTwo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          answerTwo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string answer_two = 8;</code>
+       * <code>string answer_two = 8;</code>
+       * @return The bytes for answerTwo.
        */
       public com.google.protobuf.ByteString
           getAnswerTwoBytes() {
-        return instance.getAnswerTwoBytes();
+        java.lang.Object ref = answerTwo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          answerTwo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string answer_two = 8;</code>
+       * <code>string answer_two = 8;</code>
+       * @param value The answerTwo to set.
+       * @return This builder for chaining.
        */
       public Builder setAnswerTwo(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setAnswerTwo(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        answerTwo_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string answer_two = 8;</code>
+       * <code>string answer_two = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAnswerTwo() {
-        copyOnWrite();
-        instance.clearAnswerTwo();
+        
+        answerTwo_ = getDefaultInstance().getAnswerTwo();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string answer_two = 8;</code>
+       * <code>string answer_two = 8;</code>
+       * @param value The bytes for answerTwo to set.
+       * @return This builder for chaining.
        */
       public Builder setAnswerTwoBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setAnswerTwoBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        answerTwo_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object hint_ = "";
       /**
-       * <code>optional string hint = 9;</code>
+       * <code>string hint = 9;</code>
+       * @return The hint.
        */
       public java.lang.String getHint() {
-        return instance.getHint();
+        java.lang.Object ref = hint_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hint_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string hint = 9;</code>
+       * <code>string hint = 9;</code>
+       * @return The bytes for hint.
        */
       public com.google.protobuf.ByteString
           getHintBytes() {
-        return instance.getHintBytes();
+        java.lang.Object ref = hint_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hint_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string hint = 9;</code>
+       * <code>string hint = 9;</code>
+       * @param value The hint to set.
+       * @return This builder for chaining.
        */
       public Builder setHint(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setHint(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hint_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string hint = 9;</code>
+       * <code>string hint = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHint() {
-        copyOnWrite();
-        instance.clearHint();
+        
+        hint_ = getDefaultInstance().getHint();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string hint = 9;</code>
+       * <code>string hint = 9;</code>
+       * @param value The bytes for hint to set.
+       * @return This builder for chaining.
        */
       public Builder setHintBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setHintBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hint_ = value;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserTwoStepVerificationSetPassword)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword other = (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          oldPassword_ = visitor.visitString(!oldPassword_.isEmpty(), oldPassword_,
-              !other.oldPassword_.isEmpty(), other.oldPassword_);
-          newPassword_ = visitor.visitString(!newPassword_.isEmpty(), newPassword_,
-              !other.newPassword_.isEmpty(), other.newPassword_);
-          recoveryEmail_ = visitor.visitString(!recoveryEmail_.isEmpty(), recoveryEmail_,
-              !other.recoveryEmail_.isEmpty(), other.recoveryEmail_);
-          questionOne_ = visitor.visitString(!questionOne_.isEmpty(), questionOne_,
-              !other.questionOne_.isEmpty(), other.questionOne_);
-          answerOne_ = visitor.visitString(!answerOne_.isEmpty(), answerOne_,
-              !other.answerOne_.isEmpty(), other.answerOne_);
-          questionTwo_ = visitor.visitString(!questionTwo_.isEmpty(), questionTwo_,
-              !other.questionTwo_.isEmpty(), other.questionTwo_);
-          answerTwo_ = visitor.visitString(!answerTwo_.isEmpty(), answerTwo_,
-              !other.answerTwo_.isEmpty(), other.answerTwo_);
-          hint_ = visitor.visitString(!hint_.isEmpty(), hint_,
-              !other.hint_.isEmpty(), other.hint_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
-
-                  oldPassword_ = s;
-                  break;
-                }
-                case 26: {
-                  String s = input.readStringRequireUtf8();
-
-                  newPassword_ = s;
-                  break;
-                }
-                case 34: {
-                  String s = input.readStringRequireUtf8();
-
-                  recoveryEmail_ = s;
-                  break;
-                }
-                case 42: {
-                  String s = input.readStringRequireUtf8();
-
-                  questionOne_ = s;
-                  break;
-                }
-                case 50: {
-                  String s = input.readStringRequireUtf8();
-
-                  answerOne_ = s;
-                  break;
-                }
-                case 58: {
-                  String s = input.readStringRequireUtf8();
-
-                  questionTwo_ = s;
-                  break;
-                }
-                case 66: {
-                  String s = input.readStringRequireUtf8();
-
-                  answerTwo_ = s;
-                  break;
-                }
-                case 74: {
-                  String s = input.readStringRequireUtf8();
-
-                  hint_ = s;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserTwoStepVerificationSetPassword)
     private static final net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserTwoStepVerificationSetPassword();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword();
     }
 
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserTwoStepVerificationSetPassword> PARSER;
+    private static final com.google.protobuf.Parser<UserTwoStepVerificationSetPassword>
+        PARSER = new com.google.protobuf.AbstractParser<UserTwoStepVerificationSetPassword>() {
+      @java.lang.Override
+      public UserTwoStepVerificationSetPassword parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserTwoStepVerificationSetPassword(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserTwoStepVerificationSetPassword> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserTwoStepVerificationSetPassword> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPassword getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface UserTwoStepVerificationSetPasswordResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserTwoStepVerificationSetPasswordResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The unconfirmedEmailPattern.
      */
     java.lang.String getUnconfirmedEmailPattern();
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The bytes for unconfirmedEmailPattern.
      */
     com.google.protobuf.ByteString
         getUnconfirmedEmailPatternBytes();
@@ -1257,124 +1869,190 @@ public final class ProtoUserTwoStepVerificationSetPassword {
   /**
    * Protobuf type {@code proto.UserTwoStepVerificationSetPasswordResponse}
    */
-  public  static final class UserTwoStepVerificationSetPasswordResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserTwoStepVerificationSetPasswordResponse, UserTwoStepVerificationSetPasswordResponse.Builder> implements
+  public static final class UserTwoStepVerificationSetPasswordResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserTwoStepVerificationSetPasswordResponse)
       UserTwoStepVerificationSetPasswordResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserTwoStepVerificationSetPasswordResponse.newBuilder() to construct.
+    private UserTwoStepVerificationSetPasswordResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserTwoStepVerificationSetPasswordResponse() {
       unconfirmedEmailPattern_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserTwoStepVerificationSetPasswordResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserTwoStepVerificationSetPasswordResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unconfirmedEmailPattern_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPasswordResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPasswordResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.class, net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int UNCONFIRMED_EMAIL_PATTERN_FIELD_NUMBER = 2;
-    private java.lang.String unconfirmedEmailPattern_;
+    private volatile java.lang.Object unconfirmedEmailPattern_;
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The unconfirmedEmailPattern.
      */
+    @java.lang.Override
     public java.lang.String getUnconfirmedEmailPattern() {
-      return unconfirmedEmailPattern_;
+      java.lang.Object ref = unconfirmedEmailPattern_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unconfirmedEmailPattern_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The bytes for unconfirmedEmailPattern.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUnconfirmedEmailPatternBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(unconfirmedEmailPattern_);
-    }
-    /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
-     */
-    private void setUnconfirmedEmailPattern(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      unconfirmedEmailPattern_ = value;
-    }
-    /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
-     */
-    private void clearUnconfirmedEmailPattern() {
-      
-      unconfirmedEmailPattern_ = getDefaultInstance().getUnconfirmedEmailPattern();
-    }
-    /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
-     */
-    private void setUnconfirmedEmailPatternBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      unconfirmedEmailPattern_ = value.toStringUtf8();
+      java.lang.Object ref = unconfirmedEmailPattern_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unconfirmedEmailPattern_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
-      if (!unconfirmedEmailPattern_.isEmpty()) {
-        output.writeString(2, getUnconfirmedEmailPattern());
+      if (!getUnconfirmedEmailPatternBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unconfirmedEmailPattern_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1382,296 +2060,605 @@ public final class ProtoUserTwoStepVerificationSetPassword {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
-      if (!unconfirmedEmailPattern_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getUnconfirmedEmailPattern());
+      if (!getUnconfirmedEmailPatternBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, unconfirmedEmailPattern_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse other = (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getUnconfirmedEmailPattern()
+          .equals(other.getUnconfirmedEmailPattern())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + UNCONFIRMED_EMAIL_PATTERN_FIELD_NUMBER;
+      hash = (53 * hash) + getUnconfirmedEmailPattern().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserTwoStepVerificationSetPasswordResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserTwoStepVerificationSetPasswordResponse)
         net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPasswordResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPasswordResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.class, net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        unconfirmedEmailPattern_ = "";
 
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.internal_static_proto_UserTwoStepVerificationSetPasswordResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse build() {
+        net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse buildPartial() {
+        net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse result = new net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.unconfirmedEmailPattern_ = unconfirmedEmailPattern_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse) {
+          return mergeFrom((net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse other) {
+        if (other == net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (!other.getUnconfirmedEmailPattern().isEmpty()) {
+          unconfirmedEmailPattern_ = other.unconfirmedEmailPattern_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private java.lang.Object unconfirmedEmailPattern_ = "";
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @return The unconfirmedEmailPattern.
        */
       public java.lang.String getUnconfirmedEmailPattern() {
-        return instance.getUnconfirmedEmailPattern();
+        java.lang.Object ref = unconfirmedEmailPattern_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unconfirmedEmailPattern_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @return The bytes for unconfirmedEmailPattern.
        */
       public com.google.protobuf.ByteString
           getUnconfirmedEmailPatternBytes() {
-        return instance.getUnconfirmedEmailPatternBytes();
+        java.lang.Object ref = unconfirmedEmailPattern_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unconfirmedEmailPattern_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @param value The unconfirmedEmailPattern to set.
+       * @return This builder for chaining.
        */
       public Builder setUnconfirmedEmailPattern(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setUnconfirmedEmailPattern(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        unconfirmedEmailPattern_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUnconfirmedEmailPattern() {
-        copyOnWrite();
-        instance.clearUnconfirmedEmailPattern();
+        
+        unconfirmedEmailPattern_ = getDefaultInstance().getUnconfirmedEmailPattern();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @param value The bytes for unconfirmedEmailPattern to set.
+       * @return This builder for chaining.
        */
       public Builder setUnconfirmedEmailPatternBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setUnconfirmedEmailPatternBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        unconfirmedEmailPattern_ = value;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserTwoStepVerificationSetPasswordResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse other = (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          unconfirmedEmailPattern_ = visitor.visitString(!unconfirmedEmailPattern_.isEmpty(), unconfirmedEmailPattern_,
-              !other.unconfirmedEmailPattern_.isEmpty(), other.unconfirmedEmailPattern_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
-
-                  unconfirmedEmailPattern_ = s;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserTwoStepVerificationSetPasswordResponse)
     private static final net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserTwoStepVerificationSetPasswordResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse();
     }
 
     public static net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserTwoStepVerificationSetPasswordResponse> PARSER;
+    private static final com.google.protobuf.Parser<UserTwoStepVerificationSetPasswordResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserTwoStepVerificationSetPasswordResponse>() {
+      @java.lang.Override
+      public UserTwoStepVerificationSetPasswordResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserTwoStepVerificationSetPasswordResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserTwoStepVerificationSetPasswordResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserTwoStepVerificationSetPasswordResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserTwoStepVerificationSetPassword.UserTwoStepVerificationSetPasswordResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserTwoStepVerificationSetPassword_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserTwoStepVerificationSetPassword_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserTwoStepVerificationSetPasswordResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserTwoStepVerificationSetPasswordResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n(UserTwoStepVerificationSetPassword.pro" +
+      "to\022\005proto\032\rRequest.proto\032\016Response.proto" +
+      "\"\353\001\n\"UserTwoStepVerificationSetPassword\022" +
+      "\037\n\007request\030\001 \001(\0132\016.proto.Request\022\024\n\014old_" +
+      "password\030\002 \001(\t\022\024\n\014new_password\030\003 \001(\t\022\026\n\016" +
+      "recovery_email\030\004 \001(\t\022\024\n\014question_one\030\005 \001" +
+      "(\t\022\022\n\nanswer_one\030\006 \001(\t\022\024\n\014question_two\030\007" +
+      " \001(\t\022\022\n\nanswer_two\030\010 \001(\t\022\014\n\004hint\030\t \001(\t\"r" +
+      "\n*UserTwoStepVerificationSetPasswordResp" +
+      "onse\022!\n\010response\030\001 \001(\0132\017.proto.Response\022" +
+      "!\n\031unconfirmed_email_pattern\030\002 \001(\tB9\n\016ne" +
+      "t.iGap.protoB\'ProtoUserTwoStepVerificati" +
+      "onSetPasswordb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_UserTwoStepVerificationSetPassword_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_UserTwoStepVerificationSetPassword_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserTwoStepVerificationSetPassword_descriptor,
+        new java.lang.String[] { "Request", "OldPassword", "NewPassword", "RecoveryEmail", "QuestionOne", "AnswerOne", "QuestionTwo", "AnswerTwo", "Hint", });
+    internal_static_proto_UserTwoStepVerificationSetPasswordResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_UserTwoStepVerificationSetPasswordResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserTwoStepVerificationSetPasswordResponse_descriptor,
+        new java.lang.String[] { "Response", "UnconfirmedEmailPattern", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -8,137 +8,203 @@ public final class ProtoClientGetPoll {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ClientGetPollOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientGetPoll)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint32 poll_id = 2;</code>
+     * <code>uint32 poll_id = 2;</code>
+     * @return The pollId.
      */
     int getPollId();
 
     /**
-     * <code>optional uint32 project_id = 3;</code>
+     * <code>uint32 project_id = 3;</code>
+     * @return The projectId.
      */
     int getProjectId();
   }
   /**
    * Protobuf type {@code proto.ClientGetPoll}
    */
-  public  static final class ClientGetPoll extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientGetPoll, ClientGetPoll.Builder> implements
+  public static final class ClientGetPoll extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientGetPoll)
       ClientGetPollOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ClientGetPoll.newBuilder() to construct.
+    private ClientGetPoll(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ClientGetPoll() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientGetPoll();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientGetPoll(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              pollId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              projectId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPoll_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPoll_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.class, net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int POLL_ID_FIELD_NUMBER = 2;
     private int pollId_;
     /**
-     * <code>optional uint32 poll_id = 2;</code>
+     * <code>uint32 poll_id = 2;</code>
+     * @return The pollId.
      */
+    @java.lang.Override
     public int getPollId() {
       return pollId_;
-    }
-    /**
-     * <code>optional uint32 poll_id = 2;</code>
-     */
-    private void setPollId(int value) {
-      
-      pollId_ = value;
-    }
-    /**
-     * <code>optional uint32 poll_id = 2;</code>
-     */
-    private void clearPollId() {
-      
-      pollId_ = 0;
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 3;
     private int projectId_;
     /**
-     * <code>optional uint32 project_id = 3;</code>
+     * <code>uint32 project_id = 3;</code>
+     * @return The projectId.
      */
+    @java.lang.Override
     public int getProjectId() {
       return projectId_;
     }
-    /**
-     * <code>optional uint32 project_id = 3;</code>
-     */
-    private void setProjectId(int value) {
-      
-      projectId_ = value;
-    }
-    /**
-     * <code>optional uint32 project_id = 3;</code>
-     */
-    private void clearProjectId() {
-      
-      projectId_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -150,10 +216,12 @@ public final class ProtoClientGetPoll {
       if (projectId_ != 0) {
         output.writeUInt32(3, projectId_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -169,321 +237,571 @@ public final class ProtoClientGetPoll {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, projectId_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientGetPoll.ClientGetPoll)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientGetPoll.ClientGetPoll other = (net.iGap.proto.ProtoClientGetPoll.ClientGetPoll) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getPollId()
+          != other.getPollId()) return false;
+      if (getProjectId()
+          != other.getProjectId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + POLL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPollId();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientGetPoll.ClientGetPoll prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientGetPoll}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientGetPoll.ClientGetPoll, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientGetPoll)
         net.iGap.proto.ProtoClientGetPoll.ClientGetPollOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPoll_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPoll_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.class, net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        pollId_ = 0;
 
+        projectId_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPoll_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetPoll.ClientGetPoll getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetPoll.ClientGetPoll build() {
+        net.iGap.proto.ProtoClientGetPoll.ClientGetPoll result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetPoll.ClientGetPoll buildPartial() {
+        net.iGap.proto.ProtoClientGetPoll.ClientGetPoll result = new net.iGap.proto.ProtoClientGetPoll.ClientGetPoll(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.pollId_ = pollId_;
+        result.projectId_ = projectId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientGetPoll.ClientGetPoll) {
+          return mergeFrom((net.iGap.proto.ProtoClientGetPoll.ClientGetPoll)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientGetPoll.ClientGetPoll other) {
+        if (other == net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getPollId() != 0) {
+          setPollId(other.getPollId());
+        }
+        if (other.getProjectId() != 0) {
+          setProjectId(other.getProjectId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientGetPoll.ClientGetPoll parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientGetPoll.ClientGetPoll) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private int pollId_ ;
       /**
-       * <code>optional uint32 poll_id = 2;</code>
+       * <code>uint32 poll_id = 2;</code>
+       * @return The pollId.
        */
+      @java.lang.Override
       public int getPollId() {
-        return instance.getPollId();
+        return pollId_;
       }
       /**
-       * <code>optional uint32 poll_id = 2;</code>
+       * <code>uint32 poll_id = 2;</code>
+       * @param value The pollId to set.
+       * @return This builder for chaining.
        */
       public Builder setPollId(int value) {
-        copyOnWrite();
-        instance.setPollId(value);
+        
+        pollId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 poll_id = 2;</code>
+       * <code>uint32 poll_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPollId() {
-        copyOnWrite();
-        instance.clearPollId();
+        
+        pollId_ = 0;
+        onChanged();
         return this;
       }
 
+      private int projectId_ ;
       /**
-       * <code>optional uint32 project_id = 3;</code>
+       * <code>uint32 project_id = 3;</code>
+       * @return The projectId.
        */
+      @java.lang.Override
       public int getProjectId() {
-        return instance.getProjectId();
+        return projectId_;
       }
       /**
-       * <code>optional uint32 project_id = 3;</code>
+       * <code>uint32 project_id = 3;</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
        */
       public Builder setProjectId(int value) {
-        copyOnWrite();
-        instance.setProjectId(value);
+        
+        projectId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 project_id = 3;</code>
+       * <code>uint32 project_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-        copyOnWrite();
-        instance.clearProjectId();
+        
+        projectId_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ClientGetPoll)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientGetPoll.ClientGetPoll();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientGetPoll.ClientGetPoll other = (net.iGap.proto.ProtoClientGetPoll.ClientGetPoll) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          pollId_ = visitor.visitInt(pollId_ != 0, pollId_,
-              other.pollId_ != 0, other.pollId_);
-          projectId_ = visitor.visitInt(projectId_ != 0, projectId_,
-              other.projectId_ != 0, other.projectId_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  pollId_ = input.readUInt32();
-                  break;
-                }
-                case 24: {
-
-                  projectId_ = input.readUInt32();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetPoll.ClientGetPoll.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientGetPoll)
     private static final net.iGap.proto.ProtoClientGetPoll.ClientGetPoll DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetPoll();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetPoll.ClientGetPoll();
     }
 
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPoll getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetPoll> PARSER;
+    private static final com.google.protobuf.Parser<ClientGetPoll>
+        PARSER = new com.google.protobuf.AbstractParser<ClientGetPoll>() {
+      @java.lang.Override
+      public ClientGetPoll parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientGetPoll(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientGetPoll> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientGetPoll> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientGetPoll.ClientGetPoll getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ClientGetPollResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientGetPollResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional string title = 2;</code>
+     * <code>string title = 2;</code>
+     * @return The title.
      */
     java.lang.String getTitle();
     /**
-     * <code>optional string title = 2;</code>
+     * <code>string title = 2;</code>
+     * @return The bytes for title.
      */
     com.google.protobuf.ByteString
         getTitleBytes();
@@ -501,129 +819,205 @@ public final class ProtoClientGetPoll {
      * <code>repeated .proto.Poll polls = 3;</code>
      */
     int getPollsCount();
+    /**
+     * <code>repeated .proto.Poll polls = 3;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.PollOrBuilder> 
+        getPollsOrBuilderList();
+    /**
+     * <code>repeated .proto.Poll polls = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PollOrBuilder getPollsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ClientGetPollResponse}
    */
-  public  static final class ClientGetPollResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientGetPollResponse, ClientGetPollResponse.Builder> implements
+  public static final class ClientGetPollResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientGetPollResponse)
       ClientGetPollResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ClientGetPollResponse.newBuilder() to construct.
+    private ClientGetPollResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ClientGetPollResponse() {
       title_ = "";
-      polls_ = emptyProtobufList();
+      polls_ = java.util.Collections.emptyList();
     }
-    private int bitField0_;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientGetPollResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientGetPollResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              title_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                polls_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.Poll>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              polls_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.Poll.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          polls_ = java.util.Collections.unmodifiableList(polls_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPollResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPollResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.class, net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int TITLE_FIELD_NUMBER = 2;
-    private java.lang.String title_;
+    private volatile java.lang.Object title_;
     /**
-     * <code>optional string title = 2;</code>
+     * <code>string title = 2;</code>
+     * @return The title.
      */
+    @java.lang.Override
     public java.lang.String getTitle() {
-      return title_;
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string title = 2;</code>
+     * <code>string title = 2;</code>
+     * @return The bytes for title.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTitleBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(title_);
-    }
-    /**
-     * <code>optional string title = 2;</code>
-     */
-    private void setTitle(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      title_ = value;
-    }
-    /**
-     * <code>optional string title = 2;</code>
-     */
-    private void clearTitle() {
-      
-      title_ = getDefaultInstance().getTitle();
-    }
-    /**
-     * <code>optional string title = 2;</code>
-     */
-    private void setTitleBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      title_ = value.toStringUtf8();
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int POLLS_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoGlobal.Poll> polls_;
+    private java.util.List<net.iGap.proto.ProtoGlobal.Poll> polls_;
     /**
      * <code>repeated .proto.Poll polls = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoGlobal.Poll> getPollsList() {
       return polls_;
     }
     /**
      * <code>repeated .proto.Poll polls = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoGlobal.PollOrBuilder> 
         getPollsOrBuilderList() {
       return polls_;
@@ -631,123 +1025,55 @@ public final class ProtoClientGetPoll {
     /**
      * <code>repeated .proto.Poll polls = 3;</code>
      */
+    @java.lang.Override
     public int getPollsCount() {
       return polls_.size();
     }
     /**
      * <code>repeated .proto.Poll polls = 3;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGlobal.Poll getPolls(int index) {
       return polls_.get(index);
     }
     /**
      * <code>repeated .proto.Poll polls = 3;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGlobal.PollOrBuilder getPollsOrBuilder(
         int index) {
       return polls_.get(index);
     }
-    private void ensurePollsIsMutable() {
-      if (!polls_.isModifiable()) {
-        polls_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(polls_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void setPolls(
-        int index, net.iGap.proto.ProtoGlobal.Poll value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensurePollsIsMutable();
-      polls_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void setPolls(
-        int index, net.iGap.proto.ProtoGlobal.Poll.Builder builderForValue) {
-      ensurePollsIsMutable();
-      polls_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void addPolls(net.iGap.proto.ProtoGlobal.Poll value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensurePollsIsMutable();
-      polls_.add(value);
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void addPolls(
-        int index, net.iGap.proto.ProtoGlobal.Poll value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensurePollsIsMutable();
-      polls_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void addPolls(
-        net.iGap.proto.ProtoGlobal.Poll.Builder builderForValue) {
-      ensurePollsIsMutable();
-      polls_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void addPolls(
-        int index, net.iGap.proto.ProtoGlobal.Poll.Builder builderForValue) {
-      ensurePollsIsMutable();
-      polls_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void addAllPolls(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.Poll> values) {
-      ensurePollsIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, polls_);
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void clearPolls() {
-      polls_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.Poll polls = 3;</code>
-     */
-    private void removePolls(int index) {
-      ensurePollsIsMutable();
-      polls_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
-      if (!title_.isEmpty()) {
-        output.writeString(2, getTitle());
+      if (!getTitleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
       }
       for (int i = 0; i < polls_.size(); i++) {
         output.writeMessage(3, polls_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -755,210 +1081,611 @@ public final class ProtoClientGetPoll {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
-      if (!title_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getTitle());
+      if (!getTitleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
       }
       for (int i = 0; i < polls_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, polls_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse other = (net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getTitle()
+          .equals(other.getTitle())) return false;
+      if (!getPollsList()
+          .equals(other.getPollsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      if (getPollsCount() > 0) {
+        hash = (37 * hash) + POLLS_FIELD_NUMBER;
+        hash = (53 * hash) + getPollsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientGetPollResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientGetPollResponse)
         net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPollResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPollResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.class, net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPollsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        title_ = "";
 
+        if (pollsBuilder_ == null) {
+          polls_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          pollsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientGetPoll.internal_static_proto_ClientGetPollResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse build() {
+        net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse buildPartial() {
+        net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse result = new net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.title_ = title_;
+        if (pollsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            polls_ = java.util.Collections.unmodifiableList(polls_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.polls_ = polls_;
+        } else {
+          result.polls_ = pollsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse) {
+          return mergeFrom((net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse other) {
+        if (other == net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          onChanged();
+        }
+        if (pollsBuilder_ == null) {
+          if (!other.polls_.isEmpty()) {
+            if (polls_.isEmpty()) {
+              polls_ = other.polls_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePollsIsMutable();
+              polls_.addAll(other.polls_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.polls_.isEmpty()) {
+            if (pollsBuilder_.isEmpty()) {
+              pollsBuilder_.dispose();
+              pollsBuilder_ = null;
+              polls_ = other.polls_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              pollsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPollsFieldBuilder() : null;
+            } else {
+              pollsBuilder_.addAllMessages(other.polls_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private java.lang.Object title_ = "";
       /**
-       * <code>optional string title = 2;</code>
+       * <code>string title = 2;</code>
+       * @return The title.
        */
       public java.lang.String getTitle() {
-        return instance.getTitle();
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string title = 2;</code>
+       * <code>string title = 2;</code>
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString
           getTitleBytes() {
-        return instance.getTitleBytes();
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string title = 2;</code>
+       * <code>string title = 2;</code>
+       * @param value The title to set.
+       * @return This builder for chaining.
        */
       public Builder setTitle(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setTitle(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        title_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string title = 2;</code>
+       * <code>string title = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTitle() {
-        copyOnWrite();
-        instance.clearTitle();
+        
+        title_ = getDefaultInstance().getTitle();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string title = 2;</code>
+       * <code>string title = 2;</code>
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
        */
       public Builder setTitleBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setTitleBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        title_ = value;
+        onChanged();
         return this;
       }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.Poll> polls_ =
+        java.util.Collections.emptyList();
+      private void ensurePollsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          polls_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.Poll>(polls_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Poll, net.iGap.proto.ProtoGlobal.Poll.Builder, net.iGap.proto.ProtoGlobal.PollOrBuilder> pollsBuilder_;
 
       /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGlobal.Poll> getPollsList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getPollsList());
+        if (pollsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(polls_);
+        } else {
+          return pollsBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public int getPollsCount() {
-        return instance.getPollsCount();
-      }/**
+        if (pollsBuilder_ == null) {
+          return polls_.size();
+        } else {
+          return pollsBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.Poll getPolls(int index) {
-        return instance.getPolls(index);
+        if (pollsBuilder_ == null) {
+          return polls_.get(index);
+        } else {
+          return pollsBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public Builder setPolls(
           int index, net.iGap.proto.ProtoGlobal.Poll value) {
-        copyOnWrite();
-        instance.setPolls(index, value);
+        if (pollsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePollsIsMutable();
+          polls_.set(index, value);
+          onChanged();
+        } else {
+          pollsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -966,16 +1693,29 @@ public final class ProtoClientGetPoll {
        */
       public Builder setPolls(
           int index, net.iGap.proto.ProtoGlobal.Poll.Builder builderForValue) {
-        copyOnWrite();
-        instance.setPolls(index, builderForValue);
+        if (pollsBuilder_ == null) {
+          ensurePollsIsMutable();
+          polls_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pollsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public Builder addPolls(net.iGap.proto.ProtoGlobal.Poll value) {
-        copyOnWrite();
-        instance.addPolls(value);
+        if (pollsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePollsIsMutable();
+          polls_.add(value);
+          onChanged();
+        } else {
+          pollsBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -983,8 +1723,16 @@ public final class ProtoClientGetPoll {
        */
       public Builder addPolls(
           int index, net.iGap.proto.ProtoGlobal.Poll value) {
-        copyOnWrite();
-        instance.addPolls(index, value);
+        if (pollsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePollsIsMutable();
+          polls_.add(index, value);
+          onChanged();
+        } else {
+          pollsBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -992,8 +1740,13 @@ public final class ProtoClientGetPoll {
        */
       public Builder addPolls(
           net.iGap.proto.ProtoGlobal.Poll.Builder builderForValue) {
-        copyOnWrite();
-        instance.addPolls(builderForValue);
+        if (pollsBuilder_ == null) {
+          ensurePollsIsMutable();
+          polls_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pollsBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1001,8 +1754,13 @@ public final class ProtoClientGetPoll {
        */
       public Builder addPolls(
           int index, net.iGap.proto.ProtoGlobal.Poll.Builder builderForValue) {
-        copyOnWrite();
-        instance.addPolls(index, builderForValue);
+        if (pollsBuilder_ == null) {
+          ensurePollsIsMutable();
+          polls_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pollsBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1010,154 +1768,209 @@ public final class ProtoClientGetPoll {
        */
       public Builder addAllPolls(
           java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.Poll> values) {
-        copyOnWrite();
-        instance.addAllPolls(values);
+        if (pollsBuilder_ == null) {
+          ensurePollsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, polls_);
+          onChanged();
+        } else {
+          pollsBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public Builder clearPolls() {
-        copyOnWrite();
-        instance.clearPolls();
+        if (pollsBuilder_ == null) {
+          polls_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          pollsBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.Poll polls = 3;</code>
        */
       public Builder removePolls(int index) {
-        copyOnWrite();
-        instance.removePolls(index);
+        if (pollsBuilder_ == null) {
+          ensurePollsIsMutable();
+          polls_.remove(index);
+          onChanged();
+        } else {
+          pollsBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.Poll polls = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Poll.Builder getPollsBuilder(
+          int index) {
+        return getPollsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Poll polls = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PollOrBuilder getPollsOrBuilder(
+          int index) {
+        if (pollsBuilder_ == null) {
+          return polls_.get(index);  } else {
+          return pollsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Poll polls = 3;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.PollOrBuilder> 
+           getPollsOrBuilderList() {
+        if (pollsBuilder_ != null) {
+          return pollsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(polls_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Poll polls = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Poll.Builder addPollsBuilder() {
+        return getPollsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.Poll.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Poll polls = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Poll.Builder addPollsBuilder(
+          int index) {
+        return getPollsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.Poll.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Poll polls = 3;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.Poll.Builder> 
+           getPollsBuilderList() {
+        return getPollsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Poll, net.iGap.proto.ProtoGlobal.Poll.Builder, net.iGap.proto.ProtoGlobal.PollOrBuilder> 
+          getPollsFieldBuilder() {
+        if (pollsBuilder_ == null) {
+          pollsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Poll, net.iGap.proto.ProtoGlobal.Poll.Builder, net.iGap.proto.ProtoGlobal.PollOrBuilder>(
+                  polls_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          polls_ = null;
+        }
+        return pollsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ClientGetPollResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          polls_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse other = (net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          title_ = visitor.visitString(!title_.isEmpty(), title_,
-              !other.title_.isEmpty(), other.title_);
-          polls_= visitor.visitList(polls_, other.polls_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
-
-                  title_ = s;
-                  break;
-                }
-                case 26: {
-                  if (!polls_.isModifiable()) {
-                    polls_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(polls_);
-                  }
-                  polls_.add(
-                      input.readMessage(net.iGap.proto.ProtoGlobal.Poll.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientGetPollResponse)
     private static final net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetPollResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse();
     }
 
     public static net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetPollResponse> PARSER;
+    private static final com.google.protobuf.Parser<ClientGetPollResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ClientGetPollResponse>() {
+      @java.lang.Override
+      public ClientGetPollResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientGetPollResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientGetPollResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientGetPollResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientGetPoll.ClientGetPollResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetPoll_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetPoll_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetPollResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetPollResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\023ClientGetPoll.proto\022\005proto\032\rRequest.pr" +
+      "oto\032\016Response.proto\032\014Global.proto\"U\n\rCli" +
+      "entGetPoll\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
+      "est\022\017\n\007poll_id\030\002 \001(\r\022\022\n\nproject_id\030\003 \001(\r" +
+      "\"e\n\025ClientGetPollResponse\022!\n\010response\030\001 " +
+      "\001(\0132\017.proto.Response\022\r\n\005title\030\002 \001(\t\022\032\n\005p" +
+      "olls\030\003 \003(\0132\013.proto.PollB$\n\016net.iGap.prot" +
+      "oB\022ProtoClientGetPollb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        });
+    internal_static_proto_ClientGetPoll_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ClientGetPoll_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetPoll_descriptor,
+        new java.lang.String[] { "Request", "PollId", "ProjectId", });
+    internal_static_proto_ClientGetPollResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ClientGetPollResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetPollResponse_descriptor,
+        new java.lang.String[] { "Response", "Title", "Polls", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -8,90 +8,170 @@ public final class ProtoInfoConfig {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface InfoConfigOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.InfoConfig)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
   }
   /**
    * Protobuf type {@code proto.InfoConfig}
    */
-  public  static final class InfoConfig extends
-      com.google.protobuf.GeneratedMessageLite<
-          InfoConfig, InfoConfig.Builder> implements
+  public static final class InfoConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.InfoConfig)
       InfoConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InfoConfig.newBuilder() to construct.
+    private InfoConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private InfoConfig() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InfoConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InfoConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoInfoConfig.InfoConfig.class, net.iGap.proto.ProtoInfoConfig.InfoConfig.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -99,292 +179,526 @@ public final class ProtoInfoConfig {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoInfoConfig.InfoConfig)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoInfoConfig.InfoConfig other = (net.iGap.proto.ProtoInfoConfig.InfoConfig) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoInfoConfig.InfoConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.InfoConfig}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoInfoConfig.InfoConfig, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.InfoConfig)
         net.iGap.proto.ProtoInfoConfig.InfoConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoInfoConfig.InfoConfig.class, net.iGap.proto.ProtoInfoConfig.InfoConfig.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoInfoConfig.InfoConfig.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.InfoConfig getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoInfoConfig.InfoConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.InfoConfig build() {
+        net.iGap.proto.ProtoInfoConfig.InfoConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.InfoConfig buildPartial() {
+        net.iGap.proto.ProtoInfoConfig.InfoConfig result = new net.iGap.proto.ProtoInfoConfig.InfoConfig(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoInfoConfig.InfoConfig) {
+          return mergeFrom((net.iGap.proto.ProtoInfoConfig.InfoConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoInfoConfig.InfoConfig other) {
+        if (other == net.iGap.proto.ProtoInfoConfig.InfoConfig.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoInfoConfig.InfoConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoInfoConfig.InfoConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.InfoConfig)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoInfoConfig.InfoConfig();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoInfoConfig.InfoConfig other = (net.iGap.proto.ProtoInfoConfig.InfoConfig) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoInfoConfig.InfoConfig.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.InfoConfig)
     private static final net.iGap.proto.ProtoInfoConfig.InfoConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InfoConfig();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoInfoConfig.InfoConfig();
     }
 
     public static net.iGap.proto.ProtoInfoConfig.InfoConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<InfoConfig> PARSER;
+    private static final com.google.protobuf.Parser<InfoConfig>
+        PARSER = new com.google.protobuf.AbstractParser<InfoConfig>() {
+      @java.lang.Override
+      public InfoConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InfoConfig(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<InfoConfig> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InfoConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoInfoConfig.InfoConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface InfoConfigResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.InfoConfigResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional bool debug_mode = 2;</code>
+     * <code>bool debug_mode = 2;</code>
+     * @return The debugMode.
      */
     boolean getDebugMode();
 
     /**
-     * <code>optional uint32 default_timeout = 3;</code>
+     * <code>uint32 default_timeout = 3;</code>
+     * @return The defaultTimeout.
      */
     int getDefaultTimeout();
 
     /**
-     * <code>optional bool optimize_mode = 4;</code>
+     * <code>bool optimize_mode = 4;</code>
+     * @return The optimizeMode.
      */
     boolean getOptimizeMode();
 
     /**
-     * <code>optional uint64 max_file_size = 5;</code>
+     * <code>uint64 max_file_size = 5;</code>
+     * @return The maxFileSize.
      */
     long getMaxFileSize();
 
     /**
-     * <code>optional uint64 caption_length_max = 6;</code>
+     * <code>uint64 caption_length_max = 6;</code>
+     * @return The captionLengthMax.
      */
     long getCaptionLengthMax();
 
     /**
-     * <code>optional uint64 message_length_max = 7;</code>
+     * <code>uint64 message_length_max = 7;</code>
+     * @return The messageLengthMax.
      */
     long getMessageLengthMax();
 
     /**
-     * <code>optional uint32 group_add_member_limit = 8;</code>
+     * <code>uint32 group_add_member_limit = 8;</code>
+     * @return The groupAddMemberLimit.
      */
     int getGroupAddMemberLimit();
 
     /**
-     * <code>optional uint32 channel_add_member_limit = 9;</code>
+     * <code>uint32 channel_add_member_limit = 9;</code>
+     * @return The channelAddMemberLimit.
      */
     int getChannelAddMemberLimit();
 
@@ -401,57 +715,232 @@ public final class ProtoInfoConfig {
      * <code>repeated .proto.MicroService micro_service = 10;</code>
      */
     int getMicroServiceCount();
+    /**
+     * <code>repeated .proto.MicroService micro_service = 10;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder> 
+        getMicroServiceOrBuilderList();
+    /**
+     * <code>repeated .proto.MicroService micro_service = 10;</code>
+     */
+    net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder getMicroServiceOrBuilder(
+        int index);
 
     /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * @return The enum numeric value on the wire for debugger.
      */
     int getDebuggerValue();
     /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * @return The debugger.
      */
     net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger getDebugger();
 
     /**
-     * <code>optional string base_url = 12;</code>
+     * <code>string base_url = 12;</code>
+     * @return The baseUrl.
      */
     java.lang.String getBaseUrl();
     /**
-     * <code>optional string base_url = 12;</code>
+     * <code>string base_url = 12;</code>
+     * @return The bytes for baseUrl.
      */
     com.google.protobuf.ByteString
         getBaseUrlBytes();
 
     /**
-     * <code>optional bool show_advertising = 13;</code>
+     * <code>bool show_advertising = 13;</code>
+     * @return The showAdvertising.
      */
     boolean getShowAdvertising();
 
     /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * @return The enum numeric value on the wire for defaultTab.
      */
     int getDefaultTabValue();
     /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * @return The defaultTab.
      */
     net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab();
   }
   /**
    * Protobuf type {@code proto.InfoConfigResponse}
    */
-  public  static final class InfoConfigResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          InfoConfigResponse, InfoConfigResponse.Builder> implements
+  public static final class InfoConfigResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.InfoConfigResponse)
       InfoConfigResponseOrBuilder {
-    private InfoConfigResponse() {
-      microService_ = emptyProtobufList();
-      baseUrl_ = "";
+  private static final long serialVersionUID = 0L;
+    // Use InfoConfigResponse.newBuilder() to construct.
+    private InfoConfigResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private InfoConfigResponse() {
+      microService_ = java.util.Collections.emptyList();
+      debugger_ = 0;
+      baseUrl_ = "";
+      defaultTab_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InfoConfigResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InfoConfigResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              debugMode_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              defaultTimeout_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              optimizeMode_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              maxFileSize_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              captionLengthMax_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              messageLengthMax_ = input.readUInt64();
+              break;
+            }
+            case 64: {
+
+              groupAddMemberLimit_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              channelAddMemberLimit_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                microService_ = new java.util.ArrayList<net.iGap.proto.ProtoInfoConfig.MicroService>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              microService_.add(
+                  input.readMessage(net.iGap.proto.ProtoInfoConfig.MicroService.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              debugger_ = rawValue;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              baseUrl_ = s;
+              break;
+            }
+            case 104: {
+
+              showAdvertising_ = input.readBool();
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              defaultTab_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          microService_ = java.util.Collections.unmodifiableList(microService_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfigResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfigResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.class, net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Builder.class);
+    }
+
     /**
      * Protobuf enum {@code proto.InfoConfigResponse.Debugger}
      */
     public enum Debugger
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>CRASHLYTICS = 0;</code>
        */
@@ -474,10 +963,16 @@ public final class ProtoInfoConfig {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -485,6 +980,10 @@ public final class ProtoInfoConfig {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Debugger forNumber(int value) {
         switch (value) {
           case 0: return CRASHLYTICS;
@@ -505,6 +1004,37 @@ public final class ProtoInfoConfig {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Debugger[] VALUES = values();
+
+      public static Debugger valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private Debugger(int value) {
@@ -518,7 +1048,7 @@ public final class ProtoInfoConfig {
      * Protobuf enum {@code proto.InfoConfigResponse.Tab}
      */
     public enum Tab
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>CONTACT = 0;</code>
        */
@@ -565,10 +1095,16 @@ public final class ProtoInfoConfig {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -576,6 +1112,10 @@ public final class ProtoInfoConfig {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Tab forNumber(int value) {
         switch (value) {
           case 0: return CONTACT;
@@ -599,6 +1139,37 @@ public final class ProtoInfoConfig {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Tab[] VALUES = values();
+
+      public static Tab valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private Tab(int value) {
@@ -608,254 +1179,133 @@ public final class ProtoInfoConfig {
       // @@protoc_insertion_point(enum_scope:proto.InfoConfigResponse.Tab)
     }
 
-    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int DEBUG_MODE_FIELD_NUMBER = 2;
     private boolean debugMode_;
     /**
-     * <code>optional bool debug_mode = 2;</code>
+     * <code>bool debug_mode = 2;</code>
+     * @return The debugMode.
      */
+    @java.lang.Override
     public boolean getDebugMode() {
       return debugMode_;
-    }
-    /**
-     * <code>optional bool debug_mode = 2;</code>
-     */
-    private void setDebugMode(boolean value) {
-      
-      debugMode_ = value;
-    }
-    /**
-     * <code>optional bool debug_mode = 2;</code>
-     */
-    private void clearDebugMode() {
-      
-      debugMode_ = false;
     }
 
     public static final int DEFAULT_TIMEOUT_FIELD_NUMBER = 3;
     private int defaultTimeout_;
     /**
-     * <code>optional uint32 default_timeout = 3;</code>
+     * <code>uint32 default_timeout = 3;</code>
+     * @return The defaultTimeout.
      */
+    @java.lang.Override
     public int getDefaultTimeout() {
       return defaultTimeout_;
-    }
-    /**
-     * <code>optional uint32 default_timeout = 3;</code>
-     */
-    private void setDefaultTimeout(int value) {
-      
-      defaultTimeout_ = value;
-    }
-    /**
-     * <code>optional uint32 default_timeout = 3;</code>
-     */
-    private void clearDefaultTimeout() {
-      
-      defaultTimeout_ = 0;
     }
 
     public static final int OPTIMIZE_MODE_FIELD_NUMBER = 4;
     private boolean optimizeMode_;
     /**
-     * <code>optional bool optimize_mode = 4;</code>
+     * <code>bool optimize_mode = 4;</code>
+     * @return The optimizeMode.
      */
+    @java.lang.Override
     public boolean getOptimizeMode() {
       return optimizeMode_;
-    }
-    /**
-     * <code>optional bool optimize_mode = 4;</code>
-     */
-    private void setOptimizeMode(boolean value) {
-      
-      optimizeMode_ = value;
-    }
-    /**
-     * <code>optional bool optimize_mode = 4;</code>
-     */
-    private void clearOptimizeMode() {
-      
-      optimizeMode_ = false;
     }
 
     public static final int MAX_FILE_SIZE_FIELD_NUMBER = 5;
     private long maxFileSize_;
     /**
-     * <code>optional uint64 max_file_size = 5;</code>
+     * <code>uint64 max_file_size = 5;</code>
+     * @return The maxFileSize.
      */
+    @java.lang.Override
     public long getMaxFileSize() {
       return maxFileSize_;
-    }
-    /**
-     * <code>optional uint64 max_file_size = 5;</code>
-     */
-    private void setMaxFileSize(long value) {
-      
-      maxFileSize_ = value;
-    }
-    /**
-     * <code>optional uint64 max_file_size = 5;</code>
-     */
-    private void clearMaxFileSize() {
-      
-      maxFileSize_ = 0L;
     }
 
     public static final int CAPTION_LENGTH_MAX_FIELD_NUMBER = 6;
     private long captionLengthMax_;
     /**
-     * <code>optional uint64 caption_length_max = 6;</code>
+     * <code>uint64 caption_length_max = 6;</code>
+     * @return The captionLengthMax.
      */
+    @java.lang.Override
     public long getCaptionLengthMax() {
       return captionLengthMax_;
-    }
-    /**
-     * <code>optional uint64 caption_length_max = 6;</code>
-     */
-    private void setCaptionLengthMax(long value) {
-      
-      captionLengthMax_ = value;
-    }
-    /**
-     * <code>optional uint64 caption_length_max = 6;</code>
-     */
-    private void clearCaptionLengthMax() {
-      
-      captionLengthMax_ = 0L;
     }
 
     public static final int MESSAGE_LENGTH_MAX_FIELD_NUMBER = 7;
     private long messageLengthMax_;
     /**
-     * <code>optional uint64 message_length_max = 7;</code>
+     * <code>uint64 message_length_max = 7;</code>
+     * @return The messageLengthMax.
      */
+    @java.lang.Override
     public long getMessageLengthMax() {
       return messageLengthMax_;
-    }
-    /**
-     * <code>optional uint64 message_length_max = 7;</code>
-     */
-    private void setMessageLengthMax(long value) {
-      
-      messageLengthMax_ = value;
-    }
-    /**
-     * <code>optional uint64 message_length_max = 7;</code>
-     */
-    private void clearMessageLengthMax() {
-      
-      messageLengthMax_ = 0L;
     }
 
     public static final int GROUP_ADD_MEMBER_LIMIT_FIELD_NUMBER = 8;
     private int groupAddMemberLimit_;
     /**
-     * <code>optional uint32 group_add_member_limit = 8;</code>
+     * <code>uint32 group_add_member_limit = 8;</code>
+     * @return The groupAddMemberLimit.
      */
+    @java.lang.Override
     public int getGroupAddMemberLimit() {
       return groupAddMemberLimit_;
-    }
-    /**
-     * <code>optional uint32 group_add_member_limit = 8;</code>
-     */
-    private void setGroupAddMemberLimit(int value) {
-      
-      groupAddMemberLimit_ = value;
-    }
-    /**
-     * <code>optional uint32 group_add_member_limit = 8;</code>
-     */
-    private void clearGroupAddMemberLimit() {
-      
-      groupAddMemberLimit_ = 0;
     }
 
     public static final int CHANNEL_ADD_MEMBER_LIMIT_FIELD_NUMBER = 9;
     private int channelAddMemberLimit_;
     /**
-     * <code>optional uint32 channel_add_member_limit = 9;</code>
+     * <code>uint32 channel_add_member_limit = 9;</code>
+     * @return The channelAddMemberLimit.
      */
+    @java.lang.Override
     public int getChannelAddMemberLimit() {
       return channelAddMemberLimit_;
     }
-    /**
-     * <code>optional uint32 channel_add_member_limit = 9;</code>
-     */
-    private void setChannelAddMemberLimit(int value) {
-      
-      channelAddMemberLimit_ = value;
-    }
-    /**
-     * <code>optional uint32 channel_add_member_limit = 9;</code>
-     */
-    private void clearChannelAddMemberLimit() {
-      
-      channelAddMemberLimit_ = 0;
-    }
 
     public static final int MICRO_SERVICE_FIELD_NUMBER = 10;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoInfoConfig.MicroService> microService_;
+    private java.util.List<net.iGap.proto.ProtoInfoConfig.MicroService> microService_;
     /**
      * <code>repeated .proto.MicroService micro_service = 10;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoInfoConfig.MicroService> getMicroServiceList() {
       return microService_;
     }
     /**
      * <code>repeated .proto.MicroService micro_service = 10;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder> 
         getMicroServiceOrBuilderList() {
       return microService_;
@@ -863,255 +1313,125 @@ public final class ProtoInfoConfig {
     /**
      * <code>repeated .proto.MicroService micro_service = 10;</code>
      */
+    @java.lang.Override
     public int getMicroServiceCount() {
       return microService_.size();
     }
     /**
      * <code>repeated .proto.MicroService micro_service = 10;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoInfoConfig.MicroService getMicroService(int index) {
       return microService_.get(index);
     }
     /**
      * <code>repeated .proto.MicroService micro_service = 10;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder getMicroServiceOrBuilder(
         int index) {
       return microService_.get(index);
-    }
-    private void ensureMicroServiceIsMutable() {
-      if (!microService_.isModifiable()) {
-        microService_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(microService_);
-       }
-    }
-
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void setMicroService(
-        int index, net.iGap.proto.ProtoInfoConfig.MicroService value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMicroServiceIsMutable();
-      microService_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void setMicroService(
-        int index, net.iGap.proto.ProtoInfoConfig.MicroService.Builder builderForValue) {
-      ensureMicroServiceIsMutable();
-      microService_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void addMicroService(net.iGap.proto.ProtoInfoConfig.MicroService value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMicroServiceIsMutable();
-      microService_.add(value);
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void addMicroService(
-        int index, net.iGap.proto.ProtoInfoConfig.MicroService value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMicroServiceIsMutable();
-      microService_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void addMicroService(
-        net.iGap.proto.ProtoInfoConfig.MicroService.Builder builderForValue) {
-      ensureMicroServiceIsMutable();
-      microService_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void addMicroService(
-        int index, net.iGap.proto.ProtoInfoConfig.MicroService.Builder builderForValue) {
-      ensureMicroServiceIsMutable();
-      microService_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void addAllMicroService(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoInfoConfig.MicroService> values) {
-      ensureMicroServiceIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, microService_);
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void clearMicroService() {
-      microService_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.MicroService micro_service = 10;</code>
-     */
-    private void removeMicroService(int index) {
-      ensureMicroServiceIsMutable();
-      microService_.remove(index);
     }
 
     public static final int DEBUGGER_FIELD_NUMBER = 11;
     private int debugger_;
     /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * @return The enum numeric value on the wire for debugger.
      */
-    public int getDebuggerValue() {
+    @java.lang.Override public int getDebuggerValue() {
       return debugger_;
     }
     /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+     * @return The debugger.
      */
-    public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger getDebugger() {
-      net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger.forNumber(debugger_);
+    @java.lang.Override public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger getDebugger() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger.valueOf(debugger_);
       return result == null ? net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
-     */
-    private void setDebuggerValue(int value) {
-        debugger_ = value;
-    }
-    /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
-     */
-    private void setDebugger(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      debugger_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
-     */
-    private void clearDebugger() {
-      
-      debugger_ = 0;
     }
 
     public static final int BASE_URL_FIELD_NUMBER = 12;
-    private java.lang.String baseUrl_;
+    private volatile java.lang.Object baseUrl_;
     /**
-     * <code>optional string base_url = 12;</code>
+     * <code>string base_url = 12;</code>
+     * @return The baseUrl.
      */
+    @java.lang.Override
     public java.lang.String getBaseUrl() {
-      return baseUrl_;
+      java.lang.Object ref = baseUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baseUrl_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string base_url = 12;</code>
+     * <code>string base_url = 12;</code>
+     * @return The bytes for baseUrl.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBaseUrlBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(baseUrl_);
-    }
-    /**
-     * <code>optional string base_url = 12;</code>
-     */
-    private void setBaseUrl(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      baseUrl_ = value;
-    }
-    /**
-     * <code>optional string base_url = 12;</code>
-     */
-    private void clearBaseUrl() {
-      
-      baseUrl_ = getDefaultInstance().getBaseUrl();
-    }
-    /**
-     * <code>optional string base_url = 12;</code>
-     */
-    private void setBaseUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      baseUrl_ = value.toStringUtf8();
+      java.lang.Object ref = baseUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        baseUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SHOW_ADVERTISING_FIELD_NUMBER = 13;
     private boolean showAdvertising_;
     /**
-     * <code>optional bool show_advertising = 13;</code>
+     * <code>bool show_advertising = 13;</code>
+     * @return The showAdvertising.
      */
+    @java.lang.Override
     public boolean getShowAdvertising() {
       return showAdvertising_;
-    }
-    /**
-     * <code>optional bool show_advertising = 13;</code>
-     */
-    private void setShowAdvertising(boolean value) {
-      
-      showAdvertising_ = value;
-    }
-    /**
-     * <code>optional bool show_advertising = 13;</code>
-     */
-    private void clearShowAdvertising() {
-      
-      showAdvertising_ = false;
     }
 
     public static final int DEFAULTTAB_FIELD_NUMBER = 14;
     private int defaultTab_;
     /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * @return The enum numeric value on the wire for defaultTab.
      */
-    public int getDefaultTabValue() {
+    @java.lang.Override public int getDefaultTabValue() {
       return defaultTab_;
     }
     /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     * @return The defaultTab.
      */
-    public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab() {
-      net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.forNumber(defaultTab_);
+    @java.lang.Override public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.valueOf(defaultTab_);
       return result == null ? net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.UNRECOGNIZED : result;
     }
-    /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
-     */
-    private void setDefaultTabValue(int value) {
-        defaultTab_ = value;
-    }
-    /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
-     */
-    private void setDefaultTab(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      defaultTab_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
-     */
-    private void clearDefaultTab() {
-      
-      defaultTab_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1147,8 +1467,8 @@ public final class ProtoInfoConfig {
       if (debugger_ != net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger.CRASHLYTICS.getNumber()) {
         output.writeEnum(11, debugger_);
       }
-      if (!baseUrl_.isEmpty()) {
-        output.writeString(12, getBaseUrl());
+      if (!getBaseUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, baseUrl_);
       }
       if (showAdvertising_ != false) {
         output.writeBool(13, showAdvertising_);
@@ -1156,10 +1476,12 @@ public final class ProtoInfoConfig {
       if (defaultTab_ != net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.CONTACT.getNumber()) {
         output.writeEnum(14, defaultTab_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1207,9 +1529,8 @@ public final class ProtoInfoConfig {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, debugger_);
       }
-      if (!baseUrl_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(12, getBaseUrl());
+      if (!getBaseUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, baseUrl_);
       }
       if (showAdvertising_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1219,346 +1540,890 @@ public final class ProtoInfoConfig {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, defaultTab_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoInfoConfig.InfoConfigResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoInfoConfig.InfoConfigResponse other = (net.iGap.proto.ProtoInfoConfig.InfoConfigResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (getDebugMode()
+          != other.getDebugMode()) return false;
+      if (getDefaultTimeout()
+          != other.getDefaultTimeout()) return false;
+      if (getOptimizeMode()
+          != other.getOptimizeMode()) return false;
+      if (getMaxFileSize()
+          != other.getMaxFileSize()) return false;
+      if (getCaptionLengthMax()
+          != other.getCaptionLengthMax()) return false;
+      if (getMessageLengthMax()
+          != other.getMessageLengthMax()) return false;
+      if (getGroupAddMemberLimit()
+          != other.getGroupAddMemberLimit()) return false;
+      if (getChannelAddMemberLimit()
+          != other.getChannelAddMemberLimit()) return false;
+      if (!getMicroServiceList()
+          .equals(other.getMicroServiceList())) return false;
+      if (debugger_ != other.debugger_) return false;
+      if (!getBaseUrl()
+          .equals(other.getBaseUrl())) return false;
+      if (getShowAdvertising()
+          != other.getShowAdvertising()) return false;
+      if (defaultTab_ != other.defaultTab_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + DEBUG_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDebugMode());
+      hash = (37 * hash) + DEFAULT_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultTimeout();
+      hash = (37 * hash) + OPTIMIZE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOptimizeMode());
+      hash = (37 * hash) + MAX_FILE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMaxFileSize());
+      hash = (37 * hash) + CAPTION_LENGTH_MAX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCaptionLengthMax());
+      hash = (37 * hash) + MESSAGE_LENGTH_MAX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMessageLengthMax());
+      hash = (37 * hash) + GROUP_ADD_MEMBER_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupAddMemberLimit();
+      hash = (37 * hash) + CHANNEL_ADD_MEMBER_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelAddMemberLimit();
+      if (getMicroServiceCount() > 0) {
+        hash = (37 * hash) + MICRO_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getMicroServiceList().hashCode();
+      }
+      hash = (37 * hash) + DEBUGGER_FIELD_NUMBER;
+      hash = (53 * hash) + debugger_;
+      hash = (37 * hash) + BASE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseUrl().hashCode();
+      hash = (37 * hash) + SHOW_ADVERTISING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getShowAdvertising());
+      hash = (37 * hash) + DEFAULTTAB_FIELD_NUMBER;
+      hash = (53 * hash) + defaultTab_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.InfoConfigResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoInfoConfig.InfoConfigResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.InfoConfigResponse)
         net.iGap.proto.ProtoInfoConfig.InfoConfigResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfigResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfigResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.class, net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMicroServiceFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        debugMode_ = false;
 
+        defaultTimeout_ = 0;
+
+        optimizeMode_ = false;
+
+        maxFileSize_ = 0L;
+
+        captionLengthMax_ = 0L;
+
+        messageLengthMax_ = 0L;
+
+        groupAddMemberLimit_ = 0;
+
+        channelAddMemberLimit_ = 0;
+
+        if (microServiceBuilder_ == null) {
+          microService_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          microServiceBuilder_.clear();
+        }
+        debugger_ = 0;
+
+        baseUrl_ = "";
+
+        showAdvertising_ = false;
+
+        defaultTab_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_InfoConfigResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse build() {
+        net.iGap.proto.ProtoInfoConfig.InfoConfigResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse buildPartial() {
+        net.iGap.proto.ProtoInfoConfig.InfoConfigResponse result = new net.iGap.proto.ProtoInfoConfig.InfoConfigResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.debugMode_ = debugMode_;
+        result.defaultTimeout_ = defaultTimeout_;
+        result.optimizeMode_ = optimizeMode_;
+        result.maxFileSize_ = maxFileSize_;
+        result.captionLengthMax_ = captionLengthMax_;
+        result.messageLengthMax_ = messageLengthMax_;
+        result.groupAddMemberLimit_ = groupAddMemberLimit_;
+        result.channelAddMemberLimit_ = channelAddMemberLimit_;
+        if (microServiceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            microService_ = java.util.Collections.unmodifiableList(microService_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.microService_ = microService_;
+        } else {
+          result.microService_ = microServiceBuilder_.build();
+        }
+        result.debugger_ = debugger_;
+        result.baseUrl_ = baseUrl_;
+        result.showAdvertising_ = showAdvertising_;
+        result.defaultTab_ = defaultTab_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoInfoConfig.InfoConfigResponse) {
+          return mergeFrom((net.iGap.proto.ProtoInfoConfig.InfoConfigResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse other) {
+        if (other == net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getDebugMode() != false) {
+          setDebugMode(other.getDebugMode());
+        }
+        if (other.getDefaultTimeout() != 0) {
+          setDefaultTimeout(other.getDefaultTimeout());
+        }
+        if (other.getOptimizeMode() != false) {
+          setOptimizeMode(other.getOptimizeMode());
+        }
+        if (other.getMaxFileSize() != 0L) {
+          setMaxFileSize(other.getMaxFileSize());
+        }
+        if (other.getCaptionLengthMax() != 0L) {
+          setCaptionLengthMax(other.getCaptionLengthMax());
+        }
+        if (other.getMessageLengthMax() != 0L) {
+          setMessageLengthMax(other.getMessageLengthMax());
+        }
+        if (other.getGroupAddMemberLimit() != 0) {
+          setGroupAddMemberLimit(other.getGroupAddMemberLimit());
+        }
+        if (other.getChannelAddMemberLimit() != 0) {
+          setChannelAddMemberLimit(other.getChannelAddMemberLimit());
+        }
+        if (microServiceBuilder_ == null) {
+          if (!other.microService_.isEmpty()) {
+            if (microService_.isEmpty()) {
+              microService_ = other.microService_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMicroServiceIsMutable();
+              microService_.addAll(other.microService_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.microService_.isEmpty()) {
+            if (microServiceBuilder_.isEmpty()) {
+              microServiceBuilder_.dispose();
+              microServiceBuilder_ = null;
+              microService_ = other.microService_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              microServiceBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMicroServiceFieldBuilder() : null;
+            } else {
+              microServiceBuilder_.addAllMessages(other.microService_);
+            }
+          }
+        }
+        if (other.debugger_ != 0) {
+          setDebuggerValue(other.getDebuggerValue());
+        }
+        if (!other.getBaseUrl().isEmpty()) {
+          baseUrl_ = other.baseUrl_;
+          onChanged();
+        }
+        if (other.getShowAdvertising() != false) {
+          setShowAdvertising(other.getShowAdvertising());
+        }
+        if (other.defaultTab_ != 0) {
+          setDefaultTabValue(other.getDefaultTabValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoInfoConfig.InfoConfigResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoInfoConfig.InfoConfigResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private boolean debugMode_ ;
       /**
-       * <code>optional bool debug_mode = 2;</code>
+       * <code>bool debug_mode = 2;</code>
+       * @return The debugMode.
        */
+      @java.lang.Override
       public boolean getDebugMode() {
-        return instance.getDebugMode();
+        return debugMode_;
       }
       /**
-       * <code>optional bool debug_mode = 2;</code>
+       * <code>bool debug_mode = 2;</code>
+       * @param value The debugMode to set.
+       * @return This builder for chaining.
        */
       public Builder setDebugMode(boolean value) {
-        copyOnWrite();
-        instance.setDebugMode(value);
+        
+        debugMode_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional bool debug_mode = 2;</code>
+       * <code>bool debug_mode = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDebugMode() {
-        copyOnWrite();
-        instance.clearDebugMode();
+        
+        debugMode_ = false;
+        onChanged();
         return this;
       }
 
+      private int defaultTimeout_ ;
       /**
-       * <code>optional uint32 default_timeout = 3;</code>
+       * <code>uint32 default_timeout = 3;</code>
+       * @return The defaultTimeout.
        */
+      @java.lang.Override
       public int getDefaultTimeout() {
-        return instance.getDefaultTimeout();
+        return defaultTimeout_;
       }
       /**
-       * <code>optional uint32 default_timeout = 3;</code>
+       * <code>uint32 default_timeout = 3;</code>
+       * @param value The defaultTimeout to set.
+       * @return This builder for chaining.
        */
       public Builder setDefaultTimeout(int value) {
-        copyOnWrite();
-        instance.setDefaultTimeout(value);
+        
+        defaultTimeout_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 default_timeout = 3;</code>
+       * <code>uint32 default_timeout = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDefaultTimeout() {
-        copyOnWrite();
-        instance.clearDefaultTimeout();
+        
+        defaultTimeout_ = 0;
+        onChanged();
         return this;
       }
 
+      private boolean optimizeMode_ ;
       /**
-       * <code>optional bool optimize_mode = 4;</code>
+       * <code>bool optimize_mode = 4;</code>
+       * @return The optimizeMode.
        */
+      @java.lang.Override
       public boolean getOptimizeMode() {
-        return instance.getOptimizeMode();
+        return optimizeMode_;
       }
       /**
-       * <code>optional bool optimize_mode = 4;</code>
+       * <code>bool optimize_mode = 4;</code>
+       * @param value The optimizeMode to set.
+       * @return This builder for chaining.
        */
       public Builder setOptimizeMode(boolean value) {
-        copyOnWrite();
-        instance.setOptimizeMode(value);
+        
+        optimizeMode_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional bool optimize_mode = 4;</code>
+       * <code>bool optimize_mode = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOptimizeMode() {
-        copyOnWrite();
-        instance.clearOptimizeMode();
+        
+        optimizeMode_ = false;
+        onChanged();
         return this;
       }
 
+      private long maxFileSize_ ;
       /**
-       * <code>optional uint64 max_file_size = 5;</code>
+       * <code>uint64 max_file_size = 5;</code>
+       * @return The maxFileSize.
        */
+      @java.lang.Override
       public long getMaxFileSize() {
-        return instance.getMaxFileSize();
+        return maxFileSize_;
       }
       /**
-       * <code>optional uint64 max_file_size = 5;</code>
+       * <code>uint64 max_file_size = 5;</code>
+       * @param value The maxFileSize to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxFileSize(long value) {
-        copyOnWrite();
-        instance.setMaxFileSize(value);
+        
+        maxFileSize_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 max_file_size = 5;</code>
+       * <code>uint64 max_file_size = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxFileSize() {
-        copyOnWrite();
-        instance.clearMaxFileSize();
+        
+        maxFileSize_ = 0L;
+        onChanged();
         return this;
       }
 
+      private long captionLengthMax_ ;
       /**
-       * <code>optional uint64 caption_length_max = 6;</code>
+       * <code>uint64 caption_length_max = 6;</code>
+       * @return The captionLengthMax.
        */
+      @java.lang.Override
       public long getCaptionLengthMax() {
-        return instance.getCaptionLengthMax();
+        return captionLengthMax_;
       }
       /**
-       * <code>optional uint64 caption_length_max = 6;</code>
+       * <code>uint64 caption_length_max = 6;</code>
+       * @param value The captionLengthMax to set.
+       * @return This builder for chaining.
        */
       public Builder setCaptionLengthMax(long value) {
-        copyOnWrite();
-        instance.setCaptionLengthMax(value);
+        
+        captionLengthMax_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 caption_length_max = 6;</code>
+       * <code>uint64 caption_length_max = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCaptionLengthMax() {
-        copyOnWrite();
-        instance.clearCaptionLengthMax();
+        
+        captionLengthMax_ = 0L;
+        onChanged();
         return this;
       }
 
+      private long messageLengthMax_ ;
       /**
-       * <code>optional uint64 message_length_max = 7;</code>
+       * <code>uint64 message_length_max = 7;</code>
+       * @return The messageLengthMax.
        */
+      @java.lang.Override
       public long getMessageLengthMax() {
-        return instance.getMessageLengthMax();
+        return messageLengthMax_;
       }
       /**
-       * <code>optional uint64 message_length_max = 7;</code>
+       * <code>uint64 message_length_max = 7;</code>
+       * @param value The messageLengthMax to set.
+       * @return This builder for chaining.
        */
       public Builder setMessageLengthMax(long value) {
-        copyOnWrite();
-        instance.setMessageLengthMax(value);
+        
+        messageLengthMax_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 message_length_max = 7;</code>
+       * <code>uint64 message_length_max = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMessageLengthMax() {
-        copyOnWrite();
-        instance.clearMessageLengthMax();
+        
+        messageLengthMax_ = 0L;
+        onChanged();
         return this;
       }
 
+      private int groupAddMemberLimit_ ;
       /**
-       * <code>optional uint32 group_add_member_limit = 8;</code>
+       * <code>uint32 group_add_member_limit = 8;</code>
+       * @return The groupAddMemberLimit.
        */
+      @java.lang.Override
       public int getGroupAddMemberLimit() {
-        return instance.getGroupAddMemberLimit();
+        return groupAddMemberLimit_;
       }
       /**
-       * <code>optional uint32 group_add_member_limit = 8;</code>
+       * <code>uint32 group_add_member_limit = 8;</code>
+       * @param value The groupAddMemberLimit to set.
+       * @return This builder for chaining.
        */
       public Builder setGroupAddMemberLimit(int value) {
-        copyOnWrite();
-        instance.setGroupAddMemberLimit(value);
+        
+        groupAddMemberLimit_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 group_add_member_limit = 8;</code>
+       * <code>uint32 group_add_member_limit = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGroupAddMemberLimit() {
-        copyOnWrite();
-        instance.clearGroupAddMemberLimit();
+        
+        groupAddMemberLimit_ = 0;
+        onChanged();
         return this;
       }
 
+      private int channelAddMemberLimit_ ;
       /**
-       * <code>optional uint32 channel_add_member_limit = 9;</code>
+       * <code>uint32 channel_add_member_limit = 9;</code>
+       * @return The channelAddMemberLimit.
        */
+      @java.lang.Override
       public int getChannelAddMemberLimit() {
-        return instance.getChannelAddMemberLimit();
+        return channelAddMemberLimit_;
       }
       /**
-       * <code>optional uint32 channel_add_member_limit = 9;</code>
+       * <code>uint32 channel_add_member_limit = 9;</code>
+       * @param value The channelAddMemberLimit to set.
+       * @return This builder for chaining.
        */
       public Builder setChannelAddMemberLimit(int value) {
-        copyOnWrite();
-        instance.setChannelAddMemberLimit(value);
+        
+        channelAddMemberLimit_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 channel_add_member_limit = 9;</code>
+       * <code>uint32 channel_add_member_limit = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChannelAddMemberLimit() {
-        copyOnWrite();
-        instance.clearChannelAddMemberLimit();
+        
+        channelAddMemberLimit_ = 0;
+        onChanged();
         return this;
       }
+
+      private java.util.List<net.iGap.proto.ProtoInfoConfig.MicroService> microService_ =
+        java.util.Collections.emptyList();
+      private void ensureMicroServiceIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          microService_ = new java.util.ArrayList<net.iGap.proto.ProtoInfoConfig.MicroService>(microService_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoInfoConfig.MicroService, net.iGap.proto.ProtoInfoConfig.MicroService.Builder, net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder> microServiceBuilder_;
 
       /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public java.util.List<net.iGap.proto.ProtoInfoConfig.MicroService> getMicroServiceList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getMicroServiceList());
+        if (microServiceBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(microService_);
+        } else {
+          return microServiceBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public int getMicroServiceCount() {
-        return instance.getMicroServiceCount();
-      }/**
+        if (microServiceBuilder_ == null) {
+          return microService_.size();
+        } else {
+          return microServiceBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public net.iGap.proto.ProtoInfoConfig.MicroService getMicroService(int index) {
-        return instance.getMicroService(index);
+        if (microServiceBuilder_ == null) {
+          return microService_.get(index);
+        } else {
+          return microServiceBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public Builder setMicroService(
           int index, net.iGap.proto.ProtoInfoConfig.MicroService value) {
-        copyOnWrite();
-        instance.setMicroService(index, value);
+        if (microServiceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMicroServiceIsMutable();
+          microService_.set(index, value);
+          onChanged();
+        } else {
+          microServiceBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1566,16 +2431,29 @@ public final class ProtoInfoConfig {
        */
       public Builder setMicroService(
           int index, net.iGap.proto.ProtoInfoConfig.MicroService.Builder builderForValue) {
-        copyOnWrite();
-        instance.setMicroService(index, builderForValue);
+        if (microServiceBuilder_ == null) {
+          ensureMicroServiceIsMutable();
+          microService_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          microServiceBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public Builder addMicroService(net.iGap.proto.ProtoInfoConfig.MicroService value) {
-        copyOnWrite();
-        instance.addMicroService(value);
+        if (microServiceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMicroServiceIsMutable();
+          microService_.add(value);
+          onChanged();
+        } else {
+          microServiceBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -1583,8 +2461,16 @@ public final class ProtoInfoConfig {
        */
       public Builder addMicroService(
           int index, net.iGap.proto.ProtoInfoConfig.MicroService value) {
-        copyOnWrite();
-        instance.addMicroService(index, value);
+        if (microServiceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMicroServiceIsMutable();
+          microService_.add(index, value);
+          onChanged();
+        } else {
+          microServiceBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1592,8 +2478,13 @@ public final class ProtoInfoConfig {
        */
       public Builder addMicroService(
           net.iGap.proto.ProtoInfoConfig.MicroService.Builder builderForValue) {
-        copyOnWrite();
-        instance.addMicroService(builderForValue);
+        if (microServiceBuilder_ == null) {
+          ensureMicroServiceIsMutable();
+          microService_.add(builderForValue.build());
+          onChanged();
+        } else {
+          microServiceBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1601,8 +2492,13 @@ public final class ProtoInfoConfig {
        */
       public Builder addMicroService(
           int index, net.iGap.proto.ProtoInfoConfig.MicroService.Builder builderForValue) {
-        copyOnWrite();
-        instance.addMicroService(index, builderForValue);
+        if (microServiceBuilder_ == null) {
+          ensureMicroServiceIsMutable();
+          microService_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          microServiceBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1610,405 +2506,497 @@ public final class ProtoInfoConfig {
        */
       public Builder addAllMicroService(
           java.lang.Iterable<? extends net.iGap.proto.ProtoInfoConfig.MicroService> values) {
-        copyOnWrite();
-        instance.addAllMicroService(values);
+        if (microServiceBuilder_ == null) {
+          ensureMicroServiceIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, microService_);
+          onChanged();
+        } else {
+          microServiceBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public Builder clearMicroService() {
-        copyOnWrite();
-        instance.clearMicroService();
+        if (microServiceBuilder_ == null) {
+          microService_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          microServiceBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
       public Builder removeMicroService(int index) {
-        copyOnWrite();
-        instance.removeMicroService(index);
+        if (microServiceBuilder_ == null) {
+          ensureMicroServiceIsMutable();
+          microService_.remove(index);
+          onChanged();
+        } else {
+          microServiceBuilder_.remove(index);
+        }
         return this;
       }
-
       /**
-       * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * <code>repeated .proto.MicroService micro_service = 10;</code>
        */
-      public int getDebuggerValue() {
-        return instance.getDebuggerValue();
+      public net.iGap.proto.ProtoInfoConfig.MicroService.Builder getMicroServiceBuilder(
+          int index) {
+        return getMicroServiceFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * <code>repeated .proto.MicroService micro_service = 10;</code>
+       */
+      public net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder getMicroServiceOrBuilder(
+          int index) {
+        if (microServiceBuilder_ == null) {
+          return microService_.get(index);  } else {
+          return microServiceBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.MicroService micro_service = 10;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder> 
+           getMicroServiceOrBuilderList() {
+        if (microServiceBuilder_ != null) {
+          return microServiceBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(microService_);
+        }
+      }
+      /**
+       * <code>repeated .proto.MicroService micro_service = 10;</code>
+       */
+      public net.iGap.proto.ProtoInfoConfig.MicroService.Builder addMicroServiceBuilder() {
+        return getMicroServiceFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoInfoConfig.MicroService.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.MicroService micro_service = 10;</code>
+       */
+      public net.iGap.proto.ProtoInfoConfig.MicroService.Builder addMicroServiceBuilder(
+          int index) {
+        return getMicroServiceFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoInfoConfig.MicroService.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.MicroService micro_service = 10;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoInfoConfig.MicroService.Builder> 
+           getMicroServiceBuilderList() {
+        return getMicroServiceFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoInfoConfig.MicroService, net.iGap.proto.ProtoInfoConfig.MicroService.Builder, net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder> 
+          getMicroServiceFieldBuilder() {
+        if (microServiceBuilder_ == null) {
+          microServiceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoInfoConfig.MicroService, net.iGap.proto.ProtoInfoConfig.MicroService.Builder, net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder>(
+                  microService_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          microService_ = null;
+        }
+        return microServiceBuilder_;
+      }
+
+      private int debugger_ = 0;
+      /**
+       * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * @return The enum numeric value on the wire for debugger.
+       */
+      @java.lang.Override public int getDebuggerValue() {
+        return debugger_;
+      }
+      /**
+       * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * @param value The enum numeric value on the wire for debugger to set.
+       * @return This builder for chaining.
        */
       public Builder setDebuggerValue(int value) {
-        copyOnWrite();
-        instance.setDebuggerValue(value);
+        
+        debugger_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * @return The debugger.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger getDebugger() {
-        return instance.getDebugger();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger.valueOf(debugger_);
+        return result == null ? net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * @param value The debugger to set.
+       * @return This builder for chaining.
        */
       public Builder setDebugger(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Debugger value) {
-        copyOnWrite();
-        instance.setDebugger(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        debugger_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * <code>.proto.InfoConfigResponse.Debugger debugger = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDebugger() {
-        copyOnWrite();
-        instance.clearDebugger();
+        
+        debugger_ = 0;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object baseUrl_ = "";
       /**
-       * <code>optional string base_url = 12;</code>
+       * <code>string base_url = 12;</code>
+       * @return The baseUrl.
        */
       public java.lang.String getBaseUrl() {
-        return instance.getBaseUrl();
+        java.lang.Object ref = baseUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          baseUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string base_url = 12;</code>
+       * <code>string base_url = 12;</code>
+       * @return The bytes for baseUrl.
        */
       public com.google.protobuf.ByteString
           getBaseUrlBytes() {
-        return instance.getBaseUrlBytes();
+        java.lang.Object ref = baseUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          baseUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string base_url = 12;</code>
+       * <code>string base_url = 12;</code>
+       * @param value The baseUrl to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseUrl(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setBaseUrl(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        baseUrl_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string base_url = 12;</code>
+       * <code>string base_url = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBaseUrl() {
-        copyOnWrite();
-        instance.clearBaseUrl();
+        
+        baseUrl_ = getDefaultInstance().getBaseUrl();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string base_url = 12;</code>
+       * <code>string base_url = 12;</code>
+       * @param value The bytes for baseUrl to set.
+       * @return This builder for chaining.
        */
       public Builder setBaseUrlBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setBaseUrlBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        baseUrl_ = value;
+        onChanged();
         return this;
       }
 
+      private boolean showAdvertising_ ;
       /**
-       * <code>optional bool show_advertising = 13;</code>
+       * <code>bool show_advertising = 13;</code>
+       * @return The showAdvertising.
        */
+      @java.lang.Override
       public boolean getShowAdvertising() {
-        return instance.getShowAdvertising();
+        return showAdvertising_;
       }
       /**
-       * <code>optional bool show_advertising = 13;</code>
+       * <code>bool show_advertising = 13;</code>
+       * @param value The showAdvertising to set.
+       * @return This builder for chaining.
        */
       public Builder setShowAdvertising(boolean value) {
-        copyOnWrite();
-        instance.setShowAdvertising(value);
+        
+        showAdvertising_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional bool show_advertising = 13;</code>
+       * <code>bool show_advertising = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearShowAdvertising() {
-        copyOnWrite();
-        instance.clearShowAdvertising();
+        
+        showAdvertising_ = false;
+        onChanged();
         return this;
       }
 
+      private int defaultTab_ = 0;
       /**
-       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * @return The enum numeric value on the wire for defaultTab.
        */
-      public int getDefaultTabValue() {
-        return instance.getDefaultTabValue();
+      @java.lang.Override public int getDefaultTabValue() {
+        return defaultTab_;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * @param value The enum numeric value on the wire for defaultTab to set.
+       * @return This builder for chaining.
        */
       public Builder setDefaultTabValue(int value) {
-        copyOnWrite();
-        instance.setDefaultTabValue(value);
+        
+        defaultTab_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * @return The defaultTab.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab() {
-        return instance.getDefaultTab();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.valueOf(defaultTab_);
+        return result == null ? net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * @param value The defaultTab to set.
+       * @return This builder for chaining.
        */
       public Builder setDefaultTab(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab value) {
-        copyOnWrite();
-        instance.setDefaultTab(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        defaultTab_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * <code>.proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDefaultTab() {
-        copyOnWrite();
-        instance.clearDefaultTab();
+        
+        defaultTab_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.InfoConfigResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoInfoConfig.InfoConfigResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          microService_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoInfoConfig.InfoConfigResponse other = (net.iGap.proto.ProtoInfoConfig.InfoConfigResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          debugMode_ = visitor.visitBoolean(debugMode_ != false, debugMode_,
-              other.debugMode_ != false, other.debugMode_);
-          defaultTimeout_ = visitor.visitInt(defaultTimeout_ != 0, defaultTimeout_,
-              other.defaultTimeout_ != 0, other.defaultTimeout_);
-          optimizeMode_ = visitor.visitBoolean(optimizeMode_ != false, optimizeMode_,
-              other.optimizeMode_ != false, other.optimizeMode_);
-          maxFileSize_ = visitor.visitLong(maxFileSize_ != 0L, maxFileSize_,
-              other.maxFileSize_ != 0L, other.maxFileSize_);
-          captionLengthMax_ = visitor.visitLong(captionLengthMax_ != 0L, captionLengthMax_,
-              other.captionLengthMax_ != 0L, other.captionLengthMax_);
-          messageLengthMax_ = visitor.visitLong(messageLengthMax_ != 0L, messageLengthMax_,
-              other.messageLengthMax_ != 0L, other.messageLengthMax_);
-          groupAddMemberLimit_ = visitor.visitInt(groupAddMemberLimit_ != 0, groupAddMemberLimit_,
-              other.groupAddMemberLimit_ != 0, other.groupAddMemberLimit_);
-          channelAddMemberLimit_ = visitor.visitInt(channelAddMemberLimit_ != 0, channelAddMemberLimit_,
-              other.channelAddMemberLimit_ != 0, other.channelAddMemberLimit_);
-          microService_= visitor.visitList(microService_, other.microService_);
-          debugger_ = visitor.visitInt(debugger_ != 0, debugger_,    other.debugger_ != 0, other.debugger_);
-          baseUrl_ = visitor.visitString(!baseUrl_.isEmpty(), baseUrl_,
-              !other.baseUrl_.isEmpty(), other.baseUrl_);
-          showAdvertising_ = visitor.visitBoolean(showAdvertising_ != false, showAdvertising_,
-              other.showAdvertising_ != false, other.showAdvertising_);
-          defaultTab_ = visitor.visitInt(defaultTab_ != 0, defaultTab_,    other.defaultTab_ != 0, other.defaultTab_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  debugMode_ = input.readBool();
-                  break;
-                }
-                case 24: {
-
-                  defaultTimeout_ = input.readUInt32();
-                  break;
-                }
-                case 32: {
-
-                  optimizeMode_ = input.readBool();
-                  break;
-                }
-                case 40: {
-
-                  maxFileSize_ = input.readUInt64();
-                  break;
-                }
-                case 48: {
-
-                  captionLengthMax_ = input.readUInt64();
-                  break;
-                }
-                case 56: {
-
-                  messageLengthMax_ = input.readUInt64();
-                  break;
-                }
-                case 64: {
-
-                  groupAddMemberLimit_ = input.readUInt32();
-                  break;
-                }
-                case 72: {
-
-                  channelAddMemberLimit_ = input.readUInt32();
-                  break;
-                }
-                case 82: {
-                  if (!microService_.isModifiable()) {
-                    microService_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(microService_);
-                  }
-                  microService_.add(
-                      input.readMessage(net.iGap.proto.ProtoInfoConfig.MicroService.parser(), extensionRegistry));
-                  break;
-                }
-                case 88: {
-                  int rawValue = input.readEnum();
-
-                  debugger_ = rawValue;
-                  break;
-                }
-                case 98: {
-                  String s = input.readStringRequireUtf8();
-
-                  baseUrl_ = s;
-                  break;
-                }
-                case 104: {
-
-                  showAdvertising_ = input.readBool();
-                  break;
-                }
-                case 112: {
-                  int rawValue = input.readEnum();
-
-                  defaultTab_ = rawValue;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.InfoConfigResponse)
     private static final net.iGap.proto.ProtoInfoConfig.InfoConfigResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InfoConfigResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoInfoConfig.InfoConfigResponse();
     }
 
     public static net.iGap.proto.ProtoInfoConfig.InfoConfigResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<InfoConfigResponse> PARSER;
+    private static final com.google.protobuf.Parser<InfoConfigResponse>
+        PARSER = new com.google.protobuf.AbstractParser<InfoConfigResponse>() {
+      @java.lang.Override
+      public InfoConfigResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InfoConfigResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<InfoConfigResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InfoConfigResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface MicroServiceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MicroService)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+     * <code>.proto.MicroService.ConnectionType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+     * <code>.proto.MicroService.ConnectionType type = 2;</code>
+     * @return The type.
      */
     net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType getType();
   }
   /**
    * Protobuf type {@code proto.MicroService}
    */
-  public  static final class MicroService extends
-      com.google.protobuf.GeneratedMessageLite<
-          MicroService, MicroService.Builder> implements
+  public static final class MicroService extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MicroService)
       MicroServiceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MicroService.newBuilder() to construct.
+    private MicroService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private MicroService() {
       name_ = "";
+      type_ = 0;
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MicroService();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MicroService(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoInfoConfig.internal_static_proto_MicroService_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoInfoConfig.internal_static_proto_MicroService_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoInfoConfig.MicroService.class, net.iGap.proto.ProtoInfoConfig.MicroService.Builder.class);
+    }
+
     /**
      * Protobuf enum {@code proto.MicroService.ConnectionType}
      */
     public enum ConnectionType
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>HTTPS = 0;</code>
        */
@@ -2031,10 +3019,16 @@ public final class ProtoInfoConfig {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2042,6 +3036,10 @@ public final class ProtoInfoConfig {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static ConnectionType forNumber(int value) {
         switch (value) {
           case 0: return HTTPS;
@@ -2062,6 +3060,37 @@ public final class ProtoInfoConfig {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.MicroService.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ConnectionType[] VALUES = values();
+
+      public static ConnectionType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private ConnectionType(int value) {
@@ -2072,384 +3101,634 @@ public final class ProtoInfoConfig {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private java.lang.String name_;
+    private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
-      return name_;
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(name_);
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    private void setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    private void clearName() {
-      
-      name_ = getDefaultInstance().getName();
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    private void setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value.toStringUtf8();
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_;
     /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+     * <code>.proto.MicroService.ConnectionType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+     * <code>.proto.MicroService.ConnectionType type = 2;</code>
+     * @return The type.
      */
-    public net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType getType() {
-      net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType result = net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.forNumber(type_);
+    @java.lang.Override public net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType getType() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType result = net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.valueOf(type_);
       return result == null ? net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.UNRECOGNIZED : result;
     }
-    /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
-     */
-    private void setTypeValue(int value) {
-        type_ = value;
-    }
-    /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
-     */
-    private void setType(net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      type_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
-     */
-    private void clearType() {
-      
-      type_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!name_.isEmpty()) {
-        output.writeString(1, getName());
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       if (type_ != net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.HTTPS.getNumber()) {
         output.writeEnum(2, type_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!name_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(1, getName());
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       if (type_ != net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.HTTPS.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoInfoConfig.MicroService)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoInfoConfig.MicroService other = (net.iGap.proto.ProtoInfoConfig.MicroService) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (type_ != other.type_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoInfoConfig.MicroService parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoInfoConfig.MicroService prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MicroService}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoInfoConfig.MicroService, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MicroService)
         net.iGap.proto.ProtoInfoConfig.MicroServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_MicroService_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_MicroService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoInfoConfig.MicroService.class, net.iGap.proto.ProtoInfoConfig.MicroService.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoInfoConfig.MicroService.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
 
+        type_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoInfoConfig.internal_static_proto_MicroService_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.MicroService getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoInfoConfig.MicroService.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.MicroService build() {
+        net.iGap.proto.ProtoInfoConfig.MicroService result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoInfoConfig.MicroService buildPartial() {
+        net.iGap.proto.ProtoInfoConfig.MicroService result = new net.iGap.proto.ProtoInfoConfig.MicroService(this);
+        result.name_ = name_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoInfoConfig.MicroService) {
+          return mergeFrom((net.iGap.proto.ProtoInfoConfig.MicroService)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoInfoConfig.MicroService other) {
+        if (other == net.iGap.proto.ProtoInfoConfig.MicroService.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoInfoConfig.MicroService parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoInfoConfig.MicroService) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
-        return instance.getName();
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
-        return instance.getNameBytes();
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setName(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
-        copyOnWrite();
-        instance.clearName();
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setNameBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
         return this;
       }
 
+      private int type_ = 0;
       /**
-       * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+       * <code>.proto.MicroService.ConnectionType type = 2;</code>
+       * @return The enum numeric value on the wire for type.
        */
-      public int getTypeValue() {
-        return instance.getTypeValue();
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
-       * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+       * <code>.proto.MicroService.ConnectionType type = 2;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        copyOnWrite();
-        instance.setTypeValue(value);
+        
+        type_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+       * <code>.proto.MicroService.ConnectionType type = 2;</code>
+       * @return The type.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType getType() {
-        return instance.getType();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType result = net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+       * <code>.proto.MicroService.ConnectionType type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(net.iGap.proto.ProtoInfoConfig.MicroService.ConnectionType value) {
-        copyOnWrite();
-        instance.setType(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.MicroService.ConnectionType type = 2;</code>
+       * <code>.proto.MicroService.ConnectionType type = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
-        copyOnWrite();
-        instance.clearType();
+        
+        type_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.MicroService)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoInfoConfig.MicroService();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoInfoConfig.MicroService other = (net.iGap.proto.ProtoInfoConfig.MicroService) arg1;
-          name_ = visitor.visitString(!name_.isEmpty(), name_,
-              !other.name_.isEmpty(), other.name_);
-          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  String s = input.readStringRequireUtf8();
-
-                  name_ = s;
-                  break;
-                }
-                case 16: {
-                  int rawValue = input.readEnum();
-
-                  type_ = rawValue;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoInfoConfig.MicroService.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MicroService)
     private static final net.iGap.proto.ProtoInfoConfig.MicroService DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MicroService();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoInfoConfig.MicroService();
     }
 
     public static net.iGap.proto.ProtoInfoConfig.MicroService getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MicroService> PARSER;
+    private static final com.google.protobuf.Parser<MicroService>
+        PARSER = new com.google.protobuf.AbstractParser<MicroService>() {
+      @java.lang.Override
+      public MicroService parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MicroService(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MicroService> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MicroService> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoInfoConfig.MicroService getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_InfoConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_InfoConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_InfoConfigResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_InfoConfigResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MicroService_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MicroService_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\020InfoConfig.proto\022\005proto\032\rRequest.proto" +
+      "\032\016Response.proto\"-\n\nInfoConfig\022\037\n\007reques" +
+      "t\030\001 \001(\0132\016.proto.Request\"\266\004\n\022InfoConfigRe" +
+      "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
+      "e\022\022\n\ndebug_mode\030\002 \001(\010\022\027\n\017default_timeout" +
+      "\030\003 \001(\r\022\025\n\roptimize_mode\030\004 \001(\010\022\025\n\rmax_fil" +
+      "e_size\030\005 \001(\004\022\032\n\022caption_length_max\030\006 \001(\004" +
+      "\022\032\n\022message_length_max\030\007 \001(\004\022\036\n\026group_ad" +
+      "d_member_limit\030\010 \001(\r\022 \n\030channel_add_memb" +
+      "er_limit\030\t \001(\r\022*\n\rmicro_service\030\n \003(\0132\023." +
+      "proto.MicroService\0224\n\010debugger\030\013 \001(\0162\".p" +
+      "roto.InfoConfigResponse.Debugger\022\020\n\010base" +
+      "_url\030\014 \001(\t\022\030\n\020show_advertising\030\r \001(\010\0221\n\n" +
+      "defaultTab\030\016 \001(\0162\035.proto.InfoConfigRespo" +
+      "nse.Tab\"\'\n\010Debugger\022\017\n\013CRASHLYTICS\020\000\022\n\n\006" +
+      "SENTRY\020\001\">\n\003Tab\022\013\n\007CONTACT\020\000\022\010\n\004CALL\020\001\022\010" +
+      "\n\004CHAT\020\002\022\t\n\005ILAND\020\003\022\013\n\007SETTING\020\004\"w\n\014Micr" +
+      "oService\022\014\n\004name\030\001 \001(\t\0220\n\004type\030\002 \001(\0162\".p" +
+      "roto.MicroService.ConnectionType\"\'\n\016Conn" +
+      "ectionType\022\t\n\005HTTPS\020\000\022\n\n\006SOCKET\020\001B!\n\016net" +
+      ".iGap.protoB\017ProtoInfoConfigb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_InfoConfig_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_InfoConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_InfoConfig_descriptor,
+        new java.lang.String[] { "Request", });
+    internal_static_proto_InfoConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_InfoConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_InfoConfigResponse_descriptor,
+        new java.lang.String[] { "Response", "DebugMode", "DefaultTimeout", "OptimizeMode", "MaxFileSize", "CaptionLengthMax", "MessageLengthMax", "GroupAddMemberLimit", "ChannelAddMemberLimit", "MicroService", "Debugger", "BaseUrl", "ShowAdvertising", "DefaultTab", });
+    internal_static_proto_MicroService_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_proto_MicroService_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MicroService_descriptor,
+        new java.lang.String[] { "Name", "Type", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -8,18 +8,30 @@ public final class ProtoClientCondition {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ClientConditionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientCondition)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
@@ -34,52 +46,163 @@ public final class ProtoClientCondition {
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
      */
     int getRoomsCount();
+    /**
+     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder> 
+        getRoomsOrBuilderList();
+    /**
+     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+     */
+    net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder getRoomsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ClientCondition}
    */
-  public  static final class ClientCondition extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientCondition, ClientCondition.Builder> implements
+  public static final class ClientCondition extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientCondition)
       ClientConditionOrBuilder {
-    private ClientCondition() {
-      rooms_ = emptyProtobufList();
+  private static final long serialVersionUID = 0L;
+    // Use ClientCondition.newBuilder() to construct.
+    private ClientCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private ClientCondition() {
+      rooms_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientCondition();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientCondition(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rooms_ = new java.util.ArrayList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rooms_.add(
+                  input.readMessage(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rooms_ = java.util.Collections.unmodifiableList(rooms_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientCondition.ClientCondition.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Builder.class);
+    }
+
     public interface RoomOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.ClientCondition.Room)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
       long getRoomId();
 
       /**
-       * <code>optional uint64 message_version = 3;</code>
+       * <code>uint64 message_version = 3;</code>
+       * @return The messageVersion.
        */
       long getMessageVersion();
 
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>uint64 status_version = 4;</code>
+       * @return The statusVersion.
        */
       long getStatusVersion();
 
       /**
-       * <code>optional uint64 delete_version = 5;</code>
+       * <code>uint64 delete_version = 5;</code>
+       * @return The deleteVersion.
        */
       long getDeleteVersion();
 
       /**
        * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+       * @return A list containing the offlineDeletedDeprecated.
        */
       @java.lang.Deprecated java.util.List<java.lang.Long> getOfflineDeletedDeprecatedList();
       /**
        * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+       * @return The count of offlineDeletedDeprecated.
        */
       @java.lang.Deprecated int getOfflineDeletedDeprecatedCount();
       /**
        * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+       * @param index The index of the element to return.
+       * @return The offlineDeletedDeprecated at the given index.
        */
       @java.lang.Deprecated long getOfflineDeletedDeprecated(int index);
 
@@ -96,54 +219,77 @@ public final class ProtoClientCondition {
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
        */
       int getOfflineEditedCount();
+      /**
+       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+       */
+      java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder> 
+          getOfflineEditedOrBuilderList();
+      /**
+       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+       */
+      net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder getOfflineEditedOrBuilder(
+          int index);
 
       /**
        * <code>repeated uint64 offline_seen = 8;</code>
+       * @return A list containing the offlineSeen.
        */
       java.util.List<java.lang.Long> getOfflineSeenList();
       /**
        * <code>repeated uint64 offline_seen = 8;</code>
+       * @return The count of offlineSeen.
        */
       int getOfflineSeenCount();
       /**
        * <code>repeated uint64 offline_seen = 8;</code>
+       * @param index The index of the element to return.
+       * @return The offlineSeen at the given index.
        */
       long getOfflineSeen(int index);
 
       /**
-       * <code>optional uint64 clear_id = 9;</code>
+       * <code>uint64 clear_id = 9;</code>
+       * @return The clearId.
        */
       long getClearId();
 
       /**
-       * <code>optional uint64 cache_start_id = 10;</code>
+       * <code>uint64 cache_start_id = 10;</code>
+       * @return The cacheStartId.
        */
       long getCacheStartId();
 
       /**
-       * <code>optional uint64 cache_end_id = 11;</code>
+       * <code>uint64 cache_end_id = 11;</code>
+       * @return The cacheEndId.
        */
       long getCacheEndId();
 
       /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * @return The enum numeric value on the wire for offlineMute.
        */
       int getOfflineMuteValue();
       /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * @return The offlineMute.
        */
       net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute getOfflineMute();
 
       /**
        * <code>repeated uint64 offline_listened = 13;</code>
+       * @return A list containing the offlineListened.
        */
       java.util.List<java.lang.Long> getOfflineListenedList();
       /**
        * <code>repeated uint64 offline_listened = 13;</code>
+       * @return The count of offlineListened.
        */
       int getOfflineListenedCount();
       /**
        * <code>repeated uint64 offline_listened = 13;</code>
+       * @param index The index of the element to return.
+       * @return The offlineListened at the given index.
        */
       long getOfflineListened(int index);
 
@@ -160,27 +306,243 @@ public final class ProtoClientCondition {
        * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
        */
       int getOfflineDeletedCount();
+      /**
+       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+       */
+      java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder> 
+          getOfflineDeletedOrBuilderList();
+      /**
+       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+       */
+      net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder getOfflineDeletedOrBuilder(
+          int index);
     }
     /**
      * Protobuf type {@code proto.ClientCondition.Room}
      */
-    public  static final class Room extends
-        com.google.protobuf.GeneratedMessageLite<
-            Room, Room.Builder> implements
+    public static final class Room extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.ClientCondition.Room)
         RoomOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Room.newBuilder() to construct.
+      private Room(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private Room() {
         offlineDeletedDeprecated_ = emptyLongList();
-        offlineEdited_ = emptyProtobufList();
+        offlineEdited_ = java.util.Collections.emptyList();
         offlineSeen_ = emptyLongList();
+        offlineMute_ = 0;
         offlineListened_ = emptyLongList();
-        offlineDeleted_ = emptyProtobufList();
+        offlineDeleted_ = java.util.Collections.emptyList();
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Room();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Room(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+
+                roomId_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+
+                messageVersion_ = input.readUInt64();
+                break;
+              }
+              case 32: {
+
+                statusVersion_ = input.readUInt64();
+                break;
+              }
+              case 40: {
+
+                deleteVersion_ = input.readUInt64();
+                break;
+              }
+              case 48: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  offlineDeletedDeprecated_ = newLongList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                offlineDeletedDeprecated_.addLong(input.readUInt64());
+                break;
+              }
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                  offlineDeletedDeprecated_ = newLongList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  offlineDeletedDeprecated_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              }
+              case 58: {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  offlineEdited_ = new java.util.ArrayList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                offlineEdited_.add(
+                    input.readMessage(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.parser(), extensionRegistry));
+                break;
+              }
+              case 64: {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  offlineSeen_ = newLongList();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                offlineSeen_.addLong(input.readUInt64());
+                break;
+              }
+              case 66: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                  offlineSeen_ = newLongList();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  offlineSeen_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              }
+              case 72: {
+
+                clearId_ = input.readUInt64();
+                break;
+              }
+              case 80: {
+
+                cacheStartId_ = input.readUInt64();
+                break;
+              }
+              case 88: {
+
+                cacheEndId_ = input.readUInt64();
+                break;
+              }
+              case 96: {
+                int rawValue = input.readEnum();
+
+                offlineMute_ = rawValue;
+                break;
+              }
+              case 104: {
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  offlineListened_ = newLongList();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                offlineListened_.addLong(input.readUInt64());
+                break;
+              }
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                  offlineListened_ = newLongList();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  offlineListened_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              }
+              case 114: {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                  offlineDeleted_ = new java.util.ArrayList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted>();
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                offlineDeleted_.add(
+                    input.readMessage(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            offlineDeletedDeprecated_.makeImmutable(); // C
+          }
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            offlineEdited_ = java.util.Collections.unmodifiableList(offlineEdited_);
+          }
+          if (((mutable_bitField0_ & 0x00000004) != 0)) {
+            offlineSeen_.makeImmutable(); // C
+          }
+          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+            offlineListened_.makeImmutable(); // C
+          }
+          if (((mutable_bitField0_ & 0x00000010) != 0)) {
+            offlineDeleted_ = java.util.Collections.unmodifiableList(offlineDeleted_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientCondition.ClientCondition.Room.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder.class);
+      }
+
       /**
        * Protobuf enum {@code proto.ClientCondition.Room.OfflineMute}
        */
       public enum OfflineMute
-          implements com.google.protobuf.Internal.EnumLite {
+          implements com.google.protobuf.ProtocolMessageEnum {
         /**
          * <code>UNCHANGED = 0;</code>
          */
@@ -211,10 +573,16 @@ public final class ProtoClientCondition {
 
 
         public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
           return value;
         }
 
         /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
          * @deprecated Use {@link #forNumber(int)} instead.
          */
         @java.lang.Deprecated
@@ -222,6 +590,10 @@ public final class ProtoClientCondition {
           return forNumber(value);
         }
 
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
         public static OfflineMute forNumber(int value) {
           switch (value) {
             case 0: return UNCHANGED;
@@ -243,6 +615,37 @@ public final class ProtoClientCondition {
                 }
               };
 
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientCondition.ClientCondition.Room.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final OfflineMute[] VALUES = values();
+
+        public static OfflineMute valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
         private final int value;
 
         private OfflineMute(int value) {
@@ -254,260 +657,313 @@ public final class ProtoClientCondition {
 
       public interface OfflineEditedOrBuilder extends
           // @@protoc_insertion_point(interface_extends:proto.ClientCondition.Room.OfflineEdited)
-          com.google.protobuf.MessageLiteOrBuilder {
+          com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return The messageId.
          */
         long getMessageId();
 
         /**
-         * <code>optional string message = 2;</code>
+         * <code>string message = 2;</code>
+         * @return The message.
          */
         java.lang.String getMessage();
         /**
-         * <code>optional string message = 2;</code>
+         * <code>string message = 2;</code>
+         * @return The bytes for message.
          */
         com.google.protobuf.ByteString
             getMessageBytes();
 
         /**
-         * <code>optional uint64 document_id = 3;</code>
+         * <code>uint64 document_id = 3;</code>
+         * @return The documentId.
          */
         long getDocumentId();
 
         /**
-         * <code>optional .proto.Mention mentions = 4;</code>
+         * <code>.proto.Mention mentions = 4;</code>
+         * @return Whether the mentions field is set.
          */
         boolean hasMentions();
         /**
-         * <code>optional .proto.Mention mentions = 4;</code>
+         * <code>.proto.Mention mentions = 4;</code>
+         * @return The mentions.
          */
         net.iGap.proto.ProtoGlobal.Mention getMentions();
+        /**
+         * <code>.proto.Mention mentions = 4;</code>
+         */
+        net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder();
 
         /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         * <code>.proto.TextSigns text_signs = 5;</code>
+         * @return Whether the textSigns field is set.
          */
         boolean hasTextSigns();
         /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         * <code>.proto.TextSigns text_signs = 5;</code>
+         * @return The textSigns.
          */
         net.iGap.proto.ProtoGlobal.TextSigns getTextSigns();
+        /**
+         * <code>.proto.TextSigns text_signs = 5;</code>
+         */
+        net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineEdited}
        */
-      public  static final class OfflineEdited extends
-          com.google.protobuf.GeneratedMessageLite<
-              OfflineEdited, OfflineEdited.Builder> implements
+      public static final class OfflineEdited extends
+          com.google.protobuf.GeneratedMessageV3 implements
           // @@protoc_insertion_point(message_implements:proto.ClientCondition.Room.OfflineEdited)
           OfflineEditedOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use OfflineEdited.newBuilder() to construct.
+        private OfflineEdited(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
         private OfflineEdited() {
           message_ = "";
         }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+          return new OfflineEdited();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        private OfflineEdited(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+
+                  messageId_ = input.readUInt64();
+                  break;
+                }
+                case 18: {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  message_ = s;
+                  break;
+                }
+                case 24: {
+
+                  documentId_ = input.readUInt64();
+                  break;
+                }
+                case 34: {
+                  net.iGap.proto.ProtoGlobal.Mention.Builder subBuilder = null;
+                  if (mentions_ != null) {
+                    subBuilder = mentions_.toBuilder();
+                  }
+                  mentions_ = input.readMessage(net.iGap.proto.ProtoGlobal.Mention.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(mentions_);
+                    mentions_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 42: {
+                  net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
+                  if (textSigns_ != null) {
+                    subBuilder = textSigns_.toBuilder();
+                  }
+                  textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(textSigns_);
+                    textSigns_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                default: {
+                  if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineEdited_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder.class);
+        }
+
         public static final int MESSAGE_ID_FIELD_NUMBER = 1;
         private long messageId_;
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return The messageId.
          */
+        @java.lang.Override
         public long getMessageId() {
           return messageId_;
         }
-        /**
-         * <code>optional uint64 message_id = 1;</code>
-         */
-        private void setMessageId(long value) {
-          
-          messageId_ = value;
-        }
-        /**
-         * <code>optional uint64 message_id = 1;</code>
-         */
-        private void clearMessageId() {
-          
-          messageId_ = 0L;
-        }
 
         public static final int MESSAGE_FIELD_NUMBER = 2;
-        private java.lang.String message_;
+        private volatile java.lang.Object message_;
         /**
-         * <code>optional string message = 2;</code>
+         * <code>string message = 2;</code>
+         * @return The message.
          */
+        @java.lang.Override
         public java.lang.String getMessage() {
-          return message_;
+          java.lang.Object ref = message_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            message_ = s;
+            return s;
+          }
         }
         /**
-         * <code>optional string message = 2;</code>
+         * <code>string message = 2;</code>
+         * @return The bytes for message.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString
             getMessageBytes() {
-          return com.google.protobuf.ByteString.copyFromUtf8(message_);
-        }
-        /**
-         * <code>optional string message = 2;</code>
-         */
-        private void setMessage(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          message_ = value;
-        }
-        /**
-         * <code>optional string message = 2;</code>
-         */
-        private void clearMessage() {
-          
-          message_ = getDefaultInstance().getMessage();
-        }
-        /**
-         * <code>optional string message = 2;</code>
-         */
-        private void setMessageBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          message_ = value.toStringUtf8();
+          java.lang.Object ref = message_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            message_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
 
         public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
         private long documentId_;
         /**
-         * <code>optional uint64 document_id = 3;</code>
+         * <code>uint64 document_id = 3;</code>
+         * @return The documentId.
          */
+        @java.lang.Override
         public long getDocumentId() {
           return documentId_;
-        }
-        /**
-         * <code>optional uint64 document_id = 3;</code>
-         */
-        private void setDocumentId(long value) {
-          
-          documentId_ = value;
-        }
-        /**
-         * <code>optional uint64 document_id = 3;</code>
-         */
-        private void clearDocumentId() {
-          
-          documentId_ = 0L;
         }
 
         public static final int MENTIONS_FIELD_NUMBER = 4;
         private net.iGap.proto.ProtoGlobal.Mention mentions_;
         /**
-         * <code>optional .proto.Mention mentions = 4;</code>
+         * <code>.proto.Mention mentions = 4;</code>
+         * @return Whether the mentions field is set.
          */
+        @java.lang.Override
         public boolean hasMentions() {
           return mentions_ != null;
         }
         /**
-         * <code>optional .proto.Mention mentions = 4;</code>
+         * <code>.proto.Mention mentions = 4;</code>
+         * @return The mentions.
          */
+        @java.lang.Override
         public net.iGap.proto.ProtoGlobal.Mention getMentions() {
           return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
         }
         /**
-         * <code>optional .proto.Mention mentions = 4;</code>
+         * <code>.proto.Mention mentions = 4;</code>
          */
-        private void setMentions(net.iGap.proto.ProtoGlobal.Mention value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          mentions_ = value;
-          
-          }
-        /**
-         * <code>optional .proto.Mention mentions = 4;</code>
-         */
-        private void setMentions(
-            net.iGap.proto.ProtoGlobal.Mention.Builder builderForValue) {
-          mentions_ = builderForValue.build();
-          
-        }
-        /**
-         * <code>optional .proto.Mention mentions = 4;</code>
-         */
-        private void mergeMentions(net.iGap.proto.ProtoGlobal.Mention value) {
-          if (mentions_ != null &&
-              mentions_ != net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance()) {
-            mentions_ =
-              net.iGap.proto.ProtoGlobal.Mention.newBuilder(mentions_).mergeFrom(value).buildPartial();
-          } else {
-            mentions_ = value;
-          }
-          
-        }
-        /**
-         * <code>optional .proto.Mention mentions = 4;</code>
-         */
-        private void clearMentions() {  mentions_ = null;
-          
+        @java.lang.Override
+        public net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder() {
+          return getMentions();
         }
 
         public static final int TEXT_SIGNS_FIELD_NUMBER = 5;
         private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
         /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         * <code>.proto.TextSigns text_signs = 5;</code>
+         * @return Whether the textSigns field is set.
          */
+        @java.lang.Override
         public boolean hasTextSigns() {
           return textSigns_ != null;
         }
         /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         * <code>.proto.TextSigns text_signs = 5;</code>
+         * @return The textSigns.
          */
+        @java.lang.Override
         public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
           return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
         }
         /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
+         * <code>.proto.TextSigns text_signs = 5;</code>
          */
-        private void setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          textSigns_ = value;
-          
-          }
-        /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
-         */
-        private void setTextSigns(
-            net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
-          textSigns_ = builderForValue.build();
-          
-        }
-        /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
-         */
-        private void mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
-          if (textSigns_ != null &&
-              textSigns_ != net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance()) {
-            textSigns_ =
-              net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
-          } else {
-            textSigns_ = value;
-          }
-          
-        }
-        /**
-         * <code>optional .proto.TextSigns text_signs = 5;</code>
-         */
-        private void clearTextSigns() {  textSigns_ = null;
-          
+        @java.lang.Override
+        public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+          return getTextSigns();
         }
 
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (messageId_ != 0L) {
             output.writeUInt64(1, messageId_);
           }
-          if (!message_.isEmpty()) {
-            output.writeString(2, getMessage());
+          if (!getMessageBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
           }
           if (documentId_ != 0L) {
             output.writeUInt64(3, documentId_);
@@ -518,10 +974,12 @@ public final class ProtoClientCondition {
           if (textSigns_ != null) {
             output.writeMessage(5, getTextSigns());
           }
+          unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
-          int size = memoizedSerializedSize;
+          int size = memoizedSize;
           if (size != -1) return size;
 
           size = 0;
@@ -529,9 +987,8 @@ public final class ProtoClientCondition {
             size += com.google.protobuf.CodedOutputStream
               .computeUInt64Size(1, messageId_);
           }
-          if (!message_.isEmpty()) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeStringSize(2, getMessage());
+          if (!getMessageBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
           }
           if (documentId_ != 0L) {
             size += com.google.protobuf.CodedOutputStream
@@ -545,507 +1002,934 @@ public final class ProtoClientCondition {
             size += com.google.protobuf.CodedOutputStream
               .computeMessageSize(5, getTextSigns());
           }
-          memoizedSerializedSize = size;
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
           return size;
         }
 
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited)) {
+            return super.equals(obj);
+          }
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited other = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited) obj;
+
+          if (getMessageId()
+              != other.getMessageId()) return false;
+          if (!getMessage()
+              .equals(other.getMessage())) return false;
+          if (getDocumentId()
+              != other.getDocumentId()) return false;
+          if (hasMentions() != other.hasMentions()) return false;
+          if (hasMentions()) {
+            if (!getMentions()
+                .equals(other.getMentions())) return false;
+          }
+          if (hasTextSigns() != other.hasTextSigns()) return false;
+          if (hasTextSigns()) {
+            if (!getTextSigns()
+                .equals(other.getTextSigns())) return false;
+          }
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getMessageId());
+          hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getMessage().hashCode();
+          hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getDocumentId());
+          if (hasMentions()) {
+            hash = (37 * hash) + MENTIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getMentions().hashCode();
+          }
+          if (hasTextSigns()) {
+            hash = (37 * hash) + TEXT_SIGNS_FIELD_NUMBER;
+            hash = (53 * hash) + getTextSigns().hashCode();
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data);
+          return PARSER.parseFrom(data);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data, extensionRegistry);
+          return PARSER.parseFrom(data, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data);
+          return PARSER.parseFrom(data);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data, extensionRegistry);
+          return PARSER.parseFrom(data, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
         public static Builder newBuilder(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
 
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
         /**
          * Protobuf type {@code proto.ClientCondition.Room.OfflineEdited}
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessageLite.Builder<
-              net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited, Builder> implements
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
             // @@protoc_insertion_point(builder_implements:proto.ClientCondition.Room.OfflineEdited)
             net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineEdited_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder.class);
+          }
+
           // Construct using net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.newBuilder()
           private Builder() {
-            super(DEFAULT_INSTANCE);
+            maybeForceBuilderInitialization();
           }
 
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            messageId_ = 0L;
 
+            message_ = "";
+
+            documentId_ = 0L;
+
+            if (mentionsBuilder_ == null) {
+              mentions_ = null;
+            } else {
+              mentions_ = null;
+              mentionsBuilder_ = null;
+            }
+            if (textSignsBuilder_ == null) {
+              textSigns_ = null;
+            } else {
+              textSigns_ = null;
+              textSignsBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor;
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited getDefaultInstanceForType() {
+            return net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited build() {
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited buildPartial() {
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited result = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited(this);
+            result.messageId_ = messageId_;
+            result.message_ = message_;
+            result.documentId_ = documentId_;
+            if (mentionsBuilder_ == null) {
+              result.mentions_ = mentions_;
+            } else {
+              result.mentions_ = mentionsBuilder_.build();
+            }
+            if (textSignsBuilder_ == null) {
+              result.textSigns_ = textSigns_;
+            } else {
+              result.textSigns_ = textSignsBuilder_.build();
+            }
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited) {
+              return mergeFrom((net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited other) {
+            if (other == net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.getDefaultInstance()) return this;
+            if (other.getMessageId() != 0L) {
+              setMessageId(other.getMessageId());
+            }
+            if (!other.getMessage().isEmpty()) {
+              message_ = other.message_;
+              onChanged();
+            }
+            if (other.getDocumentId() != 0L) {
+              setDocumentId(other.getDocumentId());
+            }
+            if (other.hasMentions()) {
+              mergeMentions(other.getMentions());
+            }
+            if (other.hasTextSigns()) {
+              mergeTextSigns(other.getTextSigns());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited) e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private long messageId_ ;
           /**
-           * <code>optional uint64 message_id = 1;</code>
+           * <code>uint64 message_id = 1;</code>
+           * @return The messageId.
            */
+          @java.lang.Override
           public long getMessageId() {
-            return instance.getMessageId();
+            return messageId_;
           }
           /**
-           * <code>optional uint64 message_id = 1;</code>
+           * <code>uint64 message_id = 1;</code>
+           * @param value The messageId to set.
+           * @return This builder for chaining.
            */
           public Builder setMessageId(long value) {
-            copyOnWrite();
-            instance.setMessageId(value);
+            
+            messageId_ = value;
+            onChanged();
             return this;
           }
           /**
-           * <code>optional uint64 message_id = 1;</code>
+           * <code>uint64 message_id = 1;</code>
+           * @return This builder for chaining.
            */
           public Builder clearMessageId() {
-            copyOnWrite();
-            instance.clearMessageId();
+            
+            messageId_ = 0L;
+            onChanged();
             return this;
           }
 
+          private java.lang.Object message_ = "";
           /**
-           * <code>optional string message = 2;</code>
+           * <code>string message = 2;</code>
+           * @return The message.
            */
           public java.lang.String getMessage() {
-            return instance.getMessage();
+            java.lang.Object ref = message_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              message_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
           }
           /**
-           * <code>optional string message = 2;</code>
+           * <code>string message = 2;</code>
+           * @return The bytes for message.
            */
           public com.google.protobuf.ByteString
               getMessageBytes() {
-            return instance.getMessageBytes();
+            java.lang.Object ref = message_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              message_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
           }
           /**
-           * <code>optional string message = 2;</code>
+           * <code>string message = 2;</code>
+           * @param value The message to set.
+           * @return This builder for chaining.
            */
           public Builder setMessage(
               java.lang.String value) {
-            copyOnWrite();
-            instance.setMessage(value);
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  
+            message_ = value;
+            onChanged();
             return this;
           }
           /**
-           * <code>optional string message = 2;</code>
+           * <code>string message = 2;</code>
+           * @return This builder for chaining.
            */
           public Builder clearMessage() {
-            copyOnWrite();
-            instance.clearMessage();
+            
+            message_ = getDefaultInstance().getMessage();
+            onChanged();
             return this;
           }
           /**
-           * <code>optional string message = 2;</code>
+           * <code>string message = 2;</code>
+           * @param value The bytes for message to set.
+           * @return This builder for chaining.
            */
           public Builder setMessageBytes(
               com.google.protobuf.ByteString value) {
-            copyOnWrite();
-            instance.setMessageBytes(value);
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            
+            message_ = value;
+            onChanged();
             return this;
           }
 
+          private long documentId_ ;
           /**
-           * <code>optional uint64 document_id = 3;</code>
+           * <code>uint64 document_id = 3;</code>
+           * @return The documentId.
            */
+          @java.lang.Override
           public long getDocumentId() {
-            return instance.getDocumentId();
+            return documentId_;
           }
           /**
-           * <code>optional uint64 document_id = 3;</code>
+           * <code>uint64 document_id = 3;</code>
+           * @param value The documentId to set.
+           * @return This builder for chaining.
            */
           public Builder setDocumentId(long value) {
-            copyOnWrite();
-            instance.setDocumentId(value);
+            
+            documentId_ = value;
+            onChanged();
             return this;
           }
           /**
-           * <code>optional uint64 document_id = 3;</code>
+           * <code>uint64 document_id = 3;</code>
+           * @return This builder for chaining.
            */
           public Builder clearDocumentId() {
-            copyOnWrite();
-            instance.clearDocumentId();
+            
+            documentId_ = 0L;
+            onChanged();
             return this;
           }
 
+          private net.iGap.proto.ProtoGlobal.Mention mentions_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder> mentionsBuilder_;
           /**
-           * <code>optional .proto.Mention mentions = 4;</code>
+           * <code>.proto.Mention mentions = 4;</code>
+           * @return Whether the mentions field is set.
            */
           public boolean hasMentions() {
-            return instance.hasMentions();
+            return mentionsBuilder_ != null || mentions_ != null;
           }
           /**
-           * <code>optional .proto.Mention mentions = 4;</code>
+           * <code>.proto.Mention mentions = 4;</code>
+           * @return The mentions.
            */
           public net.iGap.proto.ProtoGlobal.Mention getMentions() {
-            return instance.getMentions();
+            if (mentionsBuilder_ == null) {
+              return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+            } else {
+              return mentionsBuilder_.getMessage();
+            }
           }
           /**
-           * <code>optional .proto.Mention mentions = 4;</code>
+           * <code>.proto.Mention mentions = 4;</code>
            */
           public Builder setMentions(net.iGap.proto.ProtoGlobal.Mention value) {
-            copyOnWrite();
-            instance.setMentions(value);
-            return this;
+            if (mentionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              mentions_ = value;
+              onChanged();
+            } else {
+              mentionsBuilder_.setMessage(value);
             }
+
+            return this;
+          }
           /**
-           * <code>optional .proto.Mention mentions = 4;</code>
+           * <code>.proto.Mention mentions = 4;</code>
            */
           public Builder setMentions(
               net.iGap.proto.ProtoGlobal.Mention.Builder builderForValue) {
-            copyOnWrite();
-            instance.setMentions(builderForValue);
+            if (mentionsBuilder_ == null) {
+              mentions_ = builderForValue.build();
+              onChanged();
+            } else {
+              mentionsBuilder_.setMessage(builderForValue.build());
+            }
+
             return this;
           }
           /**
-           * <code>optional .proto.Mention mentions = 4;</code>
+           * <code>.proto.Mention mentions = 4;</code>
            */
           public Builder mergeMentions(net.iGap.proto.ProtoGlobal.Mention value) {
-            copyOnWrite();
-            instance.mergeMentions(value);
+            if (mentionsBuilder_ == null) {
+              if (mentions_ != null) {
+                mentions_ =
+                  net.iGap.proto.ProtoGlobal.Mention.newBuilder(mentions_).mergeFrom(value).buildPartial();
+              } else {
+                mentions_ = value;
+              }
+              onChanged();
+            } else {
+              mentionsBuilder_.mergeFrom(value);
+            }
+
             return this;
           }
           /**
-           * <code>optional .proto.Mention mentions = 4;</code>
+           * <code>.proto.Mention mentions = 4;</code>
            */
-          public Builder clearMentions() {  copyOnWrite();
-            instance.clearMentions();
+          public Builder clearMentions() {
+            if (mentionsBuilder_ == null) {
+              mentions_ = null;
+              onChanged();
+            } else {
+              mentions_ = null;
+              mentionsBuilder_ = null;
+            }
+
             return this;
+          }
+          /**
+           * <code>.proto.Mention mentions = 4;</code>
+           */
+          public net.iGap.proto.ProtoGlobal.Mention.Builder getMentionsBuilder() {
+            
+            onChanged();
+            return getMentionsFieldBuilder().getBuilder();
+          }
+          /**
+           * <code>.proto.Mention mentions = 4;</code>
+           */
+          public net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder() {
+            if (mentionsBuilder_ != null) {
+              return mentionsBuilder_.getMessageOrBuilder();
+            } else {
+              return mentions_ == null ?
+                  net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+            }
+          }
+          /**
+           * <code>.proto.Mention mentions = 4;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder> 
+              getMentionsFieldBuilder() {
+            if (mentionsBuilder_ == null) {
+              mentionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder>(
+                      getMentions(),
+                      getParentForChildren(),
+                      isClean());
+              mentions_ = null;
+            }
+            return mentionsBuilder_;
           }
 
+          private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> textSignsBuilder_;
           /**
-           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           * <code>.proto.TextSigns text_signs = 5;</code>
+           * @return Whether the textSigns field is set.
            */
           public boolean hasTextSigns() {
-            return instance.hasTextSigns();
+            return textSignsBuilder_ != null || textSigns_ != null;
           }
           /**
-           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           * <code>.proto.TextSigns text_signs = 5;</code>
+           * @return The textSigns.
            */
           public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
-            return instance.getTextSigns();
+            if (textSignsBuilder_ == null) {
+              return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+            } else {
+              return textSignsBuilder_.getMessage();
+            }
           }
           /**
-           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           * <code>.proto.TextSigns text_signs = 5;</code>
            */
           public Builder setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
-            copyOnWrite();
-            instance.setTextSigns(value);
-            return this;
+            if (textSignsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              textSigns_ = value;
+              onChanged();
+            } else {
+              textSignsBuilder_.setMessage(value);
             }
+
+            return this;
+          }
           /**
-           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           * <code>.proto.TextSigns text_signs = 5;</code>
            */
           public Builder setTextSigns(
               net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
-            copyOnWrite();
-            instance.setTextSigns(builderForValue);
+            if (textSignsBuilder_ == null) {
+              textSigns_ = builderForValue.build();
+              onChanged();
+            } else {
+              textSignsBuilder_.setMessage(builderForValue.build());
+            }
+
             return this;
           }
           /**
-           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           * <code>.proto.TextSigns text_signs = 5;</code>
            */
           public Builder mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
-            copyOnWrite();
-            instance.mergeTextSigns(value);
+            if (textSignsBuilder_ == null) {
+              if (textSigns_ != null) {
+                textSigns_ =
+                  net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
+              } else {
+                textSigns_ = value;
+              }
+              onChanged();
+            } else {
+              textSignsBuilder_.mergeFrom(value);
+            }
+
             return this;
           }
           /**
-           * <code>optional .proto.TextSigns text_signs = 5;</code>
+           * <code>.proto.TextSigns text_signs = 5;</code>
            */
-          public Builder clearTextSigns() {  copyOnWrite();
-            instance.clearTextSigns();
+          public Builder clearTextSigns() {
+            if (textSignsBuilder_ == null) {
+              textSigns_ = null;
+              onChanged();
+            } else {
+              textSigns_ = null;
+              textSignsBuilder_ = null;
+            }
+
             return this;
           }
+          /**
+           * <code>.proto.TextSigns text_signs = 5;</code>
+           */
+          public net.iGap.proto.ProtoGlobal.TextSigns.Builder getTextSignsBuilder() {
+            
+            onChanged();
+            return getTextSignsFieldBuilder().getBuilder();
+          }
+          /**
+           * <code>.proto.TextSigns text_signs = 5;</code>
+           */
+          public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+            if (textSignsBuilder_ != null) {
+              return textSignsBuilder_.getMessageOrBuilder();
+            } else {
+              return textSigns_ == null ?
+                  net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+            }
+          }
+          /**
+           * <code>.proto.TextSigns text_signs = 5;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> 
+              getTextSignsFieldBuilder() {
+            if (textSignsBuilder_ == null) {
+              textSignsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder>(
+                      getTextSigns(),
+                      getParentForChildren(),
+                      isClean());
+              textSigns_ = null;
+            }
+            return textSignsBuilder_;
+          }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
 
           // @@protoc_insertion_point(builder_scope:proto.ClientCondition.Room.OfflineEdited)
         }
-        protected final Object dynamicMethod(
-            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-            Object arg0, Object arg1) {
-          switch (method) {
-            case NEW_MUTABLE_INSTANCE: {
-              return new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited();
-            }
-            case IS_INITIALIZED: {
-              return DEFAULT_INSTANCE;
-            }
-            case MAKE_IMMUTABLE: {
-              return null;
-            }
-            case NEW_BUILDER: {
-              return new Builder();
-            }
-            case VISIT: {
-              Visitor visitor = (Visitor) arg0;
-              net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited other = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited) arg1;
-              messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
-                  other.messageId_ != 0L, other.messageId_);
-              message_ = visitor.visitString(!message_.isEmpty(), message_,
-                  !other.message_.isEmpty(), other.message_);
-              documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
-                  other.documentId_ != 0L, other.documentId_);
-              mentions_ = visitor.visitMessage(mentions_, other.mentions_);
-              textSigns_ = visitor.visitMessage(textSigns_, other.textSigns_);
-              if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                  .INSTANCE) {
-              }
-              return this;
-            }
-            case MERGE_FROM_STREAM: {
-              com.google.protobuf.CodedInputStream input =
-                  (com.google.protobuf.CodedInputStream) arg0;
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                  (com.google.protobuf.ExtensionRegistryLite) arg1;
-              try {
-                boolean done = false;
-                while (!done) {
-                  int tag = input.readTag();
-                  switch (tag) {
-                    case 0:
-                      done = true;
-                      break;
-                    default: {
-                      if (!input.skipField(tag)) {
-                        done = true;
-                      }
-                      break;
-                    }
-                    case 8: {
-
-                      messageId_ = input.readUInt64();
-                      break;
-                    }
-                    case 18: {
-                      String s = input.readStringRequireUtf8();
-
-                      message_ = s;
-                      break;
-                    }
-                    case 24: {
-
-                      documentId_ = input.readUInt64();
-                      break;
-                    }
-                    case 34: {
-                      net.iGap.proto.ProtoGlobal.Mention.Builder subBuilder = null;
-                      if (mentions_ != null) {
-                        subBuilder = mentions_.toBuilder();
-                      }
-                      mentions_ = input.readMessage(net.iGap.proto.ProtoGlobal.Mention.parser(), extensionRegistry);
-                      if (subBuilder != null) {
-                        subBuilder.mergeFrom(mentions_);
-                        mentions_ = subBuilder.buildPartial();
-                      }
-
-                      break;
-                    }
-                    case 42: {
-                      net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
-                      if (textSigns_ != null) {
-                        subBuilder = textSigns_.toBuilder();
-                      }
-                      textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
-                      if (subBuilder != null) {
-                        subBuilder.mergeFrom(textSigns_);
-                        textSigns_ = subBuilder.buildPartial();
-                      }
-
-                      break;
-                    }
-                  }
-                }
-              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw new RuntimeException(e.setUnfinishedMessage(this));
-              } catch (java.io.IOException e) {
-                throw new RuntimeException(
-                    new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this));
-              } finally {
-              }
-            }
-            case GET_DEFAULT_INSTANCE: {
-              return DEFAULT_INSTANCE;
-            }
-            case GET_PARSER: {
-              if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.class) {
-                  if (PARSER == null) {
-                    PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                  }
-                }
-              }
-              return PARSER;
-            }
-          }
-          throw new UnsupportedOperationException();
-        }
-
 
         // @@protoc_insertion_point(class_scope:proto.ClientCondition.Room.OfflineEdited)
         private static final net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited DEFAULT_INSTANCE;
         static {
-          DEFAULT_INSTANCE = new OfflineEdited();
-          DEFAULT_INSTANCE.makeImmutable();
+          DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited();
         }
 
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static volatile com.google.protobuf.Parser<OfflineEdited> PARSER;
+        private static final com.google.protobuf.Parser<OfflineEdited>
+            PARSER = new com.google.protobuf.AbstractParser<OfflineEdited>() {
+          @java.lang.Override
+          public OfflineEdited parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new OfflineEdited(input, extensionRegistry);
+          }
+        };
 
         public static com.google.protobuf.Parser<OfflineEdited> parser() {
-          return DEFAULT_INSTANCE.getParserForType();
+          return PARSER;
         }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<OfflineEdited> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
       }
 
       public interface OfflineDeletedOrBuilder extends
           // @@protoc_insertion_point(interface_extends:proto.ClientCondition.Room.OfflineDeleted)
-          com.google.protobuf.MessageLiteOrBuilder {
+          com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return The messageId.
          */
         long getMessageId();
 
         /**
-         * <code>optional bool both = 4;</code>
+         * <code>bool both = 4;</code>
+         * @return The both.
          */
         boolean getBoth();
 
         /**
-         * <code>optional uint64 document_id = 5;</code>
+         * <code>uint64 document_id = 5;</code>
+         * @return The documentId.
          */
         long getDocumentId();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineDeleted}
        */
-      public  static final class OfflineDeleted extends
-          com.google.protobuf.GeneratedMessageLite<
-              OfflineDeleted, OfflineDeleted.Builder> implements
+      public static final class OfflineDeleted extends
+          com.google.protobuf.GeneratedMessageV3 implements
           // @@protoc_insertion_point(message_implements:proto.ClientCondition.Room.OfflineDeleted)
           OfflineDeletedOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use OfflineDeleted.newBuilder() to construct.
+        private OfflineDeleted(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
         private OfflineDeleted() {
         }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+          return new OfflineDeleted();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        private OfflineDeleted(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+
+                  messageId_ = input.readUInt64();
+                  break;
+                }
+                case 32: {
+
+                  both_ = input.readBool();
+                  break;
+                }
+                case 40: {
+
+                  documentId_ = input.readUInt64();
+                  break;
+                }
+                default: {
+                  if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineDeleted_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder.class);
+        }
+
         public static final int MESSAGE_ID_FIELD_NUMBER = 1;
         private long messageId_;
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return The messageId.
          */
+        @java.lang.Override
         public long getMessageId() {
           return messageId_;
-        }
-        /**
-         * <code>optional uint64 message_id = 1;</code>
-         */
-        private void setMessageId(long value) {
-          
-          messageId_ = value;
-        }
-        /**
-         * <code>optional uint64 message_id = 1;</code>
-         */
-        private void clearMessageId() {
-          
-          messageId_ = 0L;
         }
 
         public static final int BOTH_FIELD_NUMBER = 4;
         private boolean both_;
         /**
-         * <code>optional bool both = 4;</code>
+         * <code>bool both = 4;</code>
+         * @return The both.
          */
+        @java.lang.Override
         public boolean getBoth() {
           return both_;
-        }
-        /**
-         * <code>optional bool both = 4;</code>
-         */
-        private void setBoth(boolean value) {
-          
-          both_ = value;
-        }
-        /**
-         * <code>optional bool both = 4;</code>
-         */
-        private void clearBoth() {
-          
-          both_ = false;
         }
 
         public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
         private long documentId_;
         /**
-         * <code>optional uint64 document_id = 5;</code>
+         * <code>uint64 document_id = 5;</code>
+         * @return The documentId.
          */
+        @java.lang.Override
         public long getDocumentId() {
           return documentId_;
         }
-        /**
-         * <code>optional uint64 document_id = 5;</code>
-         */
-        private void setDocumentId(long value) {
-          
-          documentId_ = value;
-        }
-        /**
-         * <code>optional uint64 document_id = 5;</code>
-         */
-        private void clearDocumentId() {
-          
-          documentId_ = 0L;
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
         }
 
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (messageId_ != 0L) {
@@ -1057,10 +1941,12 @@ public final class ProtoClientCondition {
           if (documentId_ != 0L) {
             output.writeUInt64(5, documentId_);
           }
+          unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
-          int size = memoizedSerializedSize;
+          int size = memoizedSize;
           if (size != -1) return size;
 
           size = 0;
@@ -1076,435 +1962,531 @@ public final class ProtoClientCondition {
             size += com.google.protobuf.CodedOutputStream
               .computeUInt64Size(5, documentId_);
           }
-          memoizedSerializedSize = size;
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
           return size;
         }
 
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted)) {
+            return super.equals(obj);
+          }
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted other = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted) obj;
+
+          if (getMessageId()
+              != other.getMessageId()) return false;
+          if (getBoth()
+              != other.getBoth()) return false;
+          if (getDocumentId()
+              != other.getDocumentId()) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getMessageId());
+          hash = (37 * hash) + BOTH_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getBoth());
+          hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getDocumentId());
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data);
+          return PARSER.parseFrom(data);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data, extensionRegistry);
+          return PARSER.parseFrom(data, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data);
+          return PARSER.parseFrom(data);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, data, extensionRegistry);
+          return PARSER.parseFrom(data, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
         }
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageLite.parseFrom(
-              DEFAULT_INSTANCE, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
         public static Builder newBuilder(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
 
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
         /**
          * Protobuf type {@code proto.ClientCondition.Room.OfflineDeleted}
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessageLite.Builder<
-              net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted, Builder> implements
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
             // @@protoc_insertion_point(builder_implements:proto.ClientCondition.Room.OfflineDeleted)
             net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineDeleted_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder.class);
+          }
+
           // Construct using net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.newBuilder()
           private Builder() {
-            super(DEFAULT_INSTANCE);
+            maybeForceBuilderInitialization();
           }
 
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            messageId_ = 0L;
 
+            both_ = false;
+
+            documentId_ = 0L;
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor;
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted getDefaultInstanceForType() {
+            return net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted build() {
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted buildPartial() {
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted result = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted(this);
+            result.messageId_ = messageId_;
+            result.both_ = both_;
+            result.documentId_ = documentId_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted) {
+              return mergeFrom((net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted other) {
+            if (other == net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.getDefaultInstance()) return this;
+            if (other.getMessageId() != 0L) {
+              setMessageId(other.getMessageId());
+            }
+            if (other.getBoth() != false) {
+              setBoth(other.getBoth());
+            }
+            if (other.getDocumentId() != 0L) {
+              setDocumentId(other.getDocumentId());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted) e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private long messageId_ ;
           /**
-           * <code>optional uint64 message_id = 1;</code>
+           * <code>uint64 message_id = 1;</code>
+           * @return The messageId.
            */
+          @java.lang.Override
           public long getMessageId() {
-            return instance.getMessageId();
+            return messageId_;
           }
           /**
-           * <code>optional uint64 message_id = 1;</code>
+           * <code>uint64 message_id = 1;</code>
+           * @param value The messageId to set.
+           * @return This builder for chaining.
            */
           public Builder setMessageId(long value) {
-            copyOnWrite();
-            instance.setMessageId(value);
+            
+            messageId_ = value;
+            onChanged();
             return this;
           }
           /**
-           * <code>optional uint64 message_id = 1;</code>
+           * <code>uint64 message_id = 1;</code>
+           * @return This builder for chaining.
            */
           public Builder clearMessageId() {
-            copyOnWrite();
-            instance.clearMessageId();
+            
+            messageId_ = 0L;
+            onChanged();
             return this;
           }
 
+          private boolean both_ ;
           /**
-           * <code>optional bool both = 4;</code>
+           * <code>bool both = 4;</code>
+           * @return The both.
            */
+          @java.lang.Override
           public boolean getBoth() {
-            return instance.getBoth();
+            return both_;
           }
           /**
-           * <code>optional bool both = 4;</code>
+           * <code>bool both = 4;</code>
+           * @param value The both to set.
+           * @return This builder for chaining.
            */
           public Builder setBoth(boolean value) {
-            copyOnWrite();
-            instance.setBoth(value);
+            
+            both_ = value;
+            onChanged();
             return this;
           }
           /**
-           * <code>optional bool both = 4;</code>
+           * <code>bool both = 4;</code>
+           * @return This builder for chaining.
            */
           public Builder clearBoth() {
-            copyOnWrite();
-            instance.clearBoth();
+            
+            both_ = false;
+            onChanged();
             return this;
           }
 
+          private long documentId_ ;
           /**
-           * <code>optional uint64 document_id = 5;</code>
+           * <code>uint64 document_id = 5;</code>
+           * @return The documentId.
            */
+          @java.lang.Override
           public long getDocumentId() {
-            return instance.getDocumentId();
+            return documentId_;
           }
           /**
-           * <code>optional uint64 document_id = 5;</code>
+           * <code>uint64 document_id = 5;</code>
+           * @param value The documentId to set.
+           * @return This builder for chaining.
            */
           public Builder setDocumentId(long value) {
-            copyOnWrite();
-            instance.setDocumentId(value);
+            
+            documentId_ = value;
+            onChanged();
             return this;
           }
           /**
-           * <code>optional uint64 document_id = 5;</code>
+           * <code>uint64 document_id = 5;</code>
+           * @return This builder for chaining.
            */
           public Builder clearDocumentId() {
-            copyOnWrite();
-            instance.clearDocumentId();
+            
+            documentId_ = 0L;
+            onChanged();
             return this;
           }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
 
           // @@protoc_insertion_point(builder_scope:proto.ClientCondition.Room.OfflineDeleted)
         }
-        protected final Object dynamicMethod(
-            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-            Object arg0, Object arg1) {
-          switch (method) {
-            case NEW_MUTABLE_INSTANCE: {
-              return new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted();
-            }
-            case IS_INITIALIZED: {
-              return DEFAULT_INSTANCE;
-            }
-            case MAKE_IMMUTABLE: {
-              return null;
-            }
-            case NEW_BUILDER: {
-              return new Builder();
-            }
-            case VISIT: {
-              Visitor visitor = (Visitor) arg0;
-              net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted other = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted) arg1;
-              messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
-                  other.messageId_ != 0L, other.messageId_);
-              both_ = visitor.visitBoolean(both_ != false, both_,
-                  other.both_ != false, other.both_);
-              documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
-                  other.documentId_ != 0L, other.documentId_);
-              if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                  .INSTANCE) {
-              }
-              return this;
-            }
-            case MERGE_FROM_STREAM: {
-              com.google.protobuf.CodedInputStream input =
-                  (com.google.protobuf.CodedInputStream) arg0;
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                  (com.google.protobuf.ExtensionRegistryLite) arg1;
-              try {
-                boolean done = false;
-                while (!done) {
-                  int tag = input.readTag();
-                  switch (tag) {
-                    case 0:
-                      done = true;
-                      break;
-                    default: {
-                      if (!input.skipField(tag)) {
-                        done = true;
-                      }
-                      break;
-                    }
-                    case 8: {
-
-                      messageId_ = input.readUInt64();
-                      break;
-                    }
-                    case 32: {
-
-                      both_ = input.readBool();
-                      break;
-                    }
-                    case 40: {
-
-                      documentId_ = input.readUInt64();
-                      break;
-                    }
-                  }
-                }
-              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw new RuntimeException(e.setUnfinishedMessage(this));
-              } catch (java.io.IOException e) {
-                throw new RuntimeException(
-                    new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this));
-              } finally {
-              }
-            }
-            case GET_DEFAULT_INSTANCE: {
-              return DEFAULT_INSTANCE;
-            }
-            case GET_PARSER: {
-              if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.class) {
-                  if (PARSER == null) {
-                    PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                  }
-                }
-              }
-              return PARSER;
-            }
-          }
-          throw new UnsupportedOperationException();
-        }
-
 
         // @@protoc_insertion_point(class_scope:proto.ClientCondition.Room.OfflineDeleted)
         private static final net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted DEFAULT_INSTANCE;
         static {
-          DEFAULT_INSTANCE = new OfflineDeleted();
-          DEFAULT_INSTANCE.makeImmutable();
+          DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted();
         }
 
         public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static volatile com.google.protobuf.Parser<OfflineDeleted> PARSER;
+        private static final com.google.protobuf.Parser<OfflineDeleted>
+            PARSER = new com.google.protobuf.AbstractParser<OfflineDeleted>() {
+          @java.lang.Override
+          public OfflineDeleted parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new OfflineDeleted(input, extensionRegistry);
+          }
+        };
 
         public static com.google.protobuf.Parser<OfflineDeleted> parser() {
-          return DEFAULT_INSTANCE.getParserForType();
+          return PARSER;
         }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<OfflineDeleted> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
       }
 
-      private int bitField0_;
       public static final int ROOM_ID_FIELD_NUMBER = 2;
       private long roomId_;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
+      @java.lang.Override
       public long getRoomId() {
         return roomId_;
-      }
-      /**
-       * <code>optional uint64 room_id = 2;</code>
-       */
-      private void setRoomId(long value) {
-        
-        roomId_ = value;
-      }
-      /**
-       * <code>optional uint64 room_id = 2;</code>
-       */
-      private void clearRoomId() {
-        
-        roomId_ = 0L;
       }
 
       public static final int MESSAGE_VERSION_FIELD_NUMBER = 3;
       private long messageVersion_;
       /**
-       * <code>optional uint64 message_version = 3;</code>
+       * <code>uint64 message_version = 3;</code>
+       * @return The messageVersion.
        */
+      @java.lang.Override
       public long getMessageVersion() {
         return messageVersion_;
-      }
-      /**
-       * <code>optional uint64 message_version = 3;</code>
-       */
-      private void setMessageVersion(long value) {
-        
-        messageVersion_ = value;
-      }
-      /**
-       * <code>optional uint64 message_version = 3;</code>
-       */
-      private void clearMessageVersion() {
-        
-        messageVersion_ = 0L;
       }
 
       public static final int STATUS_VERSION_FIELD_NUMBER = 4;
       private long statusVersion_;
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>uint64 status_version = 4;</code>
+       * @return The statusVersion.
        */
+      @java.lang.Override
       public long getStatusVersion() {
         return statusVersion_;
-      }
-      /**
-       * <code>optional uint64 status_version = 4;</code>
-       */
-      private void setStatusVersion(long value) {
-        
-        statusVersion_ = value;
-      }
-      /**
-       * <code>optional uint64 status_version = 4;</code>
-       */
-      private void clearStatusVersion() {
-        
-        statusVersion_ = 0L;
       }
 
       public static final int DELETE_VERSION_FIELD_NUMBER = 5;
       private long deleteVersion_;
       /**
-       * <code>optional uint64 delete_version = 5;</code>
+       * <code>uint64 delete_version = 5;</code>
+       * @return The deleteVersion.
        */
+      @java.lang.Override
       public long getDeleteVersion() {
         return deleteVersion_;
-      }
-      /**
-       * <code>optional uint64 delete_version = 5;</code>
-       */
-      private void setDeleteVersion(long value) {
-        
-        deleteVersion_ = value;
-      }
-      /**
-       * <code>optional uint64 delete_version = 5;</code>
-       */
-      private void clearDeleteVersion() {
-        
-        deleteVersion_ = 0L;
       }
 
       public static final int OFFLINE_DELETED_DEPRECATED_FIELD_NUMBER = 6;
       private com.google.protobuf.Internal.LongList offlineDeletedDeprecated_;
       /**
        * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+       * @return A list containing the offlineDeletedDeprecated.
        */
+      @java.lang.Override
       @java.lang.Deprecated public java.util.List<java.lang.Long>
           getOfflineDeletedDeprecatedList() {
         return offlineDeletedDeprecated_;
       }
       /**
        * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+       * @return The count of offlineDeletedDeprecated.
        */
       @java.lang.Deprecated public int getOfflineDeletedDeprecatedCount() {
         return offlineDeletedDeprecated_.size();
       }
       /**
        * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+       * @param index The index of the element to return.
+       * @return The offlineDeletedDeprecated at the given index.
        */
       @java.lang.Deprecated public long getOfflineDeletedDeprecated(int index) {
         return offlineDeletedDeprecated_.getLong(index);
       }
-      private void ensureOfflineDeletedDeprecatedIsMutable() {
-        if (!offlineDeletedDeprecated_.isModifiable()) {
-          offlineDeletedDeprecated_ =
-              com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineDeletedDeprecated_);
-         }
-      }
-      /**
-       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
-       */
-      private void setOfflineDeletedDeprecated(
-          int index, long value) {
-        ensureOfflineDeletedDeprecatedIsMutable();
-        offlineDeletedDeprecated_.setLong(index, value);
-      }
-      /**
-       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
-       */
-      private void addOfflineDeletedDeprecated(long value) {
-        ensureOfflineDeletedDeprecatedIsMutable();
-        offlineDeletedDeprecated_.addLong(value);
-      }
-      /**
-       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
-       */
-      private void addAllOfflineDeletedDeprecated(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureOfflineDeletedDeprecatedIsMutable();
-        com.google.protobuf.AbstractMessageLite.addAll(
-            values, offlineDeletedDeprecated_);
-      }
-      /**
-       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
-       */
-      private void clearOfflineDeletedDeprecated() {
-        offlineDeletedDeprecated_ = emptyLongList();
-      }
+      private int offlineDeletedDeprecatedMemoizedSerializedSize = -1;
 
       public static final int OFFLINE_EDITED_FIELD_NUMBER = 7;
-      private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> offlineEdited_;
+      private java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> offlineEdited_;
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
        */
+      @java.lang.Override
       public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> getOfflineEditedList() {
         return offlineEdited_;
       }
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder> 
           getOfflineEditedOrBuilderList() {
         return offlineEdited_;
@@ -1512,343 +2494,147 @@ public final class ProtoClientCondition {
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
        */
+      @java.lang.Override
       public int getOfflineEditedCount() {
         return offlineEdited_.size();
       }
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited getOfflineEdited(int index) {
         return offlineEdited_.get(index);
       }
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder getOfflineEditedOrBuilder(
           int index) {
         return offlineEdited_.get(index);
-      }
-      private void ensureOfflineEditedIsMutable() {
-        if (!offlineEdited_.isModifiable()) {
-          offlineEdited_ =
-              com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineEdited_);
-         }
-      }
-
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void setOfflineEdited(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.set(index, value);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void setOfflineEdited(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder builderForValue) {
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.set(index, builderForValue.build());
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void addOfflineEdited(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.add(value);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void addOfflineEdited(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.add(index, value);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void addOfflineEdited(
-          net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder builderForValue) {
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.add(builderForValue.build());
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void addOfflineEdited(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder builderForValue) {
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.add(index, builderForValue.build());
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void addAllOfflineEdited(
-          java.lang.Iterable<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> values) {
-        ensureOfflineEditedIsMutable();
-        com.google.protobuf.AbstractMessageLite.addAll(
-            values, offlineEdited_);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void clearOfflineEdited() {
-        offlineEdited_ = emptyProtobufList();
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
-       */
-      private void removeOfflineEdited(int index) {
-        ensureOfflineEditedIsMutable();
-        offlineEdited_.remove(index);
       }
 
       public static final int OFFLINE_SEEN_FIELD_NUMBER = 8;
       private com.google.protobuf.Internal.LongList offlineSeen_;
       /**
        * <code>repeated uint64 offline_seen = 8;</code>
+       * @return A list containing the offlineSeen.
        */
+      @java.lang.Override
       public java.util.List<java.lang.Long>
           getOfflineSeenList() {
         return offlineSeen_;
       }
       /**
        * <code>repeated uint64 offline_seen = 8;</code>
+       * @return The count of offlineSeen.
        */
       public int getOfflineSeenCount() {
         return offlineSeen_.size();
       }
       /**
        * <code>repeated uint64 offline_seen = 8;</code>
+       * @param index The index of the element to return.
+       * @return The offlineSeen at the given index.
        */
       public long getOfflineSeen(int index) {
         return offlineSeen_.getLong(index);
       }
-      private void ensureOfflineSeenIsMutable() {
-        if (!offlineSeen_.isModifiable()) {
-          offlineSeen_ =
-              com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineSeen_);
-         }
-      }
-      /**
-       * <code>repeated uint64 offline_seen = 8;</code>
-       */
-      private void setOfflineSeen(
-          int index, long value) {
-        ensureOfflineSeenIsMutable();
-        offlineSeen_.setLong(index, value);
-      }
-      /**
-       * <code>repeated uint64 offline_seen = 8;</code>
-       */
-      private void addOfflineSeen(long value) {
-        ensureOfflineSeenIsMutable();
-        offlineSeen_.addLong(value);
-      }
-      /**
-       * <code>repeated uint64 offline_seen = 8;</code>
-       */
-      private void addAllOfflineSeen(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureOfflineSeenIsMutable();
-        com.google.protobuf.AbstractMessageLite.addAll(
-            values, offlineSeen_);
-      }
-      /**
-       * <code>repeated uint64 offline_seen = 8;</code>
-       */
-      private void clearOfflineSeen() {
-        offlineSeen_ = emptyLongList();
-      }
+      private int offlineSeenMemoizedSerializedSize = -1;
 
       public static final int CLEAR_ID_FIELD_NUMBER = 9;
       private long clearId_;
       /**
-       * <code>optional uint64 clear_id = 9;</code>
+       * <code>uint64 clear_id = 9;</code>
+       * @return The clearId.
        */
+      @java.lang.Override
       public long getClearId() {
         return clearId_;
-      }
-      /**
-       * <code>optional uint64 clear_id = 9;</code>
-       */
-      private void setClearId(long value) {
-        
-        clearId_ = value;
-      }
-      /**
-       * <code>optional uint64 clear_id = 9;</code>
-       */
-      private void clearClearId() {
-        
-        clearId_ = 0L;
       }
 
       public static final int CACHE_START_ID_FIELD_NUMBER = 10;
       private long cacheStartId_;
       /**
-       * <code>optional uint64 cache_start_id = 10;</code>
+       * <code>uint64 cache_start_id = 10;</code>
+       * @return The cacheStartId.
        */
+      @java.lang.Override
       public long getCacheStartId() {
         return cacheStartId_;
-      }
-      /**
-       * <code>optional uint64 cache_start_id = 10;</code>
-       */
-      private void setCacheStartId(long value) {
-        
-        cacheStartId_ = value;
-      }
-      /**
-       * <code>optional uint64 cache_start_id = 10;</code>
-       */
-      private void clearCacheStartId() {
-        
-        cacheStartId_ = 0L;
       }
 
       public static final int CACHE_END_ID_FIELD_NUMBER = 11;
       private long cacheEndId_;
       /**
-       * <code>optional uint64 cache_end_id = 11;</code>
+       * <code>uint64 cache_end_id = 11;</code>
+       * @return The cacheEndId.
        */
+      @java.lang.Override
       public long getCacheEndId() {
         return cacheEndId_;
-      }
-      /**
-       * <code>optional uint64 cache_end_id = 11;</code>
-       */
-      private void setCacheEndId(long value) {
-        
-        cacheEndId_ = value;
-      }
-      /**
-       * <code>optional uint64 cache_end_id = 11;</code>
-       */
-      private void clearCacheEndId() {
-        
-        cacheEndId_ = 0L;
       }
 
       public static final int OFFLINE_MUTE_FIELD_NUMBER = 12;
       private int offlineMute_;
       /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * @return The enum numeric value on the wire for offlineMute.
        */
-      public int getOfflineMuteValue() {
+      @java.lang.Override public int getOfflineMuteValue() {
         return offlineMute_;
       }
       /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+       * @return The offlineMute.
        */
-      public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute getOfflineMute() {
-        net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute result = net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute.forNumber(offlineMute_);
+      @java.lang.Override public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute getOfflineMute() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute result = net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute.valueOf(offlineMute_);
         return result == null ? net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
-       */
-      private void setOfflineMuteValue(int value) {
-          offlineMute_ = value;
-      }
-      /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
-       */
-      private void setOfflineMute(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        offlineMute_ = value.getNumber();
-      }
-      /**
-       * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
-       */
-      private void clearOfflineMute() {
-        
-        offlineMute_ = 0;
       }
 
       public static final int OFFLINE_LISTENED_FIELD_NUMBER = 13;
       private com.google.protobuf.Internal.LongList offlineListened_;
       /**
        * <code>repeated uint64 offline_listened = 13;</code>
+       * @return A list containing the offlineListened.
        */
+      @java.lang.Override
       public java.util.List<java.lang.Long>
           getOfflineListenedList() {
         return offlineListened_;
       }
       /**
        * <code>repeated uint64 offline_listened = 13;</code>
+       * @return The count of offlineListened.
        */
       public int getOfflineListenedCount() {
         return offlineListened_.size();
       }
       /**
        * <code>repeated uint64 offline_listened = 13;</code>
+       * @param index The index of the element to return.
+       * @return The offlineListened at the given index.
        */
       public long getOfflineListened(int index) {
         return offlineListened_.getLong(index);
       }
-      private void ensureOfflineListenedIsMutable() {
-        if (!offlineListened_.isModifiable()) {
-          offlineListened_ =
-              com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineListened_);
-         }
-      }
-      /**
-       * <code>repeated uint64 offline_listened = 13;</code>
-       */
-      private void setOfflineListened(
-          int index, long value) {
-        ensureOfflineListenedIsMutable();
-        offlineListened_.setLong(index, value);
-      }
-      /**
-       * <code>repeated uint64 offline_listened = 13;</code>
-       */
-      private void addOfflineListened(long value) {
-        ensureOfflineListenedIsMutable();
-        offlineListened_.addLong(value);
-      }
-      /**
-       * <code>repeated uint64 offline_listened = 13;</code>
-       */
-      private void addAllOfflineListened(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureOfflineListenedIsMutable();
-        com.google.protobuf.AbstractMessageLite.addAll(
-            values, offlineListened_);
-      }
-      /**
-       * <code>repeated uint64 offline_listened = 13;</code>
-       */
-      private void clearOfflineListened() {
-        offlineListened_ = emptyLongList();
-      }
+      private int offlineListenedMemoizedSerializedSize = -1;
 
       public static final int OFFLINE_DELETED_FIELD_NUMBER = 14;
-      private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> offlineDeleted_;
+      private java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> offlineDeleted_;
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
        */
+      @java.lang.Override
       public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> getOfflineDeletedList() {
         return offlineDeleted_;
       }
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder> 
           getOfflineDeletedOrBuilderList() {
         return offlineDeleted_;
@@ -1856,108 +2642,38 @@ public final class ProtoClientCondition {
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
        */
+      @java.lang.Override
       public int getOfflineDeletedCount() {
         return offlineDeleted_.size();
       }
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted getOfflineDeleted(int index) {
         return offlineDeleted_.get(index);
       }
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder getOfflineDeletedOrBuilder(
           int index) {
         return offlineDeleted_.get(index);
       }
-      private void ensureOfflineDeletedIsMutable() {
-        if (!offlineDeleted_.isModifiable()) {
-          offlineDeleted_ =
-              com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineDeleted_);
-         }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void setOfflineDeleted(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.set(index, value);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void setOfflineDeleted(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder builderForValue) {
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.set(index, builderForValue.build());
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void addOfflineDeleted(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.add(value);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void addOfflineDeleted(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.add(index, value);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void addOfflineDeleted(
-          net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder builderForValue) {
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.add(builderForValue.build());
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void addOfflineDeleted(
-          int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder builderForValue) {
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.add(index, builderForValue.build());
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void addAllOfflineDeleted(
-          java.lang.Iterable<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> values) {
-        ensureOfflineDeletedIsMutable();
-        com.google.protobuf.AbstractMessageLite.addAll(
-            values, offlineDeleted_);
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void clearOfflineDeleted() {
-        offlineDeleted_ = emptyProtobufList();
-      }
-      /**
-       * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
-       */
-      private void removeOfflineDeleted(int index) {
-        ensureOfflineDeletedIsMutable();
-        offlineDeleted_.remove(index);
-      }
-
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
@@ -1973,14 +2689,22 @@ public final class ProtoClientCondition {
         if (deleteVersion_ != 0L) {
           output.writeUInt64(5, deleteVersion_);
         }
+        if (getOfflineDeletedDeprecatedList().size() > 0) {
+          output.writeUInt32NoTag(50);
+          output.writeUInt32NoTag(offlineDeletedDeprecatedMemoizedSerializedSize);
+        }
         for (int i = 0; i < offlineDeletedDeprecated_.size(); i++) {
-          output.writeUInt64(6, offlineDeletedDeprecated_.getLong(i));
+          output.writeUInt64NoTag(offlineDeletedDeprecated_.getLong(i));
         }
         for (int i = 0; i < offlineEdited_.size(); i++) {
           output.writeMessage(7, offlineEdited_.get(i));
         }
+        if (getOfflineSeenList().size() > 0) {
+          output.writeUInt32NoTag(66);
+          output.writeUInt32NoTag(offlineSeenMemoizedSerializedSize);
+        }
         for (int i = 0; i < offlineSeen_.size(); i++) {
-          output.writeUInt64(8, offlineSeen_.getLong(i));
+          output.writeUInt64NoTag(offlineSeen_.getLong(i));
         }
         if (clearId_ != 0L) {
           output.writeUInt64(9, clearId_);
@@ -1994,16 +2718,22 @@ public final class ProtoClientCondition {
         if (offlineMute_ != net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute.UNCHANGED.getNumber()) {
           output.writeEnum(12, offlineMute_);
         }
+        if (getOfflineListenedList().size() > 0) {
+          output.writeUInt32NoTag(106);
+          output.writeUInt32NoTag(offlineListenedMemoizedSerializedSize);
+        }
         for (int i = 0; i < offlineListened_.size(); i++) {
-          output.writeUInt64(13, offlineListened_.getLong(i));
+          output.writeUInt64NoTag(offlineListened_.getLong(i));
         }
         for (int i = 0; i < offlineDeleted_.size(); i++) {
           output.writeMessage(14, offlineDeleted_.get(i));
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -2030,7 +2760,12 @@ public final class ProtoClientCondition {
               .computeUInt64SizeNoTag(offlineDeletedDeprecated_.getLong(i));
           }
           size += dataSize;
-          size += 1 * getOfflineDeletedDeprecatedList().size();
+          if (!getOfflineDeletedDeprecatedList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream
+                .computeInt32SizeNoTag(dataSize);
+          }
+          offlineDeletedDeprecatedMemoizedSerializedSize = dataSize;
         }
         for (int i = 0; i < offlineEdited_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
@@ -2043,7 +2778,12 @@ public final class ProtoClientCondition {
               .computeUInt64SizeNoTag(offlineSeen_.getLong(i));
           }
           size += dataSize;
-          size += 1 * getOfflineSeenList().size();
+          if (!getOfflineSeenList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream
+                .computeInt32SizeNoTag(dataSize);
+          }
+          offlineSeenMemoizedSerializedSize = dataSize;
         }
         if (clearId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
@@ -2068,270 +2808,792 @@ public final class ProtoClientCondition {
               .computeUInt64SizeNoTag(offlineListened_.getLong(i));
           }
           size += dataSize;
-          size += 1 * getOfflineListenedList().size();
+          if (!getOfflineListenedList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream
+                .computeInt32SizeNoTag(dataSize);
+          }
+          offlineListenedMemoizedSerializedSize = dataSize;
         }
         for (int i = 0; i < offlineDeleted_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, offlineDeleted_.get(i));
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoClientCondition.ClientCondition.Room)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoClientCondition.ClientCondition.Room other = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room) obj;
+
+        if (getRoomId()
+            != other.getRoomId()) return false;
+        if (getMessageVersion()
+            != other.getMessageVersion()) return false;
+        if (getStatusVersion()
+            != other.getStatusVersion()) return false;
+        if (getDeleteVersion()
+            != other.getDeleteVersion()) return false;
+        if (!getOfflineDeletedDeprecatedList()
+            .equals(other.getOfflineDeletedDeprecatedList())) return false;
+        if (!getOfflineEditedList()
+            .equals(other.getOfflineEditedList())) return false;
+        if (!getOfflineSeenList()
+            .equals(other.getOfflineSeenList())) return false;
+        if (getClearId()
+            != other.getClearId()) return false;
+        if (getCacheStartId()
+            != other.getCacheStartId()) return false;
+        if (getCacheEndId()
+            != other.getCacheEndId()) return false;
+        if (offlineMute_ != other.offlineMute_) return false;
+        if (!getOfflineListenedList()
+            .equals(other.getOfflineListenedList())) return false;
+        if (!getOfflineDeletedList()
+            .equals(other.getOfflineDeletedList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRoomId());
+        hash = (37 * hash) + MESSAGE_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getMessageVersion());
+        hash = (37 * hash) + STATUS_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getStatusVersion());
+        hash = (37 * hash) + DELETE_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDeleteVersion());
+        if (getOfflineDeletedDeprecatedCount() > 0) {
+          hash = (37 * hash) + OFFLINE_DELETED_DEPRECATED_FIELD_NUMBER;
+          hash = (53 * hash) + getOfflineDeletedDeprecatedList().hashCode();
+        }
+        if (getOfflineEditedCount() > 0) {
+          hash = (37 * hash) + OFFLINE_EDITED_FIELD_NUMBER;
+          hash = (53 * hash) + getOfflineEditedList().hashCode();
+        }
+        if (getOfflineSeenCount() > 0) {
+          hash = (37 * hash) + OFFLINE_SEEN_FIELD_NUMBER;
+          hash = (53 * hash) + getOfflineSeenList().hashCode();
+        }
+        hash = (37 * hash) + CLEAR_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getClearId());
+        hash = (37 * hash) + CACHE_START_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getCacheStartId());
+        hash = (37 * hash) + CACHE_END_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getCacheEndId());
+        hash = (37 * hash) + OFFLINE_MUTE_FIELD_NUMBER;
+        hash = (53 * hash) + offlineMute_;
+        if (getOfflineListenedCount() > 0) {
+          hash = (37 * hash) + OFFLINE_LISTENED_FIELD_NUMBER;
+          hash = (53 * hash) + getOfflineListenedList().hashCode();
+        }
+        if (getOfflineDeletedCount() > 0) {
+          hash = (37 * hash) + OFFLINE_DELETED_FIELD_NUMBER;
+          hash = (53 * hash) + getOfflineDeletedList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoClientCondition.ClientCondition.Room prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.ClientCondition.Room}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoClientCondition.ClientCondition.Room, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.ClientCondition.Room)
           net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoClientCondition.ClientCondition.Room.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoClientCondition.ClientCondition.Room.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getOfflineEditedFieldBuilder();
+            getOfflineDeletedFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          roomId_ = 0L;
 
+          messageVersion_ = 0L;
+
+          statusVersion_ = 0L;
+
+          deleteVersion_ = 0L;
+
+          offlineDeletedDeprecated_ = emptyLongList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          if (offlineEditedBuilder_ == null) {
+            offlineEdited_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            offlineEditedBuilder_.clear();
+          }
+          offlineSeen_ = emptyLongList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          clearId_ = 0L;
+
+          cacheStartId_ = 0L;
+
+          cacheEndId_ = 0L;
+
+          offlineMute_ = 0;
+
+          offlineListened_ = emptyLongList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          if (offlineDeletedBuilder_ == null) {
+            offlineDeleted_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            offlineDeletedBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_Room_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoClientCondition.ClientCondition.Room.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room build() {
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room buildPartial() {
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room result = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room(this);
+          int from_bitField0_ = bitField0_;
+          result.roomId_ = roomId_;
+          result.messageVersion_ = messageVersion_;
+          result.statusVersion_ = statusVersion_;
+          result.deleteVersion_ = deleteVersion_;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            offlineDeletedDeprecated_.makeImmutable();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.offlineDeletedDeprecated_ = offlineDeletedDeprecated_;
+          if (offlineEditedBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              offlineEdited_ = java.util.Collections.unmodifiableList(offlineEdited_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.offlineEdited_ = offlineEdited_;
+          } else {
+            result.offlineEdited_ = offlineEditedBuilder_.build();
+          }
+          if (((bitField0_ & 0x00000004) != 0)) {
+            offlineSeen_.makeImmutable();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.offlineSeen_ = offlineSeen_;
+          result.clearId_ = clearId_;
+          result.cacheStartId_ = cacheStartId_;
+          result.cacheEndId_ = cacheEndId_;
+          result.offlineMute_ = offlineMute_;
+          if (((bitField0_ & 0x00000008) != 0)) {
+            offlineListened_.makeImmutable();
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.offlineListened_ = offlineListened_;
+          if (offlineDeletedBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) != 0)) {
+              offlineDeleted_ = java.util.Collections.unmodifiableList(offlineDeleted_);
+              bitField0_ = (bitField0_ & ~0x00000010);
+            }
+            result.offlineDeleted_ = offlineDeleted_;
+          } else {
+            result.offlineDeleted_ = offlineDeletedBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoClientCondition.ClientCondition.Room) {
+            return mergeFrom((net.iGap.proto.ProtoClientCondition.ClientCondition.Room)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoClientCondition.ClientCondition.Room other) {
+          if (other == net.iGap.proto.ProtoClientCondition.ClientCondition.Room.getDefaultInstance()) return this;
+          if (other.getRoomId() != 0L) {
+            setRoomId(other.getRoomId());
+          }
+          if (other.getMessageVersion() != 0L) {
+            setMessageVersion(other.getMessageVersion());
+          }
+          if (other.getStatusVersion() != 0L) {
+            setStatusVersion(other.getStatusVersion());
+          }
+          if (other.getDeleteVersion() != 0L) {
+            setDeleteVersion(other.getDeleteVersion());
+          }
+          if (!other.offlineDeletedDeprecated_.isEmpty()) {
+            if (offlineDeletedDeprecated_.isEmpty()) {
+              offlineDeletedDeprecated_ = other.offlineDeletedDeprecated_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureOfflineDeletedDeprecatedIsMutable();
+              offlineDeletedDeprecated_.addAll(other.offlineDeletedDeprecated_);
+            }
+            onChanged();
+          }
+          if (offlineEditedBuilder_ == null) {
+            if (!other.offlineEdited_.isEmpty()) {
+              if (offlineEdited_.isEmpty()) {
+                offlineEdited_ = other.offlineEdited_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureOfflineEditedIsMutable();
+                offlineEdited_.addAll(other.offlineEdited_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.offlineEdited_.isEmpty()) {
+              if (offlineEditedBuilder_.isEmpty()) {
+                offlineEditedBuilder_.dispose();
+                offlineEditedBuilder_ = null;
+                offlineEdited_ = other.offlineEdited_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                offlineEditedBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getOfflineEditedFieldBuilder() : null;
+              } else {
+                offlineEditedBuilder_.addAllMessages(other.offlineEdited_);
+              }
+            }
+          }
+          if (!other.offlineSeen_.isEmpty()) {
+            if (offlineSeen_.isEmpty()) {
+              offlineSeen_ = other.offlineSeen_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureOfflineSeenIsMutable();
+              offlineSeen_.addAll(other.offlineSeen_);
+            }
+            onChanged();
+          }
+          if (other.getClearId() != 0L) {
+            setClearId(other.getClearId());
+          }
+          if (other.getCacheStartId() != 0L) {
+            setCacheStartId(other.getCacheStartId());
+          }
+          if (other.getCacheEndId() != 0L) {
+            setCacheEndId(other.getCacheEndId());
+          }
+          if (other.offlineMute_ != 0) {
+            setOfflineMuteValue(other.getOfflineMuteValue());
+          }
+          if (!other.offlineListened_.isEmpty()) {
+            if (offlineListened_.isEmpty()) {
+              offlineListened_ = other.offlineListened_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureOfflineListenedIsMutable();
+              offlineListened_.addAll(other.offlineListened_);
+            }
+            onChanged();
+          }
+          if (offlineDeletedBuilder_ == null) {
+            if (!other.offlineDeleted_.isEmpty()) {
+              if (offlineDeleted_.isEmpty()) {
+                offlineDeleted_ = other.offlineDeleted_;
+                bitField0_ = (bitField0_ & ~0x00000010);
+              } else {
+                ensureOfflineDeletedIsMutable();
+                offlineDeleted_.addAll(other.offlineDeleted_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.offlineDeleted_.isEmpty()) {
+              if (offlineDeletedBuilder_.isEmpty()) {
+                offlineDeletedBuilder_.dispose();
+                offlineDeletedBuilder_ = null;
+                offlineDeleted_ = other.offlineDeleted_;
+                bitField0_ = (bitField0_ & ~0x00000010);
+                offlineDeletedBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getOfflineDeletedFieldBuilder() : null;
+              } else {
+                offlineDeletedBuilder_.addAllMessages(other.offlineDeleted_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private long roomId_ ;
         /**
-         * <code>optional uint64 room_id = 2;</code>
+         * <code>uint64 room_id = 2;</code>
+         * @return The roomId.
          */
+        @java.lang.Override
         public long getRoomId() {
-          return instance.getRoomId();
+          return roomId_;
         }
         /**
-         * <code>optional uint64 room_id = 2;</code>
+         * <code>uint64 room_id = 2;</code>
+         * @param value The roomId to set.
+         * @return This builder for chaining.
          */
         public Builder setRoomId(long value) {
-          copyOnWrite();
-          instance.setRoomId(value);
+          
+          roomId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 room_id = 2;</code>
+         * <code>uint64 room_id = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearRoomId() {
-          copyOnWrite();
-          instance.clearRoomId();
+          
+          roomId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long messageVersion_ ;
         /**
-         * <code>optional uint64 message_version = 3;</code>
+         * <code>uint64 message_version = 3;</code>
+         * @return The messageVersion.
          */
+        @java.lang.Override
         public long getMessageVersion() {
-          return instance.getMessageVersion();
+          return messageVersion_;
         }
         /**
-         * <code>optional uint64 message_version = 3;</code>
+         * <code>uint64 message_version = 3;</code>
+         * @param value The messageVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setMessageVersion(long value) {
-          copyOnWrite();
-          instance.setMessageVersion(value);
+          
+          messageVersion_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 message_version = 3;</code>
+         * <code>uint64 message_version = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMessageVersion() {
-          copyOnWrite();
-          instance.clearMessageVersion();
+          
+          messageVersion_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long statusVersion_ ;
         /**
-         * <code>optional uint64 status_version = 4;</code>
+         * <code>uint64 status_version = 4;</code>
+         * @return The statusVersion.
          */
+        @java.lang.Override
         public long getStatusVersion() {
-          return instance.getStatusVersion();
+          return statusVersion_;
         }
         /**
-         * <code>optional uint64 status_version = 4;</code>
+         * <code>uint64 status_version = 4;</code>
+         * @param value The statusVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setStatusVersion(long value) {
-          copyOnWrite();
-          instance.setStatusVersion(value);
+          
+          statusVersion_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 status_version = 4;</code>
+         * <code>uint64 status_version = 4;</code>
+         * @return This builder for chaining.
          */
         public Builder clearStatusVersion() {
-          copyOnWrite();
-          instance.clearStatusVersion();
+          
+          statusVersion_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long deleteVersion_ ;
         /**
-         * <code>optional uint64 delete_version = 5;</code>
+         * <code>uint64 delete_version = 5;</code>
+         * @return The deleteVersion.
          */
+        @java.lang.Override
         public long getDeleteVersion() {
-          return instance.getDeleteVersion();
+          return deleteVersion_;
         }
         /**
-         * <code>optional uint64 delete_version = 5;</code>
+         * <code>uint64 delete_version = 5;</code>
+         * @param value The deleteVersion to set.
+         * @return This builder for chaining.
          */
         public Builder setDeleteVersion(long value) {
-          copyOnWrite();
-          instance.setDeleteVersion(value);
+          
+          deleteVersion_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 delete_version = 5;</code>
+         * <code>uint64 delete_version = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDeleteVersion() {
-          copyOnWrite();
-          instance.clearDeleteVersion();
+          
+          deleteVersion_ = 0L;
+          onChanged();
           return this;
         }
 
+        private com.google.protobuf.Internal.LongList offlineDeletedDeprecated_ = emptyLongList();
+        private void ensureOfflineDeletedDeprecatedIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            offlineDeletedDeprecated_ = mutableCopy(offlineDeletedDeprecated_);
+            bitField0_ |= 0x00000001;
+           }
+        }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @return A list containing the offlineDeletedDeprecated.
          */
         @java.lang.Deprecated public java.util.List<java.lang.Long>
             getOfflineDeletedDeprecatedList() {
-          return java.util.Collections.unmodifiableList(
-              instance.getOfflineDeletedDeprecatedList());
+          return ((bitField0_ & 0x00000001) != 0) ?
+                   java.util.Collections.unmodifiableList(offlineDeletedDeprecated_) : offlineDeletedDeprecated_;
         }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @return The count of offlineDeletedDeprecated.
          */
         @java.lang.Deprecated public int getOfflineDeletedDeprecatedCount() {
-          return instance.getOfflineDeletedDeprecatedCount();
+          return offlineDeletedDeprecated_.size();
         }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @param index The index of the element to return.
+         * @return The offlineDeletedDeprecated at the given index.
          */
         @java.lang.Deprecated public long getOfflineDeletedDeprecated(int index) {
-          return instance.getOfflineDeletedDeprecated(index);
+          return offlineDeletedDeprecated_.getLong(index);
         }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @param index The index to set the value at.
+         * @param value The offlineDeletedDeprecated to set.
+         * @return This builder for chaining.
          */
         @java.lang.Deprecated public Builder setOfflineDeletedDeprecated(
             int index, long value) {
-          copyOnWrite();
-          instance.setOfflineDeletedDeprecated(index, value);
+          ensureOfflineDeletedDeprecatedIsMutable();
+          offlineDeletedDeprecated_.setLong(index, value);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @param value The offlineDeletedDeprecated to add.
+         * @return This builder for chaining.
          */
         @java.lang.Deprecated public Builder addOfflineDeletedDeprecated(long value) {
-          copyOnWrite();
-          instance.addOfflineDeletedDeprecated(value);
+          ensureOfflineDeletedDeprecatedIsMutable();
+          offlineDeletedDeprecated_.addLong(value);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @param values The offlineDeletedDeprecated to add.
+         * @return This builder for chaining.
          */
         @java.lang.Deprecated public Builder addAllOfflineDeletedDeprecated(
             java.lang.Iterable<? extends java.lang.Long> values) {
-          copyOnWrite();
-          instance.addAllOfflineDeletedDeprecated(values);
+          ensureOfflineDeletedDeprecatedIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, offlineDeletedDeprecated_);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
+         * @return This builder for chaining.
          */
         @java.lang.Deprecated public Builder clearOfflineDeletedDeprecated() {
-          copyOnWrite();
-          instance.clearOfflineDeletedDeprecated();
+          offlineDeletedDeprecated_ = emptyLongList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
           return this;
         }
+
+        private java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> offlineEdited_ =
+          java.util.Collections.emptyList();
+        private void ensureOfflineEditedIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            offlineEdited_ = new java.util.ArrayList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited>(offlineEdited_);
+            bitField0_ |= 0x00000002;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder> offlineEditedBuilder_;
 
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> getOfflineEditedList() {
-          return java.util.Collections.unmodifiableList(
-              instance.getOfflineEditedList());
+          if (offlineEditedBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(offlineEdited_);
+          } else {
+            return offlineEditedBuilder_.getMessageList();
+          }
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public int getOfflineEditedCount() {
-          return instance.getOfflineEditedCount();
-        }/**
+          if (offlineEditedBuilder_ == null) {
+            return offlineEdited_.size();
+          } else {
+            return offlineEditedBuilder_.getCount();
+          }
+        }
+        /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited getOfflineEdited(int index) {
-          return instance.getOfflineEdited(index);
+          if (offlineEditedBuilder_ == null) {
+            return offlineEdited_.get(index);
+          } else {
+            return offlineEditedBuilder_.getMessage(index);
+          }
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public Builder setOfflineEdited(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited value) {
-          copyOnWrite();
-          instance.setOfflineEdited(index, value);
+          if (offlineEditedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.set(index, value);
+            onChanged();
+          } else {
+            offlineEditedBuilder_.setMessage(index, value);
+          }
           return this;
         }
         /**
@@ -2339,16 +3601,29 @@ public final class ProtoClientCondition {
          */
         public Builder setOfflineEdited(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder builderForValue) {
-          copyOnWrite();
-          instance.setOfflineEdited(index, builderForValue);
+          if (offlineEditedBuilder_ == null) {
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            offlineEditedBuilder_.setMessage(index, builderForValue.build());
+          }
           return this;
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public Builder addOfflineEdited(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited value) {
-          copyOnWrite();
-          instance.addOfflineEdited(value);
+          if (offlineEditedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.add(value);
+            onChanged();
+          } else {
+            offlineEditedBuilder_.addMessage(value);
+          }
           return this;
         }
         /**
@@ -2356,8 +3631,16 @@ public final class ProtoClientCondition {
          */
         public Builder addOfflineEdited(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited value) {
-          copyOnWrite();
-          instance.addOfflineEdited(index, value);
+          if (offlineEditedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.add(index, value);
+            onChanged();
+          } else {
+            offlineEditedBuilder_.addMessage(index, value);
+          }
           return this;
         }
         /**
@@ -2365,8 +3648,13 @@ public final class ProtoClientCondition {
          */
         public Builder addOfflineEdited(
             net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder builderForValue) {
-          copyOnWrite();
-          instance.addOfflineEdited(builderForValue);
+          if (offlineEditedBuilder_ == null) {
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.add(builderForValue.build());
+            onChanged();
+          } else {
+            offlineEditedBuilder_.addMessage(builderForValue.build());
+          }
           return this;
         }
         /**
@@ -2374,8 +3662,13 @@ public final class ProtoClientCondition {
          */
         public Builder addOfflineEdited(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder builderForValue) {
-          copyOnWrite();
-          instance.addOfflineEdited(index, builderForValue);
+          if (offlineEditedBuilder_ == null) {
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            offlineEditedBuilder_.addMessage(index, builderForValue.build());
+          }
           return this;
         }
         /**
@@ -2383,268 +3676,469 @@ public final class ProtoClientCondition {
          */
         public Builder addAllOfflineEdited(
             java.lang.Iterable<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited> values) {
-          copyOnWrite();
-          instance.addAllOfflineEdited(values);
+          if (offlineEditedBuilder_ == null) {
+            ensureOfflineEditedIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, offlineEdited_);
+            onChanged();
+          } else {
+            offlineEditedBuilder_.addAllMessages(values);
+          }
           return this;
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public Builder clearOfflineEdited() {
-          copyOnWrite();
-          instance.clearOfflineEdited();
+          if (offlineEditedBuilder_ == null) {
+            offlineEdited_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            offlineEditedBuilder_.clear();
+          }
           return this;
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
          */
         public Builder removeOfflineEdited(int index) {
-          copyOnWrite();
-          instance.removeOfflineEdited(index);
+          if (offlineEditedBuilder_ == null) {
+            ensureOfflineEditedIsMutable();
+            offlineEdited_.remove(index);
+            onChanged();
+          } else {
+            offlineEditedBuilder_.remove(index);
+          }
           return this;
         }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder getOfflineEditedBuilder(
+            int index) {
+          return getOfflineEditedFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder getOfflineEditedOrBuilder(
+            int index) {
+          if (offlineEditedBuilder_ == null) {
+            return offlineEdited_.get(index);  } else {
+            return offlineEditedBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+         */
+        public java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder> 
+             getOfflineEditedOrBuilderList() {
+          if (offlineEditedBuilder_ != null) {
+            return offlineEditedBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(offlineEdited_);
+          }
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder addOfflineEditedBuilder() {
+          return getOfflineEditedFieldBuilder().addBuilder(
+              net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder addOfflineEditedBuilder(
+            int index) {
+          return getOfflineEditedFieldBuilder().addBuilder(
+              index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
+         */
+        public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder> 
+             getOfflineEditedBuilderList() {
+          return getOfflineEditedFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder> 
+            getOfflineEditedFieldBuilder() {
+          if (offlineEditedBuilder_ == null) {
+            offlineEditedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEditedOrBuilder>(
+                    offlineEdited_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            offlineEdited_ = null;
+          }
+          return offlineEditedBuilder_;
+        }
 
+        private com.google.protobuf.Internal.LongList offlineSeen_ = emptyLongList();
+        private void ensureOfflineSeenIsMutable() {
+          if (!((bitField0_ & 0x00000004) != 0)) {
+            offlineSeen_ = mutableCopy(offlineSeen_);
+            bitField0_ |= 0x00000004;
+           }
+        }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @return A list containing the offlineSeen.
          */
         public java.util.List<java.lang.Long>
             getOfflineSeenList() {
-          return java.util.Collections.unmodifiableList(
-              instance.getOfflineSeenList());
+          return ((bitField0_ & 0x00000004) != 0) ?
+                   java.util.Collections.unmodifiableList(offlineSeen_) : offlineSeen_;
         }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @return The count of offlineSeen.
          */
         public int getOfflineSeenCount() {
-          return instance.getOfflineSeenCount();
+          return offlineSeen_.size();
         }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @param index The index of the element to return.
+         * @return The offlineSeen at the given index.
          */
         public long getOfflineSeen(int index) {
-          return instance.getOfflineSeen(index);
+          return offlineSeen_.getLong(index);
         }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @param index The index to set the value at.
+         * @param value The offlineSeen to set.
+         * @return This builder for chaining.
          */
         public Builder setOfflineSeen(
             int index, long value) {
-          copyOnWrite();
-          instance.setOfflineSeen(index, value);
+          ensureOfflineSeenIsMutable();
+          offlineSeen_.setLong(index, value);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @param value The offlineSeen to add.
+         * @return This builder for chaining.
          */
         public Builder addOfflineSeen(long value) {
-          copyOnWrite();
-          instance.addOfflineSeen(value);
+          ensureOfflineSeenIsMutable();
+          offlineSeen_.addLong(value);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @param values The offlineSeen to add.
+         * @return This builder for chaining.
          */
         public Builder addAllOfflineSeen(
             java.lang.Iterable<? extends java.lang.Long> values) {
-          copyOnWrite();
-          instance.addAllOfflineSeen(values);
+          ensureOfflineSeenIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, offlineSeen_);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_seen = 8;</code>
+         * @return This builder for chaining.
          */
         public Builder clearOfflineSeen() {
-          copyOnWrite();
-          instance.clearOfflineSeen();
+          offlineSeen_ = emptyLongList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
           return this;
         }
 
+        private long clearId_ ;
         /**
-         * <code>optional uint64 clear_id = 9;</code>
+         * <code>uint64 clear_id = 9;</code>
+         * @return The clearId.
          */
+        @java.lang.Override
         public long getClearId() {
-          return instance.getClearId();
+          return clearId_;
         }
         /**
-         * <code>optional uint64 clear_id = 9;</code>
+         * <code>uint64 clear_id = 9;</code>
+         * @param value The clearId to set.
+         * @return This builder for chaining.
          */
         public Builder setClearId(long value) {
-          copyOnWrite();
-          instance.setClearId(value);
+          
+          clearId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 clear_id = 9;</code>
+         * <code>uint64 clear_id = 9;</code>
+         * @return This builder for chaining.
          */
         public Builder clearClearId() {
-          copyOnWrite();
-          instance.clearClearId();
+          
+          clearId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long cacheStartId_ ;
         /**
-         * <code>optional uint64 cache_start_id = 10;</code>
+         * <code>uint64 cache_start_id = 10;</code>
+         * @return The cacheStartId.
          */
+        @java.lang.Override
         public long getCacheStartId() {
-          return instance.getCacheStartId();
+          return cacheStartId_;
         }
         /**
-         * <code>optional uint64 cache_start_id = 10;</code>
+         * <code>uint64 cache_start_id = 10;</code>
+         * @param value The cacheStartId to set.
+         * @return This builder for chaining.
          */
         public Builder setCacheStartId(long value) {
-          copyOnWrite();
-          instance.setCacheStartId(value);
+          
+          cacheStartId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 cache_start_id = 10;</code>
+         * <code>uint64 cache_start_id = 10;</code>
+         * @return This builder for chaining.
          */
         public Builder clearCacheStartId() {
-          copyOnWrite();
-          instance.clearCacheStartId();
+          
+          cacheStartId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long cacheEndId_ ;
         /**
-         * <code>optional uint64 cache_end_id = 11;</code>
+         * <code>uint64 cache_end_id = 11;</code>
+         * @return The cacheEndId.
          */
+        @java.lang.Override
         public long getCacheEndId() {
-          return instance.getCacheEndId();
+          return cacheEndId_;
         }
         /**
-         * <code>optional uint64 cache_end_id = 11;</code>
+         * <code>uint64 cache_end_id = 11;</code>
+         * @param value The cacheEndId to set.
+         * @return This builder for chaining.
          */
         public Builder setCacheEndId(long value) {
-          copyOnWrite();
-          instance.setCacheEndId(value);
+          
+          cacheEndId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 cache_end_id = 11;</code>
+         * <code>uint64 cache_end_id = 11;</code>
+         * @return This builder for chaining.
          */
         public Builder clearCacheEndId() {
-          copyOnWrite();
-          instance.clearCacheEndId();
+          
+          cacheEndId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private int offlineMute_ = 0;
         /**
-         * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * @return The enum numeric value on the wire for offlineMute.
          */
-        public int getOfflineMuteValue() {
-          return instance.getOfflineMuteValue();
+        @java.lang.Override public int getOfflineMuteValue() {
+          return offlineMute_;
         }
         /**
-         * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * @param value The enum numeric value on the wire for offlineMute to set.
+         * @return This builder for chaining.
          */
         public Builder setOfflineMuteValue(int value) {
-          copyOnWrite();
-          instance.setOfflineMuteValue(value);
+          
+          offlineMute_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * @return The offlineMute.
          */
+        @java.lang.Override
         public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute getOfflineMute() {
-          return instance.getOfflineMute();
+          @SuppressWarnings("deprecation")
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute result = net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute.valueOf(offlineMute_);
+          return result == null ? net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute.UNRECOGNIZED : result;
         }
         /**
-         * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * @param value The offlineMute to set.
+         * @return This builder for chaining.
          */
         public Builder setOfflineMute(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineMute value) {
-          copyOnWrite();
-          instance.setOfflineMute(value);
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          offlineMute_ = value.getNumber();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * <code>.proto.ClientCondition.Room.OfflineMute offline_mute = 12;</code>
+         * @return This builder for chaining.
          */
         public Builder clearOfflineMute() {
-          copyOnWrite();
-          instance.clearOfflineMute();
+          
+          offlineMute_ = 0;
+          onChanged();
           return this;
         }
 
+        private com.google.protobuf.Internal.LongList offlineListened_ = emptyLongList();
+        private void ensureOfflineListenedIsMutable() {
+          if (!((bitField0_ & 0x00000008) != 0)) {
+            offlineListened_ = mutableCopy(offlineListened_);
+            bitField0_ |= 0x00000008;
+           }
+        }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @return A list containing the offlineListened.
          */
         public java.util.List<java.lang.Long>
             getOfflineListenedList() {
-          return java.util.Collections.unmodifiableList(
-              instance.getOfflineListenedList());
+          return ((bitField0_ & 0x00000008) != 0) ?
+                   java.util.Collections.unmodifiableList(offlineListened_) : offlineListened_;
         }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @return The count of offlineListened.
          */
         public int getOfflineListenedCount() {
-          return instance.getOfflineListenedCount();
+          return offlineListened_.size();
         }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @param index The index of the element to return.
+         * @return The offlineListened at the given index.
          */
         public long getOfflineListened(int index) {
-          return instance.getOfflineListened(index);
+          return offlineListened_.getLong(index);
         }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @param index The index to set the value at.
+         * @param value The offlineListened to set.
+         * @return This builder for chaining.
          */
         public Builder setOfflineListened(
             int index, long value) {
-          copyOnWrite();
-          instance.setOfflineListened(index, value);
+          ensureOfflineListenedIsMutable();
+          offlineListened_.setLong(index, value);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @param value The offlineListened to add.
+         * @return This builder for chaining.
          */
         public Builder addOfflineListened(long value) {
-          copyOnWrite();
-          instance.addOfflineListened(value);
+          ensureOfflineListenedIsMutable();
+          offlineListened_.addLong(value);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @param values The offlineListened to add.
+         * @return This builder for chaining.
          */
         public Builder addAllOfflineListened(
             java.lang.Iterable<? extends java.lang.Long> values) {
-          copyOnWrite();
-          instance.addAllOfflineListened(values);
+          ensureOfflineListenedIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, offlineListened_);
+          onChanged();
           return this;
         }
         /**
          * <code>repeated uint64 offline_listened = 13;</code>
+         * @return This builder for chaining.
          */
         public Builder clearOfflineListened() {
-          copyOnWrite();
-          instance.clearOfflineListened();
+          offlineListened_ = emptyLongList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
           return this;
         }
+
+        private java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> offlineDeleted_ =
+          java.util.Collections.emptyList();
+        private void ensureOfflineDeletedIsMutable() {
+          if (!((bitField0_ & 0x00000010) != 0)) {
+            offlineDeleted_ = new java.util.ArrayList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted>(offlineDeleted_);
+            bitField0_ |= 0x00000010;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder> offlineDeletedBuilder_;
 
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> getOfflineDeletedList() {
-          return java.util.Collections.unmodifiableList(
-              instance.getOfflineDeletedList());
+          if (offlineDeletedBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(offlineDeleted_);
+          } else {
+            return offlineDeletedBuilder_.getMessageList();
+          }
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public int getOfflineDeletedCount() {
-          return instance.getOfflineDeletedCount();
-        }/**
+          if (offlineDeletedBuilder_ == null) {
+            return offlineDeleted_.size();
+          } else {
+            return offlineDeletedBuilder_.getCount();
+          }
+        }
+        /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted getOfflineDeleted(int index) {
-          return instance.getOfflineDeleted(index);
+          if (offlineDeletedBuilder_ == null) {
+            return offlineDeleted_.get(index);
+          } else {
+            return offlineDeletedBuilder_.getMessage(index);
+          }
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public Builder setOfflineDeleted(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted value) {
-          copyOnWrite();
-          instance.setOfflineDeleted(index, value);
+          if (offlineDeletedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.set(index, value);
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.setMessage(index, value);
+          }
           return this;
         }
         /**
@@ -2652,16 +4146,29 @@ public final class ProtoClientCondition {
          */
         public Builder setOfflineDeleted(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder builderForValue) {
-          copyOnWrite();
-          instance.setOfflineDeleted(index, builderForValue);
+          if (offlineDeletedBuilder_ == null) {
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.setMessage(index, builderForValue.build());
+          }
           return this;
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public Builder addOfflineDeleted(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted value) {
-          copyOnWrite();
-          instance.addOfflineDeleted(value);
+          if (offlineDeletedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.add(value);
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.addMessage(value);
+          }
           return this;
         }
         /**
@@ -2669,8 +4176,16 @@ public final class ProtoClientCondition {
          */
         public Builder addOfflineDeleted(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted value) {
-          copyOnWrite();
-          instance.addOfflineDeleted(index, value);
+          if (offlineDeletedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.add(index, value);
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.addMessage(index, value);
+          }
           return this;
         }
         /**
@@ -2678,8 +4193,13 @@ public final class ProtoClientCondition {
          */
         public Builder addOfflineDeleted(
             net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder builderForValue) {
-          copyOnWrite();
-          instance.addOfflineDeleted(builderForValue);
+          if (offlineDeletedBuilder_ == null) {
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.add(builderForValue.build());
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.addMessage(builderForValue.build());
+          }
           return this;
         }
         /**
@@ -2687,8 +4207,13 @@ public final class ProtoClientCondition {
          */
         public Builder addOfflineDeleted(
             int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder builderForValue) {
-          copyOnWrite();
-          instance.addOfflineDeleted(index, builderForValue);
+          if (offlineDeletedBuilder_ == null) {
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.addMessage(index, builderForValue.build());
+          }
           return this;
         }
         /**
@@ -2696,330 +4221,198 @@ public final class ProtoClientCondition {
          */
         public Builder addAllOfflineDeleted(
             java.lang.Iterable<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted> values) {
-          copyOnWrite();
-          instance.addAllOfflineDeleted(values);
+          if (offlineDeletedBuilder_ == null) {
+            ensureOfflineDeletedIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, offlineDeleted_);
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.addAllMessages(values);
+          }
           return this;
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public Builder clearOfflineDeleted() {
-          copyOnWrite();
-          instance.clearOfflineDeleted();
+          if (offlineDeletedBuilder_ == null) {
+            offlineDeleted_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000010);
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.clear();
+          }
           return this;
         }
         /**
          * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
          */
         public Builder removeOfflineDeleted(int index) {
-          copyOnWrite();
-          instance.removeOfflineDeleted(index);
+          if (offlineDeletedBuilder_ == null) {
+            ensureOfflineDeletedIsMutable();
+            offlineDeleted_.remove(index);
+            onChanged();
+          } else {
+            offlineDeletedBuilder_.remove(index);
+          }
           return this;
         }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder getOfflineDeletedBuilder(
+            int index) {
+          return getOfflineDeletedFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder getOfflineDeletedOrBuilder(
+            int index) {
+          if (offlineDeletedBuilder_ == null) {
+            return offlineDeleted_.get(index);  } else {
+            return offlineDeletedBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+         */
+        public java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder> 
+             getOfflineDeletedOrBuilderList() {
+          if (offlineDeletedBuilder_ != null) {
+            return offlineDeletedBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(offlineDeleted_);
+          }
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder addOfflineDeletedBuilder() {
+          return getOfflineDeletedFieldBuilder().addBuilder(
+              net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+         */
+        public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder addOfflineDeletedBuilder(
+            int index) {
+          return getOfflineDeletedFieldBuilder().addBuilder(
+              index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .proto.ClientCondition.Room.OfflineDeleted offline_deleted = 14;</code>
+         */
+        public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder> 
+             getOfflineDeletedBuilderList() {
+          return getOfflineDeletedFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder> 
+            getOfflineDeletedFieldBuilder() {
+          if (offlineDeletedBuilder_ == null) {
+            offlineDeletedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeletedOrBuilder>(
+                    offlineDeleted_,
+                    ((bitField0_ & 0x00000010) != 0),
+                    getParentForChildren(),
+                    isClean());
+            offlineDeleted_ = null;
+          }
+          return offlineDeletedBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.ClientCondition.Room)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoClientCondition.ClientCondition.Room();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            offlineDeletedDeprecated_.makeImmutable();
-            offlineEdited_.makeImmutable();
-            offlineSeen_.makeImmutable();
-            offlineListened_.makeImmutable();
-            offlineDeleted_.makeImmutable();
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoClientCondition.ClientCondition.Room other = (net.iGap.proto.ProtoClientCondition.ClientCondition.Room) arg1;
-            roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-                other.roomId_ != 0L, other.roomId_);
-            messageVersion_ = visitor.visitLong(messageVersion_ != 0L, messageVersion_,
-                other.messageVersion_ != 0L, other.messageVersion_);
-            statusVersion_ = visitor.visitLong(statusVersion_ != 0L, statusVersion_,
-                other.statusVersion_ != 0L, other.statusVersion_);
-            deleteVersion_ = visitor.visitLong(deleteVersion_ != 0L, deleteVersion_,
-                other.deleteVersion_ != 0L, other.deleteVersion_);
-            offlineDeletedDeprecated_= visitor.visitLongList(offlineDeletedDeprecated_, other.offlineDeletedDeprecated_);
-            offlineEdited_= visitor.visitList(offlineEdited_, other.offlineEdited_);
-            offlineSeen_= visitor.visitLongList(offlineSeen_, other.offlineSeen_);
-            clearId_ = visitor.visitLong(clearId_ != 0L, clearId_,
-                other.clearId_ != 0L, other.clearId_);
-            cacheStartId_ = visitor.visitLong(cacheStartId_ != 0L, cacheStartId_,
-                other.cacheStartId_ != 0L, other.cacheStartId_);
-            cacheEndId_ = visitor.visitLong(cacheEndId_ != 0L, cacheEndId_,
-                other.cacheEndId_ != 0L, other.cacheEndId_);
-            offlineMute_ = visitor.visitInt(offlineMute_ != 0, offlineMute_,    other.offlineMute_ != 0, other.offlineMute_);
-            offlineListened_= visitor.visitLongList(offlineListened_, other.offlineListened_);
-            offlineDeleted_= visitor.visitList(offlineDeleted_, other.offlineDeleted_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-              bitField0_ |= other.bitField0_;
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 16: {
-
-                    roomId_ = input.readUInt64();
-                    break;
-                  }
-                  case 24: {
-
-                    messageVersion_ = input.readUInt64();
-                    break;
-                  }
-                  case 32: {
-
-                    statusVersion_ = input.readUInt64();
-                    break;
-                  }
-                  case 40: {
-
-                    deleteVersion_ = input.readUInt64();
-                    break;
-                  }
-                  case 48: {
-                    if (!offlineDeletedDeprecated_.isModifiable()) {
-                      offlineDeletedDeprecated_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineDeletedDeprecated_);
-                    }
-                    offlineDeletedDeprecated_.addLong(input.readUInt64());
-                    break;
-                  }
-                  case 50: {
-                    int length = input.readRawVarint32();
-                    int limit = input.pushLimit(length);
-                    if (!offlineDeletedDeprecated_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                      offlineDeletedDeprecated_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineDeletedDeprecated_);
-                    }
-                    while (input.getBytesUntilLimit() > 0) {
-                      offlineDeletedDeprecated_.addLong(input.readUInt64());
-                    }
-                    input.popLimit(limit);
-                    break;
-                  }
-                  case 58: {
-                    if (!offlineEdited_.isModifiable()) {
-                      offlineEdited_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineEdited_);
-                    }
-                    offlineEdited_.add(
-                        input.readMessage(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited.parser(), extensionRegistry));
-                    break;
-                  }
-                  case 64: {
-                    if (!offlineSeen_.isModifiable()) {
-                      offlineSeen_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineSeen_);
-                    }
-                    offlineSeen_.addLong(input.readUInt64());
-                    break;
-                  }
-                  case 66: {
-                    int length = input.readRawVarint32();
-                    int limit = input.pushLimit(length);
-                    if (!offlineSeen_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                      offlineSeen_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineSeen_);
-                    }
-                    while (input.getBytesUntilLimit() > 0) {
-                      offlineSeen_.addLong(input.readUInt64());
-                    }
-                    input.popLimit(limit);
-                    break;
-                  }
-                  case 72: {
-
-                    clearId_ = input.readUInt64();
-                    break;
-                  }
-                  case 80: {
-
-                    cacheStartId_ = input.readUInt64();
-                    break;
-                  }
-                  case 88: {
-
-                    cacheEndId_ = input.readUInt64();
-                    break;
-                  }
-                  case 96: {
-                    int rawValue = input.readEnum();
-
-                    offlineMute_ = rawValue;
-                    break;
-                  }
-                  case 104: {
-                    if (!offlineListened_.isModifiable()) {
-                      offlineListened_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineListened_);
-                    }
-                    offlineListened_.addLong(input.readUInt64());
-                    break;
-                  }
-                  case 106: {
-                    int length = input.readRawVarint32();
-                    int limit = input.pushLimit(length);
-                    if (!offlineListened_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                      offlineListened_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineListened_);
-                    }
-                    while (input.getBytesUntilLimit() > 0) {
-                      offlineListened_.addLong(input.readUInt64());
-                    }
-                    input.popLimit(limit);
-                    break;
-                  }
-                  case 114: {
-                    if (!offlineDeleted_.isModifiable()) {
-                      offlineDeleted_ =
-                          com.google.protobuf.GeneratedMessageLite.mutableCopy(offlineDeleted_);
-                    }
-                    offlineDeleted_.add(
-                        input.readMessage(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted.parser(), extensionRegistry));
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientCondition.ClientCondition.Room.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.ClientCondition.Room)
       private static final net.iGap.proto.ProtoClientCondition.ClientCondition.Room DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Room();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room();
       }
 
       public static net.iGap.proto.ProtoClientCondition.ClientCondition.Room getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Room> PARSER;
+      private static final com.google.protobuf.Parser<Room>
+          PARSER = new com.google.protobuf.AbstractParser<Room>() {
+        @java.lang.Override
+        public Room parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Room(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Room> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Room> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientCondition.Room getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    private int bitField0_;
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int ROOMS_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room> rooms_;
+    private java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room> rooms_;
     /**
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room> getRoomsList() {
       return rooms_;
     }
     /**
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder> 
         getRoomsOrBuilderList() {
       return rooms_;
@@ -3027,108 +4420,38 @@ public final class ProtoClientCondition {
     /**
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
      */
+    @java.lang.Override
     public int getRoomsCount() {
       return rooms_.size();
     }
     /**
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoClientCondition.ClientCondition.Room getRooms(int index) {
       return rooms_.get(index);
     }
     /**
      * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder getRoomsOrBuilder(
         int index) {
       return rooms_.get(index);
     }
-    private void ensureRoomsIsMutable() {
-      if (!rooms_.isModifiable()) {
-        rooms_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(rooms_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void setRooms(
-        int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureRoomsIsMutable();
-      rooms_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void setRooms(
-        int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder builderForValue) {
-      ensureRoomsIsMutable();
-      rooms_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void addRooms(net.iGap.proto.ProtoClientCondition.ClientCondition.Room value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureRoomsIsMutable();
-      rooms_.add(value);
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void addRooms(
-        int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureRoomsIsMutable();
-      rooms_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void addRooms(
-        net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder builderForValue) {
-      ensureRoomsIsMutable();
-      rooms_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void addRooms(
-        int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder builderForValue) {
-      ensureRoomsIsMutable();
-      rooms_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void addAllRooms(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room> values) {
-      ensureRoomsIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, rooms_);
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void clearRooms() {
-      rooms_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
-     */
-    private void removeRooms(int index) {
-      ensureRoomsIsMutable();
-      rooms_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -3137,10 +4460,12 @@ public final class ProtoClientCondition {
       for (int i = 0; i < rooms_.size(); i++) {
         output.writeMessage(2, rooms_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -3152,162 +4477,517 @@ public final class ProtoClientCondition {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, rooms_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientCondition.ClientCondition)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientCondition.ClientCondition other = (net.iGap.proto.ProtoClientCondition.ClientCondition) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!getRoomsList()
+          .equals(other.getRoomsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      if (getRoomsCount() > 0) {
+        hash = (37 * hash) + ROOMS_FIELD_NUMBER;
+        hash = (53 * hash) + getRoomsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientCondition parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientCondition.ClientCondition prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientCondition}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientCondition.ClientCondition, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientCondition)
         net.iGap.proto.ProtoClientCondition.ClientConditionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientCondition.ClientCondition.class, net.iGap.proto.ProtoClientCondition.ClientCondition.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoClientCondition.ClientCondition.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRoomsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        if (roomsBuilder_ == null) {
+          rooms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          roomsBuilder_.clear();
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientCondition_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientCondition getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientCondition.ClientCondition.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientCondition build() {
+        net.iGap.proto.ProtoClientCondition.ClientCondition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientCondition buildPartial() {
+        net.iGap.proto.ProtoClientCondition.ClientCondition result = new net.iGap.proto.ProtoClientCondition.ClientCondition(this);
+        int from_bitField0_ = bitField0_;
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        if (roomsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            rooms_ = java.util.Collections.unmodifiableList(rooms_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rooms_ = rooms_;
+        } else {
+          result.rooms_ = roomsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientCondition.ClientCondition) {
+          return mergeFrom((net.iGap.proto.ProtoClientCondition.ClientCondition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientCondition.ClientCondition other) {
+        if (other == net.iGap.proto.ProtoClientCondition.ClientCondition.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (roomsBuilder_ == null) {
+          if (!other.rooms_.isEmpty()) {
+            if (rooms_.isEmpty()) {
+              rooms_ = other.rooms_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRoomsIsMutable();
+              rooms_.addAll(other.rooms_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rooms_.isEmpty()) {
+            if (roomsBuilder_.isEmpty()) {
+              roomsBuilder_.dispose();
+              roomsBuilder_ = null;
+              rooms_ = other.rooms_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              roomsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRoomsFieldBuilder() : null;
+            } else {
+              roomsBuilder_.addAllMessages(other.rooms_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientCondition.ClientCondition parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientCondition.ClientCondition) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room> rooms_ =
+        java.util.Collections.emptyList();
+      private void ensureRoomsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          rooms_ = new java.util.ArrayList<net.iGap.proto.ProtoClientCondition.ClientCondition.Room>(rooms_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder> roomsBuilder_;
 
       /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room> getRoomsList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getRoomsList());
+        if (roomsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rooms_);
+        } else {
+          return roomsBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public int getRoomsCount() {
-        return instance.getRoomsCount();
-      }/**
+        if (roomsBuilder_ == null) {
+          return rooms_.size();
+        } else {
+          return roomsBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public net.iGap.proto.ProtoClientCondition.ClientCondition.Room getRooms(int index) {
-        return instance.getRooms(index);
+        if (roomsBuilder_ == null) {
+          return rooms_.get(index);
+        } else {
+          return roomsBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public Builder setRooms(
           int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room value) {
-        copyOnWrite();
-        instance.setRooms(index, value);
+        if (roomsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRoomsIsMutable();
+          rooms_.set(index, value);
+          onChanged();
+        } else {
+          roomsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -3315,16 +4995,29 @@ public final class ProtoClientCondition {
        */
       public Builder setRooms(
           int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRooms(index, builderForValue);
+        if (roomsBuilder_ == null) {
+          ensureRoomsIsMutable();
+          rooms_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          roomsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public Builder addRooms(net.iGap.proto.ProtoClientCondition.ClientCondition.Room value) {
-        copyOnWrite();
-        instance.addRooms(value);
+        if (roomsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRoomsIsMutable();
+          rooms_.add(value);
+          onChanged();
+        } else {
+          roomsBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -3332,8 +5025,16 @@ public final class ProtoClientCondition {
        */
       public Builder addRooms(
           int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room value) {
-        copyOnWrite();
-        instance.addRooms(index, value);
+        if (roomsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRoomsIsMutable();
+          rooms_.add(index, value);
+          onChanged();
+        } else {
+          roomsBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -3341,8 +5042,13 @@ public final class ProtoClientCondition {
        */
       public Builder addRooms(
           net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder builderForValue) {
-        copyOnWrite();
-        instance.addRooms(builderForValue);
+        if (roomsBuilder_ == null) {
+          ensureRoomsIsMutable();
+          rooms_.add(builderForValue.build());
+          onChanged();
+        } else {
+          roomsBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -3350,8 +5056,13 @@ public final class ProtoClientCondition {
        */
       public Builder addRooms(
           int index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder builderForValue) {
-        copyOnWrite();
-        instance.addRooms(index, builderForValue);
+        if (roomsBuilder_ == null) {
+          ensureRoomsIsMutable();
+          rooms_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          roomsBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -3359,228 +5070,317 @@ public final class ProtoClientCondition {
        */
       public Builder addAllRooms(
           java.lang.Iterable<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.Room> values) {
-        copyOnWrite();
-        instance.addAllRooms(values);
+        if (roomsBuilder_ == null) {
+          ensureRoomsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rooms_);
+          onChanged();
+        } else {
+          roomsBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public Builder clearRooms() {
-        copyOnWrite();
-        instance.clearRooms();
+        if (roomsBuilder_ == null) {
+          rooms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          roomsBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
        */
       public Builder removeRooms(int index) {
-        copyOnWrite();
-        instance.removeRooms(index);
+        if (roomsBuilder_ == null) {
+          ensureRoomsIsMutable();
+          rooms_.remove(index);
+          onChanged();
+        } else {
+          roomsBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder getRoomsBuilder(
+          int index) {
+        return getRoomsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder getRoomsOrBuilder(
+          int index) {
+        if (roomsBuilder_ == null) {
+          return rooms_.get(index);  } else {
+          return roomsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder> 
+           getRoomsOrBuilderList() {
+        if (roomsBuilder_ != null) {
+          return roomsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rooms_);
+        }
+      }
+      /**
+       * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder addRoomsBuilder() {
+        return getRoomsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoClientCondition.ClientCondition.Room.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder addRoomsBuilder(
+          int index) {
+        return getRoomsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ClientCondition.Room rooms = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder> 
+           getRoomsBuilderList() {
+        return getRoomsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoClientCondition.ClientCondition.Room, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder> 
+          getRoomsFieldBuilder() {
+        if (roomsBuilder_ == null) {
+          roomsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoClientCondition.ClientCondition.Room, net.iGap.proto.ProtoClientCondition.ClientCondition.Room.Builder, net.iGap.proto.ProtoClientCondition.ClientCondition.RoomOrBuilder>(
+                  rooms_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rooms_ = null;
+        }
+        return roomsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ClientCondition)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientCondition.ClientCondition();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          rooms_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientCondition.ClientCondition other = (net.iGap.proto.ProtoClientCondition.ClientCondition) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          rooms_= visitor.visitList(rooms_, other.rooms_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!rooms_.isModifiable()) {
-                    rooms_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(rooms_);
-                  }
-                  rooms_.add(
-                      input.readMessage(net.iGap.proto.ProtoClientCondition.ClientCondition.Room.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientCondition.ClientCondition.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientCondition)
     private static final net.iGap.proto.ProtoClientCondition.ClientCondition DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientCondition();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientCondition.ClientCondition();
     }
 
     public static net.iGap.proto.ProtoClientCondition.ClientCondition getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientCondition> PARSER;
+    private static final com.google.protobuf.Parser<ClientCondition>
+        PARSER = new com.google.protobuf.AbstractParser<ClientCondition>() {
+      @java.lang.Override
+      public ClientCondition parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientCondition(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientCondition> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientCondition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientCondition.ClientCondition getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ClientConditionResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientConditionResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ClientConditionResponse}
    */
-  public  static final class ClientConditionResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientConditionResponse, ClientConditionResponse.Builder> implements
+  public static final class ClientConditionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientConditionResponse)
       ClientConditionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ClientConditionResponse.newBuilder() to construct.
+    private ClientConditionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ClientConditionResponse() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientConditionResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientConditionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientConditionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientConditionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientCondition.ClientConditionResponse.class, net.iGap.proto.ProtoClientCondition.ClientConditionResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -3588,244 +5388,563 @@ public final class ProtoClientCondition {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientCondition.ClientConditionResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientCondition.ClientConditionResponse other = (net.iGap.proto.ProtoClientCondition.ClientConditionResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientCondition.ClientConditionResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientConditionResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientCondition.ClientConditionResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientConditionResponse)
         net.iGap.proto.ProtoClientCondition.ClientConditionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientConditionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientConditionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientCondition.ClientConditionResponse.class, net.iGap.proto.ProtoClientCondition.ClientConditionResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoClientCondition.ClientConditionResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientCondition.internal_static_proto_ClientConditionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientConditionResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientCondition.ClientConditionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientConditionResponse build() {
+        net.iGap.proto.ProtoClientCondition.ClientConditionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientCondition.ClientConditionResponse buildPartial() {
+        net.iGap.proto.ProtoClientCondition.ClientConditionResponse result = new net.iGap.proto.ProtoClientCondition.ClientConditionResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientCondition.ClientConditionResponse) {
+          return mergeFrom((net.iGap.proto.ProtoClientCondition.ClientConditionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientCondition.ClientConditionResponse other) {
+        if (other == net.iGap.proto.ProtoClientCondition.ClientConditionResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientCondition.ClientConditionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientCondition.ClientConditionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ClientConditionResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientCondition.ClientConditionResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientCondition.ClientConditionResponse other = (net.iGap.proto.ProtoClientCondition.ClientConditionResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientCondition.ClientConditionResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientConditionResponse)
     private static final net.iGap.proto.ProtoClientCondition.ClientConditionResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientConditionResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientCondition.ClientConditionResponse();
     }
 
     public static net.iGap.proto.ProtoClientCondition.ClientConditionResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientConditionResponse> PARSER;
+    private static final com.google.protobuf.Parser<ClientConditionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ClientConditionResponse>() {
+      @java.lang.Override
+      public ClientConditionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientConditionResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientConditionResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientConditionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientCondition.ClientConditionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientCondition_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientCondition_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientCondition_Room_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientCondition_Room_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientCondition_Room_OfflineEdited_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientCondition_Room_OfflineDeleted_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientConditionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientConditionResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\025ClientCondition.proto\022\005proto\032\rRequest." +
+      "proto\032\016Response.proto\032\014Global.proto\"\263\006\n\017" +
+      "ClientCondition\022\037\n\007request\030\001 \001(\0132\016.proto" +
+      ".Request\022*\n\005rooms\030\002 \003(\0132\033.proto.ClientCo" +
+      "ndition.Room\032\322\005\n\004Room\022\017\n\007room_id\030\002 \001(\004\022\027" +
+      "\n\017message_version\030\003 \001(\004\022\026\n\016status_versio" +
+      "n\030\004 \001(\004\022\026\n\016delete_version\030\005 \001(\004\022&\n\032offli" +
+      "ne_deleted_deprecated\030\006 \003(\004B\002\030\001\022A\n\016offli" +
+      "ne_edited\030\007 \003(\0132).proto.ClientCondition." +
+      "Room.OfflineEdited\022\024\n\014offline_seen\030\010 \003(\004" +
+      "\022\020\n\010clear_id\030\t \001(\004\022\026\n\016cache_start_id\030\n \001" +
+      "(\004\022\024\n\014cache_end_id\030\013 \001(\004\022=\n\014offline_mute" +
+      "\030\014 \001(\0162\'.proto.ClientCondition.Room.Offl" +
+      "ineMute\022\030\n\020offline_listened\030\r \003(\004\022C\n\017off" +
+      "line_deleted\030\016 \003(\0132*.proto.ClientConditi" +
+      "on.Room.OfflineDeleted\032\221\001\n\rOfflineEdited" +
+      "\022\022\n\nmessage_id\030\001 \001(\004\022\017\n\007message\030\002 \001(\t\022\023\n" +
+      "\013document_id\030\003 \001(\004\022 \n\010mentions\030\004 \001(\0132\016.p" +
+      "roto.Mention\022$\n\ntext_signs\030\005 \001(\0132\020.proto" +
+      ".TextSigns\032G\n\016OfflineDeleted\022\022\n\nmessage_" +
+      "id\030\001 \001(\004\022\014\n\004both\030\004 \001(\010\022\023\n\013document_id\030\005 " +
+      "\001(\004\"4\n\013OfflineMute\022\r\n\tUNCHANGED\020\000\022\t\n\005MUT" +
+      "ED\020\001\022\013\n\007UNMUTED\020\002\"<\n\027ClientConditionResp" +
+      "onse\022!\n\010response\030\001 \001(\0132\017.proto.ResponseB" +
+      "&\n\016net.iGap.protoB\024ProtoClientConditionb" +
+      "\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        });
+    internal_static_proto_ClientCondition_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ClientCondition_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientCondition_descriptor,
+        new java.lang.String[] { "Request", "Rooms", });
+    internal_static_proto_ClientCondition_Room_descriptor =
+      internal_static_proto_ClientCondition_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ClientCondition_Room_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientCondition_Room_descriptor,
+        new java.lang.String[] { "RoomId", "MessageVersion", "StatusVersion", "DeleteVersion", "OfflineDeletedDeprecated", "OfflineEdited", "OfflineSeen", "ClearId", "CacheStartId", "CacheEndId", "OfflineMute", "OfflineListened", "OfflineDeleted", });
+    internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor =
+      internal_static_proto_ClientCondition_Room_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ClientCondition_Room_OfflineEdited_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor,
+        new java.lang.String[] { "MessageId", "Message", "DocumentId", "Mentions", "TextSigns", });
+    internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor =
+      internal_static_proto_ClientCondition_Room_descriptor.getNestedTypes().get(1);
+    internal_static_proto_ClientCondition_Room_OfflineDeleted_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor,
+        new java.lang.String[] { "MessageId", "Both", "DocumentId", });
+    internal_static_proto_ClientConditionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ClientConditionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientConditionResponse_descriptor,
+        new java.lang.String[] { "Response", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
