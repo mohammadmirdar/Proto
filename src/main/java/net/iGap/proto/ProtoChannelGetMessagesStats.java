@@ -8,34 +8,51 @@ public final class ProtoChannelGetMessagesStats {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ChannelGetMessagesStatsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ChannelGetMessagesStats)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
     long getRoomId();
 
     /**
      * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+     * @return A list containing the messageId.
      */
     @java.lang.Deprecated java.util.List<java.lang.Long> getMessageIdList();
     /**
      * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+     * @return The count of messageId.
      */
     @java.lang.Deprecated int getMessageIdCount();
     /**
      * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+     * @param index The index of the element to return.
+     * @return The messageId at the given index.
      */
     @java.lang.Deprecated long getMessageId(int index);
 
@@ -52,89 +69,288 @@ public final class ProtoChannelGetMessagesStats {
      * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
      */
     int getMessageIdInfoCount();
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder> 
+        getMessageIdInfoOrBuilderList();
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+     */
+    net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder getMessageIdInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ChannelGetMessagesStats}
    */
-  public  static final class ChannelGetMessagesStats extends
-      com.google.protobuf.GeneratedMessageLite<
-          ChannelGetMessagesStats, ChannelGetMessagesStats.Builder> implements
+  public static final class ChannelGetMessagesStats extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ChannelGetMessagesStats)
       ChannelGetMessagesStatsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChannelGetMessagesStats.newBuilder() to construct.
+    private ChannelGetMessagesStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ChannelGetMessagesStats() {
       messageId_ = emptyLongList();
-      messageIdInfo_ = emptyProtobufList();
+      messageIdInfo_ = java.util.Collections.emptyList();
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChannelGetMessagesStats();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChannelGetMessagesStats(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                messageId_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              messageId_.addLong(input.readUInt64());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                messageId_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                messageId_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                messageIdInfo_ = new java.util.ArrayList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              messageIdInfo_.add(
+                  input.readMessage(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          messageId_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          messageIdInfo_ = java.util.Collections.unmodifiableList(messageIdInfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.Builder.class);
+    }
+
     public interface messageIdInfoOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.ChannelGetMessagesStats.messageIdInfo)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>uint64 message_id = 1;</code>
+       * @return The messageId.
        */
       long getMessageId();
 
       /**
-       * <code>optional uint64 document_id = 2;</code>
+       * <code>uint64 document_id = 2;</code>
+       * @return The documentId.
        */
       long getDocumentId();
     }
     /**
      * Protobuf type {@code proto.ChannelGetMessagesStats.messageIdInfo}
      */
-    public  static final class messageIdInfo extends
-        com.google.protobuf.GeneratedMessageLite<
-            messageIdInfo, messageIdInfo.Builder> implements
+    public static final class messageIdInfo extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.ChannelGetMessagesStats.messageIdInfo)
         messageIdInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use messageIdInfo.newBuilder() to construct.
+      private messageIdInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private messageIdInfo() {
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new messageIdInfo();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private messageIdInfo(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                messageId_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+
+                documentId_ = input.readUInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_messageIdInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_messageIdInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder.class);
+      }
+
       public static final int MESSAGE_ID_FIELD_NUMBER = 1;
       private long messageId_;
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>uint64 message_id = 1;</code>
+       * @return The messageId.
        */
+      @java.lang.Override
       public long getMessageId() {
         return messageId_;
-      }
-      /**
-       * <code>optional uint64 message_id = 1;</code>
-       */
-      private void setMessageId(long value) {
-        
-        messageId_ = value;
-      }
-      /**
-       * <code>optional uint64 message_id = 1;</code>
-       */
-      private void clearMessageId() {
-        
-        messageId_ = 0L;
       }
 
       public static final int DOCUMENT_ID_FIELD_NUMBER = 2;
       private long documentId_;
       /**
-       * <code>optional uint64 document_id = 2;</code>
+       * <code>uint64 document_id = 2;</code>
+       * @return The documentId.
        */
+      @java.lang.Override
       public long getDocumentId() {
         return documentId_;
       }
-      /**
-       * <code>optional uint64 document_id = 2;</code>
-       */
-      private void setDocumentId(long value) {
-        
-        documentId_ = value;
-      }
-      /**
-       * <code>optional uint64 document_id = 2;</code>
-       */
-      private void clearDocumentId() {
-        
-        documentId_ = 0L;
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (messageId_ != 0L) {
@@ -143,10 +359,12 @@ public final class ProtoChannelGetMessagesStats {
         if (documentId_ != 0L) {
           output.writeUInt64(2, documentId_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -158,388 +376,482 @@ public final class ProtoChannelGetMessagesStats {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(2, documentId_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo) obj;
+
+        if (getMessageId()
+            != other.getMessageId()) return false;
+        if (getDocumentId()
+            != other.getDocumentId()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getMessageId());
+        hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDocumentId());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.ChannelGetMessagesStats.messageIdInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.ChannelGetMessagesStats.messageIdInfo)
           net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_messageIdInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_messageIdInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          messageId_ = 0L;
 
+          documentId_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_messageIdInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo build() {
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo buildPartial() {
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo result = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo(this);
+          result.messageId_ = messageId_;
+          result.documentId_ = documentId_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo) {
+            return mergeFrom((net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo other) {
+          if (other == net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.getDefaultInstance()) return this;
+          if (other.getMessageId() != 0L) {
+            setMessageId(other.getMessageId());
+          }
+          if (other.getDocumentId() != 0L) {
+            setDocumentId(other.getDocumentId());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long messageId_ ;
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return The messageId.
          */
+        @java.lang.Override
         public long getMessageId() {
-          return instance.getMessageId();
+          return messageId_;
         }
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @param value The messageId to set.
+         * @return This builder for chaining.
          */
         public Builder setMessageId(long value) {
-          copyOnWrite();
-          instance.setMessageId(value);
+          
+          messageId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMessageId() {
-          copyOnWrite();
-          instance.clearMessageId();
+          
+          messageId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long documentId_ ;
         /**
-         * <code>optional uint64 document_id = 2;</code>
+         * <code>uint64 document_id = 2;</code>
+         * @return The documentId.
          */
+        @java.lang.Override
         public long getDocumentId() {
-          return instance.getDocumentId();
+          return documentId_;
         }
         /**
-         * <code>optional uint64 document_id = 2;</code>
+         * <code>uint64 document_id = 2;</code>
+         * @param value The documentId to set.
+         * @return This builder for chaining.
          */
         public Builder setDocumentId(long value) {
-          copyOnWrite();
-          instance.setDocumentId(value);
+          
+          documentId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 document_id = 2;</code>
+         * <code>uint64 document_id = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDocumentId() {
-          copyOnWrite();
-          instance.clearDocumentId();
+          
+          documentId_ = 0L;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.ChannelGetMessagesStats.messageIdInfo)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo) arg1;
-            messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
-                other.messageId_ != 0L, other.messageId_);
-            documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
-                other.documentId_ != 0L, other.documentId_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    messageId_ = input.readUInt64();
-                    break;
-                  }
-                  case 16: {
-
-                    documentId_ = input.readUInt64();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.ChannelGetMessagesStats.messageIdInfo)
       private static final net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new messageIdInfo();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo();
       }
 
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<messageIdInfo> PARSER;
+      private static final com.google.protobuf.Parser<messageIdInfo>
+          PARSER = new com.google.protobuf.AbstractParser<messageIdInfo>() {
+        @java.lang.Override
+        public messageIdInfo parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new messageIdInfo(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<messageIdInfo> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<messageIdInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    private int bitField0_;
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
+    @java.lang.Override
     public long getRoomId() {
       return roomId_;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void setRoomId(long value) {
-      
-      roomId_ = value;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void clearRoomId() {
-      
-      roomId_ = 0L;
     }
 
     public static final int MESSAGE_ID_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.LongList messageId_;
     /**
      * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+     * @return A list containing the messageId.
      */
+    @java.lang.Override
     @java.lang.Deprecated public java.util.List<java.lang.Long>
         getMessageIdList() {
       return messageId_;
     }
     /**
      * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+     * @return The count of messageId.
      */
     @java.lang.Deprecated public int getMessageIdCount() {
       return messageId_.size();
     }
     /**
      * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+     * @param index The index of the element to return.
+     * @return The messageId at the given index.
      */
     @java.lang.Deprecated public long getMessageId(int index) {
       return messageId_.getLong(index);
     }
-    private void ensureMessageIdIsMutable() {
-      if (!messageId_.isModifiable()) {
-        messageId_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(messageId_);
-       }
-    }
-    /**
-     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
-     */
-    private void setMessageId(
-        int index, long value) {
-      ensureMessageIdIsMutable();
-      messageId_.setLong(index, value);
-    }
-    /**
-     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
-     */
-    private void addMessageId(long value) {
-      ensureMessageIdIsMutable();
-      messageId_.addLong(value);
-    }
-    /**
-     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
-     */
-    private void addAllMessageId(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureMessageIdIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, messageId_);
-    }
-    /**
-     * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
-     */
-    private void clearMessageId() {
-      messageId_ = emptyLongList();
-    }
+    private int messageIdMemoizedSerializedSize = -1;
 
     public static final int MESSAGE_ID_INFO_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> messageIdInfo_;
+    private java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> messageIdInfo_;
     /**
      * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> getMessageIdInfoList() {
       return messageIdInfo_;
     }
     /**
      * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder> 
         getMessageIdInfoOrBuilderList() {
       return messageIdInfo_;
@@ -547,108 +859,38 @@ public final class ProtoChannelGetMessagesStats {
     /**
      * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
      */
+    @java.lang.Override
     public int getMessageIdInfoCount() {
       return messageIdInfo_.size();
     }
     /**
      * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getMessageIdInfo(int index) {
       return messageIdInfo_.get(index);
     }
     /**
      * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder getMessageIdInfoOrBuilder(
         int index) {
       return messageIdInfo_.get(index);
     }
-    private void ensureMessageIdInfoIsMutable() {
-      if (!messageIdInfo_.isModifiable()) {
-        messageIdInfo_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(messageIdInfo_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void setMessageIdInfo(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void setMessageIdInfo(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void addMessageIdInfo(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.add(value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void addMessageIdInfo(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void addMessageIdInfo(
-        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void addMessageIdInfo(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void addAllMessageIdInfo(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> values) {
-      ensureMessageIdInfoIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, messageIdInfo_);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void clearMessageIdInfo() {
-      messageIdInfo_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
-     */
-    private void removeMessageIdInfo(int index) {
-      ensureMessageIdInfoIsMutable();
-      messageIdInfo_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -658,16 +900,22 @@ public final class ProtoChannelGetMessagesStats {
       if (roomId_ != 0L) {
         output.writeUInt64(2, roomId_);
       }
+      if (getMessageIdList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(messageIdMemoizedSerializedSize);
+      }
       for (int i = 0; i < messageId_.size(); i++) {
-        output.writeUInt64(3, messageId_.getLong(i));
+        output.writeUInt64NoTag(messageId_.getLong(i));
       }
       for (int i = 0; i < messageIdInfo_.size(); i++) {
         output.writeMessage(4, messageIdInfo_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -686,246 +934,672 @@ public final class ProtoChannelGetMessagesStats {
             .computeUInt64SizeNoTag(messageId_.getLong(i));
         }
         size += dataSize;
-        size += 1 * getMessageIdList().size();
+        if (!getMessageIdList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        messageIdMemoizedSerializedSize = dataSize;
       }
       for (int i = 0; i < messageIdInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, messageIdInfo_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (!getMessageIdList()
+          .equals(other.getMessageIdList())) return false;
+      if (!getMessageIdInfoList()
+          .equals(other.getMessageIdInfoList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      if (getMessageIdCount() > 0) {
+        hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getMessageIdList().hashCode();
+      }
+      if (getMessageIdInfoCount() > 0) {
+        hash = (37 * hash) + MESSAGE_ID_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getMessageIdInfoList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ChannelGetMessagesStats}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ChannelGetMessagesStats)
         net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMessageIdInfoFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        roomId_ = 0L;
 
+        messageId_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (messageIdInfoBuilder_ == null) {
+          messageIdInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          messageIdInfoBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStats_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats build() {
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats buildPartial() {
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats result = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats(this);
+        int from_bitField0_ = bitField0_;
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          messageId_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.messageId_ = messageId_;
+        if (messageIdInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            messageIdInfo_ = java.util.Collections.unmodifiableList(messageIdInfo_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.messageIdInfo_ = messageIdInfo_;
+        } else {
+          result.messageIdInfo_ = messageIdInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats) {
+          return mergeFrom((net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats other) {
+        if (other == net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (!other.messageId_.isEmpty()) {
+          if (messageId_.isEmpty()) {
+            messageId_ = other.messageId_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureMessageIdIsMutable();
+            messageId_.addAll(other.messageId_);
+          }
+          onChanged();
+        }
+        if (messageIdInfoBuilder_ == null) {
+          if (!other.messageIdInfo_.isEmpty()) {
+            if (messageIdInfo_.isEmpty()) {
+              messageIdInfo_ = other.messageIdInfo_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureMessageIdInfoIsMutable();
+              messageIdInfo_.addAll(other.messageIdInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.messageIdInfo_.isEmpty()) {
+            if (messageIdInfoBuilder_.isEmpty()) {
+              messageIdInfoBuilder_.dispose();
+              messageIdInfoBuilder_ = null;
+              messageIdInfo_ = other.messageIdInfo_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              messageIdInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMessageIdInfoFieldBuilder() : null;
+            } else {
+              messageIdInfoBuilder_.addAllMessages(other.messageIdInfo_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
+      @java.lang.Override
       public long getRoomId() {
-        return instance.getRoomId();
+        return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoomId(long value) {
-        copyOnWrite();
-        instance.setRoomId(value);
+        
+        roomId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoomId() {
-        copyOnWrite();
-        instance.clearRoomId();
+        
+        roomId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private com.google.protobuf.Internal.LongList messageId_ = emptyLongList();
+      private void ensureMessageIdIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          messageId_ = mutableCopy(messageId_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @return A list containing the messageId.
        */
       @java.lang.Deprecated public java.util.List<java.lang.Long>
           getMessageIdList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getMessageIdList());
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(messageId_) : messageId_;
       }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @return The count of messageId.
        */
       @java.lang.Deprecated public int getMessageIdCount() {
-        return instance.getMessageIdCount();
+        return messageId_.size();
       }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @param index The index of the element to return.
+       * @return The messageId at the given index.
        */
       @java.lang.Deprecated public long getMessageId(int index) {
-        return instance.getMessageId(index);
+        return messageId_.getLong(index);
       }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @param index The index to set the value at.
+       * @param value The messageId to set.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder setMessageId(
           int index, long value) {
-        copyOnWrite();
-        instance.setMessageId(index, value);
+        ensureMessageIdIsMutable();
+        messageId_.setLong(index, value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @param value The messageId to add.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder addMessageId(long value) {
-        copyOnWrite();
-        instance.addMessageId(value);
+        ensureMessageIdIsMutable();
+        messageId_.addLong(value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @param values The messageId to add.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder addAllMessageId(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        copyOnWrite();
-        instance.addAllMessageId(values);
+        ensureMessageIdIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, messageId_);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 message_id = 3 [deprecated = true];</code>
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder clearMessageId() {
-        copyOnWrite();
-        instance.clearMessageId();
+        messageId_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
+
+      private java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> messageIdInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureMessageIdInfoIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          messageIdInfo_ = new java.util.ArrayList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo>(messageIdInfo_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder> messageIdInfoBuilder_;
 
       /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> getMessageIdInfoList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getMessageIdInfoList());
+        if (messageIdInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(messageIdInfo_);
+        } else {
+          return messageIdInfoBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public int getMessageIdInfoCount() {
-        return instance.getMessageIdInfoCount();
-      }/**
+        if (messageIdInfoBuilder_ == null) {
+          return messageIdInfo_.size();
+        } else {
+          return messageIdInfoBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo getMessageIdInfo(int index) {
-        return instance.getMessageIdInfo(index);
+        if (messageIdInfoBuilder_ == null) {
+          return messageIdInfo_.get(index);
+        } else {
+          return messageIdInfoBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public Builder setMessageIdInfo(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
-        copyOnWrite();
-        instance.setMessageIdInfo(index, value);
+        if (messageIdInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.set(index, value);
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -933,16 +1607,29 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder setMessageIdInfo(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
-        copyOnWrite();
-        instance.setMessageIdInfo(index, builderForValue);
+        if (messageIdInfoBuilder_ == null) {
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public Builder addMessageIdInfo(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
-        copyOnWrite();
-        instance.addMessageIdInfo(value);
+        if (messageIdInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.add(value);
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -950,8 +1637,16 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addMessageIdInfo(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo value) {
-        copyOnWrite();
-        instance.addMessageIdInfo(index, value);
+        if (messageIdInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.add(index, value);
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -959,8 +1654,13 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addMessageIdInfo(
           net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
-        copyOnWrite();
-        instance.addMessageIdInfo(builderForValue);
+        if (messageIdInfoBuilder_ == null) {
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -968,8 +1668,13 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addMessageIdInfo(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder builderForValue) {
-        copyOnWrite();
-        instance.addMessageIdInfo(index, builderForValue);
+        if (messageIdInfoBuilder_ == null) {
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -977,186 +1682,177 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addAllMessageIdInfo(
           java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo> values) {
-        copyOnWrite();
-        instance.addAllMessageIdInfo(values);
+        if (messageIdInfoBuilder_ == null) {
+          ensureMessageIdInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, messageIdInfo_);
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public Builder clearMessageIdInfo() {
-        copyOnWrite();
-        instance.clearMessageIdInfo();
+        if (messageIdInfoBuilder_ == null) {
+          messageIdInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
        */
       public Builder removeMessageIdInfo(int index) {
-        copyOnWrite();
-        instance.removeMessageIdInfo(index);
+        if (messageIdInfoBuilder_ == null) {
+          ensureMessageIdInfoIsMutable();
+          messageIdInfo_.remove(index);
+          onChanged();
+        } else {
+          messageIdInfoBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder getMessageIdInfoBuilder(
+          int index) {
+        return getMessageIdInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder getMessageIdInfoOrBuilder(
+          int index) {
+        if (messageIdInfoBuilder_ == null) {
+          return messageIdInfo_.get(index);  } else {
+          return messageIdInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder> 
+           getMessageIdInfoOrBuilderList() {
+        if (messageIdInfoBuilder_ != null) {
+          return messageIdInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(messageIdInfo_);
+        }
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder addMessageIdInfoBuilder() {
+        return getMessageIdInfoFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder addMessageIdInfoBuilder(
+          int index) {
+        return getMessageIdInfoFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStats.messageIdInfo message_id_info = 4;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder> 
+           getMessageIdInfoBuilderList() {
+        return getMessageIdInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder> 
+          getMessageIdInfoFieldBuilder() {
+        if (messageIdInfoBuilder_ == null) {
+          messageIdInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.Builder, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfoOrBuilder>(
+                  messageIdInfo_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          messageIdInfo_ = null;
+        }
+        return messageIdInfoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ChannelGetMessagesStats)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          messageId_.makeImmutable();
-          messageIdInfo_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-              other.roomId_ != 0L, other.roomId_);
-          messageId_= visitor.visitLongList(messageId_, other.messageId_);
-          messageIdInfo_= visitor.visitList(messageIdInfo_, other.messageIdInfo_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  roomId_ = input.readUInt64();
-                  break;
-                }
-                case 24: {
-                  if (!messageId_.isModifiable()) {
-                    messageId_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(messageId_);
-                  }
-                  messageId_.addLong(input.readUInt64());
-                  break;
-                }
-                case 26: {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!messageId_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                    messageId_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(messageId_);
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    messageId_.addLong(input.readUInt64());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-                case 34: {
-                  if (!messageIdInfo_.isModifiable()) {
-                    messageIdInfo_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(messageIdInfo_);
-                  }
-                  messageIdInfo_.add(
-                      input.readMessage(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.messageIdInfo.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ChannelGetMessagesStats)
     private static final net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChannelGetMessagesStats();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats();
     }
 
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChannelGetMessagesStats> PARSER;
+    private static final com.google.protobuf.Parser<ChannelGetMessagesStats>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelGetMessagesStats>() {
+      @java.lang.Override
+      public ChannelGetMessagesStats parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChannelGetMessagesStats(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ChannelGetMessagesStats> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelGetMessagesStats> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStats getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ChannelGetMessagesStatsResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ChannelGetMessagesStatsResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
@@ -1171,280 +1867,452 @@ public final class ProtoChannelGetMessagesStats {
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
      */
     int getStatsCount();
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder> 
+        getStatsOrBuilderList();
+    /**
+     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+     */
+    net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder getStatsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ChannelGetMessagesStatsResponse}
    */
-  public  static final class ChannelGetMessagesStatsResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ChannelGetMessagesStatsResponse, ChannelGetMessagesStatsResponse.Builder> implements
+  public static final class ChannelGetMessagesStatsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ChannelGetMessagesStatsResponse)
       ChannelGetMessagesStatsResponseOrBuilder {
-    private ChannelGetMessagesStatsResponse() {
-      stats_ = emptyProtobufList();
+  private static final long serialVersionUID = 0L;
+    // Use ChannelGetMessagesStatsResponse.newBuilder() to construct.
+    private ChannelGetMessagesStatsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private ChannelGetMessagesStatsResponse() {
+      stats_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChannelGetMessagesStatsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChannelGetMessagesStatsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stats_ = new java.util.ArrayList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              stats_.add(
+                  input.readMessage(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          stats_ = java.util.Collections.unmodifiableList(stats_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Builder.class);
+    }
+
     public interface StatsOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.ChannelGetMessagesStatsResponse.Stats)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>uint64 message_id = 1;</code>
+       * @return The messageId.
        */
       long getMessageId();
 
       /**
-       * <code>optional string views_label = 2;</code>
+       * <code>string views_label = 2;</code>
+       * @return The viewsLabel.
        */
       java.lang.String getViewsLabel();
       /**
-       * <code>optional string views_label = 2;</code>
+       * <code>string views_label = 2;</code>
+       * @return The bytes for viewsLabel.
        */
       com.google.protobuf.ByteString
           getViewsLabelBytes();
 
       /**
-       * <code>optional string thumbs_up_label = 3;</code>
+       * <code>string thumbs_up_label = 3;</code>
+       * @return The thumbsUpLabel.
        */
       java.lang.String getThumbsUpLabel();
       /**
-       * <code>optional string thumbs_up_label = 3;</code>
+       * <code>string thumbs_up_label = 3;</code>
+       * @return The bytes for thumbsUpLabel.
        */
       com.google.protobuf.ByteString
           getThumbsUpLabelBytes();
 
       /**
-       * <code>optional string thumbs_down_label = 4;</code>
+       * <code>string thumbs_down_label = 4;</code>
+       * @return The thumbsDownLabel.
        */
       java.lang.String getThumbsDownLabel();
       /**
-       * <code>optional string thumbs_down_label = 4;</code>
+       * <code>string thumbs_down_label = 4;</code>
+       * @return The bytes for thumbsDownLabel.
        */
       com.google.protobuf.ByteString
           getThumbsDownLabelBytes();
 
       /**
-       * <code>optional uint64 document_id = 5;</code>
+       * <code>uint64 document_id = 5;</code>
+       * @return The documentId.
        */
       long getDocumentId();
     }
     /**
      * Protobuf type {@code proto.ChannelGetMessagesStatsResponse.Stats}
      */
-    public  static final class Stats extends
-        com.google.protobuf.GeneratedMessageLite<
-            Stats, Stats.Builder> implements
+    public static final class Stats extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.ChannelGetMessagesStatsResponse.Stats)
         StatsOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Stats.newBuilder() to construct.
+      private Stats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private Stats() {
         viewsLabel_ = "";
         thumbsUpLabel_ = "";
         thumbsDownLabel_ = "";
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Stats();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Stats(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                messageId_ = input.readUInt64();
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                viewsLabel_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                thumbsUpLabel_ = s;
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                thumbsDownLabel_ = s;
+                break;
+              }
+              case 40: {
+
+                documentId_ = input.readUInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_Stats_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_Stats_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder.class);
+      }
+
       public static final int MESSAGE_ID_FIELD_NUMBER = 1;
       private long messageId_;
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>uint64 message_id = 1;</code>
+       * @return The messageId.
        */
+      @java.lang.Override
       public long getMessageId() {
         return messageId_;
       }
-      /**
-       * <code>optional uint64 message_id = 1;</code>
-       */
-      private void setMessageId(long value) {
-        
-        messageId_ = value;
-      }
-      /**
-       * <code>optional uint64 message_id = 1;</code>
-       */
-      private void clearMessageId() {
-        
-        messageId_ = 0L;
-      }
 
       public static final int VIEWS_LABEL_FIELD_NUMBER = 2;
-      private java.lang.String viewsLabel_;
+      private volatile java.lang.Object viewsLabel_;
       /**
-       * <code>optional string views_label = 2;</code>
+       * <code>string views_label = 2;</code>
+       * @return The viewsLabel.
        */
+      @java.lang.Override
       public java.lang.String getViewsLabel() {
-        return viewsLabel_;
+        java.lang.Object ref = viewsLabel_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          viewsLabel_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string views_label = 2;</code>
+       * <code>string views_label = 2;</code>
+       * @return The bytes for viewsLabel.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getViewsLabelBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(viewsLabel_);
-      }
-      /**
-       * <code>optional string views_label = 2;</code>
-       */
-      private void setViewsLabel(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        viewsLabel_ = value;
-      }
-      /**
-       * <code>optional string views_label = 2;</code>
-       */
-      private void clearViewsLabel() {
-        
-        viewsLabel_ = getDefaultInstance().getViewsLabel();
-      }
-      /**
-       * <code>optional string views_label = 2;</code>
-       */
-      private void setViewsLabelBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        viewsLabel_ = value.toStringUtf8();
+        java.lang.Object ref = viewsLabel_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          viewsLabel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int THUMBS_UP_LABEL_FIELD_NUMBER = 3;
-      private java.lang.String thumbsUpLabel_;
+      private volatile java.lang.Object thumbsUpLabel_;
       /**
-       * <code>optional string thumbs_up_label = 3;</code>
+       * <code>string thumbs_up_label = 3;</code>
+       * @return The thumbsUpLabel.
        */
+      @java.lang.Override
       public java.lang.String getThumbsUpLabel() {
-        return thumbsUpLabel_;
+        java.lang.Object ref = thumbsUpLabel_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thumbsUpLabel_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string thumbs_up_label = 3;</code>
+       * <code>string thumbs_up_label = 3;</code>
+       * @return The bytes for thumbsUpLabel.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getThumbsUpLabelBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(thumbsUpLabel_);
-      }
-      /**
-       * <code>optional string thumbs_up_label = 3;</code>
-       */
-      private void setThumbsUpLabel(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        thumbsUpLabel_ = value;
-      }
-      /**
-       * <code>optional string thumbs_up_label = 3;</code>
-       */
-      private void clearThumbsUpLabel() {
-        
-        thumbsUpLabel_ = getDefaultInstance().getThumbsUpLabel();
-      }
-      /**
-       * <code>optional string thumbs_up_label = 3;</code>
-       */
-      private void setThumbsUpLabelBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        thumbsUpLabel_ = value.toStringUtf8();
+        java.lang.Object ref = thumbsUpLabel_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          thumbsUpLabel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int THUMBS_DOWN_LABEL_FIELD_NUMBER = 4;
-      private java.lang.String thumbsDownLabel_;
+      private volatile java.lang.Object thumbsDownLabel_;
       /**
-       * <code>optional string thumbs_down_label = 4;</code>
+       * <code>string thumbs_down_label = 4;</code>
+       * @return The thumbsDownLabel.
        */
+      @java.lang.Override
       public java.lang.String getThumbsDownLabel() {
-        return thumbsDownLabel_;
+        java.lang.Object ref = thumbsDownLabel_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thumbsDownLabel_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string thumbs_down_label = 4;</code>
+       * <code>string thumbs_down_label = 4;</code>
+       * @return The bytes for thumbsDownLabel.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getThumbsDownLabelBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(thumbsDownLabel_);
-      }
-      /**
-       * <code>optional string thumbs_down_label = 4;</code>
-       */
-      private void setThumbsDownLabel(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        thumbsDownLabel_ = value;
-      }
-      /**
-       * <code>optional string thumbs_down_label = 4;</code>
-       */
-      private void clearThumbsDownLabel() {
-        
-        thumbsDownLabel_ = getDefaultInstance().getThumbsDownLabel();
-      }
-      /**
-       * <code>optional string thumbs_down_label = 4;</code>
-       */
-      private void setThumbsDownLabelBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        thumbsDownLabel_ = value.toStringUtf8();
+        java.lang.Object ref = thumbsDownLabel_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          thumbsDownLabel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
       private long documentId_;
       /**
-       * <code>optional uint64 document_id = 5;</code>
+       * <code>uint64 document_id = 5;</code>
+       * @return The documentId.
        */
+      @java.lang.Override
       public long getDocumentId() {
         return documentId_;
       }
-      /**
-       * <code>optional uint64 document_id = 5;</code>
-       */
-      private void setDocumentId(long value) {
-        
-        documentId_ = value;
-      }
-      /**
-       * <code>optional uint64 document_id = 5;</code>
-       */
-      private void clearDocumentId() {
-        
-        documentId_ = 0L;
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (messageId_ != 0L) {
           output.writeUInt64(1, messageId_);
         }
-        if (!viewsLabel_.isEmpty()) {
-          output.writeString(2, getViewsLabel());
+        if (!getViewsLabelBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, viewsLabel_);
         }
-        if (!thumbsUpLabel_.isEmpty()) {
-          output.writeString(3, getThumbsUpLabel());
+        if (!getThumbsUpLabelBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, thumbsUpLabel_);
         }
-        if (!thumbsDownLabel_.isEmpty()) {
-          output.writeString(4, getThumbsDownLabel());
+        if (!getThumbsDownLabelBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, thumbsDownLabel_);
         }
         if (documentId_ != 0L) {
           output.writeUInt64(5, documentId_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -1452,467 +2320,717 @@ public final class ProtoChannelGetMessagesStats {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(1, messageId_);
         }
-        if (!viewsLabel_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(2, getViewsLabel());
+        if (!getViewsLabelBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, viewsLabel_);
         }
-        if (!thumbsUpLabel_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(3, getThumbsUpLabel());
+        if (!getThumbsUpLabelBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, thumbsUpLabel_);
         }
-        if (!thumbsDownLabel_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(4, getThumbsDownLabel());
+        if (!getThumbsDownLabelBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, thumbsDownLabel_);
         }
         if (documentId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(5, documentId_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats) obj;
+
+        if (getMessageId()
+            != other.getMessageId()) return false;
+        if (!getViewsLabel()
+            .equals(other.getViewsLabel())) return false;
+        if (!getThumbsUpLabel()
+            .equals(other.getThumbsUpLabel())) return false;
+        if (!getThumbsDownLabel()
+            .equals(other.getThumbsDownLabel())) return false;
+        if (getDocumentId()
+            != other.getDocumentId()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getMessageId());
+        hash = (37 * hash) + VIEWS_LABEL_FIELD_NUMBER;
+        hash = (53 * hash) + getViewsLabel().hashCode();
+        hash = (37 * hash) + THUMBS_UP_LABEL_FIELD_NUMBER;
+        hash = (53 * hash) + getThumbsUpLabel().hashCode();
+        hash = (37 * hash) + THUMBS_DOWN_LABEL_FIELD_NUMBER;
+        hash = (53 * hash) + getThumbsDownLabel().hashCode();
+        hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDocumentId());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.ChannelGetMessagesStatsResponse.Stats}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.ChannelGetMessagesStatsResponse.Stats)
           net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_Stats_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_Stats_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          messageId_ = 0L;
 
+          viewsLabel_ = "";
+
+          thumbsUpLabel_ = "";
+
+          thumbsDownLabel_ = "";
+
+          documentId_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_Stats_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats build() {
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats buildPartial() {
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats result = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats(this);
+          result.messageId_ = messageId_;
+          result.viewsLabel_ = viewsLabel_;
+          result.thumbsUpLabel_ = thumbsUpLabel_;
+          result.thumbsDownLabel_ = thumbsDownLabel_;
+          result.documentId_ = documentId_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats) {
+            return mergeFrom((net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats other) {
+          if (other == net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.getDefaultInstance()) return this;
+          if (other.getMessageId() != 0L) {
+            setMessageId(other.getMessageId());
+          }
+          if (!other.getViewsLabel().isEmpty()) {
+            viewsLabel_ = other.viewsLabel_;
+            onChanged();
+          }
+          if (!other.getThumbsUpLabel().isEmpty()) {
+            thumbsUpLabel_ = other.thumbsUpLabel_;
+            onChanged();
+          }
+          if (!other.getThumbsDownLabel().isEmpty()) {
+            thumbsDownLabel_ = other.thumbsDownLabel_;
+            onChanged();
+          }
+          if (other.getDocumentId() != 0L) {
+            setDocumentId(other.getDocumentId());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long messageId_ ;
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return The messageId.
          */
+        @java.lang.Override
         public long getMessageId() {
-          return instance.getMessageId();
+          return messageId_;
         }
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @param value The messageId to set.
+         * @return This builder for chaining.
          */
         public Builder setMessageId(long value) {
-          copyOnWrite();
-          instance.setMessageId(value);
+          
+          messageId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 message_id = 1;</code>
+         * <code>uint64 message_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMessageId() {
-          copyOnWrite();
-          instance.clearMessageId();
+          
+          messageId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object viewsLabel_ = "";
         /**
-         * <code>optional string views_label = 2;</code>
+         * <code>string views_label = 2;</code>
+         * @return The viewsLabel.
          */
         public java.lang.String getViewsLabel() {
-          return instance.getViewsLabel();
+          java.lang.Object ref = viewsLabel_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            viewsLabel_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string views_label = 2;</code>
+         * <code>string views_label = 2;</code>
+         * @return The bytes for viewsLabel.
          */
         public com.google.protobuf.ByteString
             getViewsLabelBytes() {
-          return instance.getViewsLabelBytes();
+          java.lang.Object ref = viewsLabel_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            viewsLabel_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string views_label = 2;</code>
+         * <code>string views_label = 2;</code>
+         * @param value The viewsLabel to set.
+         * @return This builder for chaining.
          */
         public Builder setViewsLabel(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setViewsLabel(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          viewsLabel_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string views_label = 2;</code>
+         * <code>string views_label = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearViewsLabel() {
-          copyOnWrite();
-          instance.clearViewsLabel();
+          
+          viewsLabel_ = getDefaultInstance().getViewsLabel();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string views_label = 2;</code>
+         * <code>string views_label = 2;</code>
+         * @param value The bytes for viewsLabel to set.
+         * @return This builder for chaining.
          */
         public Builder setViewsLabelBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setViewsLabelBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          viewsLabel_ = value;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object thumbsUpLabel_ = "";
         /**
-         * <code>optional string thumbs_up_label = 3;</code>
+         * <code>string thumbs_up_label = 3;</code>
+         * @return The thumbsUpLabel.
          */
         public java.lang.String getThumbsUpLabel() {
-          return instance.getThumbsUpLabel();
+          java.lang.Object ref = thumbsUpLabel_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            thumbsUpLabel_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string thumbs_up_label = 3;</code>
+         * <code>string thumbs_up_label = 3;</code>
+         * @return The bytes for thumbsUpLabel.
          */
         public com.google.protobuf.ByteString
             getThumbsUpLabelBytes() {
-          return instance.getThumbsUpLabelBytes();
+          java.lang.Object ref = thumbsUpLabel_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            thumbsUpLabel_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string thumbs_up_label = 3;</code>
+         * <code>string thumbs_up_label = 3;</code>
+         * @param value The thumbsUpLabel to set.
+         * @return This builder for chaining.
          */
         public Builder setThumbsUpLabel(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setThumbsUpLabel(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          thumbsUpLabel_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string thumbs_up_label = 3;</code>
+         * <code>string thumbs_up_label = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearThumbsUpLabel() {
-          copyOnWrite();
-          instance.clearThumbsUpLabel();
+          
+          thumbsUpLabel_ = getDefaultInstance().getThumbsUpLabel();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string thumbs_up_label = 3;</code>
+         * <code>string thumbs_up_label = 3;</code>
+         * @param value The bytes for thumbsUpLabel to set.
+         * @return This builder for chaining.
          */
         public Builder setThumbsUpLabelBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setThumbsUpLabelBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          thumbsUpLabel_ = value;
+          onChanged();
           return this;
         }
 
+        private java.lang.Object thumbsDownLabel_ = "";
         /**
-         * <code>optional string thumbs_down_label = 4;</code>
+         * <code>string thumbs_down_label = 4;</code>
+         * @return The thumbsDownLabel.
          */
         public java.lang.String getThumbsDownLabel() {
-          return instance.getThumbsDownLabel();
+          java.lang.Object ref = thumbsDownLabel_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            thumbsDownLabel_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>optional string thumbs_down_label = 4;</code>
+         * <code>string thumbs_down_label = 4;</code>
+         * @return The bytes for thumbsDownLabel.
          */
         public com.google.protobuf.ByteString
             getThumbsDownLabelBytes() {
-          return instance.getThumbsDownLabelBytes();
+          java.lang.Object ref = thumbsDownLabel_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            thumbsDownLabel_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string thumbs_down_label = 4;</code>
+         * <code>string thumbs_down_label = 4;</code>
+         * @param value The thumbsDownLabel to set.
+         * @return This builder for chaining.
          */
         public Builder setThumbsDownLabel(
             java.lang.String value) {
-          copyOnWrite();
-          instance.setThumbsDownLabel(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          thumbsDownLabel_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string thumbs_down_label = 4;</code>
+         * <code>string thumbs_down_label = 4;</code>
+         * @return This builder for chaining.
          */
         public Builder clearThumbsDownLabel() {
-          copyOnWrite();
-          instance.clearThumbsDownLabel();
+          
+          thumbsDownLabel_ = getDefaultInstance().getThumbsDownLabel();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string thumbs_down_label = 4;</code>
+         * <code>string thumbs_down_label = 4;</code>
+         * @param value The bytes for thumbsDownLabel to set.
+         * @return This builder for chaining.
          */
         public Builder setThumbsDownLabelBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setThumbsDownLabelBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          thumbsDownLabel_ = value;
+          onChanged();
           return this;
         }
 
+        private long documentId_ ;
         /**
-         * <code>optional uint64 document_id = 5;</code>
+         * <code>uint64 document_id = 5;</code>
+         * @return The documentId.
          */
+        @java.lang.Override
         public long getDocumentId() {
-          return instance.getDocumentId();
+          return documentId_;
         }
         /**
-         * <code>optional uint64 document_id = 5;</code>
+         * <code>uint64 document_id = 5;</code>
+         * @param value The documentId to set.
+         * @return This builder for chaining.
          */
         public Builder setDocumentId(long value) {
-          copyOnWrite();
-          instance.setDocumentId(value);
+          
+          documentId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 document_id = 5;</code>
+         * <code>uint64 document_id = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDocumentId() {
-          copyOnWrite();
-          instance.clearDocumentId();
+          
+          documentId_ = 0L;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.ChannelGetMessagesStatsResponse.Stats)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats) arg1;
-            messageId_ = visitor.visitLong(messageId_ != 0L, messageId_,
-                other.messageId_ != 0L, other.messageId_);
-            viewsLabel_ = visitor.visitString(!viewsLabel_.isEmpty(), viewsLabel_,
-                !other.viewsLabel_.isEmpty(), other.viewsLabel_);
-            thumbsUpLabel_ = visitor.visitString(!thumbsUpLabel_.isEmpty(), thumbsUpLabel_,
-                !other.thumbsUpLabel_.isEmpty(), other.thumbsUpLabel_);
-            thumbsDownLabel_ = visitor.visitString(!thumbsDownLabel_.isEmpty(), thumbsDownLabel_,
-                !other.thumbsDownLabel_.isEmpty(), other.thumbsDownLabel_);
-            documentId_ = visitor.visitLong(documentId_ != 0L, documentId_,
-                other.documentId_ != 0L, other.documentId_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    messageId_ = input.readUInt64();
-                    break;
-                  }
-                  case 18: {
-                    String s = input.readStringRequireUtf8();
-
-                    viewsLabel_ = s;
-                    break;
-                  }
-                  case 26: {
-                    String s = input.readStringRequireUtf8();
-
-                    thumbsUpLabel_ = s;
-                    break;
-                  }
-                  case 34: {
-                    String s = input.readStringRequireUtf8();
-
-                    thumbsDownLabel_ = s;
-                    break;
-                  }
-                  case 40: {
-
-                    documentId_ = input.readUInt64();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.ChannelGetMessagesStatsResponse.Stats)
       private static final net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Stats();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats();
       }
 
       public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Stats> PARSER;
+      private static final com.google.protobuf.Parser<Stats>
+          PARSER = new com.google.protobuf.AbstractParser<Stats>() {
+        @java.lang.Override
+        public Stats parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Stats(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Stats> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Stats> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int STATS_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> stats_;
+    private java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> stats_;
     /**
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> getStatsList() {
       return stats_;
     }
     /**
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder> 
         getStatsOrBuilderList() {
       return stats_;
@@ -1920,108 +3038,38 @@ public final class ProtoChannelGetMessagesStats {
     /**
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
      */
+    @java.lang.Override
     public int getStatsCount() {
       return stats_.size();
     }
     /**
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats getStats(int index) {
       return stats_.get(index);
     }
     /**
      * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder getStatsOrBuilder(
         int index) {
       return stats_.get(index);
     }
-    private void ensureStatsIsMutable() {
-      if (!stats_.isModifiable()) {
-        stats_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void setStats(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureStatsIsMutable();
-      stats_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void setStats(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder builderForValue) {
-      ensureStatsIsMutable();
-      stats_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void addStats(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureStatsIsMutable();
-      stats_.add(value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void addStats(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureStatsIsMutable();
-      stats_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void addStats(
-        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder builderForValue) {
-      ensureStatsIsMutable();
-      stats_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void addStats(
-        int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder builderForValue) {
-      ensureStatsIsMutable();
-      stats_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void addAllStats(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> values) {
-      ensureStatsIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, stats_);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void clearStats() {
-      stats_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
-     */
-    private void removeStats(int index) {
-      ensureStatsIsMutable();
-      stats_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -2030,10 +3078,12 @@ public final class ProtoChannelGetMessagesStats {
       for (int i = 0; i < stats_.size(); i++) {
         output.writeMessage(2, stats_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -2045,162 +3095,517 @@ public final class ProtoChannelGetMessagesStats {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, stats_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getStatsList()
+          .equals(other.getStatsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getStatsCount() > 0) {
+        hash = (37 * hash) + STATS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ChannelGetMessagesStatsResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ChannelGetMessagesStatsResponse)
         net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.class, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStatsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (statsBuilder_ == null) {
+          stats_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          statsBuilder_.clear();
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.internal_static_proto_ChannelGetMessagesStatsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse build() {
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse buildPartial() {
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse result = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (statsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            stats_ = java.util.Collections.unmodifiableList(stats_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.stats_ = stats_;
+        } else {
+          result.stats_ = statsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse) {
+          return mergeFrom((net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse other) {
+        if (other == net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (statsBuilder_ == null) {
+          if (!other.stats_.isEmpty()) {
+            if (stats_.isEmpty()) {
+              stats_ = other.stats_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureStatsIsMutable();
+              stats_.addAll(other.stats_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.stats_.isEmpty()) {
+            if (statsBuilder_.isEmpty()) {
+              statsBuilder_.dispose();
+              statsBuilder_ = null;
+              stats_ = other.stats_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              statsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStatsFieldBuilder() : null;
+            } else {
+              statsBuilder_.addAllMessages(other.stats_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> stats_ =
+        java.util.Collections.emptyList();
+      private void ensureStatsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          stats_ = new java.util.ArrayList<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats>(stats_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder> statsBuilder_;
 
       /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> getStatsList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getStatsList());
+        if (statsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stats_);
+        } else {
+          return statsBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public int getStatsCount() {
-        return instance.getStatsCount();
-      }/**
+        if (statsBuilder_ == null) {
+          return stats_.size();
+        } else {
+          return statsBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats getStats(int index) {
-        return instance.getStats(index);
+        if (statsBuilder_ == null) {
+          return stats_.get(index);
+        } else {
+          return statsBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public Builder setStats(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats value) {
-        copyOnWrite();
-        instance.setStats(index, value);
+        if (statsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatsIsMutable();
+          stats_.set(index, value);
+          onChanged();
+        } else {
+          statsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -2208,16 +3613,29 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder setStats(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder builderForValue) {
-        copyOnWrite();
-        instance.setStats(index, builderForValue);
+        if (statsBuilder_ == null) {
+          ensureStatsIsMutable();
+          stats_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          statsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public Builder addStats(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats value) {
-        copyOnWrite();
-        instance.addStats(value);
+        if (statsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatsIsMutable();
+          stats_.add(value);
+          onChanged();
+        } else {
+          statsBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -2225,8 +3643,16 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addStats(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats value) {
-        copyOnWrite();
-        instance.addStats(index, value);
+        if (statsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatsIsMutable();
+          stats_.add(index, value);
+          onChanged();
+        } else {
+          statsBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -2234,8 +3660,13 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addStats(
           net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder builderForValue) {
-        copyOnWrite();
-        instance.addStats(builderForValue);
+        if (statsBuilder_ == null) {
+          ensureStatsIsMutable();
+          stats_.add(builderForValue.build());
+          onChanged();
+        } else {
+          statsBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -2243,8 +3674,13 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addStats(
           int index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder builderForValue) {
-        copyOnWrite();
-        instance.addStats(index, builderForValue);
+        if (statsBuilder_ == null) {
+          ensureStatsIsMutable();
+          stats_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          statsBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -2252,146 +3688,237 @@ public final class ProtoChannelGetMessagesStats {
        */
       public Builder addAllStats(
           java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats> values) {
-        copyOnWrite();
-        instance.addAllStats(values);
+        if (statsBuilder_ == null) {
+          ensureStatsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, stats_);
+          onChanged();
+        } else {
+          statsBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public Builder clearStats() {
-        copyOnWrite();
-        instance.clearStats();
+        if (statsBuilder_ == null) {
+          stats_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          statsBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
        */
       public Builder removeStats(int index) {
-        copyOnWrite();
-        instance.removeStats(index);
+        if (statsBuilder_ == null) {
+          ensureStatsIsMutable();
+          stats_.remove(index);
+          onChanged();
+        } else {
+          statsBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder getStatsBuilder(
+          int index) {
+        return getStatsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder getStatsOrBuilder(
+          int index) {
+        if (statsBuilder_ == null) {
+          return stats_.get(index);  } else {
+          return statsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder> 
+           getStatsOrBuilderList() {
+        if (statsBuilder_ != null) {
+          return statsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stats_);
+        }
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder addStatsBuilder() {
+        return getStatsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder addStatsBuilder(
+          int index) {
+        return getStatsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMessagesStatsResponse.Stats stats = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder> 
+           getStatsBuilderList() {
+        return getStatsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder> 
+          getStatsFieldBuilder() {
+        if (statsBuilder_ == null) {
+          statsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.Builder, net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.StatsOrBuilder>(
+                  stats_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          stats_ = null;
+        }
+        return statsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ChannelGetMessagesStatsResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          stats_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse other = (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          stats_= visitor.visitList(stats_, other.stats_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!stats_.isModifiable()) {
-                    stats_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(stats_);
-                  }
-                  stats_.add(
-                      input.readMessage(net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.Stats.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ChannelGetMessagesStatsResponse)
     private static final net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChannelGetMessagesStatsResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse();
     }
 
     public static net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChannelGetMessagesStatsResponse> PARSER;
+    private static final com.google.protobuf.Parser<ChannelGetMessagesStatsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelGetMessagesStatsResponse>() {
+      @java.lang.Override
+      public ChannelGetMessagesStatsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChannelGetMessagesStatsResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ChannelGetMessagesStatsResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelGetMessagesStatsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoChannelGetMessagesStats.ChannelGetMessagesStatsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMessagesStats_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMessagesStats_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMessagesStats_messageIdInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMessagesStats_messageIdInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMessagesStatsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMessagesStatsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMessagesStatsResponse_Stats_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMessagesStatsResponse_Stats_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\035ChannelGetMessagesStats.proto\022\005proto\032\r" +
+      "Request.proto\032\016Response.proto\"\344\001\n\027Channe" +
+      "lGetMessagesStats\022\037\n\007request\030\001 \001(\0132\016.pro" +
+      "to.Request\022\017\n\007room_id\030\002 \001(\004\022\026\n\nmessage_i" +
+      "d\030\003 \003(\004B\002\030\001\022E\n\017message_id_info\030\004 \003(\0132,.p" +
+      "roto.ChannelGetMessagesStats.messageIdIn" +
+      "fo\0328\n\rmessageIdInfo\022\022\n\nmessage_id\030\001 \001(\004\022" +
+      "\023\n\013document_id\030\002 \001(\004\"\374\001\n\037ChannelGetMessa" +
+      "gesStatsResponse\022!\n\010response\030\001 \001(\0132\017.pro" +
+      "to.Response\022;\n\005stats\030\002 \003(\0132,.proto.Chann" +
+      "elGetMessagesStatsResponse.Stats\032y\n\005Stat" +
+      "s\022\022\n\nmessage_id\030\001 \001(\004\022\023\n\013views_label\030\002 \001" +
+      "(\t\022\027\n\017thumbs_up_label\030\003 \001(\t\022\031\n\021thumbs_do" +
+      "wn_label\030\004 \001(\t\022\023\n\013document_id\030\005 \001(\004B.\n\016n" +
+      "et.iGap.protoB\034ProtoChannelGetMessagesSt" +
+      "atsb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_ChannelGetMessagesStats_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ChannelGetMessagesStats_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMessagesStats_descriptor,
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "MessageIdInfo", });
+    internal_static_proto_ChannelGetMessagesStats_messageIdInfo_descriptor =
+      internal_static_proto_ChannelGetMessagesStats_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ChannelGetMessagesStats_messageIdInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMessagesStats_messageIdInfo_descriptor,
+        new java.lang.String[] { "MessageId", "DocumentId", });
+    internal_static_proto_ChannelGetMessagesStatsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ChannelGetMessagesStatsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMessagesStatsResponse_descriptor,
+        new java.lang.String[] { "Response", "Stats", });
+    internal_static_proto_ChannelGetMessagesStatsResponse_Stats_descriptor =
+      internal_static_proto_ChannelGetMessagesStatsResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ChannelGetMessagesStatsResponse_Stats_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMessagesStatsResponse_Stats_descriptor,
+        new java.lang.String[] { "MessageId", "ViewsLabel", "ThumbsUpLabel", "ThumbsDownLabel", "DocumentId", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

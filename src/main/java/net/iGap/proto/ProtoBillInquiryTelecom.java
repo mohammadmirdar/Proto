@@ -8,137 +8,203 @@ public final class ProtoBillInquiryTelecom {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface BillInquiryTelecomOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.BillInquiryTelecom)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint32 province_code = 2;</code>
+     * <code>uint32 province_code = 2;</code>
+     * @return The provinceCode.
      */
     int getProvinceCode();
 
     /**
-     * <code>optional uint64 telephone_number = 3;</code>
+     * <code>uint64 telephone_number = 3;</code>
+     * @return The telephoneNumber.
      */
     long getTelephoneNumber();
   }
   /**
    * Protobuf type {@code proto.BillInquiryTelecom}
    */
-  public  static final class BillInquiryTelecom extends
-      com.google.protobuf.GeneratedMessageLite<
-          BillInquiryTelecom, BillInquiryTelecom.Builder> implements
+  public static final class BillInquiryTelecom extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.BillInquiryTelecom)
       BillInquiryTelecomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BillInquiryTelecom.newBuilder() to construct.
+    private BillInquiryTelecom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private BillInquiryTelecom() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BillInquiryTelecom();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BillInquiryTelecom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              provinceCode_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              telephoneNumber_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.class, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int PROVINCE_CODE_FIELD_NUMBER = 2;
     private int provinceCode_;
     /**
-     * <code>optional uint32 province_code = 2;</code>
+     * <code>uint32 province_code = 2;</code>
+     * @return The provinceCode.
      */
+    @java.lang.Override
     public int getProvinceCode() {
       return provinceCode_;
-    }
-    /**
-     * <code>optional uint32 province_code = 2;</code>
-     */
-    private void setProvinceCode(int value) {
-      
-      provinceCode_ = value;
-    }
-    /**
-     * <code>optional uint32 province_code = 2;</code>
-     */
-    private void clearProvinceCode() {
-      
-      provinceCode_ = 0;
     }
 
     public static final int TELEPHONE_NUMBER_FIELD_NUMBER = 3;
     private long telephoneNumber_;
     /**
-     * <code>optional uint64 telephone_number = 3;</code>
+     * <code>uint64 telephone_number = 3;</code>
+     * @return The telephoneNumber.
      */
+    @java.lang.Override
     public long getTelephoneNumber() {
       return telephoneNumber_;
     }
-    /**
-     * <code>optional uint64 telephone_number = 3;</code>
-     */
-    private void setTelephoneNumber(long value) {
-      
-      telephoneNumber_ = value;
-    }
-    /**
-     * <code>optional uint64 telephone_number = 3;</code>
-     */
-    private void clearTelephoneNumber() {
-      
-      telephoneNumber_ = 0L;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -150,10 +216,12 @@ public final class ProtoBillInquiryTelecom {
       if (telephoneNumber_ != 0L) {
         output.writeUInt64(3, telephoneNumber_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -169,457 +237,899 @@ public final class ProtoBillInquiryTelecom {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, telephoneNumber_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom other = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getProvinceCode()
+          != other.getProvinceCode()) return false;
+      if (getTelephoneNumber()
+          != other.getTelephoneNumber()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + PROVINCE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getProvinceCode();
+      hash = (37 * hash) + TELEPHONE_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTelephoneNumber());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.BillInquiryTelecom}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.BillInquiryTelecom)
         net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.class, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        provinceCode_ = 0;
 
+        telephoneNumber_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecom_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom build() {
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom buildPartial() {
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom result = new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.provinceCode_ = provinceCode_;
+        result.telephoneNumber_ = telephoneNumber_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom) {
+          return mergeFrom((net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom other) {
+        if (other == net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getProvinceCode() != 0) {
+          setProvinceCode(other.getProvinceCode());
+        }
+        if (other.getTelephoneNumber() != 0L) {
+          setTelephoneNumber(other.getTelephoneNumber());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private int provinceCode_ ;
       /**
-       * <code>optional uint32 province_code = 2;</code>
+       * <code>uint32 province_code = 2;</code>
+       * @return The provinceCode.
        */
+      @java.lang.Override
       public int getProvinceCode() {
-        return instance.getProvinceCode();
+        return provinceCode_;
       }
       /**
-       * <code>optional uint32 province_code = 2;</code>
+       * <code>uint32 province_code = 2;</code>
+       * @param value The provinceCode to set.
+       * @return This builder for chaining.
        */
       public Builder setProvinceCode(int value) {
-        copyOnWrite();
-        instance.setProvinceCode(value);
+        
+        provinceCode_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 province_code = 2;</code>
+       * <code>uint32 province_code = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProvinceCode() {
-        copyOnWrite();
-        instance.clearProvinceCode();
+        
+        provinceCode_ = 0;
+        onChanged();
         return this;
       }
 
+      private long telephoneNumber_ ;
       /**
-       * <code>optional uint64 telephone_number = 3;</code>
+       * <code>uint64 telephone_number = 3;</code>
+       * @return The telephoneNumber.
        */
+      @java.lang.Override
       public long getTelephoneNumber() {
-        return instance.getTelephoneNumber();
+        return telephoneNumber_;
       }
       /**
-       * <code>optional uint64 telephone_number = 3;</code>
+       * <code>uint64 telephone_number = 3;</code>
+       * @param value The telephoneNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setTelephoneNumber(long value) {
-        copyOnWrite();
-        instance.setTelephoneNumber(value);
+        
+        telephoneNumber_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 telephone_number = 3;</code>
+       * <code>uint64 telephone_number = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTelephoneNumber() {
-        copyOnWrite();
-        instance.clearTelephoneNumber();
+        
+        telephoneNumber_ = 0L;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.BillInquiryTelecom)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom other = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          provinceCode_ = visitor.visitInt(provinceCode_ != 0, provinceCode_,
-              other.provinceCode_ != 0, other.provinceCode_);
-          telephoneNumber_ = visitor.visitLong(telephoneNumber_ != 0L, telephoneNumber_,
-              other.telephoneNumber_ != 0L, other.telephoneNumber_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  provinceCode_ = input.readUInt32();
-                  break;
-                }
-                case 24: {
-
-                  telephoneNumber_ = input.readUInt64();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.BillInquiryTelecom)
     private static final net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BillInquiryTelecom();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom();
     }
 
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<BillInquiryTelecom> PARSER;
+    private static final com.google.protobuf.Parser<BillInquiryTelecom>
+        PARSER = new com.google.protobuf.AbstractParser<BillInquiryTelecom>() {
+      @java.lang.Override
+      public BillInquiryTelecom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BillInquiryTelecom(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<BillInquiryTelecom> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BillInquiryTelecom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface BillInquiryTelecomResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.BillInquiryTelecomResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional uint32 status = 2;</code>
+     * <code>uint32 status = 2;</code>
+     * @return The status.
      */
     int getStatus();
 
     /**
-     * <code>optional string message = 3;</code>
+     * <code>string message = 3;</code>
+     * @return The message.
      */
     java.lang.String getMessage();
     /**
-     * <code>optional string message = 3;</code>
+     * <code>string message = 3;</code>
+     * @return The bytes for message.
      */
     com.google.protobuf.ByteString
         getMessageBytes();
 
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * @return Whether the midTerm field is set.
      */
     boolean hasMidTerm();
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * @return The midTerm.
      */
     net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getMidTerm();
+    /**
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     */
+    net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder getMidTermOrBuilder();
 
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * @return Whether the lastTerm field is set.
      */
     boolean hasLastTerm();
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * @return The lastTerm.
      */
     net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getLastTerm();
+    /**
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     */
+    net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder getLastTermOrBuilder();
   }
   /**
    * Protobuf type {@code proto.BillInquiryTelecomResponse}
    */
-  public  static final class BillInquiryTelecomResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          BillInquiryTelecomResponse, BillInquiryTelecomResponse.Builder> implements
+  public static final class BillInquiryTelecomResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.BillInquiryTelecomResponse)
       BillInquiryTelecomResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BillInquiryTelecomResponse.newBuilder() to construct.
+    private BillInquiryTelecomResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private BillInquiryTelecomResponse() {
       message_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BillInquiryTelecomResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BillInquiryTelecomResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              status_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 34: {
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder subBuilder = null;
+              if (midTerm_ != null) {
+                subBuilder = midTerm_.toBuilder();
+              }
+              midTerm_ = input.readMessage(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(midTerm_);
+                midTerm_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder subBuilder = null;
+              if (lastTerm_ != null) {
+                subBuilder = lastTerm_.toBuilder();
+              }
+              lastTerm_ = input.readMessage(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastTerm_);
+                lastTerm_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.class, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.Builder.class);
+    }
+
     public interface BillInfoOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.BillInquiryTelecomResponse.BillInfo)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 bill_id = 1;</code>
+       * <code>uint64 bill_id = 1;</code>
+       * @return The billId.
        */
       long getBillId();
 
       /**
-       * <code>optional uint64 pay_id = 2;</code>
+       * <code>uint64 pay_id = 2;</code>
+       * @return The payId.
        */
       long getPayId();
 
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>uint64 amount = 3;</code>
+       * @return The amount.
        */
       long getAmount();
     }
     /**
      * Protobuf type {@code proto.BillInquiryTelecomResponse.BillInfo}
      */
-    public  static final class BillInfo extends
-        com.google.protobuf.GeneratedMessageLite<
-            BillInfo, BillInfo.Builder> implements
+    public static final class BillInfo extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.BillInquiryTelecomResponse.BillInfo)
         BillInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use BillInfo.newBuilder() to construct.
+      private BillInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private BillInfo() {
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new BillInfo();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private BillInfo(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                billId_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+
+                payId_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+
+                amount_ = input.readUInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_BillInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_BillInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.class, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder.class);
+      }
+
       public static final int BILL_ID_FIELD_NUMBER = 1;
       private long billId_;
       /**
-       * <code>optional uint64 bill_id = 1;</code>
+       * <code>uint64 bill_id = 1;</code>
+       * @return The billId.
        */
+      @java.lang.Override
       public long getBillId() {
         return billId_;
-      }
-      /**
-       * <code>optional uint64 bill_id = 1;</code>
-       */
-      private void setBillId(long value) {
-        
-        billId_ = value;
-      }
-      /**
-       * <code>optional uint64 bill_id = 1;</code>
-       */
-      private void clearBillId() {
-        
-        billId_ = 0L;
       }
 
       public static final int PAY_ID_FIELD_NUMBER = 2;
       private long payId_;
       /**
-       * <code>optional uint64 pay_id = 2;</code>
+       * <code>uint64 pay_id = 2;</code>
+       * @return The payId.
        */
+      @java.lang.Override
       public long getPayId() {
         return payId_;
-      }
-      /**
-       * <code>optional uint64 pay_id = 2;</code>
-       */
-      private void setPayId(long value) {
-        
-        payId_ = value;
-      }
-      /**
-       * <code>optional uint64 pay_id = 2;</code>
-       */
-      private void clearPayId() {
-        
-        payId_ = 0L;
       }
 
       public static final int AMOUNT_FIELD_NUMBER = 3;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>uint64 amount = 3;</code>
+       * @return The amount.
        */
+      @java.lang.Override
       public long getAmount() {
         return amount_;
       }
-      /**
-       * <code>optional uint64 amount = 3;</code>
-       */
-      private void setAmount(long value) {
-        
-        amount_ = value;
-      }
-      /**
-       * <code>optional uint64 amount = 3;</code>
-       */
-      private void clearAmount() {
-        
-        amount_ = 0L;
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (billId_ != 0L) {
@@ -631,10 +1141,12 @@ public final class ProtoBillInquiryTelecom {
         if (amount_ != 0L) {
           output.writeUInt64(3, amount_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -650,498 +1162,585 @@ public final class ProtoBillInquiryTelecom {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(3, amount_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo other = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo) obj;
+
+        if (getBillId()
+            != other.getBillId()) return false;
+        if (getPayId()
+            != other.getPayId()) return false;
+        if (getAmount()
+            != other.getAmount()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + BILL_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getBillId());
+        hash = (37 * hash) + PAY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getPayId());
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getAmount());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.BillInquiryTelecomResponse.BillInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.BillInquiryTelecomResponse.BillInfo)
           net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_BillInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_BillInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.class, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          billId_ = 0L;
 
+          payId_ = 0L;
+
+          amount_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_BillInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo build() {
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo buildPartial() {
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo result = new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo(this);
+          result.billId_ = billId_;
+          result.payId_ = payId_;
+          result.amount_ = amount_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo) {
+            return mergeFrom((net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo other) {
+          if (other == net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance()) return this;
+          if (other.getBillId() != 0L) {
+            setBillId(other.getBillId());
+          }
+          if (other.getPayId() != 0L) {
+            setPayId(other.getPayId());
+          }
+          if (other.getAmount() != 0L) {
+            setAmount(other.getAmount());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long billId_ ;
         /**
-         * <code>optional uint64 bill_id = 1;</code>
+         * <code>uint64 bill_id = 1;</code>
+         * @return The billId.
          */
+        @java.lang.Override
         public long getBillId() {
-          return instance.getBillId();
+          return billId_;
         }
         /**
-         * <code>optional uint64 bill_id = 1;</code>
+         * <code>uint64 bill_id = 1;</code>
+         * @param value The billId to set.
+         * @return This builder for chaining.
          */
         public Builder setBillId(long value) {
-          copyOnWrite();
-          instance.setBillId(value);
+          
+          billId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 bill_id = 1;</code>
+         * <code>uint64 bill_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBillId() {
-          copyOnWrite();
-          instance.clearBillId();
+          
+          billId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long payId_ ;
         /**
-         * <code>optional uint64 pay_id = 2;</code>
+         * <code>uint64 pay_id = 2;</code>
+         * @return The payId.
          */
+        @java.lang.Override
         public long getPayId() {
-          return instance.getPayId();
+          return payId_;
         }
         /**
-         * <code>optional uint64 pay_id = 2;</code>
+         * <code>uint64 pay_id = 2;</code>
+         * @param value The payId to set.
+         * @return This builder for chaining.
          */
         public Builder setPayId(long value) {
-          copyOnWrite();
-          instance.setPayId(value);
+          
+          payId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 pay_id = 2;</code>
+         * <code>uint64 pay_id = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearPayId() {
-          copyOnWrite();
-          instance.clearPayId();
+          
+          payId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private long amount_ ;
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>uint64 amount = 3;</code>
+         * @return The amount.
          */
+        @java.lang.Override
         public long getAmount() {
-          return instance.getAmount();
+          return amount_;
         }
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>uint64 amount = 3;</code>
+         * @param value The amount to set.
+         * @return This builder for chaining.
          */
         public Builder setAmount(long value) {
-          copyOnWrite();
-          instance.setAmount(value);
+          
+          amount_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>uint64 amount = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAmount() {
-          copyOnWrite();
-          instance.clearAmount();
+          
+          amount_ = 0L;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.BillInquiryTelecomResponse.BillInfo)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo other = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo) arg1;
-            billId_ = visitor.visitLong(billId_ != 0L, billId_,
-                other.billId_ != 0L, other.billId_);
-            payId_ = visitor.visitLong(payId_ != 0L, payId_,
-                other.payId_ != 0L, other.payId_);
-            amount_ = visitor.visitLong(amount_ != 0L, amount_,
-                other.amount_ != 0L, other.amount_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    billId_ = input.readUInt64();
-                    break;
-                  }
-                  case 16: {
-
-                    payId_ = input.readUInt64();
-                    break;
-                  }
-                  case 24: {
-
-                    amount_ = input.readUInt64();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.BillInquiryTelecomResponse.BillInfo)
       private static final net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new BillInfo();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo();
       }
 
       public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<BillInfo> PARSER;
+      private static final com.google.protobuf.Parser<BillInfo>
+          PARSER = new com.google.protobuf.AbstractParser<BillInfo>() {
+        @java.lang.Override
+        public BillInfo parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BillInfo(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<BillInfo> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BillInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private int status_;
     /**
-     * <code>optional uint32 status = 2;</code>
+     * <code>uint32 status = 2;</code>
+     * @return The status.
      */
+    @java.lang.Override
     public int getStatus() {
       return status_;
     }
-    /**
-     * <code>optional uint32 status = 2;</code>
-     */
-    private void setStatus(int value) {
-      
-      status_ = value;
-    }
-    /**
-     * <code>optional uint32 status = 2;</code>
-     */
-    private void clearStatus() {
-      
-      status_ = 0;
-    }
 
     public static final int MESSAGE_FIELD_NUMBER = 3;
-    private java.lang.String message_;
+    private volatile java.lang.Object message_;
     /**
-     * <code>optional string message = 3;</code>
+     * <code>string message = 3;</code>
+     * @return The message.
      */
+    @java.lang.Override
     public java.lang.String getMessage() {
-      return message_;
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string message = 3;</code>
+     * <code>string message = 3;</code>
+     * @return The bytes for message.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(message_);
-    }
-    /**
-     * <code>optional string message = 3;</code>
-     */
-    private void setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-    }
-    /**
-     * <code>optional string message = 3;</code>
-     */
-    private void clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-    }
-    /**
-     * <code>optional string message = 3;</code>
-     */
-    private void setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value.toStringUtf8();
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MID_TERM_FIELD_NUMBER = 4;
     private net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo midTerm_;
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * @return Whether the midTerm field is set.
      */
+    @java.lang.Override
     public boolean hasMidTerm() {
       return midTerm_ != null;
     }
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * @return The midTerm.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getMidTerm() {
       return midTerm_ == null ? net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance() : midTerm_;
     }
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
      */
-    private void setMidTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      midTerm_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
-     */
-    private void setMidTerm(
-        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder builderForValue) {
-      midTerm_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
-     */
-    private void mergeMidTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-      if (midTerm_ != null &&
-          midTerm_ != net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance()) {
-        midTerm_ =
-          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.newBuilder(midTerm_).mergeFrom(value).buildPartial();
-      } else {
-        midTerm_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
-     */
-    private void clearMidTerm() {  midTerm_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder getMidTermOrBuilder() {
+      return getMidTerm();
     }
 
     public static final int LAST_TERM_FIELD_NUMBER = 5;
     private net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo lastTerm_;
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * @return Whether the lastTerm field is set.
      */
+    @java.lang.Override
     public boolean hasLastTerm() {
       return lastTerm_ != null;
     }
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * @return The lastTerm.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getLastTerm() {
       return lastTerm_ == null ? net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance() : lastTerm_;
     }
     /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+     * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
      */
-    private void setLastTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      lastTerm_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
-     */
-    private void setLastTerm(
-        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder builderForValue) {
-      lastTerm_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
-     */
-    private void mergeLastTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-      if (lastTerm_ != null &&
-          lastTerm_ != net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance()) {
-        lastTerm_ =
-          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.newBuilder(lastTerm_).mergeFrom(value).buildPartial();
-      } else {
-        lastTerm_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
-     */
-    private void clearLastTerm() {  lastTerm_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder getLastTermOrBuilder() {
+      return getLastTerm();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1150,8 +1749,8 @@ public final class ProtoBillInquiryTelecom {
       if (status_ != 0) {
         output.writeUInt32(2, status_);
       }
-      if (!message_.isEmpty()) {
-        output.writeString(3, getMessage());
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
       }
       if (midTerm_ != null) {
         output.writeMessage(4, getMidTerm());
@@ -1159,10 +1758,12 @@ public final class ProtoBillInquiryTelecom {
       if (lastTerm_ != null) {
         output.writeMessage(5, getLastTerm());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1174,9 +1775,8 @@ public final class ProtoBillInquiryTelecom {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, status_);
       }
-      if (!message_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(3, getMessage());
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
       }
       if (midTerm_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -1186,440 +1786,938 @@ public final class ProtoBillInquiryTelecom {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getLastTerm());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse other = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (hasMidTerm() != other.hasMidTerm()) return false;
+      if (hasMidTerm()) {
+        if (!getMidTerm()
+            .equals(other.getMidTerm())) return false;
+      }
+      if (hasLastTerm() != other.hasLastTerm()) return false;
+      if (hasLastTerm()) {
+        if (!getLastTerm()
+            .equals(other.getLastTerm())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      if (hasMidTerm()) {
+        hash = (37 * hash) + MID_TERM_FIELD_NUMBER;
+        hash = (53 * hash) + getMidTerm().hashCode();
+      }
+      if (hasLastTerm()) {
+        hash = (37 * hash) + LAST_TERM_FIELD_NUMBER;
+        hash = (53 * hash) + getLastTerm().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.BillInquiryTelecomResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.BillInquiryTelecomResponse)
         net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.class, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        status_ = 0;
 
+        message_ = "";
+
+        if (midTermBuilder_ == null) {
+          midTerm_ = null;
+        } else {
+          midTerm_ = null;
+          midTermBuilder_ = null;
+        }
+        if (lastTermBuilder_ == null) {
+          lastTerm_ = null;
+        } else {
+          lastTerm_ = null;
+          lastTermBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.internal_static_proto_BillInquiryTelecomResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse build() {
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse buildPartial() {
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse result = new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.status_ = status_;
+        result.message_ = message_;
+        if (midTermBuilder_ == null) {
+          result.midTerm_ = midTerm_;
+        } else {
+          result.midTerm_ = midTermBuilder_.build();
+        }
+        if (lastTermBuilder_ == null) {
+          result.lastTerm_ = lastTerm_;
+        } else {
+          result.lastTerm_ = lastTermBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse) {
+          return mergeFrom((net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse other) {
+        if (other == net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (other.hasMidTerm()) {
+          mergeMidTerm(other.getMidTerm());
+        }
+        if (other.hasLastTerm()) {
+          mergeLastTerm(other.getLastTerm());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private int status_ ;
       /**
-       * <code>optional uint32 status = 2;</code>
+       * <code>uint32 status = 2;</code>
+       * @return The status.
        */
+      @java.lang.Override
       public int getStatus() {
-        return instance.getStatus();
+        return status_;
       }
       /**
-       * <code>optional uint32 status = 2;</code>
+       * <code>uint32 status = 2;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
        */
       public Builder setStatus(int value) {
-        copyOnWrite();
-        instance.setStatus(value);
+        
+        status_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 status = 2;</code>
+       * <code>uint32 status = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        copyOnWrite();
-        instance.clearStatus();
+        
+        status_ = 0;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object message_ = "";
       /**
-       * <code>optional string message = 3;</code>
+       * <code>string message = 3;</code>
+       * @return The message.
        */
       public java.lang.String getMessage() {
-        return instance.getMessage();
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string message = 3;</code>
+       * <code>string message = 3;</code>
+       * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
-        return instance.getMessageBytes();
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string message = 3;</code>
+       * <code>string message = 3;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
        */
       public Builder setMessage(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setMessage(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string message = 3;</code>
+       * <code>string message = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMessage() {
-        copyOnWrite();
-        instance.clearMessage();
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string message = 3;</code>
+       * <code>string message = 3;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setMessageBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
         return this;
       }
 
+      private net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo midTerm_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder> midTermBuilder_;
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * @return Whether the midTerm field is set.
        */
       public boolean hasMidTerm() {
-        return instance.hasMidTerm();
+        return midTermBuilder_ != null || midTerm_ != null;
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * @return The midTerm.
        */
       public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getMidTerm() {
-        return instance.getMidTerm();
+        if (midTermBuilder_ == null) {
+          return midTerm_ == null ? net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance() : midTerm_;
+        } else {
+          return midTermBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
        */
       public Builder setMidTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-        copyOnWrite();
-        instance.setMidTerm(value);
-        return this;
+        if (midTermBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          midTerm_ = value;
+          onChanged();
+        } else {
+          midTermBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
        */
       public Builder setMidTerm(
           net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder builderForValue) {
-        copyOnWrite();
-        instance.setMidTerm(builderForValue);
+        if (midTermBuilder_ == null) {
+          midTerm_ = builderForValue.build();
+          onChanged();
+        } else {
+          midTermBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
        */
       public Builder mergeMidTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-        copyOnWrite();
-        instance.mergeMidTerm(value);
+        if (midTermBuilder_ == null) {
+          if (midTerm_ != null) {
+            midTerm_ =
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.newBuilder(midTerm_).mergeFrom(value).buildPartial();
+          } else {
+            midTerm_ = value;
+          }
+          onChanged();
+        } else {
+          midTermBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
        */
-      public Builder clearMidTerm() {  copyOnWrite();
-        instance.clearMidTerm();
+      public Builder clearMidTerm() {
+        if (midTermBuilder_ == null) {
+          midTerm_ = null;
+          onChanged();
+        } else {
+          midTerm_ = null;
+          midTermBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       */
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder getMidTermBuilder() {
+        
+        onChanged();
+        return getMidTermFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       */
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder getMidTermOrBuilder() {
+        if (midTermBuilder_ != null) {
+          return midTermBuilder_.getMessageOrBuilder();
+        } else {
+          return midTerm_ == null ?
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance() : midTerm_;
+        }
+      }
+      /**
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo mid_term = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder> 
+          getMidTermFieldBuilder() {
+        if (midTermBuilder_ == null) {
+          midTermBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder>(
+                  getMidTerm(),
+                  getParentForChildren(),
+                  isClean());
+          midTerm_ = null;
+        }
+        return midTermBuilder_;
       }
 
+      private net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo lastTerm_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder> lastTermBuilder_;
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * @return Whether the lastTerm field is set.
        */
       public boolean hasLastTerm() {
-        return instance.hasLastTerm();
+        return lastTermBuilder_ != null || lastTerm_ != null;
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * @return The lastTerm.
        */
       public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo getLastTerm() {
-        return instance.getLastTerm();
+        if (lastTermBuilder_ == null) {
+          return lastTerm_ == null ? net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance() : lastTerm_;
+        } else {
+          return lastTermBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
        */
       public Builder setLastTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-        copyOnWrite();
-        instance.setLastTerm(value);
-        return this;
+        if (lastTermBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastTerm_ = value;
+          onChanged();
+        } else {
+          lastTermBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
        */
       public Builder setLastTerm(
           net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder builderForValue) {
-        copyOnWrite();
-        instance.setLastTerm(builderForValue);
+        if (lastTermBuilder_ == null) {
+          lastTerm_ = builderForValue.build();
+          onChanged();
+        } else {
+          lastTermBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
        */
       public Builder mergeLastTerm(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo value) {
-        copyOnWrite();
-        instance.mergeLastTerm(value);
+        if (lastTermBuilder_ == null) {
+          if (lastTerm_ != null) {
+            lastTerm_ =
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.newBuilder(lastTerm_).mergeFrom(value).buildPartial();
+          } else {
+            lastTerm_ = value;
+          }
+          onChanged();
+        } else {
+          lastTermBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
        */
-      public Builder clearLastTerm() {  copyOnWrite();
-        instance.clearLastTerm();
+      public Builder clearLastTerm() {
+        if (lastTermBuilder_ == null) {
+          lastTerm_ = null;
+          onChanged();
+        } else {
+          lastTerm_ = null;
+          lastTermBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       */
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder getLastTermBuilder() {
+        
+        onChanged();
+        return getLastTermFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       */
+      public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder getLastTermOrBuilder() {
+        if (lastTermBuilder_ != null) {
+          return lastTermBuilder_.getMessageOrBuilder();
+        } else {
+          return lastTerm_ == null ?
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.getDefaultInstance() : lastTerm_;
+        }
+      }
+      /**
+       * <code>.proto.BillInquiryTelecomResponse.BillInfo last_term = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder> 
+          getLastTermFieldBuilder() {
+        if (lastTermBuilder_ == null) {
+          lastTermBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder, net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfoOrBuilder>(
+                  getLastTerm(),
+                  getParentForChildren(),
+                  isClean());
+          lastTerm_ = null;
+        }
+        return lastTermBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.BillInquiryTelecomResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse other = (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          status_ = visitor.visitInt(status_ != 0, status_,
-              other.status_ != 0, other.status_);
-          message_ = visitor.visitString(!message_.isEmpty(), message_,
-              !other.message_.isEmpty(), other.message_);
-          midTerm_ = visitor.visitMessage(midTerm_, other.midTerm_);
-          lastTerm_ = visitor.visitMessage(lastTerm_, other.lastTerm_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  status_ = input.readUInt32();
-                  break;
-                }
-                case 26: {
-                  String s = input.readStringRequireUtf8();
-
-                  message_ = s;
-                  break;
-                }
-                case 34: {
-                  net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder subBuilder = null;
-                  if (midTerm_ != null) {
-                    subBuilder = midTerm_.toBuilder();
-                  }
-                  midTerm_ = input.readMessage(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(midTerm_);
-                    midTerm_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 42: {
-                  net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.Builder subBuilder = null;
-                  if (lastTerm_ != null) {
-                    subBuilder = lastTerm_.toBuilder();
-                  }
-                  lastTerm_ = input.readMessage(net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.BillInfo.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(lastTerm_);
-                    lastTerm_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.BillInquiryTelecomResponse)
     private static final net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BillInquiryTelecomResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse();
     }
 
     public static net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<BillInquiryTelecomResponse> PARSER;
+    private static final com.google.protobuf.Parser<BillInquiryTelecomResponse>
+        PARSER = new com.google.protobuf.AbstractParser<BillInquiryTelecomResponse>() {
+      @java.lang.Override
+      public BillInquiryTelecomResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BillInquiryTelecomResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<BillInquiryTelecomResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BillInquiryTelecomResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoBillInquiryTelecom.BillInquiryTelecomResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_BillInquiryTelecom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_BillInquiryTelecom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_BillInquiryTelecomResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_BillInquiryTelecomResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_BillInquiryTelecomResponse_BillInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_BillInquiryTelecomResponse_BillInfo_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\030BillInquiryTelecom.proto\022\005proto\032\rReque" +
+      "st.proto\032\016Response.proto\"f\n\022BillInquiryT" +
+      "elecom\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022" +
+      "\025\n\rprovince_code\030\002 \001(\r\022\030\n\020telephone_numb" +
+      "er\030\003 \001(\004\"\232\002\n\032BillInquiryTelecomResponse\022" +
+      "!\n\010response\030\001 \001(\0132\017.proto.Response\022\016\n\006st" +
+      "atus\030\002 \001(\r\022\017\n\007message\030\003 \001(\t\022<\n\010mid_term\030" +
+      "\004 \001(\0132*.proto.BillInquiryTelecomResponse" +
+      ".BillInfo\022=\n\tlast_term\030\005 \001(\0132*.proto.Bil" +
+      "lInquiryTelecomResponse.BillInfo\032;\n\010Bill" +
+      "Info\022\017\n\007bill_id\030\001 \001(\004\022\016\n\006pay_id\030\002 \001(\004\022\016\n" +
+      "\006amount\030\003 \001(\004B)\n\016net.iGap.protoB\027ProtoBi" +
+      "llInquiryTelecomb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_BillInquiryTelecom_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_BillInquiryTelecom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BillInquiryTelecom_descriptor,
+        new java.lang.String[] { "Request", "ProvinceCode", "TelephoneNumber", });
+    internal_static_proto_BillInquiryTelecomResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_BillInquiryTelecomResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BillInquiryTelecomResponse_descriptor,
+        new java.lang.String[] { "Response", "Status", "Message", "MidTerm", "LastTerm", });
+    internal_static_proto_BillInquiryTelecomResponse_BillInfo_descriptor =
+      internal_static_proto_BillInquiryTelecomResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_BillInquiryTelecomResponse_BillInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BillInquiryTelecomResponse_BillInfo_descriptor,
+        new java.lang.String[] { "BillId", "PayId", "Amount", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

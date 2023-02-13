@@ -8,90 +8,170 @@ public final class ProtoClientGetFavoriteMenu {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ClientGetFavoriteMenuOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientGetFavoriteMenu)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ClientGetFavoriteMenu}
    */
-  public  static final class ClientGetFavoriteMenu extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientGetFavoriteMenu, ClientGetFavoriteMenu.Builder> implements
+  public static final class ClientGetFavoriteMenu extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientGetFavoriteMenu)
       ClientGetFavoriteMenuOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ClientGetFavoriteMenu.newBuilder() to construct.
+    private ClientGetFavoriteMenu(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ClientGetFavoriteMenu() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientGetFavoriteMenu();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientGetFavoriteMenu(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenu_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenu_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.class, net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -99,254 +179,480 @@ public final class ProtoClientGetFavoriteMenu {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu other = (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientGetFavoriteMenu}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientGetFavoriteMenu)
         net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenu_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenu_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.class, net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenu_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu build() {
+        net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu buildPartial() {
+        net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu result = new net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu) {
+          return mergeFrom((net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu other) {
+        if (other == net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ClientGetFavoriteMenu)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu other = (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientGetFavoriteMenu)
     private static final net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetFavoriteMenu();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu();
     }
 
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetFavoriteMenu> PARSER;
+    private static final com.google.protobuf.Parser<ClientGetFavoriteMenu>
+        PARSER = new com.google.protobuf.AbstractParser<ClientGetFavoriteMenu>() {
+      @java.lang.Override
+      public ClientGetFavoriteMenu parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientGetFavoriteMenu(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientGetFavoriteMenu> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientGetFavoriteMenu> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenu getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ClientGetFavoriteMenuResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientGetFavoriteMenuResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.Favorite favorites = 2;</code>
@@ -361,82 +667,160 @@ public final class ProtoClientGetFavoriteMenu {
      * <code>repeated .proto.Favorite favorites = 2;</code>
      */
     int getFavoritesCount();
+    /**
+     * <code>repeated .proto.Favorite favorites = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.FavoriteOrBuilder> 
+        getFavoritesOrBuilderList();
+    /**
+     * <code>repeated .proto.Favorite favorites = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.FavoriteOrBuilder getFavoritesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ClientGetFavoriteMenuResponse}
    */
-  public  static final class ClientGetFavoriteMenuResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientGetFavoriteMenuResponse, ClientGetFavoriteMenuResponse.Builder> implements
+  public static final class ClientGetFavoriteMenuResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientGetFavoriteMenuResponse)
       ClientGetFavoriteMenuResponseOrBuilder {
-    private ClientGetFavoriteMenuResponse() {
-      favorites_ = emptyProtobufList();
+  private static final long serialVersionUID = 0L;
+    // Use ClientGetFavoriteMenuResponse.newBuilder() to construct.
+    private ClientGetFavoriteMenuResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
-    private int bitField0_;
+    private ClientGetFavoriteMenuResponse() {
+      favorites_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientGetFavoriteMenuResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientGetFavoriteMenuResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                favorites_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.Favorite>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              favorites_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.Favorite.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          favorites_ = java.util.Collections.unmodifiableList(favorites_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenuResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenuResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.class, net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int FAVORITES_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoGlobal.Favorite> favorites_;
+    private java.util.List<net.iGap.proto.ProtoGlobal.Favorite> favorites_;
     /**
      * <code>repeated .proto.Favorite favorites = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<net.iGap.proto.ProtoGlobal.Favorite> getFavoritesList() {
       return favorites_;
     }
     /**
      * <code>repeated .proto.Favorite favorites = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends net.iGap.proto.ProtoGlobal.FavoriteOrBuilder> 
         getFavoritesOrBuilderList() {
       return favorites_;
@@ -444,108 +828,38 @@ public final class ProtoClientGetFavoriteMenu {
     /**
      * <code>repeated .proto.Favorite favorites = 2;</code>
      */
+    @java.lang.Override
     public int getFavoritesCount() {
       return favorites_.size();
     }
     /**
      * <code>repeated .proto.Favorite favorites = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGlobal.Favorite getFavorites(int index) {
       return favorites_.get(index);
     }
     /**
      * <code>repeated .proto.Favorite favorites = 2;</code>
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoGlobal.FavoriteOrBuilder getFavoritesOrBuilder(
         int index) {
       return favorites_.get(index);
     }
-    private void ensureFavoritesIsMutable() {
-      if (!favorites_.isModifiable()) {
-        favorites_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(favorites_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void setFavorites(
-        int index, net.iGap.proto.ProtoGlobal.Favorite value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureFavoritesIsMutable();
-      favorites_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void setFavorites(
-        int index, net.iGap.proto.ProtoGlobal.Favorite.Builder builderForValue) {
-      ensureFavoritesIsMutable();
-      favorites_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void addFavorites(net.iGap.proto.ProtoGlobal.Favorite value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureFavoritesIsMutable();
-      favorites_.add(value);
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void addFavorites(
-        int index, net.iGap.proto.ProtoGlobal.Favorite value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureFavoritesIsMutable();
-      favorites_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void addFavorites(
-        net.iGap.proto.ProtoGlobal.Favorite.Builder builderForValue) {
-      ensureFavoritesIsMutable();
-      favorites_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void addFavorites(
-        int index, net.iGap.proto.ProtoGlobal.Favorite.Builder builderForValue) {
-      ensureFavoritesIsMutable();
-      favorites_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void addAllFavorites(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.Favorite> values) {
-      ensureFavoritesIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, favorites_);
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void clearFavorites() {
-      favorites_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.Favorite favorites = 2;</code>
-     */
-    private void removeFavorites(int index) {
-      ensureFavoritesIsMutable();
-      favorites_.remove(index);
-    }
-
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -554,10 +868,12 @@ public final class ProtoClientGetFavoriteMenu {
       for (int i = 0; i < favorites_.size(); i++) {
         output.writeMessage(2, favorites_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -569,162 +885,517 @@ public final class ProtoClientGetFavoriteMenu {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, favorites_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse other = (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getFavoritesList()
+          .equals(other.getFavoritesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getFavoritesCount() > 0) {
+        hash = (37 * hash) + FAVORITES_FIELD_NUMBER;
+        hash = (53 * hash) + getFavoritesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientGetFavoriteMenuResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientGetFavoriteMenuResponse)
         net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenuResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenuResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.class, net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getFavoritesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (favoritesBuilder_ == null) {
+          favorites_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          favoritesBuilder_.clear();
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.internal_static_proto_ClientGetFavoriteMenuResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse build() {
+        net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse buildPartial() {
+        net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse result = new net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (favoritesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            favorites_ = java.util.Collections.unmodifiableList(favorites_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.favorites_ = favorites_;
+        } else {
+          result.favorites_ = favoritesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse) {
+          return mergeFrom((net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse other) {
+        if (other == net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (favoritesBuilder_ == null) {
+          if (!other.favorites_.isEmpty()) {
+            if (favorites_.isEmpty()) {
+              favorites_ = other.favorites_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFavoritesIsMutable();
+              favorites_.addAll(other.favorites_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.favorites_.isEmpty()) {
+            if (favoritesBuilder_.isEmpty()) {
+              favoritesBuilder_.dispose();
+              favoritesBuilder_ = null;
+              favorites_ = other.favorites_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              favoritesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFavoritesFieldBuilder() : null;
+            } else {
+              favoritesBuilder_.addAllMessages(other.favorites_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.Favorite> favorites_ =
+        java.util.Collections.emptyList();
+      private void ensureFavoritesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          favorites_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.Favorite>(favorites_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Favorite, net.iGap.proto.ProtoGlobal.Favorite.Builder, net.iGap.proto.ProtoGlobal.FavoriteOrBuilder> favoritesBuilder_;
 
       /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGlobal.Favorite> getFavoritesList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getFavoritesList());
+        if (favoritesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(favorites_);
+        } else {
+          return favoritesBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public int getFavoritesCount() {
-        return instance.getFavoritesCount();
-      }/**
+        if (favoritesBuilder_ == null) {
+          return favorites_.size();
+        } else {
+          return favoritesBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public net.iGap.proto.ProtoGlobal.Favorite getFavorites(int index) {
-        return instance.getFavorites(index);
+        if (favoritesBuilder_ == null) {
+          return favorites_.get(index);
+        } else {
+          return favoritesBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public Builder setFavorites(
           int index, net.iGap.proto.ProtoGlobal.Favorite value) {
-        copyOnWrite();
-        instance.setFavorites(index, value);
+        if (favoritesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFavoritesIsMutable();
+          favorites_.set(index, value);
+          onChanged();
+        } else {
+          favoritesBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -732,16 +1403,29 @@ public final class ProtoClientGetFavoriteMenu {
        */
       public Builder setFavorites(
           int index, net.iGap.proto.ProtoGlobal.Favorite.Builder builderForValue) {
-        copyOnWrite();
-        instance.setFavorites(index, builderForValue);
+        if (favoritesBuilder_ == null) {
+          ensureFavoritesIsMutable();
+          favorites_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          favoritesBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public Builder addFavorites(net.iGap.proto.ProtoGlobal.Favorite value) {
-        copyOnWrite();
-        instance.addFavorites(value);
+        if (favoritesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFavoritesIsMutable();
+          favorites_.add(value);
+          onChanged();
+        } else {
+          favoritesBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -749,8 +1433,16 @@ public final class ProtoClientGetFavoriteMenu {
        */
       public Builder addFavorites(
           int index, net.iGap.proto.ProtoGlobal.Favorite value) {
-        copyOnWrite();
-        instance.addFavorites(index, value);
+        if (favoritesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFavoritesIsMutable();
+          favorites_.add(index, value);
+          onChanged();
+        } else {
+          favoritesBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -758,8 +1450,13 @@ public final class ProtoClientGetFavoriteMenu {
        */
       public Builder addFavorites(
           net.iGap.proto.ProtoGlobal.Favorite.Builder builderForValue) {
-        copyOnWrite();
-        instance.addFavorites(builderForValue);
+        if (favoritesBuilder_ == null) {
+          ensureFavoritesIsMutable();
+          favorites_.add(builderForValue.build());
+          onChanged();
+        } else {
+          favoritesBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -767,8 +1464,13 @@ public final class ProtoClientGetFavoriteMenu {
        */
       public Builder addFavorites(
           int index, net.iGap.proto.ProtoGlobal.Favorite.Builder builderForValue) {
-        copyOnWrite();
-        instance.addFavorites(index, builderForValue);
+        if (favoritesBuilder_ == null) {
+          ensureFavoritesIsMutable();
+          favorites_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          favoritesBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -776,146 +1478,209 @@ public final class ProtoClientGetFavoriteMenu {
        */
       public Builder addAllFavorites(
           java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.Favorite> values) {
-        copyOnWrite();
-        instance.addAllFavorites(values);
+        if (favoritesBuilder_ == null) {
+          ensureFavoritesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, favorites_);
+          onChanged();
+        } else {
+          favoritesBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public Builder clearFavorites() {
-        copyOnWrite();
-        instance.clearFavorites();
+        if (favoritesBuilder_ == null) {
+          favorites_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          favoritesBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.Favorite favorites = 2;</code>
        */
       public Builder removeFavorites(int index) {
-        copyOnWrite();
-        instance.removeFavorites(index);
+        if (favoritesBuilder_ == null) {
+          ensureFavoritesIsMutable();
+          favorites_.remove(index);
+          onChanged();
+        } else {
+          favoritesBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.Favorite favorites = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Favorite.Builder getFavoritesBuilder(
+          int index) {
+        return getFavoritesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Favorite favorites = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.FavoriteOrBuilder getFavoritesOrBuilder(
+          int index) {
+        if (favoritesBuilder_ == null) {
+          return favorites_.get(index);  } else {
+          return favoritesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Favorite favorites = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.FavoriteOrBuilder> 
+           getFavoritesOrBuilderList() {
+        if (favoritesBuilder_ != null) {
+          return favoritesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(favorites_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Favorite favorites = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Favorite.Builder addFavoritesBuilder() {
+        return getFavoritesFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.Favorite.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Favorite favorites = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Favorite.Builder addFavoritesBuilder(
+          int index) {
+        return getFavoritesFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.Favorite.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Favorite favorites = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.Favorite.Builder> 
+           getFavoritesBuilderList() {
+        return getFavoritesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Favorite, net.iGap.proto.ProtoGlobal.Favorite.Builder, net.iGap.proto.ProtoGlobal.FavoriteOrBuilder> 
+          getFavoritesFieldBuilder() {
+        if (favoritesBuilder_ == null) {
+          favoritesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Favorite, net.iGap.proto.ProtoGlobal.Favorite.Builder, net.iGap.proto.ProtoGlobal.FavoriteOrBuilder>(
+                  favorites_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          favorites_ = null;
+        }
+        return favoritesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ClientGetFavoriteMenuResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          favorites_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse other = (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          favorites_= visitor.visitList(favorites_, other.favorites_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!favorites_.isModifiable()) {
-                    favorites_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(favorites_);
-                  }
-                  favorites_.add(
-                      input.readMessage(net.iGap.proto.ProtoGlobal.Favorite.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientGetFavoriteMenuResponse)
     private static final net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetFavoriteMenuResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse();
     }
 
     public static net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetFavoriteMenuResponse> PARSER;
+    private static final com.google.protobuf.Parser<ClientGetFavoriteMenuResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ClientGetFavoriteMenuResponse>() {
+      @java.lang.Override
+      public ClientGetFavoriteMenuResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientGetFavoriteMenuResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientGetFavoriteMenuResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientGetFavoriteMenuResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientGetFavoriteMenu.ClientGetFavoriteMenuResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetFavoriteMenu_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetFavoriteMenu_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetFavoriteMenuResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetFavoriteMenuResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\033ClientGetFavoriteMenu.proto\022\005proto\032\rRe" +
+      "quest.proto\032\016Response.proto\032\014Global.prot" +
+      "o\"8\n\025ClientGetFavoriteMenu\022\037\n\007request\030\001 " +
+      "\001(\0132\016.proto.Request\"f\n\035ClientGetFavorite" +
+      "MenuResponse\022!\n\010response\030\001 \001(\0132\017.proto.R" +
+      "esponse\022\"\n\tfavorites\030\002 \003(\0132\017.proto.Favor" +
+      "iteB,\n\016net.iGap.protoB\032ProtoClientGetFav" +
+      "oriteMenub\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        });
+    internal_static_proto_ClientGetFavoriteMenu_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ClientGetFavoriteMenu_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetFavoriteMenu_descriptor,
+        new java.lang.String[] { "Request", });
+    internal_static_proto_ClientGetFavoriteMenuResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ClientGetFavoriteMenuResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetFavoriteMenuResponse_descriptor,
+        new java.lang.String[] { "Response", "Favorites", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

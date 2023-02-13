@@ -8,88 +8,114 @@ public final class ProtoInternalUpdate {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface InternalUpdateOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.updatequeue.InternalUpdate)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 sender_user_id = 1;</code>
+     * <code>uint64 sender_user_id = 1;</code>
+     * @return The senderUserId.
      */
     long getSenderUserId();
 
     /**
      * <code>repeated uint64 affected_user_ids = 2;</code>
+     * @return A list containing the affectedUserIds.
      */
     java.util.List<java.lang.Long> getAffectedUserIdsList();
     /**
      * <code>repeated uint64 affected_user_ids = 2;</code>
+     * @return The count of affectedUserIds.
      */
     int getAffectedUserIdsCount();
     /**
      * <code>repeated uint64 affected_user_ids = 2;</code>
+     * @param index The index of the element to return.
+     * @return The affectedUserIds at the given index.
      */
     long getAffectedUserIds(int index);
 
     /**
-     * <code>optional string class_name = 3;</code>
+     * <code>string class_name = 3;</code>
+     * @return The className.
      */
     java.lang.String getClassName();
     /**
-     * <code>optional string class_name = 3;</code>
+     * <code>string class_name = 3;</code>
+     * @return The bytes for className.
      */
     com.google.protobuf.ByteString
         getClassNameBytes();
 
     /**
-     * <code>optional uint64 action_id = 4;</code>
+     * <code>uint64 action_id = 4;</code>
+     * @return The actionId.
      */
     long getActionId();
 
     /**
-     * <code>optional string request_id = 5;</code>
+     * <code>string request_id = 5;</code>
+     * @return The requestId.
      */
     java.lang.String getRequestId();
     /**
-     * <code>optional string request_id = 5;</code>
+     * <code>string request_id = 5;</code>
+     * @return The bytes for requestId.
      */
     com.google.protobuf.ByteString
         getRequestIdBytes();
 
     /**
-     * <code>optional bytes wrapped_proto = 6;</code>
+     * <code>bytes wrapped_proto = 6;</code>
+     * @return The wrappedProto.
      */
     com.google.protobuf.ByteString getWrappedProto();
 
     /**
-     * <code>optional string sender_session_id = 7;</code>
+     * <code>string sender_session_id = 7;</code>
+     * @return The senderSessionId.
      */
     java.lang.String getSenderSessionId();
     /**
-     * <code>optional string sender_session_id = 7;</code>
+     * <code>string sender_session_id = 7;</code>
+     * @return The bytes for senderSessionId.
      */
     com.google.protobuf.ByteString
         getSenderSessionIdBytes();
 
     /**
-     * <code>optional uint64 expiration_time = 8;</code>
+     * <code>uint64 expiration_time = 8;</code>
+     * @return The expirationTime.
      */
     long getExpirationTime();
 
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @return A list containing the receiverSessionId.
      */
-    java.util.List<String>
+    java.util.List<java.lang.String>
         getReceiverSessionIdList();
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @return The count of receiverSessionId.
      */
     int getReceiverSessionIdCount();
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @param index The index of the element to return.
+     * @return The receiverSessionId at the given index.
      */
     java.lang.String getReceiverSessionId(int index);
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the receiverSessionId at the given index.
      */
     com.google.protobuf.ByteString
         getReceiverSessionIdBytes(int index);
@@ -97,429 +123,434 @@ public final class ProtoInternalUpdate {
   /**
    * Protobuf type {@code proto.updatequeue.InternalUpdate}
    */
-  public  static final class InternalUpdate extends
-      com.google.protobuf.GeneratedMessageLite<
-          InternalUpdate, InternalUpdate.Builder> implements
+  public static final class InternalUpdate extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.updatequeue.InternalUpdate)
       InternalUpdateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InternalUpdate.newBuilder() to construct.
+    private InternalUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private InternalUpdate() {
       affectedUserIds_ = emptyLongList();
       className_ = "";
       requestId_ = "";
       wrappedProto_ = com.google.protobuf.ByteString.EMPTY;
       senderSessionId_ = "";
-      receiverSessionId_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+      receiverSessionId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
-    private int bitField0_;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InternalUpdate();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InternalUpdate(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              senderUserId_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                affectedUserIds_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              affectedUserIds_.addLong(input.readUInt64());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                affectedUserIds_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                affectedUserIds_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              className_ = s;
+              break;
+            }
+            case 32: {
+
+              actionId_ = input.readUInt64();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+            case 50: {
+
+              wrappedProto_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              senderSessionId_ = s;
+              break;
+            }
+            case 64: {
+
+              expirationTime_ = input.readUInt64();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                receiverSessionId_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              receiverSessionId_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          affectedUserIds_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          receiverSessionId_ = receiverSessionId_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.updateQueue.core.ProtoInternalUpdate.internal_static_proto_updatequeue_InternalUpdate_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.updateQueue.core.ProtoInternalUpdate.internal_static_proto_updatequeue_InternalUpdate_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.class, net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.Builder.class);
+    }
+
     public static final int SENDER_USER_ID_FIELD_NUMBER = 1;
     private long senderUserId_;
     /**
-     * <code>optional uint64 sender_user_id = 1;</code>
+     * <code>uint64 sender_user_id = 1;</code>
+     * @return The senderUserId.
      */
+    @java.lang.Override
     public long getSenderUserId() {
       return senderUserId_;
-    }
-    /**
-     * <code>optional uint64 sender_user_id = 1;</code>
-     */
-    private void setSenderUserId(long value) {
-      
-      senderUserId_ = value;
-    }
-    /**
-     * <code>optional uint64 sender_user_id = 1;</code>
-     */
-    private void clearSenderUserId() {
-      
-      senderUserId_ = 0L;
     }
 
     public static final int AFFECTED_USER_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.LongList affectedUserIds_;
     /**
      * <code>repeated uint64 affected_user_ids = 2;</code>
+     * @return A list containing the affectedUserIds.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Long>
         getAffectedUserIdsList() {
       return affectedUserIds_;
     }
     /**
      * <code>repeated uint64 affected_user_ids = 2;</code>
+     * @return The count of affectedUserIds.
      */
     public int getAffectedUserIdsCount() {
       return affectedUserIds_.size();
     }
     /**
      * <code>repeated uint64 affected_user_ids = 2;</code>
+     * @param index The index of the element to return.
+     * @return The affectedUserIds at the given index.
      */
     public long getAffectedUserIds(int index) {
       return affectedUserIds_.getLong(index);
     }
-    private void ensureAffectedUserIdsIsMutable() {
-      if (!affectedUserIds_.isModifiable()) {
-        affectedUserIds_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(affectedUserIds_);
-       }
-    }
-    /**
-     * <code>repeated uint64 affected_user_ids = 2;</code>
-     */
-    private void setAffectedUserIds(
-        int index, long value) {
-      ensureAffectedUserIdsIsMutable();
-      affectedUserIds_.setLong(index, value);
-    }
-    /**
-     * <code>repeated uint64 affected_user_ids = 2;</code>
-     */
-    private void addAffectedUserIds(long value) {
-      ensureAffectedUserIdsIsMutable();
-      affectedUserIds_.addLong(value);
-    }
-    /**
-     * <code>repeated uint64 affected_user_ids = 2;</code>
-     */
-    private void addAllAffectedUserIds(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureAffectedUserIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, affectedUserIds_);
-    }
-    /**
-     * <code>repeated uint64 affected_user_ids = 2;</code>
-     */
-    private void clearAffectedUserIds() {
-      affectedUserIds_ = emptyLongList();
-    }
+    private int affectedUserIdsMemoizedSerializedSize = -1;
 
     public static final int CLASS_NAME_FIELD_NUMBER = 3;
-    private java.lang.String className_;
+    private volatile java.lang.Object className_;
     /**
-     * <code>optional string class_name = 3;</code>
+     * <code>string class_name = 3;</code>
+     * @return The className.
      */
+    @java.lang.Override
     public java.lang.String getClassName() {
-      return className_;
+      java.lang.Object ref = className_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        className_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string class_name = 3;</code>
+     * <code>string class_name = 3;</code>
+     * @return The bytes for className.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getClassNameBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(className_);
-    }
-    /**
-     * <code>optional string class_name = 3;</code>
-     */
-    private void setClassName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      className_ = value;
-    }
-    /**
-     * <code>optional string class_name = 3;</code>
-     */
-    private void clearClassName() {
-      
-      className_ = getDefaultInstance().getClassName();
-    }
-    /**
-     * <code>optional string class_name = 3;</code>
-     */
-    private void setClassNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      className_ = value.toStringUtf8();
+      java.lang.Object ref = className_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        className_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ACTION_ID_FIELD_NUMBER = 4;
     private long actionId_;
     /**
-     * <code>optional uint64 action_id = 4;</code>
+     * <code>uint64 action_id = 4;</code>
+     * @return The actionId.
      */
+    @java.lang.Override
     public long getActionId() {
       return actionId_;
     }
-    /**
-     * <code>optional uint64 action_id = 4;</code>
-     */
-    private void setActionId(long value) {
-      
-      actionId_ = value;
-    }
-    /**
-     * <code>optional uint64 action_id = 4;</code>
-     */
-    private void clearActionId() {
-      
-      actionId_ = 0L;
-    }
 
     public static final int REQUEST_ID_FIELD_NUMBER = 5;
-    private java.lang.String requestId_;
+    private volatile java.lang.Object requestId_;
     /**
-     * <code>optional string request_id = 5;</code>
+     * <code>string request_id = 5;</code>
+     * @return The requestId.
      */
+    @java.lang.Override
     public java.lang.String getRequestId() {
-      return requestId_;
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string request_id = 5;</code>
+     * <code>string request_id = 5;</code>
+     * @return The bytes for requestId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRequestIdBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(requestId_);
-    }
-    /**
-     * <code>optional string request_id = 5;</code>
-     */
-    private void setRequestId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      requestId_ = value;
-    }
-    /**
-     * <code>optional string request_id = 5;</code>
-     */
-    private void clearRequestId() {
-      
-      requestId_ = getDefaultInstance().getRequestId();
-    }
-    /**
-     * <code>optional string request_id = 5;</code>
-     */
-    private void setRequestIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      requestId_ = value.toStringUtf8();
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int WRAPPED_PROTO_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString wrappedProto_;
     /**
-     * <code>optional bytes wrapped_proto = 6;</code>
+     * <code>bytes wrapped_proto = 6;</code>
+     * @return The wrappedProto.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getWrappedProto() {
       return wrappedProto_;
     }
-    /**
-     * <code>optional bytes wrapped_proto = 6;</code>
-     */
-    private void setWrappedProto(com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      wrappedProto_ = value;
-    }
-    /**
-     * <code>optional bytes wrapped_proto = 6;</code>
-     */
-    private void clearWrappedProto() {
-      
-      wrappedProto_ = getDefaultInstance().getWrappedProto();
-    }
 
     public static final int SENDER_SESSION_ID_FIELD_NUMBER = 7;
-    private java.lang.String senderSessionId_;
+    private volatile java.lang.Object senderSessionId_;
     /**
-     * <code>optional string sender_session_id = 7;</code>
+     * <code>string sender_session_id = 7;</code>
+     * @return The senderSessionId.
      */
+    @java.lang.Override
     public java.lang.String getSenderSessionId() {
-      return senderSessionId_;
+      java.lang.Object ref = senderSessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        senderSessionId_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string sender_session_id = 7;</code>
+     * <code>string sender_session_id = 7;</code>
+     * @return The bytes for senderSessionId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSenderSessionIdBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(senderSessionId_);
-    }
-    /**
-     * <code>optional string sender_session_id = 7;</code>
-     */
-    private void setSenderSessionId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      senderSessionId_ = value;
-    }
-    /**
-     * <code>optional string sender_session_id = 7;</code>
-     */
-    private void clearSenderSessionId() {
-      
-      senderSessionId_ = getDefaultInstance().getSenderSessionId();
-    }
-    /**
-     * <code>optional string sender_session_id = 7;</code>
-     */
-    private void setSenderSessionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      senderSessionId_ = value.toStringUtf8();
+      java.lang.Object ref = senderSessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        senderSessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int EXPIRATION_TIME_FIELD_NUMBER = 8;
     private long expirationTime_;
     /**
-     * <code>optional uint64 expiration_time = 8;</code>
+     * <code>uint64 expiration_time = 8;</code>
+     * @return The expirationTime.
      */
+    @java.lang.Override
     public long getExpirationTime() {
       return expirationTime_;
     }
-    /**
-     * <code>optional uint64 expiration_time = 8;</code>
-     */
-    private void setExpirationTime(long value) {
-      
-      expirationTime_ = value;
-    }
-    /**
-     * <code>optional uint64 expiration_time = 8;</code>
-     */
-    private void clearExpirationTime() {
-      
-      expirationTime_ = 0L;
-    }
 
     public static final int RECEIVER_SESSION_ID_FIELD_NUMBER = 9;
-    private com.google.protobuf.Internal.ProtobufList<String> receiverSessionId_;
+    private com.google.protobuf.LazyStringList receiverSessionId_;
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @return A list containing the receiverSessionId.
      */
-    public java.util.List<String> getReceiverSessionIdList() {
+    public com.google.protobuf.ProtocolStringList
+        getReceiverSessionIdList() {
       return receiverSessionId_;
     }
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @return The count of receiverSessionId.
      */
     public int getReceiverSessionIdCount() {
       return receiverSessionId_.size();
     }
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @param index The index of the element to return.
+     * @return The receiverSessionId at the given index.
      */
     public java.lang.String getReceiverSessionId(int index) {
       return receiverSessionId_.get(index);
     }
     /**
      * <code>repeated string receiver_session_id = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the receiverSessionId at the given index.
      */
     public com.google.protobuf.ByteString
         getReceiverSessionIdBytes(int index) {
-      return com.google.protobuf.ByteString.copyFromUtf8(
-          receiverSessionId_.get(index));
-    }
-    private void ensureReceiverSessionIdIsMutable() {
-      if (!receiverSessionId_.isModifiable()) {
-        receiverSessionId_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(receiverSessionId_);
-       }
-    }
-    /**
-     * <code>repeated string receiver_session_id = 9;</code>
-     */
-    private void setReceiverSessionId(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureReceiverSessionIdIsMutable();
-      receiverSessionId_.set(index, value);
-    }
-    /**
-     * <code>repeated string receiver_session_id = 9;</code>
-     */
-    private void addReceiverSessionId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureReceiverSessionIdIsMutable();
-      receiverSessionId_.add(value);
-    }
-    /**
-     * <code>repeated string receiver_session_id = 9;</code>
-     */
-    private void addAllReceiverSessionId(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureReceiverSessionIdIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, receiverSessionId_);
-    }
-    /**
-     * <code>repeated string receiver_session_id = 9;</code>
-     */
-    private void clearReceiverSessionId() {
-      receiverSessionId_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
-    }
-    /**
-     * <code>repeated string receiver_session_id = 9;</code>
-     */
-    private void addReceiverSessionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureReceiverSessionIdIsMutable();
-      receiverSessionId_.add(value.toStringUtf8());
+      return receiverSessionId_.getByteString(index);
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (senderUserId_ != 0L) {
         output.writeUInt64(1, senderUserId_);
       }
-      for (int i = 0; i < affectedUserIds_.size(); i++) {
-        output.writeUInt64(2, affectedUserIds_.getLong(i));
+      if (getAffectedUserIdsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(affectedUserIdsMemoizedSerializedSize);
       }
-      if (!className_.isEmpty()) {
-        output.writeString(3, getClassName());
+      for (int i = 0; i < affectedUserIds_.size(); i++) {
+        output.writeUInt64NoTag(affectedUserIds_.getLong(i));
+      }
+      if (!getClassNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, className_);
       }
       if (actionId_ != 0L) {
         output.writeUInt64(4, actionId_);
       }
-      if (!requestId_.isEmpty()) {
-        output.writeString(5, getRequestId());
+      if (!getRequestIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requestId_);
       }
       if (!wrappedProto_.isEmpty()) {
         output.writeBytes(6, wrappedProto_);
       }
-      if (!senderSessionId_.isEmpty()) {
-        output.writeString(7, getSenderSessionId());
+      if (!getSenderSessionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, senderSessionId_);
       }
       if (expirationTime_ != 0L) {
         output.writeUInt64(8, expirationTime_);
       }
       for (int i = 0; i < receiverSessionId_.size(); i++) {
-        output.writeString(9, receiverSessionId_.get(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, receiverSessionId_.getRaw(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -534,27 +565,29 @@ public final class ProtoInternalUpdate {
             .computeUInt64SizeNoTag(affectedUserIds_.getLong(i));
         }
         size += dataSize;
-        size += 1 * getAffectedUserIdsList().size();
+        if (!getAffectedUserIdsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        affectedUserIdsMemoizedSerializedSize = dataSize;
       }
-      if (!className_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(3, getClassName());
+      if (!getClassNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, className_);
       }
       if (actionId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, actionId_);
       }
-      if (!requestId_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(5, getRequestId());
+      if (!getRequestIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, requestId_);
       }
       if (!wrappedProto_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, wrappedProto_);
       }
-      if (!senderSessionId_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(7, getSenderSessionId());
+      if (!getSenderSessionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, senderSessionId_);
       }
       if (expirationTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -563,617 +596,1027 @@ public final class ProtoInternalUpdate {
       {
         int dataSize = 0;
         for (int i = 0; i < receiverSessionId_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeStringSizeNoTag(receiverSessionId_.get(i));
+          dataSize += computeStringSizeNoTag(receiverSessionId_.getRaw(i));
         }
         size += dataSize;
         size += 1 * getReceiverSessionIdList().size();
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate other = (net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate) obj;
+
+      if (getSenderUserId()
+          != other.getSenderUserId()) return false;
+      if (!getAffectedUserIdsList()
+          .equals(other.getAffectedUserIdsList())) return false;
+      if (!getClassName()
+          .equals(other.getClassName())) return false;
+      if (getActionId()
+          != other.getActionId()) return false;
+      if (!getRequestId()
+          .equals(other.getRequestId())) return false;
+      if (!getWrappedProto()
+          .equals(other.getWrappedProto())) return false;
+      if (!getSenderSessionId()
+          .equals(other.getSenderSessionId())) return false;
+      if (getExpirationTime()
+          != other.getExpirationTime()) return false;
+      if (!getReceiverSessionIdList()
+          .equals(other.getReceiverSessionIdList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SENDER_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSenderUserId());
+      if (getAffectedUserIdsCount() > 0) {
+        hash = (37 * hash) + AFFECTED_USER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getAffectedUserIdsList().hashCode();
+      }
+      hash = (37 * hash) + CLASS_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getClassName().hashCode();
+      hash = (37 * hash) + ACTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getActionId());
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+      hash = (37 * hash) + WRAPPED_PROTO_FIELD_NUMBER;
+      hash = (53 * hash) + getWrappedProto().hashCode();
+      hash = (37 * hash) + SENDER_SESSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSenderSessionId().hashCode();
+      hash = (37 * hash) + EXPIRATION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExpirationTime());
+      if (getReceiverSessionIdCount() > 0) {
+        hash = (37 * hash) + RECEIVER_SESSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getReceiverSessionIdList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.updatequeue.InternalUpdate}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.updatequeue.InternalUpdate)
         net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.updateQueue.core.ProtoInternalUpdate.internal_static_proto_updatequeue_InternalUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.updateQueue.core.ProtoInternalUpdate.internal_static_proto_updatequeue_InternalUpdate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.class, net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.Builder.class);
+      }
+
       // Construct using net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        senderUserId_ = 0L;
 
+        affectedUserIds_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        className_ = "";
+
+        actionId_ = 0L;
+
+        requestId_ = "";
+
+        wrappedProto_ = com.google.protobuf.ByteString.EMPTY;
+
+        senderSessionId_ = "";
+
+        expirationTime_ = 0L;
+
+        receiverSessionId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.updateQueue.core.ProtoInternalUpdate.internal_static_proto_updatequeue_InternalUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate getDefaultInstanceForType() {
+        return net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate build() {
+        net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate buildPartial() {
+        net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate result = new net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate(this);
+        int from_bitField0_ = bitField0_;
+        result.senderUserId_ = senderUserId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          affectedUserIds_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.affectedUserIds_ = affectedUserIds_;
+        result.className_ = className_;
+        result.actionId_ = actionId_;
+        result.requestId_ = requestId_;
+        result.wrappedProto_ = wrappedProto_;
+        result.senderSessionId_ = senderSessionId_;
+        result.expirationTime_ = expirationTime_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          receiverSessionId_ = receiverSessionId_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.receiverSessionId_ = receiverSessionId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate) {
+          return mergeFrom((net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate other) {
+        if (other == net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.getDefaultInstance()) return this;
+        if (other.getSenderUserId() != 0L) {
+          setSenderUserId(other.getSenderUserId());
+        }
+        if (!other.affectedUserIds_.isEmpty()) {
+          if (affectedUserIds_.isEmpty()) {
+            affectedUserIds_ = other.affectedUserIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAffectedUserIdsIsMutable();
+            affectedUserIds_.addAll(other.affectedUserIds_);
+          }
+          onChanged();
+        }
+        if (!other.getClassName().isEmpty()) {
+          className_ = other.className_;
+          onChanged();
+        }
+        if (other.getActionId() != 0L) {
+          setActionId(other.getActionId());
+        }
+        if (!other.getRequestId().isEmpty()) {
+          requestId_ = other.requestId_;
+          onChanged();
+        }
+        if (other.getWrappedProto() != com.google.protobuf.ByteString.EMPTY) {
+          setWrappedProto(other.getWrappedProto());
+        }
+        if (!other.getSenderSessionId().isEmpty()) {
+          senderSessionId_ = other.senderSessionId_;
+          onChanged();
+        }
+        if (other.getExpirationTime() != 0L) {
+          setExpirationTime(other.getExpirationTime());
+        }
+        if (!other.receiverSessionId_.isEmpty()) {
+          if (receiverSessionId_.isEmpty()) {
+            receiverSessionId_ = other.receiverSessionId_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureReceiverSessionIdIsMutable();
+            receiverSessionId_.addAll(other.receiverSessionId_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long senderUserId_ ;
       /**
-       * <code>optional uint64 sender_user_id = 1;</code>
+       * <code>uint64 sender_user_id = 1;</code>
+       * @return The senderUserId.
        */
+      @java.lang.Override
       public long getSenderUserId() {
-        return instance.getSenderUserId();
+        return senderUserId_;
       }
       /**
-       * <code>optional uint64 sender_user_id = 1;</code>
+       * <code>uint64 sender_user_id = 1;</code>
+       * @param value The senderUserId to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderUserId(long value) {
-        copyOnWrite();
-        instance.setSenderUserId(value);
+        
+        senderUserId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 sender_user_id = 1;</code>
+       * <code>uint64 sender_user_id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSenderUserId() {
-        copyOnWrite();
-        instance.clearSenderUserId();
+        
+        senderUserId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private com.google.protobuf.Internal.LongList affectedUserIds_ = emptyLongList();
+      private void ensureAffectedUserIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          affectedUserIds_ = mutableCopy(affectedUserIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @return A list containing the affectedUserIds.
        */
       public java.util.List<java.lang.Long>
           getAffectedUserIdsList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getAffectedUserIdsList());
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(affectedUserIds_) : affectedUserIds_;
       }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @return The count of affectedUserIds.
        */
       public int getAffectedUserIdsCount() {
-        return instance.getAffectedUserIdsCount();
+        return affectedUserIds_.size();
       }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @param index The index of the element to return.
+       * @return The affectedUserIds at the given index.
        */
       public long getAffectedUserIds(int index) {
-        return instance.getAffectedUserIds(index);
+        return affectedUserIds_.getLong(index);
       }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The affectedUserIds to set.
+       * @return This builder for chaining.
        */
       public Builder setAffectedUserIds(
           int index, long value) {
-        copyOnWrite();
-        instance.setAffectedUserIds(index, value);
+        ensureAffectedUserIdsIsMutable();
+        affectedUserIds_.setLong(index, value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @param value The affectedUserIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAffectedUserIds(long value) {
-        copyOnWrite();
-        instance.addAffectedUserIds(value);
+        ensureAffectedUserIdsIsMutable();
+        affectedUserIds_.addLong(value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @param values The affectedUserIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllAffectedUserIds(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        copyOnWrite();
-        instance.addAllAffectedUserIds(values);
+        ensureAffectedUserIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, affectedUserIds_);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 affected_user_ids = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAffectedUserIds() {
-        copyOnWrite();
-        instance.clearAffectedUserIds();
+        affectedUserIds_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
 
+      private java.lang.Object className_ = "";
       /**
-       * <code>optional string class_name = 3;</code>
+       * <code>string class_name = 3;</code>
+       * @return The className.
        */
       public java.lang.String getClassName() {
-        return instance.getClassName();
+        java.lang.Object ref = className_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          className_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string class_name = 3;</code>
+       * <code>string class_name = 3;</code>
+       * @return The bytes for className.
        */
       public com.google.protobuf.ByteString
           getClassNameBytes() {
-        return instance.getClassNameBytes();
+        java.lang.Object ref = className_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          className_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string class_name = 3;</code>
+       * <code>string class_name = 3;</code>
+       * @param value The className to set.
+       * @return This builder for chaining.
        */
       public Builder setClassName(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setClassName(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        className_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string class_name = 3;</code>
+       * <code>string class_name = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearClassName() {
-        copyOnWrite();
-        instance.clearClassName();
+        
+        className_ = getDefaultInstance().getClassName();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string class_name = 3;</code>
+       * <code>string class_name = 3;</code>
+       * @param value The bytes for className to set.
+       * @return This builder for chaining.
        */
       public Builder setClassNameBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setClassNameBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        className_ = value;
+        onChanged();
         return this;
       }
 
+      private long actionId_ ;
       /**
-       * <code>optional uint64 action_id = 4;</code>
+       * <code>uint64 action_id = 4;</code>
+       * @return The actionId.
        */
+      @java.lang.Override
       public long getActionId() {
-        return instance.getActionId();
+        return actionId_;
       }
       /**
-       * <code>optional uint64 action_id = 4;</code>
+       * <code>uint64 action_id = 4;</code>
+       * @param value The actionId to set.
+       * @return This builder for chaining.
        */
       public Builder setActionId(long value) {
-        copyOnWrite();
-        instance.setActionId(value);
+        
+        actionId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 action_id = 4;</code>
+       * <code>uint64 action_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearActionId() {
-        copyOnWrite();
-        instance.clearActionId();
+        
+        actionId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object requestId_ = "";
       /**
-       * <code>optional string request_id = 5;</code>
+       * <code>string request_id = 5;</code>
+       * @return The requestId.
        */
       public java.lang.String getRequestId() {
-        return instance.getRequestId();
+        java.lang.Object ref = requestId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string request_id = 5;</code>
+       * <code>string request_id = 5;</code>
+       * @return The bytes for requestId.
        */
       public com.google.protobuf.ByteString
           getRequestIdBytes() {
-        return instance.getRequestIdBytes();
+        java.lang.Object ref = requestId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string request_id = 5;</code>
+       * <code>string request_id = 5;</code>
+       * @param value The requestId to set.
+       * @return This builder for chaining.
        */
       public Builder setRequestId(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setRequestId(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string request_id = 5;</code>
+       * <code>string request_id = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRequestId() {
-        copyOnWrite();
-        instance.clearRequestId();
+        
+        requestId_ = getDefaultInstance().getRequestId();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string request_id = 5;</code>
+       * <code>string request_id = 5;</code>
+       * @param value The bytes for requestId to set.
+       * @return This builder for chaining.
        */
       public Builder setRequestIdBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setRequestIdBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestId_ = value;
+        onChanged();
         return this;
       }
 
+      private com.google.protobuf.ByteString wrappedProto_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes wrapped_proto = 6;</code>
+       * <code>bytes wrapped_proto = 6;</code>
+       * @return The wrappedProto.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getWrappedProto() {
-        return instance.getWrappedProto();
+        return wrappedProto_;
       }
       /**
-       * <code>optional bytes wrapped_proto = 6;</code>
+       * <code>bytes wrapped_proto = 6;</code>
+       * @param value The wrappedProto to set.
+       * @return This builder for chaining.
        */
       public Builder setWrappedProto(com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setWrappedProto(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        wrappedProto_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional bytes wrapped_proto = 6;</code>
+       * <code>bytes wrapped_proto = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearWrappedProto() {
-        copyOnWrite();
-        instance.clearWrappedProto();
+        
+        wrappedProto_ = getDefaultInstance().getWrappedProto();
+        onChanged();
         return this;
       }
 
+      private java.lang.Object senderSessionId_ = "";
       /**
-       * <code>optional string sender_session_id = 7;</code>
+       * <code>string sender_session_id = 7;</code>
+       * @return The senderSessionId.
        */
       public java.lang.String getSenderSessionId() {
-        return instance.getSenderSessionId();
+        java.lang.Object ref = senderSessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          senderSessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string sender_session_id = 7;</code>
+       * <code>string sender_session_id = 7;</code>
+       * @return The bytes for senderSessionId.
        */
       public com.google.protobuf.ByteString
           getSenderSessionIdBytes() {
-        return instance.getSenderSessionIdBytes();
+        java.lang.Object ref = senderSessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          senderSessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string sender_session_id = 7;</code>
+       * <code>string sender_session_id = 7;</code>
+       * @param value The senderSessionId to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderSessionId(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setSenderSessionId(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        senderSessionId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string sender_session_id = 7;</code>
+       * <code>string sender_session_id = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSenderSessionId() {
-        copyOnWrite();
-        instance.clearSenderSessionId();
+        
+        senderSessionId_ = getDefaultInstance().getSenderSessionId();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string sender_session_id = 7;</code>
+       * <code>string sender_session_id = 7;</code>
+       * @param value The bytes for senderSessionId to set.
+       * @return This builder for chaining.
        */
       public Builder setSenderSessionIdBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setSenderSessionIdBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        senderSessionId_ = value;
+        onChanged();
         return this;
       }
 
+      private long expirationTime_ ;
       /**
-       * <code>optional uint64 expiration_time = 8;</code>
+       * <code>uint64 expiration_time = 8;</code>
+       * @return The expirationTime.
        */
+      @java.lang.Override
       public long getExpirationTime() {
-        return instance.getExpirationTime();
+        return expirationTime_;
       }
       /**
-       * <code>optional uint64 expiration_time = 8;</code>
+       * <code>uint64 expiration_time = 8;</code>
+       * @param value The expirationTime to set.
+       * @return This builder for chaining.
        */
       public Builder setExpirationTime(long value) {
-        copyOnWrite();
-        instance.setExpirationTime(value);
+        
+        expirationTime_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 expiration_time = 8;</code>
+       * <code>uint64 expiration_time = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExpirationTime() {
-        copyOnWrite();
-        instance.clearExpirationTime();
+        
+        expirationTime_ = 0L;
+        onChanged();
         return this;
       }
 
-      /**
-       * <code>repeated string receiver_session_id = 9;</code>
-       */
-      public java.util.List<String>
-          getReceiverSessionIdList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getReceiverSessionIdList());
+      private com.google.protobuf.LazyStringList receiverSessionId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureReceiverSessionIdIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          receiverSessionId_ = new com.google.protobuf.LazyStringArrayList(receiverSessionId_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @return A list containing the receiverSessionId.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getReceiverSessionIdList() {
+        return receiverSessionId_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string receiver_session_id = 9;</code>
+       * @return The count of receiverSessionId.
        */
       public int getReceiverSessionIdCount() {
-        return instance.getReceiverSessionIdCount();
+        return receiverSessionId_.size();
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @param index The index of the element to return.
+       * @return The receiverSessionId at the given index.
        */
       public java.lang.String getReceiverSessionId(int index) {
-        return instance.getReceiverSessionId(index);
+        return receiverSessionId_.get(index);
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the receiverSessionId at the given index.
        */
       public com.google.protobuf.ByteString
           getReceiverSessionIdBytes(int index) {
-        return instance.getReceiverSessionIdBytes(index);
+        return receiverSessionId_.getByteString(index);
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @param index The index to set the value at.
+       * @param value The receiverSessionId to set.
+       * @return This builder for chaining.
        */
       public Builder setReceiverSessionId(
           int index, java.lang.String value) {
-        copyOnWrite();
-        instance.setReceiverSessionId(index, value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReceiverSessionIdIsMutable();
+        receiverSessionId_.set(index, value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @param value The receiverSessionId to add.
+       * @return This builder for chaining.
        */
       public Builder addReceiverSessionId(
           java.lang.String value) {
-        copyOnWrite();
-        instance.addReceiverSessionId(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReceiverSessionIdIsMutable();
+        receiverSessionId_.add(value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @param values The receiverSessionId to add.
+       * @return This builder for chaining.
        */
       public Builder addAllReceiverSessionId(
           java.lang.Iterable<java.lang.String> values) {
-        copyOnWrite();
-        instance.addAllReceiverSessionId(values);
+        ensureReceiverSessionIdIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, receiverSessionId_);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearReceiverSessionId() {
-        copyOnWrite();
-        instance.clearReceiverSessionId();
+        receiverSessionId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated string receiver_session_id = 9;</code>
+       * @param value The bytes of the receiverSessionId to add.
+       * @return This builder for chaining.
        */
       public Builder addReceiverSessionIdBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.addReceiverSessionIdBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureReceiverSessionIdIsMutable();
+        receiverSessionId_.add(value);
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.updatequeue.InternalUpdate)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          affectedUserIds_.makeImmutable();
-          receiverSessionId_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate other = (net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate) arg1;
-          senderUserId_ = visitor.visitLong(senderUserId_ != 0L, senderUserId_,
-              other.senderUserId_ != 0L, other.senderUserId_);
-          affectedUserIds_= visitor.visitLongList(affectedUserIds_, other.affectedUserIds_);
-          className_ = visitor.visitString(!className_.isEmpty(), className_,
-              !other.className_.isEmpty(), other.className_);
-          actionId_ = visitor.visitLong(actionId_ != 0L, actionId_,
-              other.actionId_ != 0L, other.actionId_);
-          requestId_ = visitor.visitString(!requestId_.isEmpty(), requestId_,
-              !other.requestId_.isEmpty(), other.requestId_);
-          wrappedProto_ = visitor.visitByteString(wrappedProto_ != com.google.protobuf.ByteString.EMPTY, wrappedProto_,
-              other.wrappedProto_ != com.google.protobuf.ByteString.EMPTY, other.wrappedProto_);
-          senderSessionId_ = visitor.visitString(!senderSessionId_.isEmpty(), senderSessionId_,
-              !other.senderSessionId_.isEmpty(), other.senderSessionId_);
-          expirationTime_ = visitor.visitLong(expirationTime_ != 0L, expirationTime_,
-              other.expirationTime_ != 0L, other.expirationTime_);
-          receiverSessionId_= visitor.visitList(receiverSessionId_, other.receiverSessionId_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 8: {
-
-                  senderUserId_ = input.readUInt64();
-                  break;
-                }
-                case 16: {
-                  if (!affectedUserIds_.isModifiable()) {
-                    affectedUserIds_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(affectedUserIds_);
-                  }
-                  affectedUserIds_.addLong(input.readUInt64());
-                  break;
-                }
-                case 18: {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!affectedUserIds_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                    affectedUserIds_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(affectedUserIds_);
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    affectedUserIds_.addLong(input.readUInt64());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-                case 26: {
-                  String s = input.readStringRequireUtf8();
-
-                  className_ = s;
-                  break;
-                }
-                case 32: {
-
-                  actionId_ = input.readUInt64();
-                  break;
-                }
-                case 42: {
-                  String s = input.readStringRequireUtf8();
-
-                  requestId_ = s;
-                  break;
-                }
-                case 50: {
-
-                  wrappedProto_ = input.readBytes();
-                  break;
-                }
-                case 58: {
-                  String s = input.readStringRequireUtf8();
-
-                  senderSessionId_ = s;
-                  break;
-                }
-                case 64: {
-
-                  expirationTime_ = input.readUInt64();
-                  break;
-                }
-                case 74: {
-                  String s = input.readStringRequireUtf8();
-                  if (!receiverSessionId_.isModifiable()) {
-                    receiverSessionId_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(receiverSessionId_);
-                  }
-                  receiverSessionId_.add(s);
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.updatequeue.InternalUpdate)
     private static final net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InternalUpdate();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate();
     }
 
     public static net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<InternalUpdate> PARSER;
+    private static final com.google.protobuf.Parser<InternalUpdate>
+        PARSER = new com.google.protobuf.AbstractParser<InternalUpdate>() {
+      @java.lang.Override
+      public InternalUpdate parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InternalUpdate(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<InternalUpdate> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InternalUpdate> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.updateQueue.core.ProtoInternalUpdate.InternalUpdate getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_updatequeue_InternalUpdate_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_updatequeue_InternalUpdate_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\024InternalUpdate.proto\022\021proto.updatequeu" +
+      "e\"\346\001\n\016InternalUpdate\022\026\n\016sender_user_id\030\001" +
+      " \001(\004\022\031\n\021affected_user_ids\030\002 \003(\004\022\022\n\nclass" +
+      "_name\030\003 \001(\t\022\021\n\taction_id\030\004 \001(\004\022\022\n\nreques" +
+      "t_id\030\005 \001(\t\022\025\n\rwrapped_proto\030\006 \001(\014\022\031\n\021sen" +
+      "der_session_id\030\007 \001(\t\022\027\n\017expiration_time\030" +
+      "\010 \001(\004\022\033\n\023receiver_session_id\030\t \003(\tB6\n\037ne" +
+      "t.iGap.proto.updateQueue.coreB\023ProtoInte" +
+      "rnalUpdateb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_proto_updatequeue_InternalUpdate_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_updatequeue_InternalUpdate_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_updatequeue_InternalUpdate_descriptor,
+        new java.lang.String[] { "SenderUserId", "AffectedUserIds", "ClassName", "ActionId", "RequestId", "WrappedProto", "SenderSessionId", "ExpirationTime", "ReceiverSessionId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

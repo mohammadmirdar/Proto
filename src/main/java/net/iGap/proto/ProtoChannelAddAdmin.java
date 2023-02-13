@@ -8,398 +8,528 @@ public final class ProtoChannelAddAdmin {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ChannelAddAdminOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ChannelAddAdmin)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
     long getRoomId();
 
     /**
-     * <code>optional uint64 member_id = 3;</code>
+     * <code>uint64 member_id = 3;</code>
+     * @return The memberId.
      */
     long getMemberId();
 
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return Whether the permission field is set.
      */
     boolean hasPermission();
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return The permission.
      */
     net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getPermission();
+    /**
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     */
+    net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getPermissionOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelAddAdmin}
    */
-  public  static final class ChannelAddAdmin extends
-      com.google.protobuf.GeneratedMessageLite<
-          ChannelAddAdmin, ChannelAddAdmin.Builder> implements
+  public static final class ChannelAddAdmin extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ChannelAddAdmin)
       ChannelAddAdminOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChannelAddAdmin.newBuilder() to construct.
+    private ChannelAddAdmin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ChannelAddAdmin() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChannelAddAdmin();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChannelAddAdmin(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              memberId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder subBuilder = null;
+              if (permission_ != null) {
+                subBuilder = permission_.toBuilder();
+              }
+              permission_ = input.readMessage(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(permission_);
+                permission_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.class, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.Builder.class);
+    }
+
     public interface AdminRightsOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.ChannelAddAdmin.AdminRights)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional bool modify_room = 1;</code>
+       * <code>bool modify_room = 1;</code>
+       * @return The modifyRoom.
        */
       boolean getModifyRoom();
 
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>bool post_message = 2;</code>
+       * @return The postMessage.
        */
       boolean getPostMessage();
 
       /**
-       * <code>optional bool edit_message = 3;</code>
+       * <code>bool edit_message = 3;</code>
+       * @return The editMessage.
        */
       boolean getEditMessage();
 
       /**
-       * <code>optional bool delete_message = 4;</code>
+       * <code>bool delete_message = 4;</code>
+       * @return The deleteMessage.
        */
       boolean getDeleteMessage();
 
       /**
-       * <code>optional bool pin_message = 5;</code>
+       * <code>bool pin_message = 5;</code>
+       * @return The pinMessage.
        */
       boolean getPinMessage();
 
       /**
-       * <code>optional bool add_member = 6;</code>
+       * <code>bool add_member = 6;</code>
+       * @return The addMember.
        */
       boolean getAddMember();
 
       /**
-       * <code>optional bool ban_member = 7;</code>
+       * <code>bool ban_member = 7;</code>
+       * @return The banMember.
        */
       boolean getBanMember();
 
       /**
-       * <code>optional bool get_member = 8;</code>
+       * <code>bool get_member = 8;</code>
+       * @return The getMember.
        */
       boolean getGetMember();
 
       /**
-       * <code>optional bool add_admin = 9;</code>
+       * <code>bool add_admin = 9;</code>
+       * @return The addAdmin.
        */
       boolean getAddAdmin();
 
       /**
-       * <code>optional bool add_story = 10;</code>
+       * <code>bool add_story = 10;</code>
+       * @return The addStory.
        */
       boolean getAddStory();
 
       /**
-       * <code>optional bool delete_story = 11;</code>
+       * <code>bool delete_story = 11;</code>
+       * @return The deleteStory.
        */
       boolean getDeleteStory();
 
       /**
-       * <code>optional bool show_story_views = 12;</code>
+       * <code>bool show_story_views = 12;</code>
+       * @return The showStoryViews.
        */
       boolean getShowStoryViews();
     }
     /**
      * Protobuf type {@code proto.ChannelAddAdmin.AdminRights}
      */
-    public  static final class AdminRights extends
-        com.google.protobuf.GeneratedMessageLite<
-            AdminRights, AdminRights.Builder> implements
+    public static final class AdminRights extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.ChannelAddAdmin.AdminRights)
         AdminRightsOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use AdminRights.newBuilder() to construct.
+      private AdminRights(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private AdminRights() {
       }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new AdminRights();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private AdminRights(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                modifyRoom_ = input.readBool();
+                break;
+              }
+              case 16: {
+
+                postMessage_ = input.readBool();
+                break;
+              }
+              case 24: {
+
+                editMessage_ = input.readBool();
+                break;
+              }
+              case 32: {
+
+                deleteMessage_ = input.readBool();
+                break;
+              }
+              case 40: {
+
+                pinMessage_ = input.readBool();
+                break;
+              }
+              case 48: {
+
+                addMember_ = input.readBool();
+                break;
+              }
+              case 56: {
+
+                banMember_ = input.readBool();
+                break;
+              }
+              case 64: {
+
+                getMember_ = input.readBool();
+                break;
+              }
+              case 72: {
+
+                addAdmin_ = input.readBool();
+                break;
+              }
+              case 80: {
+
+                addStory_ = input.readBool();
+                break;
+              }
+              case 88: {
+
+                deleteStory_ = input.readBool();
+                break;
+              }
+              case 96: {
+
+                showStoryViews_ = input.readBool();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_AdminRights_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_AdminRights_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.class, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder.class);
+      }
+
       public static final int MODIFY_ROOM_FIELD_NUMBER = 1;
       private boolean modifyRoom_;
       /**
-       * <code>optional bool modify_room = 1;</code>
+       * <code>bool modify_room = 1;</code>
+       * @return The modifyRoom.
        */
+      @java.lang.Override
       public boolean getModifyRoom() {
         return modifyRoom_;
-      }
-      /**
-       * <code>optional bool modify_room = 1;</code>
-       */
-      private void setModifyRoom(boolean value) {
-        
-        modifyRoom_ = value;
-      }
-      /**
-       * <code>optional bool modify_room = 1;</code>
-       */
-      private void clearModifyRoom() {
-        
-        modifyRoom_ = false;
       }
 
       public static final int POST_MESSAGE_FIELD_NUMBER = 2;
       private boolean postMessage_;
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>bool post_message = 2;</code>
+       * @return The postMessage.
        */
+      @java.lang.Override
       public boolean getPostMessage() {
         return postMessage_;
-      }
-      /**
-       * <code>optional bool post_message = 2;</code>
-       */
-      private void setPostMessage(boolean value) {
-        
-        postMessage_ = value;
-      }
-      /**
-       * <code>optional bool post_message = 2;</code>
-       */
-      private void clearPostMessage() {
-        
-        postMessage_ = false;
       }
 
       public static final int EDIT_MESSAGE_FIELD_NUMBER = 3;
       private boolean editMessage_;
       /**
-       * <code>optional bool edit_message = 3;</code>
+       * <code>bool edit_message = 3;</code>
+       * @return The editMessage.
        */
+      @java.lang.Override
       public boolean getEditMessage() {
         return editMessage_;
-      }
-      /**
-       * <code>optional bool edit_message = 3;</code>
-       */
-      private void setEditMessage(boolean value) {
-        
-        editMessage_ = value;
-      }
-      /**
-       * <code>optional bool edit_message = 3;</code>
-       */
-      private void clearEditMessage() {
-        
-        editMessage_ = false;
       }
 
       public static final int DELETE_MESSAGE_FIELD_NUMBER = 4;
       private boolean deleteMessage_;
       /**
-       * <code>optional bool delete_message = 4;</code>
+       * <code>bool delete_message = 4;</code>
+       * @return The deleteMessage.
        */
+      @java.lang.Override
       public boolean getDeleteMessage() {
         return deleteMessage_;
-      }
-      /**
-       * <code>optional bool delete_message = 4;</code>
-       */
-      private void setDeleteMessage(boolean value) {
-        
-        deleteMessage_ = value;
-      }
-      /**
-       * <code>optional bool delete_message = 4;</code>
-       */
-      private void clearDeleteMessage() {
-        
-        deleteMessage_ = false;
       }
 
       public static final int PIN_MESSAGE_FIELD_NUMBER = 5;
       private boolean pinMessage_;
       /**
-       * <code>optional bool pin_message = 5;</code>
+       * <code>bool pin_message = 5;</code>
+       * @return The pinMessage.
        */
+      @java.lang.Override
       public boolean getPinMessage() {
         return pinMessage_;
-      }
-      /**
-       * <code>optional bool pin_message = 5;</code>
-       */
-      private void setPinMessage(boolean value) {
-        
-        pinMessage_ = value;
-      }
-      /**
-       * <code>optional bool pin_message = 5;</code>
-       */
-      private void clearPinMessage() {
-        
-        pinMessage_ = false;
       }
 
       public static final int ADD_MEMBER_FIELD_NUMBER = 6;
       private boolean addMember_;
       /**
-       * <code>optional bool add_member = 6;</code>
+       * <code>bool add_member = 6;</code>
+       * @return The addMember.
        */
+      @java.lang.Override
       public boolean getAddMember() {
         return addMember_;
-      }
-      /**
-       * <code>optional bool add_member = 6;</code>
-       */
-      private void setAddMember(boolean value) {
-        
-        addMember_ = value;
-      }
-      /**
-       * <code>optional bool add_member = 6;</code>
-       */
-      private void clearAddMember() {
-        
-        addMember_ = false;
       }
 
       public static final int BAN_MEMBER_FIELD_NUMBER = 7;
       private boolean banMember_;
       /**
-       * <code>optional bool ban_member = 7;</code>
+       * <code>bool ban_member = 7;</code>
+       * @return The banMember.
        */
+      @java.lang.Override
       public boolean getBanMember() {
         return banMember_;
-      }
-      /**
-       * <code>optional bool ban_member = 7;</code>
-       */
-      private void setBanMember(boolean value) {
-        
-        banMember_ = value;
-      }
-      /**
-       * <code>optional bool ban_member = 7;</code>
-       */
-      private void clearBanMember() {
-        
-        banMember_ = false;
       }
 
       public static final int GET_MEMBER_FIELD_NUMBER = 8;
       private boolean getMember_;
       /**
-       * <code>optional bool get_member = 8;</code>
+       * <code>bool get_member = 8;</code>
+       * @return The getMember.
        */
+      @java.lang.Override
       public boolean getGetMember() {
         return getMember_;
-      }
-      /**
-       * <code>optional bool get_member = 8;</code>
-       */
-      private void setGetMember(boolean value) {
-        
-        getMember_ = value;
-      }
-      /**
-       * <code>optional bool get_member = 8;</code>
-       */
-      private void clearGetMember() {
-        
-        getMember_ = false;
       }
 
       public static final int ADD_ADMIN_FIELD_NUMBER = 9;
       private boolean addAdmin_;
       /**
-       * <code>optional bool add_admin = 9;</code>
+       * <code>bool add_admin = 9;</code>
+       * @return The addAdmin.
        */
+      @java.lang.Override
       public boolean getAddAdmin() {
         return addAdmin_;
-      }
-      /**
-       * <code>optional bool add_admin = 9;</code>
-       */
-      private void setAddAdmin(boolean value) {
-        
-        addAdmin_ = value;
-      }
-      /**
-       * <code>optional bool add_admin = 9;</code>
-       */
-      private void clearAddAdmin() {
-        
-        addAdmin_ = false;
       }
 
       public static final int ADD_STORY_FIELD_NUMBER = 10;
       private boolean addStory_;
       /**
-       * <code>optional bool add_story = 10;</code>
+       * <code>bool add_story = 10;</code>
+       * @return The addStory.
        */
+      @java.lang.Override
       public boolean getAddStory() {
         return addStory_;
-      }
-      /**
-       * <code>optional bool add_story = 10;</code>
-       */
-      private void setAddStory(boolean value) {
-        
-        addStory_ = value;
-      }
-      /**
-       * <code>optional bool add_story = 10;</code>
-       */
-      private void clearAddStory() {
-        
-        addStory_ = false;
       }
 
       public static final int DELETE_STORY_FIELD_NUMBER = 11;
       private boolean deleteStory_;
       /**
-       * <code>optional bool delete_story = 11;</code>
+       * <code>bool delete_story = 11;</code>
+       * @return The deleteStory.
        */
+      @java.lang.Override
       public boolean getDeleteStory() {
         return deleteStory_;
-      }
-      /**
-       * <code>optional bool delete_story = 11;</code>
-       */
-      private void setDeleteStory(boolean value) {
-        
-        deleteStory_ = value;
-      }
-      /**
-       * <code>optional bool delete_story = 11;</code>
-       */
-      private void clearDeleteStory() {
-        
-        deleteStory_ = false;
       }
 
       public static final int SHOW_STORY_VIEWS_FIELD_NUMBER = 12;
       private boolean showStoryViews_;
       /**
-       * <code>optional bool show_story_views = 12;</code>
+       * <code>bool show_story_views = 12;</code>
+       * @return The showStoryViews.
        */
+      @java.lang.Override
       public boolean getShowStoryViews() {
         return showStoryViews_;
       }
-      /**
-       * <code>optional bool show_story_views = 12;</code>
-       */
-      private void setShowStoryViews(boolean value) {
-        
-        showStoryViews_ = value;
-      }
-      /**
-       * <code>optional bool show_story_views = 12;</code>
-       */
-      private void clearShowStoryViews() {
-        
-        showStoryViews_ = false;
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (modifyRoom_ != false) {
@@ -438,10 +568,12 @@ public final class ProtoChannelAddAdmin {
         if (showStoryViews_ != false) {
           output.writeBool(12, showStoryViews_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -493,693 +625,910 @@ public final class ProtoChannelAddAdmin {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(12, showStoryViews_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights other = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights) obj;
+
+        if (getModifyRoom()
+            != other.getModifyRoom()) return false;
+        if (getPostMessage()
+            != other.getPostMessage()) return false;
+        if (getEditMessage()
+            != other.getEditMessage()) return false;
+        if (getDeleteMessage()
+            != other.getDeleteMessage()) return false;
+        if (getPinMessage()
+            != other.getPinMessage()) return false;
+        if (getAddMember()
+            != other.getAddMember()) return false;
+        if (getBanMember()
+            != other.getBanMember()) return false;
+        if (getGetMember()
+            != other.getGetMember()) return false;
+        if (getAddAdmin()
+            != other.getAddAdmin()) return false;
+        if (getAddStory()
+            != other.getAddStory()) return false;
+        if (getDeleteStory()
+            != other.getDeleteStory()) return false;
+        if (getShowStoryViews()
+            != other.getShowStoryViews()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MODIFY_ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getModifyRoom());
+        hash = (37 * hash) + POST_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getPostMessage());
+        hash = (37 * hash) + EDIT_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getEditMessage());
+        hash = (37 * hash) + DELETE_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getDeleteMessage());
+        hash = (37 * hash) + PIN_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getPinMessage());
+        hash = (37 * hash) + ADD_MEMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAddMember());
+        hash = (37 * hash) + BAN_MEMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getBanMember());
+        hash = (37 * hash) + GET_MEMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getGetMember());
+        hash = (37 * hash) + ADD_ADMIN_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAddAdmin());
+        hash = (37 * hash) + ADD_STORY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAddStory());
+        hash = (37 * hash) + DELETE_STORY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getDeleteStory());
+        hash = (37 * hash) + SHOW_STORY_VIEWS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getShowStoryViews());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.ChannelAddAdmin.AdminRights}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.ChannelAddAdmin.AdminRights)
           net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_AdminRights_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_AdminRights_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.class, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          modifyRoom_ = false;
 
+          postMessage_ = false;
+
+          editMessage_ = false;
+
+          deleteMessage_ = false;
+
+          pinMessage_ = false;
+
+          addMember_ = false;
+
+          banMember_ = false;
+
+          getMember_ = false;
+
+          addAdmin_ = false;
+
+          addStory_ = false;
+
+          deleteStory_ = false;
+
+          showStoryViews_ = false;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_AdminRights_descriptor;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights build() {
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights buildPartial() {
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights result = new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights(this);
+          result.modifyRoom_ = modifyRoom_;
+          result.postMessage_ = postMessage_;
+          result.editMessage_ = editMessage_;
+          result.deleteMessage_ = deleteMessage_;
+          result.pinMessage_ = pinMessage_;
+          result.addMember_ = addMember_;
+          result.banMember_ = banMember_;
+          result.getMember_ = getMember_;
+          result.addAdmin_ = addAdmin_;
+          result.addStory_ = addStory_;
+          result.deleteStory_ = deleteStory_;
+          result.showStoryViews_ = showStoryViews_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights) {
+            return mergeFrom((net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights other) {
+          if (other == net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance()) return this;
+          if (other.getModifyRoom() != false) {
+            setModifyRoom(other.getModifyRoom());
+          }
+          if (other.getPostMessage() != false) {
+            setPostMessage(other.getPostMessage());
+          }
+          if (other.getEditMessage() != false) {
+            setEditMessage(other.getEditMessage());
+          }
+          if (other.getDeleteMessage() != false) {
+            setDeleteMessage(other.getDeleteMessage());
+          }
+          if (other.getPinMessage() != false) {
+            setPinMessage(other.getPinMessage());
+          }
+          if (other.getAddMember() != false) {
+            setAddMember(other.getAddMember());
+          }
+          if (other.getBanMember() != false) {
+            setBanMember(other.getBanMember());
+          }
+          if (other.getGetMember() != false) {
+            setGetMember(other.getGetMember());
+          }
+          if (other.getAddAdmin() != false) {
+            setAddAdmin(other.getAddAdmin());
+          }
+          if (other.getAddStory() != false) {
+            setAddStory(other.getAddStory());
+          }
+          if (other.getDeleteStory() != false) {
+            setDeleteStory(other.getDeleteStory());
+          }
+          if (other.getShowStoryViews() != false) {
+            setShowStoryViews(other.getShowStoryViews());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private boolean modifyRoom_ ;
         /**
-         * <code>optional bool modify_room = 1;</code>
+         * <code>bool modify_room = 1;</code>
+         * @return The modifyRoom.
          */
+        @java.lang.Override
         public boolean getModifyRoom() {
-          return instance.getModifyRoom();
+          return modifyRoom_;
         }
         /**
-         * <code>optional bool modify_room = 1;</code>
+         * <code>bool modify_room = 1;</code>
+         * @param value The modifyRoom to set.
+         * @return This builder for chaining.
          */
         public Builder setModifyRoom(boolean value) {
-          copyOnWrite();
-          instance.setModifyRoom(value);
+          
+          modifyRoom_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool modify_room = 1;</code>
+         * <code>bool modify_room = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearModifyRoom() {
-          copyOnWrite();
-          instance.clearModifyRoom();
+          
+          modifyRoom_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean postMessage_ ;
         /**
-         * <code>optional bool post_message = 2;</code>
+         * <code>bool post_message = 2;</code>
+         * @return The postMessage.
          */
+        @java.lang.Override
         public boolean getPostMessage() {
-          return instance.getPostMessage();
+          return postMessage_;
         }
         /**
-         * <code>optional bool post_message = 2;</code>
+         * <code>bool post_message = 2;</code>
+         * @param value The postMessage to set.
+         * @return This builder for chaining.
          */
         public Builder setPostMessage(boolean value) {
-          copyOnWrite();
-          instance.setPostMessage(value);
+          
+          postMessage_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool post_message = 2;</code>
+         * <code>bool post_message = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearPostMessage() {
-          copyOnWrite();
-          instance.clearPostMessage();
+          
+          postMessage_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean editMessage_ ;
         /**
-         * <code>optional bool edit_message = 3;</code>
+         * <code>bool edit_message = 3;</code>
+         * @return The editMessage.
          */
+        @java.lang.Override
         public boolean getEditMessage() {
-          return instance.getEditMessage();
+          return editMessage_;
         }
         /**
-         * <code>optional bool edit_message = 3;</code>
+         * <code>bool edit_message = 3;</code>
+         * @param value The editMessage to set.
+         * @return This builder for chaining.
          */
         public Builder setEditMessage(boolean value) {
-          copyOnWrite();
-          instance.setEditMessage(value);
+          
+          editMessage_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool edit_message = 3;</code>
+         * <code>bool edit_message = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEditMessage() {
-          copyOnWrite();
-          instance.clearEditMessage();
+          
+          editMessage_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean deleteMessage_ ;
         /**
-         * <code>optional bool delete_message = 4;</code>
+         * <code>bool delete_message = 4;</code>
+         * @return The deleteMessage.
          */
+        @java.lang.Override
         public boolean getDeleteMessage() {
-          return instance.getDeleteMessage();
+          return deleteMessage_;
         }
         /**
-         * <code>optional bool delete_message = 4;</code>
+         * <code>bool delete_message = 4;</code>
+         * @param value The deleteMessage to set.
+         * @return This builder for chaining.
          */
         public Builder setDeleteMessage(boolean value) {
-          copyOnWrite();
-          instance.setDeleteMessage(value);
+          
+          deleteMessage_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool delete_message = 4;</code>
+         * <code>bool delete_message = 4;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDeleteMessage() {
-          copyOnWrite();
-          instance.clearDeleteMessage();
+          
+          deleteMessage_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean pinMessage_ ;
         /**
-         * <code>optional bool pin_message = 5;</code>
+         * <code>bool pin_message = 5;</code>
+         * @return The pinMessage.
          */
+        @java.lang.Override
         public boolean getPinMessage() {
-          return instance.getPinMessage();
+          return pinMessage_;
         }
         /**
-         * <code>optional bool pin_message = 5;</code>
+         * <code>bool pin_message = 5;</code>
+         * @param value The pinMessage to set.
+         * @return This builder for chaining.
          */
         public Builder setPinMessage(boolean value) {
-          copyOnWrite();
-          instance.setPinMessage(value);
+          
+          pinMessage_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool pin_message = 5;</code>
+         * <code>bool pin_message = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearPinMessage() {
-          copyOnWrite();
-          instance.clearPinMessage();
+          
+          pinMessage_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean addMember_ ;
         /**
-         * <code>optional bool add_member = 6;</code>
+         * <code>bool add_member = 6;</code>
+         * @return The addMember.
          */
+        @java.lang.Override
         public boolean getAddMember() {
-          return instance.getAddMember();
+          return addMember_;
         }
         /**
-         * <code>optional bool add_member = 6;</code>
+         * <code>bool add_member = 6;</code>
+         * @param value The addMember to set.
+         * @return This builder for chaining.
          */
         public Builder setAddMember(boolean value) {
-          copyOnWrite();
-          instance.setAddMember(value);
+          
+          addMember_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool add_member = 6;</code>
+         * <code>bool add_member = 6;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAddMember() {
-          copyOnWrite();
-          instance.clearAddMember();
+          
+          addMember_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean banMember_ ;
         /**
-         * <code>optional bool ban_member = 7;</code>
+         * <code>bool ban_member = 7;</code>
+         * @return The banMember.
          */
+        @java.lang.Override
         public boolean getBanMember() {
-          return instance.getBanMember();
+          return banMember_;
         }
         /**
-         * <code>optional bool ban_member = 7;</code>
+         * <code>bool ban_member = 7;</code>
+         * @param value The banMember to set.
+         * @return This builder for chaining.
          */
         public Builder setBanMember(boolean value) {
-          copyOnWrite();
-          instance.setBanMember(value);
+          
+          banMember_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool ban_member = 7;</code>
+         * <code>bool ban_member = 7;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBanMember() {
-          copyOnWrite();
-          instance.clearBanMember();
+          
+          banMember_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean getMember_ ;
         /**
-         * <code>optional bool get_member = 8;</code>
+         * <code>bool get_member = 8;</code>
+         * @return The getMember.
          */
+        @java.lang.Override
         public boolean getGetMember() {
-          return instance.getGetMember();
+          return getMember_;
         }
         /**
-         * <code>optional bool get_member = 8;</code>
+         * <code>bool get_member = 8;</code>
+         * @param value The getMember to set.
+         * @return This builder for chaining.
          */
         public Builder setGetMember(boolean value) {
-          copyOnWrite();
-          instance.setGetMember(value);
+          
+          getMember_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool get_member = 8;</code>
+         * <code>bool get_member = 8;</code>
+         * @return This builder for chaining.
          */
         public Builder clearGetMember() {
-          copyOnWrite();
-          instance.clearGetMember();
+          
+          getMember_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean addAdmin_ ;
         /**
-         * <code>optional bool add_admin = 9;</code>
+         * <code>bool add_admin = 9;</code>
+         * @return The addAdmin.
          */
+        @java.lang.Override
         public boolean getAddAdmin() {
-          return instance.getAddAdmin();
+          return addAdmin_;
         }
         /**
-         * <code>optional bool add_admin = 9;</code>
+         * <code>bool add_admin = 9;</code>
+         * @param value The addAdmin to set.
+         * @return This builder for chaining.
          */
         public Builder setAddAdmin(boolean value) {
-          copyOnWrite();
-          instance.setAddAdmin(value);
+          
+          addAdmin_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool add_admin = 9;</code>
+         * <code>bool add_admin = 9;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAddAdmin() {
-          copyOnWrite();
-          instance.clearAddAdmin();
+          
+          addAdmin_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean addStory_ ;
         /**
-         * <code>optional bool add_story = 10;</code>
+         * <code>bool add_story = 10;</code>
+         * @return The addStory.
          */
+        @java.lang.Override
         public boolean getAddStory() {
-          return instance.getAddStory();
+          return addStory_;
         }
         /**
-         * <code>optional bool add_story = 10;</code>
+         * <code>bool add_story = 10;</code>
+         * @param value The addStory to set.
+         * @return This builder for chaining.
          */
         public Builder setAddStory(boolean value) {
-          copyOnWrite();
-          instance.setAddStory(value);
+          
+          addStory_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool add_story = 10;</code>
+         * <code>bool add_story = 10;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAddStory() {
-          copyOnWrite();
-          instance.clearAddStory();
+          
+          addStory_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean deleteStory_ ;
         /**
-         * <code>optional bool delete_story = 11;</code>
+         * <code>bool delete_story = 11;</code>
+         * @return The deleteStory.
          */
+        @java.lang.Override
         public boolean getDeleteStory() {
-          return instance.getDeleteStory();
+          return deleteStory_;
         }
         /**
-         * <code>optional bool delete_story = 11;</code>
+         * <code>bool delete_story = 11;</code>
+         * @param value The deleteStory to set.
+         * @return This builder for chaining.
          */
         public Builder setDeleteStory(boolean value) {
-          copyOnWrite();
-          instance.setDeleteStory(value);
+          
+          deleteStory_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool delete_story = 11;</code>
+         * <code>bool delete_story = 11;</code>
+         * @return This builder for chaining.
          */
         public Builder clearDeleteStory() {
-          copyOnWrite();
-          instance.clearDeleteStory();
+          
+          deleteStory_ = false;
+          onChanged();
           return this;
         }
 
+        private boolean showStoryViews_ ;
         /**
-         * <code>optional bool show_story_views = 12;</code>
+         * <code>bool show_story_views = 12;</code>
+         * @return The showStoryViews.
          */
+        @java.lang.Override
         public boolean getShowStoryViews() {
-          return instance.getShowStoryViews();
+          return showStoryViews_;
         }
         /**
-         * <code>optional bool show_story_views = 12;</code>
+         * <code>bool show_story_views = 12;</code>
+         * @param value The showStoryViews to set.
+         * @return This builder for chaining.
          */
         public Builder setShowStoryViews(boolean value) {
-          copyOnWrite();
-          instance.setShowStoryViews(value);
+          
+          showStoryViews_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional bool show_story_views = 12;</code>
+         * <code>bool show_story_views = 12;</code>
+         * @return This builder for chaining.
          */
         public Builder clearShowStoryViews() {
-          copyOnWrite();
-          instance.clearShowStoryViews();
+          
+          showStoryViews_ = false;
+          onChanged();
           return this;
         }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.ChannelAddAdmin.AdminRights)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights other = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights) arg1;
-            modifyRoom_ = visitor.visitBoolean(modifyRoom_ != false, modifyRoom_,
-                other.modifyRoom_ != false, other.modifyRoom_);
-            postMessage_ = visitor.visitBoolean(postMessage_ != false, postMessage_,
-                other.postMessage_ != false, other.postMessage_);
-            editMessage_ = visitor.visitBoolean(editMessage_ != false, editMessage_,
-                other.editMessage_ != false, other.editMessage_);
-            deleteMessage_ = visitor.visitBoolean(deleteMessage_ != false, deleteMessage_,
-                other.deleteMessage_ != false, other.deleteMessage_);
-            pinMessage_ = visitor.visitBoolean(pinMessage_ != false, pinMessage_,
-                other.pinMessage_ != false, other.pinMessage_);
-            addMember_ = visitor.visitBoolean(addMember_ != false, addMember_,
-                other.addMember_ != false, other.addMember_);
-            banMember_ = visitor.visitBoolean(banMember_ != false, banMember_,
-                other.banMember_ != false, other.banMember_);
-            getMember_ = visitor.visitBoolean(getMember_ != false, getMember_,
-                other.getMember_ != false, other.getMember_);
-            addAdmin_ = visitor.visitBoolean(addAdmin_ != false, addAdmin_,
-                other.addAdmin_ != false, other.addAdmin_);
-            addStory_ = visitor.visitBoolean(addStory_ != false, addStory_,
-                other.addStory_ != false, other.addStory_);
-            deleteStory_ = visitor.visitBoolean(deleteStory_ != false, deleteStory_,
-                other.deleteStory_ != false, other.deleteStory_);
-            showStoryViews_ = visitor.visitBoolean(showStoryViews_ != false, showStoryViews_,
-                other.showStoryViews_ != false, other.showStoryViews_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    modifyRoom_ = input.readBool();
-                    break;
-                  }
-                  case 16: {
-
-                    postMessage_ = input.readBool();
-                    break;
-                  }
-                  case 24: {
-
-                    editMessage_ = input.readBool();
-                    break;
-                  }
-                  case 32: {
-
-                    deleteMessage_ = input.readBool();
-                    break;
-                  }
-                  case 40: {
-
-                    pinMessage_ = input.readBool();
-                    break;
-                  }
-                  case 48: {
-
-                    addMember_ = input.readBool();
-                    break;
-                  }
-                  case 56: {
-
-                    banMember_ = input.readBool();
-                    break;
-                  }
-                  case 64: {
-
-                    getMember_ = input.readBool();
-                    break;
-                  }
-                  case 72: {
-
-                    addAdmin_ = input.readBool();
-                    break;
-                  }
-                  case 80: {
-
-                    addStory_ = input.readBool();
-                    break;
-                  }
-                  case 88: {
-
-                    deleteStory_ = input.readBool();
-                    break;
-                  }
-                  case 96: {
-
-                    showStoryViews_ = input.readBool();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.ChannelAddAdmin.AdminRights)
       private static final net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new AdminRights();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights();
       }
 
       public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<AdminRights> PARSER;
+      private static final com.google.protobuf.Parser<AdminRights>
+          PARSER = new com.google.protobuf.AbstractParser<AdminRights>() {
+        @java.lang.Override
+        public AdminRights parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdminRights(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<AdminRights> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AdminRights> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
+    @java.lang.Override
     public long getRoomId() {
       return roomId_;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void setRoomId(long value) {
-      
-      roomId_ = value;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void clearRoomId() {
-      
-      roomId_ = 0L;
     }
 
     public static final int MEMBER_ID_FIELD_NUMBER = 3;
     private long memberId_;
     /**
-     * <code>optional uint64 member_id = 3;</code>
+     * <code>uint64 member_id = 3;</code>
+     * @return The memberId.
      */
+    @java.lang.Override
     public long getMemberId() {
       return memberId_;
-    }
-    /**
-     * <code>optional uint64 member_id = 3;</code>
-     */
-    private void setMemberId(long value) {
-      
-      memberId_ = value;
-    }
-    /**
-     * <code>optional uint64 member_id = 3;</code>
-     */
-    private void clearMemberId() {
-      
-      memberId_ = 0L;
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 4;
     private net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights permission_;
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return Whether the permission field is set.
      */
+    @java.lang.Override
     public boolean hasPermission() {
       return permission_ != null;
     }
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return The permission.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getPermission() {
       return permission_ == null ? net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : permission_;
     }
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
      */
-    private void setPermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      permission_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
-     */
-    private void setPermission(
-        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder builderForValue) {
-      permission_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
-     */
-    private void mergePermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-      if (permission_ != null &&
-          permission_ != net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance()) {
-        permission_ =
-          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.newBuilder(permission_).mergeFrom(value).buildPartial();
-      } else {
-        permission_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
-     */
-    private void clearPermission() {  permission_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getPermissionOrBuilder() {
+      return getPermission();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -1194,10 +1543,12 @@ public final class ProtoChannelAddAdmin {
       if (permission_ != null) {
         output.writeMessage(4, getPermission());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1217,553 +1568,933 @@ public final class ProtoChannelAddAdmin {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getPermission());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin other = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (getMemberId()
+          != other.getMemberId()) return false;
+      if (hasPermission() != other.hasPermission()) return false;
+      if (hasPermission()) {
+        if (!getPermission()
+            .equals(other.getPermission())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + MEMBER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMemberId());
+      if (hasPermission()) {
+        hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPermission().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ChannelAddAdmin}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ChannelAddAdmin)
         net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.class, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        roomId_ = 0L;
 
+        memberId_ = 0L;
+
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdmin_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin build() {
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin buildPartial() {
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin result = new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        result.memberId_ = memberId_;
+        if (permissionBuilder_ == null) {
+          result.permission_ = permission_;
+        } else {
+          result.permission_ = permissionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin) {
+          return mergeFrom((net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin other) {
+        if (other == net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.getMemberId() != 0L) {
+          setMemberId(other.getMemberId());
+        }
+        if (other.hasPermission()) {
+          mergePermission(other.getPermission());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
+      @java.lang.Override
       public long getRoomId() {
-        return instance.getRoomId();
+        return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoomId(long value) {
-        copyOnWrite();
-        instance.setRoomId(value);
+        
+        roomId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoomId() {
-        copyOnWrite();
-        instance.clearRoomId();
+        
+        roomId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private long memberId_ ;
       /**
-       * <code>optional uint64 member_id = 3;</code>
+       * <code>uint64 member_id = 3;</code>
+       * @return The memberId.
        */
+      @java.lang.Override
       public long getMemberId() {
-        return instance.getMemberId();
+        return memberId_;
       }
       /**
-       * <code>optional uint64 member_id = 3;</code>
+       * <code>uint64 member_id = 3;</code>
+       * @param value The memberId to set.
+       * @return This builder for chaining.
        */
       public Builder setMemberId(long value) {
-        copyOnWrite();
-        instance.setMemberId(value);
+        
+        memberId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 member_id = 3;</code>
+       * <code>uint64 member_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMemberId() {
-        copyOnWrite();
-        instance.clearMemberId();
+        
+        memberId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights permission_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder> permissionBuilder_;
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * @return Whether the permission field is set.
        */
       public boolean hasPermission() {
-        return instance.hasPermission();
+        return permissionBuilder_ != null || permission_ != null;
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * @return The permission.
        */
       public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getPermission() {
-        return instance.getPermission();
+        if (permissionBuilder_ == null) {
+          return permission_ == null ? net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : permission_;
+        } else {
+          return permissionBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
       public Builder setPermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-        copyOnWrite();
-        instance.setPermission(value);
-        return this;
+        if (permissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          permission_ = value;
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
       public Builder setPermission(
           net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder builderForValue) {
-        copyOnWrite();
-        instance.setPermission(builderForValue);
+        if (permissionBuilder_ == null) {
+          permission_ = builderForValue.build();
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
       public Builder mergePermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-        copyOnWrite();
-        instance.mergePermission(value);
+        if (permissionBuilder_ == null) {
+          if (permission_ != null) {
+            permission_ =
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.newBuilder(permission_).mergeFrom(value).buildPartial();
+          } else {
+            permission_ = value;
+          }
+          onChanged();
+        } else {
+          permissionBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
-      public Builder clearPermission() {  copyOnWrite();
-        instance.clearPermission();
+      public Builder clearPermission() {
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+          onChanged();
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder getPermissionBuilder() {
+        
+        onChanged();
+        return getPermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getPermissionOrBuilder() {
+        if (permissionBuilder_ != null) {
+          return permissionBuilder_.getMessageOrBuilder();
+        } else {
+          return permission_ == null ?
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : permission_;
+        }
+      }
+      /**
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder> 
+          getPermissionFieldBuilder() {
+        if (permissionBuilder_ == null) {
+          permissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder>(
+                  getPermission(),
+                  getParentForChildren(),
+                  isClean());
+          permission_ = null;
+        }
+        return permissionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ChannelAddAdmin)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin other = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-              other.roomId_ != 0L, other.roomId_);
-          memberId_ = visitor.visitLong(memberId_ != 0L, memberId_,
-              other.memberId_ != 0L, other.memberId_);
-          permission_ = visitor.visitMessage(permission_, other.permission_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  roomId_ = input.readUInt64();
-                  break;
-                }
-                case 24: {
-
-                  memberId_ = input.readUInt64();
-                  break;
-                }
-                case 34: {
-                  net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder subBuilder = null;
-                  if (permission_ != null) {
-                    subBuilder = permission_.toBuilder();
-                  }
-                  permission_ = input.readMessage(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(permission_);
-                    permission_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ChannelAddAdmin)
     private static final net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChannelAddAdmin();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin();
     }
 
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChannelAddAdmin> PARSER;
+    private static final com.google.protobuf.Parser<ChannelAddAdmin>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelAddAdmin>() {
+      @java.lang.Override
+      public ChannelAddAdmin parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChannelAddAdmin(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ChannelAddAdmin> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelAddAdmin> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ChannelAddAdminResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ChannelAddAdminResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
     long getRoomId();
 
     /**
-     * <code>optional uint64 member_id = 3;</code>
+     * <code>uint64 member_id = 3;</code>
+     * @return The memberId.
      */
     long getMemberId();
 
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return Whether the permission field is set.
      */
     boolean hasPermission();
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return The permission.
      */
     net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getPermission();
+    /**
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     */
+    net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getPermissionOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelAddAdminResponse}
    */
-  public  static final class ChannelAddAdminResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ChannelAddAdminResponse, ChannelAddAdminResponse.Builder> implements
+  public static final class ChannelAddAdminResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ChannelAddAdminResponse)
       ChannelAddAdminResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChannelAddAdminResponse.newBuilder() to construct.
+    private ChannelAddAdminResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ChannelAddAdminResponse() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChannelAddAdminResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChannelAddAdminResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              memberId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder subBuilder = null;
+              if (permission_ != null) {
+                subBuilder = permission_.toBuilder();
+              }
+              permission_ = input.readMessage(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(permission_);
+                permission_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdminResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdminResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.class, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>uint64 room_id = 2;</code>
+     * @return The roomId.
      */
+    @java.lang.Override
     public long getRoomId() {
       return roomId_;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void setRoomId(long value) {
-      
-      roomId_ = value;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void clearRoomId() {
-      
-      roomId_ = 0L;
     }
 
     public static final int MEMBER_ID_FIELD_NUMBER = 3;
     private long memberId_;
     /**
-     * <code>optional uint64 member_id = 3;</code>
+     * <code>uint64 member_id = 3;</code>
+     * @return The memberId.
      */
+    @java.lang.Override
     public long getMemberId() {
       return memberId_;
-    }
-    /**
-     * <code>optional uint64 member_id = 3;</code>
-     */
-    private void setMemberId(long value) {
-      
-      memberId_ = value;
-    }
-    /**
-     * <code>optional uint64 member_id = 3;</code>
-     */
-    private void clearMemberId() {
-      
-      memberId_ = 0L;
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 4;
     private net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights permission_;
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return Whether the permission field is set.
      */
+    @java.lang.Override
     public boolean hasPermission() {
       return permission_ != null;
     }
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * @return The permission.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getPermission() {
       return permission_ == null ? net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : permission_;
     }
     /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+     * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
      */
-    private void setPermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      permission_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
-     */
-    private void setPermission(
-        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder builderForValue) {
-      permission_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
-     */
-    private void mergePermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-      if (permission_ != null &&
-          permission_ != net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance()) {
-        permission_ =
-          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.newBuilder(permission_).mergeFrom(value).buildPartial();
-      } else {
-        permission_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
-     */
-    private void clearPermission() {  permission_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getPermissionOrBuilder() {
+      return getPermission();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1778,10 +2509,12 @@ public final class ProtoChannelAddAdmin {
       if (permission_ != null) {
         output.writeMessage(4, getPermission());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1801,363 +2534,757 @@ public final class ProtoChannelAddAdmin {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getPermission());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse other = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (getMemberId()
+          != other.getMemberId()) return false;
+      if (hasPermission() != other.hasPermission()) return false;
+      if (hasPermission()) {
+        if (!getPermission()
+            .equals(other.getPermission())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + MEMBER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMemberId());
+      if (hasPermission()) {
+        hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPermission().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ChannelAddAdminResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ChannelAddAdminResponse)
         net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdminResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdminResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.class, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        roomId_ = 0L;
 
+        memberId_ = 0L;
+
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoChannelAddAdmin.internal_static_proto_ChannelAddAdminResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse build() {
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse buildPartial() {
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse result = new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        result.memberId_ = memberId_;
+        if (permissionBuilder_ == null) {
+          result.permission_ = permission_;
+        } else {
+          result.permission_ = permissionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse) {
+          return mergeFrom((net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse other) {
+        if (other == net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.getMemberId() != 0L) {
+          setMemberId(other.getMemberId());
+        }
+        if (other.hasPermission()) {
+          mergePermission(other.getPermission());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return The roomId.
        */
+      @java.lang.Override
       public long getRoomId() {
-        return instance.getRoomId();
+        return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoomId(long value) {
-        copyOnWrite();
-        instance.setRoomId(value);
+        
+        roomId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>uint64 room_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoomId() {
-        copyOnWrite();
-        instance.clearRoomId();
+        
+        roomId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private long memberId_ ;
       /**
-       * <code>optional uint64 member_id = 3;</code>
+       * <code>uint64 member_id = 3;</code>
+       * @return The memberId.
        */
+      @java.lang.Override
       public long getMemberId() {
-        return instance.getMemberId();
+        return memberId_;
       }
       /**
-       * <code>optional uint64 member_id = 3;</code>
+       * <code>uint64 member_id = 3;</code>
+       * @param value The memberId to set.
+       * @return This builder for chaining.
        */
       public Builder setMemberId(long value) {
-        copyOnWrite();
-        instance.setMemberId(value);
+        
+        memberId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 member_id = 3;</code>
+       * <code>uint64 member_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMemberId() {
-        copyOnWrite();
-        instance.clearMemberId();
+        
+        memberId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights permission_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder> permissionBuilder_;
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * @return Whether the permission field is set.
        */
       public boolean hasPermission() {
-        return instance.hasPermission();
+        return permissionBuilder_ != null || permission_ != null;
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * @return The permission.
        */
       public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights getPermission() {
-        return instance.getPermission();
+        if (permissionBuilder_ == null) {
+          return permission_ == null ? net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : permission_;
+        } else {
+          return permissionBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
       public Builder setPermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-        copyOnWrite();
-        instance.setPermission(value);
-        return this;
+        if (permissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          permission_ = value;
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
       public Builder setPermission(
           net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder builderForValue) {
-        copyOnWrite();
-        instance.setPermission(builderForValue);
+        if (permissionBuilder_ == null) {
+          permission_ = builderForValue.build();
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
       public Builder mergePermission(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights value) {
-        copyOnWrite();
-        instance.mergePermission(value);
+        if (permissionBuilder_ == null) {
+          if (permission_ != null) {
+            permission_ =
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.newBuilder(permission_).mergeFrom(value).buildPartial();
+          } else {
+            permission_ = value;
+          }
+          onChanged();
+        } else {
+          permissionBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
        */
-      public Builder clearPermission() {  copyOnWrite();
-        instance.clearPermission();
+      public Builder clearPermission() {
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+          onChanged();
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder getPermissionBuilder() {
+        
+        onChanged();
+        return getPermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getPermissionOrBuilder() {
+        if (permissionBuilder_ != null) {
+          return permissionBuilder_.getMessageOrBuilder();
+        } else {
+          return permission_ == null ?
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.getDefaultInstance() : permission_;
+        }
+      }
+      /**
+       * <code>.proto.ChannelAddAdmin.AdminRights permission = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder> 
+          getPermissionFieldBuilder() {
+        if (permissionBuilder_ == null) {
+          permissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder, net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder>(
+                  getPermission(),
+                  getParentForChildren(),
+                  isClean());
+          permission_ = null;
+        }
+        return permissionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.ChannelAddAdminResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse other = (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-              other.roomId_ != 0L, other.roomId_);
-          memberId_ = visitor.visitLong(memberId_ != 0L, memberId_,
-              other.memberId_ != 0L, other.memberId_);
-          permission_ = visitor.visitMessage(permission_, other.permission_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  roomId_ = input.readUInt64();
-                  break;
-                }
-                case 24: {
-
-                  memberId_ = input.readUInt64();
-                  break;
-                }
-                case 34: {
-                  net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.Builder subBuilder = null;
-                  if (permission_ != null) {
-                    subBuilder = permission_.toBuilder();
-                  }
-                  permission_ = input.readMessage(net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRights.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(permission_);
-                    permission_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ChannelAddAdminResponse)
     private static final net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChannelAddAdminResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse();
     }
 
     public static net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChannelAddAdminResponse> PARSER;
+    private static final com.google.protobuf.Parser<ChannelAddAdminResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelAddAdminResponse>() {
+      @java.lang.Override
+      public ChannelAddAdminResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChannelAddAdminResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ChannelAddAdminResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelAddAdminResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdminResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelAddAdmin_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelAddAdmin_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelAddAdmin_AdminRights_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelAddAdmin_AdminRights_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelAddAdminResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelAddAdminResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\025ChannelAddAdmin.proto\022\005proto\032\rRequest." +
+      "proto\032\016Response.proto\"\236\003\n\017ChannelAddAdmi" +
+      "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007ro" +
+      "om_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0226\n\npermis" +
+      "sion\030\004 \001(\0132\".proto.ChannelAddAdmin.Admin" +
+      "Rights\032\215\002\n\013AdminRights\022\023\n\013modify_room\030\001 " +
+      "\001(\010\022\024\n\014post_message\030\002 \001(\010\022\024\n\014edit_messag" +
+      "e\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022\023\n\013pin_m" +
+      "essage\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022\n\nban_" +
+      "member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010\022\021\n\tadd_" +
+      "admin\030\t \001(\010\022\021\n\tadd_story\030\n \001(\010\022\024\n\014delete" +
+      "_story\030\013 \001(\010\022\030\n\020show_story_views\030\014 \001(\010\"\230" +
+      "\001\n\027ChannelAddAdminResponse\022!\n\010response\030\001" +
+      " \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001(\004\022\021" +
+      "\n\tmember_id\030\003 \001(\004\0226\n\npermission\030\004 \001(\0132\"." +
+      "proto.ChannelAddAdmin.AdminRightsB&\n\016net" +
+      ".iGap.protoB\024ProtoChannelAddAdminb\006proto" +
+      "3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_ChannelAddAdmin_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ChannelAddAdmin_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelAddAdmin_descriptor,
+        new java.lang.String[] { "Request", "RoomId", "MemberId", "Permission", });
+    internal_static_proto_ChannelAddAdmin_AdminRights_descriptor =
+      internal_static_proto_ChannelAddAdmin_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ChannelAddAdmin_AdminRights_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelAddAdmin_AdminRights_descriptor,
+        new java.lang.String[] { "ModifyRoom", "PostMessage", "EditMessage", "DeleteMessage", "PinMessage", "AddMember", "BanMember", "GetMember", "AddAdmin", "AddStory", "DeleteStory", "ShowStoryViews", });
+    internal_static_proto_ChannelAddAdminResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ChannelAddAdminResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelAddAdminResponse_descriptor,
+        new java.lang.String[] { "Response", "RoomId", "MemberId", "Permission", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

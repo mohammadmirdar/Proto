@@ -8,64 +8,185 @@ public final class ProtoUserRegister {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface UserRegisterOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserRegister)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional uint64 phone_number = 2;</code>
+     * <code>uint64 phone_number = 2;</code>
+     * @return The phoneNumber.
      */
     long getPhoneNumber();
 
     /**
-     * <code>optional string country_code = 3;</code>
+     * <code>string country_code = 3;</code>
+     * @return The countryCode.
      */
     java.lang.String getCountryCode();
     /**
-     * <code>optional string country_code = 3;</code>
+     * <code>string country_code = 3;</code>
+     * @return The bytes for countryCode.
      */
     com.google.protobuf.ByteString
         getCountryCodeBytes();
 
     /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * @return The enum numeric value on the wire for preferenceMethod.
      */
     int getPreferenceMethodValue();
     /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * @return The preferenceMethod.
      */
     net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod();
 
     /**
-     * <code>optional uint32 app_id = 5;</code>
+     * <code>uint32 app_id = 5;</code>
+     * @return The appId.
      */
     int getAppId();
   }
   /**
    * Protobuf type {@code proto.UserRegister}
    */
-  public  static final class UserRegister extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserRegister, UserRegister.Builder> implements
+  public static final class UserRegister extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserRegister)
       UserRegisterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserRegister.newBuilder() to construct.
+    private UserRegister(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserRegister() {
       countryCode_ = "";
+      preferenceMethod_ = 0;
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserRegister();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserRegister(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              phoneNumber_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              countryCode_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              preferenceMethod_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              appId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegister_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegister_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserRegister.UserRegister.class, net.iGap.proto.ProtoUserRegister.UserRegister.Builder.class);
+    }
+
     /**
      * Protobuf enum {@code proto.UserRegister.PreferenceMethod}
      */
     public enum PreferenceMethod
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>VERIFY_CODE_AUTO = 0;</code>
        */
@@ -96,10 +217,16 @@ public final class ProtoUserRegister {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -107,6 +234,10 @@ public final class ProtoUserRegister {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static PreferenceMethod forNumber(int value) {
         switch (value) {
           case 0: return VERIFY_CODE_AUTO;
@@ -128,6 +259,37 @@ public final class ProtoUserRegister {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserRegister.UserRegister.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PreferenceMethod[] VALUES = values();
+
+      public static PreferenceMethod valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private PreferenceMethod(int value) {
@@ -140,186 +302,120 @@ public final class ProtoUserRegister {
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int PHONE_NUMBER_FIELD_NUMBER = 2;
     private long phoneNumber_;
     /**
-     * <code>optional uint64 phone_number = 2;</code>
+     * <code>uint64 phone_number = 2;</code>
+     * @return The phoneNumber.
      */
+    @java.lang.Override
     public long getPhoneNumber() {
       return phoneNumber_;
     }
-    /**
-     * <code>optional uint64 phone_number = 2;</code>
-     */
-    private void setPhoneNumber(long value) {
-      
-      phoneNumber_ = value;
-    }
-    /**
-     * <code>optional uint64 phone_number = 2;</code>
-     */
-    private void clearPhoneNumber() {
-      
-      phoneNumber_ = 0L;
-    }
 
     public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
-    private java.lang.String countryCode_;
+    private volatile java.lang.Object countryCode_;
     /**
-     * <code>optional string country_code = 3;</code>
+     * <code>string country_code = 3;</code>
+     * @return The countryCode.
      */
+    @java.lang.Override
     public java.lang.String getCountryCode() {
-      return countryCode_;
+      java.lang.Object ref = countryCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        countryCode_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string country_code = 3;</code>
+     * <code>string country_code = 3;</code>
+     * @return The bytes for countryCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(countryCode_);
-    }
-    /**
-     * <code>optional string country_code = 3;</code>
-     */
-    private void setCountryCode(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      countryCode_ = value;
-    }
-    /**
-     * <code>optional string country_code = 3;</code>
-     */
-    private void clearCountryCode() {
-      
-      countryCode_ = getDefaultInstance().getCountryCode();
-    }
-    /**
-     * <code>optional string country_code = 3;</code>
-     */
-    private void setCountryCodeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      countryCode_ = value.toStringUtf8();
+      java.lang.Object ref = countryCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        countryCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PREFERENCE_METHOD_FIELD_NUMBER = 4;
     private int preferenceMethod_;
     /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * @return The enum numeric value on the wire for preferenceMethod.
      */
-    public int getPreferenceMethodValue() {
+    @java.lang.Override public int getPreferenceMethodValue() {
       return preferenceMethod_;
     }
     /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+     * @return The preferenceMethod.
      */
-    public net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod() {
-      net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod result = net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.forNumber(preferenceMethod_);
+    @java.lang.Override public net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod result = net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.valueOf(preferenceMethod_);
       return result == null ? net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
-     */
-    private void setPreferenceMethodValue(int value) {
-        preferenceMethod_ = value;
-    }
-    /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
-     */
-    private void setPreferenceMethod(net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      preferenceMethod_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
-     */
-    private void clearPreferenceMethod() {
-      
-      preferenceMethod_ = 0;
     }
 
     public static final int APP_ID_FIELD_NUMBER = 5;
     private int appId_;
     /**
-     * <code>optional uint32 app_id = 5;</code>
+     * <code>uint32 app_id = 5;</code>
+     * @return The appId.
      */
+    @java.lang.Override
     public int getAppId() {
       return appId_;
     }
-    /**
-     * <code>optional uint32 app_id = 5;</code>
-     */
-    private void setAppId(int value) {
-      
-      appId_ = value;
-    }
-    /**
-     * <code>optional uint32 app_id = 5;</code>
-     */
-    private void clearAppId() {
-      
-      appId_ = 0;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
@@ -328,8 +424,8 @@ public final class ProtoUserRegister {
       if (phoneNumber_ != 0L) {
         output.writeUInt64(2, phoneNumber_);
       }
-      if (!countryCode_.isEmpty()) {
-        output.writeString(3, getCountryCode());
+      if (!getCountryCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, countryCode_);
       }
       if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
         output.writeEnum(4, preferenceMethod_);
@@ -337,10 +433,12 @@ public final class ProtoUserRegister {
       if (appId_ != 0) {
         output.writeUInt32(5, appId_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -352,9 +450,8 @@ public final class ProtoUserRegister {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, phoneNumber_);
       }
-      if (!countryCode_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(3, getCountryCode());
+      if (!getCountryCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, countryCode_);
       }
       if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -364,498 +461,971 @@ public final class ProtoUserRegister {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, appId_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserRegister.UserRegister)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserRegister.UserRegister other = (net.iGap.proto.ProtoUserRegister.UserRegister) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (getPhoneNumber()
+          != other.getPhoneNumber()) return false;
+      if (!getCountryCode()
+          .equals(other.getCountryCode())) return false;
+      if (preferenceMethod_ != other.preferenceMethod_) return false;
+      if (getAppId()
+          != other.getAppId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPhoneNumber());
+      hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCountryCode().hashCode();
+      hash = (37 * hash) + PREFERENCE_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + preferenceMethod_;
+      hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegister parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserRegister.UserRegister prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserRegister}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserRegister.UserRegister, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserRegister)
         net.iGap.proto.ProtoUserRegister.UserRegisterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegister_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegister_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserRegister.UserRegister.class, net.iGap.proto.ProtoUserRegister.UserRegister.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserRegister.UserRegister.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        phoneNumber_ = 0L;
 
+        countryCode_ = "";
+
+        preferenceMethod_ = 0;
+
+        appId_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegister_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserRegister.UserRegister getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserRegister.UserRegister.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserRegister.UserRegister build() {
+        net.iGap.proto.ProtoUserRegister.UserRegister result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserRegister.UserRegister buildPartial() {
+        net.iGap.proto.ProtoUserRegister.UserRegister result = new net.iGap.proto.ProtoUserRegister.UserRegister(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.phoneNumber_ = phoneNumber_;
+        result.countryCode_ = countryCode_;
+        result.preferenceMethod_ = preferenceMethod_;
+        result.appId_ = appId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserRegister.UserRegister) {
+          return mergeFrom((net.iGap.proto.ProtoUserRegister.UserRegister)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserRegister.UserRegister other) {
+        if (other == net.iGap.proto.ProtoUserRegister.UserRegister.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getPhoneNumber() != 0L) {
+          setPhoneNumber(other.getPhoneNumber());
+        }
+        if (!other.getCountryCode().isEmpty()) {
+          countryCode_ = other.countryCode_;
+          onChanged();
+        }
+        if (other.preferenceMethod_ != 0) {
+          setPreferenceMethodValue(other.getPreferenceMethodValue());
+        }
+        if (other.getAppId() != 0) {
+          setAppId(other.getAppId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserRegister.UserRegister parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserRegister.UserRegister) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private long phoneNumber_ ;
       /**
-       * <code>optional uint64 phone_number = 2;</code>
+       * <code>uint64 phone_number = 2;</code>
+       * @return The phoneNumber.
        */
+      @java.lang.Override
       public long getPhoneNumber() {
-        return instance.getPhoneNumber();
+        return phoneNumber_;
       }
       /**
-       * <code>optional uint64 phone_number = 2;</code>
+       * <code>uint64 phone_number = 2;</code>
+       * @param value The phoneNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setPhoneNumber(long value) {
-        copyOnWrite();
-        instance.setPhoneNumber(value);
+        
+        phoneNumber_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 phone_number = 2;</code>
+       * <code>uint64 phone_number = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhoneNumber() {
-        copyOnWrite();
-        instance.clearPhoneNumber();
+        
+        phoneNumber_ = 0L;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object countryCode_ = "";
       /**
-       * <code>optional string country_code = 3;</code>
+       * <code>string country_code = 3;</code>
+       * @return The countryCode.
        */
       public java.lang.String getCountryCode() {
-        return instance.getCountryCode();
+        java.lang.Object ref = countryCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          countryCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string country_code = 3;</code>
+       * <code>string country_code = 3;</code>
+       * @return The bytes for countryCode.
        */
       public com.google.protobuf.ByteString
           getCountryCodeBytes() {
-        return instance.getCountryCodeBytes();
+        java.lang.Object ref = countryCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          countryCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string country_code = 3;</code>
+       * <code>string country_code = 3;</code>
+       * @param value The countryCode to set.
+       * @return This builder for chaining.
        */
       public Builder setCountryCode(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setCountryCode(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        countryCode_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string country_code = 3;</code>
+       * <code>string country_code = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCountryCode() {
-        copyOnWrite();
-        instance.clearCountryCode();
+        
+        countryCode_ = getDefaultInstance().getCountryCode();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string country_code = 3;</code>
+       * <code>string country_code = 3;</code>
+       * @param value The bytes for countryCode to set.
+       * @return This builder for chaining.
        */
       public Builder setCountryCodeBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setCountryCodeBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        countryCode_ = value;
+        onChanged();
         return this;
       }
 
+      private int preferenceMethod_ = 0;
       /**
-       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * @return The enum numeric value on the wire for preferenceMethod.
        */
-      public int getPreferenceMethodValue() {
-        return instance.getPreferenceMethodValue();
+      @java.lang.Override public int getPreferenceMethodValue() {
+        return preferenceMethod_;
       }
       /**
-       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * @param value The enum numeric value on the wire for preferenceMethod to set.
+       * @return This builder for chaining.
        */
       public Builder setPreferenceMethodValue(int value) {
-        copyOnWrite();
-        instance.setPreferenceMethodValue(value);
+        
+        preferenceMethod_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * @return The preferenceMethod.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod() {
-        return instance.getPreferenceMethod();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod result = net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.valueOf(preferenceMethod_);
+        return result == null ? net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * @param value The preferenceMethod to set.
+       * @return This builder for chaining.
        */
       public Builder setPreferenceMethod(net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod value) {
-        copyOnWrite();
-        instance.setPreferenceMethod(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        preferenceMethod_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * <code>.proto.UserRegister.PreferenceMethod preference_method = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPreferenceMethod() {
-        copyOnWrite();
-        instance.clearPreferenceMethod();
+        
+        preferenceMethod_ = 0;
+        onChanged();
         return this;
       }
 
+      private int appId_ ;
       /**
-       * <code>optional uint32 app_id = 5;</code>
+       * <code>uint32 app_id = 5;</code>
+       * @return The appId.
        */
+      @java.lang.Override
       public int getAppId() {
-        return instance.getAppId();
+        return appId_;
       }
       /**
-       * <code>optional uint32 app_id = 5;</code>
+       * <code>uint32 app_id = 5;</code>
+       * @param value The appId to set.
+       * @return This builder for chaining.
        */
       public Builder setAppId(int value) {
-        copyOnWrite();
-        instance.setAppId(value);
+        
+        appId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 app_id = 5;</code>
+       * <code>uint32 app_id = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAppId() {
-        copyOnWrite();
-        instance.clearAppId();
+        
+        appId_ = 0;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserRegister)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserRegister.UserRegister();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserRegister.UserRegister other = (net.iGap.proto.ProtoUserRegister.UserRegister) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          phoneNumber_ = visitor.visitLong(phoneNumber_ != 0L, phoneNumber_,
-              other.phoneNumber_ != 0L, other.phoneNumber_);
-          countryCode_ = visitor.visitString(!countryCode_.isEmpty(), countryCode_,
-              !other.countryCode_.isEmpty(), other.countryCode_);
-          preferenceMethod_ = visitor.visitInt(preferenceMethod_ != 0, preferenceMethod_,    other.preferenceMethod_ != 0, other.preferenceMethod_);
-          appId_ = visitor.visitInt(appId_ != 0, appId_,
-              other.appId_ != 0, other.appId_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  phoneNumber_ = input.readUInt64();
-                  break;
-                }
-                case 26: {
-                  String s = input.readStringRequireUtf8();
-
-                  countryCode_ = s;
-                  break;
-                }
-                case 32: {
-                  int rawValue = input.readEnum();
-
-                  preferenceMethod_ = rawValue;
-                  break;
-                }
-                case 40: {
-
-                  appId_ = input.readUInt32();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserRegister.UserRegister.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserRegister)
     private static final net.iGap.proto.ProtoUserRegister.UserRegister DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserRegister();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserRegister.UserRegister();
     }
 
     public static net.iGap.proto.ProtoUserRegister.UserRegister getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserRegister> PARSER;
+    private static final com.google.protobuf.Parser<UserRegister>
+        PARSER = new com.google.protobuf.AbstractParser<UserRegister>() {
+      @java.lang.Override
+      public UserRegister parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserRegister(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserRegister> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserRegister> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserRegister.UserRegister getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface UserRegisterResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserRegisterResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional string username = 2;</code>
+     * <code>string username = 2;</code>
+     * @return The username.
      */
     java.lang.String getUsername();
     /**
-     * <code>optional string username = 2;</code>
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
     /**
-     * <code>optional uint64 user_id = 3;</code>
+     * <code>uint64 user_id = 3;</code>
+     * @return The userId.
      */
     long getUserId();
 
     /**
-     * <code>optional string author_hash = 4;</code>
+     * <code>string author_hash = 4;</code>
+     * @return The authorHash.
      */
     java.lang.String getAuthorHash();
     /**
-     * <code>optional string author_hash = 4;</code>
+     * <code>string author_hash = 4;</code>
+     * @return The bytes for authorHash.
      */
     com.google.protobuf.ByteString
         getAuthorHashBytes();
 
     /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+     * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+     * @return The enum numeric value on the wire for method.
      */
     int getMethodValue();
     /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+     * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+     * @return The method.
      */
     net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method getMethod();
 
     /**
-     * <code>optional uint32 resend_delay = 6;</code>
+     * <code>uint32 resend_delay = 6;</code>
+     * @return The resendDelay.
      */
     int getResendDelay();
 
     /**
      * <code>repeated uint64 sms_number = 7;</code>
+     * @return A list containing the smsNumber.
      */
     java.util.List<java.lang.Long> getSmsNumberList();
     /**
      * <code>repeated uint64 sms_number = 7;</code>
+     * @return The count of smsNumber.
      */
     int getSmsNumberCount();
     /**
      * <code>repeated uint64 sms_number = 7;</code>
+     * @param index The index of the element to return.
+     * @return The smsNumber at the given index.
      */
     long getSmsNumber(int index);
 
     /**
-     * <code>optional string verify_code_regex = 8;</code>
+     * <code>string verify_code_regex = 8;</code>
+     * @return The verifyCodeRegex.
      */
     java.lang.String getVerifyCodeRegex();
     /**
-     * <code>optional string verify_code_regex = 8;</code>
+     * <code>string verify_code_regex = 8;</code>
+     * @return The bytes for verifyCodeRegex.
      */
     com.google.protobuf.ByteString
         getVerifyCodeRegexBytes();
 
     /**
-     * <code>optional uint32 verify_code_digit_count = 9;</code>
+     * <code>uint32 verify_code_digit_count = 9;</code>
+     * @return The verifyCodeDigitCount.
      */
     int getVerifyCodeDigitCount();
 
     /**
-     * <code>optional bool call_method_supported = 10;</code>
+     * <code>bool call_method_supported = 10;</code>
+     * @return The callMethodSupported.
      */
     boolean getCallMethodSupported();
   }
   /**
    * Protobuf type {@code proto.UserRegisterResponse}
    */
-  public  static final class UserRegisterResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserRegisterResponse, UserRegisterResponse.Builder> implements
+  public static final class UserRegisterResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserRegisterResponse)
       UserRegisterResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserRegisterResponse.newBuilder() to construct.
+    private UserRegisterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserRegisterResponse() {
       username_ = "";
       authorHash_ = "";
+      method_ = 0;
       smsNumber_ = emptyLongList();
       verifyCodeRegex_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserRegisterResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserRegisterResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 24: {
+
+              userId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authorHash_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              method_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              resendDelay_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                smsNumber_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              smsNumber_.addLong(input.readUInt64());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                smsNumber_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                smsNumber_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              verifyCodeRegex_ = s;
+              break;
+            }
+            case 72: {
+
+              verifyCodeDigitCount_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              callMethodSupported_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          smsNumber_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegisterResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegisterResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserRegister.UserRegisterResponse.class, net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Builder.class);
+    }
+
     /**
      * Protobuf enum {@code proto.UserRegisterResponse.Method}
      */
     public enum Method
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>VERIFY_CODE_SMS = 0;</code>
        */
@@ -894,10 +1464,16 @@ public final class ProtoUserRegister {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -905,6 +1481,10 @@ public final class ProtoUserRegister {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Method forNumber(int value) {
         switch (value) {
           case 0: return VERIFY_CODE_SMS;
@@ -927,6 +1507,37 @@ public final class ProtoUserRegister {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserRegister.UserRegisterResponse.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Method[] VALUES = values();
+
+      public static Method valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private Method(int value) {
@@ -936,400 +1547,263 @@ public final class ProtoUserRegister {
       // @@protoc_insertion_point(enum_scope:proto.UserRegisterResponse.Method)
     }
 
-    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private java.lang.String username_;
+    private volatile java.lang.Object username_;
     /**
-     * <code>optional string username = 2;</code>
+     * <code>string username = 2;</code>
+     * @return The username.
      */
+    @java.lang.Override
     public java.lang.String getUsername() {
-      return username_;
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string username = 2;</code>
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUsernameBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(username_);
-    }
-    /**
-     * <code>optional string username = 2;</code>
-     */
-    private void setUsername(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      username_ = value;
-    }
-    /**
-     * <code>optional string username = 2;</code>
-     */
-    private void clearUsername() {
-      
-      username_ = getDefaultInstance().getUsername();
-    }
-    /**
-     * <code>optional string username = 2;</code>
-     */
-    private void setUsernameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      username_ = value.toStringUtf8();
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int USER_ID_FIELD_NUMBER = 3;
     private long userId_;
     /**
-     * <code>optional uint64 user_id = 3;</code>
+     * <code>uint64 user_id = 3;</code>
+     * @return The userId.
      */
+    @java.lang.Override
     public long getUserId() {
       return userId_;
     }
-    /**
-     * <code>optional uint64 user_id = 3;</code>
-     */
-    private void setUserId(long value) {
-      
-      userId_ = value;
-    }
-    /**
-     * <code>optional uint64 user_id = 3;</code>
-     */
-    private void clearUserId() {
-      
-      userId_ = 0L;
-    }
 
     public static final int AUTHOR_HASH_FIELD_NUMBER = 4;
-    private java.lang.String authorHash_;
+    private volatile java.lang.Object authorHash_;
     /**
-     * <code>optional string author_hash = 4;</code>
+     * <code>string author_hash = 4;</code>
+     * @return The authorHash.
      */
+    @java.lang.Override
     public java.lang.String getAuthorHash() {
-      return authorHash_;
+      java.lang.Object ref = authorHash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authorHash_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string author_hash = 4;</code>
+     * <code>string author_hash = 4;</code>
+     * @return The bytes for authorHash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getAuthorHashBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(authorHash_);
-    }
-    /**
-     * <code>optional string author_hash = 4;</code>
-     */
-    private void setAuthorHash(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      authorHash_ = value;
-    }
-    /**
-     * <code>optional string author_hash = 4;</code>
-     */
-    private void clearAuthorHash() {
-      
-      authorHash_ = getDefaultInstance().getAuthorHash();
-    }
-    /**
-     * <code>optional string author_hash = 4;</code>
-     */
-    private void setAuthorHashBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      authorHash_ = value.toStringUtf8();
+      java.lang.Object ref = authorHash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authorHash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int METHOD_FIELD_NUMBER = 5;
     private int method_;
     /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+     * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+     * @return The enum numeric value on the wire for method.
      */
-    public int getMethodValue() {
+    @java.lang.Override public int getMethodValue() {
       return method_;
     }
     /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+     * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+     * @return The method.
      */
-    public net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method getMethod() {
-      net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method result = net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.forNumber(method_);
+    @java.lang.Override public net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method getMethod() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method result = net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.valueOf(method_);
       return result == null ? net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
-     */
-    private void setMethodValue(int value) {
-        method_ = value;
-    }
-    /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
-     */
-    private void setMethod(net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      method_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
-     */
-    private void clearMethod() {
-      
-      method_ = 0;
     }
 
     public static final int RESEND_DELAY_FIELD_NUMBER = 6;
     private int resendDelay_;
     /**
-     * <code>optional uint32 resend_delay = 6;</code>
+     * <code>uint32 resend_delay = 6;</code>
+     * @return The resendDelay.
      */
+    @java.lang.Override
     public int getResendDelay() {
       return resendDelay_;
-    }
-    /**
-     * <code>optional uint32 resend_delay = 6;</code>
-     */
-    private void setResendDelay(int value) {
-      
-      resendDelay_ = value;
-    }
-    /**
-     * <code>optional uint32 resend_delay = 6;</code>
-     */
-    private void clearResendDelay() {
-      
-      resendDelay_ = 0;
     }
 
     public static final int SMS_NUMBER_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.LongList smsNumber_;
     /**
      * <code>repeated uint64 sms_number = 7;</code>
+     * @return A list containing the smsNumber.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Long>
         getSmsNumberList() {
       return smsNumber_;
     }
     /**
      * <code>repeated uint64 sms_number = 7;</code>
+     * @return The count of smsNumber.
      */
     public int getSmsNumberCount() {
       return smsNumber_.size();
     }
     /**
      * <code>repeated uint64 sms_number = 7;</code>
+     * @param index The index of the element to return.
+     * @return The smsNumber at the given index.
      */
     public long getSmsNumber(int index) {
       return smsNumber_.getLong(index);
     }
-    private void ensureSmsNumberIsMutable() {
-      if (!smsNumber_.isModifiable()) {
-        smsNumber_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(smsNumber_);
-       }
-    }
-    /**
-     * <code>repeated uint64 sms_number = 7;</code>
-     */
-    private void setSmsNumber(
-        int index, long value) {
-      ensureSmsNumberIsMutable();
-      smsNumber_.setLong(index, value);
-    }
-    /**
-     * <code>repeated uint64 sms_number = 7;</code>
-     */
-    private void addSmsNumber(long value) {
-      ensureSmsNumberIsMutable();
-      smsNumber_.addLong(value);
-    }
-    /**
-     * <code>repeated uint64 sms_number = 7;</code>
-     */
-    private void addAllSmsNumber(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureSmsNumberIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, smsNumber_);
-    }
-    /**
-     * <code>repeated uint64 sms_number = 7;</code>
-     */
-    private void clearSmsNumber() {
-      smsNumber_ = emptyLongList();
-    }
+    private int smsNumberMemoizedSerializedSize = -1;
 
     public static final int VERIFY_CODE_REGEX_FIELD_NUMBER = 8;
-    private java.lang.String verifyCodeRegex_;
+    private volatile java.lang.Object verifyCodeRegex_;
     /**
-     * <code>optional string verify_code_regex = 8;</code>
+     * <code>string verify_code_regex = 8;</code>
+     * @return The verifyCodeRegex.
      */
+    @java.lang.Override
     public java.lang.String getVerifyCodeRegex() {
-      return verifyCodeRegex_;
+      java.lang.Object ref = verifyCodeRegex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        verifyCodeRegex_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string verify_code_regex = 8;</code>
+     * <code>string verify_code_regex = 8;</code>
+     * @return The bytes for verifyCodeRegex.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getVerifyCodeRegexBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(verifyCodeRegex_);
-    }
-    /**
-     * <code>optional string verify_code_regex = 8;</code>
-     */
-    private void setVerifyCodeRegex(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      verifyCodeRegex_ = value;
-    }
-    /**
-     * <code>optional string verify_code_regex = 8;</code>
-     */
-    private void clearVerifyCodeRegex() {
-      
-      verifyCodeRegex_ = getDefaultInstance().getVerifyCodeRegex();
-    }
-    /**
-     * <code>optional string verify_code_regex = 8;</code>
-     */
-    private void setVerifyCodeRegexBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      verifyCodeRegex_ = value.toStringUtf8();
+      java.lang.Object ref = verifyCodeRegex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        verifyCodeRegex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int VERIFY_CODE_DIGIT_COUNT_FIELD_NUMBER = 9;
     private int verifyCodeDigitCount_;
     /**
-     * <code>optional uint32 verify_code_digit_count = 9;</code>
+     * <code>uint32 verify_code_digit_count = 9;</code>
+     * @return The verifyCodeDigitCount.
      */
+    @java.lang.Override
     public int getVerifyCodeDigitCount() {
       return verifyCodeDigitCount_;
-    }
-    /**
-     * <code>optional uint32 verify_code_digit_count = 9;</code>
-     */
-    private void setVerifyCodeDigitCount(int value) {
-      
-      verifyCodeDigitCount_ = value;
-    }
-    /**
-     * <code>optional uint32 verify_code_digit_count = 9;</code>
-     */
-    private void clearVerifyCodeDigitCount() {
-      
-      verifyCodeDigitCount_ = 0;
     }
 
     public static final int CALL_METHOD_SUPPORTED_FIELD_NUMBER = 10;
     private boolean callMethodSupported_;
     /**
-     * <code>optional bool call_method_supported = 10;</code>
+     * <code>bool call_method_supported = 10;</code>
+     * @return The callMethodSupported.
      */
+    @java.lang.Override
     public boolean getCallMethodSupported() {
       return callMethodSupported_;
     }
-    /**
-     * <code>optional bool call_method_supported = 10;</code>
-     */
-    private void setCallMethodSupported(boolean value) {
-      
-      callMethodSupported_ = value;
-    }
-    /**
-     * <code>optional bool call_method_supported = 10;</code>
-     */
-    private void clearCallMethodSupported() {
-      
-      callMethodSupported_ = false;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
-      if (!username_.isEmpty()) {
-        output.writeString(2, getUsername());
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (userId_ != 0L) {
         output.writeUInt64(3, userId_);
       }
-      if (!authorHash_.isEmpty()) {
-        output.writeString(4, getAuthorHash());
+      if (!getAuthorHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, authorHash_);
       }
       if (method_ != net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.VERIFY_CODE_SMS.getNumber()) {
         output.writeEnum(5, method_);
@@ -1337,11 +1811,15 @@ public final class ProtoUserRegister {
       if (resendDelay_ != 0) {
         output.writeUInt32(6, resendDelay_);
       }
-      for (int i = 0; i < smsNumber_.size(); i++) {
-        output.writeUInt64(7, smsNumber_.getLong(i));
+      if (getSmsNumberList().size() > 0) {
+        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(smsNumberMemoizedSerializedSize);
       }
-      if (!verifyCodeRegex_.isEmpty()) {
-        output.writeString(8, getVerifyCodeRegex());
+      for (int i = 0; i < smsNumber_.size(); i++) {
+        output.writeUInt64NoTag(smsNumber_.getLong(i));
+      }
+      if (!getVerifyCodeRegexBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, verifyCodeRegex_);
       }
       if (verifyCodeDigitCount_ != 0) {
         output.writeUInt32(9, verifyCodeDigitCount_);
@@ -1349,10 +1827,12 @@ public final class ProtoUserRegister {
       if (callMethodSupported_ != false) {
         output.writeBool(10, callMethodSupported_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1360,17 +1840,15 @@ public final class ProtoUserRegister {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
-      if (!username_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getUsername());
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (userId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, userId_);
       }
-      if (!authorHash_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(4, getAuthorHash());
+      if (!getAuthorHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, authorHash_);
       }
       if (method_ != net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.VERIFY_CODE_SMS.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -1387,11 +1865,15 @@ public final class ProtoUserRegister {
             .computeUInt64SizeNoTag(smsNumber_.getLong(i));
         }
         size += dataSize;
-        size += 1 * getSmsNumberList().size();
+        if (!getSmsNumberList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        smsNumberMemoizedSerializedSize = dataSize;
       }
-      if (!verifyCodeRegex_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(8, getVerifyCodeRegex());
+      if (!getVerifyCodeRegexBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, verifyCodeRegex_);
       }
       if (verifyCodeDigitCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1401,631 +1883,1116 @@ public final class ProtoUserRegister {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, callMethodSupported_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserRegister.UserRegisterResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserRegister.UserRegisterResponse other = (net.iGap.proto.ProtoUserRegister.UserRegisterResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getAuthorHash()
+          .equals(other.getAuthorHash())) return false;
+      if (method_ != other.method_) return false;
+      if (getResendDelay()
+          != other.getResendDelay()) return false;
+      if (!getSmsNumberList()
+          .equals(other.getSmsNumberList())) return false;
+      if (!getVerifyCodeRegex()
+          .equals(other.getVerifyCodeRegex())) return false;
+      if (getVerifyCodeDigitCount()
+          != other.getVerifyCodeDigitCount()) return false;
+      if (getCallMethodSupported()
+          != other.getCallMethodSupported()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + AUTHOR_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthorHash().hashCode();
+      hash = (37 * hash) + METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + method_;
+      hash = (37 * hash) + RESEND_DELAY_FIELD_NUMBER;
+      hash = (53 * hash) + getResendDelay();
+      if (getSmsNumberCount() > 0) {
+        hash = (37 * hash) + SMS_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getSmsNumberList().hashCode();
+      }
+      hash = (37 * hash) + VERIFY_CODE_REGEX_FIELD_NUMBER;
+      hash = (53 * hash) + getVerifyCodeRegex().hashCode();
+      hash = (37 * hash) + VERIFY_CODE_DIGIT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getVerifyCodeDigitCount();
+      hash = (37 * hash) + CALL_METHOD_SUPPORTED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCallMethodSupported());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserRegister.UserRegisterResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserRegisterResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserRegister.UserRegisterResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserRegisterResponse)
         net.iGap.proto.ProtoUserRegister.UserRegisterResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegisterResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegisterResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserRegister.UserRegisterResponse.class, net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserRegister.UserRegisterResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        username_ = "";
 
+        userId_ = 0L;
+
+        authorHash_ = "";
+
+        method_ = 0;
+
+        resendDelay_ = 0;
+
+        smsNumber_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        verifyCodeRegex_ = "";
+
+        verifyCodeDigitCount_ = 0;
+
+        callMethodSupported_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserRegister.internal_static_proto_UserRegisterResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserRegister.UserRegisterResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserRegister.UserRegisterResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserRegister.UserRegisterResponse build() {
+        net.iGap.proto.ProtoUserRegister.UserRegisterResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserRegister.UserRegisterResponse buildPartial() {
+        net.iGap.proto.ProtoUserRegister.UserRegisterResponse result = new net.iGap.proto.ProtoUserRegister.UserRegisterResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.username_ = username_;
+        result.userId_ = userId_;
+        result.authorHash_ = authorHash_;
+        result.method_ = method_;
+        result.resendDelay_ = resendDelay_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          smsNumber_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.smsNumber_ = smsNumber_;
+        result.verifyCodeRegex_ = verifyCodeRegex_;
+        result.verifyCodeDigitCount_ = verifyCodeDigitCount_;
+        result.callMethodSupported_ = callMethodSupported_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserRegister.UserRegisterResponse) {
+          return mergeFrom((net.iGap.proto.ProtoUserRegister.UserRegisterResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserRegister.UserRegisterResponse other) {
+        if (other == net.iGap.proto.ProtoUserRegister.UserRegisterResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (!other.getAuthorHash().isEmpty()) {
+          authorHash_ = other.authorHash_;
+          onChanged();
+        }
+        if (other.method_ != 0) {
+          setMethodValue(other.getMethodValue());
+        }
+        if (other.getResendDelay() != 0) {
+          setResendDelay(other.getResendDelay());
+        }
+        if (!other.smsNumber_.isEmpty()) {
+          if (smsNumber_.isEmpty()) {
+            smsNumber_ = other.smsNumber_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSmsNumberIsMutable();
+            smsNumber_.addAll(other.smsNumber_);
+          }
+          onChanged();
+        }
+        if (!other.getVerifyCodeRegex().isEmpty()) {
+          verifyCodeRegex_ = other.verifyCodeRegex_;
+          onChanged();
+        }
+        if (other.getVerifyCodeDigitCount() != 0) {
+          setVerifyCodeDigitCount(other.getVerifyCodeDigitCount());
+        }
+        if (other.getCallMethodSupported() != false) {
+          setCallMethodSupported(other.getCallMethodSupported());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserRegister.UserRegisterResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserRegister.UserRegisterResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private java.lang.Object username_ = "";
       /**
-       * <code>optional string username = 2;</code>
+       * <code>string username = 2;</code>
+       * @return The username.
        */
       public java.lang.String getUsername() {
-        return instance.getUsername();
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string username = 2;</code>
+       * <code>string username = 2;</code>
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
-        return instance.getUsernameBytes();
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string username = 2;</code>
+       * <code>string username = 2;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
        */
       public Builder setUsername(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setUsername(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string username = 2;</code>
+       * <code>string username = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUsername() {
-        copyOnWrite();
-        instance.clearUsername();
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string username = 2;</code>
+       * <code>string username = 2;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
        */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setUsernameBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
         return this;
       }
 
+      private long userId_ ;
       /**
-       * <code>optional uint64 user_id = 3;</code>
+       * <code>uint64 user_id = 3;</code>
+       * @return The userId.
        */
+      @java.lang.Override
       public long getUserId() {
-        return instance.getUserId();
+        return userId_;
       }
       /**
-       * <code>optional uint64 user_id = 3;</code>
+       * <code>uint64 user_id = 3;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
        */
       public Builder setUserId(long value) {
-        copyOnWrite();
-        instance.setUserId(value);
+        
+        userId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 user_id = 3;</code>
+       * <code>uint64 user_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUserId() {
-        copyOnWrite();
-        instance.clearUserId();
+        
+        userId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object authorHash_ = "";
       /**
-       * <code>optional string author_hash = 4;</code>
+       * <code>string author_hash = 4;</code>
+       * @return The authorHash.
        */
       public java.lang.String getAuthorHash() {
-        return instance.getAuthorHash();
+        java.lang.Object ref = authorHash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authorHash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string author_hash = 4;</code>
+       * <code>string author_hash = 4;</code>
+       * @return The bytes for authorHash.
        */
       public com.google.protobuf.ByteString
           getAuthorHashBytes() {
-        return instance.getAuthorHashBytes();
+        java.lang.Object ref = authorHash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authorHash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string author_hash = 4;</code>
+       * <code>string author_hash = 4;</code>
+       * @param value The authorHash to set.
+       * @return This builder for chaining.
        */
       public Builder setAuthorHash(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setAuthorHash(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        authorHash_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string author_hash = 4;</code>
+       * <code>string author_hash = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAuthorHash() {
-        copyOnWrite();
-        instance.clearAuthorHash();
+        
+        authorHash_ = getDefaultInstance().getAuthorHash();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string author_hash = 4;</code>
+       * <code>string author_hash = 4;</code>
+       * @param value The bytes for authorHash to set.
+       * @return This builder for chaining.
        */
       public Builder setAuthorHashBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setAuthorHashBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        authorHash_ = value;
+        onChanged();
         return this;
       }
 
+      private int method_ = 0;
       /**
-       * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+       * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+       * @return The enum numeric value on the wire for method.
        */
-      public int getMethodValue() {
-        return instance.getMethodValue();
+      @java.lang.Override public int getMethodValue() {
+        return method_;
       }
       /**
-       * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+       * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+       * @param value The enum numeric value on the wire for method to set.
+       * @return This builder for chaining.
        */
       public Builder setMethodValue(int value) {
-        copyOnWrite();
-        instance.setMethodValue(value);
+        
+        method_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+       * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+       * @return The method.
        */
+      @java.lang.Override
       public net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method getMethod() {
-        return instance.getMethod();
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method result = net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.valueOf(method_);
+        return result == null ? net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+       * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+       * @param value The method to set.
+       * @return This builder for chaining.
        */
       public Builder setMethod(net.iGap.proto.ProtoUserRegister.UserRegisterResponse.Method value) {
-        copyOnWrite();
-        instance.setMethod(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        method_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional .proto.UserRegisterResponse.Method method = 5;</code>
+       * <code>.proto.UserRegisterResponse.Method method = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMethod() {
-        copyOnWrite();
-        instance.clearMethod();
+        
+        method_ = 0;
+        onChanged();
         return this;
       }
 
+      private int resendDelay_ ;
       /**
-       * <code>optional uint32 resend_delay = 6;</code>
+       * <code>uint32 resend_delay = 6;</code>
+       * @return The resendDelay.
        */
+      @java.lang.Override
       public int getResendDelay() {
-        return instance.getResendDelay();
+        return resendDelay_;
       }
       /**
-       * <code>optional uint32 resend_delay = 6;</code>
+       * <code>uint32 resend_delay = 6;</code>
+       * @param value The resendDelay to set.
+       * @return This builder for chaining.
        */
       public Builder setResendDelay(int value) {
-        copyOnWrite();
-        instance.setResendDelay(value);
+        
+        resendDelay_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 resend_delay = 6;</code>
+       * <code>uint32 resend_delay = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResendDelay() {
-        copyOnWrite();
-        instance.clearResendDelay();
+        
+        resendDelay_ = 0;
+        onChanged();
         return this;
       }
 
+      private com.google.protobuf.Internal.LongList smsNumber_ = emptyLongList();
+      private void ensureSmsNumberIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          smsNumber_ = mutableCopy(smsNumber_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @return A list containing the smsNumber.
        */
       public java.util.List<java.lang.Long>
           getSmsNumberList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getSmsNumberList());
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(smsNumber_) : smsNumber_;
       }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @return The count of smsNumber.
        */
       public int getSmsNumberCount() {
-        return instance.getSmsNumberCount();
+        return smsNumber_.size();
       }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @param index The index of the element to return.
+       * @return The smsNumber at the given index.
        */
       public long getSmsNumber(int index) {
-        return instance.getSmsNumber(index);
+        return smsNumber_.getLong(index);
       }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The smsNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setSmsNumber(
           int index, long value) {
-        copyOnWrite();
-        instance.setSmsNumber(index, value);
+        ensureSmsNumberIsMutable();
+        smsNumber_.setLong(index, value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @param value The smsNumber to add.
+       * @return This builder for chaining.
        */
       public Builder addSmsNumber(long value) {
-        copyOnWrite();
-        instance.addSmsNumber(value);
+        ensureSmsNumberIsMutable();
+        smsNumber_.addLong(value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @param values The smsNumber to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSmsNumber(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        copyOnWrite();
-        instance.addAllSmsNumber(values);
+        ensureSmsNumberIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, smsNumber_);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 sms_number = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSmsNumber() {
-        copyOnWrite();
-        instance.clearSmsNumber();
+        smsNumber_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
 
+      private java.lang.Object verifyCodeRegex_ = "";
       /**
-       * <code>optional string verify_code_regex = 8;</code>
+       * <code>string verify_code_regex = 8;</code>
+       * @return The verifyCodeRegex.
        */
       public java.lang.String getVerifyCodeRegex() {
-        return instance.getVerifyCodeRegex();
+        java.lang.Object ref = verifyCodeRegex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          verifyCodeRegex_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string verify_code_regex = 8;</code>
+       * <code>string verify_code_regex = 8;</code>
+       * @return The bytes for verifyCodeRegex.
        */
       public com.google.protobuf.ByteString
           getVerifyCodeRegexBytes() {
-        return instance.getVerifyCodeRegexBytes();
+        java.lang.Object ref = verifyCodeRegex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          verifyCodeRegex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string verify_code_regex = 8;</code>
+       * <code>string verify_code_regex = 8;</code>
+       * @param value The verifyCodeRegex to set.
+       * @return This builder for chaining.
        */
       public Builder setVerifyCodeRegex(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setVerifyCodeRegex(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        verifyCodeRegex_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string verify_code_regex = 8;</code>
+       * <code>string verify_code_regex = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVerifyCodeRegex() {
-        copyOnWrite();
-        instance.clearVerifyCodeRegex();
+        
+        verifyCodeRegex_ = getDefaultInstance().getVerifyCodeRegex();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string verify_code_regex = 8;</code>
+       * <code>string verify_code_regex = 8;</code>
+       * @param value The bytes for verifyCodeRegex to set.
+       * @return This builder for chaining.
        */
       public Builder setVerifyCodeRegexBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setVerifyCodeRegexBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        verifyCodeRegex_ = value;
+        onChanged();
         return this;
       }
 
+      private int verifyCodeDigitCount_ ;
       /**
-       * <code>optional uint32 verify_code_digit_count = 9;</code>
+       * <code>uint32 verify_code_digit_count = 9;</code>
+       * @return The verifyCodeDigitCount.
        */
+      @java.lang.Override
       public int getVerifyCodeDigitCount() {
-        return instance.getVerifyCodeDigitCount();
+        return verifyCodeDigitCount_;
       }
       /**
-       * <code>optional uint32 verify_code_digit_count = 9;</code>
+       * <code>uint32 verify_code_digit_count = 9;</code>
+       * @param value The verifyCodeDigitCount to set.
+       * @return This builder for chaining.
        */
       public Builder setVerifyCodeDigitCount(int value) {
-        copyOnWrite();
-        instance.setVerifyCodeDigitCount(value);
+        
+        verifyCodeDigitCount_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 verify_code_digit_count = 9;</code>
+       * <code>uint32 verify_code_digit_count = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVerifyCodeDigitCount() {
-        copyOnWrite();
-        instance.clearVerifyCodeDigitCount();
+        
+        verifyCodeDigitCount_ = 0;
+        onChanged();
         return this;
       }
 
+      private boolean callMethodSupported_ ;
       /**
-       * <code>optional bool call_method_supported = 10;</code>
+       * <code>bool call_method_supported = 10;</code>
+       * @return The callMethodSupported.
        */
+      @java.lang.Override
       public boolean getCallMethodSupported() {
-        return instance.getCallMethodSupported();
+        return callMethodSupported_;
       }
       /**
-       * <code>optional bool call_method_supported = 10;</code>
+       * <code>bool call_method_supported = 10;</code>
+       * @param value The callMethodSupported to set.
+       * @return This builder for chaining.
        */
       public Builder setCallMethodSupported(boolean value) {
-        copyOnWrite();
-        instance.setCallMethodSupported(value);
+        
+        callMethodSupported_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional bool call_method_supported = 10;</code>
+       * <code>bool call_method_supported = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCallMethodSupported() {
-        copyOnWrite();
-        instance.clearCallMethodSupported();
+        
+        callMethodSupported_ = false;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserRegisterResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserRegister.UserRegisterResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          smsNumber_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserRegister.UserRegisterResponse other = (net.iGap.proto.ProtoUserRegister.UserRegisterResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          username_ = visitor.visitString(!username_.isEmpty(), username_,
-              !other.username_.isEmpty(), other.username_);
-          userId_ = visitor.visitLong(userId_ != 0L, userId_,
-              other.userId_ != 0L, other.userId_);
-          authorHash_ = visitor.visitString(!authorHash_.isEmpty(), authorHash_,
-              !other.authorHash_.isEmpty(), other.authorHash_);
-          method_ = visitor.visitInt(method_ != 0, method_,    other.method_ != 0, other.method_);
-          resendDelay_ = visitor.visitInt(resendDelay_ != 0, resendDelay_,
-              other.resendDelay_ != 0, other.resendDelay_);
-          smsNumber_= visitor.visitLongList(smsNumber_, other.smsNumber_);
-          verifyCodeRegex_ = visitor.visitString(!verifyCodeRegex_.isEmpty(), verifyCodeRegex_,
-              !other.verifyCodeRegex_.isEmpty(), other.verifyCodeRegex_);
-          verifyCodeDigitCount_ = visitor.visitInt(verifyCodeDigitCount_ != 0, verifyCodeDigitCount_,
-              other.verifyCodeDigitCount_ != 0, other.verifyCodeDigitCount_);
-          callMethodSupported_ = visitor.visitBoolean(callMethodSupported_ != false, callMethodSupported_,
-              other.callMethodSupported_ != false, other.callMethodSupported_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
-
-                  username_ = s;
-                  break;
-                }
-                case 24: {
-
-                  userId_ = input.readUInt64();
-                  break;
-                }
-                case 34: {
-                  String s = input.readStringRequireUtf8();
-
-                  authorHash_ = s;
-                  break;
-                }
-                case 40: {
-                  int rawValue = input.readEnum();
-
-                  method_ = rawValue;
-                  break;
-                }
-                case 48: {
-
-                  resendDelay_ = input.readUInt32();
-                  break;
-                }
-                case 56: {
-                  if (!smsNumber_.isModifiable()) {
-                    smsNumber_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(smsNumber_);
-                  }
-                  smsNumber_.addLong(input.readUInt64());
-                  break;
-                }
-                case 58: {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!smsNumber_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                    smsNumber_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(smsNumber_);
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    smsNumber_.addLong(input.readUInt64());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-                case 66: {
-                  String s = input.readStringRequireUtf8();
-
-                  verifyCodeRegex_ = s;
-                  break;
-                }
-                case 72: {
-
-                  verifyCodeDigitCount_ = input.readUInt32();
-                  break;
-                }
-                case 80: {
-
-                  callMethodSupported_ = input.readBool();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserRegister.UserRegisterResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserRegisterResponse)
     private static final net.iGap.proto.ProtoUserRegister.UserRegisterResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserRegisterResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserRegister.UserRegisterResponse();
     }
 
     public static net.iGap.proto.ProtoUserRegister.UserRegisterResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserRegisterResponse> PARSER;
+    private static final com.google.protobuf.Parser<UserRegisterResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserRegisterResponse>() {
+      @java.lang.Override
+      public UserRegisterResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserRegisterResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserRegisterResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserRegisterResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserRegister.UserRegisterResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserRegister_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserRegister_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserRegisterResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserRegisterResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\022UserRegister.proto\022\005proto\032\rRequest.pro" +
+      "to\032\016Response.proto\"\201\002\n\014UserRegister\022\037\n\007r" +
+      "equest\030\001 \001(\0132\016.proto.Request\022\024\n\014phone_nu" +
+      "mber\030\002 \001(\004\022\024\n\014country_code\030\003 \001(\t\022?\n\021pref" +
+      "erence_method\030\004 \001(\0162$.proto.UserRegister" +
+      ".PreferenceMethod\022\016\n\006app_id\030\005 \001(\r\"S\n\020Pre" +
+      "ferenceMethod\022\024\n\020VERIFY_CODE_AUTO\020\000\022\023\n\017V" +
+      "ERIFY_CODE_SMS\020\001\022\024\n\020VERIFY_CODE_CALL\020\002\"\223" +
+      "\003\n\024UserRegisterResponse\022!\n\010response\030\001 \001(" +
+      "\0132\017.proto.Response\022\020\n\010username\030\002 \001(\t\022\017\n\007" +
+      "user_id\030\003 \001(\004\022\023\n\013author_hash\030\004 \001(\t\0222\n\006me" +
+      "thod\030\005 \001(\0162\".proto.UserRegisterResponse." +
+      "Method\022\024\n\014resend_delay\030\006 \001(\r\022\022\n\nsms_numb" +
+      "er\030\007 \003(\004\022\031\n\021verify_code_regex\030\010 \001(\t\022\037\n\027v" +
+      "erify_code_digit_count\030\t \001(\r\022\035\n\025call_met" +
+      "hod_supported\030\n \001(\010\"g\n\006Method\022\023\n\017VERIFY_" +
+      "CODE_SMS\020\000\022\026\n\022VERIFY_CODE_SOCKET\020\001\022\032\n\026VE" +
+      "RIFY_CODE_SMS_SOCKET\020\002\022\024\n\020VERIFY_CODE_CA" +
+      "LL\020\003B#\n\016net.iGap.protoB\021ProtoUserRegiste" +
+      "rb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_UserRegister_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_UserRegister_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserRegister_descriptor,
+        new java.lang.String[] { "Request", "PhoneNumber", "CountryCode", "PreferenceMethod", "AppId", });
+    internal_static_proto_UserRegisterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_UserRegisterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserRegisterResponse_descriptor,
+        new java.lang.String[] { "Response", "Username", "UserId", "AuthorHash", "Method", "ResendDelay", "SmsNumber", "VerifyCodeRegex", "VerifyCodeDigitCount", "CallMethodSupported", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

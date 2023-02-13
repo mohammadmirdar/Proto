@@ -8,90 +8,170 @@ public final class ProtoUserTwoStepVerificationResendVerifyEmail {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface UserTwoStepVerificationResendVerifyEmailOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserTwoStepVerificationResendVerifyEmail)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
   }
   /**
    * Protobuf type {@code proto.UserTwoStepVerificationResendVerifyEmail}
    */
-  public  static final class UserTwoStepVerificationResendVerifyEmail extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserTwoStepVerificationResendVerifyEmail, UserTwoStepVerificationResendVerifyEmail.Builder> implements
+  public static final class UserTwoStepVerificationResendVerifyEmail extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserTwoStepVerificationResendVerifyEmail)
       UserTwoStepVerificationResendVerifyEmailOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserTwoStepVerificationResendVerifyEmail.newBuilder() to construct.
+    private UserTwoStepVerificationResendVerifyEmail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserTwoStepVerificationResendVerifyEmail() {
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserTwoStepVerificationResendVerifyEmail();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserTwoStepVerificationResendVerifyEmail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmail_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmail_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.class, net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @java.lang.Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoRequest.Request getRequest() {
       return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -99,261 +179,489 @@ public final class ProtoUserTwoStepVerificationResendVerifyEmail {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail other = (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserTwoStepVerificationResendVerifyEmail}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserTwoStepVerificationResendVerifyEmail)
         net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmail_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.class, net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        return this;
+      }
 
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmail_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail build() {
+        net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail buildPartial() {
+        net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail result = new net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail) {
+          return mergeFrom((net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail other) {
+        if (other == net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserTwoStepVerificationResendVerifyEmail)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail other = (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserTwoStepVerificationResendVerifyEmail)
     private static final net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserTwoStepVerificationResendVerifyEmail();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail();
     }
 
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmail> PARSER;
+    private static final com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmail>
+        PARSER = new com.google.protobuf.AbstractParser<UserTwoStepVerificationResendVerifyEmail>() {
+      @java.lang.Override
+      public UserTwoStepVerificationResendVerifyEmail parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserTwoStepVerificationResendVerifyEmail(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmail> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmail> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmail getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface UserTwoStepVerificationResendVerifyEmailResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserTwoStepVerificationResendVerifyEmailResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The unconfirmedEmailPattern.
      */
     java.lang.String getUnconfirmedEmailPattern();
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The bytes for unconfirmedEmailPattern.
      */
     com.google.protobuf.ByteString
         getUnconfirmedEmailPatternBytes();
@@ -361,124 +669,190 @@ public final class ProtoUserTwoStepVerificationResendVerifyEmail {
   /**
    * Protobuf type {@code proto.UserTwoStepVerificationResendVerifyEmailResponse}
    */
-  public  static final class UserTwoStepVerificationResendVerifyEmailResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserTwoStepVerificationResendVerifyEmailResponse, UserTwoStepVerificationResendVerifyEmailResponse.Builder> implements
+  public static final class UserTwoStepVerificationResendVerifyEmailResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserTwoStepVerificationResendVerifyEmailResponse)
       UserTwoStepVerificationResendVerifyEmailResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserTwoStepVerificationResendVerifyEmailResponse.newBuilder() to construct.
+    private UserTwoStepVerificationResendVerifyEmailResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserTwoStepVerificationResendVerifyEmailResponse() {
       unconfirmedEmailPattern_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserTwoStepVerificationResendVerifyEmailResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserTwoStepVerificationResendVerifyEmailResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unconfirmedEmailPattern_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.class, net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.Builder.class);
+    }
+
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @java.lang.Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
+    @java.lang.Override
     public net.iGap.proto.ProtoResponse.Response getResponse() {
       return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @java.lang.Override
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int UNCONFIRMED_EMAIL_PATTERN_FIELD_NUMBER = 2;
-    private java.lang.String unconfirmedEmailPattern_;
+    private volatile java.lang.Object unconfirmedEmailPattern_;
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The unconfirmedEmailPattern.
      */
+    @java.lang.Override
     public java.lang.String getUnconfirmedEmailPattern() {
-      return unconfirmedEmailPattern_;
+      java.lang.Object ref = unconfirmedEmailPattern_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unconfirmedEmailPattern_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
+     * <code>string unconfirmed_email_pattern = 2;</code>
+     * @return The bytes for unconfirmedEmailPattern.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUnconfirmedEmailPatternBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(unconfirmedEmailPattern_);
-    }
-    /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
-     */
-    private void setUnconfirmedEmailPattern(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      unconfirmedEmailPattern_ = value;
-    }
-    /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
-     */
-    private void clearUnconfirmedEmailPattern() {
-      
-      unconfirmedEmailPattern_ = getDefaultInstance().getUnconfirmedEmailPattern();
-    }
-    /**
-     * <code>optional string unconfirmed_email_pattern = 2;</code>
-     */
-    private void setUnconfirmedEmailPatternBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      unconfirmedEmailPattern_ = value.toStringUtf8();
+      java.lang.Object ref = unconfirmedEmailPattern_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unconfirmedEmailPattern_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
-      if (!unconfirmedEmailPattern_.isEmpty()) {
-        output.writeString(2, getUnconfirmedEmailPattern());
+      if (!getUnconfirmedEmailPatternBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unconfirmedEmailPattern_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -486,296 +860,601 @@ public final class ProtoUserTwoStepVerificationResendVerifyEmail {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
-      if (!unconfirmedEmailPattern_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getUnconfirmedEmailPattern());
+      if (!getUnconfirmedEmailPatternBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, unconfirmedEmailPattern_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse other = (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getUnconfirmedEmailPattern()
+          .equals(other.getUnconfirmedEmailPattern())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + UNCONFIRMED_EMAIL_PATTERN_FIELD_NUMBER;
+      hash = (53 * hash) + getUnconfirmedEmailPattern().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserTwoStepVerificationResendVerifyEmailResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserTwoStepVerificationResendVerifyEmailResponse)
         net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.class, net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        unconfirmedEmailPattern_ = "";
 
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse build() {
+        net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse buildPartial() {
+        net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse result = new net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.unconfirmedEmailPattern_ = unconfirmedEmailPattern_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse) {
+          return mergeFrom((net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse other) {
+        if (other == net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (!other.getUnconfirmedEmailPattern().isEmpty()) {
+          unconfirmedEmailPattern_ = other.unconfirmedEmailPattern_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
       }
 
+      private java.lang.Object unconfirmedEmailPattern_ = "";
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @return The unconfirmedEmailPattern.
        */
       public java.lang.String getUnconfirmedEmailPattern() {
-        return instance.getUnconfirmedEmailPattern();
+        java.lang.Object ref = unconfirmedEmailPattern_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unconfirmedEmailPattern_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @return The bytes for unconfirmedEmailPattern.
        */
       public com.google.protobuf.ByteString
           getUnconfirmedEmailPatternBytes() {
-        return instance.getUnconfirmedEmailPatternBytes();
+        java.lang.Object ref = unconfirmedEmailPattern_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unconfirmedEmailPattern_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @param value The unconfirmedEmailPattern to set.
+       * @return This builder for chaining.
        */
       public Builder setUnconfirmedEmailPattern(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setUnconfirmedEmailPattern(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        unconfirmedEmailPattern_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUnconfirmedEmailPattern() {
-        copyOnWrite();
-        instance.clearUnconfirmedEmailPattern();
+        
+        unconfirmedEmailPattern_ = getDefaultInstance().getUnconfirmedEmailPattern();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string unconfirmed_email_pattern = 2;</code>
+       * <code>string unconfirmed_email_pattern = 2;</code>
+       * @param value The bytes for unconfirmedEmailPattern to set.
+       * @return This builder for chaining.
        */
       public Builder setUnconfirmedEmailPatternBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setUnconfirmedEmailPatternBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        unconfirmedEmailPattern_ = value;
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.UserTwoStepVerificationResendVerifyEmailResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse other = (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          unconfirmedEmailPattern_ = visitor.visitString(!unconfirmedEmailPattern_.isEmpty(), unconfirmedEmailPattern_,
-              !other.unconfirmedEmailPattern_.isEmpty(), other.unconfirmedEmailPattern_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
-
-                  unconfirmedEmailPattern_ = s;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserTwoStepVerificationResendVerifyEmailResponse)
     private static final net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserTwoStepVerificationResendVerifyEmailResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse();
     }
 
     public static net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmailResponse> PARSER;
+    private static final com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmailResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserTwoStepVerificationResendVerifyEmailResponse>() {
+      @java.lang.Override
+      public UserTwoStepVerificationResendVerifyEmailResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserTwoStepVerificationResendVerifyEmailResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmailResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserTwoStepVerificationResendVerifyEmailResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoUserTwoStepVerificationResendVerifyEmail.UserTwoStepVerificationResendVerifyEmailResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserTwoStepVerificationResendVerifyEmail_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserTwoStepVerificationResendVerifyEmail_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n.UserTwoStepVerificationResendVerifyEma" +
+      "il.proto\022\005proto\032\rRequest.proto\032\016Response" +
+      ".proto\"K\n(UserTwoStepVerificationResendV" +
+      "erifyEmail\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
+      "est\"x\n0UserTwoStepVerificationResendVeri" +
+      "fyEmailResponse\022!\n\010response\030\001 \001(\0132\017.prot" +
+      "o.Response\022!\n\031unconfirmed_email_pattern\030" +
+      "\002 \001(\tB?\n\016net.iGap.protoB-ProtoUserTwoSte" +
+      "pVerificationResendVerifyEmailb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_UserTwoStepVerificationResendVerifyEmail_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_UserTwoStepVerificationResendVerifyEmail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserTwoStepVerificationResendVerifyEmail_descriptor,
+        new java.lang.String[] { "Request", });
+    internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserTwoStepVerificationResendVerifyEmailResponse_descriptor,
+        new java.lang.String[] { "Response", "UnconfirmedEmailPattern", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

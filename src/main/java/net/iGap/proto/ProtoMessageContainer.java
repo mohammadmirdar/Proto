@@ -8,169 +8,233 @@ public final class ProtoMessageContainer {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface MessageContainerOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MessageContainer)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional uint32 action_id = 2;</code>
+     * <code>uint32 action_id = 2;</code>
+     * @return The actionId.
      */
     int getActionId();
 
     /**
-     * <code>optional uint64 timestamp = 3;</code>
+     * <code>uint64 timestamp = 3;</code>
+     * @return The timestamp.
      */
     long getTimestamp();
 
     /**
-     * <code>optional bytes wrapped_proto = 4;</code>
+     * <code>bytes wrapped_proto = 4;</code>
+     * @return The wrappedProto.
      */
     com.google.protobuf.ByteString getWrappedProto();
   }
   /**
    * Protobuf type {@code proto.MessageContainer}
    */
-  public  static final class MessageContainer extends
-      com.google.protobuf.GeneratedMessageLite<
-          MessageContainer, MessageContainer.Builder> implements
+  public static final class MessageContainer extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MessageContainer)
       MessageContainerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MessageContainer.newBuilder() to construct.
+    private MessageContainer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private MessageContainer() {
       id_ = "";
       wrappedProto_ = com.google.protobuf.ByteString.EMPTY;
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MessageContainer();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MessageContainer(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+
+              actionId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              timestamp_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+
+              wrappedProto_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoMessageContainer.internal_static_proto_MessageContainer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoMessageContainer.internal_static_proto_MessageContainer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoMessageContainer.MessageContainer.class, net.iGap.proto.ProtoMessageContainer.MessageContainer.Builder.class);
+    }
+
     public static final int ID_FIELD_NUMBER = 1;
-    private java.lang.String id_;
+    private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
-      return id_;
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(id_);
-    }
-    /**
-     * <code>optional string id = 1;</code>
-     */
-    private void setId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-    }
-    /**
-     * <code>optional string id = 1;</code>
-     */
-    private void clearId() {
-      
-      id_ = getDefaultInstance().getId();
-    }
-    /**
-     * <code>optional string id = 1;</code>
-     */
-    private void setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value.toStringUtf8();
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ACTION_ID_FIELD_NUMBER = 2;
     private int actionId_;
     /**
-     * <code>optional uint32 action_id = 2;</code>
+     * <code>uint32 action_id = 2;</code>
+     * @return The actionId.
      */
+    @java.lang.Override
     public int getActionId() {
       return actionId_;
-    }
-    /**
-     * <code>optional uint32 action_id = 2;</code>
-     */
-    private void setActionId(int value) {
-      
-      actionId_ = value;
-    }
-    /**
-     * <code>optional uint32 action_id = 2;</code>
-     */
-    private void clearActionId() {
-      
-      actionId_ = 0;
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
     private long timestamp_;
     /**
-     * <code>optional uint64 timestamp = 3;</code>
+     * <code>uint64 timestamp = 3;</code>
+     * @return The timestamp.
      */
+    @java.lang.Override
     public long getTimestamp() {
       return timestamp_;
-    }
-    /**
-     * <code>optional uint64 timestamp = 3;</code>
-     */
-    private void setTimestamp(long value) {
-      
-      timestamp_ = value;
-    }
-    /**
-     * <code>optional uint64 timestamp = 3;</code>
-     */
-    private void clearTimestamp() {
-      
-      timestamp_ = 0L;
     }
 
     public static final int WRAPPED_PROTO_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString wrappedProto_;
     /**
-     * <code>optional bytes wrapped_proto = 4;</code>
+     * <code>bytes wrapped_proto = 4;</code>
+     * @return The wrappedProto.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getWrappedProto() {
       return wrappedProto_;
     }
-    /**
-     * <code>optional bytes wrapped_proto = 4;</code>
-     */
-    private void setWrappedProto(com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      wrappedProto_ = value;
-    }
-    /**
-     * <code>optional bytes wrapped_proto = 4;</code>
-     */
-    private void clearWrappedProto() {
-      
-      wrappedProto_ = getDefaultInstance().getWrappedProto();
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!id_.isEmpty()) {
-        output.writeString(1, getId());
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (actionId_ != 0) {
         output.writeUInt32(2, actionId_);
@@ -181,16 +245,17 @@ public final class ProtoMessageContainer {
       if (!wrappedProto_.isEmpty()) {
         output.writeBytes(4, wrappedProto_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!id_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(1, getId());
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (actionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -204,323 +269,564 @@ public final class ProtoMessageContainer {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, wrappedProto_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoMessageContainer.MessageContainer)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoMessageContainer.MessageContainer other = (net.iGap.proto.ProtoMessageContainer.MessageContainer) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (getActionId()
+          != other.getActionId()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (!getWrappedProto()
+          .equals(other.getWrappedProto())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + ACTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getActionId();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + WRAPPED_PROTO_FIELD_NUMBER;
+      hash = (53 * hash) + getWrappedProto().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoMessageContainer.MessageContainer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MessageContainer}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMessageContainer.MessageContainer, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MessageContainer)
         net.iGap.proto.ProtoMessageContainer.MessageContainerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMessageContainer.internal_static_proto_MessageContainer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoMessageContainer.internal_static_proto_MessageContainer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoMessageContainer.MessageContainer.class, net.iGap.proto.ProtoMessageContainer.MessageContainer.Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoMessageContainer.MessageContainer.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
 
+        actionId_ = 0;
+
+        timestamp_ = 0L;
+
+        wrappedProto_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoMessageContainer.internal_static_proto_MessageContainer_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMessageContainer.MessageContainer getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoMessageContainer.MessageContainer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMessageContainer.MessageContainer build() {
+        net.iGap.proto.ProtoMessageContainer.MessageContainer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoMessageContainer.MessageContainer buildPartial() {
+        net.iGap.proto.ProtoMessageContainer.MessageContainer result = new net.iGap.proto.ProtoMessageContainer.MessageContainer(this);
+        result.id_ = id_;
+        result.actionId_ = actionId_;
+        result.timestamp_ = timestamp_;
+        result.wrappedProto_ = wrappedProto_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoMessageContainer.MessageContainer) {
+          return mergeFrom((net.iGap.proto.ProtoMessageContainer.MessageContainer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoMessageContainer.MessageContainer other) {
+        if (other == net.iGap.proto.ProtoMessageContainer.MessageContainer.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.getActionId() != 0) {
+          setActionId(other.getActionId());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getWrappedProto() != com.google.protobuf.ByteString.EMPTY) {
+          setWrappedProto(other.getWrappedProto());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoMessageContainer.MessageContainer parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoMessageContainer.MessageContainer) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
-        return instance.getId();
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
-        return instance.getIdBytes();
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setId(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
-        copyOnWrite();
-        instance.clearId();
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setIdBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
         return this;
       }
 
+      private int actionId_ ;
       /**
-       * <code>optional uint32 action_id = 2;</code>
+       * <code>uint32 action_id = 2;</code>
+       * @return The actionId.
        */
+      @java.lang.Override
       public int getActionId() {
-        return instance.getActionId();
+        return actionId_;
       }
       /**
-       * <code>optional uint32 action_id = 2;</code>
+       * <code>uint32 action_id = 2;</code>
+       * @param value The actionId to set.
+       * @return This builder for chaining.
        */
       public Builder setActionId(int value) {
-        copyOnWrite();
-        instance.setActionId(value);
+        
+        actionId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 action_id = 2;</code>
+       * <code>uint32 action_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearActionId() {
-        copyOnWrite();
-        instance.clearActionId();
+        
+        actionId_ = 0;
+        onChanged();
         return this;
       }
 
+      private long timestamp_ ;
       /**
-       * <code>optional uint64 timestamp = 3;</code>
+       * <code>uint64 timestamp = 3;</code>
+       * @return The timestamp.
        */
+      @java.lang.Override
       public long getTimestamp() {
-        return instance.getTimestamp();
+        return timestamp_;
       }
       /**
-       * <code>optional uint64 timestamp = 3;</code>
+       * <code>uint64 timestamp = 3;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
-        copyOnWrite();
-        instance.setTimestamp(value);
+        
+        timestamp_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 timestamp = 3;</code>
+       * <code>uint64 timestamp = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        copyOnWrite();
-        instance.clearTimestamp();
+        
+        timestamp_ = 0L;
+        onChanged();
         return this;
       }
 
+      private com.google.protobuf.ByteString wrappedProto_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes wrapped_proto = 4;</code>
+       * <code>bytes wrapped_proto = 4;</code>
+       * @return The wrappedProto.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getWrappedProto() {
-        return instance.getWrappedProto();
+        return wrappedProto_;
       }
       /**
-       * <code>optional bytes wrapped_proto = 4;</code>
+       * <code>bytes wrapped_proto = 4;</code>
+       * @param value The wrappedProto to set.
+       * @return This builder for chaining.
        */
       public Builder setWrappedProto(com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setWrappedProto(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        wrappedProto_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional bytes wrapped_proto = 4;</code>
+       * <code>bytes wrapped_proto = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearWrappedProto() {
-        copyOnWrite();
-        instance.clearWrappedProto();
+        
+        wrappedProto_ = getDefaultInstance().getWrappedProto();
+        onChanged();
         return this;
       }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.MessageContainer)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMessageContainer.MessageContainer();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMessageContainer.MessageContainer other = (net.iGap.proto.ProtoMessageContainer.MessageContainer) arg1;
-          id_ = visitor.visitString(!id_.isEmpty(), id_,
-              !other.id_.isEmpty(), other.id_);
-          actionId_ = visitor.visitInt(actionId_ != 0, actionId_,
-              other.actionId_ != 0, other.actionId_);
-          timestamp_ = visitor.visitLong(timestamp_ != 0L, timestamp_,
-              other.timestamp_ != 0L, other.timestamp_);
-          wrappedProto_ = visitor.visitByteString(wrappedProto_ != com.google.protobuf.ByteString.EMPTY, wrappedProto_,
-              other.wrappedProto_ != com.google.protobuf.ByteString.EMPTY, other.wrappedProto_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  String s = input.readStringRequireUtf8();
-
-                  id_ = s;
-                  break;
-                }
-                case 16: {
-
-                  actionId_ = input.readUInt32();
-                  break;
-                }
-                case 24: {
-
-                  timestamp_ = input.readUInt64();
-                  break;
-                }
-                case 34: {
-
-                  wrappedProto_ = input.readBytes();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMessageContainer.MessageContainer.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MessageContainer)
     private static final net.iGap.proto.ProtoMessageContainer.MessageContainer DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MessageContainer();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoMessageContainer.MessageContainer();
     }
 
     public static net.iGap.proto.ProtoMessageContainer.MessageContainer getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MessageContainer> PARSER;
+    private static final com.google.protobuf.Parser<MessageContainer>
+        PARSER = new com.google.protobuf.AbstractParser<MessageContainer>() {
+      @java.lang.Override
+      public MessageContainer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MessageContainer(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MessageContainer> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MessageContainer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoMessageContainer.MessageContainer getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MessageContainer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MessageContainer_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\026MessageContainer.proto\022\005proto\"[\n\020Messa" +
+      "geContainer\022\n\n\002id\030\001 \001(\t\022\021\n\taction_id\030\002 \001" +
+      "(\r\022\021\n\ttimestamp\030\003 \001(\004\022\025\n\rwrapped_proto\030\004" +
+      " \001(\014B\'\n\016net.iGap.protoB\025ProtoMessageCont" +
+      "ainerb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_proto_MessageContainer_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_MessageContainer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MessageContainer_descriptor,
+        new java.lang.String[] { "Id", "ActionId", "Timestamp", "WrappedProto", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

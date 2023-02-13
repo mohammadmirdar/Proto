@@ -8,25 +8,39 @@ public final class ProtoMxbSearch {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface MxbSearchOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MxbSearch)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
     boolean hasRequest();
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
-    net.iGap.proto.ProtoRequest.Request getRequest();
+    ProtoRequest.Request getRequest();
+    /**
+     * <code>.proto.Request request = 1;</code>
+     */
+    ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional string phone = 2;</code>
+     * <code>string phone = 2;</code>
+     * @return The phone.
      */
-    java.lang.String getPhone();
+    String getPhone();
     /**
-     * <code>optional string phone = 2;</code>
+     * <code>string phone = 2;</code>
+     * @return The bytes for phone.
      */
     com.google.protobuf.ByteString
         getPhoneBytes();
@@ -34,124 +48,190 @@ public final class ProtoMxbSearch {
   /**
    * Protobuf type {@code proto.MxbSearch}
    */
-  public  static final class MxbSearch extends
-      com.google.protobuf.GeneratedMessageLite<
-          MxbSearch, MxbSearch.Builder> implements
+  public static final class MxbSearch extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MxbSearch)
       MxbSearchOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MxbSearch.newBuilder() to construct.
+    private MxbSearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private MxbSearch() {
       phone_ = "";
     }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MxbSearch();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MxbSearch(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              String s = input.readStringRequireUtf8();
+
+              phone_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ProtoMxbSearch.internal_static_proto_MxbSearch_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ProtoMxbSearch.internal_static_proto_MxbSearch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              MxbSearch.class, Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
-    private net.iGap.proto.ProtoRequest.Request request_;
+    private ProtoRequest.Request request_;
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return Whether the request field is set.
      */
+    @Override
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
+     * @return The request.
      */
-    public net.iGap.proto.ProtoRequest.Request getRequest() {
-      return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+    @Override
+    public ProtoRequest.Request getRequest() {
+      return request_ == null ? ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .proto.Request request = 1;</code>
+     * <code>.proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    @Override
+    public ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int PHONE_FIELD_NUMBER = 2;
-    private java.lang.String phone_;
+    private volatile Object phone_;
     /**
-     * <code>optional string phone = 2;</code>
+     * <code>string phone = 2;</code>
+     * @return The phone.
      */
-    public java.lang.String getPhone() {
-      return phone_;
+    @Override
+    public String getPhone() {
+      Object ref = phone_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        phone_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional string phone = 2;</code>
+     * <code>string phone = 2;</code>
+     * @return The bytes for phone.
      */
+    @Override
     public com.google.protobuf.ByteString
         getPhoneBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(phone_);
-    }
-    /**
-     * <code>optional string phone = 2;</code>
-     */
-    private void setPhone(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      phone_ = value;
-    }
-    /**
-     * <code>optional string phone = 2;</code>
-     */
-    private void clearPhone() {
-      
-      phone_ = getDefaultInstance().getPhone();
-    }
-    /**
-     * <code>optional string phone = 2;</code>
-     */
-    private void setPhoneBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      phone_ = value.toStringUtf8();
+      Object ref = phone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        phone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
-      if (!phone_.isEmpty()) {
-        output.writeString(2, getPhone());
+      if (!getPhoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phone_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -159,372 +239,747 @@ public final class ProtoMxbSearch {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      if (!phone_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(2, getPhone());
+      if (!getPhoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phone_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof MxbSearch)) {
+        return super.equals(obj);
+      }
+      MxbSearch other = (MxbSearch) obj;
+
+      if (hasRequest() != other.hasRequest()) return false;
+      if (hasRequest()) {
+        if (!getRequest()
+            .equals(other.getRequest())) return false;
+      }
+      if (!getPhone()
+          .equals(other.getPhone())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getPhone().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static MxbSearch parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MxbSearch parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MxbSearch parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(
+    public static MxbSearch parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(byte[] data)
+    public static MxbSearch parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(
+    public static MxbSearch parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(java.io.InputStream input)
+    public static MxbSearch parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(
+    public static MxbSearch parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseDelimitedFrom(java.io.InputStream input)
+    public static MxbSearch parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseDelimitedFrom(
+    public static MxbSearch parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(
+    public static MxbSearch parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch parseFrom(
+    public static MxbSearch parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(net.iGap.proto.ProtoMxbSearch.MxbSearch prototype) {
+    public static Builder newBuilder(MxbSearch prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MxbSearch}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMxbSearch.MxbSearch, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MxbSearch)
-        net.iGap.proto.ProtoMxbSearch.MxbSearchOrBuilder {
+        MxbSearchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearch_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                MxbSearch.class, Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoMxbSearch.MxbSearch.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        phone_ = "";
 
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearch_descriptor;
+      }
+
+      @Override
+      public MxbSearch getDefaultInstanceForType() {
+        return MxbSearch.getDefaultInstance();
+      }
+
+      @Override
+      public MxbSearch build() {
+        MxbSearch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public MxbSearch buildPartial() {
+        MxbSearch result = new MxbSearch(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.phone_ = phone_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof MxbSearch) {
+          return mergeFrom((MxbSearch)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(MxbSearch other) {
+        if (other == MxbSearch.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (!other.getPhone().isEmpty()) {
+          phone_ = other.phone_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        MxbSearch parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (MxbSearch) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private ProtoRequest.Request request_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ProtoRequest.Request, ProtoRequest.Request.Builder, ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       * @return The request.
        */
-      public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
-      }
-      /**
-       * <code>optional .proto.Request request = 1;</code>
-       */
-      public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+      public ProtoRequest.Request getRequest() {
+        if (requestBuilder_ == null) {
+          return request_ == null ? ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
         }
+      }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
+       */
+      public Builder setRequest(ProtoRequest.Request value) {
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
        */
       public Builder setRequest(
-          net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+          ProtoRequest.Request.Builder builderForValue) {
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+      public Builder mergeRequest(ProtoRequest.Request value) {
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Request request = 1;</code>
+       * <code>.proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      public ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>.proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ProtoRequest.Request, ProtoRequest.Request.Builder, ProtoRequest.RequestOrBuilder>
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ProtoRequest.Request, ProtoRequest.Request.Builder, ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
       }
 
+      private Object phone_ = "";
       /**
-       * <code>optional string phone = 2;</code>
+       * <code>string phone = 2;</code>
+       * @return The phone.
        */
-      public java.lang.String getPhone() {
-        return instance.getPhone();
+      public String getPhone() {
+        Object ref = phone_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          phone_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
       }
       /**
-       * <code>optional string phone = 2;</code>
+       * <code>string phone = 2;</code>
+       * @return The bytes for phone.
        */
       public com.google.protobuf.ByteString
           getPhoneBytes() {
-        return instance.getPhoneBytes();
+        Object ref = phone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          phone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>optional string phone = 2;</code>
+       * <code>string phone = 2;</code>
+       * @param value The phone to set.
+       * @return This builder for chaining.
        */
       public Builder setPhone(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setPhone(value);
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        phone_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string phone = 2;</code>
+       * <code>string phone = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhone() {
-        copyOnWrite();
-        instance.clearPhone();
+        
+        phone_ = getDefaultInstance().getPhone();
+        onChanged();
         return this;
       }
       /**
-       * <code>optional string phone = 2;</code>
+       * <code>string phone = 2;</code>
+       * @param value The bytes for phone to set.
+       * @return This builder for chaining.
        */
       public Builder setPhoneBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setPhoneBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        phone_ = value;
+        onChanged();
         return this;
       }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.MxbSearch)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMxbSearch.MxbSearch();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMxbSearch.MxbSearch other = (net.iGap.proto.ProtoMxbSearch.MxbSearch) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          phone_ = visitor.visitString(!phone_.isEmpty(), phone_,
-              !other.phone_.isEmpty(), other.phone_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  String s = input.readStringRequireUtf8();
-
-                  phone_ = s;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMxbSearch.MxbSearch.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MxbSearch)
-    private static final net.iGap.proto.ProtoMxbSearch.MxbSearch DEFAULT_INSTANCE;
+    private static final MxbSearch DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new MxbSearch();
-      DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearch getDefaultInstance() {
+    public static MxbSearch getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MxbSearch> PARSER;
+    private static final com.google.protobuf.Parser<MxbSearch>
+        PARSER = new com.google.protobuf.AbstractParser<MxbSearch>() {
+      @Override
+      public MxbSearch parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MxbSearch(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MxbSearch> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @Override
+    public com.google.protobuf.Parser<MxbSearch> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public MxbSearch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface MxbSearchResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MxbSearchResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
     boolean hasResponse();
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
-    net.iGap.proto.ProtoResponse.Response getResponse();
+    ProtoResponse.Response getResponse();
+    /**
+     * <code>.proto.Response response = 1;</code>
+     */
+    ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
-    java.util.List<net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item> 
+    java.util.List<MxbSearchResponse.Item>
         getItemsList();
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
-    net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item getItems(int index);
+    MxbSearchResponse.Item getItems(int index);
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
     int getItemsCount();
+    /**
+     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+     */
+    java.util.List<? extends MxbSearchResponse.ItemOrBuilder>
+        getItemsOrBuilderList();
+    /**
+     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+     */
+    MxbSearchResponse.ItemOrBuilder getItemsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.MxbSearchResponse}
    */
-  public  static final class MxbSearchResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          MxbSearchResponse, MxbSearchResponse.Builder> implements
+  public static final class MxbSearchResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MxbSearchResponse)
       MxbSearchResponseOrBuilder {
-    private MxbSearchResponse() {
-      items_ = emptyProtobufList();
+  private static final long serialVersionUID = 0L;
+    // Use MxbSearchResponse.newBuilder() to construct.
+    private MxbSearchResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private MxbSearchResponse() {
+      items_ = java.util.Collections.emptyList();
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MxbSearchResponse();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MxbSearchResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                items_ = new java.util.ArrayList<Item>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              items_.add(
+                  input.readMessage(Item.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          items_ = java.util.Collections.unmodifiableList(items_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              MxbSearchResponse.class, Builder.class);
+    }
+
     public interface ItemOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.MxbSearchResponse.Item)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>uint64 mxb_user_id = 1;</code>
+       * @return The mxbUserId.
        */
-      long getId();
+      long getMxbUserId();
 
       /**
-       * <code>optional string nickname = 2;</code>
+       * <code>string nickname = 2;</code>
+       * @return The nickname.
        */
-      java.lang.String getNickname();
+      String getNickname();
       /**
-       * <code>optional string nickname = 2;</code>
+       * <code>string nickname = 2;</code>
+       * @return The bytes for nickname.
        */
       com.google.protobuf.ByteString
           getNicknameBytes();
 
       /**
-       * <code>optional string avatar = 3;</code>
+       * <code>string avatar = 3;</code>
+       * @return The avatar.
        */
-      java.lang.String getAvatar();
+      String getAvatar();
       /**
-       * <code>optional string avatar = 3;</code>
+       * <code>string avatar = 3;</code>
+       * @return The bytes for avatar.
        */
       com.google.protobuf.ByteString
           getAvatarBytes();
 
       /**
-       * <code>optional uint32 messenger_id = 4;</code>
+       * <code>uint32 messenger_id = 4;</code>
+       * @return The messengerId.
        */
       int getMessengerId();
 
       /**
-       * <code>optional string phone = 5;</code>
+       * <code>string phone = 5;</code>
+       * @return The phone.
        */
-      java.lang.String getPhone();
+      String getPhone();
       /**
-       * <code>optional string phone = 5;</code>
+       * <code>string phone = 5;</code>
+       * @return The bytes for phone.
        */
       com.google.protobuf.ByteString
           getPhoneBytes();
@@ -532,798 +987,1038 @@ public final class ProtoMxbSearch {
     /**
      * Protobuf type {@code proto.MxbSearchResponse.Item}
      */
-    public  static final class Item extends
-        com.google.protobuf.GeneratedMessageLite<
-            Item, Item.Builder> implements
+    public static final class Item extends
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.MxbSearchResponse.Item)
         ItemOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Item.newBuilder() to construct.
+      private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
       private Item() {
         nickname_ = "";
         avatar_ = "";
         phone_ = "";
       }
-      public static final int ID_FIELD_NUMBER = 1;
-      private long id_;
-      /**
-       * <code>optional uint64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
+
+      @Override
+      @SuppressWarnings({"unused"})
+      protected Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Item();
       }
-      /**
-       * <code>optional uint64 id = 1;</code>
-       */
-      private void setId(long value) {
-        
-        id_ = value;
+
+      @Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
       }
+      private Item(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                mxbUserId_ = input.readUInt64();
+                break;
+              }
+              case 18: {
+                String s = input.readStringRequireUtf8();
+
+                nickname_ = s;
+                break;
+              }
+              case 26: {
+                String s = input.readStringRequireUtf8();
+
+                avatar_ = s;
+                break;
+              }
+              case 32: {
+
+                messengerId_ = input.readUInt32();
+                break;
+              }
+              case 42: {
+                String s = input.readStringRequireUtf8();
+
+                phone_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_Item_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_Item_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Item.class, Builder.class);
+      }
+
+      public static final int MXB_USER_ID_FIELD_NUMBER = 1;
+      private long mxbUserId_;
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>uint64 mxb_user_id = 1;</code>
+       * @return The mxbUserId.
        */
-      private void clearId() {
-        
-        id_ = 0L;
+      @Override
+      public long getMxbUserId() {
+        return mxbUserId_;
       }
 
       public static final int NICKNAME_FIELD_NUMBER = 2;
-      private java.lang.String nickname_;
+      private volatile Object nickname_;
       /**
-       * <code>optional string nickname = 2;</code>
+       * <code>string nickname = 2;</code>
+       * @return The nickname.
        */
-      public java.lang.String getNickname() {
-        return nickname_;
+      @Override
+      public String getNickname() {
+        Object ref = nickname_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          nickname_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string nickname = 2;</code>
+       * <code>string nickname = 2;</code>
+       * @return The bytes for nickname.
        */
+      @Override
       public com.google.protobuf.ByteString
           getNicknameBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(nickname_);
-      }
-      /**
-       * <code>optional string nickname = 2;</code>
-       */
-      private void setNickname(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        nickname_ = value;
-      }
-      /**
-       * <code>optional string nickname = 2;</code>
-       */
-      private void clearNickname() {
-        
-        nickname_ = getDefaultInstance().getNickname();
-      }
-      /**
-       * <code>optional string nickname = 2;</code>
-       */
-      private void setNicknameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        nickname_ = value.toStringUtf8();
+        Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int AVATAR_FIELD_NUMBER = 3;
-      private java.lang.String avatar_;
+      private volatile Object avatar_;
       /**
-       * <code>optional string avatar = 3;</code>
+       * <code>string avatar = 3;</code>
+       * @return The avatar.
        */
-      public java.lang.String getAvatar() {
-        return avatar_;
+      @Override
+      public String getAvatar() {
+        Object ref = avatar_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          avatar_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string avatar = 3;</code>
+       * <code>string avatar = 3;</code>
+       * @return The bytes for avatar.
        */
+      @Override
       public com.google.protobuf.ByteString
           getAvatarBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(avatar_);
-      }
-      /**
-       * <code>optional string avatar = 3;</code>
-       */
-      private void setAvatar(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        avatar_ = value;
-      }
-      /**
-       * <code>optional string avatar = 3;</code>
-       */
-      private void clearAvatar() {
-        
-        avatar_ = getDefaultInstance().getAvatar();
-      }
-      /**
-       * <code>optional string avatar = 3;</code>
-       */
-      private void setAvatarBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        avatar_ = value.toStringUtf8();
+        Object ref = avatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          avatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int MESSENGER_ID_FIELD_NUMBER = 4;
       private int messengerId_;
       /**
-       * <code>optional uint32 messenger_id = 4;</code>
+       * <code>uint32 messenger_id = 4;</code>
+       * @return The messengerId.
        */
+      @Override
       public int getMessengerId() {
         return messengerId_;
       }
-      /**
-       * <code>optional uint32 messenger_id = 4;</code>
-       */
-      private void setMessengerId(int value) {
-        
-        messengerId_ = value;
-      }
-      /**
-       * <code>optional uint32 messenger_id = 4;</code>
-       */
-      private void clearMessengerId() {
-        
-        messengerId_ = 0;
-      }
 
       public static final int PHONE_FIELD_NUMBER = 5;
-      private java.lang.String phone_;
+      private volatile Object phone_;
       /**
-       * <code>optional string phone = 5;</code>
+       * <code>string phone = 5;</code>
+       * @return The phone.
        */
-      public java.lang.String getPhone() {
-        return phone_;
+      @Override
+      public String getPhone() {
+        Object ref = phone_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          phone_ = s;
+          return s;
+        }
       }
       /**
-       * <code>optional string phone = 5;</code>
+       * <code>string phone = 5;</code>
+       * @return The bytes for phone.
        */
+      @Override
       public com.google.protobuf.ByteString
           getPhoneBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(phone_);
-      }
-      /**
-       * <code>optional string phone = 5;</code>
-       */
-      private void setPhone(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phone_ = value;
-      }
-      /**
-       * <code>optional string phone = 5;</code>
-       */
-      private void clearPhone() {
-        
-        phone_ = getDefaultInstance().getPhone();
-      }
-      /**
-       * <code>optional string phone = 5;</code>
-       */
-      private void setPhoneBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phone_ = value.toStringUtf8();
+        Object ref = phone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          phone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
+      private byte memoizedIsInitialized = -1;
+      @Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (id_ != 0L) {
-          output.writeUInt64(1, id_);
+        if (mxbUserId_ != 0L) {
+          output.writeUInt64(1, mxbUserId_);
         }
-        if (!nickname_.isEmpty()) {
-          output.writeString(2, getNickname());
+        if (!getNicknameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickname_);
         }
-        if (!avatar_.isEmpty()) {
-          output.writeString(3, getAvatar());
+        if (!getAvatarBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatar_);
         }
         if (messengerId_ != 0) {
           output.writeUInt32(4, messengerId_);
         }
-        if (!phone_.isEmpty()) {
-          output.writeString(5, getPhone());
+        if (!getPhoneBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, phone_);
         }
+        unknownFields.writeTo(output);
       }
 
+      @Override
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (id_ != 0L) {
+        if (mxbUserId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt64Size(1, id_);
+            .computeUInt64Size(1, mxbUserId_);
         }
-        if (!nickname_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(2, getNickname());
+        if (!getNicknameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickname_);
         }
-        if (!avatar_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(3, getAvatar());
+        if (!getAvatarBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatar_);
         }
         if (messengerId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(4, messengerId_);
         }
-        if (!phone_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeStringSize(5, getPhone());
+        if (!getPhoneBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, phone_);
         }
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(
+      @Override
+      public boolean equals(final Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof Item)) {
+          return super.equals(obj);
+        }
+        Item other = (Item) obj;
+
+        if (getMxbUserId()
+            != other.getMxbUserId()) return false;
+        if (!getNickname()
+            .equals(other.getNickname())) return false;
+        if (!getAvatar()
+            .equals(other.getAvatar())) return false;
+        if (getMessengerId()
+            != other.getMessengerId()) return false;
+        if (!getPhone()
+            .equals(other.getPhone())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MXB_USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getMxbUserId());
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNickname().hashCode();
+        hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+        hash = (53 * hash) + getAvatar().hashCode();
+        hash = (37 * hash) + MESSENGER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getMessengerId();
+        hash = (37 * hash) + PHONE_FIELD_NUMBER;
+        hash = (53 * hash) + getPhone().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static Item parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Item parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Item parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(
+      public static Item parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(byte[] data)
+      public static Item parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(
+      public static Item parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(java.io.InputStream input)
+      public static Item parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(
+      public static Item parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseDelimitedFrom(java.io.InputStream input)
+      public static Item parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseDelimitedFrom(
+      public static Item parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(
+      public static Item parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item parseFrom(
+      public static Item parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @Override
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item prototype) {
+      public static Builder newBuilder(Item prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @Override
+      protected Builder newBuilderForType(
+          BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.MxbSearchResponse.Item}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.MxbSearchResponse.Item)
-          net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.ItemOrBuilder {
+          ItemOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_Item_descriptor;
+        }
+
+        @Override
+        protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_Item_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  Item.class, Builder.class);
+        }
+
         // Construct using net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.newBuilder()
         private Builder() {
-          super(DEFAULT_INSTANCE);
+          maybeForceBuilderInitialization();
         }
 
+        private Builder(
+            BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @Override
+        public Builder clear() {
+          super.clear();
+          mxbUserId_ = 0L;
 
+          nickname_ = "";
+
+          avatar_ = "";
+
+          messengerId_ = 0;
+
+          phone_ = "";
+
+          return this;
+        }
+
+        @Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_Item_descriptor;
+        }
+
+        @Override
+        public Item getDefaultInstanceForType() {
+          return Item.getDefaultInstance();
+        }
+
+        @Override
+        public Item build() {
+          Item result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @Override
+        public Item buildPartial() {
+          Item result = new Item(this);
+          result.mxbUserId_ = mxbUserId_;
+          result.nickname_ = nickname_;
+          result.avatar_ = avatar_;
+          result.messengerId_ = messengerId_;
+          result.phone_ = phone_;
+          onBuilt();
+          return result;
+        }
+
+        @Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.setField(field, value);
+        }
+        @Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof Item) {
+            return mergeFrom((Item)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(Item other) {
+          if (other == Item.getDefaultInstance()) return this;
+          if (other.getMxbUserId() != 0L) {
+            setMxbUserId(other.getMxbUserId());
+          }
+          if (!other.getNickname().isEmpty()) {
+            nickname_ = other.nickname_;
+            onChanged();
+          }
+          if (!other.getAvatar().isEmpty()) {
+            avatar_ = other.avatar_;
+            onChanged();
+          }
+          if (other.getMessengerId() != 0) {
+            setMessengerId(other.getMessengerId());
+          }
+          if (!other.getPhone().isEmpty()) {
+            phone_ = other.phone_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          Item parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (Item) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long mxbUserId_ ;
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>uint64 mxb_user_id = 1;</code>
+         * @return The mxbUserId.
          */
-        public long getId() {
-          return instance.getId();
+        @Override
+        public long getMxbUserId() {
+          return mxbUserId_;
         }
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>uint64 mxb_user_id = 1;</code>
+         * @param value The mxbUserId to set.
+         * @return This builder for chaining.
          */
-        public Builder setId(long value) {
-          copyOnWrite();
-          instance.setId(value);
+        public Builder setMxbUserId(long value) {
+          
+          mxbUserId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>uint64 mxb_user_id = 1;</code>
+         * @return This builder for chaining.
          */
-        public Builder clearId() {
-          copyOnWrite();
-          instance.clearId();
+        public Builder clearMxbUserId() {
+          
+          mxbUserId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private Object nickname_ = "";
         /**
-         * <code>optional string nickname = 2;</code>
+         * <code>string nickname = 2;</code>
+         * @return The nickname.
          */
-        public java.lang.String getNickname() {
-          return instance.getNickname();
+        public String getNickname() {
+          Object ref = nickname_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            nickname_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
         }
         /**
-         * <code>optional string nickname = 2;</code>
+         * <code>string nickname = 2;</code>
+         * @return The bytes for nickname.
          */
         public com.google.protobuf.ByteString
             getNicknameBytes() {
-          return instance.getNicknameBytes();
+          Object ref = nickname_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            nickname_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string nickname = 2;</code>
+         * <code>string nickname = 2;</code>
+         * @param value The nickname to set.
+         * @return This builder for chaining.
          */
         public Builder setNickname(
-            java.lang.String value) {
-          copyOnWrite();
-          instance.setNickname(value);
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          nickname_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string nickname = 2;</code>
+         * <code>string nickname = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearNickname() {
-          copyOnWrite();
-          instance.clearNickname();
+          
+          nickname_ = getDefaultInstance().getNickname();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string nickname = 2;</code>
+         * <code>string nickname = 2;</code>
+         * @param value The bytes for nickname to set.
+         * @return This builder for chaining.
          */
         public Builder setNicknameBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setNicknameBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          nickname_ = value;
+          onChanged();
           return this;
         }
 
+        private Object avatar_ = "";
         /**
-         * <code>optional string avatar = 3;</code>
+         * <code>string avatar = 3;</code>
+         * @return The avatar.
          */
-        public java.lang.String getAvatar() {
-          return instance.getAvatar();
+        public String getAvatar() {
+          Object ref = avatar_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            avatar_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
         }
         /**
-         * <code>optional string avatar = 3;</code>
+         * <code>string avatar = 3;</code>
+         * @return The bytes for avatar.
          */
         public com.google.protobuf.ByteString
             getAvatarBytes() {
-          return instance.getAvatarBytes();
+          Object ref = avatar_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            avatar_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string avatar = 3;</code>
+         * <code>string avatar = 3;</code>
+         * @param value The avatar to set.
+         * @return This builder for chaining.
          */
         public Builder setAvatar(
-            java.lang.String value) {
-          copyOnWrite();
-          instance.setAvatar(value);
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          avatar_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string avatar = 3;</code>
+         * <code>string avatar = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearAvatar() {
-          copyOnWrite();
-          instance.clearAvatar();
+          
+          avatar_ = getDefaultInstance().getAvatar();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string avatar = 3;</code>
+         * <code>string avatar = 3;</code>
+         * @param value The bytes for avatar to set.
+         * @return This builder for chaining.
          */
         public Builder setAvatarBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setAvatarBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          avatar_ = value;
+          onChanged();
           return this;
         }
 
+        private int messengerId_ ;
         /**
-         * <code>optional uint32 messenger_id = 4;</code>
+         * <code>uint32 messenger_id = 4;</code>
+         * @return The messengerId.
          */
+        @Override
         public int getMessengerId() {
-          return instance.getMessengerId();
+          return messengerId_;
         }
         /**
-         * <code>optional uint32 messenger_id = 4;</code>
+         * <code>uint32 messenger_id = 4;</code>
+         * @param value The messengerId to set.
+         * @return This builder for chaining.
          */
         public Builder setMessengerId(int value) {
-          copyOnWrite();
-          instance.setMessengerId(value);
+          
+          messengerId_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 messenger_id = 4;</code>
+         * <code>uint32 messenger_id = 4;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMessengerId() {
-          copyOnWrite();
-          instance.clearMessengerId();
+          
+          messengerId_ = 0;
+          onChanged();
           return this;
         }
 
+        private Object phone_ = "";
         /**
-         * <code>optional string phone = 5;</code>
+         * <code>string phone = 5;</code>
+         * @return The phone.
          */
-        public java.lang.String getPhone() {
-          return instance.getPhone();
+        public String getPhone() {
+          Object ref = phone_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            phone_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
         }
         /**
-         * <code>optional string phone = 5;</code>
+         * <code>string phone = 5;</code>
+         * @return The bytes for phone.
          */
         public com.google.protobuf.ByteString
             getPhoneBytes() {
-          return instance.getPhoneBytes();
+          Object ref = phone_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            phone_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>optional string phone = 5;</code>
+         * <code>string phone = 5;</code>
+         * @param value The phone to set.
+         * @return This builder for chaining.
          */
         public Builder setPhone(
-            java.lang.String value) {
-          copyOnWrite();
-          instance.setPhone(value);
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          phone_ = value;
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string phone = 5;</code>
+         * <code>string phone = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearPhone() {
-          copyOnWrite();
-          instance.clearPhone();
+          
+          phone_ = getDefaultInstance().getPhone();
+          onChanged();
           return this;
         }
         /**
-         * <code>optional string phone = 5;</code>
+         * <code>string phone = 5;</code>
+         * @param value The bytes for phone to set.
+         * @return This builder for chaining.
          */
         public Builder setPhoneBytes(
             com.google.protobuf.ByteString value) {
-          copyOnWrite();
-          instance.setPhoneBytes(value);
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          phone_ = value;
+          onChanged();
           return this;
         }
+        @Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:proto.MxbSearchResponse.Item)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item other = (net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item) arg1;
-            id_ = visitor.visitLong(id_ != 0L, id_,
-                other.id_ != 0L, other.id_);
-            nickname_ = visitor.visitString(!nickname_.isEmpty(), nickname_,
-                !other.nickname_.isEmpty(), other.nickname_);
-            avatar_ = visitor.visitString(!avatar_.isEmpty(), avatar_,
-                !other.avatar_.isEmpty(), other.avatar_);
-            messengerId_ = visitor.visitInt(messengerId_ != 0, messengerId_,
-                other.messengerId_ != 0, other.messengerId_);
-            phone_ = visitor.visitString(!phone_.isEmpty(), phone_,
-                !other.phone_.isEmpty(), other.phone_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    id_ = input.readUInt64();
-                    break;
-                  }
-                  case 18: {
-                    String s = input.readStringRequireUtf8();
-
-                    nickname_ = s;
-                    break;
-                  }
-                  case 26: {
-                    String s = input.readStringRequireUtf8();
-
-                    avatar_ = s;
-                    break;
-                  }
-                  case 32: {
-
-                    messengerId_ = input.readUInt32();
-                    break;
-                  }
-                  case 42: {
-                    String s = input.readStringRequireUtf8();
-
-                    phone_ = s;
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.MxbSearchResponse.Item)
-      private static final net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item DEFAULT_INSTANCE;
+      private static final Item DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new Item();
-        DEFAULT_INSTANCE.makeImmutable();
       }
 
-      public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item getDefaultInstance() {
+      public static Item getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Item> PARSER;
+      private static final com.google.protobuf.Parser<Item>
+          PARSER = new com.google.protobuf.AbstractParser<Item>() {
+        @Override
+        public Item parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Item(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Item> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @Override
+      public com.google.protobuf.Parser<Item> getParserForType() {
+        return PARSER;
+      }
+
+      @Override
+      public Item getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
-    private net.iGap.proto.ProtoResponse.Response response_;
+    private ProtoResponse.Response response_;
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return Whether the response field is set.
      */
+    @Override
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
+     * @return The response.
      */
-    public net.iGap.proto.ProtoResponse.Response getResponse() {
-      return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+    @Override
+    public ProtoResponse.Response getResponse() {
+      return response_ == null ? ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .proto.Response response = 1;</code>
+     * <code>.proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    @Override
+    public ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int ITEMS_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item> items_;
+    private java.util.List<Item> items_;
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
-    public java.util.List<net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item> getItemsList() {
+    @Override
+    public java.util.List<Item> getItemsList() {
       return items_;
     }
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
-    public java.util.List<? extends net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.ItemOrBuilder> 
+    @Override
+    public java.util.List<? extends ItemOrBuilder>
         getItemsOrBuilderList() {
       return items_;
     }
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
+    @Override
     public int getItemsCount() {
       return items_.size();
     }
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
-    public net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item getItems(int index) {
+    @Override
+    public Item getItems(int index) {
       return items_.get(index);
     }
     /**
      * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
      */
-    public net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.ItemOrBuilder getItemsOrBuilder(
+    @Override
+    public ItemOrBuilder getItemsOrBuilder(
         int index) {
       return items_.get(index);
     }
-    private void ensureItemsIsMutable() {
-      if (!items_.isModifiable()) {
-        items_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(items_);
-       }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void setItems(
-        int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureItemsIsMutable();
-      items_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void setItems(
-        int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.Builder builderForValue) {
-      ensureItemsIsMutable();
-      items_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void addItems(net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureItemsIsMutable();
-      items_.add(value);
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void addItems(
-        int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureItemsIsMutable();
-      items_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void addItems(
-        net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.Builder builderForValue) {
-      ensureItemsIsMutable();
-      items_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void addItems(
-        int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.Builder builderForValue) {
-      ensureItemsIsMutable();
-      items_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void addAllItems(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item> values) {
-      ensureItemsIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, items_);
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void clearItems() {
-      items_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
-     */
-    private void removeItems(int index) {
-      ensureItemsIsMutable();
-      items_.remove(index);
-    }
-
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (response_ != null) {
@@ -1332,10 +2027,12 @@ public final class ProtoMxbSearch {
       for (int i = 0; i < items_.size(); i++) {
         output.writeMessage(2, items_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1347,353 +2044,813 @@ public final class ProtoMxbSearch {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, items_.get(i));
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof MxbSearchResponse)) {
+        return super.equals(obj);
+      }
+      MxbSearchResponse other = (MxbSearchResponse) obj;
+
+      if (hasResponse() != other.hasResponse()) return false;
+      if (hasResponse()) {
+        if (!getResponse()
+            .equals(other.getResponse())) return false;
+      }
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static MxbSearchResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MxbSearchResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MxbSearchResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(
+    public static MxbSearchResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(byte[] data)
+    public static MxbSearchResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(
+    public static MxbSearchResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(java.io.InputStream input)
+    public static MxbSearchResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(
+    public static MxbSearchResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseDelimitedFrom(java.io.InputStream input)
+    public static MxbSearchResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseDelimitedFrom(
+    public static MxbSearchResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(
+    public static MxbSearchResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse parseFrom(
+    public static MxbSearchResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(net.iGap.proto.ProtoMxbSearch.MxbSearchResponse prototype) {
+    public static Builder newBuilder(MxbSearchResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MxbSearchResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMxbSearch.MxbSearchResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MxbSearchResponse)
-        net.iGap.proto.ProtoMxbSearch.MxbSearchResponseOrBuilder {
+        MxbSearchResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                MxbSearchResponse.class, Builder.class);
+      }
+
       // Construct using net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.newBuilder()
       private Builder() {
-        super(DEFAULT_INSTANCE);
+        maybeForceBuilderInitialization();
       }
 
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemsFieldBuilder();
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
 
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ProtoMxbSearch.internal_static_proto_MxbSearchResponse_descriptor;
+      }
+
+      @Override
+      public MxbSearchResponse getDefaultInstanceForType() {
+        return MxbSearchResponse.getDefaultInstance();
+      }
+
+      @Override
+      public MxbSearchResponse build() {
+        MxbSearchResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public MxbSearchResponse buildPartial() {
+        MxbSearchResponse result = new MxbSearchResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof MxbSearchResponse) {
+          return mergeFrom((MxbSearchResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(MxbSearchResponse other) {
+        if (other == MxbSearchResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        MxbSearchResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (MxbSearchResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private ProtoResponse.Response response_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ProtoResponse.Response, ProtoResponse.Response.Builder, ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return Whether the response field is set.
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       * @return The response.
        */
-      public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
-      }
-      /**
-       * <code>optional .proto.Response response = 1;</code>
-       */
-      public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+      public ProtoResponse.Response getResponse() {
+        if (responseBuilder_ == null) {
+          return response_ == null ? ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
         }
+      }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
+       */
+      public Builder setResponse(ProtoResponse.Response value) {
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
        */
       public Builder setResponse(
-          net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+          ProtoResponse.Response.Builder builderForValue) {
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+      public Builder mergeResponse(ProtoResponse.Response value) {
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional .proto.Response response = 1;</code>
+       * <code>.proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      public ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>.proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ProtoResponse.Response, ProtoResponse.Response.Builder, ProtoResponse.ResponseOrBuilder>
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ProtoResponse.Response, ProtoResponse.Response.Builder, ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<Item> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<Item>(items_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Item, Item.Builder, ItemOrBuilder> itemsBuilder_;
 
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
-      public java.util.List<net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item> getItemsList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getItemsList());
+      public java.util.List<Item> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public int getItemsCount() {
-        return instance.getItemsCount();
-      }/**
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
-      public net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item getItems(int index) {
-        return instance.getItems(index);
+      public Item getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder setItems(
-          int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item value) {
-        copyOnWrite();
-        instance.setItems(index, value);
+          int index, Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder setItems(
-          int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.Builder builderForValue) {
-        copyOnWrite();
-        instance.setItems(index, builderForValue);
+          int index, Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
-      public Builder addItems(net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item value) {
-        copyOnWrite();
-        instance.addItems(value);
+      public Builder addItems(Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder addItems(
-          int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item value) {
-        copyOnWrite();
-        instance.addItems(index, value);
+          int index, Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder addItems(
-          net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.Builder builderForValue) {
-        copyOnWrite();
-        instance.addItems(builderForValue);
+          Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder addItems(
-          int index, net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.Builder builderForValue) {
-        copyOnWrite();
-        instance.addItems(index, builderForValue);
+          int index, Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder addAllItems(
-          java.lang.Iterable<? extends net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item> values) {
-        copyOnWrite();
-        instance.addAllItems(values);
+          Iterable<? extends Item> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder clearItems() {
-        copyOnWrite();
-        instance.clearItems();
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
        */
       public Builder removeItems(int index) {
-        copyOnWrite();
-        instance.removeItems(index);
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
         return this;
       }
+      /**
+       * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+       */
+      public Item.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+       */
+      public ItemOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+       */
+      public java.util.List<? extends ItemOrBuilder>
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+       */
+      public Item.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            Item.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+       */
+      public Item.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, Item.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.MxbSearchResponse.Item items = 2;</code>
+       */
+      public java.util.List<Item.Builder>
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Item, Item.Builder, ItemOrBuilder>
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Item, Item.Builder, ItemOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:proto.MxbSearchResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMxbSearch.MxbSearchResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          items_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMxbSearch.MxbSearchResponse other = (net.iGap.proto.ProtoMxbSearch.MxbSearchResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          items_= visitor.visitList(items_, other.items_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!items_.isModifiable()) {
-                    items_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(items_);
-                  }
-                  items_.add(
-                      input.readMessage(net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.Item.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMxbSearch.MxbSearchResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MxbSearchResponse)
-    private static final net.iGap.proto.ProtoMxbSearch.MxbSearchResponse DEFAULT_INSTANCE;
+    private static final MxbSearchResponse DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new MxbSearchResponse();
-      DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static net.iGap.proto.ProtoMxbSearch.MxbSearchResponse getDefaultInstance() {
+    public static MxbSearchResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MxbSearchResponse> PARSER;
+    private static final com.google.protobuf.Parser<MxbSearchResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MxbSearchResponse>() {
+      @Override
+      public MxbSearchResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MxbSearchResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MxbSearchResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @Override
+    public com.google.protobuf.Parser<MxbSearchResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public MxbSearchResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MxbSearch_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MxbSearch_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MxbSearchResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MxbSearchResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MxbSearchResponse_Item_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MxbSearchResponse_Item_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    String[] descriptorData = {
+      "\n\017MxbSearch.proto\022\005proto\032\rRequest.proto\032" +
+      "\016Response.proto\";\n\tMxbSearch\022\037\n\007request\030" +
+      "\001 \001(\0132\016.proto.Request\022\r\n\005phone\030\002 \001(\t\"\310\001\n" +
+      "\021MxbSearchResponse\022!\n\010response\030\001 \001(\0132\017.p" +
+      "roto.Response\022,\n\005items\030\002 \003(\0132\035.proto.Mxb" +
+      "SearchResponse.Item\032b\n\004Item\022\023\n\013mxb_user_" +
+      "id\030\001 \001(\004\022\020\n\010nickname\030\002 \001(\t\022\016\n\006avatar\030\003 \001" +
+      "(\t\022\024\n\014messenger_id\030\004 \001(\r\022\r\n\005phone\030\005 \001(\tB" +
+      " \n\016net.iGap.protoB\016ProtoMxbSearchb\006proto" +
+      "3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          ProtoRequest.getDescriptor(),
+          ProtoResponse.getDescriptor(),
+        });
+    internal_static_proto_MxbSearch_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_MxbSearch_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MxbSearch_descriptor,
+        new String[] { "Request", "Phone", });
+    internal_static_proto_MxbSearchResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_MxbSearchResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MxbSearchResponse_descriptor,
+        new String[] { "Response", "Items", });
+    internal_static_proto_MxbSearchResponse_Item_descriptor =
+      internal_static_proto_MxbSearchResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_MxbSearchResponse_Item_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MxbSearchResponse_Item_descriptor,
+        new String[] { "MxbUserId", "Nickname", "Avatar", "MessengerId", "Phone", });
+    ProtoRequest.getDescriptor();
+    ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
