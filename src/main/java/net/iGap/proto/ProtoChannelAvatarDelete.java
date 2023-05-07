@@ -807,6 +807,21 @@ public final class ProtoChannelAvatarDelete {
      * @return The roomId.
      */
     long getRoomId();
+
+    /**
+     * <code>.proto.Avatar last_avatar = 4;</code>
+     * @return Whether the lastAvatar field is set.
+     */
+    boolean hasLastAvatar();
+    /**
+     * <code>.proto.Avatar last_avatar = 4;</code>
+     * @return The lastAvatar.
+     */
+    net.iGap.proto.ProtoGlobal.Avatar getLastAvatar();
+    /**
+     * <code>.proto.Avatar last_avatar = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.AvatarOrBuilder getLastAvatarOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelAvatarDeleteResponse}
@@ -874,6 +889,19 @@ public final class ProtoChannelAvatarDelete {
             case 24: {
 
               roomId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              net.iGap.proto.ProtoGlobal.Avatar.Builder subBuilder = null;
+              if (lastAvatar_ != null) {
+                subBuilder = lastAvatar_.toBuilder();
+              }
+              lastAvatar_ = input.readMessage(net.iGap.proto.ProtoGlobal.Avatar.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastAvatar_);
+                lastAvatar_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -956,6 +984,32 @@ public final class ProtoChannelAvatarDelete {
       return roomId_;
     }
 
+    public static final int LAST_AVATAR_FIELD_NUMBER = 4;
+    private net.iGap.proto.ProtoGlobal.Avatar lastAvatar_;
+    /**
+     * <code>.proto.Avatar last_avatar = 4;</code>
+     * @return Whether the lastAvatar field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastAvatar() {
+      return lastAvatar_ != null;
+    }
+    /**
+     * <code>.proto.Avatar last_avatar = 4;</code>
+     * @return The lastAvatar.
+     */
+    @java.lang.Override
+    public net.iGap.proto.ProtoGlobal.Avatar getLastAvatar() {
+      return lastAvatar_ == null ? net.iGap.proto.ProtoGlobal.Avatar.getDefaultInstance() : lastAvatar_;
+    }
+    /**
+     * <code>.proto.Avatar last_avatar = 4;</code>
+     */
+    @java.lang.Override
+    public net.iGap.proto.ProtoGlobal.AvatarOrBuilder getLastAvatarOrBuilder() {
+      return getLastAvatar();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -979,6 +1033,9 @@ public final class ProtoChannelAvatarDelete {
       if (roomId_ != 0L) {
         output.writeUInt64(3, roomId_);
       }
+      if (lastAvatar_ != null) {
+        output.writeMessage(4, getLastAvatar());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -999,6 +1056,10 @@ public final class ProtoChannelAvatarDelete {
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, roomId_);
+      }
+      if (lastAvatar_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getLastAvatar());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1024,6 +1085,11 @@ public final class ProtoChannelAvatarDelete {
           != other.getId()) return false;
       if (getRoomId()
           != other.getRoomId()) return false;
+      if (hasLastAvatar() != other.hasLastAvatar()) return false;
+      if (hasLastAvatar()) {
+        if (!getLastAvatar()
+            .equals(other.getLastAvatar())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1045,6 +1111,10 @@ public final class ProtoChannelAvatarDelete {
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
+      if (hasLastAvatar()) {
+        hash = (37 * hash) + LAST_AVATAR_FIELD_NUMBER;
+        hash = (53 * hash) + getLastAvatar().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1188,6 +1258,12 @@ public final class ProtoChannelAvatarDelete {
 
         roomId_ = 0L;
 
+        if (lastAvatarBuilder_ == null) {
+          lastAvatar_ = null;
+        } else {
+          lastAvatar_ = null;
+          lastAvatarBuilder_ = null;
+        }
         return this;
       }
 
@@ -1221,6 +1297,11 @@ public final class ProtoChannelAvatarDelete {
         }
         result.id_ = id_;
         result.roomId_ = roomId_;
+        if (lastAvatarBuilder_ == null) {
+          result.lastAvatar_ = lastAvatar_;
+        } else {
+          result.lastAvatar_ = lastAvatarBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1277,6 +1358,9 @@ public final class ProtoChannelAvatarDelete {
         }
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
+        }
+        if (other.hasLastAvatar()) {
+          mergeLastAvatar(other.getLastAvatar());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1487,6 +1571,125 @@ public final class ProtoChannelAvatarDelete {
         onChanged();
         return this;
       }
+
+      private net.iGap.proto.ProtoGlobal.Avatar lastAvatar_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Avatar, net.iGap.proto.ProtoGlobal.Avatar.Builder, net.iGap.proto.ProtoGlobal.AvatarOrBuilder> lastAvatarBuilder_;
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       * @return Whether the lastAvatar field is set.
+       */
+      public boolean hasLastAvatar() {
+        return lastAvatarBuilder_ != null || lastAvatar_ != null;
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       * @return The lastAvatar.
+       */
+      public net.iGap.proto.ProtoGlobal.Avatar getLastAvatar() {
+        if (lastAvatarBuilder_ == null) {
+          return lastAvatar_ == null ? net.iGap.proto.ProtoGlobal.Avatar.getDefaultInstance() : lastAvatar_;
+        } else {
+          return lastAvatarBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      public Builder setLastAvatar(net.iGap.proto.ProtoGlobal.Avatar value) {
+        if (lastAvatarBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastAvatar_ = value;
+          onChanged();
+        } else {
+          lastAvatarBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      public Builder setLastAvatar(
+          net.iGap.proto.ProtoGlobal.Avatar.Builder builderForValue) {
+        if (lastAvatarBuilder_ == null) {
+          lastAvatar_ = builderForValue.build();
+          onChanged();
+        } else {
+          lastAvatarBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      public Builder mergeLastAvatar(net.iGap.proto.ProtoGlobal.Avatar value) {
+        if (lastAvatarBuilder_ == null) {
+          if (lastAvatar_ != null) {
+            lastAvatar_ =
+              net.iGap.proto.ProtoGlobal.Avatar.newBuilder(lastAvatar_).mergeFrom(value).buildPartial();
+          } else {
+            lastAvatar_ = value;
+          }
+          onChanged();
+        } else {
+          lastAvatarBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      public Builder clearLastAvatar() {
+        if (lastAvatarBuilder_ == null) {
+          lastAvatar_ = null;
+          onChanged();
+        } else {
+          lastAvatar_ = null;
+          lastAvatarBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Avatar.Builder getLastAvatarBuilder() {
+        
+        onChanged();
+        return getLastAvatarFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.AvatarOrBuilder getLastAvatarOrBuilder() {
+        if (lastAvatarBuilder_ != null) {
+          return lastAvatarBuilder_.getMessageOrBuilder();
+        } else {
+          return lastAvatar_ == null ?
+              net.iGap.proto.ProtoGlobal.Avatar.getDefaultInstance() : lastAvatar_;
+        }
+      }
+      /**
+       * <code>.proto.Avatar last_avatar = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Avatar, net.iGap.proto.ProtoGlobal.Avatar.Builder, net.iGap.proto.ProtoGlobal.AvatarOrBuilder> 
+          getLastAvatarFieldBuilder() {
+        if (lastAvatarBuilder_ == null) {
+          lastAvatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Avatar, net.iGap.proto.ProtoGlobal.Avatar.Builder, net.iGap.proto.ProtoGlobal.AvatarOrBuilder>(
+                  getLastAvatar(),
+                  getParentForChildren(),
+                  isClean());
+          lastAvatar_ = null;
+        }
+        return lastAvatarBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1560,19 +1763,21 @@ public final class ProtoChannelAvatarDelete {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ChannelAvatarDelete.proto\022\005proto\032\rRequ" +
-      "est.proto\032\016Response.proto\"S\n\023ChannelAvat" +
-      "arDelete\022\037\n\007request\030\001 \001(\0132\016.proto.Reques" +
-      "t\022\n\n\002id\030\002 \001(\004\022\017\n\007room_id\030\003 \001(\004\"]\n\033Channe" +
-      "lAvatarDeleteResponse\022!\n\010response\030\001 \001(\0132" +
-      "\017.proto.Response\022\n\n\002id\030\002 \001(\004\022\017\n\007room_id\030" +
-      "\003 \001(\004B*\n\016net.iGap.protoB\030ProtoChannelAva" +
-      "tarDeleteb\006proto3"
+      "est.proto\032\016Response.proto\032\014Global.proto\"" +
+      "S\n\023ChannelAvatarDelete\022\037\n\007request\030\001 \001(\0132" +
+      "\016.proto.Request\022\n\n\002id\030\002 \001(\004\022\017\n\007room_id\030\003" +
+      " \001(\004\"\201\001\n\033ChannelAvatarDeleteResponse\022!\n\010" +
+      "response\030\001 \001(\0132\017.proto.Response\022\n\n\002id\030\002 " +
+      "\001(\004\022\017\n\007room_id\030\003 \001(\004\022\"\n\013last_avatar\030\004 \001(" +
+      "\0132\r.proto.AvatarB*\n\016net.iGap.protoB\030Prot" +
+      "oChannelAvatarDeleteb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
         });
     internal_static_proto_ChannelAvatarDelete_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1585,9 +1790,10 @@ public final class ProtoChannelAvatarDelete {
     internal_static_proto_ChannelAvatarDeleteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelAvatarDeleteResponse_descriptor,
-        new java.lang.String[] { "Response", "Id", "RoomId", });
+        new java.lang.String[] { "Response", "Id", "RoomId", "LastAvatar", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
