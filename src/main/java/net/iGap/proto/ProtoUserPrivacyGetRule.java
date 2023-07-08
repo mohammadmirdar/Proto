@@ -771,6 +771,17 @@ public final class ProtoUserPrivacyGetRule {
      * @return The level.
      */
     net.iGap.proto.ProtoGlobal.PrivacyLevel getLevel();
+
+    /**
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The type.
+     */
+    net.iGap.proto.ProtoGlobal.PrivacyType getType();
   }
   /**
    * Protobuf type {@code proto.UserPrivacyGetRuleResponse}
@@ -786,6 +797,7 @@ public final class ProtoUserPrivacyGetRule {
     }
     private UserPrivacyGetRuleResponse() {
       level_ = 0;
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -829,6 +841,12 @@ public final class ProtoUserPrivacyGetRule {
                 response_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
             case 24: {
@@ -914,6 +932,25 @@ public final class ProtoUserPrivacyGetRule {
       return result == null ? net.iGap.proto.ProtoGlobal.PrivacyLevel.UNRECOGNIZED : result;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_;
+    /**
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.proto.PrivacyType type = 2;</code>
+     * @return The type.
+     */
+    @java.lang.Override public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
+      @SuppressWarnings("deprecation")
+      net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoGlobal.PrivacyType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -931,6 +968,9 @@ public final class ProtoUserPrivacyGetRule {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
+      if (type_ != net.iGap.proto.ProtoGlobal.PrivacyType.USER_STATUS.getNumber()) {
+        output.writeEnum(2, type_);
+      }
       if (level_ != net.iGap.proto.ProtoGlobal.PrivacyLevel.ALLOW_ALL.getNumber()) {
         output.writeEnum(3, level_);
       }
@@ -946,6 +986,10 @@ public final class ProtoUserPrivacyGetRule {
       if (response_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
+      }
+      if (type_ != net.iGap.proto.ProtoGlobal.PrivacyType.USER_STATUS.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, type_);
       }
       if (level_ != net.iGap.proto.ProtoGlobal.PrivacyLevel.ALLOW_ALL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -972,6 +1016,7 @@ public final class ProtoUserPrivacyGetRule {
             .equals(other.getResponse())) return false;
       }
       if (level_ != other.level_) return false;
+      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -989,6 +1034,8 @@ public final class ProtoUserPrivacyGetRule {
       }
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + level_;
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1130,6 +1177,8 @@ public final class ProtoUserPrivacyGetRule {
         }
         level_ = 0;
 
+        type_ = 0;
+
         return this;
       }
 
@@ -1162,6 +1211,7 @@ public final class ProtoUserPrivacyGetRule {
           result.response_ = responseBuilder_.build();
         }
         result.level_ = level_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -1215,6 +1265,9 @@ public final class ProtoUserPrivacyGetRule {
         }
         if (other.level_ != 0) {
           setLevelValue(other.getLevelValue());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1417,6 +1470,60 @@ public final class ProtoUserPrivacyGetRule {
         onChanged();
         return this;
       }
+
+      private int type_ = 0;
+      /**
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public net.iGap.proto.ProtoGlobal.PrivacyType getType() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.PrivacyType result = net.iGap.proto.ProtoGlobal.PrivacyType.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.PrivacyType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(net.iGap.proto.ProtoGlobal.PrivacyType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.PrivacyType type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1493,10 +1600,11 @@ public final class ProtoUserPrivacyGetRule {
       "st.proto\032\016Response.proto\032\014Global.proto\"W" +
       "\n\022UserPrivacyGetRule\022\037\n\007request\030\001 \001(\0132\016." +
       "proto.Request\022 \n\004type\030\002 \001(\0162\022.proto.Priv" +
-      "acyType\"c\n\032UserPrivacyGetRuleResponse\022!\n" +
-      "\010response\030\001 \001(\0132\017.proto.Response\022\"\n\005leve" +
-      "l\030\003 \001(\0162\023.proto.PrivacyLevelB)\n\016net.iGap" +
-      ".protoB\027ProtoUserPrivacyGetRuleb\006proto3"
+      "acyType\"\205\001\n\032UserPrivacyGetRuleResponse\022!" +
+      "\n\010response\030\001 \001(\0132\017.proto.Response\022\"\n\005lev" +
+      "el\030\003 \001(\0162\023.proto.PrivacyLevel\022 \n\004type\030\002 " +
+      "\001(\0162\022.proto.PrivacyTypeB)\n\016net.iGap.prot" +
+      "oB\027ProtoUserPrivacyGetRuleb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1516,7 +1624,7 @@ public final class ProtoUserPrivacyGetRule {
     internal_static_proto_UserPrivacyGetRuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserPrivacyGetRuleResponse_descriptor,
-        new java.lang.String[] { "Response", "Level", });
+        new java.lang.String[] { "Response", "Level", "Type", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
