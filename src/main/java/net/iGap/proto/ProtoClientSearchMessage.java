@@ -34,11 +34,19 @@ public final class ProtoClientSearchMessage {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
+     * <pre>
+     * without query server find all message
+     * </pre>
+     *
      * <code>string query = 2;</code>
      * @return The query.
      */
     java.lang.String getQuery();
     /**
+     * <pre>
+     * without query server find all message
+     * </pre>
+     *
      * <code>string query = 2;</code>
      * @return The bytes for query.
      */
@@ -46,30 +54,50 @@ public final class ProtoClientSearchMessage {
         getQueryBytes();
 
     /**
+     * <pre>
+     * without roomId server search in all user's rooms
+     * </pre>
+     *
      * <code>uint64 roomId = 3;</code>
      * @return The roomId.
      */
     long getRoomId();
 
     /**
+     * <pre>
+     * default is current time, client can change it
+     * </pre>
+     *
      * <code>uint64 start_time = 4;</code>
      * @return The startTime.
      */
     long getStartTime();
 
     /**
+     * <pre>
+     * optional, client can set it for define range time
+     * </pre>
+     *
      * <code>uint64 end_time = 5;</code>
      * @return The endTime.
      */
     long getEndTime();
 
     /**
+     * <pre>
+     * first time client must be send 0, then must be send size of rooms that client received until now
+     * </pre>
+     *
      * <code>uint32 room_offset = 6;</code>
      * @return The roomOffset.
      */
     int getRoomOffset();
 
     /**
+     * <pre>
+     * count of rooms result. max is 20.
+     * </pre>
+     *
      * <code>uint32 room_limit = 7;</code>
      * @return The roomLimit.
      */
@@ -244,6 +272,10 @@ public final class ProtoClientSearchMessage {
     public static final int QUERY_FIELD_NUMBER = 2;
     private volatile java.lang.Object query_;
     /**
+     * <pre>
+     * without query server find all message
+     * </pre>
+     *
      * <code>string query = 2;</code>
      * @return The query.
      */
@@ -261,6 +293,10 @@ public final class ProtoClientSearchMessage {
       }
     }
     /**
+     * <pre>
+     * without query server find all message
+     * </pre>
+     *
      * <code>string query = 2;</code>
      * @return The bytes for query.
      */
@@ -282,6 +318,10 @@ public final class ProtoClientSearchMessage {
     public static final int ROOMID_FIELD_NUMBER = 3;
     private long roomId_;
     /**
+     * <pre>
+     * without roomId server search in all user's rooms
+     * </pre>
+     *
      * <code>uint64 roomId = 3;</code>
      * @return The roomId.
      */
@@ -293,6 +333,10 @@ public final class ProtoClientSearchMessage {
     public static final int START_TIME_FIELD_NUMBER = 4;
     private long startTime_;
     /**
+     * <pre>
+     * default is current time, client can change it
+     * </pre>
+     *
      * <code>uint64 start_time = 4;</code>
      * @return The startTime.
      */
@@ -304,6 +348,10 @@ public final class ProtoClientSearchMessage {
     public static final int END_TIME_FIELD_NUMBER = 5;
     private long endTime_;
     /**
+     * <pre>
+     * optional, client can set it for define range time
+     * </pre>
+     *
      * <code>uint64 end_time = 5;</code>
      * @return The endTime.
      */
@@ -315,6 +363,10 @@ public final class ProtoClientSearchMessage {
     public static final int ROOM_OFFSET_FIELD_NUMBER = 6;
     private int roomOffset_;
     /**
+     * <pre>
+     * first time client must be send 0, then must be send size of rooms that client received until now
+     * </pre>
+     *
      * <code>uint32 room_offset = 6;</code>
      * @return The roomOffset.
      */
@@ -326,6 +378,10 @@ public final class ProtoClientSearchMessage {
     public static final int ROOM_LIMIT_FIELD_NUMBER = 7;
     private int roomLimit_;
     /**
+     * <pre>
+     * count of rooms result. max is 20.
+     * </pre>
+     *
      * <code>uint32 room_limit = 7;</code>
      * @return The roomLimit.
      */
@@ -910,6 +966,10 @@ public final class ProtoClientSearchMessage {
 
       private java.lang.Object query_ = "";
       /**
+       * <pre>
+       * without query server find all message
+       * </pre>
+       *
        * <code>string query = 2;</code>
        * @return The query.
        */
@@ -926,6 +986,10 @@ public final class ProtoClientSearchMessage {
         }
       }
       /**
+       * <pre>
+       * without query server find all message
+       * </pre>
+       *
        * <code>string query = 2;</code>
        * @return The bytes for query.
        */
@@ -943,6 +1007,10 @@ public final class ProtoClientSearchMessage {
         }
       }
       /**
+       * <pre>
+       * without query server find all message
+       * </pre>
+       *
        * <code>string query = 2;</code>
        * @param value The query to set.
        * @return This builder for chaining.
@@ -958,6 +1026,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * without query server find all message
+       * </pre>
+       *
        * <code>string query = 2;</code>
        * @return This builder for chaining.
        */
@@ -968,6 +1040,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * without query server find all message
+       * </pre>
+       *
        * <code>string query = 2;</code>
        * @param value The bytes for query to set.
        * @return This builder for chaining.
@@ -986,6 +1062,10 @@ public final class ProtoClientSearchMessage {
 
       private long roomId_ ;
       /**
+       * <pre>
+       * without roomId server search in all user's rooms
+       * </pre>
+       *
        * <code>uint64 roomId = 3;</code>
        * @return The roomId.
        */
@@ -994,6 +1074,10 @@ public final class ProtoClientSearchMessage {
         return roomId_;
       }
       /**
+       * <pre>
+       * without roomId server search in all user's rooms
+       * </pre>
+       *
        * <code>uint64 roomId = 3;</code>
        * @param value The roomId to set.
        * @return This builder for chaining.
@@ -1005,6 +1089,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * without roomId server search in all user's rooms
+       * </pre>
+       *
        * <code>uint64 roomId = 3;</code>
        * @return This builder for chaining.
        */
@@ -1017,6 +1105,10 @@ public final class ProtoClientSearchMessage {
 
       private long startTime_ ;
       /**
+       * <pre>
+       * default is current time, client can change it
+       * </pre>
+       *
        * <code>uint64 start_time = 4;</code>
        * @return The startTime.
        */
@@ -1025,6 +1117,10 @@ public final class ProtoClientSearchMessage {
         return startTime_;
       }
       /**
+       * <pre>
+       * default is current time, client can change it
+       * </pre>
+       *
        * <code>uint64 start_time = 4;</code>
        * @param value The startTime to set.
        * @return This builder for chaining.
@@ -1036,6 +1132,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * default is current time, client can change it
+       * </pre>
+       *
        * <code>uint64 start_time = 4;</code>
        * @return This builder for chaining.
        */
@@ -1048,6 +1148,10 @@ public final class ProtoClientSearchMessage {
 
       private long endTime_ ;
       /**
+       * <pre>
+       * optional, client can set it for define range time
+       * </pre>
+       *
        * <code>uint64 end_time = 5;</code>
        * @return The endTime.
        */
@@ -1056,6 +1160,10 @@ public final class ProtoClientSearchMessage {
         return endTime_;
       }
       /**
+       * <pre>
+       * optional, client can set it for define range time
+       * </pre>
+       *
        * <code>uint64 end_time = 5;</code>
        * @param value The endTime to set.
        * @return This builder for chaining.
@@ -1067,6 +1175,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * optional, client can set it for define range time
+       * </pre>
+       *
        * <code>uint64 end_time = 5;</code>
        * @return This builder for chaining.
        */
@@ -1079,6 +1191,10 @@ public final class ProtoClientSearchMessage {
 
       private int roomOffset_ ;
       /**
+       * <pre>
+       * first time client must be send 0, then must be send size of rooms that client received until now
+       * </pre>
+       *
        * <code>uint32 room_offset = 6;</code>
        * @return The roomOffset.
        */
@@ -1087,6 +1203,10 @@ public final class ProtoClientSearchMessage {
         return roomOffset_;
       }
       /**
+       * <pre>
+       * first time client must be send 0, then must be send size of rooms that client received until now
+       * </pre>
+       *
        * <code>uint32 room_offset = 6;</code>
        * @param value The roomOffset to set.
        * @return This builder for chaining.
@@ -1098,6 +1218,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * first time client must be send 0, then must be send size of rooms that client received until now
+       * </pre>
+       *
        * <code>uint32 room_offset = 6;</code>
        * @return This builder for chaining.
        */
@@ -1110,6 +1234,10 @@ public final class ProtoClientSearchMessage {
 
       private int roomLimit_ ;
       /**
+       * <pre>
+       * count of rooms result. max is 20.
+       * </pre>
+       *
        * <code>uint32 room_limit = 7;</code>
        * @return The roomLimit.
        */
@@ -1118,6 +1246,10 @@ public final class ProtoClientSearchMessage {
         return roomLimit_;
       }
       /**
+       * <pre>
+       * count of rooms result. max is 20.
+       * </pre>
+       *
        * <code>uint32 room_limit = 7;</code>
        * @param value The roomLimit to set.
        * @return This builder for chaining.
@@ -1129,6 +1261,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * count of rooms result. max is 20.
+       * </pre>
+       *
        * <code>uint32 room_limit = 7;</code>
        * @return This builder for chaining.
        */
@@ -1289,12 +1425,20 @@ public final class ProtoClientSearchMessage {
         int index);
 
     /**
+     * <pre>
+     * client reached to end of list, so must not be send new request with these configs
+     * </pre>
+     *
      * <code>bool rooms_continues = 3;</code>
      * @return The roomsContinues.
      */
     boolean getRoomsContinues();
 
     /**
+     * <pre>
+     * count fo result
+     * </pre>
+     *
      * <code>uint32 total = 4;</code>
      * @return The total.
      */
@@ -1419,10 +1563,19 @@ public final class ProtoClientSearchMessage {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint64 room_id = 1;</code>
-       * @return The roomId.
+       * <code>.proto.Room room = 1;</code>
+       * @return Whether the room field is set.
        */
-      long getRoomId();
+      boolean hasRoom();
+      /**
+       * <code>.proto.Room room = 1;</code>
+       * @return The room.
+       */
+      net.iGap.proto.ProtoGlobal.Room getRoom();
+      /**
+       * <code>.proto.Room room = 1;</code>
+       */
+      net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder();
 
       /**
        * <code>.proto.RoomMessage message = 2;</code>
@@ -1484,9 +1637,17 @@ public final class ProtoClientSearchMessage {
               case 0:
                 done = true;
                 break;
-              case 8: {
+              case 10: {
+                net.iGap.proto.ProtoGlobal.Room.Builder subBuilder = null;
+                if (room_ != null) {
+                  subBuilder = room_.toBuilder();
+                }
+                room_ = input.readMessage(net.iGap.proto.ProtoGlobal.Room.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(room_);
+                  room_ = subBuilder.buildPartial();
+                }
 
-                roomId_ = input.readUInt64();
                 break;
               }
               case 18: {
@@ -1534,15 +1695,30 @@ public final class ProtoClientSearchMessage {
                 net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.class, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.Builder.class);
       }
 
-      public static final int ROOM_ID_FIELD_NUMBER = 1;
-      private long roomId_;
+      public static final int ROOM_FIELD_NUMBER = 1;
+      private net.iGap.proto.ProtoGlobal.Room room_;
       /**
-       * <code>uint64 room_id = 1;</code>
-       * @return The roomId.
+       * <code>.proto.Room room = 1;</code>
+       * @return Whether the room field is set.
        */
       @java.lang.Override
-      public long getRoomId() {
-        return roomId_;
+      public boolean hasRoom() {
+        return room_ != null;
+      }
+      /**
+       * <code>.proto.Room room = 1;</code>
+       * @return The room.
+       */
+      @java.lang.Override
+      public net.iGap.proto.ProtoGlobal.Room getRoom() {
+        return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+      }
+      /**
+       * <code>.proto.Room room = 1;</code>
+       */
+      @java.lang.Override
+      public net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder() {
+        return getRoom();
       }
 
       public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -1585,8 +1761,8 @@ public final class ProtoClientSearchMessage {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (roomId_ != 0L) {
-          output.writeUInt64(1, roomId_);
+        if (room_ != null) {
+          output.writeMessage(1, getRoom());
         }
         if (message_ != null) {
           output.writeMessage(2, getMessage());
@@ -1600,9 +1776,9 @@ public final class ProtoClientSearchMessage {
         if (size != -1) return size;
 
         size = 0;
-        if (roomId_ != 0L) {
+        if (room_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt64Size(1, roomId_);
+            .computeMessageSize(1, getRoom());
         }
         if (message_ != null) {
           size += com.google.protobuf.CodedOutputStream
@@ -1623,8 +1799,11 @@ public final class ProtoClientSearchMessage {
         }
         net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result other = (net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result) obj;
 
-        if (getRoomId()
-            != other.getRoomId()) return false;
+        if (hasRoom() != other.hasRoom()) return false;
+        if (hasRoom()) {
+          if (!getRoom()
+              .equals(other.getRoom())) return false;
+        }
         if (hasMessage() != other.hasMessage()) return false;
         if (hasMessage()) {
           if (!getMessage()
@@ -1641,9 +1820,10 @@ public final class ProtoClientSearchMessage {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getRoomId());
+        if (hasRoom()) {
+          hash = (37 * hash) + ROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getRoom().hashCode();
+        }
         if (hasMessage()) {
           hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
           hash = (53 * hash) + getMessage().hashCode();
@@ -1781,8 +1961,12 @@ public final class ProtoClientSearchMessage {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          roomId_ = 0L;
-
+          if (roomBuilder_ == null) {
+            room_ = null;
+          } else {
+            room_ = null;
+            roomBuilder_ = null;
+          }
           if (messageBuilder_ == null) {
             message_ = null;
           } else {
@@ -1815,7 +1999,11 @@ public final class ProtoClientSearchMessage {
         @java.lang.Override
         public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result buildPartial() {
           net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result result = new net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result(this);
-          result.roomId_ = roomId_;
+          if (roomBuilder_ == null) {
+            result.room_ = room_;
+          } else {
+            result.room_ = roomBuilder_.build();
+          }
           if (messageBuilder_ == null) {
             result.message_ = message_;
           } else {
@@ -1869,8 +2057,8 @@ public final class ProtoClientSearchMessage {
 
         public Builder mergeFrom(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result other) {
           if (other == net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.getDefaultInstance()) return this;
-          if (other.getRoomId() != 0L) {
-            setRoomId(other.getRoomId());
+          if (other.hasRoom()) {
+            mergeRoom(other.getRoom());
           }
           if (other.hasMessage()) {
             mergeMessage(other.getMessage());
@@ -1904,35 +2092,123 @@ public final class ProtoClientSearchMessage {
           return this;
         }
 
-        private long roomId_ ;
+        private net.iGap.proto.ProtoGlobal.Room room_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder> roomBuilder_;
         /**
-         * <code>uint64 room_id = 1;</code>
-         * @return The roomId.
+         * <code>.proto.Room room = 1;</code>
+         * @return Whether the room field is set.
          */
-        @java.lang.Override
-        public long getRoomId() {
-          return roomId_;
+        public boolean hasRoom() {
+          return roomBuilder_ != null || room_ != null;
         }
         /**
-         * <code>uint64 room_id = 1;</code>
-         * @param value The roomId to set.
-         * @return This builder for chaining.
+         * <code>.proto.Room room = 1;</code>
+         * @return The room.
          */
-        public Builder setRoomId(long value) {
-          
-          roomId_ = value;
-          onChanged();
+        public net.iGap.proto.ProtoGlobal.Room getRoom() {
+          if (roomBuilder_ == null) {
+            return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+          } else {
+            return roomBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.proto.Room room = 1;</code>
+         */
+        public Builder setRoom(net.iGap.proto.ProtoGlobal.Room value) {
+          if (roomBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            room_ = value;
+            onChanged();
+          } else {
+            roomBuilder_.setMessage(value);
+          }
+
           return this;
         }
         /**
-         * <code>uint64 room_id = 1;</code>
-         * @return This builder for chaining.
+         * <code>.proto.Room room = 1;</code>
          */
-        public Builder clearRoomId() {
-          
-          roomId_ = 0L;
-          onChanged();
+        public Builder setRoom(
+            net.iGap.proto.ProtoGlobal.Room.Builder builderForValue) {
+          if (roomBuilder_ == null) {
+            room_ = builderForValue.build();
+            onChanged();
+          } else {
+            roomBuilder_.setMessage(builderForValue.build());
+          }
+
           return this;
+        }
+        /**
+         * <code>.proto.Room room = 1;</code>
+         */
+        public Builder mergeRoom(net.iGap.proto.ProtoGlobal.Room value) {
+          if (roomBuilder_ == null) {
+            if (room_ != null) {
+              room_ =
+                net.iGap.proto.ProtoGlobal.Room.newBuilder(room_).mergeFrom(value).buildPartial();
+            } else {
+              room_ = value;
+            }
+            onChanged();
+          } else {
+            roomBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.proto.Room room = 1;</code>
+         */
+        public Builder clearRoom() {
+          if (roomBuilder_ == null) {
+            room_ = null;
+            onChanged();
+          } else {
+            room_ = null;
+            roomBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>.proto.Room room = 1;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.Room.Builder getRoomBuilder() {
+          
+          onChanged();
+          return getRoomFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>.proto.Room room = 1;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder() {
+          if (roomBuilder_ != null) {
+            return roomBuilder_.getMessageOrBuilder();
+          } else {
+            return room_ == null ?
+                net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+          }
+        }
+        /**
+         * <code>.proto.Room room = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder> 
+            getRoomFieldBuilder() {
+          if (roomBuilder_ == null) {
+            roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder>(
+                    getRoom(),
+                    getParentForChildren(),
+                    isClean());
+            room_ = null;
+          }
+          return roomBuilder_;
         }
 
         private net.iGap.proto.ProtoGlobal.RoomMessage message_;
@@ -2175,6 +2451,10 @@ public final class ProtoClientSearchMessage {
     public static final int ROOMS_CONTINUES_FIELD_NUMBER = 3;
     private boolean roomsContinues_;
     /**
+     * <pre>
+     * client reached to end of list, so must not be send new request with these configs
+     * </pre>
+     *
      * <code>bool rooms_continues = 3;</code>
      * @return The roomsContinues.
      */
@@ -2186,6 +2466,10 @@ public final class ProtoClientSearchMessage {
     public static final int TOTAL_FIELD_NUMBER = 4;
     private int total_;
     /**
+     * <pre>
+     * count fo result
+     * </pre>
+     *
      * <code>uint32 total = 4;</code>
      * @return The total.
      */
@@ -2962,6 +3246,10 @@ public final class ProtoClientSearchMessage {
 
       private boolean roomsContinues_ ;
       /**
+       * <pre>
+       * client reached to end of list, so must not be send new request with these configs
+       * </pre>
+       *
        * <code>bool rooms_continues = 3;</code>
        * @return The roomsContinues.
        */
@@ -2970,6 +3258,10 @@ public final class ProtoClientSearchMessage {
         return roomsContinues_;
       }
       /**
+       * <pre>
+       * client reached to end of list, so must not be send new request with these configs
+       * </pre>
+       *
        * <code>bool rooms_continues = 3;</code>
        * @param value The roomsContinues to set.
        * @return This builder for chaining.
@@ -2981,6 +3273,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * client reached to end of list, so must not be send new request with these configs
+       * </pre>
+       *
        * <code>bool rooms_continues = 3;</code>
        * @return This builder for chaining.
        */
@@ -2993,6 +3289,10 @@ public final class ProtoClientSearchMessage {
 
       private int total_ ;
       /**
+       * <pre>
+       * count fo result
+       * </pre>
+       *
        * <code>uint32 total = 4;</code>
        * @return The total.
        */
@@ -3001,6 +3301,10 @@ public final class ProtoClientSearchMessage {
         return total_;
       }
       /**
+       * <pre>
+       * count fo result
+       * </pre>
+       *
        * <code>uint32 total = 4;</code>
        * @param value The total to set.
        * @return This builder for chaining.
@@ -3012,6 +3316,10 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
+       * <pre>
+       * count fo result
+       * </pre>
+       *
        * <code>uint32 total = 4;</code>
        * @return This builder for chaining.
        */
@@ -3105,14 +3413,14 @@ public final class ProtoClientSearchMessage {
       "d\030\003 \001(\004\022\022\n\nstart_time\030\004 \001(\004\022\020\n\010end_time\030" +
       "\005 \001(\004\022\023\n\013room_offset\030\006 \001(\r\022\022\n\nroom_limit" +
       "\030\007 \001(\r\022\037\n\004type\030\010 \001(\0162\021.proto.SearchType\"" +
-      "\343\001\n\033ClientSearchMessageResponse\022!\n\010respo" +
+      "\355\001\n\033ClientSearchMessageResponse\022!\n\010respo" +
       "nse\030\001 \001(\0132\017.proto.Response\0229\n\006result\030\002 \003" +
       "(\0132).proto.ClientSearchMessageResponse.R" +
       "esult\022\027\n\017rooms_continues\030\003 \001(\010\022\r\n\005total\030" +
-      "\004 \001(\r\032>\n\006Result\022\017\n\007room_id\030\001 \001(\004\022#\n\007mess" +
-      "age\030\002 \001(\0132\022.proto.RoomMessageB*\n\016net.iGa" +
-      "p.protoB\030ProtoClientSearchMessageb\006proto" +
-      "3"
+      "\004 \001(\r\032H\n\006Result\022\031\n\004room\030\001 \001(\0132\013.proto.Ro" +
+      "om\022#\n\007message\030\002 \001(\0132\022.proto.RoomMessageB" +
+      "*\n\016net.iGap.protoB\030ProtoClientSearchMess" +
+      "ageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3138,7 +3446,7 @@ public final class ProtoClientSearchMessage {
     internal_static_proto_ClientSearchMessageResponse_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchMessageResponse_Result_descriptor,
-        new java.lang.String[] { "RoomId", "Message", });
+        new java.lang.String[] { "Room", "Message", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
