@@ -65,54 +65,49 @@ public final class ProtoClientSearchMessage {
 
     /**
      * <pre>
-     * default is current time, client can change it
+     * type of search clients can send request by that
      * </pre>
      *
-     * <code>uint64 start_time = 4;</code>
-     * @return The startTime.
-     */
-    long getStartTime();
-
-    /**
-     * <pre>
-     * optional, client can set it for define range time
-     * </pre>
-     *
-     * <code>uint64 end_time = 5;</code>
-     * @return The endTime.
-     */
-    long getEndTime();
-
-    /**
-     * <pre>
-     * first time client must be send 0, then must be send size of rooms that client received until now
-     * </pre>
-     *
-     * <code>uint32 room_offset = 6;</code>
-     * @return The roomOffset.
-     */
-    int getRoomOffset();
-
-    /**
-     * <pre>
-     * count of rooms result. max is 20.
-     * </pre>
-     *
-     * <code>uint32 room_limit = 7;</code>
-     * @return The roomLimit.
-     */
-    int getRoomLimit();
-
-    /**
-     * <code>.proto.SearchType type = 8;</code>
+     * <code>.proto.SearchType type = 4;</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>.proto.SearchType type = 8;</code>
+     * <pre>
+     * type of search clients can send request by that
+     * </pre>
+     *
+     * <code>.proto.SearchType type = 4;</code>
      * @return The type.
      */
     net.iGap.proto.ProtoGlobal.SearchType getType();
+
+    /**
+     * <pre>
+     * for fetching next page of same query, client must be send
+     * </pre>
+     *
+     * <code>.proto.PageInfo page_info = 5;</code>
+     * @return Whether the pageInfo field is set.
+     */
+    boolean hasPageInfo();
+    /**
+     * <pre>
+     * for fetching next page of same query, client must be send
+     * </pre>
+     *
+     * <code>.proto.PageInfo page_info = 5;</code>
+     * @return The pageInfo.
+     */
+    net.iGap.proto.ProtoClientSearchMessage.PageInfo getPageInfo();
+    /**
+     * <pre>
+     * for fetching next page of same query, client must be send
+     * </pre>
+     *
+     * <code>.proto.PageInfo page_info = 5;</code>
+     */
+    net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder getPageInfoOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ClientSearchMessage}
@@ -186,29 +181,22 @@ public final class ProtoClientSearchMessage {
               break;
             }
             case 32: {
-
-              startTime_ = input.readUInt64();
-              break;
-            }
-            case 40: {
-
-              endTime_ = input.readUInt64();
-              break;
-            }
-            case 48: {
-
-              roomOffset_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              roomLimit_ = input.readUInt32();
-              break;
-            }
-            case 64: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
+              break;
+            }
+            case 42: {
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder subBuilder = null;
+              if (pageInfo_ != null) {
+                subBuilder = pageInfo_.toBuilder();
+              }
+              pageInfo_ = input.readMessage(net.iGap.proto.ProtoClientSearchMessage.PageInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pageInfo_);
+                pageInfo_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -330,83 +318,69 @@ public final class ProtoClientSearchMessage {
       return roomId_;
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 4;
-    private long startTime_;
-    /**
-     * <pre>
-     * default is current time, client can change it
-     * </pre>
-     *
-     * <code>uint64 start_time = 4;</code>
-     * @return The startTime.
-     */
-    @java.lang.Override
-    public long getStartTime() {
-      return startTime_;
-    }
-
-    public static final int END_TIME_FIELD_NUMBER = 5;
-    private long endTime_;
-    /**
-     * <pre>
-     * optional, client can set it for define range time
-     * </pre>
-     *
-     * <code>uint64 end_time = 5;</code>
-     * @return The endTime.
-     */
-    @java.lang.Override
-    public long getEndTime() {
-      return endTime_;
-    }
-
-    public static final int ROOM_OFFSET_FIELD_NUMBER = 6;
-    private int roomOffset_;
-    /**
-     * <pre>
-     * first time client must be send 0, then must be send size of rooms that client received until now
-     * </pre>
-     *
-     * <code>uint32 room_offset = 6;</code>
-     * @return The roomOffset.
-     */
-    @java.lang.Override
-    public int getRoomOffset() {
-      return roomOffset_;
-    }
-
-    public static final int ROOM_LIMIT_FIELD_NUMBER = 7;
-    private int roomLimit_;
-    /**
-     * <pre>
-     * count of rooms result. max is 20.
-     * </pre>
-     *
-     * <code>uint32 room_limit = 7;</code>
-     * @return The roomLimit.
-     */
-    @java.lang.Override
-    public int getRoomLimit() {
-      return roomLimit_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 8;
+    public static final int TYPE_FIELD_NUMBER = 4;
     private int type_;
     /**
-     * <code>.proto.SearchType type = 8;</code>
+     * <pre>
+     * type of search clients can send request by that
+     * </pre>
+     *
+     * <code>.proto.SearchType type = 4;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.proto.SearchType type = 8;</code>
+     * <pre>
+     * type of search clients can send request by that
+     * </pre>
+     *
+     * <code>.proto.SearchType type = 4;</code>
      * @return The type.
      */
     @java.lang.Override public net.iGap.proto.ProtoGlobal.SearchType getType() {
       @SuppressWarnings("deprecation")
       net.iGap.proto.ProtoGlobal.SearchType result = net.iGap.proto.ProtoGlobal.SearchType.valueOf(type_);
       return result == null ? net.iGap.proto.ProtoGlobal.SearchType.UNRECOGNIZED : result;
+    }
+
+    public static final int PAGE_INFO_FIELD_NUMBER = 5;
+    private net.iGap.proto.ProtoClientSearchMessage.PageInfo pageInfo_;
+    /**
+     * <pre>
+     * for fetching next page of same query, client must be send
+     * </pre>
+     *
+     * <code>.proto.PageInfo page_info = 5;</code>
+     * @return Whether the pageInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasPageInfo() {
+      return pageInfo_ != null;
+    }
+    /**
+     * <pre>
+     * for fetching next page of same query, client must be send
+     * </pre>
+     *
+     * <code>.proto.PageInfo page_info = 5;</code>
+     * @return The pageInfo.
+     */
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientSearchMessage.PageInfo getPageInfo() {
+      return pageInfo_ == null ? net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance() : pageInfo_;
+    }
+    /**
+     * <pre>
+     * for fetching next page of same query, client must be send
+     * </pre>
+     *
+     * <code>.proto.PageInfo page_info = 5;</code>
+     */
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder getPageInfoOrBuilder() {
+      return getPageInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -432,20 +406,11 @@ public final class ProtoClientSearchMessage {
       if (roomId_ != 0L) {
         output.writeUInt64(3, roomId_);
       }
-      if (startTime_ != 0L) {
-        output.writeUInt64(4, startTime_);
-      }
-      if (endTime_ != 0L) {
-        output.writeUInt64(5, endTime_);
-      }
-      if (roomOffset_ != 0) {
-        output.writeUInt32(6, roomOffset_);
-      }
-      if (roomLimit_ != 0) {
-        output.writeUInt32(7, roomLimit_);
-      }
       if (type_ != net.iGap.proto.ProtoGlobal.SearchType.SEARCH_ALL_TYPES.getNumber()) {
-        output.writeEnum(8, type_);
+        output.writeEnum(4, type_);
+      }
+      if (pageInfo_ != null) {
+        output.writeMessage(5, getPageInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -467,25 +432,13 @@ public final class ProtoClientSearchMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, roomId_);
       }
-      if (startTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, startTime_);
-      }
-      if (endTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, endTime_);
-      }
-      if (roomOffset_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, roomOffset_);
-      }
-      if (roomLimit_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, roomLimit_);
-      }
       if (type_ != net.iGap.proto.ProtoGlobal.SearchType.SEARCH_ALL_TYPES.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, type_);
+          .computeEnumSize(4, type_);
+      }
+      if (pageInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getPageInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -511,15 +464,12 @@ public final class ProtoClientSearchMessage {
           .equals(other.getQuery())) return false;
       if (getRoomId()
           != other.getRoomId()) return false;
-      if (getStartTime()
-          != other.getStartTime()) return false;
-      if (getEndTime()
-          != other.getEndTime()) return false;
-      if (getRoomOffset()
-          != other.getRoomOffset()) return false;
-      if (getRoomLimit()
-          != other.getRoomLimit()) return false;
       if (type_ != other.type_) return false;
+      if (hasPageInfo() != other.hasPageInfo()) return false;
+      if (hasPageInfo()) {
+        if (!getPageInfo()
+            .equals(other.getPageInfo())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -540,18 +490,12 @@ public final class ProtoClientSearchMessage {
       hash = (37 * hash) + ROOMID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
-      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStartTime());
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEndTime());
-      hash = (37 * hash) + ROOM_OFFSET_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomOffset();
-      hash = (37 * hash) + ROOM_LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomLimit();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      if (hasPageInfo()) {
+        hash = (37 * hash) + PAGE_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getPageInfo().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -695,16 +639,14 @@ public final class ProtoClientSearchMessage {
 
         roomId_ = 0L;
 
-        startTime_ = 0L;
-
-        endTime_ = 0L;
-
-        roomOffset_ = 0;
-
-        roomLimit_ = 0;
-
         type_ = 0;
 
+        if (pageInfoBuilder_ == null) {
+          pageInfo_ = null;
+        } else {
+          pageInfo_ = null;
+          pageInfoBuilder_ = null;
+        }
         return this;
       }
 
@@ -738,11 +680,12 @@ public final class ProtoClientSearchMessage {
         }
         result.query_ = query_;
         result.roomId_ = roomId_;
-        result.startTime_ = startTime_;
-        result.endTime_ = endTime_;
-        result.roomOffset_ = roomOffset_;
-        result.roomLimit_ = roomLimit_;
         result.type_ = type_;
+        if (pageInfoBuilder_ == null) {
+          result.pageInfo_ = pageInfo_;
+        } else {
+          result.pageInfo_ = pageInfoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -801,20 +744,11 @@ public final class ProtoClientSearchMessage {
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
         }
-        if (other.getStartTime() != 0L) {
-          setStartTime(other.getStartTime());
-        }
-        if (other.getEndTime() != 0L) {
-          setEndTime(other.getEndTime());
-        }
-        if (other.getRoomOffset() != 0) {
-          setRoomOffset(other.getRoomOffset());
-        }
-        if (other.getRoomLimit() != 0) {
-          setRoomLimit(other.getRoomLimit());
-        }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
+        }
+        if (other.hasPageInfo()) {
+          mergePageInfo(other.getPageInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1103,188 +1037,24 @@ public final class ProtoClientSearchMessage {
         return this;
       }
 
-      private long startTime_ ;
-      /**
-       * <pre>
-       * default is current time, client can change it
-       * </pre>
-       *
-       * <code>uint64 start_time = 4;</code>
-       * @return The startTime.
-       */
-      @java.lang.Override
-      public long getStartTime() {
-        return startTime_;
-      }
-      /**
-       * <pre>
-       * default is current time, client can change it
-       * </pre>
-       *
-       * <code>uint64 start_time = 4;</code>
-       * @param value The startTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTime(long value) {
-        
-        startTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default is current time, client can change it
-       * </pre>
-       *
-       * <code>uint64 start_time = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartTime() {
-        
-        startTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long endTime_ ;
-      /**
-       * <pre>
-       * optional, client can set it for define range time
-       * </pre>
-       *
-       * <code>uint64 end_time = 5;</code>
-       * @return The endTime.
-       */
-      @java.lang.Override
-      public long getEndTime() {
-        return endTime_;
-      }
-      /**
-       * <pre>
-       * optional, client can set it for define range time
-       * </pre>
-       *
-       * <code>uint64 end_time = 5;</code>
-       * @param value The endTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndTime(long value) {
-        
-        endTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * optional, client can set it for define range time
-       * </pre>
-       *
-       * <code>uint64 end_time = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndTime() {
-        
-        endTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int roomOffset_ ;
-      /**
-       * <pre>
-       * first time client must be send 0, then must be send size of rooms that client received until now
-       * </pre>
-       *
-       * <code>uint32 room_offset = 6;</code>
-       * @return The roomOffset.
-       */
-      @java.lang.Override
-      public int getRoomOffset() {
-        return roomOffset_;
-      }
-      /**
-       * <pre>
-       * first time client must be send 0, then must be send size of rooms that client received until now
-       * </pre>
-       *
-       * <code>uint32 room_offset = 6;</code>
-       * @param value The roomOffset to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoomOffset(int value) {
-        
-        roomOffset_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * first time client must be send 0, then must be send size of rooms that client received until now
-       * </pre>
-       *
-       * <code>uint32 room_offset = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoomOffset() {
-        
-        roomOffset_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int roomLimit_ ;
-      /**
-       * <pre>
-       * count of rooms result. max is 20.
-       * </pre>
-       *
-       * <code>uint32 room_limit = 7;</code>
-       * @return The roomLimit.
-       */
-      @java.lang.Override
-      public int getRoomLimit() {
-        return roomLimit_;
-      }
-      /**
-       * <pre>
-       * count of rooms result. max is 20.
-       * </pre>
-       *
-       * <code>uint32 room_limit = 7;</code>
-       * @param value The roomLimit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoomLimit(int value) {
-        
-        roomLimit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * count of rooms result. max is 20.
-       * </pre>
-       *
-       * <code>uint32 room_limit = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoomLimit() {
-        
-        roomLimit_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int type_ = 0;
       /**
-       * <code>.proto.SearchType type = 8;</code>
+       * <pre>
+       * type of search clients can send request by that
+       * </pre>
+       *
+       * <code>.proto.SearchType type = 4;</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.proto.SearchType type = 8;</code>
+       * <pre>
+       * type of search clients can send request by that
+       * </pre>
+       *
+       * <code>.proto.SearchType type = 4;</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -1295,7 +1065,11 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
-       * <code>.proto.SearchType type = 8;</code>
+       * <pre>
+       * type of search clients can send request by that
+       * </pre>
+       *
+       * <code>.proto.SearchType type = 4;</code>
        * @return The type.
        */
       @java.lang.Override
@@ -1305,7 +1079,11 @@ public final class ProtoClientSearchMessage {
         return result == null ? net.iGap.proto.ProtoGlobal.SearchType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.proto.SearchType type = 8;</code>
+       * <pre>
+       * type of search clients can send request by that
+       * </pre>
+       *
+       * <code>.proto.SearchType type = 4;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -1319,7 +1097,11 @@ public final class ProtoClientSearchMessage {
         return this;
       }
       /**
-       * <code>.proto.SearchType type = 8;</code>
+       * <pre>
+       * type of search clients can send request by that
+       * </pre>
+       *
+       * <code>.proto.SearchType type = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -1327,6 +1109,161 @@ public final class ProtoClientSearchMessage {
         type_ = 0;
         onChanged();
         return this;
+      }
+
+      private net.iGap.proto.ProtoClientSearchMessage.PageInfo pageInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder> pageInfoBuilder_;
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       * @return Whether the pageInfo field is set.
+       */
+      public boolean hasPageInfo() {
+        return pageInfoBuilder_ != null || pageInfo_ != null;
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       * @return The pageInfo.
+       */
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo getPageInfo() {
+        if (pageInfoBuilder_ == null) {
+          return pageInfo_ == null ? net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance() : pageInfo_;
+        } else {
+          return pageInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      public Builder setPageInfo(net.iGap.proto.ProtoClientSearchMessage.PageInfo value) {
+        if (pageInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pageInfo_ = value;
+          onChanged();
+        } else {
+          pageInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      public Builder setPageInfo(
+          net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder builderForValue) {
+        if (pageInfoBuilder_ == null) {
+          pageInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          pageInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      public Builder mergePageInfo(net.iGap.proto.ProtoClientSearchMessage.PageInfo value) {
+        if (pageInfoBuilder_ == null) {
+          if (pageInfo_ != null) {
+            pageInfo_ =
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.newBuilder(pageInfo_).mergeFrom(value).buildPartial();
+          } else {
+            pageInfo_ = value;
+          }
+          onChanged();
+        } else {
+          pageInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      public Builder clearPageInfo() {
+        if (pageInfoBuilder_ == null) {
+          pageInfo_ = null;
+          onChanged();
+        } else {
+          pageInfo_ = null;
+          pageInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder getPageInfoBuilder() {
+        
+        onChanged();
+        return getPageInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder getPageInfoOrBuilder() {
+        if (pageInfoBuilder_ != null) {
+          return pageInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return pageInfo_ == null ?
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance() : pageInfo_;
+        }
+      }
+      /**
+       * <pre>
+       * for fetching next page of same query, client must be send
+       * </pre>
+       *
+       * <code>.proto.PageInfo page_info = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder> 
+          getPageInfoFieldBuilder() {
+        if (pageInfoBuilder_ == null) {
+          pageInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder>(
+                  getPageInfo(),
+                  getParentForChildren(),
+                  isClean());
+          pageInfo_ = null;
+        }
+        return pageInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1425,24 +1362,19 @@ public final class ProtoClientSearchMessage {
         int index);
 
     /**
-     * <pre>
-     * client reached to end of list, so must not be send new request with these configs
-     * </pre>
-     *
-     * <code>bool rooms_continues = 3;</code>
-     * @return The roomsContinues.
+     * <code>.proto.PageInfo future_page_info = 3;</code>
+     * @return Whether the futurePageInfo field is set.
      */
-    boolean getRoomsContinues();
-
+    boolean hasFuturePageInfo();
     /**
-     * <pre>
-     * count fo result
-     * </pre>
-     *
-     * <code>uint32 total = 4;</code>
-     * @return The total.
+     * <code>.proto.PageInfo future_page_info = 3;</code>
+     * @return The futurePageInfo.
      */
-    int getTotal();
+    net.iGap.proto.ProtoClientSearchMessage.PageInfo getFuturePageInfo();
+    /**
+     * <code>.proto.PageInfo future_page_info = 3;</code>
+     */
+    net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder getFuturePageInfoOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ClientSearchMessageResponse}
@@ -1513,14 +1445,17 @@ public final class ProtoClientSearchMessage {
                   input.readMessage(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.parser(), extensionRegistry));
               break;
             }
-            case 24: {
+            case 26: {
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder subBuilder = null;
+              if (futurePageInfo_ != null) {
+                subBuilder = futurePageInfo_.toBuilder();
+              }
+              futurePageInfo_ = input.readMessage(net.iGap.proto.ProtoClientSearchMessage.PageInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(futurePageInfo_);
+                futurePageInfo_ = subBuilder.buildPartial();
+              }
 
-              roomsContinues_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              total_ = input.readUInt32();
               break;
             }
             default: {
@@ -1563,19 +1498,10 @@ public final class ProtoClientSearchMessage {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>.proto.Room room = 1;</code>
-       * @return Whether the room field is set.
+       * <code>int64 room_id = 1;</code>
+       * @return The roomId.
        */
-      boolean hasRoom();
-      /**
-       * <code>.proto.Room room = 1;</code>
-       * @return The room.
-       */
-      net.iGap.proto.ProtoGlobal.Room getRoom();
-      /**
-       * <code>.proto.Room room = 1;</code>
-       */
-      net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder();
+      long getRoomId();
 
       /**
        * <code>.proto.RoomMessage message = 2;</code>
@@ -1637,17 +1563,9 @@ public final class ProtoClientSearchMessage {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                net.iGap.proto.ProtoGlobal.Room.Builder subBuilder = null;
-                if (room_ != null) {
-                  subBuilder = room_.toBuilder();
-                }
-                room_ = input.readMessage(net.iGap.proto.ProtoGlobal.Room.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(room_);
-                  room_ = subBuilder.buildPartial();
-                }
+              case 8: {
 
+                roomId_ = input.readInt64();
                 break;
               }
               case 18: {
@@ -1695,30 +1613,15 @@ public final class ProtoClientSearchMessage {
                 net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.class, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.Builder.class);
       }
 
-      public static final int ROOM_FIELD_NUMBER = 1;
-      private net.iGap.proto.ProtoGlobal.Room room_;
+      public static final int ROOM_ID_FIELD_NUMBER = 1;
+      private long roomId_;
       /**
-       * <code>.proto.Room room = 1;</code>
-       * @return Whether the room field is set.
+       * <code>int64 room_id = 1;</code>
+       * @return The roomId.
        */
       @java.lang.Override
-      public boolean hasRoom() {
-        return room_ != null;
-      }
-      /**
-       * <code>.proto.Room room = 1;</code>
-       * @return The room.
-       */
-      @java.lang.Override
-      public net.iGap.proto.ProtoGlobal.Room getRoom() {
-        return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
-      }
-      /**
-       * <code>.proto.Room room = 1;</code>
-       */
-      @java.lang.Override
-      public net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder() {
-        return getRoom();
+      public long getRoomId() {
+        return roomId_;
       }
 
       public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -1761,8 +1664,8 @@ public final class ProtoClientSearchMessage {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (room_ != null) {
-          output.writeMessage(1, getRoom());
+        if (roomId_ != 0L) {
+          output.writeInt64(1, roomId_);
         }
         if (message_ != null) {
           output.writeMessage(2, getMessage());
@@ -1776,9 +1679,9 @@ public final class ProtoClientSearchMessage {
         if (size != -1) return size;
 
         size = 0;
-        if (room_ != null) {
+        if (roomId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, getRoom());
+            .computeInt64Size(1, roomId_);
         }
         if (message_ != null) {
           size += com.google.protobuf.CodedOutputStream
@@ -1799,11 +1702,8 @@ public final class ProtoClientSearchMessage {
         }
         net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result other = (net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result) obj;
 
-        if (hasRoom() != other.hasRoom()) return false;
-        if (hasRoom()) {
-          if (!getRoom()
-              .equals(other.getRoom())) return false;
-        }
+        if (getRoomId()
+            != other.getRoomId()) return false;
         if (hasMessage() != other.hasMessage()) return false;
         if (hasMessage()) {
           if (!getMessage()
@@ -1820,10 +1720,9 @@ public final class ProtoClientSearchMessage {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasRoom()) {
-          hash = (37 * hash) + ROOM_FIELD_NUMBER;
-          hash = (53 * hash) + getRoom().hashCode();
-        }
+        hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRoomId());
         if (hasMessage()) {
           hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
           hash = (53 * hash) + getMessage().hashCode();
@@ -1961,12 +1860,8 @@ public final class ProtoClientSearchMessage {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (roomBuilder_ == null) {
-            room_ = null;
-          } else {
-            room_ = null;
-            roomBuilder_ = null;
-          }
+          roomId_ = 0L;
+
           if (messageBuilder_ == null) {
             message_ = null;
           } else {
@@ -1999,11 +1894,7 @@ public final class ProtoClientSearchMessage {
         @java.lang.Override
         public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result buildPartial() {
           net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result result = new net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result(this);
-          if (roomBuilder_ == null) {
-            result.room_ = room_;
-          } else {
-            result.room_ = roomBuilder_.build();
-          }
+          result.roomId_ = roomId_;
           if (messageBuilder_ == null) {
             result.message_ = message_;
           } else {
@@ -2057,8 +1948,8 @@ public final class ProtoClientSearchMessage {
 
         public Builder mergeFrom(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result other) {
           if (other == net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.getDefaultInstance()) return this;
-          if (other.hasRoom()) {
-            mergeRoom(other.getRoom());
+          if (other.getRoomId() != 0L) {
+            setRoomId(other.getRoomId());
           }
           if (other.hasMessage()) {
             mergeMessage(other.getMessage());
@@ -2092,123 +1983,35 @@ public final class ProtoClientSearchMessage {
           return this;
         }
 
-        private net.iGap.proto.ProtoGlobal.Room room_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder> roomBuilder_;
+        private long roomId_ ;
         /**
-         * <code>.proto.Room room = 1;</code>
-         * @return Whether the room field is set.
+         * <code>int64 room_id = 1;</code>
+         * @return The roomId.
          */
-        public boolean hasRoom() {
-          return roomBuilder_ != null || room_ != null;
+        @java.lang.Override
+        public long getRoomId() {
+          return roomId_;
         }
         /**
-         * <code>.proto.Room room = 1;</code>
-         * @return The room.
+         * <code>int64 room_id = 1;</code>
+         * @param value The roomId to set.
+         * @return This builder for chaining.
          */
-        public net.iGap.proto.ProtoGlobal.Room getRoom() {
-          if (roomBuilder_ == null) {
-            return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
-          } else {
-            return roomBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>.proto.Room room = 1;</code>
-         */
-        public Builder setRoom(net.iGap.proto.ProtoGlobal.Room value) {
-          if (roomBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            room_ = value;
-            onChanged();
-          } else {
-            roomBuilder_.setMessage(value);
-          }
-
-          return this;
-        }
-        /**
-         * <code>.proto.Room room = 1;</code>
-         */
-        public Builder setRoom(
-            net.iGap.proto.ProtoGlobal.Room.Builder builderForValue) {
-          if (roomBuilder_ == null) {
-            room_ = builderForValue.build();
-            onChanged();
-          } else {
-            roomBuilder_.setMessage(builderForValue.build());
-          }
-
-          return this;
-        }
-        /**
-         * <code>.proto.Room room = 1;</code>
-         */
-        public Builder mergeRoom(net.iGap.proto.ProtoGlobal.Room value) {
-          if (roomBuilder_ == null) {
-            if (room_ != null) {
-              room_ =
-                net.iGap.proto.ProtoGlobal.Room.newBuilder(room_).mergeFrom(value).buildPartial();
-            } else {
-              room_ = value;
-            }
-            onChanged();
-          } else {
-            roomBuilder_.mergeFrom(value);
-          }
-
-          return this;
-        }
-        /**
-         * <code>.proto.Room room = 1;</code>
-         */
-        public Builder clearRoom() {
-          if (roomBuilder_ == null) {
-            room_ = null;
-            onChanged();
-          } else {
-            room_ = null;
-            roomBuilder_ = null;
-          }
-
-          return this;
-        }
-        /**
-         * <code>.proto.Room room = 1;</code>
-         */
-        public net.iGap.proto.ProtoGlobal.Room.Builder getRoomBuilder() {
+        public Builder setRoomId(long value) {
           
+          roomId_ = value;
           onChanged();
-          return getRoomFieldBuilder().getBuilder();
+          return this;
         }
         /**
-         * <code>.proto.Room room = 1;</code>
+         * <code>int64 room_id = 1;</code>
+         * @return This builder for chaining.
          */
-        public net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder() {
-          if (roomBuilder_ != null) {
-            return roomBuilder_.getMessageOrBuilder();
-          } else {
-            return room_ == null ?
-                net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
-          }
-        }
-        /**
-         * <code>.proto.Room room = 1;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder> 
-            getRoomFieldBuilder() {
-          if (roomBuilder_ == null) {
-            roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder>(
-                    getRoom(),
-                    getParentForChildren(),
-                    isClean());
-            room_ = null;
-          }
-          return roomBuilder_;
+        public Builder clearRoomId() {
+          
+          roomId_ = 0L;
+          onChanged();
+          return this;
         }
 
         private net.iGap.proto.ProtoGlobal.RoomMessage message_;
@@ -2448,34 +2251,30 @@ public final class ProtoClientSearchMessage {
       return result_.get(index);
     }
 
-    public static final int ROOMS_CONTINUES_FIELD_NUMBER = 3;
-    private boolean roomsContinues_;
+    public static final int FUTURE_PAGE_INFO_FIELD_NUMBER = 3;
+    private net.iGap.proto.ProtoClientSearchMessage.PageInfo futurePageInfo_;
     /**
-     * <pre>
-     * client reached to end of list, so must not be send new request with these configs
-     * </pre>
-     *
-     * <code>bool rooms_continues = 3;</code>
-     * @return The roomsContinues.
+     * <code>.proto.PageInfo future_page_info = 3;</code>
+     * @return Whether the futurePageInfo field is set.
      */
     @java.lang.Override
-    public boolean getRoomsContinues() {
-      return roomsContinues_;
+    public boolean hasFuturePageInfo() {
+      return futurePageInfo_ != null;
     }
-
-    public static final int TOTAL_FIELD_NUMBER = 4;
-    private int total_;
     /**
-     * <pre>
-     * count fo result
-     * </pre>
-     *
-     * <code>uint32 total = 4;</code>
-     * @return The total.
+     * <code>.proto.PageInfo future_page_info = 3;</code>
+     * @return The futurePageInfo.
      */
     @java.lang.Override
-    public int getTotal() {
-      return total_;
+    public net.iGap.proto.ProtoClientSearchMessage.PageInfo getFuturePageInfo() {
+      return futurePageInfo_ == null ? net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance() : futurePageInfo_;
+    }
+    /**
+     * <code>.proto.PageInfo future_page_info = 3;</code>
+     */
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder getFuturePageInfoOrBuilder() {
+      return getFuturePageInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2498,11 +2297,8 @@ public final class ProtoClientSearchMessage {
       for (int i = 0; i < result_.size(); i++) {
         output.writeMessage(2, result_.get(i));
       }
-      if (roomsContinues_ != false) {
-        output.writeBool(3, roomsContinues_);
-      }
-      if (total_ != 0) {
-        output.writeUInt32(4, total_);
+      if (futurePageInfo_ != null) {
+        output.writeMessage(3, getFuturePageInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -2521,13 +2317,9 @@ public final class ProtoClientSearchMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, result_.get(i));
       }
-      if (roomsContinues_ != false) {
+      if (futurePageInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, roomsContinues_);
-      }
-      if (total_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, total_);
+          .computeMessageSize(3, getFuturePageInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2551,10 +2343,11 @@ public final class ProtoClientSearchMessage {
       }
       if (!getResultList()
           .equals(other.getResultList())) return false;
-      if (getRoomsContinues()
-          != other.getRoomsContinues()) return false;
-      if (getTotal()
-          != other.getTotal()) return false;
+      if (hasFuturePageInfo() != other.hasFuturePageInfo()) return false;
+      if (hasFuturePageInfo()) {
+        if (!getFuturePageInfo()
+            .equals(other.getFuturePageInfo())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2574,11 +2367,10 @@ public final class ProtoClientSearchMessage {
         hash = (37 * hash) + RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getResultList().hashCode();
       }
-      hash = (37 * hash) + ROOMS_CONTINUES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getRoomsContinues());
-      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
-      hash = (53 * hash) + getTotal();
+      if (hasFuturePageInfo()) {
+        hash = (37 * hash) + FUTURE_PAGE_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getFuturePageInfo().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2725,10 +2517,12 @@ public final class ProtoClientSearchMessage {
         } else {
           resultBuilder_.clear();
         }
-        roomsContinues_ = false;
-
-        total_ = 0;
-
+        if (futurePageInfoBuilder_ == null) {
+          futurePageInfo_ = null;
+        } else {
+          futurePageInfo_ = null;
+          futurePageInfoBuilder_ = null;
+        }
         return this;
       }
 
@@ -2770,8 +2564,11 @@ public final class ProtoClientSearchMessage {
         } else {
           result.result_ = resultBuilder_.build();
         }
-        result.roomsContinues_ = roomsContinues_;
-        result.total_ = total_;
+        if (futurePageInfoBuilder_ == null) {
+          result.futurePageInfo_ = futurePageInfo_;
+        } else {
+          result.futurePageInfo_ = futurePageInfoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2849,11 +2646,8 @@ public final class ProtoClientSearchMessage {
             }
           }
         }
-        if (other.getRoomsContinues() != false) {
-          setRoomsContinues(other.getRoomsContinues());
-        }
-        if (other.getTotal() != 0) {
-          setTotal(other.getTotal());
+        if (other.hasFuturePageInfo()) {
+          mergeFuturePageInfo(other.getFuturePageInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3244,90 +3038,123 @@ public final class ProtoClientSearchMessage {
         return resultBuilder_;
       }
 
-      private boolean roomsContinues_ ;
+      private net.iGap.proto.ProtoClientSearchMessage.PageInfo futurePageInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder> futurePageInfoBuilder_;
       /**
-       * <pre>
-       * client reached to end of list, so must not be send new request with these configs
-       * </pre>
-       *
-       * <code>bool rooms_continues = 3;</code>
-       * @return The roomsContinues.
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       * @return Whether the futurePageInfo field is set.
        */
-      @java.lang.Override
-      public boolean getRoomsContinues() {
-        return roomsContinues_;
+      public boolean hasFuturePageInfo() {
+        return futurePageInfoBuilder_ != null || futurePageInfo_ != null;
       }
       /**
-       * <pre>
-       * client reached to end of list, so must not be send new request with these configs
-       * </pre>
-       *
-       * <code>bool rooms_continues = 3;</code>
-       * @param value The roomsContinues to set.
-       * @return This builder for chaining.
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       * @return The futurePageInfo.
        */
-      public Builder setRoomsContinues(boolean value) {
-        
-        roomsContinues_ = value;
-        onChanged();
-        return this;
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo getFuturePageInfo() {
+        if (futurePageInfoBuilder_ == null) {
+          return futurePageInfo_ == null ? net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance() : futurePageInfo_;
+        } else {
+          return futurePageInfoBuilder_.getMessage();
+        }
       }
       /**
-       * <pre>
-       * client reached to end of list, so must not be send new request with these configs
-       * </pre>
-       *
-       * <code>bool rooms_continues = 3;</code>
-       * @return This builder for chaining.
+       * <code>.proto.PageInfo future_page_info = 3;</code>
        */
-      public Builder clearRoomsContinues() {
-        
-        roomsContinues_ = false;
-        onChanged();
-        return this;
-      }
+      public Builder setFuturePageInfo(net.iGap.proto.ProtoClientSearchMessage.PageInfo value) {
+        if (futurePageInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          futurePageInfo_ = value;
+          onChanged();
+        } else {
+          futurePageInfoBuilder_.setMessage(value);
+        }
 
-      private int total_ ;
-      /**
-       * <pre>
-       * count fo result
-       * </pre>
-       *
-       * <code>uint32 total = 4;</code>
-       * @return The total.
-       */
-      @java.lang.Override
-      public int getTotal() {
-        return total_;
-      }
-      /**
-       * <pre>
-       * count fo result
-       * </pre>
-       *
-       * <code>uint32 total = 4;</code>
-       * @param value The total to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotal(int value) {
-        
-        total_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <pre>
-       * count fo result
-       * </pre>
-       *
-       * <code>uint32 total = 4;</code>
-       * @return This builder for chaining.
+       * <code>.proto.PageInfo future_page_info = 3;</code>
        */
-      public Builder clearTotal() {
-        
-        total_ = 0;
-        onChanged();
+      public Builder setFuturePageInfo(
+          net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder builderForValue) {
+        if (futurePageInfoBuilder_ == null) {
+          futurePageInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          futurePageInfoBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       */
+      public Builder mergeFuturePageInfo(net.iGap.proto.ProtoClientSearchMessage.PageInfo value) {
+        if (futurePageInfoBuilder_ == null) {
+          if (futurePageInfo_ != null) {
+            futurePageInfo_ =
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.newBuilder(futurePageInfo_).mergeFrom(value).buildPartial();
+          } else {
+            futurePageInfo_ = value;
+          }
+          onChanged();
+        } else {
+          futurePageInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       */
+      public Builder clearFuturePageInfo() {
+        if (futurePageInfoBuilder_ == null) {
+          futurePageInfo_ = null;
+          onChanged();
+        } else {
+          futurePageInfo_ = null;
+          futurePageInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       */
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder getFuturePageInfoBuilder() {
+        
+        onChanged();
+        return getFuturePageInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       */
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder getFuturePageInfoOrBuilder() {
+        if (futurePageInfoBuilder_ != null) {
+          return futurePageInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return futurePageInfo_ == null ?
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance() : futurePageInfo_;
+        }
+      }
+      /**
+       * <code>.proto.PageInfo future_page_info = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder> 
+          getFuturePageInfoFieldBuilder() {
+        if (futurePageInfoBuilder_ == null) {
+          futurePageInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder>(
+                  getFuturePageInfo(),
+                  getParentForChildren(),
+                  isClean());
+          futurePageInfo_ = null;
+        }
+        return futurePageInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3382,6 +3209,613 @@ public final class ProtoClientSearchMessage {
 
   }
 
+  public interface PageInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.PageInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * for fetch next page, client must be set 'start_time' by server info
+     * </pre>
+     *
+     * <code>uint64 start_time = 1;</code>
+     * @return The startTime.
+     */
+    long getStartTime();
+
+    /**
+     * <pre>
+     * for fetch next page, client must be set 'ignore_size' by server info
+     * </pre>
+     *
+     * <code>uint32 ignore_size = 2;</code>
+     * @return The ignoreSize.
+     */
+    int getIgnoreSize();
+  }
+  /**
+   * <pre>
+   * basic info which client must be send for get next page result
+   * </pre>
+   *
+   * Protobuf type {@code proto.PageInfo}
+   */
+  public static final class PageInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.PageInfo)
+      PageInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PageInfo.newBuilder() to construct.
+    private PageInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PageInfo() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PageInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PageInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              startTime_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              ignoreSize_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_PageInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_PageInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientSearchMessage.PageInfo.class, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder.class);
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 1;
+    private long startTime_;
+    /**
+     * <pre>
+     * for fetch next page, client must be set 'start_time' by server info
+     * </pre>
+     *
+     * <code>uint64 start_time = 1;</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
+    }
+
+    public static final int IGNORE_SIZE_FIELD_NUMBER = 2;
+    private int ignoreSize_;
+    /**
+     * <pre>
+     * for fetch next page, client must be set 'ignore_size' by server info
+     * </pre>
+     *
+     * <code>uint32 ignore_size = 2;</code>
+     * @return The ignoreSize.
+     */
+    @java.lang.Override
+    public int getIgnoreSize() {
+      return ignoreSize_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (startTime_ != 0L) {
+        output.writeUInt64(1, startTime_);
+      }
+      if (ignoreSize_ != 0) {
+        output.writeUInt32(2, ignoreSize_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (startTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, startTime_);
+      }
+      if (ignoreSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, ignoreSize_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientSearchMessage.PageInfo)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientSearchMessage.PageInfo other = (net.iGap.proto.ProtoClientSearchMessage.PageInfo) obj;
+
+      if (getStartTime()
+          != other.getStartTime()) return false;
+      if (getIgnoreSize()
+          != other.getIgnoreSize()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartTime());
+      hash = (37 * hash) + IGNORE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getIgnoreSize();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoClientSearchMessage.PageInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * basic info which client must be send for get next page result
+     * </pre>
+     *
+     * Protobuf type {@code proto.PageInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.PageInfo)
+        net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_PageInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_PageInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientSearchMessage.PageInfo.class, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoClientSearchMessage.PageInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        startTime_ = 0L;
+
+        ignoreSize_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_PageInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo build() {
+        net.iGap.proto.ProtoClientSearchMessage.PageInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientSearchMessage.PageInfo buildPartial() {
+        net.iGap.proto.ProtoClientSearchMessage.PageInfo result = new net.iGap.proto.ProtoClientSearchMessage.PageInfo(this);
+        result.startTime_ = startTime_;
+        result.ignoreSize_ = ignoreSize_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientSearchMessage.PageInfo) {
+          return mergeFrom((net.iGap.proto.ProtoClientSearchMessage.PageInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientSearchMessage.PageInfo other) {
+        if (other == net.iGap.proto.ProtoClientSearchMessage.PageInfo.getDefaultInstance()) return this;
+        if (other.getStartTime() != 0L) {
+          setStartTime(other.getStartTime());
+        }
+        if (other.getIgnoreSize() != 0) {
+          setIgnoreSize(other.getIgnoreSize());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientSearchMessage.PageInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientSearchMessage.PageInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long startTime_ ;
+      /**
+       * <pre>
+       * for fetch next page, client must be set 'start_time' by server info
+       * </pre>
+       *
+       * <code>uint64 start_time = 1;</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <pre>
+       * for fetch next page, client must be set 'start_time' by server info
+       * </pre>
+       *
+       * <code>uint64 start_time = 1;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(long value) {
+        
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * for fetch next page, client must be set 'start_time' by server info
+       * </pre>
+       *
+       * <code>uint64 start_time = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+        
+        startTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int ignoreSize_ ;
+      /**
+       * <pre>
+       * for fetch next page, client must be set 'ignore_size' by server info
+       * </pre>
+       *
+       * <code>uint32 ignore_size = 2;</code>
+       * @return The ignoreSize.
+       */
+      @java.lang.Override
+      public int getIgnoreSize() {
+        return ignoreSize_;
+      }
+      /**
+       * <pre>
+       * for fetch next page, client must be set 'ignore_size' by server info
+       * </pre>
+       *
+       * <code>uint32 ignore_size = 2;</code>
+       * @param value The ignoreSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnoreSize(int value) {
+        
+        ignoreSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * for fetch next page, client must be set 'ignore_size' by server info
+       * </pre>
+       *
+       * <code>uint32 ignore_size = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnoreSize() {
+        
+        ignoreSize_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.PageInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.PageInfo)
+    private static final net.iGap.proto.ProtoClientSearchMessage.PageInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientSearchMessage.PageInfo();
+    }
+
+    public static net.iGap.proto.ProtoClientSearchMessage.PageInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PageInfo>
+        PARSER = new com.google.protobuf.AbstractParser<PageInfo>() {
+      @java.lang.Override
+      public PageInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PageInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PageInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PageInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public net.iGap.proto.ProtoClientSearchMessage.PageInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_ClientSearchMessage_descriptor;
   private static final 
@@ -3397,6 +3831,11 @@ public final class ProtoClientSearchMessage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_ClientSearchMessageResponse_Result_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_PageInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_PageInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3408,19 +3847,19 @@ public final class ProtoClientSearchMessage {
     java.lang.String[] descriptorData = {
       "\n\031ClientSearchMessage.proto\022\005proto\032\rRequ" +
       "est.proto\032\016Response.proto\032\014Global.proto\"" +
-      "\305\001\n\023ClientSearchMessage\022\037\n\007request\030\001 \001(\013" +
+      "\232\001\n\023ClientSearchMessage\022\037\n\007request\030\001 \001(\013" +
       "2\016.proto.Request\022\r\n\005query\030\002 \001(\t\022\016\n\006roomI" +
-      "d\030\003 \001(\004\022\022\n\nstart_time\030\004 \001(\004\022\020\n\010end_time\030" +
-      "\005 \001(\004\022\023\n\013room_offset\030\006 \001(\r\022\022\n\nroom_limit" +
-      "\030\007 \001(\r\022\037\n\004type\030\010 \001(\0162\021.proto.SearchType\"" +
-      "\355\001\n\033ClientSearchMessageResponse\022!\n\010respo" +
-      "nse\030\001 \001(\0132\017.proto.Response\0229\n\006result\030\002 \003" +
-      "(\0132).proto.ClientSearchMessageResponse.R" +
-      "esult\022\027\n\017rooms_continues\030\003 \001(\010\022\r\n\005total\030" +
-      "\004 \001(\r\032H\n\006Result\022\031\n\004room\030\001 \001(\0132\013.proto.Ro" +
-      "om\022#\n\007message\030\002 \001(\0132\022.proto.RoomMessageB" +
-      "*\n\016net.iGap.protoB\030ProtoClientSearchMess" +
-      "ageb\006proto3"
+      "d\030\003 \001(\004\022\037\n\004type\030\004 \001(\0162\021.proto.SearchType" +
+      "\022\"\n\tpage_info\030\005 \001(\0132\017.proto.PageInfo\"\346\001\n" +
+      "\033ClientSearchMessageResponse\022!\n\010response" +
+      "\030\001 \001(\0132\017.proto.Response\0229\n\006result\030\002 \003(\0132" +
+      ").proto.ClientSearchMessageResponse.Resu" +
+      "lt\022)\n\020future_page_info\030\003 \001(\0132\017.proto.Pag" +
+      "eInfo\032>\n\006Result\022\017\n\007room_id\030\001 \001(\003\022#\n\007mess" +
+      "age\030\002 \001(\0132\022.proto.RoomMessage\"3\n\010PageInf" +
+      "o\022\022\n\nstart_time\030\001 \001(\004\022\023\n\013ignore_size\030\002 \001" +
+      "(\rB*\n\016net.iGap.protoB\030ProtoClientSearchM" +
+      "essageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3434,19 +3873,25 @@ public final class ProtoClientSearchMessage {
     internal_static_proto_ClientSearchMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchMessage_descriptor,
-        new java.lang.String[] { "Request", "Query", "RoomId", "StartTime", "EndTime", "RoomOffset", "RoomLimit", "Type", });
+        new java.lang.String[] { "Request", "Query", "RoomId", "Type", "PageInfo", });
     internal_static_proto_ClientSearchMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientSearchMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchMessageResponse_descriptor,
-        new java.lang.String[] { "Response", "Result", "RoomsContinues", "Total", });
+        new java.lang.String[] { "Response", "Result", "FuturePageInfo", });
     internal_static_proto_ClientSearchMessageResponse_Result_descriptor =
       internal_static_proto_ClientSearchMessageResponse_descriptor.getNestedTypes().get(0);
     internal_static_proto_ClientSearchMessageResponse_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchMessageResponse_Result_descriptor,
-        new java.lang.String[] { "Room", "Message", });
+        new java.lang.String[] { "RoomId", "Message", });
+    internal_static_proto_PageInfo_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_proto_PageInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_PageInfo_descriptor,
+        new java.lang.String[] { "StartTime", "IgnoreSize", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
