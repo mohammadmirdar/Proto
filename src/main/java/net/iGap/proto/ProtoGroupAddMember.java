@@ -1955,7 +1955,7 @@ public final class ProtoGroupAddMember {
      * <code>.proto.GroupRoom.Role role = 4 [deprecated = true];</code>
      * @return The role.
      */
-    @java.lang.Deprecated net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole();
+    @java.lang.Deprecated net.igap.proto.ProtoGlobal.GroupRoom.Role getRole();
 
     /**
      * <code>repeated .proto.GroupAddMemberResponse.Member members = 5;</code>
@@ -2107,10 +2107,19 @@ public final class ProtoGroupAddMember {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint64 user_id = 1;</code>
-       * @return The userId.
+       * <code>.proto.RegisteredUser member_info = 1;</code>
+       * @return Whether the memberInfo field is set.
        */
-      long getUserId();
+      boolean hasMemberInfo();
+      /**
+       * <code>.proto.RegisteredUser member_info = 1;</code>
+       * @return The memberInfo.
+       */
+      net.igap.proto.ProtoGlobal.RegisteredUser getMemberInfo();
+      /**
+       * <code>.proto.RegisteredUser member_info = 1;</code>
+       */
+      net.igap.proto.ProtoGlobal.RegisteredUserOrBuilder getMemberInfoOrBuilder();
 
       /**
        * <code>.proto.GroupRoom.Role role = 2;</code>
@@ -2121,7 +2130,7 @@ public final class ProtoGroupAddMember {
        * <code>.proto.GroupRoom.Role role = 2;</code>
        * @return The role.
        */
-      net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole();
+      net.igap.proto.ProtoGlobal.GroupRoom.Role getRole();
     }
     /**
      * Protobuf type {@code proto.GroupAddMemberResponse.Member}
@@ -2169,9 +2178,17 @@ public final class ProtoGroupAddMember {
               case 0:
                 done = true;
                 break;
-              case 8: {
+              case 10: {
+                net.igap.proto.ProtoGlobal.RegisteredUser.Builder subBuilder = null;
+                if (memberInfo_ != null) {
+                  subBuilder = memberInfo_.toBuilder();
+                }
+                memberInfo_ = input.readMessage(net.igap.proto.ProtoGlobal.RegisteredUser.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(memberInfo_);
+                  memberInfo_ = subBuilder.buildPartial();
+                }
 
-                userId_ = input.readUInt64();
                 break;
               }
               case 16: {
@@ -2212,15 +2229,30 @@ public final class ProtoGroupAddMember {
                 net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member.class, net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member.Builder.class);
       }
 
-      public static final int USER_ID_FIELD_NUMBER = 1;
-      private long userId_;
+      public static final int MEMBER_INFO_FIELD_NUMBER = 1;
+      private net.igap.proto.ProtoGlobal.RegisteredUser memberInfo_;
       /**
-       * <code>uint64 user_id = 1;</code>
-       * @return The userId.
+       * <code>.proto.RegisteredUser member_info = 1;</code>
+       * @return Whether the memberInfo field is set.
        */
       @java.lang.Override
-      public long getUserId() {
-        return userId_;
+      public boolean hasMemberInfo() {
+        return memberInfo_ != null;
+      }
+      /**
+       * <code>.proto.RegisteredUser member_info = 1;</code>
+       * @return The memberInfo.
+       */
+      @java.lang.Override
+      public net.igap.proto.ProtoGlobal.RegisteredUser getMemberInfo() {
+        return memberInfo_ == null ? net.igap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : memberInfo_;
+      }
+      /**
+       * <code>.proto.RegisteredUser member_info = 1;</code>
+       */
+      @java.lang.Override
+      public net.igap.proto.ProtoGlobal.RegisteredUserOrBuilder getMemberInfoOrBuilder() {
+        return getMemberInfo();
       }
 
       public static final int ROLE_FIELD_NUMBER = 2;
@@ -2236,10 +2268,10 @@ public final class ProtoGroupAddMember {
        * <code>.proto.GroupRoom.Role role = 2;</code>
        * @return The role.
        */
-      @java.lang.Override public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
+      @java.lang.Override public net.igap.proto.ProtoGlobal.GroupRoom.Role getRole() {
         @SuppressWarnings("deprecation")
-        net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
-        return result == null ? net.iGap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
+        net.igap.proto.ProtoGlobal.GroupRoom.Role result = net.igap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
+        return result == null ? net.igap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2256,10 +2288,10 @@ public final class ProtoGroupAddMember {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (userId_ != 0L) {
-          output.writeUInt64(1, userId_);
+        if (memberInfo_ != null) {
+          output.writeMessage(1, getMemberInfo());
         }
-        if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
+        if (role_ != net.igap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
           output.writeEnum(2, role_);
         }
         unknownFields.writeTo(output);
@@ -2271,11 +2303,11 @@ public final class ProtoGroupAddMember {
         if (size != -1) return size;
 
         size = 0;
-        if (userId_ != 0L) {
+        if (memberInfo_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt64Size(1, userId_);
+            .computeMessageSize(1, getMemberInfo());
         }
-        if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
+        if (role_ != net.igap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(2, role_);
         }
@@ -2294,8 +2326,11 @@ public final class ProtoGroupAddMember {
         }
         net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member other = (net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member) obj;
 
-        if (getUserId()
-            != other.getUserId()) return false;
+        if (hasMemberInfo() != other.hasMemberInfo()) return false;
+        if (hasMemberInfo()) {
+          if (!getMemberInfo()
+              .equals(other.getMemberInfo())) return false;
+        }
         if (role_ != other.role_) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
@@ -2308,9 +2343,10 @@ public final class ProtoGroupAddMember {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getUserId());
+        if (hasMemberInfo()) {
+          hash = (37 * hash) + MEMBER_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getMemberInfo().hashCode();
+        }
         hash = (37 * hash) + ROLE_FIELD_NUMBER;
         hash = (53 * hash) + role_;
         hash = (29 * hash) + unknownFields.hashCode();
@@ -2446,8 +2482,12 @@ public final class ProtoGroupAddMember {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          userId_ = 0L;
-
+          if (memberInfoBuilder_ == null) {
+            memberInfo_ = null;
+          } else {
+            memberInfo_ = null;
+            memberInfoBuilder_ = null;
+          }
           role_ = 0;
 
           return this;
@@ -2476,7 +2516,11 @@ public final class ProtoGroupAddMember {
         @java.lang.Override
         public net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member buildPartial() {
           net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member result = new net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member(this);
-          result.userId_ = userId_;
+          if (memberInfoBuilder_ == null) {
+            result.memberInfo_ = memberInfo_;
+          } else {
+            result.memberInfo_ = memberInfoBuilder_.build();
+          }
           result.role_ = role_;
           onBuilt();
           return result;
@@ -2526,8 +2570,8 @@ public final class ProtoGroupAddMember {
 
         public Builder mergeFrom(net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member other) {
           if (other == net.iGap.proto.ProtoGroupAddMember.GroupAddMemberResponse.Member.getDefaultInstance()) return this;
-          if (other.getUserId() != 0L) {
-            setUserId(other.getUserId());
+          if (other.hasMemberInfo()) {
+            mergeMemberInfo(other.getMemberInfo());
           }
           if (other.role_ != 0) {
             setRoleValue(other.getRoleValue());
@@ -2561,35 +2605,123 @@ public final class ProtoGroupAddMember {
           return this;
         }
 
-        private long userId_ ;
+        private net.igap.proto.ProtoGlobal.RegisteredUser memberInfo_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.igap.proto.ProtoGlobal.RegisteredUser, net.igap.proto.ProtoGlobal.RegisteredUser.Builder, net.igap.proto.ProtoGlobal.RegisteredUserOrBuilder> memberInfoBuilder_;
         /**
-         * <code>uint64 user_id = 1;</code>
-         * @return The userId.
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         * @return Whether the memberInfo field is set.
          */
-        @java.lang.Override
-        public long getUserId() {
-          return userId_;
+        public boolean hasMemberInfo() {
+          return memberInfoBuilder_ != null || memberInfo_ != null;
         }
         /**
-         * <code>uint64 user_id = 1;</code>
-         * @param value The userId to set.
-         * @return This builder for chaining.
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         * @return The memberInfo.
          */
-        public Builder setUserId(long value) {
-          
-          userId_ = value;
-          onChanged();
+        public net.igap.proto.ProtoGlobal.RegisteredUser getMemberInfo() {
+          if (memberInfoBuilder_ == null) {
+            return memberInfo_ == null ? net.igap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : memberInfo_;
+          } else {
+            return memberInfoBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         */
+        public Builder setMemberInfo(net.igap.proto.ProtoGlobal.RegisteredUser value) {
+          if (memberInfoBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            memberInfo_ = value;
+            onChanged();
+          } else {
+            memberInfoBuilder_.setMessage(value);
+          }
+
           return this;
         }
         /**
-         * <code>uint64 user_id = 1;</code>
-         * @return This builder for chaining.
+         * <code>.proto.RegisteredUser member_info = 1;</code>
          */
-        public Builder clearUserId() {
-          
-          userId_ = 0L;
-          onChanged();
+        public Builder setMemberInfo(
+            net.igap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
+          if (memberInfoBuilder_ == null) {
+            memberInfo_ = builderForValue.build();
+            onChanged();
+          } else {
+            memberInfoBuilder_.setMessage(builderForValue.build());
+          }
+
           return this;
+        }
+        /**
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         */
+        public Builder mergeMemberInfo(net.igap.proto.ProtoGlobal.RegisteredUser value) {
+          if (memberInfoBuilder_ == null) {
+            if (memberInfo_ != null) {
+              memberInfo_ =
+                net.igap.proto.ProtoGlobal.RegisteredUser.newBuilder(memberInfo_).mergeFrom(value).buildPartial();
+            } else {
+              memberInfo_ = value;
+            }
+            onChanged();
+          } else {
+            memberInfoBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         */
+        public Builder clearMemberInfo() {
+          if (memberInfoBuilder_ == null) {
+            memberInfo_ = null;
+            onChanged();
+          } else {
+            memberInfo_ = null;
+            memberInfoBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         */
+        public net.igap.proto.ProtoGlobal.RegisteredUser.Builder getMemberInfoBuilder() {
+          
+          onChanged();
+          return getMemberInfoFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         */
+        public net.igap.proto.ProtoGlobal.RegisteredUserOrBuilder getMemberInfoOrBuilder() {
+          if (memberInfoBuilder_ != null) {
+            return memberInfoBuilder_.getMessageOrBuilder();
+          } else {
+            return memberInfo_ == null ?
+                net.igap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : memberInfo_;
+          }
+        }
+        /**
+         * <code>.proto.RegisteredUser member_info = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.igap.proto.ProtoGlobal.RegisteredUser, net.igap.proto.ProtoGlobal.RegisteredUser.Builder, net.igap.proto.ProtoGlobal.RegisteredUserOrBuilder> 
+            getMemberInfoFieldBuilder() {
+          if (memberInfoBuilder_ == null) {
+            memberInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                net.igap.proto.ProtoGlobal.RegisteredUser, net.igap.proto.ProtoGlobal.RegisteredUser.Builder, net.igap.proto.ProtoGlobal.RegisteredUserOrBuilder>(
+                    getMemberInfo(),
+                    getParentForChildren(),
+                    isClean());
+            memberInfo_ = null;
+          }
+          return memberInfoBuilder_;
         }
 
         private int role_ = 0;
@@ -2616,17 +2748,17 @@ public final class ProtoGroupAddMember {
          * @return The role.
          */
         @java.lang.Override
-        public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
+        public net.igap.proto.ProtoGlobal.GroupRoom.Role getRole() {
           @SuppressWarnings("deprecation")
-          net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
-          return result == null ? net.iGap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
+          net.igap.proto.ProtoGlobal.GroupRoom.Role result = net.igap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
+          return result == null ? net.igap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
         }
         /**
          * <code>.proto.GroupRoom.Role role = 2;</code>
          * @param value The role to set.
          * @return This builder for chaining.
          */
-        public Builder setRole(net.iGap.proto.ProtoGlobal.GroupRoom.Role value) {
+        public Builder setRole(net.igap.proto.ProtoGlobal.GroupRoom.Role value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -2759,10 +2891,10 @@ public final class ProtoGroupAddMember {
      * <code>.proto.GroupRoom.Role role = 4 [deprecated = true];</code>
      * @return The role.
      */
-    @java.lang.Override @java.lang.Deprecated public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
+    @java.lang.Override @java.lang.Deprecated public net.igap.proto.ProtoGlobal.GroupRoom.Role getRole() {
       @SuppressWarnings("deprecation")
-      net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
-      return result == null ? net.iGap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
+      net.igap.proto.ProtoGlobal.GroupRoom.Role result = net.igap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
+      return result == null ? net.igap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
     }
 
     public static final int MEMBERS_FIELD_NUMBER = 5;
@@ -2828,7 +2960,7 @@ public final class ProtoGroupAddMember {
       if (userId_ != 0L) {
         output.writeUInt64(3, userId_);
       }
-      if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
+      if (role_ != net.igap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
         output.writeEnum(4, role_);
       }
       for (int i = 0; i < members_.size(); i++) {
@@ -2855,7 +2987,7 @@ public final class ProtoGroupAddMember {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, userId_);
       }
-      if (role_ != net.iGap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
+      if (role_ != net.igap.proto.ProtoGlobal.GroupRoom.Role.MEMBER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, role_);
       }
@@ -3434,17 +3566,17 @@ public final class ProtoGroupAddMember {
        * @return The role.
        */
       @java.lang.Override
-      @java.lang.Deprecated public net.iGap.proto.ProtoGlobal.GroupRoom.Role getRole() {
+      @java.lang.Deprecated public net.igap.proto.ProtoGlobal.GroupRoom.Role getRole() {
         @SuppressWarnings("deprecation")
-        net.iGap.proto.ProtoGlobal.GroupRoom.Role result = net.iGap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
-        return result == null ? net.iGap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
+        net.igap.proto.ProtoGlobal.GroupRoom.Role result = net.igap.proto.ProtoGlobal.GroupRoom.Role.valueOf(role_);
+        return result == null ? net.igap.proto.ProtoGlobal.GroupRoom.Role.UNRECOGNIZED : result;
       }
       /**
        * <code>.proto.GroupRoom.Role role = 4 [deprecated = true];</code>
        * @param value The role to set.
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated public Builder setRole(net.iGap.proto.ProtoGlobal.GroupRoom.Role value) {
+      @java.lang.Deprecated public Builder setRole(net.igap.proto.ProtoGlobal.GroupRoom.Role value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3793,21 +3925,22 @@ public final class ProtoGroupAddMember {
       "bers\030\004 \003(\0132\034.proto.GroupAddMember.Member" +
       "\032N\n\006Member\022\017\n\007user_id\030\001 \001(\004\022\030\n\020start_mes" +
       "sage_id\030\002 \001(\004\022\031\n\021start_document_id\030\003 \001(\004" +
-      "\"\201\002\n\026GroupAddMemberResponse\022!\n\010response\030" +
+      "\"\234\002\n\026GroupAddMemberResponse\022!\n\010response\030" +
       "\001 \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001(\004\022" +
       "\023\n\007user_id\030\003 \001(\004B\002\030\001\022\'\n\004role\030\004 \001(\0162\025.pro" +
       "to.GroupRoom.RoleB\002\030\001\0225\n\007members\030\005 \003(\0132$" +
-      ".proto.GroupAddMemberResponse.Member\032>\n\006" +
-      "Member\022\017\n\007user_id\030\001 \001(\004\022#\n\004role\030\002 \001(\0162\025." +
-      "proto.GroupRoom.RoleB%\n\016net.iGap.protoB\023" +
-      "ProtoGroupAddMemberb\006proto3"
+      ".proto.GroupAddMemberResponse.Member\032Y\n\006" +
+      "Member\022*\n\013member_info\030\001 \001(\0132\025.proto.Regi" +
+      "steredUser\022#\n\004role\030\002 \001(\0162\025.proto.GroupRo" +
+      "om.RoleB%\n\016net.iGap.protoB\023ProtoGroupAdd" +
+      "Memberb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
-          net.iGap.proto.ProtoGlobal.getDescriptor(),
+          net.igap.proto.ProtoGlobal.getDescriptor(),
         });
     internal_static_proto_GroupAddMember_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3832,10 +3965,10 @@ public final class ProtoGroupAddMember {
     internal_static_proto_GroupAddMemberResponse_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupAddMemberResponse_Member_descriptor,
-        new java.lang.String[] { "UserId", "Role", });
+        new java.lang.String[] { "MemberInfo", "Role", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
-    net.iGap.proto.ProtoGlobal.getDescriptor();
+    net.igap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
