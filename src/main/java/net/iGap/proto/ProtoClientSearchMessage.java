@@ -84,7 +84,7 @@ public final class ProtoClientSearchMessage {
 
     /**
      * <pre>
-     * for fetching next page of same query, client must be send
+     * for fetching next page with same query, client must be send
      * </pre>
      *
      * <code>.proto.PageInfo page_info = 5;</code>
@@ -93,7 +93,7 @@ public final class ProtoClientSearchMessage {
     boolean hasPageInfo();
     /**
      * <pre>
-     * for fetching next page of same query, client must be send
+     * for fetching next page with same query, client must be send
      * </pre>
      *
      * <code>.proto.PageInfo page_info = 5;</code>
@@ -102,7 +102,7 @@ public final class ProtoClientSearchMessage {
     net.iGap.proto.ProtoClientSearchMessage.PageInfo getPageInfo();
     /**
      * <pre>
-     * for fetching next page of same query, client must be send
+     * for fetching next page with same query, client must be send
      * </pre>
      *
      * <code>.proto.PageInfo page_info = 5;</code>
@@ -349,7 +349,7 @@ public final class ProtoClientSearchMessage {
     private net.iGap.proto.ProtoClientSearchMessage.PageInfo pageInfo_;
     /**
      * <pre>
-     * for fetching next page of same query, client must be send
+     * for fetching next page with same query, client must be send
      * </pre>
      *
      * <code>.proto.PageInfo page_info = 5;</code>
@@ -361,7 +361,7 @@ public final class ProtoClientSearchMessage {
     }
     /**
      * <pre>
-     * for fetching next page of same query, client must be send
+     * for fetching next page with same query, client must be send
      * </pre>
      *
      * <code>.proto.PageInfo page_info = 5;</code>
@@ -373,7 +373,7 @@ public final class ProtoClientSearchMessage {
     }
     /**
      * <pre>
-     * for fetching next page of same query, client must be send
+     * for fetching next page with same query, client must be send
      * </pre>
      *
      * <code>.proto.PageInfo page_info = 5;</code>
@@ -1116,7 +1116,7 @@ public final class ProtoClientSearchMessage {
           net.iGap.proto.ProtoClientSearchMessage.PageInfo, net.iGap.proto.ProtoClientSearchMessage.PageInfo.Builder, net.iGap.proto.ProtoClientSearchMessage.PageInfoOrBuilder> pageInfoBuilder_;
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1127,7 +1127,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1142,7 +1142,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1162,7 +1162,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1180,7 +1180,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1202,7 +1202,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1220,7 +1220,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1232,7 +1232,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1247,7 +1247,7 @@ public final class ProtoClientSearchMessage {
       }
       /**
        * <pre>
-       * for fetching next page of same query, client must be send
+       * for fetching next page with same query, client must be send
        * </pre>
        *
        * <code>.proto.PageInfo page_info = 5;</code>
@@ -1504,19 +1504,89 @@ public final class ProtoClientSearchMessage {
       long getRoomId();
 
       /**
-       * <code>.proto.RoomMessage message = 2;</code>
-       * @return Whether the message field is set.
+       * <code>uint64 sender_user_id = 2;</code>
+       * @return The senderUserId.
        */
-      boolean hasMessage();
+      long getSenderUserId();
+
       /**
-       * <code>.proto.RoomMessage message = 2;</code>
+       * <code>.proto.RoomType room_type = 3;</code>
+       * @return The enum numeric value on the wire for roomType.
+       */
+      int getRoomTypeValue();
+      /**
+       * <code>.proto.RoomType room_type = 3;</code>
+       * @return The roomType.
+       */
+      net.iGap.proto.ProtoGlobal.RoomType getRoomType();
+
+      /**
+       * <code>string message = 4;</code>
        * @return The message.
        */
-      net.iGap.proto.ProtoGlobal.RoomMessage getMessage();
+      java.lang.String getMessage();
       /**
-       * <code>.proto.RoomMessage message = 2;</code>
+       * <code>string message = 4;</code>
+       * @return The bytes for message.
        */
-      net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder getMessageOrBuilder();
+      com.google.protobuf.ByteString
+          getMessageBytes();
+
+      /**
+       * <code>.proto.RoomMessageType message_type = 5;</code>
+       * @return The enum numeric value on the wire for messageType.
+       */
+      int getMessageTypeValue();
+      /**
+       * <code>.proto.RoomMessageType message_type = 5;</code>
+       * @return The messageType.
+       */
+      net.iGap.proto.ProtoGlobal.RoomMessageType getMessageType();
+
+      /**
+       * <code>uint32 create_time = 6;</code>
+       * @return The createTime.
+       */
+      int getCreateTime();
+
+      /**
+       * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+       * @return Whether the file field is set.
+       */
+      boolean hasFile();
+      /**
+       * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+       * @return The file.
+       */
+      net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File getFile();
+      /**
+       * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+       */
+      net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder getFileOrBuilder();
+
+      /**
+       * <code>uint32 view_count = 10;</code>
+       * @return The viewCount.
+       */
+      int getViewCount();
+
+      /**
+       * <code>uint32 reaction_count = 11;</code>
+       * @return The reactionCount.
+       */
+      int getReactionCount();
+
+      /**
+       * <code>bool has_link = 12;</code>
+       * @return The hasLink.
+       */
+      boolean getHasLink();
+
+      /**
+       * <code>bool isBot = 13;</code>
+       * @return The isBot.
+       */
+      boolean getIsBot();
     }
     /**
      * Protobuf type {@code proto.ClientSearchMessageResponse.Result}
@@ -1531,6 +1601,9 @@ public final class ProtoClientSearchMessage {
         super(builder);
       }
       private Result() {
+        roomType_ = 0;
+        message_ = "";
+        messageType_ = 0;
       }
 
       @java.lang.Override
@@ -1568,17 +1641,65 @@ public final class ProtoClientSearchMessage {
                 roomId_ = input.readInt64();
                 break;
               }
-              case 18: {
-                net.iGap.proto.ProtoGlobal.RoomMessage.Builder subBuilder = null;
-                if (message_ != null) {
-                  subBuilder = message_.toBuilder();
+              case 16: {
+
+                senderUserId_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+                int rawValue = input.readEnum();
+
+                roomType_ = rawValue;
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                message_ = s;
+                break;
+              }
+              case 40: {
+                int rawValue = input.readEnum();
+
+                messageType_ = rawValue;
+                break;
+              }
+              case 48: {
+
+                createTime_ = input.readUInt32();
+                break;
+              }
+              case 58: {
+                net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder subBuilder = null;
+                if (file_ != null) {
+                  subBuilder = file_.toBuilder();
                 }
-                message_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessage.parser(), extensionRegistry);
+                file_ = input.readMessage(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.parser(), extensionRegistry);
                 if (subBuilder != null) {
-                  subBuilder.mergeFrom(message_);
-                  message_ = subBuilder.buildPartial();
+                  subBuilder.mergeFrom(file_);
+                  file_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+              case 80: {
+
+                viewCount_ = input.readUInt32();
+                break;
+              }
+              case 88: {
+
+                reactionCount_ = input.readUInt32();
+                break;
+              }
+              case 96: {
+
+                hasLink_ = input.readBool();
+                break;
+              }
+              case 104: {
+
+                isBot_ = input.readBool();
                 break;
               }
               default: {
@@ -1613,6 +1734,874 @@ public final class ProtoClientSearchMessage {
                 net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.class, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.Builder.class);
       }
 
+      public interface FileOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:proto.ClientSearchMessageResponse.Result.File)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string file_name = 1;</code>
+         * @return The fileName.
+         */
+        java.lang.String getFileName();
+        /**
+         * <code>string file_name = 1;</code>
+         * @return The bytes for fileName.
+         */
+        com.google.protobuf.ByteString
+            getFileNameBytes();
+
+        /**
+         * <code>string token = 2;</code>
+         * @return The token.
+         */
+        java.lang.String getToken();
+        /**
+         * <code>string token = 2;</code>
+         * @return The bytes for token.
+         */
+        com.google.protobuf.ByteString
+            getTokenBytes();
+
+        /**
+         * <code>string mime = 3;</code>
+         * @return The mime.
+         */
+        java.lang.String getMime();
+        /**
+         * <code>string mime = 3;</code>
+         * @return The bytes for mime.
+         */
+        com.google.protobuf.ByteString
+            getMimeBytes();
+      }
+      /**
+       * Protobuf type {@code proto.ClientSearchMessageResponse.Result.File}
+       */
+      public static final class File extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:proto.ClientSearchMessageResponse.Result.File)
+          FileOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use File.newBuilder() to construct.
+        private File(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+        private File() {
+          fileName_ = "";
+          token_ = "";
+          mime_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+          return new File();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        private File(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  fileName_ = s;
+                  break;
+                }
+                case 18: {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  token_ = s;
+                  break;
+                }
+                case 26: {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  mime_ = s;
+                  break;
+                }
+                default: {
+                  if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_ClientSearchMessageResponse_Result_File_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_ClientSearchMessageResponse_Result_File_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.class, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder.class);
+        }
+
+        public static final int FILE_NAME_FIELD_NUMBER = 1;
+        private volatile java.lang.Object fileName_;
+        /**
+         * <code>string file_name = 1;</code>
+         * @return The fileName.
+         */
+        @java.lang.Override
+        public java.lang.String getFileName() {
+          java.lang.Object ref = fileName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fileName_ = s;
+            return s;
+          }
+        }
+        /**
+         * <code>string file_name = 1;</code>
+         * @return The bytes for fileName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString
+            getFileNameBytes() {
+          java.lang.Object ref = fileName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            fileName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int TOKEN_FIELD_NUMBER = 2;
+        private volatile java.lang.Object token_;
+        /**
+         * <code>string token = 2;</code>
+         * @return The token.
+         */
+        @java.lang.Override
+        public java.lang.String getToken() {
+          java.lang.Object ref = token_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            token_ = s;
+            return s;
+          }
+        }
+        /**
+         * <code>string token = 2;</code>
+         * @return The bytes for token.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString
+            getTokenBytes() {
+          java.lang.Object ref = token_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            token_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int MIME_FIELD_NUMBER = 3;
+        private volatile java.lang.Object mime_;
+        /**
+         * <code>string mime = 3;</code>
+         * @return The mime.
+         */
+        @java.lang.Override
+        public java.lang.String getMime() {
+          java.lang.Object ref = mime_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mime_ = s;
+            return s;
+          }
+        }
+        /**
+         * <code>string mime = 3;</code>
+         * @return The bytes for mime.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString
+            getMimeBytes() {
+          java.lang.Object ref = mime_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            mime_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                            throws java.io.IOException {
+          if (!getFileNameBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fileName_);
+          }
+          if (!getTokenBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+          }
+          if (!getMimeBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mime_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!getFileNameBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fileName_);
+          }
+          if (!getTokenBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+          }
+          if (!getMimeBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mime_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File)) {
+            return super.equals(obj);
+          }
+          net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File other = (net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File) obj;
+
+          if (!getFileName()
+              .equals(other.getFileName())) return false;
+          if (!getToken()
+              .equals(other.getToken())) return false;
+          if (!getMime()
+              .equals(other.getMime())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getFileName().hashCode();
+          hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+          hash = (53 * hash) + getToken().hashCode();
+          hash = (37 * hash) + MIME_FIELD_NUMBER;
+          hash = (53 * hash) + getMime().hashCode();
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * Protobuf type {@code proto.ClientSearchMessageResponse.Result.File}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:proto.ClientSearchMessageResponse.Result.File)
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_ClientSearchMessageResponse_Result_File_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_ClientSearchMessageResponse_Result_File_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.class, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder.class);
+          }
+
+          // Construct using net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            fileName_ = "";
+
+            token_ = "";
+
+            mime_ = "";
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return net.iGap.proto.ProtoClientSearchMessage.internal_static_proto_ClientSearchMessageResponse_Result_File_descriptor;
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File getDefaultInstanceForType() {
+            return net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File build() {
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File buildPartial() {
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File result = new net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File(this);
+            result.fileName_ = fileName_;
+            result.token_ = token_;
+            result.mime_ = mime_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File) {
+              return mergeFrom((net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File other) {
+            if (other == net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.getDefaultInstance()) return this;
+            if (!other.getFileName().isEmpty()) {
+              fileName_ = other.fileName_;
+              onChanged();
+            }
+            if (!other.getToken().isEmpty()) {
+              token_ = other.token_;
+              onChanged();
+            }
+            if (!other.getMime().isEmpty()) {
+              mime_ = other.mime_;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File) e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private java.lang.Object fileName_ = "";
+          /**
+           * <code>string file_name = 1;</code>
+           * @return The fileName.
+           */
+          public java.lang.String getFileName() {
+            java.lang.Object ref = fileName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fileName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <code>string file_name = 1;</code>
+           * @return The bytes for fileName.
+           */
+          public com.google.protobuf.ByteString
+              getFileNameBytes() {
+            java.lang.Object ref = fileName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              fileName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>string file_name = 1;</code>
+           * @param value The fileName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFileName(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  
+            fileName_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string file_name = 1;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearFileName() {
+            
+            fileName_ = getDefaultInstance().getFileName();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string file_name = 1;</code>
+           * @param value The bytes for fileName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFileNameBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            
+            fileName_ = value;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object token_ = "";
+          /**
+           * <code>string token = 2;</code>
+           * @return The token.
+           */
+          public java.lang.String getToken() {
+            java.lang.Object ref = token_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              token_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <code>string token = 2;</code>
+           * @return The bytes for token.
+           */
+          public com.google.protobuf.ByteString
+              getTokenBytes() {
+            java.lang.Object ref = token_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              token_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>string token = 2;</code>
+           * @param value The token to set.
+           * @return This builder for chaining.
+           */
+          public Builder setToken(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  
+            token_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string token = 2;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearToken() {
+            
+            token_ = getDefaultInstance().getToken();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string token = 2;</code>
+           * @param value The bytes for token to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTokenBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            
+            token_ = value;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object mime_ = "";
+          /**
+           * <code>string mime = 3;</code>
+           * @return The mime.
+           */
+          public java.lang.String getMime() {
+            java.lang.Object ref = mime_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              mime_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <code>string mime = 3;</code>
+           * @return The bytes for mime.
+           */
+          public com.google.protobuf.ByteString
+              getMimeBytes() {
+            java.lang.Object ref = mime_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              mime_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>string mime = 3;</code>
+           * @param value The mime to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMime(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  
+            mime_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string mime = 3;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearMime() {
+            
+            mime_ = getDefaultInstance().getMime();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string mime = 3;</code>
+           * @param value The bytes for mime to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            
+            mime_ = value;
+            onChanged();
+            return this;
+          }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+
+          // @@protoc_insertion_point(builder_scope:proto.ClientSearchMessageResponse.Result.File)
+        }
+
+        // @@protoc_insertion_point(class_scope:proto.ClientSearchMessageResponse.Result.File)
+        private static final net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File DEFAULT_INSTANCE;
+        static {
+          DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File();
+        }
+
+        public static net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<File>
+            PARSER = new com.google.protobuf.AbstractParser<File>() {
+          @java.lang.Override
+          public File parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new File(input, extensionRegistry);
+          }
+        };
+
+        public static com.google.protobuf.Parser<File> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<File> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
+      }
+
       public static final int ROOM_ID_FIELD_NUMBER = 1;
       private long roomId_;
       /**
@@ -1624,30 +2613,172 @@ public final class ProtoClientSearchMessage {
         return roomId_;
       }
 
-      public static final int MESSAGE_FIELD_NUMBER = 2;
-      private net.iGap.proto.ProtoGlobal.RoomMessage message_;
+      public static final int SENDER_USER_ID_FIELD_NUMBER = 2;
+      private long senderUserId_;
       /**
-       * <code>.proto.RoomMessage message = 2;</code>
-       * @return Whether the message field is set.
+       * <code>uint64 sender_user_id = 2;</code>
+       * @return The senderUserId.
        */
       @java.lang.Override
-      public boolean hasMessage() {
-        return message_ != null;
+      public long getSenderUserId() {
+        return senderUserId_;
+      }
+
+      public static final int ROOM_TYPE_FIELD_NUMBER = 3;
+      private int roomType_;
+      /**
+       * <code>.proto.RoomType room_type = 3;</code>
+       * @return The enum numeric value on the wire for roomType.
+       */
+      @java.lang.Override public int getRoomTypeValue() {
+        return roomType_;
       }
       /**
-       * <code>.proto.RoomMessage message = 2;</code>
+       * <code>.proto.RoomType room_type = 3;</code>
+       * @return The roomType.
+       */
+      @java.lang.Override public net.iGap.proto.ProtoGlobal.RoomType getRoomType() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.RoomType result = net.iGap.proto.ProtoGlobal.RoomType.valueOf(roomType_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomType.UNRECOGNIZED : result;
+      }
+
+      public static final int MESSAGE_FIELD_NUMBER = 4;
+      private volatile java.lang.Object message_;
+      /**
+       * <code>string message = 4;</code>
        * @return The message.
        */
       @java.lang.Override
-      public net.iGap.proto.ProtoGlobal.RoomMessage getMessage() {
-        return message_ == null ? net.iGap.proto.ProtoGlobal.RoomMessage.getDefaultInstance() : message_;
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        }
       }
       /**
-       * <code>.proto.RoomMessage message = 2;</code>
+       * <code>string message = 4;</code>
+       * @return The bytes for message.
        */
       @java.lang.Override
-      public net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder getMessageOrBuilder() {
-        return getMessage();
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int MESSAGE_TYPE_FIELD_NUMBER = 5;
+      private int messageType_;
+      /**
+       * <code>.proto.RoomMessageType message_type = 5;</code>
+       * @return The enum numeric value on the wire for messageType.
+       */
+      @java.lang.Override public int getMessageTypeValue() {
+        return messageType_;
+      }
+      /**
+       * <code>.proto.RoomMessageType message_type = 5;</code>
+       * @return The messageType.
+       */
+      @java.lang.Override public net.iGap.proto.ProtoGlobal.RoomMessageType getMessageType() {
+        @SuppressWarnings("deprecation")
+        net.iGap.proto.ProtoGlobal.RoomMessageType result = net.iGap.proto.ProtoGlobal.RoomMessageType.valueOf(messageType_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageType.UNRECOGNIZED : result;
+      }
+
+      public static final int CREATE_TIME_FIELD_NUMBER = 6;
+      private int createTime_;
+      /**
+       * <code>uint32 create_time = 6;</code>
+       * @return The createTime.
+       */
+      @java.lang.Override
+      public int getCreateTime() {
+        return createTime_;
+      }
+
+      public static final int FILE_FIELD_NUMBER = 7;
+      private net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File file_;
+      /**
+       * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+       * @return Whether the file field is set.
+       */
+      @java.lang.Override
+      public boolean hasFile() {
+        return file_ != null;
+      }
+      /**
+       * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+       * @return The file.
+       */
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File getFile() {
+        return file_ == null ? net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.getDefaultInstance() : file_;
+      }
+      /**
+       * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+       */
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder getFileOrBuilder() {
+        return getFile();
+      }
+
+      public static final int VIEW_COUNT_FIELD_NUMBER = 10;
+      private int viewCount_;
+      /**
+       * <code>uint32 view_count = 10;</code>
+       * @return The viewCount.
+       */
+      @java.lang.Override
+      public int getViewCount() {
+        return viewCount_;
+      }
+
+      public static final int REACTION_COUNT_FIELD_NUMBER = 11;
+      private int reactionCount_;
+      /**
+       * <code>uint32 reaction_count = 11;</code>
+       * @return The reactionCount.
+       */
+      @java.lang.Override
+      public int getReactionCount() {
+        return reactionCount_;
+      }
+
+      public static final int HAS_LINK_FIELD_NUMBER = 12;
+      private boolean hasLink_;
+      /**
+       * <code>bool has_link = 12;</code>
+       * @return The hasLink.
+       */
+      @java.lang.Override
+      public boolean getHasLink() {
+        return hasLink_;
+      }
+
+      public static final int ISBOT_FIELD_NUMBER = 13;
+      private boolean isBot_;
+      /**
+       * <code>bool isBot = 13;</code>
+       * @return The isBot.
+       */
+      @java.lang.Override
+      public boolean getIsBot() {
+        return isBot_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1667,8 +2798,35 @@ public final class ProtoClientSearchMessage {
         if (roomId_ != 0L) {
           output.writeInt64(1, roomId_);
         }
-        if (message_ != null) {
-          output.writeMessage(2, getMessage());
+        if (senderUserId_ != 0L) {
+          output.writeUInt64(2, senderUserId_);
+        }
+        if (roomType_ != net.iGap.proto.ProtoGlobal.RoomType.CHAT.getNumber()) {
+          output.writeEnum(3, roomType_);
+        }
+        if (!getMessageBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
+        }
+        if (messageType_ != net.iGap.proto.ProtoGlobal.RoomMessageType.TEXT.getNumber()) {
+          output.writeEnum(5, messageType_);
+        }
+        if (createTime_ != 0) {
+          output.writeUInt32(6, createTime_);
+        }
+        if (file_ != null) {
+          output.writeMessage(7, getFile());
+        }
+        if (viewCount_ != 0) {
+          output.writeUInt32(10, viewCount_);
+        }
+        if (reactionCount_ != 0) {
+          output.writeUInt32(11, reactionCount_);
+        }
+        if (hasLink_ != false) {
+          output.writeBool(12, hasLink_);
+        }
+        if (isBot_ != false) {
+          output.writeBool(13, isBot_);
         }
         unknownFields.writeTo(output);
       }
@@ -1683,9 +2841,44 @@ public final class ProtoClientSearchMessage {
           size += com.google.protobuf.CodedOutputStream
             .computeInt64Size(1, roomId_);
         }
-        if (message_ != null) {
+        if (senderUserId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getMessage());
+            .computeUInt64Size(2, senderUserId_);
+        }
+        if (roomType_ != net.iGap.proto.ProtoGlobal.RoomType.CHAT.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(3, roomType_);
+        }
+        if (!getMessageBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+        }
+        if (messageType_ != net.iGap.proto.ProtoGlobal.RoomMessageType.TEXT.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(5, messageType_);
+        }
+        if (createTime_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(6, createTime_);
+        }
+        if (file_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(7, getFile());
+        }
+        if (viewCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(10, viewCount_);
+        }
+        if (reactionCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(11, reactionCount_);
+        }
+        if (hasLink_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(12, hasLink_);
+        }
+        if (isBot_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(13, isBot_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1704,11 +2897,27 @@ public final class ProtoClientSearchMessage {
 
         if (getRoomId()
             != other.getRoomId()) return false;
-        if (hasMessage() != other.hasMessage()) return false;
-        if (hasMessage()) {
-          if (!getMessage()
-              .equals(other.getMessage())) return false;
+        if (getSenderUserId()
+            != other.getSenderUserId()) return false;
+        if (roomType_ != other.roomType_) return false;
+        if (!getMessage()
+            .equals(other.getMessage())) return false;
+        if (messageType_ != other.messageType_) return false;
+        if (getCreateTime()
+            != other.getCreateTime()) return false;
+        if (hasFile() != other.hasFile()) return false;
+        if (hasFile()) {
+          if (!getFile()
+              .equals(other.getFile())) return false;
         }
+        if (getViewCount()
+            != other.getViewCount()) return false;
+        if (getReactionCount()
+            != other.getReactionCount()) return false;
+        if (getHasLink()
+            != other.getHasLink()) return false;
+        if (getIsBot()
+            != other.getIsBot()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -1723,10 +2932,31 @@ public final class ProtoClientSearchMessage {
         hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getRoomId());
-        if (hasMessage()) {
-          hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-          hash = (53 * hash) + getMessage().hashCode();
+        hash = (37 * hash) + SENDER_USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getSenderUserId());
+        hash = (37 * hash) + ROOM_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + roomType_;
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
+        hash = (37 * hash) + MESSAGE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + messageType_;
+        hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTime();
+        if (hasFile()) {
+          hash = (37 * hash) + FILE_FIELD_NUMBER;
+          hash = (53 * hash) + getFile().hashCode();
         }
+        hash = (37 * hash) + VIEW_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getViewCount();
+        hash = (37 * hash) + REACTION_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getReactionCount();
+        hash = (37 * hash) + HAS_LINK_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getHasLink());
+        hash = (37 * hash) + ISBOT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsBot());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1862,12 +3092,30 @@ public final class ProtoClientSearchMessage {
           super.clear();
           roomId_ = 0L;
 
-          if (messageBuilder_ == null) {
-            message_ = null;
+          senderUserId_ = 0L;
+
+          roomType_ = 0;
+
+          message_ = "";
+
+          messageType_ = 0;
+
+          createTime_ = 0;
+
+          if (fileBuilder_ == null) {
+            file_ = null;
           } else {
-            message_ = null;
-            messageBuilder_ = null;
+            file_ = null;
+            fileBuilder_ = null;
           }
+          viewCount_ = 0;
+
+          reactionCount_ = 0;
+
+          hasLink_ = false;
+
+          isBot_ = false;
+
           return this;
         }
 
@@ -1895,11 +3143,20 @@ public final class ProtoClientSearchMessage {
         public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result buildPartial() {
           net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result result = new net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result(this);
           result.roomId_ = roomId_;
-          if (messageBuilder_ == null) {
-            result.message_ = message_;
+          result.senderUserId_ = senderUserId_;
+          result.roomType_ = roomType_;
+          result.message_ = message_;
+          result.messageType_ = messageType_;
+          result.createTime_ = createTime_;
+          if (fileBuilder_ == null) {
+            result.file_ = file_;
           } else {
-            result.message_ = messageBuilder_.build();
+            result.file_ = fileBuilder_.build();
           }
+          result.viewCount_ = viewCount_;
+          result.reactionCount_ = reactionCount_;
+          result.hasLink_ = hasLink_;
+          result.isBot_ = isBot_;
           onBuilt();
           return result;
         }
@@ -1951,8 +3208,36 @@ public final class ProtoClientSearchMessage {
           if (other.getRoomId() != 0L) {
             setRoomId(other.getRoomId());
           }
-          if (other.hasMessage()) {
-            mergeMessage(other.getMessage());
+          if (other.getSenderUserId() != 0L) {
+            setSenderUserId(other.getSenderUserId());
+          }
+          if (other.roomType_ != 0) {
+            setRoomTypeValue(other.getRoomTypeValue());
+          }
+          if (!other.getMessage().isEmpty()) {
+            message_ = other.message_;
+            onChanged();
+          }
+          if (other.messageType_ != 0) {
+            setMessageTypeValue(other.getMessageTypeValue());
+          }
+          if (other.getCreateTime() != 0) {
+            setCreateTime(other.getCreateTime());
+          }
+          if (other.hasFile()) {
+            mergeFile(other.getFile());
+          }
+          if (other.getViewCount() != 0) {
+            setViewCount(other.getViewCount());
+          }
+          if (other.getReactionCount() != 0) {
+            setReactionCount(other.getReactionCount());
+          }
+          if (other.getHasLink() != false) {
+            setHasLink(other.getHasLink());
+          }
+          if (other.getIsBot() != false) {
+            setIsBot(other.getIsBot());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -2014,123 +3299,493 @@ public final class ProtoClientSearchMessage {
           return this;
         }
 
-        private net.iGap.proto.ProtoGlobal.RoomMessage message_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            net.iGap.proto.ProtoGlobal.RoomMessage, net.iGap.proto.ProtoGlobal.RoomMessage.Builder, net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder> messageBuilder_;
+        private long senderUserId_ ;
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
-         * @return Whether the message field is set.
+         * <code>uint64 sender_user_id = 2;</code>
+         * @return The senderUserId.
          */
-        public boolean hasMessage() {
-          return messageBuilder_ != null || message_ != null;
+        @java.lang.Override
+        public long getSenderUserId() {
+          return senderUserId_;
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>uint64 sender_user_id = 2;</code>
+         * @param value The senderUserId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSenderUserId(long value) {
+          
+          senderUserId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint64 sender_user_id = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearSenderUserId() {
+          
+          senderUserId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int roomType_ = 0;
+        /**
+         * <code>.proto.RoomType room_type = 3;</code>
+         * @return The enum numeric value on the wire for roomType.
+         */
+        @java.lang.Override public int getRoomTypeValue() {
+          return roomType_;
+        }
+        /**
+         * <code>.proto.RoomType room_type = 3;</code>
+         * @param value The enum numeric value on the wire for roomType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoomTypeValue(int value) {
+          
+          roomType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.proto.RoomType room_type = 3;</code>
+         * @return The roomType.
+         */
+        @java.lang.Override
+        public net.iGap.proto.ProtoGlobal.RoomType getRoomType() {
+          @SuppressWarnings("deprecation")
+          net.iGap.proto.ProtoGlobal.RoomType result = net.iGap.proto.ProtoGlobal.RoomType.valueOf(roomType_);
+          return result == null ? net.iGap.proto.ProtoGlobal.RoomType.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.proto.RoomType room_type = 3;</code>
+         * @param value The roomType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoomType(net.iGap.proto.ProtoGlobal.RoomType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          roomType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.proto.RoomType room_type = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRoomType() {
+          
+          roomType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object message_ = "";
+        /**
+         * <code>string message = 4;</code>
          * @return The message.
          */
-        public net.iGap.proto.ProtoGlobal.RoomMessage getMessage() {
-          if (messageBuilder_ == null) {
-            return message_ == null ? net.iGap.proto.ProtoGlobal.RoomMessage.getDefaultInstance() : message_;
+        public java.lang.String getMessage() {
+          java.lang.Object ref = message_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            message_ = s;
+            return s;
           } else {
-            return messageBuilder_.getMessage();
+            return (java.lang.String) ref;
           }
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>string message = 4;</code>
+         * @return The bytes for message.
          */
-        public Builder setMessage(net.iGap.proto.ProtoGlobal.RoomMessage value) {
-          if (messageBuilder_ == null) {
+        public com.google.protobuf.ByteString
+            getMessageBytes() {
+          java.lang.Object ref = message_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            message_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string message = 4;</code>
+         * @param value The message to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessage(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          message_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string message = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMessage() {
+          
+          message_ = getDefaultInstance().getMessage();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string message = 4;</code>
+         * @param value The bytes for message to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessageBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          message_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int messageType_ = 0;
+        /**
+         * <code>.proto.RoomMessageType message_type = 5;</code>
+         * @return The enum numeric value on the wire for messageType.
+         */
+        @java.lang.Override public int getMessageTypeValue() {
+          return messageType_;
+        }
+        /**
+         * <code>.proto.RoomMessageType message_type = 5;</code>
+         * @param value The enum numeric value on the wire for messageType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessageTypeValue(int value) {
+          
+          messageType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.proto.RoomMessageType message_type = 5;</code>
+         * @return The messageType.
+         */
+        @java.lang.Override
+        public net.iGap.proto.ProtoGlobal.RoomMessageType getMessageType() {
+          @SuppressWarnings("deprecation")
+          net.iGap.proto.ProtoGlobal.RoomMessageType result = net.iGap.proto.ProtoGlobal.RoomMessageType.valueOf(messageType_);
+          return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageType.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.proto.RoomMessageType message_type = 5;</code>
+         * @param value The messageType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessageType(net.iGap.proto.ProtoGlobal.RoomMessageType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          messageType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.proto.RoomMessageType message_type = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMessageType() {
+          
+          messageType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int createTime_ ;
+        /**
+         * <code>uint32 create_time = 6;</code>
+         * @return The createTime.
+         */
+        @java.lang.Override
+        public int getCreateTime() {
+          return createTime_;
+        }
+        /**
+         * <code>uint32 create_time = 6;</code>
+         * @param value The createTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCreateTime(int value) {
+          
+          createTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 create_time = 6;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearCreateTime() {
+          
+          createTime_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File file_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder> fileBuilder_;
+        /**
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+         * @return Whether the file field is set.
+         */
+        public boolean hasFile() {
+          return fileBuilder_ != null || file_ != null;
+        }
+        /**
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+         * @return The file.
+         */
+        public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File getFile() {
+          if (fileBuilder_ == null) {
+            return file_ == null ? net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.getDefaultInstance() : file_;
+          } else {
+            return fileBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
+         */
+        public Builder setFile(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File value) {
+          if (fileBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            message_ = value;
+            file_ = value;
             onChanged();
           } else {
-            messageBuilder_.setMessage(value);
+            fileBuilder_.setMessage(value);
           }
 
           return this;
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
          */
-        public Builder setMessage(
-            net.iGap.proto.ProtoGlobal.RoomMessage.Builder builderForValue) {
-          if (messageBuilder_ == null) {
-            message_ = builderForValue.build();
+        public Builder setFile(
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder builderForValue) {
+          if (fileBuilder_ == null) {
+            file_ = builderForValue.build();
             onChanged();
           } else {
-            messageBuilder_.setMessage(builderForValue.build());
+            fileBuilder_.setMessage(builderForValue.build());
           }
 
           return this;
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
          */
-        public Builder mergeMessage(net.iGap.proto.ProtoGlobal.RoomMessage value) {
-          if (messageBuilder_ == null) {
-            if (message_ != null) {
-              message_ =
-                net.iGap.proto.ProtoGlobal.RoomMessage.newBuilder(message_).mergeFrom(value).buildPartial();
+        public Builder mergeFile(net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File value) {
+          if (fileBuilder_ == null) {
+            if (file_ != null) {
+              file_ =
+                net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.newBuilder(file_).mergeFrom(value).buildPartial();
             } else {
-              message_ = value;
+              file_ = value;
             }
             onChanged();
           } else {
-            messageBuilder_.mergeFrom(value);
+            fileBuilder_.mergeFrom(value);
           }
 
           return this;
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
          */
-        public Builder clearMessage() {
-          if (messageBuilder_ == null) {
-            message_ = null;
+        public Builder clearFile() {
+          if (fileBuilder_ == null) {
+            file_ = null;
             onChanged();
           } else {
-            message_ = null;
-            messageBuilder_ = null;
+            file_ = null;
+            fileBuilder_ = null;
           }
 
           return this;
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
          */
-        public net.iGap.proto.ProtoGlobal.RoomMessage.Builder getMessageBuilder() {
+        public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder getFileBuilder() {
           
           onChanged();
-          return getMessageFieldBuilder().getBuilder();
+          return getFileFieldBuilder().getBuilder();
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
          */
-        public net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder getMessageOrBuilder() {
-          if (messageBuilder_ != null) {
-            return messageBuilder_.getMessageOrBuilder();
+        public net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder getFileOrBuilder() {
+          if (fileBuilder_ != null) {
+            return fileBuilder_.getMessageOrBuilder();
           } else {
-            return message_ == null ?
-                net.iGap.proto.ProtoGlobal.RoomMessage.getDefaultInstance() : message_;
+            return file_ == null ?
+                net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.getDefaultInstance() : file_;
           }
         }
         /**
-         * <code>.proto.RoomMessage message = 2;</code>
+         * <code>.proto.ClientSearchMessageResponse.Result.File file = 7;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            net.iGap.proto.ProtoGlobal.RoomMessage, net.iGap.proto.ProtoGlobal.RoomMessage.Builder, net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder> 
-            getMessageFieldBuilder() {
-          if (messageBuilder_ == null) {
-            messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                net.iGap.proto.ProtoGlobal.RoomMessage, net.iGap.proto.ProtoGlobal.RoomMessage.Builder, net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder>(
-                    getMessage(),
+            net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder> 
+            getFileFieldBuilder() {
+          if (fileBuilder_ == null) {
+            fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.File.Builder, net.iGap.proto.ProtoClientSearchMessage.ClientSearchMessageResponse.Result.FileOrBuilder>(
+                    getFile(),
                     getParentForChildren(),
                     isClean());
-            message_ = null;
+            file_ = null;
           }
-          return messageBuilder_;
+          return fileBuilder_;
+        }
+
+        private int viewCount_ ;
+        /**
+         * <code>uint32 view_count = 10;</code>
+         * @return The viewCount.
+         */
+        @java.lang.Override
+        public int getViewCount() {
+          return viewCount_;
+        }
+        /**
+         * <code>uint32 view_count = 10;</code>
+         * @param value The viewCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setViewCount(int value) {
+          
+          viewCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 view_count = 10;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearViewCount() {
+          
+          viewCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int reactionCount_ ;
+        /**
+         * <code>uint32 reaction_count = 11;</code>
+         * @return The reactionCount.
+         */
+        @java.lang.Override
+        public int getReactionCount() {
+          return reactionCount_;
+        }
+        /**
+         * <code>uint32 reaction_count = 11;</code>
+         * @param value The reactionCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReactionCount(int value) {
+          
+          reactionCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 reaction_count = 11;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearReactionCount() {
+          
+          reactionCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean hasLink_ ;
+        /**
+         * <code>bool has_link = 12;</code>
+         * @return The hasLink.
+         */
+        @java.lang.Override
+        public boolean getHasLink() {
+          return hasLink_;
+        }
+        /**
+         * <code>bool has_link = 12;</code>
+         * @param value The hasLink to set.
+         * @return This builder for chaining.
+         */
+        public Builder setHasLink(boolean value) {
+          
+          hasLink_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool has_link = 12;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearHasLink() {
+          
+          hasLink_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean isBot_ ;
+        /**
+         * <code>bool isBot = 13;</code>
+         * @return The isBot.
+         */
+        @java.lang.Override
+        public boolean getIsBot() {
+          return isBot_;
+        }
+        /**
+         * <code>bool isBot = 13;</code>
+         * @param value The isBot to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIsBot(boolean value) {
+          
+          isBot_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool isBot = 13;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIsBot() {
+          
+          isBot_ = false;
+          onChanged();
+          return this;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -3832,6 +5487,11 @@ public final class ProtoClientSearchMessage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_ClientSearchMessageResponse_Result_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientSearchMessageResponse_Result_File_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientSearchMessageResponse_Result_File_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_PageInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3850,16 +5510,23 @@ public final class ProtoClientSearchMessage {
       "\232\001\n\023ClientSearchMessage\022\037\n\007request\030\001 \001(\013" +
       "2\016.proto.Request\022\r\n\005query\030\002 \001(\t\022\016\n\006roomI" +
       "d\030\003 \001(\004\022\037\n\004type\030\004 \001(\0162\021.proto.SearchType" +
-      "\022\"\n\tpage_info\030\005 \001(\0132\017.proto.PageInfo\"\346\001\n" +
+      "\022\"\n\tpage_info\030\005 \001(\0132\017.proto.PageInfo\"\225\004\n" +
       "\033ClientSearchMessageResponse\022!\n\010response" +
       "\030\001 \001(\0132\017.proto.Response\0229\n\006result\030\002 \003(\0132" +
       ").proto.ClientSearchMessageResponse.Resu" +
       "lt\022)\n\020future_page_info\030\003 \001(\0132\017.proto.Pag" +
-      "eInfo\032>\n\006Result\022\017\n\007room_id\030\001 \001(\003\022#\n\007mess" +
-      "age\030\002 \001(\0132\022.proto.RoomMessage\"3\n\010PageInf" +
-      "o\022\022\n\nstart_time\030\001 \001(\004\022\023\n\013ignore_size\030\002 \001" +
-      "(\rB*\n\016net.iGap.protoB\030ProtoClientSearchM" +
-      "essageb\006proto3"
+      "eInfo\032\354\002\n\006Result\022\017\n\007room_id\030\001 \001(\003\022\026\n\016sen" +
+      "der_user_id\030\002 \001(\004\022\"\n\troom_type\030\003 \001(\0162\017.p" +
+      "roto.RoomType\022\017\n\007message\030\004 \001(\t\022,\n\014messag" +
+      "e_type\030\005 \001(\0162\026.proto.RoomMessageType\022\023\n\013" +
+      "create_time\030\006 \001(\r\022<\n\004file\030\007 \001(\0132..proto." +
+      "ClientSearchMessageResponse.Result.File\022" +
+      "\022\n\nview_count\030\n \001(\r\022\026\n\016reaction_count\030\013 " +
+      "\001(\r\022\020\n\010has_link\030\014 \001(\010\022\r\n\005isBot\030\r \001(\010\0326\n\004" +
+      "File\022\021\n\tfile_name\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\014" +
+      "\n\004mime\030\003 \001(\t\"3\n\010PageInfo\022\022\n\nstart_time\030\001" +
+      " \001(\004\022\023\n\013ignore_size\030\002 \001(\rB*\n\016net.iGap.pr" +
+      "otoB\030ProtoClientSearchMessageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3885,7 +5552,13 @@ public final class ProtoClientSearchMessage {
     internal_static_proto_ClientSearchMessageResponse_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchMessageResponse_Result_descriptor,
-        new java.lang.String[] { "RoomId", "Message", });
+        new java.lang.String[] { "RoomId", "SenderUserId", "RoomType", "Message", "MessageType", "CreateTime", "File", "ViewCount", "ReactionCount", "HasLink", "IsBot", });
+    internal_static_proto_ClientSearchMessageResponse_Result_File_descriptor =
+      internal_static_proto_ClientSearchMessageResponse_Result_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ClientSearchMessageResponse_Result_File_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientSearchMessageResponse_Result_File_descriptor,
+        new java.lang.String[] { "FileName", "Token", "Mime", });
     internal_static_proto_PageInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_PageInfo_fieldAccessorTable = new
