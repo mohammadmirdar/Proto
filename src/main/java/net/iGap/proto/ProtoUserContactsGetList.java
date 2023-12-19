@@ -677,6 +677,18 @@ public final class ProtoUserContactsGetList {
      */
     net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getRegisteredUserOrBuilder(
         int index);
+
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The contactListVersion.
+     */
+    java.lang.String getContactListVersion();
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The bytes for contactListVersion.
+     */
+    com.google.protobuf.ByteString
+        getContactListVersionBytes();
   }
   /**
    * Protobuf type {@code proto.UserContactsGetListResponse}
@@ -692,6 +704,7 @@ public final class ProtoUserContactsGetList {
     }
     private UserContactsGetListResponse() {
       registeredUser_ = java.util.Collections.emptyList();
+      contactListVersion_ = "";
     }
 
     @java.lang.Override
@@ -745,6 +758,12 @@ public final class ProtoUserContactsGetList {
               }
               registeredUser_.add(
                   input.readMessage(net.iGap.proto.ProtoGlobal.RegisteredUser.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contactListVersion_ = s;
               break;
             }
             default: {
@@ -848,6 +867,44 @@ public final class ProtoUserContactsGetList {
       return registeredUser_.get(index);
     }
 
+    public static final int CONTACT_LIST_VERSION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object contactListVersion_;
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The contactListVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getContactListVersion() {
+      java.lang.Object ref = contactListVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contactListVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The bytes for contactListVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContactListVersionBytes() {
+      java.lang.Object ref = contactListVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contactListVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -868,6 +925,9 @@ public final class ProtoUserContactsGetList {
       for (int i = 0; i < registeredUser_.size(); i++) {
         output.writeMessage(2, registeredUser_.get(i));
       }
+      if (!getContactListVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contactListVersion_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -884,6 +944,9 @@ public final class ProtoUserContactsGetList {
       for (int i = 0; i < registeredUser_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, registeredUser_.get(i));
+      }
+      if (!getContactListVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contactListVersion_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -907,6 +970,8 @@ public final class ProtoUserContactsGetList {
       }
       if (!getRegisteredUserList()
           .equals(other.getRegisteredUserList())) return false;
+      if (!getContactListVersion()
+          .equals(other.getContactListVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -926,6 +991,8 @@ public final class ProtoUserContactsGetList {
         hash = (37 * hash) + REGISTERED_USER_FIELD_NUMBER;
         hash = (53 * hash) + getRegisteredUserList().hashCode();
       }
+      hash = (37 * hash) + CONTACT_LIST_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getContactListVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1072,6 +1139,8 @@ public final class ProtoUserContactsGetList {
         } else {
           registeredUserBuilder_.clear();
         }
+        contactListVersion_ = "";
+
         return this;
       }
 
@@ -1113,6 +1182,7 @@ public final class ProtoUserContactsGetList {
         } else {
           result.registeredUser_ = registeredUserBuilder_.build();
         }
+        result.contactListVersion_ = contactListVersion_;
         onBuilt();
         return result;
       }
@@ -1189,6 +1259,10 @@ public final class ProtoUserContactsGetList {
               registeredUserBuilder_.addAllMessages(other.registeredUser_);
             }
           }
+        }
+        if (!other.getContactListVersion().isEmpty()) {
+          contactListVersion_ = other.contactListVersion_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1578,6 +1652,82 @@ public final class ProtoUserContactsGetList {
         }
         return registeredUserBuilder_;
       }
+
+      private java.lang.Object contactListVersion_ = "";
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @return The contactListVersion.
+       */
+      public java.lang.String getContactListVersion() {
+        java.lang.Object ref = contactListVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contactListVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @return The bytes for contactListVersion.
+       */
+      public com.google.protobuf.ByteString
+          getContactListVersionBytes() {
+        java.lang.Object ref = contactListVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contactListVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @param value The contactListVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContactListVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contactListVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContactListVersion() {
+        
+        contactListVersion_ = getDefaultInstance().getContactListVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @param value The bytes for contactListVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContactListVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contactListVersion_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1653,11 +1803,12 @@ public final class ProtoUserContactsGetList {
       "\n\031UserContactsGetList.proto\022\005proto\032\rRequ" +
       "est.proto\032\016Response.proto\032\014Global.proto\"" +
       "6\n\023UserContactsGetList\022\037\n\007request\030\001 \001(\0132" +
-      "\016.proto.Request\"p\n\033UserContactsGetListRe" +
-      "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
-      "e\022.\n\017registered_user\030\002 \003(\0132\025.proto.Regis" +
-      "teredUserB*\n\016net.iGap.protoB\030ProtoUserCo" +
-      "ntactsGetListb\006proto3"
+      "\016.proto.Request\"\216\001\n\033UserContactsGetListR" +
+      "esponse\022!\n\010response\030\001 \001(\0132\017.proto.Respon" +
+      "se\022.\n\017registered_user\030\002 \003(\0132\025.proto.Regi" +
+      "steredUser\022\034\n\024contact_list_version\030\003 \001(\t" +
+      "B*\n\016net.iGap.protoB\030ProtoUserContactsGet" +
+      "Listb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1677,7 +1828,7 @@ public final class ProtoUserContactsGetList {
     internal_static_proto_UserContactsGetListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserContactsGetListResponse_descriptor,
-        new java.lang.String[] { "Response", "RegisteredUser", });
+        new java.lang.String[] { "Response", "RegisteredUser", "ContactListVersion", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();

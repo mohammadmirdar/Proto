@@ -2291,6 +2291,18 @@ public final class ProtoUserContactsImport {
      */
     net.iGap.proto.ProtoUserContactsImport.UserContactsImportResponse.ContactOrBuilder getRegisteredContactsOrBuilder(
         int index);
+
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The contactListVersion.
+     */
+    java.lang.String getContactListVersion();
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The bytes for contactListVersion.
+     */
+    com.google.protobuf.ByteString
+        getContactListVersionBytes();
   }
   /**
    * Protobuf type {@code proto.UserContactsImportResponse}
@@ -2306,6 +2318,7 @@ public final class ProtoUserContactsImport {
     }
     private UserContactsImportResponse() {
       registeredContacts_ = java.util.Collections.emptyList();
+      contactListVersion_ = "";
     }
 
     @java.lang.Override
@@ -2359,6 +2372,12 @@ public final class ProtoUserContactsImport {
               }
               registeredContacts_.add(
                   input.readMessage(net.iGap.proto.ProtoUserContactsImport.UserContactsImportResponse.Contact.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contactListVersion_ = s;
               break;
             }
             default: {
@@ -3101,6 +3120,44 @@ public final class ProtoUserContactsImport {
       return registeredContacts_.get(index);
     }
 
+    public static final int CONTACT_LIST_VERSION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object contactListVersion_;
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The contactListVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getContactListVersion() {
+      java.lang.Object ref = contactListVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contactListVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string contact_list_version = 3;</code>
+     * @return The bytes for contactListVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContactListVersionBytes() {
+      java.lang.Object ref = contactListVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contactListVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3121,6 +3178,9 @@ public final class ProtoUserContactsImport {
       for (int i = 0; i < registeredContacts_.size(); i++) {
         output.writeMessage(2, registeredContacts_.get(i));
       }
+      if (!getContactListVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contactListVersion_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3137,6 +3197,9 @@ public final class ProtoUserContactsImport {
       for (int i = 0; i < registeredContacts_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, registeredContacts_.get(i));
+      }
+      if (!getContactListVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contactListVersion_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3160,6 +3223,8 @@ public final class ProtoUserContactsImport {
       }
       if (!getRegisteredContactsList()
           .equals(other.getRegisteredContactsList())) return false;
+      if (!getContactListVersion()
+          .equals(other.getContactListVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3179,6 +3244,8 @@ public final class ProtoUserContactsImport {
         hash = (37 * hash) + REGISTERED_CONTACTS_FIELD_NUMBER;
         hash = (53 * hash) + getRegisteredContactsList().hashCode();
       }
+      hash = (37 * hash) + CONTACT_LIST_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getContactListVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3325,6 +3392,8 @@ public final class ProtoUserContactsImport {
         } else {
           registeredContactsBuilder_.clear();
         }
+        contactListVersion_ = "";
+
         return this;
       }
 
@@ -3366,6 +3435,7 @@ public final class ProtoUserContactsImport {
         } else {
           result.registeredContacts_ = registeredContactsBuilder_.build();
         }
+        result.contactListVersion_ = contactListVersion_;
         onBuilt();
         return result;
       }
@@ -3442,6 +3512,10 @@ public final class ProtoUserContactsImport {
               registeredContactsBuilder_.addAllMessages(other.registeredContacts_);
             }
           }
+        }
+        if (!other.getContactListVersion().isEmpty()) {
+          contactListVersion_ = other.contactListVersion_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3831,6 +3905,82 @@ public final class ProtoUserContactsImport {
         }
         return registeredContactsBuilder_;
       }
+
+      private java.lang.Object contactListVersion_ = "";
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @return The contactListVersion.
+       */
+      public java.lang.String getContactListVersion() {
+        java.lang.Object ref = contactListVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contactListVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @return The bytes for contactListVersion.
+       */
+      public com.google.protobuf.ByteString
+          getContactListVersionBytes() {
+        java.lang.Object ref = contactListVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contactListVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @param value The contactListVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContactListVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contactListVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContactListVersion() {
+        
+        contactListVersion_ = getDefaultInstance().getContactListVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contact_list_version = 3;</code>
+       * @param value The bytes for contactListVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContactListVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contactListVersion_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3920,13 +4070,13 @@ public final class ProtoUserContactsImport {
       "mport.Contact\022\r\n\005force\030\003 \001(\010\022\024\n\014contact_" +
       "hash\030\004 \001(\t\032R\n\007Contact\022\r\n\005phone\030\001 \001(\t\022\022\n\n" +
       "first_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022\021\n\tc" +
-      "lient_id\030\004 \001(\t\"\266\001\n\032UserContactsImportRes" +
+      "lient_id\030\004 \001(\t\"\324\001\n\032UserContactsImportRes" +
       "ponse\022!\n\010response\030\001 \001(\0132\017.proto.Response" +
       "\022F\n\023registered_contacts\030\002 \003(\0132).proto.Us" +
-      "erContactsImportResponse.Contact\032-\n\007Cont" +
-      "act\022\021\n\tclient_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\004B" +
-      ")\n\016net.iGap.protoB\027ProtoUserContactsImpo" +
-      "rtb\006proto3"
+      "erContactsImportResponse.Contact\022\034\n\024cont" +
+      "act_list_version\030\003 \001(\t\032-\n\007Contact\022\021\n\tcli" +
+      "ent_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\004B)\n\016net.iGa" +
+      "p.protoB\027ProtoUserContactsImportb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3951,7 +4101,7 @@ public final class ProtoUserContactsImport {
     internal_static_proto_UserContactsImportResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserContactsImportResponse_descriptor,
-        new java.lang.String[] { "Response", "RegisteredContacts", });
+        new java.lang.String[] { "Response", "RegisteredContacts", "ContactListVersion", });
     internal_static_proto_UserContactsImportResponse_Contact_descriptor =
       internal_static_proto_UserContactsImportResponse_descriptor.getNestedTypes().get(0);
     internal_static_proto_UserContactsImportResponse_Contact_fieldAccessorTable = new
