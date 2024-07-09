@@ -41,10 +41,24 @@ public final class ProtoChatGetRoom {
     long getPeerId();
 
     /**
+     * <pre>
+     * If you make this field true, only roomId will be sent in the response
+     * </pre>
+     *
      * <code>bool only_room_id = 3;</code>
      * @return The onlyRoomId.
      */
     boolean getOnlyRoomId();
+
+    /**
+     * <pre>
+     * If you make this field true, roomId won't be create and just room info will be respond to client if exist
+     * </pre>
+     *
+     * <code>bool no_create = 4;</code>
+     * @return The noCreate.
+     */
+    boolean getNoCreate();
   }
   /**
    * Protobuf type {@code proto.ChatGetRoom}
@@ -122,12 +136,31 @@ public final class ProtoChatGetRoom {
     public static final int ONLY_ROOM_ID_FIELD_NUMBER = 3;
     private boolean onlyRoomId_ = false;
     /**
+     * <pre>
+     * If you make this field true, only roomId will be sent in the response
+     * </pre>
+     *
      * <code>bool only_room_id = 3;</code>
      * @return The onlyRoomId.
      */
     @java.lang.Override
     public boolean getOnlyRoomId() {
       return onlyRoomId_;
+    }
+
+    public static final int NO_CREATE_FIELD_NUMBER = 4;
+    private boolean noCreate_ = false;
+    /**
+     * <pre>
+     * If you make this field true, roomId won't be create and just room info will be respond to client if exist
+     * </pre>
+     *
+     * <code>bool no_create = 4;</code>
+     * @return The noCreate.
+     */
+    @java.lang.Override
+    public boolean getNoCreate() {
+      return noCreate_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,6 +186,9 @@ public final class ProtoChatGetRoom {
       if (onlyRoomId_ != false) {
         output.writeBool(3, onlyRoomId_);
       }
+      if (noCreate_ != false) {
+        output.writeBool(4, noCreate_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -173,6 +209,10 @@ public final class ProtoChatGetRoom {
       if (onlyRoomId_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, onlyRoomId_);
+      }
+      if (noCreate_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, noCreate_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -198,6 +238,8 @@ public final class ProtoChatGetRoom {
           != other.getPeerId()) return false;
       if (getOnlyRoomId()
           != other.getOnlyRoomId()) return false;
+      if (getNoCreate()
+          != other.getNoCreate()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -219,6 +261,9 @@ public final class ProtoChatGetRoom {
       hash = (37 * hash) + ONLY_ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getOnlyRoomId());
+      hash = (37 * hash) + NO_CREATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNoCreate());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -363,6 +408,7 @@ public final class ProtoChatGetRoom {
         }
         peerId_ = 0L;
         onlyRoomId_ = false;
+        noCreate_ = false;
         return this;
       }
 
@@ -408,6 +454,9 @@ public final class ProtoChatGetRoom {
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.onlyRoomId_ = onlyRoomId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.noCreate_ = noCreate_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -465,6 +514,9 @@ public final class ProtoChatGetRoom {
         if (other.getOnlyRoomId() != false) {
           setOnlyRoomId(other.getOnlyRoomId());
         }
+        if (other.getNoCreate() != false) {
+          setNoCreate(other.getNoCreate());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -508,6 +560,11 @@ public final class ProtoChatGetRoom {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+              case 32: {
+                noCreate_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -680,6 +737,10 @@ public final class ProtoChatGetRoom {
 
       private boolean onlyRoomId_ ;
       /**
+       * <pre>
+       * If you make this field true, only roomId will be sent in the response
+       * </pre>
+       *
        * <code>bool only_room_id = 3;</code>
        * @return The onlyRoomId.
        */
@@ -688,6 +749,10 @@ public final class ProtoChatGetRoom {
         return onlyRoomId_;
       }
       /**
+       * <pre>
+       * If you make this field true, only roomId will be sent in the response
+       * </pre>
+       *
        * <code>bool only_room_id = 3;</code>
        * @param value The onlyRoomId to set.
        * @return This builder for chaining.
@@ -700,12 +765,60 @@ public final class ProtoChatGetRoom {
         return this;
       }
       /**
+       * <pre>
+       * If you make this field true, only roomId will be sent in the response
+       * </pre>
+       *
        * <code>bool only_room_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearOnlyRoomId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         onlyRoomId_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean noCreate_ ;
+      /**
+       * <pre>
+       * If you make this field true, roomId won't be create and just room info will be respond to client if exist
+       * </pre>
+       *
+       * <code>bool no_create = 4;</code>
+       * @return The noCreate.
+       */
+      @java.lang.Override
+      public boolean getNoCreate() {
+        return noCreate_;
+      }
+      /**
+       * <pre>
+       * If you make this field true, roomId won't be create and just room info will be respond to client if exist
+       * </pre>
+       *
+       * <code>bool no_create = 4;</code>
+       * @param value The noCreate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNoCreate(boolean value) {
+
+        noCreate_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If you make this field true, roomId won't be create and just room info will be respond to client if exist
+       * </pre>
+       *
+       * <code>bool no_create = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNoCreate() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        noCreate_ = false;
         onChanged();
         return this;
       }
@@ -1605,13 +1718,13 @@ public final class ProtoChatGetRoom {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ChatGetRoom.proto\022\005proto\032\rRequest.prot" +
-      "o\032\016Response.proto\032\014Global.proto\"U\n\013ChatG" +
+      "o\032\016Response.proto\032\014Global.proto\"h\n\013ChatG" +
       "etRoom\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022" +
-      "\017\n\007peer_id\030\002 \001(\004\022\024\n\014only_room_id\030\003 \001(\010\"S" +
-      "\n\023ChatGetRoomResponse\022!\n\010response\030\001 \001(\0132" +
-      "\017.proto.Response\022\031\n\004room\030\002 \001(\0132\013.proto.R" +
-      "oomB\"\n\016net.iGap.protoB\020ProtoChatGetRoomb" +
-      "\006proto3"
+      "\017\n\007peer_id\030\002 \001(\004\022\024\n\014only_room_id\030\003 \001(\010\022\021" +
+      "\n\tno_create\030\004 \001(\010\"S\n\023ChatGetRoomResponse" +
+      "\022!\n\010response\030\001 \001(\0132\017.proto.Response\022\031\n\004r" +
+      "oom\030\002 \001(\0132\013.proto.RoomB\"\n\016net.iGap.proto" +
+      "B\020ProtoChatGetRoomb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1625,7 +1738,7 @@ public final class ProtoChatGetRoom {
     internal_static_proto_ChatGetRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatGetRoom_descriptor,
-        new java.lang.String[] { "Request", "PeerId", "OnlyRoomId", });
+        new java.lang.String[] { "Request", "PeerId", "OnlyRoomId", "NoCreate", });
     internal_static_proto_ChatGetRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChatGetRoomResponse_fieldAccessorTable = new
