@@ -1,0 +1,48 @@
+syntax = "proto3";
+package proto;
+import "Response.proto";
+import "Global.proto";
+
+option java_package = "net.iGap.proto";
+option java_outer_classname = "ProtoAdvertisementList";
+
+message AdvertisementList {
+  Response response = 1;
+
+  message Advertisement {
+    enum Type {
+      ILAND = 0;
+      ROOM = 1;
+      EXTERNAL_LINK = 2;
+      ADS_SERVICE = 3;
+    }
+    Type type = 1;
+
+    message Iland {
+      string public_url = 1;
+      int32 discovery_page_id = 2;
+    }
+    Iland iland = 2;
+
+    message Room {
+      int64 roomId = 1;
+      string title = 2;
+      string description = 3;
+      File avatar = 4;
+    }
+    Room room = 3;
+
+    message ExternalLink {
+      string public_url = 1;
+      string link = 2;
+    }
+    ExternalLink external_link = 4;
+
+    message Ads {
+      string link = 1;
+    }
+    Ads ads = 5;
+  }
+
+  repeated Advertisement advertisement = 2;
+}
