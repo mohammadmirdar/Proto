@@ -3253,16 +3253,16 @@ public final class ProtoAdvertisements {
           com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>string link = 1;</code>
-         * @return The link.
+         * <code>string placement_id = 1;</code>
+         * @return The placementId.
          */
-        java.lang.String getLink();
+        java.lang.String getPlacementId();
         /**
-         * <code>string link = 1;</code>
-         * @return The bytes for link.
+         * <code>string placement_id = 1;</code>
+         * @return The bytes for placementId.
          */
         com.google.protobuf.ByteString
-            getLinkBytes();
+            getPlacementIdBytes();
       }
       /**
        * Protobuf type {@code proto.AdvertisementsResponse.Advertisement.Ads}
@@ -3277,7 +3277,7 @@ public final class ProtoAdvertisements {
           super(builder);
         }
         private Ads() {
-          link_ = "";
+          placementId_ = "";
         }
 
         @java.lang.Override
@@ -3300,39 +3300,39 @@ public final class ProtoAdvertisements {
                   net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads.class, net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads.Builder.class);
         }
 
-        public static final int LINK_FIELD_NUMBER = 1;
+        public static final int PLACEMENT_ID_FIELD_NUMBER = 1;
         @SuppressWarnings("serial")
-        private volatile java.lang.Object link_ = "";
+        private volatile java.lang.Object placementId_ = "";
         /**
-         * <code>string link = 1;</code>
-         * @return The link.
+         * <code>string placement_id = 1;</code>
+         * @return The placementId.
          */
         @java.lang.Override
-        public java.lang.String getLink() {
-          java.lang.Object ref = link_;
+        public java.lang.String getPlacementId() {
+          java.lang.Object ref = placementId_;
           if (ref instanceof java.lang.String) {
             return (java.lang.String) ref;
           } else {
             com.google.protobuf.ByteString bs = 
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            link_ = s;
+            placementId_ = s;
             return s;
           }
         }
         /**
-         * <code>string link = 1;</code>
-         * @return The bytes for link.
+         * <code>string placement_id = 1;</code>
+         * @return The bytes for placementId.
          */
         @java.lang.Override
         public com.google.protobuf.ByteString
-            getLinkBytes() {
-          java.lang.Object ref = link_;
+            getPlacementIdBytes() {
+          java.lang.Object ref = placementId_;
           if (ref instanceof java.lang.String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
-            link_ = b;
+            placementId_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
@@ -3353,8 +3353,8 @@ public final class ProtoAdvertisements {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(link_)) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, link_);
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placementId_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, placementId_);
           }
           getUnknownFields().writeTo(output);
         }
@@ -3365,8 +3365,8 @@ public final class ProtoAdvertisements {
           if (size != -1) return size;
 
           size = 0;
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(link_)) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, link_);
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placementId_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, placementId_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -3383,8 +3383,8 @@ public final class ProtoAdvertisements {
           }
           net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads other = (net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads) obj;
 
-          if (!getLink()
-              .equals(other.getLink())) return false;
+          if (!getPlacementId()
+              .equals(other.getPlacementId())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -3396,8 +3396,8 @@ public final class ProtoAdvertisements {
           }
           int hash = 41;
           hash = (19 * hash) + getDescriptor().hashCode();
-          hash = (37 * hash) + LINK_FIELD_NUMBER;
-          hash = (53 * hash) + getLink().hashCode();
+          hash = (37 * hash) + PLACEMENT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getPlacementId().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -3529,7 +3529,7 @@ public final class ProtoAdvertisements {
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            link_ = "";
+            placementId_ = "";
             return this;
           }
 
@@ -3564,7 +3564,7 @@ public final class ProtoAdvertisements {
           private void buildPartial0(net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads result) {
             int from_bitField0_ = bitField0_;
             if (((from_bitField0_ & 0x00000001) != 0)) {
-              result.link_ = link_;
+              result.placementId_ = placementId_;
             }
           }
 
@@ -3612,8 +3612,8 @@ public final class ProtoAdvertisements {
 
           public Builder mergeFrom(net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads other) {
             if (other == net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Ads.getDefaultInstance()) return this;
-            if (!other.getLink().isEmpty()) {
-              link_ = other.link_;
+            if (!other.getPlacementId().isEmpty()) {
+              placementId_ = other.placementId_;
               bitField0_ |= 0x00000001;
               onChanged();
             }
@@ -3644,7 +3644,7 @@ public final class ProtoAdvertisements {
                     done = true;
                     break;
                   case 10: {
-                    link_ = input.readStringRequireUtf8();
+                    placementId_ = input.readStringRequireUtf8();
                     bitField0_ |= 0x00000001;
                     break;
                   } // case 10
@@ -3665,73 +3665,73 @@ public final class ProtoAdvertisements {
           }
           private int bitField0_;
 
-          private java.lang.Object link_ = "";
+          private java.lang.Object placementId_ = "";
           /**
-           * <code>string link = 1;</code>
-           * @return The link.
+           * <code>string placement_id = 1;</code>
+           * @return The placementId.
            */
-          public java.lang.String getLink() {
-            java.lang.Object ref = link_;
+          public java.lang.String getPlacementId() {
+            java.lang.Object ref = placementId_;
             if (!(ref instanceof java.lang.String)) {
               com.google.protobuf.ByteString bs =
                   (com.google.protobuf.ByteString) ref;
               java.lang.String s = bs.toStringUtf8();
-              link_ = s;
+              placementId_ = s;
               return s;
             } else {
               return (java.lang.String) ref;
             }
           }
           /**
-           * <code>string link = 1;</code>
-           * @return The bytes for link.
+           * <code>string placement_id = 1;</code>
+           * @return The bytes for placementId.
            */
           public com.google.protobuf.ByteString
-              getLinkBytes() {
-            java.lang.Object ref = link_;
+              getPlacementIdBytes() {
+            java.lang.Object ref = placementId_;
             if (ref instanceof String) {
               com.google.protobuf.ByteString b = 
                   com.google.protobuf.ByteString.copyFromUtf8(
                       (java.lang.String) ref);
-              link_ = b;
+              placementId_ = b;
               return b;
             } else {
               return (com.google.protobuf.ByteString) ref;
             }
           }
           /**
-           * <code>string link = 1;</code>
-           * @param value The link to set.
+           * <code>string placement_id = 1;</code>
+           * @param value The placementId to set.
            * @return This builder for chaining.
            */
-          public Builder setLink(
+          public Builder setPlacementId(
               java.lang.String value) {
             if (value == null) { throw new NullPointerException(); }
-            link_ = value;
+            placementId_ = value;
             bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
           /**
-           * <code>string link = 1;</code>
+           * <code>string placement_id = 1;</code>
            * @return This builder for chaining.
            */
-          public Builder clearLink() {
-            link_ = getDefaultInstance().getLink();
+          public Builder clearPlacementId() {
+            placementId_ = getDefaultInstance().getPlacementId();
             bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
           /**
-           * <code>string link = 1;</code>
-           * @param value The bytes for link to set.
+           * <code>string placement_id = 1;</code>
+           * @param value The bytes for placementId to set.
            * @return This builder for chaining.
            */
-          public Builder setLinkBytes(
+          public Builder setPlacementIdBytes(
               com.google.protobuf.ByteString value) {
             if (value == null) { throw new NullPointerException(); }
             checkByteStringIsUtf8(value);
-            link_ = value;
+            placementId_ = value;
             bitField0_ |= 0x00000001;
             onChanged();
             return this;
@@ -5965,10 +5965,10 @@ public final class ProtoAdvertisements {
       "\n\024Advertisements.proto\022\005proto\032\016Response." +
       "proto\032\014Global.proto\032\rRequest.proto\"1\n\016Ad" +
       "vertisements\022\037\n\007request\030\001 \001(\0132\016.proto.Re" +
-      "quest\"\373\005\n\026AdvertisementsResponse\022!\n\010resp" +
+      "quest\"\203\006\n\026AdvertisementsResponse\022!\n\010resp" +
       "onse\030\001 \001(\0132\017.proto.Response\022B\n\radvertise" +
       "ment\030\002 \003(\0132+.proto.AdvertisementsRespons" +
-      "e.Advertisement\032\371\004\n\rAdvertisement\022>\n\004typ" +
+      "e.Advertisement\032\201\005\n\rAdvertisement\022>\n\004typ" +
       "e\030\001 \001(\01620.proto.AdvertisementsResponse.A" +
       "dvertisement.Type\022@\n\005iland\030\002 \001(\01321.proto" +
       ".AdvertisementsResponse.Advertisement.Il" +
@@ -5982,10 +5982,10 @@ public final class ProtoAdvertisements {
       "omId\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\023\n\013description" +
       "\030\003 \001(\t\022\033\n\006avatar\030\004 \001(\0132\013.proto.File\0320\n\014E" +
       "xternalLink\022\022\n\npublic_url\030\001 \001(\t\022\014\n\004link\030" +
-      "\002 \001(\t\032\023\n\003Ads\022\014\n\004link\030\001 \001(\t\"?\n\004Type\022\t\n\005IL" +
-      "AND\020\000\022\010\n\004ROOM\020\001\022\021\n\rEXTERNAL_LINK\020\002\022\017\n\013AD" +
-      "S_SERVICE\020\003B%\n\016net.iGap.protoB\023ProtoAdve" +
-      "rtisementsb\006proto3"
+      "\002 \001(\t\032\033\n\003Ads\022\024\n\014placement_id\030\001 \001(\t\"?\n\004Ty" +
+      "pe\022\t\n\005ILAND\020\000\022\010\n\004ROOM\020\001\022\021\n\rEXTERNAL_LINK" +
+      "\020\002\022\017\n\013ADS_SERVICE\020\003B%\n\016net.iGap.protoB\023P" +
+      "rotoAdvertisementsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6035,7 +6035,7 @@ public final class ProtoAdvertisements {
     internal_static_proto_AdvertisementsResponse_Advertisement_Ads_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_AdvertisementsResponse_Advertisement_Ads_descriptor,
-        new java.lang.String[] { "Link", });
+        new java.lang.String[] { "PlacementId", });
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
     net.iGap.proto.ProtoRequest.getDescriptor();
