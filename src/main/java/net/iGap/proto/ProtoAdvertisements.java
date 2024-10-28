@@ -1602,19 +1602,16 @@ public final class ProtoAdvertisements {
             getDescriptionBytes();
 
         /**
-         * <code>.proto.File avatar = 4;</code>
-         * @return Whether the avatar field is set.
+         * <code>string file_url = 4;</code>
+         * @return The fileUrl.
          */
-        boolean hasAvatar();
+        java.lang.String getFileUrl();
         /**
-         * <code>.proto.File avatar = 4;</code>
-         * @return The avatar.
+         * <code>string file_url = 4;</code>
+         * @return The bytes for fileUrl.
          */
-        net.iGap.proto.ProtoGlobal.File getAvatar();
-        /**
-         * <code>.proto.File avatar = 4;</code>
-         */
-        net.iGap.proto.ProtoGlobal.FileOrBuilder getAvatarOrBuilder();
+        com.google.protobuf.ByteString
+            getFileUrlBytes();
       }
       /**
        * Protobuf type {@code proto.AdvertisementsResponse.Advertisement.Room}
@@ -1631,6 +1628,7 @@ public final class ProtoAdvertisements {
         private Room() {
           title_ = "";
           description_ = "";
+          fileUrl_ = "";
         }
 
         @java.lang.Override
@@ -1653,7 +1651,6 @@ public final class ProtoAdvertisements {
                   net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Room.class, net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Room.Builder.class);
         }
 
-        private int bitField0_;
         public static final int ROOMID_FIELD_NUMBER = 1;
         private long roomId_ = 0L;
         /**
@@ -1743,30 +1740,43 @@ public final class ProtoAdvertisements {
           }
         }
 
-        public static final int AVATAR_FIELD_NUMBER = 4;
-        private net.iGap.proto.ProtoGlobal.File avatar_;
+        public static final int FILE_URL_FIELD_NUMBER = 4;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object fileUrl_ = "";
         /**
-         * <code>.proto.File avatar = 4;</code>
-         * @return Whether the avatar field is set.
+         * <code>string file_url = 4;</code>
+         * @return The fileUrl.
          */
         @java.lang.Override
-        public boolean hasAvatar() {
-          return ((bitField0_ & 0x00000001) != 0);
+        public java.lang.String getFileUrl() {
+          java.lang.Object ref = fileUrl_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fileUrl_ = s;
+            return s;
+          }
         }
         /**
-         * <code>.proto.File avatar = 4;</code>
-         * @return The avatar.
+         * <code>string file_url = 4;</code>
+         * @return The bytes for fileUrl.
          */
         @java.lang.Override
-        public net.iGap.proto.ProtoGlobal.File getAvatar() {
-          return avatar_ == null ? net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : avatar_;
-        }
-        /**
-         * <code>.proto.File avatar = 4;</code>
-         */
-        @java.lang.Override
-        public net.iGap.proto.ProtoGlobal.FileOrBuilder getAvatarOrBuilder() {
-          return avatar_ == null ? net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : avatar_;
+        public com.google.protobuf.ByteString
+            getFileUrlBytes() {
+          java.lang.Object ref = fileUrl_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            fileUrl_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
 
         private byte memoizedIsInitialized = -1;
@@ -1792,8 +1802,8 @@ public final class ProtoAdvertisements {
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
           }
-          if (((bitField0_ & 0x00000001) != 0)) {
-            output.writeMessage(4, getAvatar());
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileUrl_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fileUrl_);
           }
           getUnknownFields().writeTo(output);
         }
@@ -1814,9 +1824,8 @@ public final class ProtoAdvertisements {
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
           }
-          if (((bitField0_ & 0x00000001) != 0)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(4, getAvatar());
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileUrl_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fileUrl_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -1839,11 +1848,8 @@ public final class ProtoAdvertisements {
               .equals(other.getTitle())) return false;
           if (!getDescription()
               .equals(other.getDescription())) return false;
-          if (hasAvatar() != other.hasAvatar()) return false;
-          if (hasAvatar()) {
-            if (!getAvatar()
-                .equals(other.getAvatar())) return false;
-          }
+          if (!getFileUrl()
+              .equals(other.getFileUrl())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -1862,10 +1868,8 @@ public final class ProtoAdvertisements {
           hash = (53 * hash) + getTitle().hashCode();
           hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
           hash = (53 * hash) + getDescription().hashCode();
-          if (hasAvatar()) {
-            hash = (37 * hash) + AVATAR_FIELD_NUMBER;
-            hash = (53 * hash) + getAvatar().hashCode();
-          }
+          hash = (37 * hash) + FILE_URL_FIELD_NUMBER;
+          hash = (53 * hash) + getFileUrl().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -1985,19 +1989,13 @@ public final class ProtoAdvertisements {
 
           // Construct using net.iGap.proto.ProtoAdvertisements.AdvertisementsResponse.Advertisement.Room.newBuilder()
           private Builder() {
-            maybeForceBuilderInitialization();
+
           }
 
           private Builder(
               com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-              getAvatarFieldBuilder();
-            }
+
           }
           @java.lang.Override
           public Builder clear() {
@@ -2006,11 +2004,7 @@ public final class ProtoAdvertisements {
             roomId_ = 0L;
             title_ = "";
             description_ = "";
-            avatar_ = null;
-            if (avatarBuilder_ != null) {
-              avatarBuilder_.dispose();
-              avatarBuilder_ = null;
-            }
+            fileUrl_ = "";
             return this;
           }
 
@@ -2053,14 +2047,9 @@ public final class ProtoAdvertisements {
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.description_ = description_;
             }
-            int to_bitField0_ = 0;
             if (((from_bitField0_ & 0x00000008) != 0)) {
-              result.avatar_ = avatarBuilder_ == null
-                  ? avatar_
-                  : avatarBuilder_.build();
-              to_bitField0_ |= 0x00000001;
+              result.fileUrl_ = fileUrl_;
             }
-            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -2120,8 +2109,10 @@ public final class ProtoAdvertisements {
               bitField0_ |= 0x00000004;
               onChanged();
             }
-            if (other.hasAvatar()) {
-              mergeAvatar(other.getAvatar());
+            if (!other.getFileUrl().isEmpty()) {
+              fileUrl_ = other.fileUrl_;
+              bitField0_ |= 0x00000008;
+              onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
@@ -2165,9 +2156,7 @@ public final class ProtoAdvertisements {
                     break;
                   } // case 26
                   case 34: {
-                    input.readMessage(
-                        getAvatarFieldBuilder().getBuilder(),
-                        extensionRegistry);
+                    fileUrl_ = input.readStringRequireUtf8();
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 34
@@ -2364,125 +2353,76 @@ public final class ProtoAdvertisements {
             return this;
           }
 
-          private net.iGap.proto.ProtoGlobal.File avatar_;
-          private com.google.protobuf.SingleFieldBuilderV3<
-              net.iGap.proto.ProtoGlobal.File, net.iGap.proto.ProtoGlobal.File.Builder, net.iGap.proto.ProtoGlobal.FileOrBuilder> avatarBuilder_;
+          private java.lang.Object fileUrl_ = "";
           /**
-           * <code>.proto.File avatar = 4;</code>
-           * @return Whether the avatar field is set.
+           * <code>string file_url = 4;</code>
+           * @return The fileUrl.
            */
-          public boolean hasAvatar() {
-            return ((bitField0_ & 0x00000008) != 0);
-          }
-          /**
-           * <code>.proto.File avatar = 4;</code>
-           * @return The avatar.
-           */
-          public net.iGap.proto.ProtoGlobal.File getAvatar() {
-            if (avatarBuilder_ == null) {
-              return avatar_ == null ? net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : avatar_;
+          public java.lang.String getFileUrl() {
+            java.lang.Object ref = fileUrl_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fileUrl_ = s;
+              return s;
             } else {
-              return avatarBuilder_.getMessage();
+              return (java.lang.String) ref;
             }
           }
           /**
-           * <code>.proto.File avatar = 4;</code>
+           * <code>string file_url = 4;</code>
+           * @return The bytes for fileUrl.
            */
-          public Builder setAvatar(net.iGap.proto.ProtoGlobal.File value) {
-            if (avatarBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              avatar_ = value;
+          public com.google.protobuf.ByteString
+              getFileUrlBytes() {
+            java.lang.Object ref = fileUrl_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              fileUrl_ = b;
+              return b;
             } else {
-              avatarBuilder_.setMessage(value);
+              return (com.google.protobuf.ByteString) ref;
             }
+          }
+          /**
+           * <code>string file_url = 4;</code>
+           * @param value The fileUrl to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFileUrl(
+              java.lang.String value) {
+            if (value == null) { throw new NullPointerException(); }
+            fileUrl_ = value;
             bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
           /**
-           * <code>.proto.File avatar = 4;</code>
+           * <code>string file_url = 4;</code>
+           * @return This builder for chaining.
            */
-          public Builder setAvatar(
-              net.iGap.proto.ProtoGlobal.File.Builder builderForValue) {
-            if (avatarBuilder_ == null) {
-              avatar_ = builderForValue.build();
-            } else {
-              avatarBuilder_.setMessage(builderForValue.build());
-            }
-            bitField0_ |= 0x00000008;
-            onChanged();
-            return this;
-          }
-          /**
-           * <code>.proto.File avatar = 4;</code>
-           */
-          public Builder mergeAvatar(net.iGap.proto.ProtoGlobal.File value) {
-            if (avatarBuilder_ == null) {
-              if (((bitField0_ & 0x00000008) != 0) &&
-                avatar_ != null &&
-                avatar_ != net.iGap.proto.ProtoGlobal.File.getDefaultInstance()) {
-                getAvatarBuilder().mergeFrom(value);
-              } else {
-                avatar_ = value;
-              }
-            } else {
-              avatarBuilder_.mergeFrom(value);
-            }
-            if (avatar_ != null) {
-              bitField0_ |= 0x00000008;
-              onChanged();
-            }
-            return this;
-          }
-          /**
-           * <code>.proto.File avatar = 4;</code>
-           */
-          public Builder clearAvatar() {
+          public Builder clearFileUrl() {
+            fileUrl_ = getDefaultInstance().getFileUrl();
             bitField0_ = (bitField0_ & ~0x00000008);
-            avatar_ = null;
-            if (avatarBuilder_ != null) {
-              avatarBuilder_.dispose();
-              avatarBuilder_ = null;
-            }
             onChanged();
             return this;
           }
           /**
-           * <code>.proto.File avatar = 4;</code>
+           * <code>string file_url = 4;</code>
+           * @param value The bytes for fileUrl to set.
+           * @return This builder for chaining.
            */
-          public net.iGap.proto.ProtoGlobal.File.Builder getAvatarBuilder() {
+          public Builder setFileUrlBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) { throw new NullPointerException(); }
+            checkByteStringIsUtf8(value);
+            fileUrl_ = value;
             bitField0_ |= 0x00000008;
             onChanged();
-            return getAvatarFieldBuilder().getBuilder();
-          }
-          /**
-           * <code>.proto.File avatar = 4;</code>
-           */
-          public net.iGap.proto.ProtoGlobal.FileOrBuilder getAvatarOrBuilder() {
-            if (avatarBuilder_ != null) {
-              return avatarBuilder_.getMessageOrBuilder();
-            } else {
-              return avatar_ == null ?
-                  net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : avatar_;
-            }
-          }
-          /**
-           * <code>.proto.File avatar = 4;</code>
-           */
-          private com.google.protobuf.SingleFieldBuilderV3<
-              net.iGap.proto.ProtoGlobal.File, net.iGap.proto.ProtoGlobal.File.Builder, net.iGap.proto.ProtoGlobal.FileOrBuilder> 
-              getAvatarFieldBuilder() {
-            if (avatarBuilder_ == null) {
-              avatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  net.iGap.proto.ProtoGlobal.File, net.iGap.proto.ProtoGlobal.File.Builder, net.iGap.proto.ProtoGlobal.FileOrBuilder>(
-                      getAvatar(),
-                      getParentForChildren(),
-                      isClean());
-              avatar_ = null;
-            }
-            return avatarBuilder_;
+            return this;
           }
           @java.lang.Override
           public final Builder setUnknownFields(
@@ -5963,35 +5903,34 @@ public final class ProtoAdvertisements {
   static {
     java.lang.String[] descriptorData = {
       "\n\024Advertisements.proto\022\005proto\032\016Response." +
-      "proto\032\014Global.proto\032\rRequest.proto\"1\n\016Ad" +
-      "vertisements\022\037\n\007request\030\001 \001(\0132\016.proto.Re" +
-      "quest\"\203\006\n\026AdvertisementsResponse\022!\n\010resp" +
-      "onse\030\001 \001(\0132\017.proto.Response\022B\n\radvertise" +
-      "ment\030\002 \003(\0132+.proto.AdvertisementsRespons" +
-      "e.Advertisement\032\201\005\n\rAdvertisement\022>\n\004typ" +
-      "e\030\001 \001(\01620.proto.AdvertisementsResponse.A" +
-      "dvertisement.Type\022@\n\005iland\030\002 \001(\01321.proto" +
-      ".AdvertisementsResponse.Advertisement.Il" +
-      "and\022>\n\004room\030\003 \001(\01320.proto.Advertisements" +
-      "Response.Advertisement.Room\022O\n\rexternal_" +
-      "link\030\004 \001(\01328.proto.AdvertisementsRespons" +
-      "e.Advertisement.ExternalLink\022<\n\003ads\030\005 \001(" +
-      "\0132/.proto.AdvertisementsResponse.Adverti" +
-      "sement.Ads\0326\n\005Iland\022\022\n\npublic_url\030\001 \001(\t\022" +
-      "\031\n\021discovery_page_id\030\002 \001(\005\032W\n\004Room\022\016\n\006ro" +
-      "omId\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\023\n\013description" +
-      "\030\003 \001(\t\022\033\n\006avatar\030\004 \001(\0132\013.proto.File\0320\n\014E" +
-      "xternalLink\022\022\n\npublic_url\030\001 \001(\t\022\014\n\004link\030" +
-      "\002 \001(\t\032\033\n\003Ads\022\024\n\014placement_id\030\001 \001(\t\"?\n\004Ty" +
-      "pe\022\t\n\005ILAND\020\000\022\010\n\004ROOM\020\001\022\021\n\rEXTERNAL_LINK" +
-      "\020\002\022\017\n\013ADS_SERVICE\020\003B%\n\016net.iGap.protoB\023P" +
-      "rotoAdvertisementsb\006proto3"
+      "proto\032\rRequest.proto\"1\n\016Advertisements\022\037" +
+      "\n\007request\030\001 \001(\0132\016.proto.Request\"\370\005\n\026Adve" +
+      "rtisementsResponse\022!\n\010response\030\001 \001(\0132\017.p" +
+      "roto.Response\022B\n\radvertisement\030\002 \003(\0132+.p" +
+      "roto.AdvertisementsResponse.Advertisemen" +
+      "t\032\366\004\n\rAdvertisement\022>\n\004type\030\001 \001(\01620.prot" +
+      "o.AdvertisementsResponse.Advertisement.T" +
+      "ype\022@\n\005iland\030\002 \001(\01321.proto.Advertisement" +
+      "sResponse.Advertisement.Iland\022>\n\004room\030\003 " +
+      "\001(\01320.proto.AdvertisementsResponse.Adver" +
+      "tisement.Room\022O\n\rexternal_link\030\004 \001(\01328.p" +
+      "roto.AdvertisementsResponse.Advertisemen" +
+      "t.ExternalLink\022<\n\003ads\030\005 \001(\0132/.proto.Adve" +
+      "rtisementsResponse.Advertisement.Ads\0326\n\005" +
+      "Iland\022\022\n\npublic_url\030\001 \001(\t\022\031\n\021discovery_p" +
+      "age_id\030\002 \001(\005\032L\n\004Room\022\016\n\006roomId\030\001 \001(\003\022\r\n\005" +
+      "title\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\020\n\010file" +
+      "_url\030\004 \001(\t\0320\n\014ExternalLink\022\022\n\npublic_url" +
+      "\030\001 \001(\t\022\014\n\004link\030\002 \001(\t\032\033\n\003Ads\022\024\n\014placement" +
+      "_id\030\001 \001(\t\"?\n\004Type\022\t\n\005ILAND\020\000\022\010\n\004ROOM\020\001\022\021" +
+      "\n\rEXTERNAL_LINK\020\002\022\017\n\013ADS_SERVICE\020\003B%\n\016ne" +
+      "t.iGap.protoB\023ProtoAdvertisementsb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoResponse.getDescriptor(),
-          net.iGap.proto.ProtoGlobal.getDescriptor(),
           net.iGap.proto.ProtoRequest.getDescriptor(),
         });
     internal_static_proto_Advertisements_descriptor =
@@ -6023,7 +5962,7 @@ public final class ProtoAdvertisements {
     internal_static_proto_AdvertisementsResponse_Advertisement_Room_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_AdvertisementsResponse_Advertisement_Room_descriptor,
-        new java.lang.String[] { "RoomId", "Title", "Description", "Avatar", });
+        new java.lang.String[] { "RoomId", "Title", "Description", "FileUrl", });
     internal_static_proto_AdvertisementsResponse_Advertisement_ExternalLink_descriptor =
       internal_static_proto_AdvertisementsResponse_Advertisement_descriptor.getNestedTypes().get(2);
     internal_static_proto_AdvertisementsResponse_Advertisement_ExternalLink_fieldAccessorTable = new
@@ -6037,7 +5976,6 @@ public final class ProtoAdvertisements {
         internal_static_proto_AdvertisementsResponse_Advertisement_Ads_descriptor,
         new java.lang.String[] { "PlacementId", });
     net.iGap.proto.ProtoResponse.getDescriptor();
-    net.iGap.proto.ProtoGlobal.getDescriptor();
     net.iGap.proto.ProtoRequest.getDescriptor();
   }
 
