@@ -900,27 +900,27 @@ public final class ProtoGroupRoomMemberMention {
         int index);
 
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
-    java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info> 
-        getInfoList();
+    java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result> 
+        getResultList();
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
-    net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info getInfo(int index);
+    net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result getResult(int index);
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
-    int getInfoCount();
+    int getResultCount();
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
-    java.util.List<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder> 
-        getInfoOrBuilderList();
+    java.util.List<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder> 
+        getResultOrBuilderList();
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
-    net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder getInfoOrBuilder(
+    net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder getResultOrBuilder(
         int index);
   }
   /**
@@ -937,7 +937,7 @@ public final class ProtoGroupRoomMemberMention {
     }
     private GroupRoomMemberMentionResponse() {
       users_ = java.util.Collections.emptyList();
-      info_ = java.util.Collections.emptyList();
+      result_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -960,8 +960,8 @@ public final class ProtoGroupRoomMemberMention {
               net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.class, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Builder.class);
     }
 
-    public interface InfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:proto.GroupRoomMemberMentionResponse.Info)
+    public interface ResultOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.GroupRoomMemberMentionResponse.Result)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -1012,18 +1012,18 @@ public final class ProtoGroupRoomMemberMention {
           getUsernameBytes();
     }
     /**
-     * Protobuf type {@code proto.GroupRoomMemberMentionResponse.Info}
+     * Protobuf type {@code proto.GroupRoomMemberMentionResponse.Result}
      */
-    public static final class Info extends
+    public static final class Result extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:proto.GroupRoomMemberMentionResponse.Info)
-        InfoOrBuilder {
+        // @@protoc_insertion_point(message_implements:proto.GroupRoomMemberMentionResponse.Result)
+        ResultOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use Info.newBuilder() to construct.
-      private Info(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use Result.newBuilder() to construct.
+      private Result(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private Info() {
+      private Result() {
         role_ = 0;
         displayName_ = "";
         username_ = "";
@@ -1033,20 +1033,20 @@ public final class ProtoGroupRoomMemberMention {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(
           UnusedPrivateParameter unused) {
-        return new Info();
+        return new Result();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Info_descriptor;
+        return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Result_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Info_fieldAccessorTable
+        return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Result_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.class, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder.class);
+                net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.class, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder.class);
       }
 
       public static final int ROOM_ID_FIELD_NUMBER = 2;
@@ -1233,10 +1233,10 @@ public final class ProtoGroupRoomMemberMention {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info)) {
+        if (!(obj instanceof net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result)) {
           return super.equals(obj);
         }
-        net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info other = (net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info) obj;
+        net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result other = (net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result) obj;
 
         if (getRoomId()
             != other.getRoomId()) return false;
@@ -1275,44 +1275,44 @@ public final class ProtoGroupRoomMemberMention {
         return hash;
       }
 
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(byte[] data)
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(java.io.InputStream input)
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1320,26 +1320,26 @@ public final class ProtoGroupRoomMemberMention {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseDelimitedFrom(java.io.InputStream input)
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
 
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseDelimitedFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info parseFrom(
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1352,7 +1352,7 @@ public final class ProtoGroupRoomMemberMention {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info prototype) {
+      public static Builder newBuilder(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       @java.lang.Override
@@ -1368,26 +1368,26 @@ public final class ProtoGroupRoomMemberMention {
         return builder;
       }
       /**
-       * Protobuf type {@code proto.GroupRoomMemberMentionResponse.Info}
+       * Protobuf type {@code proto.GroupRoomMemberMentionResponse.Result}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:proto.GroupRoomMemberMentionResponse.Info)
-          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder {
+          // @@protoc_insertion_point(builder_implements:proto.GroupRoomMemberMentionResponse.Result)
+          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Info_descriptor;
+          return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Result_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Info_fieldAccessorTable
+          return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Result_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.class, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder.class);
+                  net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.class, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder.class);
         }
 
-        // Construct using net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.newBuilder()
+        // Construct using net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.newBuilder()
         private Builder() {
 
         }
@@ -1412,17 +1412,17 @@ public final class ProtoGroupRoomMemberMention {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Info_descriptor;
+          return net.iGap.proto.ProtoGroupRoomMemberMention.internal_static_proto_GroupRoomMemberMentionResponse_Result_descriptor;
         }
 
         @java.lang.Override
-        public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info getDefaultInstanceForType() {
-          return net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.getDefaultInstance();
+        public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.getDefaultInstance();
         }
 
         @java.lang.Override
-        public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info build() {
-          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info result = buildPartial();
+        public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result build() {
+          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -1430,14 +1430,14 @@ public final class ProtoGroupRoomMemberMention {
         }
 
         @java.lang.Override
-        public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info buildPartial() {
-          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info result = new net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info(this);
+        public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result buildPartial() {
+          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result result = new net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result(this);
           if (bitField0_ != 0) { buildPartial0(result); }
           onBuilt();
           return result;
         }
 
-        private void buildPartial0(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info result) {
+        private void buildPartial0(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.roomId_ = roomId_;
@@ -1490,16 +1490,16 @@ public final class ProtoGroupRoomMemberMention {
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info) {
-            return mergeFrom((net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info)other);
+          if (other instanceof net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result) {
+            return mergeFrom((net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info other) {
-          if (other == net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.getDefaultInstance()) return this;
+        public Builder mergeFrom(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result other) {
+          if (other == net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.getDefaultInstance()) return this;
           if (other.getRoomId() != 0L) {
             setRoomId(other.getRoomId());
           }
@@ -1860,23 +1860,23 @@ public final class ProtoGroupRoomMemberMention {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:proto.GroupRoomMemberMentionResponse.Info)
+        // @@protoc_insertion_point(builder_scope:proto.GroupRoomMemberMentionResponse.Result)
       }
 
-      // @@protoc_insertion_point(class_scope:proto.GroupRoomMemberMentionResponse.Info)
-      private static final net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:proto.GroupRoomMemberMentionResponse.Result)
+      private static final net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result();
       }
 
-      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info getDefaultInstance() {
+      public static net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<Info>
-          PARSER = new com.google.protobuf.AbstractParser<Info>() {
+      private static final com.google.protobuf.Parser<Result>
+          PARSER = new com.google.protobuf.AbstractParser<Result>() {
         @java.lang.Override
-        public Info parsePartialFrom(
+        public Result parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1895,17 +1895,17 @@ public final class ProtoGroupRoomMemberMention {
         }
       };
 
-      public static com.google.protobuf.Parser<Info> parser() {
+      public static com.google.protobuf.Parser<Result> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<Info> getParserForType() {
+      public com.google.protobuf.Parser<Result> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info getDefaultInstanceForType() {
+      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
@@ -1992,45 +1992,45 @@ public final class ProtoGroupRoomMemberMention {
       return users_.get(index);
     }
 
-    public static final int INFO_FIELD_NUMBER = 4;
+    public static final int RESULT_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
-    private java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info> info_;
+    private java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result> result_;
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info> getInfoList() {
-      return info_;
+    public java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result> getResultList() {
+      return result_;
     }
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder> 
-        getInfoOrBuilderList() {
-      return info_;
+    public java.util.List<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder> 
+        getResultOrBuilderList() {
+      return result_;
     }
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
     @java.lang.Override
-    public int getInfoCount() {
-      return info_.size();
+    public int getResultCount() {
+      return result_.size();
     }
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
     @java.lang.Override
-    public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info getInfo(int index) {
-      return info_.get(index);
+    public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result getResult(int index) {
+      return result_.get(index);
     }
     /**
-     * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+     * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
      */
     @java.lang.Override
-    public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder getInfoOrBuilder(
+    public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder getResultOrBuilder(
         int index) {
-      return info_.get(index);
+      return result_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2056,8 +2056,8 @@ public final class ProtoGroupRoomMemberMention {
       for (int i = 0; i < users_.size(); i++) {
         output.writeMessage(3, users_.get(i));
       }
-      for (int i = 0; i < info_.size(); i++) {
-        output.writeMessage(4, info_.get(i));
+      for (int i = 0; i < result_.size(); i++) {
+        output.writeMessage(4, result_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -2080,9 +2080,9 @@ public final class ProtoGroupRoomMemberMention {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, users_.get(i));
       }
-      for (int i = 0; i < info_.size(); i++) {
+      for (int i = 0; i < result_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, info_.get(i));
+          .computeMessageSize(4, result_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2108,8 +2108,8 @@ public final class ProtoGroupRoomMemberMention {
           != other.getRoomId()) return false;
       if (!getUsersList()
           .equals(other.getUsersList())) return false;
-      if (!getInfoList()
-          .equals(other.getInfoList())) return false;
+      if (!getResultList()
+          .equals(other.getResultList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2132,9 +2132,9 @@ public final class ProtoGroupRoomMemberMention {
         hash = (37 * hash) + USERS_FIELD_NUMBER;
         hash = (53 * hash) + getUsersList().hashCode();
       }
-      if (getInfoCount() > 0) {
-        hash = (37 * hash) + INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getInfoList().hashCode();
+      if (getResultCount() > 0) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResultList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2268,7 +2268,7 @@ public final class ProtoGroupRoomMemberMention {
                 .alwaysUseFieldBuilders) {
           getResponseFieldBuilder();
           getUsersFieldBuilder();
-          getInfoFieldBuilder();
+          getResultFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2288,11 +2288,11 @@ public final class ProtoGroupRoomMemberMention {
           usersBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
-        if (infoBuilder_ == null) {
-          info_ = java.util.Collections.emptyList();
+        if (resultBuilder_ == null) {
+          result_ = java.util.Collections.emptyList();
         } else {
-          info_ = null;
-          infoBuilder_.clear();
+          result_ = null;
+          resultBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
@@ -2337,14 +2337,14 @@ public final class ProtoGroupRoomMemberMention {
         } else {
           result.users_ = usersBuilder_.build();
         }
-        if (infoBuilder_ == null) {
+        if (resultBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0)) {
-            info_ = java.util.Collections.unmodifiableList(info_);
+            result_ = java.util.Collections.unmodifiableList(result_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
-          result.info_ = info_;
+          result.result_ = result_;
         } else {
-          result.info_ = infoBuilder_.build();
+          result.result_ = resultBuilder_.build();
         }
       }
 
@@ -2439,29 +2439,29 @@ public final class ProtoGroupRoomMemberMention {
             }
           }
         }
-        if (infoBuilder_ == null) {
-          if (!other.info_.isEmpty()) {
-            if (info_.isEmpty()) {
-              info_ = other.info_;
+        if (resultBuilder_ == null) {
+          if (!other.result_.isEmpty()) {
+            if (result_.isEmpty()) {
+              result_ = other.result_;
               bitField0_ = (bitField0_ & ~0x00000008);
             } else {
-              ensureInfoIsMutable();
-              info_.addAll(other.info_);
+              ensureResultIsMutable();
+              result_.addAll(other.result_);
             }
             onChanged();
           }
         } else {
-          if (!other.info_.isEmpty()) {
-            if (infoBuilder_.isEmpty()) {
-              infoBuilder_.dispose();
-              infoBuilder_ = null;
-              info_ = other.info_;
+          if (!other.result_.isEmpty()) {
+            if (resultBuilder_.isEmpty()) {
+              resultBuilder_.dispose();
+              resultBuilder_ = null;
+              result_ = other.result_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              infoBuilder_ = 
+              resultBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getInfoFieldBuilder() : null;
+                   getResultFieldBuilder() : null;
             } else {
-              infoBuilder_.addAllMessages(other.info_);
+              resultBuilder_.addAllMessages(other.result_);
             }
           }
         }
@@ -2517,15 +2517,15 @@ public final class ProtoGroupRoomMemberMention {
                 break;
               } // case 26
               case 34: {
-                net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info m =
+                net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result m =
                     input.readMessage(
-                        net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.parser(),
+                        net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.parser(),
                         extensionRegistry);
-                if (infoBuilder_ == null) {
-                  ensureInfoIsMutable();
-                  info_.add(m);
+                if (resultBuilder_ == null) {
+                  ensureResultIsMutable();
+                  result_.add(m);
                 } else {
-                  infoBuilder_.addMessage(m);
+                  resultBuilder_.addMessage(m);
                 }
                 break;
               } // case 34
@@ -2945,244 +2945,244 @@ public final class ProtoGroupRoomMemberMention {
         return usersBuilder_;
       }
 
-      private java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info> info_ =
+      private java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result> result_ =
         java.util.Collections.emptyList();
-      private void ensureInfoIsMutable() {
+      private void ensureResultIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          info_ = new java.util.ArrayList<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info>(info_);
+          result_ = new java.util.ArrayList<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result>(result_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder> infoBuilder_;
+          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder> resultBuilder_;
 
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info> getInfoList() {
-        if (infoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(info_);
+      public java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result> getResultList() {
+        if (resultBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(result_);
         } else {
-          return infoBuilder_.getMessageList();
+          return resultBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public int getInfoCount() {
-        if (infoBuilder_ == null) {
-          return info_.size();
+      public int getResultCount() {
+        if (resultBuilder_ == null) {
+          return result_.size();
         } else {
-          return infoBuilder_.getCount();
+          return resultBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info getInfo(int index) {
-        if (infoBuilder_ == null) {
-          return info_.get(index);
+      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result getResult(int index) {
+        if (resultBuilder_ == null) {
+          return result_.get(index);
         } else {
-          return infoBuilder_.getMessage(index);
+          return resultBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder setInfo(
-          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info value) {
-        if (infoBuilder_ == null) {
+      public Builder setResult(
+          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result value) {
+        if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInfoIsMutable();
-          info_.set(index, value);
+          ensureResultIsMutable();
+          result_.set(index, value);
           onChanged();
         } else {
-          infoBuilder_.setMessage(index, value);
+          resultBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder setInfo(
-          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          ensureInfoIsMutable();
-          info_.set(index, builderForValue.build());
+      public Builder setResult(
+          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.set(index, builderForValue.build());
           onChanged();
         } else {
-          infoBuilder_.setMessage(index, builderForValue.build());
+          resultBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder addInfo(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info value) {
-        if (infoBuilder_ == null) {
+      public Builder addResult(net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result value) {
+        if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInfoIsMutable();
-          info_.add(value);
+          ensureResultIsMutable();
+          result_.add(value);
           onChanged();
         } else {
-          infoBuilder_.addMessage(value);
+          resultBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder addInfo(
-          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info value) {
-        if (infoBuilder_ == null) {
+      public Builder addResult(
+          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result value) {
+        if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInfoIsMutable();
-          info_.add(index, value);
+          ensureResultIsMutable();
+          result_.add(index, value);
           onChanged();
         } else {
-          infoBuilder_.addMessage(index, value);
+          resultBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder addInfo(
-          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          ensureInfoIsMutable();
-          info_.add(builderForValue.build());
+      public Builder addResult(
+          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.add(builderForValue.build());
           onChanged();
         } else {
-          infoBuilder_.addMessage(builderForValue.build());
+          resultBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder addInfo(
-          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          ensureInfoIsMutable();
-          info_.add(index, builderForValue.build());
+      public Builder addResult(
+          int index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.add(index, builderForValue.build());
           onChanged();
         } else {
-          infoBuilder_.addMessage(index, builderForValue.build());
+          resultBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder addAllInfo(
-          java.lang.Iterable<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info> values) {
-        if (infoBuilder_ == null) {
-          ensureInfoIsMutable();
+      public Builder addAllResult(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result> values) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, info_);
+              values, result_);
           onChanged();
         } else {
-          infoBuilder_.addAllMessages(values);
+          resultBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          info_ = java.util.Collections.emptyList();
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
-          infoBuilder_.clear();
+          resultBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public Builder removeInfo(int index) {
-        if (infoBuilder_ == null) {
-          ensureInfoIsMutable();
-          info_.remove(index);
+      public Builder removeResult(int index) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.remove(index);
           onChanged();
         } else {
-          infoBuilder_.remove(index);
+          resultBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder getInfoBuilder(
+      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder getResultBuilder(
           int index) {
-        return getInfoFieldBuilder().getBuilder(index);
+        return getResultFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder getInfoOrBuilder(
+      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder getResultOrBuilder(
           int index) {
-        if (infoBuilder_ == null) {
-          return info_.get(index);  } else {
-          return infoBuilder_.getMessageOrBuilder(index);
+        if (resultBuilder_ == null) {
+          return result_.get(index);  } else {
+          return resultBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public java.util.List<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder> 
-           getInfoOrBuilderList() {
-        if (infoBuilder_ != null) {
-          return infoBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder> 
+           getResultOrBuilderList() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(info_);
+          return java.util.Collections.unmodifiableList(result_);
         }
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder addInfoBuilder() {
-        return getInfoFieldBuilder().addBuilder(
-            net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.getDefaultInstance());
+      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder addResultBuilder() {
+        return getResultFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.getDefaultInstance());
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder addInfoBuilder(
+      public net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder addResultBuilder(
           int index) {
-        return getInfoFieldBuilder().addBuilder(
-            index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.getDefaultInstance());
+        return getResultFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.getDefaultInstance());
       }
       /**
-       * <code>repeated .proto.GroupRoomMemberMentionResponse.Info info = 4;</code>
+       * <code>repeated .proto.GroupRoomMemberMentionResponse.Result result = 4;</code>
        */
-      public java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder> 
-           getInfoBuilderList() {
-        return getInfoFieldBuilder().getBuilderList();
+      public java.util.List<net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder> 
+           getResultBuilderList() {
+        return getResultFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          infoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Info.Builder, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.InfoOrBuilder>(
-                  info_,
+          net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.Result.Builder, net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMentionResponse.ResultOrBuilder>(
+                  result_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
-          info_ = null;
+          result_ = null;
         }
-        return infoBuilder_;
+        return resultBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3259,10 +3259,10 @@ public final class ProtoGroupRoomMemberMention {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_GroupRoomMemberMentionResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_GroupRoomMemberMentionResponse_Info_descriptor;
+    internal_static_proto_GroupRoomMemberMentionResponse_Result_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_GroupRoomMemberMentionResponse_Info_fieldAccessorTable;
+      internal_static_proto_GroupRoomMemberMentionResponse_Result_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3276,16 +3276,16 @@ public final class ProtoGroupRoomMemberMention {
       "equest.proto\032\016Response.proto\032\014Global.pro" +
       "to\"Y\n\026GroupRoomMemberMention\022\037\n\007request\030" +
       "\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\r" +
-      "\n\005query\030\003 \001(\t\"\257\002\n\036GroupRoomMemberMention" +
+      "\n\005query\030\003 \001(\t\"\265\002\n\036GroupRoomMemberMention" +
       "Response\022!\n\010response\030\001 \001(\0132\017.proto.Respo" +
       "nse\022\023\n\007room_id\030\002 \001(\004B\002\030\001\022(\n\005users\030\003 \003(\0132" +
-      "\025.proto.RegisteredUserB\002\030\001\0228\n\004info\030\004 \003(\013" +
-      "2*.proto.GroupRoomMemberMentionResponse." +
-      "Info\032q\n\004Info\022\017\n\007room_id\030\002 \001(\004\022\017\n\007user_id" +
-      "\030\003 \001(\004\022\037\n\004role\030\004 \001(\0162\021.proto.MemberRole\022" +
-      "\024\n\014display_name\030\005 \001(\t\022\020\n\010username\030\006 \001(\tB" +
-      "-\n\016net.iGap.protoB\033ProtoGroupRoomMemberM" +
-      "entionb\006proto3"
+      "\025.proto.RegisteredUserB\002\030\001\022<\n\006result\030\004 \003" +
+      "(\0132,.proto.GroupRoomMemberMentionRespons" +
+      "e.Result\032s\n\006Result\022\017\n\007room_id\030\002 \001(\004\022\017\n\007u" +
+      "ser_id\030\003 \001(\004\022\037\n\004role\030\004 \001(\0162\021.proto.Membe" +
+      "rRole\022\024\n\014display_name\030\005 \001(\t\022\020\n\010username\030" +
+      "\006 \001(\tB-\n\016net.iGap.protoB\033ProtoGroupRoomM" +
+      "emberMentionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3305,12 +3305,12 @@ public final class ProtoGroupRoomMemberMention {
     internal_static_proto_GroupRoomMemberMentionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoomMemberMentionResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "Users", "Info", });
-    internal_static_proto_GroupRoomMemberMentionResponse_Info_descriptor =
+        new java.lang.String[] { "Response", "RoomId", "Users", "Result", });
+    internal_static_proto_GroupRoomMemberMentionResponse_Result_descriptor =
       internal_static_proto_GroupRoomMemberMentionResponse_descriptor.getNestedTypes().get(0);
-    internal_static_proto_GroupRoomMemberMentionResponse_Info_fieldAccessorTable = new
+    internal_static_proto_GroupRoomMemberMentionResponse_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_GroupRoomMemberMentionResponse_Info_descriptor,
+        internal_static_proto_GroupRoomMemberMentionResponse_Result_descriptor,
         new java.lang.String[] { "RoomId", "UserId", "Role", "DisplayName", "Username", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();

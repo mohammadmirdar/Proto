@@ -60,6 +60,17 @@ public final class ProtoClientSearch {
      * <code>.proto.Pagination pagination = 3;</code>
      */
     net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder();
+
+    /**
+     * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+     * @return The type.
+     */
+    net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType getType();
   }
   /**
    * Protobuf type {@code proto.ClientSearch}
@@ -75,6 +86,7 @@ public final class ProtoClientSearch {
     }
     private ClientSearch() {
       query_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -95,6 +107,123 @@ public final class ProtoClientSearch {
       return net.iGap.proto.ProtoClientSearch.internal_static_proto_ClientSearch_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               net.iGap.proto.ProtoClientSearch.ClientSearch.class, net.iGap.proto.ProtoClientSearch.ClientSearch.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.ClientSearch.ClientSearchType}
+     */
+    public enum ClientSearchType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ALL = 0;</code>
+       */
+      ALL(0),
+      /**
+       * <code>USER = 1;</code>
+       */
+      USER(1),
+      /**
+       * <code>ROOM = 2;</code>
+       */
+      ROOM(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ALL = 0;</code>
+       */
+      public static final int ALL_VALUE = 0;
+      /**
+       * <code>USER = 1;</code>
+       */
+      public static final int USER_VALUE = 1;
+      /**
+       * <code>ROOM = 2;</code>
+       */
+      public static final int ROOM_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ClientSearchType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ClientSearchType forNumber(int value) {
+        switch (value) {
+          case 0: return ALL;
+          case 1: return USER;
+          case 2: return ROOM;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ClientSearchType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ClientSearchType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ClientSearchType>() {
+              public ClientSearchType findValueByNumber(int number) {
+                return ClientSearchType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientSearch.ClientSearch.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ClientSearchType[] VALUES = values();
+
+      public static ClientSearchType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ClientSearchType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.ClientSearch.ClientSearchType)
     }
 
     private int bitField0_;
@@ -189,6 +318,24 @@ public final class ProtoClientSearch {
       return pagination_ == null ? net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance() : pagination_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_ = 0;
+    /**
+     * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+     * @return The type.
+     */
+    @java.lang.Override public net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType getType() {
+      net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType result = net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType.forNumber(type_);
+      return result == null ? net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -212,6 +359,9 @@ public final class ProtoClientSearch {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getPagination());
       }
+      if (type_ != net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType.ALL.getNumber()) {
+        output.writeEnum(4, type_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -231,6 +381,10 @@ public final class ProtoClientSearch {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPagination());
+      }
+      if (type_ != net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType.ALL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, type_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -259,6 +413,7 @@ public final class ProtoClientSearch {
         if (!getPagination()
             .equals(other.getPagination())) return false;
       }
+      if (type_ != other.type_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -280,6 +435,8 @@ public final class ProtoClientSearch {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
       }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -429,6 +586,7 @@ public final class ProtoClientSearch {
           paginationBuilder_.dispose();
           paginationBuilder_ = null;
         }
+        type_ = 0;
         return this;
       }
 
@@ -477,6 +635,9 @@ public final class ProtoClientSearch {
               ? pagination_
               : paginationBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.type_ = type_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -536,6 +697,9 @@ public final class ProtoClientSearch {
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
         }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -581,6 +745,11 @@ public final class ProtoClientSearch {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 32: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -910,6 +1079,59 @@ public final class ProtoClientSearch {
           pagination_ = null;
         }
         return paginationBuilder_;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType getType() {
+        net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType result = net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType.forNumber(type_);
+        return result == null ? net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(net.iGap.proto.ProtoClientSearch.ClientSearch.ClientSearchType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.ClientSearch.ClientSearchType type = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        type_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3229,20 +3451,22 @@ public final class ProtoClientSearch {
   static {
     java.lang.String[] descriptorData = {
       "\n\022ClientSearch.proto\022\005proto\032\rRequest.pro" +
-      "to\032\016Response.proto\032\014Global.proto\"e\n\014Clie" +
-      "ntSearch\022\037\n\007request\030\001 \001(\0132\016.proto.Reques" +
-      "t\022\r\n\005query\030\002 \001(\t\022%\n\npagination\030\003 \001(\0132\021.p" +
-      "roto.Pagination\"\342\002\n\024ClientSearchResponse" +
-      "\022!\n\010response\030\001 \001(\0132\017.proto.Response\022.\n\004i" +
-      "nfo\030\002 \003(\0132 .proto.ClientSearchResponse.I" +
-      "nfo\032\366\001\n\004Info\022;\n\010category\030\001 \001(\0162).proto.C" +
-      "lientSearchResponse.Info.Category\0223\n\004typ" +
-      "e\030\002 \001(\0162%.proto.ClientSearchResponse.Inf" +
-      "o.Type\022#\n\004user\030\003 \001(\0132\025.proto.RegisteredU" +
-      "ser\022\031\n\004room\030\004 \001(\0132\013.proto.Room\" \n\010Catego" +
-      "ry\022\010\n\004MINE\020\000\022\n\n\006GLOBAL\020\001\"\032\n\004Type\022\010\n\004USER" +
-      "\020\000\022\010\n\004ROOM\020\001B#\n\016net.iGap.protoB\021ProtoCli" +
-      "entSearchb\006proto3"
+      "to\032\016Response.proto\032\014Global.proto\"\312\001\n\014Cli" +
+      "entSearch\022\037\n\007request\030\001 \001(\0132\016.proto.Reque" +
+      "st\022\r\n\005query\030\002 \001(\t\022%\n\npagination\030\003 \001(\0132\021." +
+      "proto.Pagination\0222\n\004type\030\004 \001(\0162$.proto.C" +
+      "lientSearch.ClientSearchType\"/\n\020ClientSe" +
+      "archType\022\007\n\003ALL\020\000\022\010\n\004USER\020\001\022\010\n\004ROOM\020\002\"\342\002" +
+      "\n\024ClientSearchResponse\022!\n\010response\030\001 \001(\013" +
+      "2\017.proto.Response\022.\n\004info\030\002 \003(\0132 .proto." +
+      "ClientSearchResponse.Info\032\366\001\n\004Info\022;\n\010ca" +
+      "tegory\030\001 \001(\0162).proto.ClientSearchRespons" +
+      "e.Info.Category\0223\n\004type\030\002 \001(\0162%.proto.Cl" +
+      "ientSearchResponse.Info.Type\022#\n\004user\030\003 \001" +
+      "(\0132\025.proto.RegisteredUser\022\031\n\004room\030\004 \001(\0132" +
+      "\013.proto.Room\" \n\010Category\022\010\n\004MINE\020\000\022\n\n\006GL" +
+      "OBAL\020\001\"\032\n\004Type\022\010\n\004USER\020\000\022\010\n\004ROOM\020\001B#\n\016ne" +
+      "t.iGap.protoB\021ProtoClientSearchb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3256,7 +3480,7 @@ public final class ProtoClientSearch {
     internal_static_proto_ClientSearch_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearch_descriptor,
-        new java.lang.String[] { "Request", "Query", "Pagination", });
+        new java.lang.String[] { "Request", "Query", "Pagination", "Type", });
     internal_static_proto_ClientSearchResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientSearchResponse_fieldAccessorTable = new
